@@ -27,10 +27,17 @@ python scripts/migrar_presupuestos.py
 python scripts/merge_y_validar.py
 ```
 
+## Datos en Drive (alimentan Looker Studio)
+
+Carpeta [Sistema Gastos](https://drive.google.com/drive/folders/1vAPsrCr8_QbHpG_zyj24Erl3jPMzW-ad):
+
+- [gastos_resumen_mensual](https://docs.google.com/spreadsheets/d/10Tfth6Z7V0_W4WzVQJ-GCqro8HeSuV1y8Aj0nob4MDo) — mes × categoría × gasto (2021-11 → 2026-06), desde `out/resumen_mensual.csv`
+- [gastos_presupuesto_vs_real](https://docs.google.com/spreadsheets/d/1c-kDv0qQAdkQg1Qg_WFtg6qM2qgKG3pXlmIg941z1qo) — mes × categoría × presupuesto/real/diferencia (2025-01 → 2026-07), desde `out/presupuesto_vs_real.csv`
+
 ## Estado
 
 - [x] Fase 1 — migración del histórico + validación (cierra 0,00 contra fuentes)
-- [ ] Fase 1 — export a Google Sheets + dashboard Looker Studio
+- [x] Fase 1 — export a Google Sheets (falta conectar Looker Studio, 3 clicks del usuario)
 - [ ] Fase 2 — pipeline de mails (avisos Santander 2×/día, bandeja de pendientes)
 - [ ] Fase 3 — conciliación mensual (PDFs BBVA/Santander MC, cierre casa, Splitwise API)
 - [ ] Fase 4 — presupuesto integrado + alertas
