@@ -1,0 +1,72 @@
+# Conceptos
+
+```
+Conceptos,Tipo
+Gastos Comunes,Fijo
+Antel,Fijo
+UTE,Fijo
+IMM,Fijo
+Chia,Variable
+Salir a Comer / Delivery,Variable
+Super,Variable
+Regalos,Variable
+Eventos,Variable
+Particulares,Variable
+Limpieza,Variable
+Garrafa,Variable
+Cosas Casa,Variable
+Lavadero,Variable
+Transporte,Variable
+Grupo de Viaje,Variable
+Ropa / Peluqueria,Variable
+Tarjetas,Variable
+Otras Salidas,Variable
+Gastos Roja,Variable
+Rutina,Variable
+Wanderers,Variable
+Salud,Variable
+Viajes / Escapadas,Variable
+Celular,Variable
+Farmacia,Variable
+Educacion,Variable
+Suscripciones,Variable
+Auto,Variable
+Tramites,Variable
+Pago Auto,Variable
+Propinas,Variable
+
+```
+
+# Presupuesto
+
+```
+En los amarillos esta la diferencia grande respecto a otros meses,Salir a Comer / Delivery,Lo puedo llevar a 5k, cocinando mas y pidiendo menos
+Gastos no ajustables, o casi imposible,Cosas Casa,Puede ser 2k este mes
+Conceptos,Tipo,Presupuesto,Gasto Real,Diferencia,Variacion,Comentario Pre,Comentario Post,Oportunidad de Ajustar,Transporte,Menos Uber / Taxi, el gasto ya lo tiene el auto
+Gastos Comunes,Fijo,12.500,10.985,-1.515,-12,1%,Ropa / Peluqueria,sin comprar ropa, puedo ir a 1500
+UTE,Fijo,1.700,1.530,-170,-10,0%,Otras Salidas,Nada programado, puede bajar
+Antel,Fijo,1.100,1.089,-11,-1,0%,Otos Gastos,Podría ser 0
+IMM,Fijo,0,0,-
+Salud,Variable,10.000,11.556,1.556,15,6%,3 Psico + remedios
+Salir a Comer / Delivery,Variable,7.000,6.089,-911,-13,0%
+Super,Variable,7.000,5.891,-1.109,-15,8%
+Cosas Casa,Variable,2.000,1.631,-369,-18,5%
+Transporte,Variable,1.200,1.224,24,2,0%
+Educacion,Variable,28.500,28.152,-348,-1,2%,Libro + ORT
+Gastos Roja,Variable,1.000,-1.000,-
+Ropa / Peluqueria,Variable,4.000,3.798,-202,-5,1%,Birken + Pelu
+Otras Salidas,Variable,2.000,4.203,2.203,110,2%,Entradas Medio y Medio
+Limpieza,Variable,1.500,2.781,1.281,85,4%,2 Yova
+Wanderers,Variable,900,1.050,150,16,7%
+Tarjetas,Variable,1.100,1.279,179,16,3%
+Regalos,Variable,1.000,26,-974,-97,4%
+Garrafa,Variable,0,-
+Viajes / Escapadas,Variable,12.000,12.127,127,1,1%,RIO,RIO
+Celular,Variable,1.650,-1.650,-
+Suscripciones,Variable,500,761,261,52,2%
+Auto,Variable,5.000,6.749,1.749,35,0%,Ida a Colonia
+Tramites,Variable,0,-
+Otos Gastos,Variable,0,-
+101.650,100.921,-729,-0,7%
+
+```

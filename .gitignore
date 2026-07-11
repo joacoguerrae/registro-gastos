@@ -1,0 +1,4 @@
+config/secrets.local.json
+__pycache__/
+*.pyc
+out/tmp/

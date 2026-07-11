@@ -1,0 +1,72 @@
+# Conceptos
+
+```
+Conceptos,Tipo
+Gastos Comunes,Fijo
+Antel,Fijo
+UTE,Fijo
+IMM,Fijo
+Chia,Variable
+Pedir/Comer Afuera,Variable
+Super,Variable
+Regalos,Variable
+Limpieza,Variable
+Garrafa,Variable
+Cosas Casa,Variable
+Lavadero,Variable
+Transporte,Variable
+Ropa / Otras Compras,Variable
+Tarjetas,Variable
+Otras Salidas,Variable
+Gastos Roja,Variable
+Rutina,Variable
+Wanderers,Variable
+Salud,Variable
+Viajes / Escapadas,Variable
+Celular,Variable
+Farmacia,Variable
+Educacion,Variable
+Suscripciones,Variable
+Auto,Variable
+Tramites,Variable
+Pago Auto,Variable
+Propinas,Variable
+Peluquería,Variable
+
+```
+
+# Presupuesto
+
+```
+En los amarillos esta la diferencia grande respecto a otros meses,Salir a Comer / Delivery,Lo puedo llevar a 5k, cocinando mas y pidiendo menos
+Gastos no ajustables, o casi imposible,Cosas Casa,Puede ser 2k este mes
+Conceptos,Tipo,Presupuesto,Gasto Real,Diferencia,Variacion,Comentario Pre,Comentario Post,Oportunidad de Ajustar,Transporte,Menos Uber / Taxi, el gasto ya lo tiene el auto
+Gastos Comunes,Fijo,22.400,-22.400,-,Ropa / Peluqueria,sin comprar ropa, puedo ir a 1500
+UTE,Fijo,1.800,-1.800,-,Otras Salidas,Nada programado, puede bajar
+Antel,Fijo,1.200,-1.200,-,Otos Gastos,Podría ser 0
+IMM,Fijo,0,0,-
+Club,Fijo,4.715,-4.715,-
+Salud,Variable,4.000,-4.000,-,medicamentos
+Salir a Comer / Delivery,Variable,6.000,-6.000,-
+Super,Variable,7.500,-7.500,-
+Cosas Casa,Variable,11.000,-11.000,-,cortinas?
+Transporte,Variable,1.000,-1.000,-
+Educacion,Variable,28.170,-28.170,-
+Gastos Roja,Variable,500,-500,-
+Ropa / Otras Compras,Variable,2.000,-2.000,-
+Otras Salidas,Variable,2.000,-2.000,-
+Limpieza,Variable,1.700,-1.700,-
+Wanderers,Variable,1.500,-1.500,-
+Tarjetas,Variable,1.000,-1.000,-
+Regalos,Variable,1.000,-1.000,-
+Garrafa,Variable,0,0,-
+Viajes / Escapadas,Variable,2.000,-2.000,-
+Celular,Variable,1.000,-1.000,-
+Suscripciones,Variable,2.200,-2.200,-
+Auto,Variable,4.500,-4.500,-
+Tramites,Variable,0,-
+Otos Gastos,Variable,0,-
+Peluquería,Variable,560,-560,-
+107.745,0,-107.745,-
+
+```

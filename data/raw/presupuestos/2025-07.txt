@@ -1,0 +1,74 @@
+# Conceptos
+
+```
+Conceptos,Tipo
+Gastos Comunes,Fijo
+Antel,Fijo
+UTE,Fijo
+IMM,Fijo
+Chia,Variable
+Salir a Comer / Delivery,Variable
+Super,Variable
+Regalos,Variable
+Eventos,Variable
+Particulares,Variable
+Limpieza,Variable
+Garrafa,Variable
+Cosas Casa,Variable
+Lavadero,Variable
+Transporte,Variable
+Grupo de Viaje,Variable
+Ropa / Peluqueria,Variable
+Tarjetas,Variable
+Otras Salidas,Variable
+Gastos Roja,Variable
+Rutina,Variable
+Wanderers,Variable
+Salud,Variable
+Viajes / Escapadas,Variable
+Celular,Variable
+Farmacia,Variable
+Educacion,Variable
+Suscripciones,Variable
+Auto,Variable
+Tramites,Variable
+Pago Auto,Variable
+Propinas,Variable
+
+```
+
+# Presupuesto
+
+```
+En los amarillos esta la diferencia grande respecto a otros meses,Salir a Comer / Delivery,Lo puedo llevar a 5k, cocinando mas y pidiendo menos
+Gastos no ajustables, o casi imposible,Cosas Casa,Puede ser 2k este mes
+Conceptos,Tipo,Presupuesto,Gasto Real,Diferencia,Variacion,Oportunidad de Ajustar,Transporte,Menos Uber / Taxi, el gasto ya lo tiene el auto
+Gastos Comunes,Fijo,12.300,12.070,-230,-1,9%,Ropa / Peluqueria,sin comprar ropa, puedo ir a 1500
+UTE,Fijo,1.800,1.623,-177,-9,8%,Otras Salidas,Nada programado, puede bajar
+Antel,Fijo,1.100,1.056,-44,-4,0%,Otos Gastos,Podría ser 0
+IMM,Fijo,0,0,-
+Salud,Variable,11.000,11.028,28,0,3%,Psico de junio
+Salir a Comer / Delivery,Variable,6.000,2.707,-3.293,-54,9%
+Super,Variable,6.000,6.166,166,2,8%
+Cosas Casa,Variable,2.000,-2.000,-
+Transporte,Variable,1.500,1.465,-35,-2,3%
+Educacion,Variable,27.000,26.813,-187,-0,7%
+Gastos Roja,Variable,500,-500,-
+Ropa / Peluqueria,Variable,3.000,5.759,2.759,92,0%
+Otras Salidas,Variable,10.000,3.706,-6.294,-62,9%,CUMPLE
+Limpieza,Variable,1.000,929,-71,-7,1%
+Wanderers,Variable,400,390,-10,-2,5%
+Tarjetas,Variable,1.000,1.357,357,35,7%
+Regalos,Variable,2.000,6.085,4.085,204,3%,Casamiento
+Garrafa,Variable,620,628,8,1,3%
+Viajes / Escapadas,Variable,0,-
+Celular,Variable,813,832,19,2,3%
+Suscripciones,Variable,1.000,464,-536,-53,6%
+Auto,Variable,4.000,4.849,849,21,2%
+Tramites,Variable,0,-
+Otos Gastos,Variable,0,-
+Pago Auto,Varable,16.000,15.188,-812,-5,1%,USD
+109.033,103.115,-5.918,-5,4%
+Sin Pago Auto,93.033,87.927,-5,5%
+
+```

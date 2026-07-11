@@ -1,0 +1,76 @@
+# Conceptos
+
+```
+Conceptos,Tipo
+Gastos Comunes,Fijo
+Antel,Fijo
+UTE,Fijo
+IMM,Fijo
+Chia,Variable
+Salir a Comer / Delivery,Variable
+Super,Variable
+Regalos,Variable
+Eventos,Variable
+Particulares,Variable
+Limpieza,Variable
+Garrafa,Variable
+Cosas Casa,Variable
+Lavadero,Variable
+Transporte,Variable
+Grupo de Viaje,Variable
+Ropa / Otras Compras,Variable
+Tarjetas,Variable
+Otras Salidas,Variable
+Gastos Roja,Variable
+Rutina,Variable
+Wanderers,Variable
+Salud,Variable
+Viajes / Escapadas,Variable
+Celular,Variable
+Farmacia,Variable
+Educacion,Variable
+Suscripciones,Variable
+Auto,Variable
+Tramites,Variable
+Pago Auto,Variable
+Propinas,Variable
+Peluquería,Variable
+Split Pibes,Variable
+
+```
+
+# Presupuesto
+
+```
+En los amarillos esta la diferencia grande respecto a otros meses,Salir a Comer / Delivery,Lo puedo llevar a 5k, cocinando mas y pidiendo menos
+Gastos no ajustables, o casi imposible,Cosas Casa,Puede ser 2k este mes
+Conceptos,Tipo,Presupuesto,Gasto Real,Diferencia,Variacion,Comentario Pre,Comentario Post,Oportunidad de Ajustar,Transporte,Menos Uber / Taxi, el gasto ya lo tiene el auto
+Gastos Comunes,Fijo,11.150,11.075,-75,-0,7%,Ropa / Peluqueria,sin comprar ropa, puedo ir a 1500
+UTE,Fijo,1.700,1.806,106,6,2%,Otras Salidas,Nada programado, puede bajar
+Antel,Fijo,1.150,1.098,-52,-4,5%,Otos Gastos,Podría ser 0
+IMM,Fijo,0,0,-
+Club,Fijo,0,4.715,4.715,100,0%
+Salud,Variable,3.500,-3.500,-,0 Psico + Medicamentos
+Salir a Comer / Delivery,Variable,8.000,4.820,-3.180,-39,8%
+Super,Variable,7.000,9.479,2.479,35,4%
+Cosas Casa,Variable,3.000,688,-2.312,-77,1%
+Transporte,Variable,1.100,1.795,695,63,2%
+Educacion,Variable,28.200,28.200,0,0,0%
+Gastos Roja,Variable,0,0,-
+Ropa / Otras Compras,Variable,2.000,1.169,-831,-41,6%
+Otras Salidas,Variable,6.000,451,-5.549,-92,5%,Medio y Medio
+Limpieza,Variable,2.000,1.893,-107,-5,4%
+Wanderers,Variable,1.500,1.550,50,3,3%
+Tarjetas,Variable,850,1.871,1.021,120,1%
+Regalos,Variable,8.000,1.902,-6.098,-76,2%,Navidad
+Garrafa,Variable,700,-700,-
+Viajes / Escapadas,Variable,2.500,34.992,32.492,1299,7%
+Celular,Variable,850,849,-1,-0,1%
+Suscripciones,Variable,800,720,-80,-10,0%
+Auto,Variable,20.600,21.500,900,4,4%,Patente + Seguro + Nafta + Garage
+Tramites,Variable,300,-300,-
+Otos Gastos,Variable,0,0,-
+Peluquería,Variable,590,1.229,639,108,3%
+111.490,131.802,20.312,18,2%
+
+```

@@ -1,0 +1,11 @@
+cuenta,alias_1money,tarjetas,moneda,tipo,activa,notas
+Santander UYU,$ Santander,9071,UYU,banco,si,9071 = débito personal
+Santander USD,USD Santander,,USD,banco,si,caja de ahorro USD (ahorro)
+Cuenta Casa,Casa,8261,UYU,conjunta,si,"cuenta casa de vuelta en Santander (débito 8261, decisión jul-2026); los avisos de la 8261 son ámbito casa. Mercado Pago fue la cuenta casa jun-jul 2026"
+Deudas,Deudas,,UYU,virtual,si,splits con amigos y hermanos (Splitwise)
+BBVA Crédito,BBVA Credito,,UYU,tarjeta_credito,si,sin avisos por transacción; solo estado de cuenta mensual PDF
+Santander Platinum,Santander Credito,6427,UYU,tarjeta_credito,si,avisos por transacción por mail
+Santander Mastercard,,,UYU,tarjeta_credito,si,"crédito de la casa; sin avisos por transacción, estado de cuenta mensual PDF con contraseña=CI"
+Itaú Crédito,Itau Credito,,UYU,tarjeta_credito,no,cerrada — solo histórico
+Efectivo,Efectivo,,UYU,efectivo,si,
+BBVA USD,BBVA USD,,USD,banco,si,

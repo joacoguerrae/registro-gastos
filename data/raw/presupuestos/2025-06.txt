@@ -1,0 +1,76 @@
+# Conceptos
+
+```
+Conceptos,Tipo
+Gastos Comunes,Fijo
+Antel,Fijo
+UTE,Fijo
+IMM,Fijo
+Chia,Variable
+Salir a Comer / Delivery,Variable
+Super,Variable
+Regalos,Variable
+Eventos,Variable
+Particulares,Variable
+Limpieza,Variable
+Garrafa,Variable
+Cosas Casa,Variable
+Lavadero,Variable
+Transporte,Variable
+Grupo de Viaje,Variable
+Ropa / Peluqueria,Variable
+Tarjetas,Variable
+Otras Salidas,Variable
+Gastos Roja,Variable
+Rutina,Variable
+Wanderers,Variable
+Salud,Variable
+Viajes / Escapadas,Variable
+Celular,Variable
+Farmacia,Variable
+Educacion,Variable
+Suscripciones,Variable
+Auto,Variable
+Tramites,Variable
+Pago Auto,Variable
+Propinas,Variable
+
+```
+
+# Presupuesto
+
+```
+En los amarillos esta la diferencia grande respecto a otros meses,Salir a Comer / Delivery,Lo puedo llevar a 5k, cocinando mas y pidiendo menos
+Gastos no ajustables, o casi imposible,Cosas Casa,Puede ser 2k este mes
+Conceptos,Tipo,Presupuesto,Gasto Real,Diferencia,Variacion,Oportunidad de Ajustar,Transporte,Menos Uber / Taxi, el gasto ya lo tiene el auto
+Gastos Comunes,Fijo,12.300,12.273,-27,-0,2%,Ropa / Peluqueria,sin comprar ropa, puedo ir a 1500
+UTE,Fijo,1.500,1.728,228,15,2%,Otras Salidas,Nada programado, puede bajar
+Antel,Fijo,1.100,1.074,-26,-2,4%,Otos Gastos,Podría ser 0
+IMM,Fijo,1.150,1.165,15,1,3%
+Salud,Variable,12.000,2.735,-9.265,-77,2%,Psico en Julio
+Salir a Comer / Delivery,Variable,6.500,4.397,-2.103,-32,4%
+Super,Variable,7.500,5.085,-2.415,-32,2%
+Cosas Casa,Variable,2.500,943,-1.557,-62,3%
+Transporte,Variable,1.200,362,-838,-69,8%
+Educacion,Variable,27.000,26.813,-187,-0,7%
+Gastos Roja,Variable,800,270,-530,-66,3%
+Farmacia,Variable,0,0,0,-,Migro todo a Salud
+Ropa / Peluqueria,Variable,2.000,2.021,21,1,1%
+Otras Salidas,Variable,1.500,3.781,2.281,152,1%
+Limpieza,Variable,1.500,945,-555,-37,0%
+Wanderers,Variable,1.050,1.050,0,0,0%
+Tarjetas,Variable,1.000,902,-98,-9,8%
+Regalos,Variable,6.000,7.668,1.668,27,8%
+Chia,Variable,0,0,-
+Garrafa,Variable,0,0,-
+Viajes / Escapadas,Variable,0,-
+Celular,Variable,813,-813,-
+Suscripciones,Variable,1.000,119,-881,-88,1%
+Auto,Variable,4.000,3.449,-551,-13,8%
+Tramites,Variable,0,-
+Otos Gastos,Variable,1.000,-1.000,-
+Pago Auto,Varable,16.000,14.915,-1.085,-6,8%,USD
+109.413,91.695,-17.718,-16,2%
+Sin Pago Auto,93.413,76.780,-17,8%
+
+```

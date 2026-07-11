@@ -1,0 +1,21 @@
+categoria,tipo,orden
+Vivienda,Fijo,1
+Servicios,Fijo,2
+Educación,Fijo,3
+Club,Fijo,4
+Suscripciones,Fijo,5
+Salud,Variable,6
+Super,Variable,7
+Comer afuera / Delivery,Variable,8
+Transporte,Variable,9
+Auto,Variable,10
+Casa & hogar,Variable,11
+Compras personales,Variable,12
+Salidas & ocio,Variable,13
+Wanderers,Variable,14
+Regalos,Variable,15
+Viajes,Variable,16
+Otros,Variable,17
+Sueldo,Ingreso,18
+Devoluciones & cashback,Ingreso,19
+Otros ingresos,Ingreso,20

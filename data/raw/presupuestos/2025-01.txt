@@ -1,0 +1,76 @@
+# Conceptos
+
+```
+Conceptos,Tipo
+Gastos Comunes,Fijo
+Antel,Fijo
+UTE,Fijo
+IMM,Fijo
+Chia,Variable
+Salir a Comer / Delivery,Variable
+Super,Variable
+Regalos,Variable
+Eventos,Variable
+Particulares,Variable
+Limpieza,Variable
+Garrafa,Variable
+Cosas Casa,Variable
+Lavadero,Variable
+Transporte,Variable
+Grupo de Viaje,Variable
+Ropa / Peluqueria,Variable
+Tarjetas,Variable
+Otras Salidas,Variable
+Gastos Roja,Variable
+Rutina,Variable
+Wanderers,Variable
+Salud,Variable
+Viajes / Escapadas,Variable
+Celular,Variable
+Farmacia,Variable
+Educacion,Variable
+Suscripciones,Variable
+Auto,Variable
+Tramites,Variable
+Pago Auto,Variable
+Propinas,Variable
+
+```
+
+# Presupuesto
+
+```
+
+Conceptos,Tipo,Presupuesto,Gasto Real,Diferencia,Variacion
+Gastos Comunes,Fijo,10.000,9.676,-324,-3,2%
+UTE,Fijo,1.600,962,-638,-39,9%
+Antel,Fijo,980,963,-17,-1,7%
+IMM,Fijo,0,0,-
+Salud,Variable,5.100,3.600,-1.500,-29,4%
+Salir a Comer / Delivery,Variable,10.000,9.754,-246,-2,5%
+Super,Variable,6.000,5.848,-152,-2,5%
+Cosas Casa,Variable,6.000,4.543,-1.457,-24,3%
+Transporte,Variable,500,888,388,77,6%
+Eventos,Variable,0,0,-
+Educacion,Variable,1.000,-1.000,-
+Gastos Roja,Variable,0,0,-
+Farmacia,Variable,800,1.260,460,57,5%
+Ropa / Peluqueria,Variable,4.000,4.442,442,11,1%
+Otras Salidas,Variable,2.000,1.300,-700,-35,0%
+Limpieza,Variable,1.500,793,-707,-47,1%
+Wanderers,Variable,900,900,0,0,0%
+Tarjetas,Variable,1.000,724,-276,-27,6%
+Regalos,Variable,1.000,2.907,1.907,190,7%
+Chia,Variable,0,0,-
+Garrafa,Variable,0,0,-
+Viajes / Escapadas,Variable,3.000,37.804,34.804,1160,1%,RIO
+Celular,Variable,1.000,-1.000,-
+Suscripciones,Variable,300,44,-256,-85,3%
+Auto,Variable,3.000,12.282,9.282,309,4%,PATENTE
+Tramites,Variable,0,-
+Pago Auto,Varable,16.000,12.806,-3.194,-20,0%,USD
+75.680,111.496,35.816,47,3%
+Sin Pago Auto,59.680,98.690,65,4%
+54.604
+
+```

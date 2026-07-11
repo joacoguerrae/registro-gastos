@@ -1,0 +1,76 @@
+# Conceptos
+
+```
+Conceptos,Tipo
+Gastos Comunes,Fijo
+Antel,Fijo
+UTE,Fijo
+IMM,Fijo
+Chia,Variable
+Salir a Comer / Delivery,Variable
+Super,Variable
+Regalos,Variable
+Eventos,Variable
+Particulares,Variable
+Limpieza,Variable
+Garrafa,Variable
+Cosas Casa,Variable
+Lavadero,Variable
+Transporte,Variable
+Grupo de Viaje,Variable
+Ropa / Peluqueria,Variable
+Tarjetas,Variable
+Otras Salidas,Variable
+Gastos Roja,Variable
+Rutina,Variable
+Wanderers,Variable
+Salud,Variable
+Viajes / Escapadas,Variable
+Celular,Variable
+Farmacia,Variable
+Educacion,Variable
+Suscripciones,Variable
+Auto,Variable
+Tramites,Variable
+Pago Auto,Variable
+Propinas,Variable
+
+```
+
+# Presupuesto
+
+```
+
+Conceptos,Tipo,Presupuesto,Gasto Real,Diferencia,Variacion
+Gastos Comunes,Fijo,10.205,11.163,958,9,4%,12.300,2.095,Gastos Comunes,Fijo,12.300
+UTE,Fijo,1.600,1.598,-2,-0,1%,1.500,-100,UTE,Fijo,1.500
+Antel,Fijo,1.010,1.124,114,11,3%,1.100,90,Antel,Fijo,1.100
+IMM,Fijo,1.063,1.163,100,9,4%,1.150,87,IMM,Fijo,1.150
+Salud,Variable,7.200,3.600,-3.600,-50,0%,12.000,4.800,Salud,Variable,12.000
+Salir a Comer / Delivery,Variable,7.500,8.301,801,10,7%,6.500,-1.000,Salir a Comer / Delivery,Variable,6.500
+Super,Variable,6.000,3.844,-2.156,-35,9%,7.500,1.500,Super,Variable,7.500
+Cosas Casa,Variable,2.000,47,-1.953,-97,7%,2.500,500,Cosas Casa,Variable,2.500
+Transporte,Variable,700,325,-375,-53,6%,1.200,500,Transporte,Variable,1.200
+Educacion,Variable,1.000,-1.000,-,27.000,26.000,Educacion,Variable,27.000
+Gastos Roja,Variable,600,782,182,30,3%,800,200,Gastos Roja,Variable,800
+Farmacia,Variable,1.000,1.396,396,39,6%,0,-1.000,Farmacia,Variable,0
+Ropa / Peluqueria,Variable,1.500,990,-510,-34,0%,2.000,500,Ropa / Peluqueria,Variable,2.000
+Otras Salidas,Variable,1.500,-1.500,-,1.500,0,Otras Salidas,Variable,1.500
+Limpieza,Variable,1.200,-1.200,-,1.500,300,Limpieza,Variable,1.500
+Wanderers,Variable,500,-500,-,1.050,550,Wanderers,Variable,1.050
+Tarjetas,Variable,2.900,3.013,113,3,9%,1.000,-1.900,Tarjetas,Variable,1.000
+Regalos,Variable,1.000,-1.000,-,6.000,5.000,Regalos,Variable,6.000
+Chia,Variable,0,0,-,0,0,Chia,Variable,0
+Garrafa,Variable,600,620,20,3,3%,0,-600,Garrafa,Variable,0
+Viajes / Escapadas,Variable,1.720,8.777,7.057,410,3%,Parte de Praia,-1.720,Viajes / Escapadas,Variable
+Celular,Variable,271,-271,-,813,542,Celular,Variable,813
+Suscripciones,Variable,250,258,8,3,2%,1.000,750,Suscripciones,Variable,1.000
+Auto,Variable,6.000,10.523,4.523,75,4%,TALLER,4.000,-2.000,Auto,Variable,4.000
+Tramites,Variable,0,-,0,Tramites,Variable
+Otos Gastos,Variable,1.000,-1.000,-,1.000,0,Otos Gastos,Variable,1.000
+Pago Auto,Varable,16.000,12.615,-3.385,-21,2%,USD,16.000,0,Pago Auto,Varable,16.000
+74.319,70.139,-4.180,-5,6%,35.094,109.413
+Sin Pago Auto,58.319,57.524,-1,4%
+16.771
+
+```

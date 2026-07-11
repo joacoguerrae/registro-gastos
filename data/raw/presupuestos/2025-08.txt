@@ -1,0 +1,72 @@
+# Conceptos
+
+```
+Conceptos,Tipo
+Gastos Comunes,Fijo
+Antel,Fijo
+UTE,Fijo
+IMM,Fijo
+Chia,Variable
+Salir a Comer / Delivery,Variable
+Super,Variable
+Regalos,Variable
+Eventos,Variable
+Particulares,Variable
+Limpieza,Variable
+Garrafa,Variable
+Cosas Casa,Variable
+Lavadero,Variable
+Transporte,Variable
+Grupo de Viaje,Variable
+Ropa / Peluqueria,Variable
+Tarjetas,Variable
+Otras Salidas,Variable
+Gastos Roja,Variable
+Rutina,Variable
+Wanderers,Variable
+Salud,Variable
+Viajes / Escapadas,Variable
+Celular,Variable
+Farmacia,Variable
+Educacion,Variable
+Suscripciones,Variable
+Auto,Variable
+Tramites,Variable
+Pago Auto,Variable
+Propinas,Variable
+
+```
+
+# Presupuesto
+
+```
+En los amarillos esta la diferencia grande respecto a otros meses,Salir a Comer / Delivery,Lo puedo llevar a 5k, cocinando mas y pidiendo menos
+Gastos no ajustables, o casi imposible,Cosas Casa,Puede ser 2k este mes
+Conceptos,Tipo,Presupuesto,Gasto Real,Diferencia,Variacion,Oportunidad de Ajustar,Transporte,Menos Uber / Taxi, el gasto ya lo tiene el auto
+Gastos Comunes,Fijo,12.300,12.130,-170,-1,4%,Ropa / Peluqueria,sin comprar ropa, puedo ir a 1500
+UTE,Fijo,1.700,1.760,60,3,5%,Otras Salidas,Nada programado, puede bajar
+Antel,Fijo,1.100,1.062,-38,-3,5%,Otos Gastos,Podría ser 0
+IMM,Fijo,1.200,1.146,-54,-4,5%
+Salud,Variable,16.500,12.433,-4.067,-24,6%,Psico + hialuronico,No pague hialuronico
+Salir a Comer / Delivery,Variable,7.000,8.506,1.506,21,5%,Quede muy arriba pibes
+Super,Variable,6.000,5.731,-269,-4,5%
+Cosas Casa,Variable,11.000,10.586,-414,-3,8%,Persiana
+Transporte,Variable,600,1.120,520,86,7%
+Educacion,Variable,28.000,26.813,-1.187,-4,2%
+Gastos Roja,Variable,500,-500,-
+Ropa / Peluqueria,Variable,1.500,1.248,-252,-16,8%
+Otras Salidas,Variable,25.000,24.545,-455,-1,8%,CUMPLE
+Limpieza,Variable,1.000,933,-67,-6,7%
+Wanderers,Variable,900,90,-810,-90,0%
+Tarjetas,Variable,1.000,804,-196,-19,6%
+Regalos,Variable,2.000,1.942,-58,-2,9%
+Garrafa,Variable,0,-
+Viajes / Escapadas,Variable,0,-
+Celular,Variable,813,811,-2,-0,2%
+Suscripciones,Variable,1.000,820,-180,-18,0%
+Auto,Variable,4.000,6.205,2.205,55,1%,Fuimos a Rocha
+Tramites,Variable,0,-
+Otos Gastos,Variable,0,-
+123.113,118.685,-4.428,-3,6%
+
+```
