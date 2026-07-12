@@ -70,5 +70,5 @@ Carpeta [Sistema Gastos](https://drive.google.com/drive/folders/1vAPsrCr8_QbHpG_
 
 - Cuenta casa: vuelve a Santander (débito **8261**) → los avisos de esa tarjeta son ámbito casa. Mastercard Santander = crédito de la casa. 9071 débito personal, 6427 = Platinum personal. Itaú cerrada.
 - La app 1Money queda congelada (histórico migrado); la planilla de casa queda congelada como histórico.
-- División casa: coeficientes por ingresos del mes en `config/ingresos.csv`; cierre mensual con una sola transferencia de ajuste.
+- División casa: coeficientes por ingresos del mes en `config/ingresos.csv`. La cuenta casa es CONTINUA: sin transferencias de ajuste entre Lu y Joaco — el cierre calcula la posición acumulada de cada uno y sugiere los aportes del mes siguiente para converger (semilla 2026-06-30 en `config/posicion_casa.json`).
 - Anti doble conteo: columna `en_analisis` (reglas en esquema.md; excepción documentada: 2024-09 usa volcados 1Money).
