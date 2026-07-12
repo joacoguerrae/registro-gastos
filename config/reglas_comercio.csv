@@ -1,0 +1,31 @@
+patron,categoria,ambito_override,nota
+DLO\*?PedidosYa Market,Super,,peya market = super
+DLO\*?PedidosYa Propina,Comer afuera / Delivery,,propina delivery
+DLO\*?PedidosYa Envio,Comer afuera / Delivery,,envio delivery
+DLO\*?PedidosYa|DLOPEDIDOSYA,Comer afuera / Delivery,,pedidosya general (despues de market/propina/envio)
+DLOUBERRIDES|UBER,Transporte,,
+TATA|DISCO|DEVOTO|MACRO MERCADO|MICRO MACRO|TIENDA INGLESA|EL DORADO|FROG|KINKO|SUPERMERCADO,Super,,
+CARNICERIA|VERDULERIA|PANADERIA|FERIA,Super,,
+LA ROTISERIA|ROTISERIA|RESTAURANTE|RESTORAN|CAFETERIA|CAFE |PIZZERIA|BURGER|MC ?DONALD|CHIVITERIA|SUSHI|EL TIMON|LOS HERMANOS|EMPORIO,Comer afuera / Delivery,,
+HANDY|MERPAGO\*,,,queda sin categoria a proposito: revisar (comercio generico)
+UTE ?,Servicios,casa,
+ANTEL,Servicios,casa,
+IMM |INTENDENCIA,Vivienda,casa,
+ANCAP|ESSO|AXION|PETROBRAS|NAFTA,Auto,,
+SUCIVE|PATENTE,Auto,,
+BANCO DE SEGURO|BSE,Auto,,seguro del auto en BSE
+GARAGE,Auto,casa,
+FARMACIA|FARMASHOP|SAN ROQUE,Salud,,
+MEDICINA PERSONALIZAD|CLINICA|ASOCIACION ESPANOLA|MEDICA URUGUAYA|COSEM|SUMMUM,Salud,,
+Proyecto PAS,Salud,,psicologo (INTERNET/Proyecto PAS)
+APPLE\.COM/BILL|APPLE COM BILL,Suscripciones,,
+GOOGLE|YOUTUBE,Suscripciones,,
+NETFLIX|SPOTIFY|HBO|DISNEY|MAX |PARAMOUNT,Suscripciones,,
+ANTHROPIC|OPENAI|CHATGPT,Suscripciones,,
+MELI\+|MERCADOLIBRE M\+,Suscripciones,,
+UNIVERSIDAD ORT|ORT ,Educación,,
+WANDERERS,Wanderers,,
+BIGUA,Club,,
+PELUQUERIA|BARBERIA,Compras personales,,
+CINE |CINEMA|MOVIE|TEATRO,Salidas & ocio,,
+PUESTO PLAVAN|ROSA DI IACOVO,Comer afuera / Delivery,,
