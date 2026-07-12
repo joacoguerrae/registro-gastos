@@ -1,11 +1,13 @@
 cuenta,fecha_corte,saldo,moneda,fuente,nota
-Santander UYU,2026-07-11,5978.00,UYU,1money account_balance,saldo segun la app al 11/7 — NO incluye los gastos de julio capturados por mail; el primer corte de conciliacion (Fase 3) lo calibra contra el saldo real del banco
-Santander USD,2026-07-11,6803.00,USD,1money account_balance,
-Cuenta Casa,2026-07-11,-15233.00,UYU,1money account_balance,saldo de la app — NO es el real; el saldo real de la cuenta conjunta era ~1552 segun la planilla (hoy en Mercado Pago); calibrar en Fase 3
-Deudas,2026-07-11,7678.42,UYU,1money account_balance,positivo = me deben (Splitwise); calibrar contra saldo Splitwise en Fase 3
-BBVA Crédito,2026-07-11,83970.30,UYU,1money account_balance,deuda del periodo segun la app; calibrar contra estado de cuenta
-Santander Platinum,2026-07-11,34353.69,UYU,1money account_balance,deuda del periodo segun la app; calibrar contra estado de cuenta
-Efectivo,2026-07-11,0.00,UYU,1money account_balance,
-BBVA USD,2026-07-11,693.00,USD,1money account_balance,
-Dolares Viaje,2026-07-11,77.00,USD,1money account_balance,
-Tricount Europa,2026-07-11,227.00,USD,1money account_balance,
+Cuenta Casa,2026-07-12,17322.24,UYU,saldos reales reportados por Joaco,"= corriente Santander 383,96 + 16.938,28 que llegan de MP el 12/7; hipótesis corriente=casa (8261) a confirmar"
+Santander UYU,2026-07-12,16016.13,UYU,saldos reales reportados por Joaco,caja de ahorro personal (hipótesis: tarjeta 9071)
+Santander USD,2026-07-12,8073.30,USD,saldos reales reportados por Joaco,
+BBVA USD,2026-07-12,692.93,USD,saldos reales reportados por Joaco,"incluye 200 USD de amigos (deuda con ellos)"
+BBVA Crédito,2026-07-12,204.51,UYU,saldos reales reportados por Joaco,"deuda del período (Mapfre); nada impago"
+Santander Platinum,2026-07-12,28987.50,UYU,saldos reales reportados por Joaco,"deuda UYU del período según Joaco; ver discrepancias BSE/Uber en data/saldos.csv"
+Santander Platinum USD,2026-07-12,99.46,USD,saldos reales reportados por Joaco,"deuda USD del período (Google One + Anthropic)"
+Santander Mastercard,2026-07-12,0.00,UYU,saldos reales reportados por Joaco,
+Deudas,2026-07-12,-1340.34,UYU,Splitwise segun Joaco,"negativo = debo"
+Deudas USD,2026-07-12,1547.76,USD,Splitwise segun Joaco,"positivo = me deben"
+Efectivo,2026-07-12,0.00,UYU,saldos reales reportados por Joaco,
+Efectivo USD,2026-07-12,30.00,USD,saldos reales reportados por Joaco,

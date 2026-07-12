@@ -1,0 +1,14 @@
+fecha_corte,cuenta,moneda,saldo_calculado,saldo_real,diferencia,comentario
+2026-07-12,Santander cuenta corriente,UYU,,383.96,,"física; hipótesis: es la cuenta de la casa (tarjeta 8261) — a confirmar. Recibe en el día 16.938,28 desde MP (vuelta de la casa a Santander)"
+2026-07-12,Santander caja de ahorro,UYU,,16016.13,,"física; hipótesis: personal (tarjeta 9071) — a confirmar"
+2026-07-12,Santander USD,USD,,8073.30,,caja de ahorro USD (ahorro)
+2026-07-12,Mercado Pago,UYU,,16938.28,,"fondo casa, en tránsito a la cuenta corriente Santander el 12/7"
+2026-07-12,BBVA USD,USD,,692.93,,"200 USD son de amigos (sobró de un viaje) → propios 492,93; los 200 son deuda con amigos"
+2026-07-12,BBVA Crédito (deuda),UYU,,204.51,,"nada impago; único movimiento del período: seguro Mapfre 204,51 (BBVA no manda avisos — entra con el estado de cuenta en F3)"
+2026-07-12,Santander Platinum (deuda),UYU,,28987.50,,"según Joaco: Uber 402,79 + PedidosYa 414,71 + ORT 28.170. DISCREPANCIAS: mail del 9/7 BANCO DE SEGURO 3.794 no listado; Uber 402,79 sin aviso por mail"
+2026-07-12,Santander Platinum (deuda),USD,,99.46,,"Google One 1,99 + Anthropic 97,47 — coincide con lo capturado por mail"
+2026-07-12,Santander Mastercard (deuda),UYU,,0.00,,sin saldos ni movimientos
+2026-07-12,Splitwise,UYU,,-1340.34,,debo $ 1.340,34
+2026-07-12,Splitwise,USD,,1547.76,,"me deben USD 1.547,76 — vs cuenta Deudas de la app (7.678,42 UYU, desactualizada): la API de Splitwise (F3) la mantiene sola"
+2026-07-12,Efectivo,USD,,30.00,,
+2026-07-12,Efectivo,UYU,,0.00,,"cuentas viejas de la app (Dolares Viaje 77 USD, Tricount Europa 227 USD) no reportadas → depuradas en esta calibración"
