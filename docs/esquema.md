@@ -47,6 +47,7 @@ La planilla "Gastos Vazquez Ledesma" queda **congelada como histórico** (migrad
 
 - Las filas `ambito=casa` se dividen con los coeficientes del mes: `config/ingresos.csv` (mes, ingreso_lu, ingreso_joaco; coef = ingreso/(suma)). Si un mes no está cargado, se usan los valores del último mes disponible y el cierre lo marca como "a confirmar".
 - Excepciones de participación (gasto pagado con cuenta casa pero 100% de uno) se marcan en la revisión semanal; por defecto participan ambos.
+- **Gastos ámbito=casa pagados desde cuentas/tarjetas personales de Joaco** (ej. seguro del auto en la Platinum): cuentan doble en el cierre — como gasto de casa (se divide por coeficiente) y como aporte implícito de Joaco por el total que pagó.
 - Cierre mensual: parte de Lu = suma(gasto_casa × coef_lu del mes) − aportes de Lu; el sistema genera el número a transferir y lo registra.
 
 ## config/ingresos.csv

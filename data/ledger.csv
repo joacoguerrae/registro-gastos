@@ -4481,6 +4481,7 @@ a9d06604df7c,2026-06-27,2026-06,gasto,309.12,UYU,309.12,Cuenta Casa,,Super,Super
 be34a690f09d,2026-06-27,2026-06,ingreso,0.36,USD,14.46,Santander Viaje,,,Ajuste saldo,,,interno,1money,confirmado,0,372f4461-fb5c-4e4b-905a-2d005a40b03e
 da62ba356c4d,2026-06-27,2026-06,gasto,4806.37,UYU,4806.37,Euros viaje,,Viajes,Viaje,,,personal,1money,confirmado,1,a4cd1c13-4108-4aa9-a7c0-3afc7b2e4c98
 e18073832be8,2026-06-27,2026-06,gasto,4.00,UYU,4.00,Santander UYU,,,Ajuste saldo,,,interno,1money,confirmado,0,b3fbb7f5-7fdf-4755-9635-283719ed27a5
+e62421101491,2026-06-27,2026-06,gasto,402.79,UYU,402.79,Santander Platinum,,Transporte,,UBER,"Uber 27/6 (periodo Platinum, sin aviso por mail; agregado en calibracion 12/7)",personal,manual,pendiente,1,calibracion-2026-07-12
 e8516fc937cd,2026-06-27,2026-06,gasto,1044.60,UYU,1044.60,Cuenta Casa,,Viajes,Viajes / Escapadas,,Uber Marsella,casa,planilla_casa,confirmado,1,fila:1903
 f06088f2f51e,2026-06-27,2026-06,gasto,2.00,USD,80.35,Santander USD,,,Ajuste saldo,,,interno,1money,confirmado,0,9eb4a675-f919-49f7-9146-4bc6f48a6147
 f9144a5a393b,2026-06-27,2026-06,gasto,364.79,UYU,364.79,Cuenta Casa,,Super,Super,,Queso,casa,planilla_casa,confirmado,1,fila:1902
@@ -4560,5 +4561,5 @@ edcb5f29c99a,2026-07-04,2026-07,gasto,14278.00,UYU,14278.00,Santander UYU,,,,Bea
 880bfd725665,2026-07-08,2026-07,gasto,28170.00,UYU,28170.00,Santander Platinum,,Educación,,UNIVERSIDAD ORT,UNIVERSIDAD ORT,personal,mail,confirmado,1,19f44033457195fa
 4a8feed90b26,2026-07-09,2026-07,gasto,340.76,UYU,340.76,Santander UYU,,Comer afuera / Delivery,,MONTEVIDEO/LA ROTISERIA V       VIS3,LA ROTISERIA V,personal,mail,confirmado,1,19f4784a7c042a72
 6371620f4cc0,2026-07-09,2026-07,gasto,45.00,UYU,45.00,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,pendiente,1,19f44e1dec5f6d1d
-d67303385bbf,2026-07-09,2026-07,gasto,3794.00,UYU,3794.00,Santander Platinum,,Auto,,BANCO DE SEGURO,BANCO DE SEGURO,personal,mail,confirmado,1,19f465b363be7949
+d67303385bbf,2026-07-09,2026-07,gasto,3794.00,UYU,3794.00,Santander Platinum,,Auto,,BANCO DE SEGURO,BANCO DE SEGURO,casa,mail,confirmado,1,19f465b363be7949
 54e12ba772cb,2026-07-10,2026-07,transferencia,150.37,USD,6064.42,Santander UYU,BBVA Crédito,,,INTERNET/Proyecto PAS,Pago tarjeta BBVA (Proyecto PAS),interno,mail,pendiente,0,19f4cc50713be2b9

@@ -11,7 +11,7 @@ ANTEL,Servicios,casa,
 IMM |INTENDENCIA,Vivienda,casa,
 ANCAP|ESSO|AXION|PETROBRAS|NAFTA,Auto,,
 SUCIVE|PATENTE,Auto,,
-BANCO DE SEGURO|BSE,Auto,,seguro del auto en BSE
+BANCO DE SEGURO|BSE,Auto,casa,"seguro del auto en BSE — es gasto de casa aunque lo pague Joaco (cuenta como aporte suyo en el cierre)"
 GARAGE,Auto,casa,
 FARMACIA|FARMASHOP|SAN ROQUE,Salud,,
 MEDICINA PERSONALIZAD|CLINICA|ASOCIACION ESPANOLA|MEDICA URUGUAYA|COSEM|SUMMUM,Salud,,

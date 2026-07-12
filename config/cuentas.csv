@@ -1,7 +1,7 @@
 cuenta,alias_1money,tarjetas,moneda,tipo,activa,notas
-Santander UYU,$ Santander,9071,UYU,banco,si,9071 = débito personal
+Santander UYU,$ Santander,9071,UYU,banco,si,"= caja de ahorro Santander UYU (suc. Ciudad Vieja), tarjeta 9071 — plata personal (confirmado 12/7)"
 Santander USD,USD Santander,,USD,banco,si,caja de ahorro USD (ahorro)
-Cuenta Casa,Casa,8261,UYU,conjunta,si,"cuenta casa de vuelta en Santander (débito 8261, decisión jul-2026); los avisos de la 8261 son ámbito casa. Mercado Pago fue la cuenta casa jun-jul 2026"
+Cuenta Casa,Casa,8261,UYU,conjunta,si,"= cuenta corriente Santander UYU (suc. Ombú), tarjeta 8261 — fondo casa (confirmado 12/7; el fondo volvió de MP el 12/7). Mercado Pago fue la cuenta casa jun-jul 2026"
 Deudas,Deudas,,UYU,virtual,si,splits con amigos y hermanos (Splitwise)
 BBVA Crédito,BBVA Credito,,UYU,tarjeta_credito,si,sin avisos por transacción; solo estado de cuenta mensual PDF
 Santander Platinum,Santander Credito,6427,UYU,tarjeta_credito,si,avisos por transacción por mail

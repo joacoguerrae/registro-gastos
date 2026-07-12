@@ -24,3 +24,4 @@ aab8a376e4b8,transferencia_a_clasificar,"a 'Lu pesos', concepto 'bigua', UYU 471
 41e0c57ed0b2,transferencia_a_clasificar,"a 'Gastos Comunes VL', concepto '801', UYU 23768.00: sin categoria",2026-07-12,
 edcb5f29c99a,transferencia_a_clasificar,"a 'Bea Itau', concepto 'seguro y Contribucion', UYU 14278.00: sin categoria",2026-07-12,
 a7ad2ee2689b,recibo_sin_matchear,Meli+ UYU 199.00 2026-07-01: sin aviso de tarjeta que matchee (posible pago con saldo MP),2026-07-12,
+e62421101491,posible_duplicado,"el banco muestra Uber 402,79 el 27/6; la app tenia 'Uber 516,00' (007eb366e0ff) del 30/6 que el banco NO muestra en el periodo: decidir si fue el mismo viaje mal tipeado (-> en_analisis=0 al de 516)",2026-07-12,

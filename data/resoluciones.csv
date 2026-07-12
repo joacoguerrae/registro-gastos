@@ -5,3 +5,4 @@ id_ledger,campo,valor,nota,fecha
 54e12ba772cb,en_analisis,0,,2026-07-12
 54e12ba772cb,descripcion,Pago tarjeta BBVA (Proyecto PAS),,2026-07-12
 54e12ba772cb,motivo_resuelto,sin_categoria,es pago de tarjeta - no requiere categoria,2026-07-12
+d67303385bbf,ambito,casa,seguro del auto BSE = gasto de casa (pagado por Joaco -> aporte implicito en el cierre),2026-07-12
