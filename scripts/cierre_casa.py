@@ -153,10 +153,19 @@ def main():
     parte_joaco = round(total - parte_lu, 2)
 
     # ---------------------------------------------------------- aportes del mes
+    # config/cierre_exclusiones.csv: ids que NO cuentan como aporte (ej. espejos
+    # de aportes ya incluidos en la posicion semilla de la planilla)
+    excl_path = P("config", "cierre_exclusiones.csv")
+    excluidos = set()
+    if os.path.exists(excl_path):
+        with open(excl_path, encoding="utf-8-sig", newline="") as f:
+            excluidos = {r["id_ledger"] for r in csv.DictReader(f)}
     transf = [r for r in ledger
               if r["mes"] == mes and r["tipo"] == "transferencia"
-              and r["cuenta_destino"] == "Cuenta Casa"]
-    implicitos = [r for r in gastos if r["cuenta"] not in CUENTAS_CASA]
+              and r["cuenta_destino"] == "Cuenta Casa"
+              and r["id"] not in excluidos]
+    implicitos = [r for r in gastos
+                  if r["cuenta"] not in CUENTAS_CASA and r["id"] not in excluidos]
     aportes_joaco = round(sum(monto_uyu(r) for r in transf)
                           + sum(monto_uyu(r) for r in implicitos), 2)
     lu_mes = [r for r in aportes_lu_rows if r["mes"] == mes]
