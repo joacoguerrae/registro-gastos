@@ -1,0 +1,6 @@
+{
+  "fecha_corte": "2026-06-30",
+  "lu": 11244.07,
+  "joaco": -9692.04,
+  "_nota": "Posicion semilla de la cuenta continua de casa (Saldos Tarjeta de la planilla congelada al 2026-06-30). Positivo = a favor. Desde 2026-07 la posicion vive en data/cierre_casa.csv (scripts/cierre_casa.py); este archivo NO se edita mas."
+}

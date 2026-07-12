@@ -4550,6 +4550,7 @@ edcb5f29c99a,2026-07-04,2026-07,gasto,14278.00,UYU,14278.00,Santander UYU,,,,Bea
 42a8b3fdcd61,2026-07-05,2026-07,gasto,72.79,UYU,72.79,Santander UYU,,Super,,MONTEVIDEO/DLO*PedidosYa Envio  VIS3,DLO*PedidosYa Envio,personal,mail,confirmado,1,19f34d4279af5f5b
 8a1f0682a5d8,2026-07-05,2026-07,gasto,469.18,UYU,469.18,Santander UYU,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,personal,mail,confirmado,1,19f34b8d77cfb1bf
 8a25bdc16c66,2026-07-05,2026-07,gasto,97.47,USD,3930.97,Santander Platinum,,Suscripciones,,ANTHROPIC,ANTHROPIC,personal,mail,pendiente,1,19f33b6377cc5be5
+15f8b8044162,2026-07-06,2026-07,gasto,733.40,UYU,733.40,Deudas,,,General,,Asado,split,splitwise,pendiente,1,sw:4556085652
 653cd7add456,2026-07-06,2026-07,gasto,25.00,UYU,25.00,Santander UYU,,Super,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,personal,mail,confirmado,1,19f358f2f39664d1
 7dbacd00f53c,2026-07-06,2026-07,gasto,90.00,UYU,90.00,Santander UYU,,Comer afuera / Delivery,,Dan de Amilivia,cafe Joaco,personal,mail,confirmado,1,19f38502b7c18bb0
 015e4df3d48d,2026-07-08,2026-07,gasto,567.54,UYU,567.54,Santander UYU,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,personal,mail,confirmado,1,19f438b63c1805e8
@@ -4562,4 +4563,7 @@ edcb5f29c99a,2026-07-04,2026-07,gasto,14278.00,UYU,14278.00,Santander UYU,,,,Bea
 4a8feed90b26,2026-07-09,2026-07,gasto,340.76,UYU,340.76,Santander UYU,,Comer afuera / Delivery,,MONTEVIDEO/LA ROTISERIA V       VIS3,LA ROTISERIA V,personal,mail,confirmado,1,19f4784a7c042a72
 6371620f4cc0,2026-07-09,2026-07,gasto,45.00,UYU,45.00,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,19f44e1dec5f6d1d
 d67303385bbf,2026-07-09,2026-07,gasto,3794.00,UYU,3794.00,Santander Platinum,,Auto,,BANCO DE SEGURO,BANCO DE SEGURO,casa,mail,confirmado,1,19f465b363be7949
+36d2419551ff,2026-07-10,2026-07,transferencia,1156.50,UYU,1156.50,Deudas,Santander UYU,,,,Pago Splitwise de Joaquin: Payment,interno,splitwise,pendiente,0,sw:4561539134
 54e12ba772cb,2026-07-10,2026-07,transferencia,150.37,USD,6064.42,Santander UYU,BBVA Crédito,,,INTERNET/Proyecto PAS,Pago tarjeta BBVA (Proyecto PAS),interno,mail,pendiente,0,19f4cc50713be2b9
+ccd3203d6b75,2026-07-10,2026-07,gasto,407.67,UYU,407.67,Deudas,,,Alimentos,,Regalo papa,split,splitwise,pendiente,1,sw:4562555128
+c0864e169a0e,2026-07-12,2026-07,gasto,466.66,UYU,466.66,Deudas,,,Restaurantes,,Pizza,split,splitwise,pendiente,1,sw:4566353446

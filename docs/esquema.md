@@ -27,7 +27,7 @@ Contrato de datos del ledger único. Toda pieza del sistema (migradores, parsers
 | comercio | string | vacío en migración (lo llenan los parsers de mail) |
 | descripcion | string | comment (1Money) / Descripcion (planilla) |
 | ambito | personal \| casa \| split \| interno | ver reglas abajo |
-| origen | 1money \| planilla_casa \| mail \| splitwise \| mp \| manual | |
+| origen | 1money \| planilla_casa \| mail \| splitwise \| mp \| manual \| estado_cuenta | `estado_cuenta`: línea de un estado de cuenta PDF (BBVA, Santander Mastercard) sin aviso de mail que la respalde — ver docs/fase3.md §2 |
 | estado | confirmado \| pendiente \| conciliado | migración → confirmado |
 | en_analisis | 1 \| 0 | 0 = se conserva para auditoría pero NO cuenta en análisis de gasto (evita doble conteo). Reglas abajo. |
 | fuente_id | string | uid de 1Money / `fila:N` de planilla / message-id de mail |
@@ -48,7 +48,7 @@ La planilla "Gastos Vazquez Ledesma" queda **congelada como histórico** (migrad
 - Las filas `ambito=casa` se dividen con los coeficientes del mes: `config/ingresos.csv` (mes, ingreso_lu, ingreso_joaco; coef = ingreso/(suma)). Si un mes no está cargado, se usan los valores del último mes disponible y el cierre lo marca como "a confirmar".
 - Excepciones de participación (gasto pagado con cuenta casa pero 100% de uno) se marcan en la revisión semanal; por defecto participan ambos.
 - **Gastos ámbito=casa pagados desde cuentas/tarjetas personales de Joaco** (ej. seguro del auto en la Platinum): cuentan doble en el cierre — como gasto de casa (se divide por coeficiente) y como aporte implícito de Joaco por el total que pagó.
-- Cierre mensual: parte de Lu = suma(gasto_casa × coef_lu del mes) − aportes de Lu; el sistema genera el número a transferir y lo registra.
+- **Cierre mensual (cuenta continua, SIN transferencia de ajuste)**: la cuenta casa es continua; nadie le transfiere al otro. El cierre calcula la posición acumulada de cada uno (aportes acumulados − parte acumulada de los gastos) y sugiere cuánto debería aportar cada uno el mes siguiente para converger a cero. Posición semilla al 2026-06-30 (de la planilla congelada): Lu **+11.244,07** / Joaco **−9.692,04**. Aportes de Joaco = transferencias a Cuenta Casa (capturadas por mail/ledger) + gastos casa pagados desde sus cuentas personales (aporte implícito). Aportes de Lu = invisibles para el pipeline (transferencias entrantes no generan mail) → input manual en el cierre. Detalle operativo en docs/fase3.md.
 
 ## config/ingresos.csv
 

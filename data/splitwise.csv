@@ -1,0 +1,12 @@
+id,fecha,descripcion,grupo,moneda,costo_total,mi_paid_share,mi_owed_share,creado_por,es_pago
+4544350903,2026-07-01,Burger,,UYU,1785.00,1785.00,892.50,Joaquin,0
+4544405047,2026-07-01,Picada y bebida,,UYU,528.00,528.00,264.00,Joaquin,0
+4546727164,2026-07-01,Youtube,Hermanos de Marian,USD,14.40,14.40,0.00,Joaquin,0
+4546727817,2026-07-01,Youtube,Casita 🫶🏼,USD,4.80,4.80,0.00,Joaquin,0
+4549344291,2026-07-03,Movistar,Hermanos de Marian,USD,1780.00,1780.00,890.00,Joaquin,0
+4556085652,2026-07-06,Asado,Caqui Tapa,UYU,2933.60,0.00,733.40,Juan,0
+4558021546,2026-07-07,Helado,Caqui Tapa,UYU,551.00,551.00,137.75,Joaquin,0
+4561539005,2026-07-10,Deuda person sanky deudor,Caqui Tapa,UYU,1156.00,1156.00,0.00,Joaquin,0
+4561539134,2026-07-10,Payment,,UYU,1156.50,0.00,1156.50,Joaquin,1
+4562555128,2026-07-10,Regalo papa,Hermanos de Marian,UYU,1223.00,0.00,407.67,Rodrigo,0
+4566353446,2026-07-12,Pizza,Hermanos de Marian,UYU,1400.00,0.00,466.66,Rodrigo,0
