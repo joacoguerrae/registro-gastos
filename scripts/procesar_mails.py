@@ -60,6 +60,13 @@ PROC_COLS = ["message_id", "fecha_mail", "handler", "resultado", "id_ledger",
 PEND_COLS = ["id_ledger", "motivo", "detalle", "fecha_alta", "resuelto"]
 FACT_COLS = ["mes", "emisor", "monto", "vencimiento", "message_id"]
 
+# data/resoluciones.csv: correcciones manuales persistentes (sobreviven a
+# --reprocesar). campo = columna del ledger a sobreescribir, o el especial
+# "motivo_resuelto" (valor = motivo de pendientes que queda cerrado y no se
+# vuelve a generar para ese id).
+RESOLUCIONES = P("data", "resoluciones.csv")
+RES_COLS = ["id_ledger", "campo", "valor", "nota", "fecha"]
+
 BACKFILL_DESDE = "2026-07-01"          # junio ya está en el ledger vía 1Money
 DEDUPE_1M_INI, DEDUPE_1M_FIN = "2026-07-01", "2026-07-08"  # ventana dedupe cruzado
 
@@ -175,7 +182,7 @@ def fmt(x):
 def leer_csv(path, cols):
     if not os.path.exists(path):
         return []
-    with open(path, encoding="utf-8", newline="") as f:
+    with open(path, encoding="utf-8-sig", newline="") as f:
         rd = csv.DictReader(f)
         assert rd.fieldnames == cols, f"columnas de {path} != esperadas: {rd.fieldnames}"
         return list(rd)
@@ -207,16 +214,22 @@ def main():
         with open(SPLITS_CSV, encoding="utf-8-sig") as f:
             for r0 in csv.DictReader(f):
                 splits_pat.append((re.compile(r0["patron"], re.I),
-                                   (r0.get("mi_fraccion") or "").strip(),
-                                   (r0.get("contraparte") or "").strip()))
+                                   (r0.get("frac_casa") or "").strip(),
+                                   (r0.get("frac_deudas") or "").strip(),
+                                   (r0.get("contrapartes") or "").strip()))
 
     def motivo_split(texto, categoria, monto_uyu):
-        """-> (motivo, detalle) si el gasto debe recordarse para Splitwise."""
-        for pat, frac, quien in splits_pat:
+        """-> (motivo, detalle) si el gasto debe recordarse para Splitwise.
+        Solo marca: la division efectiva SIEMPRE requiere OK de Joaco en la revision."""
+        for pat, fcasa, fdeudas, quienes in splits_pat:
             if pat.search(texto):
-                extra = f", mi fraccion {frac}" if frac else ""
+                partes = []
+                if fdeudas:
+                    partes.append(f"Deudas {fdeudas} ({quienes or '?'})")
+                if fcasa:
+                    partes.append(f"casa {fcasa}")
                 return ("split_a_cargar",
-                        f"split recurrente con {quien or '?'}{extra}: {texto!r}")
+                        f"split recurrente propuesto: {' + '.join(partes) or quienes}: {texto!r} — aplicar con OK en revision")
         if umbral_split and categoria in CATS_SPLIT_HEURISTICA \
                 and float(monto_uyu or 0) >= umbral_split:
             return ("split_a_cargar",
@@ -576,8 +589,33 @@ def main():
             log_proc(mail, "ignorado", "ignorado",
                      detalle=f"{mail['from']} | {mail['subject']}")
 
-    # -------------------------------------------------- 5. persistir
+    # -------------------------------------------------- 5. resoluciones manuales
+    # Correcciones persistentes por id: se re-aplican en TODA corrida, asi las
+    # decisiones de la revision sobreviven a --reprocesar.
+    resoluciones = leer_csv(RESOLUCIONES, RES_COLS)
+    overrides = defaultdict(dict)      # id -> {columna: valor}
+    resueltos = set()                  # (id, motivo) que no deben regenerarse
+    for res in resoluciones:
+        if res["campo"] == "motivo_resuelto":
+            resueltos.add((res["id_ledger"], res["valor"]))
+        elif res["campo"] in COLUMNS:
+            overrides[res["id_ledger"]][res["campo"]] = res["valor"]
+
     ledger_final = ledger + nuevos
+    n_overrides = 0
+    for r in ledger_final:
+        for campo, valor in overrides.get(r["id"], {}).items():
+            if r[campo] != valor:
+                r[campo] = valor
+                n_overrides += 1
+                ledger_modificado = True
+    pend_nuevos = [p for p in pend_nuevos
+                   if (p["id_ledger"], p["motivo"]) not in resueltos]
+    for p in pendientes:               # cerrar tambien los ya existentes
+        if (p["id_ledger"], p["motivo"]) in resueltos and not p["resuelto"]:
+            p["resuelto"] = "1"
+
+    # -------------------------------------------------- 6. persistir
     ledger_final.sort(key=lambda r: (r["fecha"], r["id"]))
     if nuevos or ledger_modificado or args.reprocesar:
         escribir_csv(LEDGER, COLUMNS, ledger_final)
@@ -594,6 +632,8 @@ def main():
     # -------------------------------------------------- 6. reporte
     print(f"mails en inbox_raw: {len(mails)}; ya procesados (skip): "
           f"{sum(1 for m in mails if m['message_id'] in ya_procesados)}")
+    print(f"resoluciones aplicadas: {n_overrides} campos; "
+          f"pendientes suprimidos por resolucion: {len(resueltos)} (id,motivo)")
     cnt = Counter((p["handler"], p["resultado"]) for p in proc_nuevos)
     for (h, res), n in sorted(cnt.items()):
         print(f"  {h:15s} {res:28s} {n}")

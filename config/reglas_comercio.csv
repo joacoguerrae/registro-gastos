@@ -15,7 +15,7 @@ BANCO DE SEGURO|BSE,Auto,,seguro del auto en BSE
 GARAGE,Auto,casa,
 FARMACIA|FARMASHOP|SAN ROQUE,Salud,,
 MEDICINA PERSONALIZAD|CLINICA|ASOCIACION ESPANOLA|MEDICA URUGUAYA|COSEM|SUMMUM,Salud,,
-Proyecto PAS,,,canal de pagos web de Santander — el destinatario varia: siempre queda pendiente para clasificar
+Proyecto PAS,,,app de pagos de Santander — tipicamente pago de tarjetas (BBVA -> transferencia interna) o de cuentas/facturas (-> gasto con categoria): siempre pendiente y se resuelve caso a caso
 APPLE\.COM/BILL|APPLE COM BILL,Suscripciones,,
 GOOGLE|YOUTUBE,Suscripciones,,
 NETFLIX|SPOTIFY|HBO|DISNEY|MAX |PARAMOUNT,Suscripciones,,

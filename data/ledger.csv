@@ -4561,4 +4561,4 @@ edcb5f29c99a,2026-07-04,2026-07,gasto,14278.00,UYU,14278.00,Santander UYU,,,,Bea
 4a8feed90b26,2026-07-09,2026-07,gasto,340.76,UYU,340.76,Santander UYU,,Comer afuera / Delivery,,MONTEVIDEO/LA ROTISERIA V       VIS3,LA ROTISERIA V,personal,mail,confirmado,1,19f4784a7c042a72
 6371620f4cc0,2026-07-09,2026-07,gasto,45.00,UYU,45.00,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,pendiente,1,19f44e1dec5f6d1d
 d67303385bbf,2026-07-09,2026-07,gasto,3794.00,UYU,3794.00,Santander Platinum,,Auto,,BANCO DE SEGURO,BANCO DE SEGURO,personal,mail,confirmado,1,19f465b363be7949
-54e12ba772cb,2026-07-10,2026-07,gasto,150.37,USD,6064.42,Santander UYU,,,,INTERNET/Proyecto PAS,Proyecto PAS,personal,mail,pendiente,1,19f4cc50713be2b9
+54e12ba772cb,2026-07-10,2026-07,transferencia,150.37,USD,6064.42,Santander UYU,BBVA Crédito,,,INTERNET/Proyecto PAS,Pago tarjeta BBVA (Proyecto PAS),interno,mail,pendiente,0,19f4cc50713be2b9

@@ -5,12 +5,12 @@ Generado por `scripts/merge_y_validar.py` el 2026-07-12. Todas las cifras de fue
 ## 1. Merge → data/ledger.csv
 
 - Filas totales: **4563** (3060 de 1money + 1465 de planilla_casa + 38 de otros origenes preservados: mail, etc.)
-- Por tipo: {'gasto': 3917, 'ingreso': 437, 'transferencia': 209}
+- Por tipo: {'gasto': 3916, 'ingreso': 437, 'transferencia': 210}
 - Rango de fechas: 2021-11-01 → 2026-07-10
 - IDs únicos: sí
 - Suma |monto_uyu| (todas las filas con valor): 15,997,926.36
 - Celdas vacías fuera de regla del esquema: ninguna
-- Gasto 2026 en análisis (en_analisis=1): **956,337.99 UYU**
+- Gasto 2026 en análisis (en_analisis=1): **950,273.57 UYU**
 
 ## 2a. Conteos vs MyFinance.db
 
@@ -149,7 +149,7 @@ Resultado: **10/10 OK**
 
 | Validación | Estado | Detalle |
 |---|---|---|
-| 1.merge | OK | 4563 filas ({'1money': 3060, 'planilla_casa': 1465, 'mail': 38}), tipos {'gasto': 3917, 'ingreso': 437, 'transferencia': 209}, rango 2021-11-01 -> 2026-07-10, ids duplicados: ninguno |
+| 1.merge | OK | 4563 filas ({'1money': 3060, 'planilla_casa': 1465, 'mail': 38}), tipos {'gasto': 3916, 'ingreso': 437, 'transferencia': 210}, rango 2021-11-01 -> 2026-07-10, ids duplicados: ninguno |
 | 1.vacios | OK | celdas vacias fuera de regla: 0 |
 | 1.suma | OK | suma \|monto_uyu\| todas las filas: 15997926.36 |
 | 2a.conteos | OK | DB: 2853 tx activas / 207 transfers; ledger 1money: 2853 tx / 207 transfers (esperado 2853/207) |
@@ -160,8 +160,8 @@ Resultado: **10/10 OK**
 | 2e.presupuesto | OK | 19 meses (2025-01->2026-07), 490 filas, filas/mes 2026: {'2026-01': 26, '2026-02': 26, '2026-03': 26, '2026-04': 26, '2026-05': 26, '2026-06': 26, '2026-07': 26}; controles: 2025-01: 75680/111496 vs esperado 75680/111496 OK; 2025-06: 109413/91695 vs esperado 109413/91695 OK; 2025-12: 106801/148901 vs esperado 106801/148901 OK; 2026-06: 169835/262321 vs esperado 169835/262321 OK; 2026-07: 107745/0 vs esperado 107745/0 OK |
 | 2f.muestreo | OK | 10/10 rastreadas: 10 OK |
 | 2c.huerfanas | INFO | 64 gastos de la planilla fuera de toda ventana (no migrados al ledger), suma 81313.86 UYU -> A REVISAR: Debito Casa con Gasto Joaco vacio: 4 filas, 2866.00 UYU; A REVISAR: sin Origen fuera de ventana A: 31 filas, 44002.00 UYU; Debito Casa 100% Lu (gasto_joaco=0, por diseno): 22 filas, 26907.86 UYU; tricount (excluida por diseno): 7 filas, 7538.00 UYU |
-| 4.resumen | OK | 635 filas (mes,categoria) -> out/resumen_mensual.csv; suma total 4199233.14 |
-| total.2026 | INFO | gasto 2026 en_analisis=1: 956337.99 UYU |
+| 4.resumen | OK | 635 filas (mes,categoria) -> out/resumen_mensual.csv; suma total 4193168.72 |
+| total.2026 | INFO | gasto 2026 en_analisis=1: 950273.57 UYU |
 
 ## Pendientes / decisiones del usuario
 

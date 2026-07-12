@@ -1,0 +1,7 @@
+id_ledger,campo,valor,nota,fecha
+54e12ba772cb,tipo,transferencia,Pago de tarjeta BBVA via Proyecto PAS (confirmado por Joaco),2026-07-12
+54e12ba772cb,cuenta_destino,BBVA Crédito,,2026-07-12
+54e12ba772cb,ambito,interno,,2026-07-12
+54e12ba772cb,en_analisis,0,,2026-07-12
+54e12ba772cb,descripcion,Pago tarjeta BBVA (Proyecto PAS),,2026-07-12
+54e12ba772cb,motivo_resuelto,sin_categoria,es pago de tarjeta - no requiere categoria,2026-07-12
