@@ -1,4 +1,6 @@
 config/secrets.local.json
+.claude/settings.local.json
+out/sync_log.txt
 __pycache__/
 *.pyc
 out/tmp/

@@ -368,7 +368,7 @@ def main():
                             f"{moneda} {fmt(monto)} x tc {tc[moneda]} = {r['monto_uyu']} UYU (corrige Fase 3)"))
         if not categoria:
             motivos.append(("sin_categoria", f"establecimiento {est_crudo!r} sin regla"))
-        if tarjeta == "8261":
+        if tarjeta == "8261" and not params.get("ambito_8261_confirmado"):
             motivos.append(("ambito_a_confirmar",
                             "transicion jul-2026: confirmar vuelta de la casa a Santander (8261)"))
         ms = motivo_split(est_crudo, categoria, r["monto_uyu"])
@@ -614,6 +614,17 @@ def main():
     for p in pendientes:               # cerrar tambien los ya existentes
         if (p["id_ledger"], p["motivo"]) in resueltos and not p["resuelto"]:
             p["resuelto"] = "1"
+
+    # estado coherente con la bandeja: una fila mail/manual queda pendiente
+    # solo si tiene algun pendiente sin resolver (conciliado no se toca)
+    ids_con_pendiente = {p["id_ledger"] for p in pendientes if not p["resuelto"]}
+    ids_con_pendiente |= {p["id_ledger"] for p in pend_nuevos}
+    for r in ledger_final:
+        if r["origen"] in ("mail", "manual") and r["estado"] != "conciliado":
+            deseado = "pendiente" if r["id"] in ids_con_pendiente else "confirmado"
+            if r["estado"] != deseado:
+                r["estado"] = deseado
+                ledger_modificado = True
 
     # -------------------------------------------------- 6. persistir
     ledger_final.sort(key=lambda r: (r["fecha"], r["id"]))

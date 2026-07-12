@@ -43,3 +43,4 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 19f1ea948535c030,2026-07-01T17:10:37Z,recibo,insertado_pendiente,a7ad2ee2689b,Meli+ UYU 199.00 sin match,,2026-07-12T14:13:17+00:00
 19f232bbb569d81d,2026-07-02T14:11:36Z,recibo,recibo_matcheado,a6ef3e758f12,Google Play – 100 GB (Google One) USD 1.99 -> enriquece comercio de a6ef3e758f12,,2026-07-12T14:13:17+00:00
 19f3ff031a0a6abe,2026-07-07T15:05:53Z,ignorado,estado_cuenta_pendiente_f3,,bbvanetnotificacionesp@grupobbva.com.uy | Estado de Cuenta de su Tarjeta de Crédito Visa BBVA,,2026-07-12T14:13:17+00:00
+19f56d608e88460c,2026-07-12T14:58:15Z,recibo,ignorado,,recibo no parseable,,2026-07-12T15:10:02+00:00

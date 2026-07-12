@@ -2,5 +2,6 @@
   "tc_usd_uyu": 40.33,
   "tc_eur_uyu": 46.09,
   "umbral_split_uyu": 1500,
+  "ambito_8261_confirmado": true,
   "_nota": "tc_*: tipos de cambio estimados para monto_uyu de gastos en moneda extranjera capturados por mail (fuente: tabla rates de 1Money al 2026-07-11); la conciliacion mensual (Fase 3) los corrige con el valor real del estado de cuenta. umbral_split_uyu: gastos de Comer afuera / Delivery o Salidas & ocio por encima de este monto generan el recordatorio split_a_cargar (cargar a Splitwise?)."
 }
