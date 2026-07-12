@@ -42,6 +42,13 @@ ESTADO_SYNC = P("config", "estado_sync.json")
 CUENTAS_CSV = P("config", "cuentas.csv")
 REGLAS_CSV = P("config", "reglas_comercio.csv")
 PARAMETROS = P("config", "parametros.json")
+SPLITS_CSV = P("config", "splits_recurrentes.csv")
+
+# Propina y Envio de PedidosYa heredan categoria/ambito del pedido que los origino
+PEYA_HIJO = re.compile(r"PedidosYa (Propina|Envio)", re.I)
+PEYA_PADRE = re.compile(r"PedidosYa", re.I)
+PEYA_VENTANA_SEG = 6 * 3600          # el pedido origina propina/envio hasta 6 h despues
+CATS_SPLIT_HEURISTICA = ("Comer afuera / Delivery", "Salidas & ocio")
 
 COLUMNS = ["id", "fecha", "mes", "tipo", "monto", "moneda", "monto_uyu",
            "cuenta", "cuenta_destino", "categoria", "subcategoria", "comercio",
@@ -194,6 +201,27 @@ def main():
     with open(PARAMETROS, encoding="utf-8") as f:
         params = json.load(f)
     tc = {"USD": params["tc_usd_uyu"], "EUR": params["tc_eur_uyu"]}
+    umbral_split = float(params.get("umbral_split_uyu", 0) or 0)
+    splits_pat = []
+    if os.path.exists(SPLITS_CSV):
+        with open(SPLITS_CSV, encoding="utf-8-sig") as f:
+            for r0 in csv.DictReader(f):
+                splits_pat.append((re.compile(r0["patron"], re.I),
+                                   (r0.get("mi_fraccion") or "").strip(),
+                                   (r0.get("contraparte") or "").strip()))
+
+    def motivo_split(texto, categoria, monto_uyu):
+        """-> (motivo, detalle) si el gasto debe recordarse para Splitwise."""
+        for pat, frac, quien in splits_pat:
+            if pat.search(texto):
+                extra = f", mi fraccion {frac}" if frac else ""
+                return ("split_a_cargar",
+                        f"split recurrente con {quien or '?'}{extra}: {texto!r}")
+        if umbral_split and categoria in CATS_SPLIT_HEURISTICA \
+                and float(monto_uyu or 0) >= umbral_split:
+            return ("split_a_cargar",
+                    f"{categoria} por {monto_uyu} UYU (>= umbral {umbral_split:.0f}): cargar a Splitwise?")
+        return None
 
     ledger = leer_csv(LEDGER, COLUMNS)
     procesados = leer_csv(PROCESADOS, PROC_COLS)
@@ -221,6 +249,20 @@ def main():
             t, m, e, ts = r["dedupe_key"].split("||")
             claves_previas.append((t, m, e, dt.datetime.fromisoformat(ts),
                                    r["message_id"]))
+
+    # pedidos PedidosYa de corridas anteriores (padres para herencia propina/envio)
+    filas_mail_por_id = {r["id"]: r for r in ledger if r["origen"] == "mail"}
+    padres_peya = []  # (tarjeta, fh, categoria, ambito)
+    for p in procesados:
+        if p["handler"] == "aviso_tarjeta" and p["resultado"] == "insertado" \
+                and p["dedupe_key"]:
+            t0, _, e0, ts0 = p["dedupe_key"].split("||")
+            if PEYA_PADRE.search(e0) and not PEYA_HIJO.search(e0):
+                r0 = filas_mail_por_id.get(p["id_ledger"])
+                if r0:
+                    padres_peya.append((t0, dt.datetime.fromisoformat(ts0),
+                                        r0["categoria"], r0["ambito"]))
+    padres_peya.sort(key=lambda x: x[1])
 
     mails = []
     for path in sorted(glob.glob(os.path.join(INBOX, "*.json"))):
@@ -290,6 +332,15 @@ def main():
         if amb_override:
             ambito = amb_override
 
+        # herencia: Propina/Envio de PedidosYa toman la categoria y el ambito
+        # del pedido que los origino (misma tarjeta, hasta 6 h antes)
+        if PEYA_HIJO.search(est_crudo):
+            for (t0, fh0, cat0, amb0) in reversed(padres_peya):
+                if t0 == tarjeta and 0 <= (fh - fh0).total_seconds() <= PEYA_VENTANA_SEG:
+                    if cat0:
+                        categoria, ambito = cat0, amb0
+                    break
+
         r = fila_base(mail["message_id"])
         r.update(fecha=fecha, mes=fecha[:7], tipo="gasto", monto=fmt(monto),
                  moneda=moneda, cuenta=cuenta, categoria=categoria,
@@ -307,6 +358,9 @@ def main():
         if tarjeta == "8261":
             motivos.append(("ambito_a_confirmar",
                             "transicion jul-2026: confirmar vuelta de la casa a Santander (8261)"))
+        ms = motivo_split(est_crudo, categoria, r["monto_uyu"])
+        if ms:
+            motivos.append(ms)
 
         # dedupe heurístico +-10 min
         clave = (tarjeta, fmt(monto), est_crudo)
@@ -317,6 +371,8 @@ def main():
                                 f"mismo (tarjeta,monto,establecimiento) que mail {mid0} a las {fh0}"))
                 break
         claves_corrida.append((tarjeta, fmt(monto), est_crudo, fh, mail["message_id"]))
+        if PEYA_PADRE.search(est_crudo) and not PEYA_HIJO.search(est_crudo):
+            padres_peya.append((tarjeta, fh, categoria, ambito))
 
         if motivos:
             r["estado"] = "pendiente"
@@ -459,6 +515,10 @@ def main():
             break
         if match:
             match["comercio"] = rec["producto"]
+            ms = motivo_split(rec["producto"], match["categoria"], match["monto_uyu"])
+            if ms:
+                pend(match["id"], *ms)
+                match["estado"] = "pendiente"
             if match in filas_mail_existentes:
                 ledger_modificado = True
             log_proc(mail, "recibo", "recibo_matcheado", match["id"],
@@ -484,6 +544,9 @@ def main():
             pend(r["id"], "recibo_sin_matchear",
                  f"{rec['producto']} {rec['moneda']} {fmt(rec['monto'])} {fecha}: "
                  "sin aviso de tarjeta que matchee (posible pago con saldo MP)")
+            ms = motivo_split(rec["producto"], categoria, r["monto_uyu"])
+            if ms:
+                pend(r["id"], *ms)
             nuevos.append(r)
             candidatos.append(r)
             log_proc(mail, "recibo", "insertado_pendiente", r["id"],

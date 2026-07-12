@@ -45,6 +45,8 @@ Campos del cuerpo: `VISA terminada en NNNN`, `Importe` (`UYU 28.170,00` / `USD 9
 - Fila ledger: tipo=gasto, monto/moneda del importe, comercio=establecimiento crudo, descripcion=establecimiento limpio (sin prefijos `MONTEVIDEO/`, `INTERNET/`, `FKD`, `9829089080/`, sufijo `VIS3`), origen=mail, fuente_id=message_id, id=sha1("mail"+message_id)[:12], estado según reglas.
 - monto_uyu: UYU → monto; USD/EUR → monto × tc de `config/parametros.json` (redondeo 2), y motivo `tc_estimado` en pendientes (lo corrige la conciliación de Fase 3).
 - categoria: por `config/reglas_comercio.csv` (regex case-insensitive sobre establecimiento crudo; primera que matchea gana; columna ambito_override opcional). Sin match → categoria vacía + pendiente `sin_categoria`.
+- **Herencia PedidosYa**: `PedidosYa Propina` y `PedidosYa Envio` heredan categoría y ámbito del pedido que los originó (misma tarjeta, hasta 6 h antes): pedido Market → Super, pedido restaurante → Comer afuera / Delivery. Sin pedido previo en ventana → regla general (Delivery).
+- **Proyecto PAS** es el canal de pagos web de Santander (el destinatario varía) → siempre queda pendiente `sin_categoria` para clasificar a mano.
 - **Transición 8261 (jul-2026)**: hasta que Joaco confirme la vuelta de la casa a Santander, toda fila 8261 además va a pendientes con motivo `ambito_a_confirmar`.
 
 ## Handler transferencia
@@ -77,10 +79,31 @@ No tocan el ledger. Append a `data/facturas.csv`: `mes,emisor,monto,vencimiento,
 - Heurístico: mismo (tarjeta, monto, establecimiento) con message_id distinto en ±10 minutos → la segunda fila se inserta con pendiente `posible_duplicado` (hubo duplicados reales del banco Y cargos legítimos repetidos — decide Joaco en la revisión).
 - PedidosYa: pedido + Propina + Envio son avisos separados legítimos → filas separadas, misma categoría.
 
+## Splits (gastos compartidos con hermanos/amigos → Splitwise)
+
+Problema: Joaco paga el 100% (ej. YouTube familiar, un asado) pero su gasto real es una fracción; el resto se lo deben (cuenta Deudas / Splitwise).
+
+**Recordatorio (automático):** el pipeline marca pendiente `split_a_cargar` cuando:
+1. el comercio/producto matchea `config/splits_recurrentes.csv` (patron, mi_fraccion, contraparte), o
+2. heurística: categoría Comer afuera / Delivery o Salidas & ocio con monto_uyu ≥ `umbral_split_uyu` (config/parametros.json, hoy 1.500).
+
+**Resolución (en /revisar-pendientes, con fracción f confirmada):**
+- La fila original ajusta `monto` y `monto_uyu` a `× f` (mantiene categoría y fecha) → el gasto del mes queda solo con su parte.
+- Se agrega una fila hermana `tipo=transferencia`, misma cuenta → `cuenta_destino=Deudas`, por el `× (1−f)` restante, `en_analisis=0`, `fuente_id=<original>-split`.
+- **Invariante de conciliación: fila original ajustada + fila hermana = cargo real de la tarjeta**, así el estado de cuenta sigue cerrando al peso.
+- Cuando pagan (Splitwise settle / transferencia recibida) → transferencia Deudas → Santander, y Deudas tiende a 0.
+- Con la API de Splitwise (Fase 3): al resolver el split, Claude además CREA el gasto en Splitwise (con ok de Joaco), y a la inversa, los gastos que le cargan a él entran solos como gasto cuenta=Deudas por su parte.
+
 ## data/pendientes.csv — bandeja de revisión
 
-`id_ledger,motivo,detalle,fecha_alta,resuelto` — motivos: `sin_categoria`, `ambito_a_confirmar`, `posible_duplicado`, `transferencia_a_clasificar`, `recibo_sin_matchear`, `tc_estimado`.
+`id_ledger,motivo,detalle,fecha_alta,resuelto` — motivos: `sin_categoria`, `ambito_a_confirmar`, `posible_duplicado`, `transferencia_a_clasificar`, `recibo_sin_matchear`, `tc_estimado`, `split_a_cargar`.
 Revisión semanal: Claude presenta los no resueltos, Joaco decide, se actualizan ledger y reglas (los fallos de categoría alimentan `reglas_comercio.csv` para que no se repitan).
+
+## Fase 3 — conciliación (diseño, para no duplicar ni descuadrar)
+
+**Estados de cuenta vs avisos (ej. Santander Platinum 6427):** el estado de cuenta NUNCA inserta directo — hace MATCHING contra las filas ya capturadas por mail del período (monto en la moneda original ±0,5%, fecha ±3 días, comercio fuzzy). Línea matcheada → la fila pasa a `estado=conciliado` y se corrige `monto_uyu` con el tipo de cambio real (cierra los `tc_estimado`). Línea SIN match → se inserta (es lo que los mails no ven: débitos automáticos, ajustes, tarjetas sin avisos como BBVA y la Mastercard). Fila mail sin línea del estado → sospechoso (reversa o error) → pendiente. Cierre: suma de filas del período == total del estado, al peso.
+
+**Saldos por cuenta:** `config/saldos_iniciales.csv` (sembrado desde 1Money al 2026-07-11, a calibrar) + corte mensual en `data/saldos.csv`: `fecha_corte,cuenta,saldo_calculado,saldo_real,diferencia,comentario`, donde `saldo_calculado = inicial + Σ movimientos del ledger` (gastos restan, ingresos suman, transferencias mueven entre cuentas) y `saldo_real` viene de: estados de cuenta (tarjetas), saldo del banco que Joaco reporta 1 vez/mes (2 minutos), export MP. Diferencia ≠ 0 → lista de movimientos sospechosos del período, NUNCA ajuste ciego. El primer corte calibra los iniciales.
 
 ## Validación post-corrida
 

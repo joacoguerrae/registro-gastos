@@ -1,0 +1,11 @@
+cuenta,fecha_corte,saldo,moneda,fuente,nota
+Santander UYU,2026-07-11,5978.00,UYU,1money account_balance,saldo segun la app al 11/7 — NO incluye los gastos de julio capturados por mail; el primer corte de conciliacion (Fase 3) lo calibra contra el saldo real del banco
+Santander USD,2026-07-11,6803.00,USD,1money account_balance,
+Cuenta Casa,2026-07-11,-15233.00,UYU,1money account_balance,saldo de la app — NO es el real; el saldo real de la cuenta conjunta era ~1552 segun la planilla (hoy en Mercado Pago); calibrar en Fase 3
+Deudas,2026-07-11,7678.42,UYU,1money account_balance,positivo = me deben (Splitwise); calibrar contra saldo Splitwise en Fase 3
+BBVA Crédito,2026-07-11,83970.30,UYU,1money account_balance,deuda del periodo segun la app; calibrar contra estado de cuenta
+Santander Platinum,2026-07-11,34353.69,UYU,1money account_balance,deuda del periodo segun la app; calibrar contra estado de cuenta
+Efectivo,2026-07-11,0.00,UYU,1money account_balance,
+BBVA USD,2026-07-11,693.00,USD,1money account_balance,
+Dolares Viaje,2026-07-11,77.00,USD,1money account_balance,
+Tricount Europa,2026-07-11,227.00,USD,1money account_balance,
