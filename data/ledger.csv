@@ -4519,8 +4519,46 @@ dbc88dbbdf4e,2026-06-30,2026-06,gasto,1097.00,UYU,1097.00,Deudas,,Regalos,Regalo
 ee9ad0852712,2026-06-30,2026-06,gasto,284.24,UYU,284.24,Cuenta Casa,,Transporte,Transporte,,Uber,casa,planilla_casa,confirmado,1,fila:1919
 f7c5a9b846f5,2026-06-30,2026-06,gasto,2305.32,UYU,2305.32,Cuenta Casa,,Auto,Auto,,Nafta,casa,planilla_casa,confirmado,1,fila:1918
 0bd2d13729c2,2026-07-01,2026-07,transferencia,2224.00,UYU,2224.00,Santander Platinum,Cuenta Casa,,,,Regalo agus,interno,1money,confirmado,0,d6e43b40-0976-413a-ba0e-506838c5e6aa
+31165a77a9ba,2026-07-01,2026-07,gasto,188.00,UYU,188.00,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa Cero MaVIS3,DLO*PedidosYa Cero Ma,casa,mail,pendiente,1,19f1fd1618659ed1
+468f6afc10f4,2026-07-01,2026-07,gasto,877.69,UYU,877.69,Santander UYU,,,,MONTEVIDEO/MERPAGO*DONALBERTOUY VIS3,MERPAGO*DONALBERTOUY,personal,mail,pendiente,1,19f1ef221dc9e335
 498a45f69e2c,2026-07-01,2026-07,transferencia,768.00,UYU,768.00,Santander Platinum,Deudas,,,,Youtube,interno,1money,confirmado,0,becb008e-00fd-4b07-9508-b4687fd978bf
+4f45ed514324,2026-07-01,2026-07,gasto,3636.81,UYU,3636.81,Santander UYU,,Salud,,INTERNET/Proyecto PAS,Proyecto PAS,personal,mail,confirmado,1,19f2003ab0b02f41
+5ebdde9d01a6,2026-07-01,2026-07,gasto,35.00,UYU,35.00,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,pendiente,1,19f1fe09f7628dce
 73669fa68d06,2026-07-01,2026-07,transferencia,5840.00,UYU,5840.00,Santander Platinum,Deudas,,,,,interno,1money,confirmado,0,6ce24e3d-4ff1-4a5c-b0e8-a62a0f92d66b
 77c26159e14d,2026-07-01,2026-07,ingreso,3.00,UYU,3.00,Santander UYU,,,Ajuste saldo,,,interno,1money,confirmado,0,39601714-a704-4967-8949-1183a1aa2b31
+a6ef3e758f12,2026-07-01,2026-07,gasto,1.99,USD,80.26,Santander Platinum,,Suscripciones,,Google Play – 100 GB (Google One),GOOGLE,personal,mail,pendiente,1,19f1e0a3bdedcd85
+a7ad2ee2689b,2026-07-01,2026-07,gasto,199.00,UYU,199.00,Santander UYU,,Suscripciones,,Meli+,Meli+,personal,mail,pendiente,1,19f1ea948535c030
 cd8675911f7c,2026-07-01,2026-07,transferencia,12000.00,UYU,12000.00,Santander UYU,Cuenta Casa,,,,Aporte,interno,1money,confirmado,0,0a13fd62-4a10-441c-a36f-6c2a2496ae95
+e89f07151e87,2026-07-01,2026-07,gasto,530.47,USD,21393.86,Santander UYU,,Salud,,INTERNET/Proyecto PAS,Proyecto PAS,personal,mail,pendiente,1,19f2003eeee734dc
+b3a8a5fd14e4,2026-07-02,2026-07,gasto,949.39,UYU,949.39,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa Bbc BurVIS3,DLO*PedidosYa Bbc Bur,casa,mail,pendiente,1,19f2563d431a6f60
+761e0058038c,2026-07-03,2026-07,gasto,1750.82,UYU,1750.82,Santander UYU,,Salud,,INTERNET/Proyecto PAS,Proyecto PAS,personal,mail,confirmado,1,19f27c35c2b77ce0
+7bb209bbce30,2026-07-03,2026-07,gasto,45.00,UYU,45.00,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,pendiente,1,19f2605580da913e
+aab8a376e4b8,2026-07-03,2026-07,transferencia,4715.00,UYU,4715.00,Santander UYU,Lu pesos,,,,bigua,interno,mail,pendiente,0,19f2895c2c4bf5af
+b9cda293cd0b,2026-07-03,2026-07,gasto,2783.20,UYU,2783.20,Santander UYU,,Salud,,9829089080/MEDICINA PERSONALIZADVIS3,MEDICINA PERSONALIZAD,personal,mail,confirmado,1,19f28065b7fa79e0
+f1d3b1ff2dfc,2026-07-03,2026-07,gasto,107.21,UYU,107.21,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,casa,mail,pendiente,1,19f2a11e53d1151c
+02e041677f95,2026-07-04,2026-07,gasto,706.23,UYU,706.23,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/LOS HERMANOS         VIS3,LOS HERMANOS,casa,mail,pendiente,1,19f2dede8df3ed86
+2d916130c4c1,2026-07-04,2026-07,gasto,25.00,UYU,25.00,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA P,DLOPEDIDOSYA P,personal,mail,confirmado,1,19f2d7e47451b37a
+2e5e22d04dea,2026-07-04,2026-07,gasto,566.56,UYU,566.56,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/ROSA DI IACOVO (AFU) VIS3,ROSA DI IACOVO (AFU),casa,mail,pendiente,1,19f2df63e026ff24
+41e0c57ed0b2,2026-07-04,2026-07,gasto,23768.00,UYU,23768.00,Santander UYU,,,,Gastos Comunes VL,801,personal,mail,pendiente,1,19f2e5e5c9fc5eb5
+56ab9cc5e982,2026-07-04,2026-07,gasto,389.71,UYU,389.71,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA,DLOPEDIDOSYA,personal,mail,confirmado,1,19f2d724ca7a73f5
+59b7a6047475,2026-07-04,2026-07,gasto,3600.00,UYU,3600.00,Santander UYU,,Auto,,Martin Rodriguez Garage,Garage Vazquez Ledesma,casa,mail,confirmado,1,19f2e6bbeffc5abc
+692bfe8d54c7,2026-07-04,2026-07,gasto,108.39,UYU,108.39,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,casa,mail,pendiente,1,19f2e1a332dd299e
+9fb2d8abda43,2026-07-04,2026-07,gasto,796.72,UYU,796.72,Cuenta Casa,,Comer afuera / Delivery,,FKDMONTEVIDEO/EL TIMON     *HANDY*0VIS3,EL TIMON *HANDY*0,casa,mail,pendiente,1,19f2de450ebb16f2
+c3a37380a25e,2026-07-04,2026-07,gasto,467.21,UYU,467.21,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/PUESTO PLAVAN        VIS3,PUESTO PLAVAN,casa,mail,pendiente,1,19f2e01153573e3a
+edcb5f29c99a,2026-07-04,2026-07,gasto,14278.00,UYU,14278.00,Santander UYU,,,,Bea Itau,seguro y Contribucion,personal,mail,pendiente,1,19f2e704c046e913
+42a8b3fdcd61,2026-07-05,2026-07,gasto,72.79,UYU,72.79,Santander UYU,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa Envio  VIS3,DLO*PedidosYa Envio,personal,mail,confirmado,1,19f34d4279af5f5b
+8a1f0682a5d8,2026-07-05,2026-07,gasto,469.18,UYU,469.18,Santander UYU,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,personal,mail,confirmado,1,19f34b8d77cfb1bf
+8a25bdc16c66,2026-07-05,2026-07,gasto,97.47,USD,3930.97,Santander Platinum,,Suscripciones,,ANTHROPIC,ANTHROPIC,personal,mail,pendiente,1,19f33b6377cc5be5
+653cd7add456,2026-07-06,2026-07,gasto,25.00,UYU,25.00,Santander UYU,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,personal,mail,confirmado,1,19f358f2f39664d1
+7dbacd00f53c,2026-07-06,2026-07,gasto,90.00,UYU,90.00,Santander UYU,,Comer afuera / Delivery,,Dan de Amilivia,cafe Joaco,personal,mail,confirmado,1,19f38502b7c18bb0
+015e4df3d48d,2026-07-08,2026-07,gasto,567.54,UYU,567.54,Santander UYU,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,personal,mail,confirmado,1,19f438b63c1805e8
+23f422eb1539,2026-07-08,2026-07,gasto,45.00,UYU,45.00,Santander UYU,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,personal,mail,confirmado,1,19f43b489c608f2f
+34c6fc3e2019,2026-07-08,2026-07,gasto,1624.61,UYU,1624.61,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa PaladarVIS3,DLO*PedidosYa Paladar,casa,mail,pendiente,1,19f4438ae31bede9
+48185369f917,2026-07-08,2026-07,gasto,101.00,UYU,101.00,Santander UYU,,Comer afuera / Delivery,,MONTEVIDEO/CAFETERIA INFINITO COVIS3,CAFETERIA INFINITO CO,personal,mail,confirmado,1,19f43b203b6b8b42
 57cf76c72263,2026-07-08,2026-07,transferencia,4256.00,UYU,4256.00,BBVA Crédito,Deudas,,,,Regalo Marian,interno,1money,confirmado,0,f260ab22-4224-4a66-aa27-a97d8e7b63bb
+62ec22e319a9,2026-07-08,2026-07,transferencia,20000.00,UYU,20000.00,Santander UYU,Cuenta Casa,,,,Casa,interno,mail,confirmado,0,19f445a43684d79f
+880bfd725665,2026-07-08,2026-07,gasto,28170.00,UYU,28170.00,Santander Platinum,,Educación,,UNIVERSIDAD ORT,UNIVERSIDAD ORT,personal,mail,confirmado,1,19f44033457195fa
+4a8feed90b26,2026-07-09,2026-07,gasto,340.76,UYU,340.76,Santander UYU,,Comer afuera / Delivery,,MONTEVIDEO/LA ROTISERIA V       VIS3,LA ROTISERIA V,personal,mail,confirmado,1,19f4784a7c042a72
+6371620f4cc0,2026-07-09,2026-07,gasto,45.00,UYU,45.00,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,pendiente,1,19f44e1dec5f6d1d
+d67303385bbf,2026-07-09,2026-07,gasto,3794.00,UYU,3794.00,Santander Platinum,,Auto,,BANCO DE SEGURO,BANCO DE SEGURO,personal,mail,confirmado,1,19f465b363be7949
+54e12ba772cb,2026-07-10,2026-07,gasto,150.37,USD,6064.42,Santander UYU,,Salud,,INTERNET/Proyecto PAS,Proyecto PAS,personal,mail,pendiente,1,19f4cc50713be2b9

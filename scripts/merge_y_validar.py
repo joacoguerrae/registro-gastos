@@ -73,6 +73,14 @@ def merge():
             rd = csv.DictReader(f)
             assert rd.fieldnames == COLUMNS, f"columnas de {path} != esquema: {rd.fieldnames}"
             rows.extend(list(rd))
+    # PRESERVAR las filas que no vienen de los staging de migracion (origen=mail,
+    # splitwise, mp, manual) ya presentes en el ledger: el merge las re-incorpora
+    # tal cual en cada refusion (si no, se borraria el backfill de Fase 2).
+    if os.path.exists(OUT_LEDGER):
+        with open(OUT_LEDGER, encoding="utf-8", newline="") as f:
+            rd = csv.DictReader(f)
+            assert rd.fieldnames == COLUMNS, f"columnas de {OUT_LEDGER} != esquema: {rd.fieldnames}"
+            rows.extend(r for r in rd if r["origen"] not in ("1money", "planilla_casa"))
     rows.sort(key=lambda r: (r["fecha"], r["id"]))
 
     # Override documentado: meses sin cobertura de planilla usan el volcado 1Money.
@@ -228,7 +236,10 @@ def main():
                 continue
             if c in permit_vacio_siempre:
                 continue
-            if c == "categoria" and (r["tipo"] == "transferencia" or r["subcategoria"] == "Ajuste saldo"):
+            if c == "categoria" and (r["tipo"] == "transferencia" or r["subcategoria"] == "Ajuste saldo"
+                                     or r["estado"] == "pendiente"):
+                # estado=pendiente: filas origen=mail en la bandeja de revision
+                # (data/pendientes.csv) pueden no tener categoria todavia
                 continue
             if c == "monto_uyu" and r["tipo"] == "transferencia" and r["moneda"] != "UYU":
                 continue
@@ -260,7 +271,10 @@ def main():
     # ---------- 2b. gastos por anio en_analisis=1 ----------
     led_gasto_anio = defaultdict(lambda: defaultdict(float))
     for r in ledger:
-        if r["tipo"] == "gasto" and r["en_analisis"] == "1":
+        # solo origen 1money/planilla_casa: las filas origen=mail no vienen de
+        # estas fuentes y se validan contra Gmail, no contra la migracion
+        if (r["origen"] in ("1money", "planilla_casa")
+                and r["tipo"] == "gasto" and r["en_analisis"] == "1"):
             led_gasto_anio[r["fecha"][:4]][r["origen"]] += float(r["monto_uyu"])
     x = recalc_xlsx()
     joaco_anio = defaultdict(float)
@@ -301,7 +315,8 @@ def main():
     with open(CATEG_CSV, encoding="utf-8-sig") as f:
         categorias_validas = {r["categoria"].strip() for r in csv.DictReader(f)}
     sin_cat = [r for r in ledger if r["tipo"] in ("gasto", "ingreso")
-               and r["en_analisis"] == "1" and r["categoria"] == ""]
+               and r["en_analisis"] == "1" and r["categoria"] == ""
+               and r["estado"] != "pendiente"]  # pendientes: bandeja de revision (mail)
     cats_ledger = {r["categoria"] for r in ledger if r["categoria"]}
     cats_invalidas = cats_ledger - categorias_validas
     log("2d.categorias", "OK" if not sin_cat and not cats_invalidas else "DESVIO",
@@ -403,7 +418,9 @@ def main():
               "(independiente de los reportes de los migradores).\n")
     md.append("## 1. Merge → data/ledger.csv\n")
     md.append(f"- Filas totales: **{n_total}** ({por_origen['1money']} de 1money + "
-              f"{por_origen['planilla_casa']} de planilla_casa)")
+              f"{por_origen['planilla_casa']} de planilla_casa + "
+              f"{sum(v for k, v in por_origen.items() if k not in ('1money', 'planilla_casa'))} "
+              "de otros origenes preservados: mail, etc.)")
     md.append(f"- Por tipo: {dict(por_tipo)}")
     md.append(f"- Rango de fechas: {rango[0]} → {rango[1]}")
     md.append(f"- IDs únicos: {'sí' if not dupes else f'NO — duplicados: {dupes}'}")

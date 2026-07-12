@@ -38,7 +38,8 @@ Carpeta [Sistema Gastos](https://drive.google.com/drive/folders/1vAPsrCr8_QbHpG_
 
 - [x] Fase 1 — migración del histórico + validación (cierra 0,00 contra fuentes)
 - [x] Fase 1 — export a Google Sheets (falta conectar Looker Studio, 3 clicks del usuario)
-- [ ] Fase 2 — pipeline de mails (avisos Santander 2×/día, bandeja de pendientes)
+- [x] Fase 2 — pipeline de mails (parsers + backfill julio verificado 1:1 vs Gmail, ver docs/validacion-fase2.md; comandos /sync-gastos y /revisar-pendientes)
+- [ ] Fase 2.5 — automatización durable (OAuth Google: Gmail API para el pull + escritura de Sheets) — hoy el sync corre vía Claude (cron de sesión 2×/día)
 - [ ] Fase 3 — conciliación mensual (PDFs BBVA/Santander MC, cierre casa, Splitwise API)
 - [ ] Fase 4 — presupuesto integrado + alertas
 
