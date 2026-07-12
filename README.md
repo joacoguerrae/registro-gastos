@@ -33,6 +33,7 @@ Carpeta [Sistema Gastos](https://drive.google.com/drive/folders/1vAPsrCr8_QbHpG_
 
 - [gastos_resumen_mensual](https://docs.google.com/spreadsheets/d/10Tfth6Z7V0_W4WzVQJ-GCqro8HeSuV1y8Aj0nob4MDo) — mes × categoría × gasto (2021-11 → 2026-06), desde `out/resumen_mensual.csv`
 - [gastos_presupuesto_vs_real](https://docs.google.com/spreadsheets/d/1c-kDv0qQAdkQg1Qg_WFtg6qM2qgKG3pXlmIg941z1qo) — mes × categoría × presupuesto/real/diferencia (2025-01 → 2026-07), desde `out/presupuesto_vs_real.csv`
+- [gastos_casa_mensual](https://docs.google.com/spreadsheets/d/15YU1L7MFnqbYCkkP8IT0o2e8v7yTPJu8ADvbxHS6cPA) — gastos de la CASA por mes × categoría con la parte de Lu y de Joaco (2023-05 →), desde `out/casa_mensual.csv`
 
 ## Estado
 
