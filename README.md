@@ -8,15 +8,37 @@ Diseño completo: [docs/esquema.md](docs/esquema.md) · Validación de la migrac
 
 ```
 config/               categorías, mapeos, cuentas, ingresos mensuales (coeficientes casa)
-config/secrets.local.json   credenciales locales (gitignored — NO subir ni compartir)
+config/secrets.local.json   credenciales locales (gitignored — NO subir ni compartir; Splitwise API key + contraseña CI de los PDF)
+config/posicion_casa.json   posición semilla de la cuenta continua de casa al 2026-06-30 (no se edita más)
+config/saldos_iniciales.csv  saldo semilla por cuenta al corte de calibración (2026-07-12)
 data/ledger.csv       el libro único (todas las transacciones, histórico 2021-11 →)
 data/casa.csv         planilla de casa histórica normalizada (congelada jul-2026)
 data/presupuesto.csv  presupuestos mensuales históricos (2025-01 → 2026-07)
+data/splitwise.csv    crudo por gasto traído de la API de Splitwise (Fase 3, solo lectura)
+data/cierre_casa.csv  posición mensual de la cuenta continua de casa (Fase 3, ver scripts/cierre_casa.py)
+data/aportes_lu.csv   aportes de Lu a la cuenta casa (input manual — las transferencias entrantes no generan mail)
+data/saldos.csv       conciliación mensual de saldos por cuenta (calculado vs real, Fase 3 §4)
+data/estados/          PDF de estados de cuenta (BBVA, Santander Mastercard) que Joaco suelta a mano — ver más abajo
 data/raw/             fuentes originales (MyFinance.db de 1Money, casa.xlsx, snapshots presupuestos)
 data/staging/         salidas intermedias de los migradores
 scripts/              migradores + merge_y_validar.py (regenera ledger, resumen y validación)
 out/resumen_mensual.csv   agregado mes × categoría para el dashboard
 ```
+
+## data/estados/ — estados de cuenta PDF
+
+El conector de Gmail no baja adjuntos, así que los PDF de estados de cuenta (BBVA día 1-7, Santander Mastercard día 5-8) hay que soltarlos a mano en `data/estados/` apenas lleguen (nombre de archivo libre; el parser identifica el emisor por contenido). Después corré:
+
+```
+python scripts/conciliar_estado.py           # procesa todos los PDF nuevos de la carpeta
+python scripts/conciliar_estado.py archivo.pdf  # o uno puntual
+```
+
+Concilia cada línea del estado contra el ledger (monto ±0,5%, fecha ±3 días): matchea → `estado=conciliado` y corrige `monto_uyu` con el TC real; sin match → inserta la línea (`origen=estado_cuenta`); fila del ledger sin línea del estado → pendiente `sin_respaldo_estado`. Cierra al peso contra el total del período. Hoy (2026-07-12) los extractores de BBVA y Santander Mastercard son *stubs* — el motor de matching (`conciliar()`, sin dependencia de PDF) ya está testeado con un estado sintético (`scripts/test_conciliacion.py`); falta calibrar el parser de texto con el primer PDF real que Joaco suelte.
+
+## /cierre-mes — ceremonia mensual
+
+Orquesta el cierre de casa y la conciliación de saldos (`.claude/commands/cierre-mes.md`): pide ingresos del mes y aportes de Lu, pregunta los saldos reales por cuenta, corre `conciliar_estado.py` si hay PDF nuevos, `cierre_casa.py` y `conciliar_saldos.py`, y presenta el reporte (posición de casa, presupuesto vs real, saldos con diferencia, pendientes abiertos) antes de commitear. Se invoca escribiendo `/cierre-mes` al final de cada mes.
 
 ## Regenerar todo
 
@@ -41,7 +63,7 @@ Carpeta [Sistema Gastos](https://drive.google.com/drive/folders/1vAPsrCr8_QbHpG_
 - [x] Fase 1 — export a Google Sheets (falta conectar Looker Studio, 3 clicks del usuario)
 - [x] Fase 2 — pipeline de mails (parsers + backfill julio verificado 1:1 vs Gmail, ver docs/validacion-fase2.md; comandos /sync-gastos y /revisar-pendientes)
 - [ ] Fase 2.5 — automatización durable (OAuth Google: Gmail API para el pull + escritura de Sheets) — hoy el sync corre vía Claude (cron de sesión 2×/día)
-- [ ] Fase 3 — conciliación mensual (PDFs BBVA/Santander MC, cierre casa, Splitwise API)
+- [x] Fase 3 — Splitwise (cuenta Deudas, solo lectura, integrado a `scripts/correr_pipeline.cmd`), cierre continuo de casa (`scripts/cierre_casa.py`, `/cierre-mes`) y conciliación de saldos (`scripts/conciliar_saldos.py`) operativos. Motor de matching de estados de cuenta construido y testeado con estado sintético (`scripts/conciliar_estado.py` + `scripts/test_conciliacion.py`); falta calibrar los extractores de BBVA y Santander Mastercard con el primer PDF real (ver `data/estados/`).
 - [ ] Fase 4 — presupuesto integrado + alertas
 
 ## Decisiones clave
