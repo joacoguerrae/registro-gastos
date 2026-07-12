@@ -218,7 +218,7 @@ def main():
                                    (r0.get("frac_deudas") or "").strip(),
                                    (r0.get("contrapartes") or "").strip()))
 
-    def motivo_split(texto, categoria, monto_uyu):
+    def motivo_split(texto, categoria, monto_uyu, ambito_actual=""):
         """-> (motivo, detalle) si el gasto debe recordarse para Splitwise.
         Solo marca: la division efectiva SIEMPRE requiere OK de Joaco en la revision."""
         for pat, fcasa, fdeudas, quienes in splits_pat:
@@ -231,7 +231,8 @@ def main():
                 return ("split_a_cargar",
                         f"split recurrente propuesto: {' + '.join(partes) or quienes}: {texto!r} — aplicar con OK en revision")
         if umbral_split and categoria in CATS_SPLIT_HEURISTICA \
-                and float(monto_uyu or 0) >= umbral_split:
+                and float(monto_uyu or 0) >= umbral_split \
+                and ambito_actual != "casa":
             return ("split_a_cargar",
                     f"{categoria} por {monto_uyu} UYU (>= umbral {umbral_split:.0f}): cargar a Splitwise?")
         return None
@@ -371,7 +372,7 @@ def main():
         if tarjeta == "8261" and not params.get("ambito_8261_confirmado"):
             motivos.append(("ambito_a_confirmar",
                             "transicion jul-2026: confirmar vuelta de la casa a Santander (8261)"))
-        ms = motivo_split(est_crudo, categoria, r["monto_uyu"])
+        ms = motivo_split(est_crudo, categoria, r["monto_uyu"], r["ambito"])
         if ms:
             motivos.append(ms)
 
@@ -426,9 +427,14 @@ def main():
                              f"{dup['id']} ({dup['fecha']} {dup['monto']} {dup['descripcion']})")
             continue
 
+        # cuenta origen segun el mail: la corriente es el fondo de la casa,
+        # la caja de ahorro es la plata personal (confirmado 12/7)
+        tipo_origen = (v["tipo"] or "").lower()
+        cuenta_origen = "Cuenta Casa" if "corriente" in tipo_origen else "Santander UYU"
+
         r = fila_base(mail["message_id"])
         r.update(fecha=fecha, mes=fecha[:7], monto=fmt(monto), moneda=moneda,
-                 cuenta="Santander UYU", descripcion=concepto)
+                 cuenta=cuenta_origen, descripcion=concepto)
         if moneda == "UYU":
             r["monto_uyu"] = fmt(monto)
         texto = f"{titular} {concepto}"
@@ -440,11 +446,18 @@ def main():
                      ambito="interno", en_analisis="0",
                      descripcion=concepto or "Aporte")
         elif re.search(r"\blu\b", titular, re.I):
-            # regla 2: transferencia a Lu — a clasificar (puede ser cierre de casa)
-            r.update(tipo="transferencia", cuenta_destino=titular,
-                     ambito="interno", en_analisis="0")
-            motivos.append(("transferencia_a_clasificar",
-                            f"a {titular!r}, concepto {concepto!r}, {moneda} {fmt(monto)}"))
+            # regla 2: transferencia a Lu. Si el concepto matchea una regla de
+            # comercio (ej. "bigua" -> Club) es un gasto pagado via Lu; si no,
+            # queda a clasificar (puede ser movimiento de casa).
+            categoria, amb_override, hubo = categorizar(concepto, reglas)
+            if hubo and categoria:
+                r.update(tipo="gasto", comercio=f"{categoria} (via Lu)",
+                         categoria=categoria, ambito=amb_override or "personal")
+            else:
+                r.update(tipo="transferencia", cuenta_destino=titular,
+                         ambito="interno", en_analisis="0")
+                motivos.append(("transferencia_a_clasificar",
+                                f"a {titular!r}, concepto {concepto!r}, {moneda} {fmt(monto)}"))
         else:
             # regla 3: tercero -> gasto
             ambito = "casa" if re.search(r"garage|vazquez ledesma", texto, re.I) else "personal"
@@ -528,7 +541,7 @@ def main():
             break
         if match:
             match["comercio"] = rec["producto"]
-            ms = motivo_split(rec["producto"], match["categoria"], match["monto_uyu"])
+            ms = motivo_split(rec["producto"], match["categoria"], match["monto_uyu"], match["ambito"])
             if ms:
                 pend(match["id"], *ms)
                 match["estado"] = "pendiente"
@@ -557,7 +570,7 @@ def main():
             pend(r["id"], "recibo_sin_matchear",
                  f"{rec['producto']} {rec['moneda']} {fmt(rec['monto'])} {fecha}: "
                  "sin aviso de tarjeta que matchee (posible pago con saldo MP)")
-            ms = motivo_split(rec["producto"], categoria, r["monto_uyu"])
+            ms = motivo_split(rec["producto"], categoria, r["monto_uyu"], r["ambito"])
             if ms:
                 pend(r["id"], *ms)
             nuevos.append(r)
@@ -620,7 +633,7 @@ def main():
     ids_con_pendiente = {p["id_ledger"] for p in pendientes if not p["resuelto"]}
     ids_con_pendiente |= {p["id_ledger"] for p in pend_nuevos}
     for r in ledger_final:
-        if r["origen"] in ("mail", "manual") and r["estado"] != "conciliado":
+        if r["origen"] in ("mail", "manual", "splitwise") and r["estado"] != "conciliado":
             deseado = "pendiente" if r["id"] in ids_con_pendiente else "confirmado"
             if r["estado"] != deseado:
                 r["estado"] = deseado

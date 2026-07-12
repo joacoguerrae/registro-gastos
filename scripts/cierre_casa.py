@@ -149,7 +149,23 @@ def main():
 
     gastos = gasto_casa_mes(ledger, mes)
     total = round(sum(monto_uyu(r) for r in gastos), 2)
-    parte_lu = round(total * coef_lu, 2)
+
+    # data/participaciones.csv: filas casa con fraccion fija por decision de la
+    # revision (ej. Paladar 2/3 Lu por ser con amigas de ella) en vez del
+    # coeficiente del mes.
+    part_path = P("data", "participaciones.csv")
+    participaciones = {}
+    if os.path.exists(part_path):
+        with open(part_path, encoding="utf-8-sig", newline="") as f:
+            participaciones = {r["id_ledger"]: (float(r["frac_lu"]), float(r["frac_joaco"]))
+                               for r in csv.DictReader(f)}
+    parte_lu = parte_joaco = 0.0
+    for r in gastos:
+        m = monto_uyu(r)
+        f_lu, f_jo = participaciones.get(r["id"], (coef_lu, coef_joaco))
+        parte_lu += m * f_lu
+        parte_joaco += m * f_jo
+    parte_lu = round(parte_lu, 2)
     parte_joaco = round(total - parte_lu, 2)
 
     # ---------------------------------------------------------- aportes del mes
@@ -163,11 +179,21 @@ def main():
     transf = [r for r in ledger
               if r["mes"] == mes and r["tipo"] == "transferencia"
               and r["cuenta_destino"] == "Cuenta Casa"
+              and r["cuenta"] not in CUENTAS_CASA   # mover el fondo de lugar no es aporte
               and r["id"] not in excluidos]
     implicitos = [r for r in gastos
                   if r["cuenta"] not in CUENTAS_CASA and r["id"] not in excluidos]
+    # Retiros personales del fondo: gastos NO-casa o prestamos a Deudas pagados
+    # desde cuentas de la casa -> restan del aporte de Joaco.
+    retiros = [r for r in ledger
+               if r["mes"] == mes and r["cuenta"] in CUENTAS_CASA
+               and r["id"] not in excluidos
+               and ((r["tipo"] == "gasto" and r["ambito"] in ("personal", "split")
+                     and r["en_analisis"] == "1")
+                    or (r["tipo"] == "transferencia" and r["cuenta_destino"] == "Deudas"))]
     aportes_joaco = round(sum(monto_uyu(r) for r in transf)
-                          + sum(monto_uyu(r) for r in implicitos), 2)
+                          + sum(monto_uyu(r) for r in implicitos)
+                          - sum(monto_uyu(r) for r in retiros), 2)
     lu_mes = [r for r in aportes_lu_rows if r["mes"] == mes]
     aportes_lu = round(sum(float(r["monto"]) for r in lu_mes), 2)
 
@@ -205,7 +231,9 @@ def main():
     print(f"gasto casa del mes ({len(gastos)} filas): {fmt(total)} UYU")
     print(f"  parte Lu   {fmt(parte_lu):>12s}")
     print(f"  parte Joaco{fmt(parte_joaco):>12s}")
-    print(f"aportes Joaco: {fmt(aportes_joaco)}")
+    print(f"aportes Joaco: {fmt(aportes_joaco)}"
+          + (f"  (incluye -{sum(monto_uyu(r) for r in retiros):.2f} de retiros personales del fondo)"
+             if retiros else ""))
     for r in transf:
         print(f"  transferencia {r['fecha']} {fmt(monto_uyu(r)):>12s}  "
               f"{r['cuenta']} -> Cuenta Casa  {r['descripcion']}")

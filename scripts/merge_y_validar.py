@@ -93,6 +93,20 @@ def merge():
             r["en_analisis"] = "1"
             r["ambito"] = "casa"
 
+    # Resoluciones manuales (data/resoluciones.csv): el merge reconstruye las
+    # filas de migracion desde staging, asi que hay que re-aplicarlas aca
+    # tambien (procesar_mails.py hace lo mismo para sus corridas).
+    res_path = P("data", "resoluciones.csv")
+    if os.path.exists(res_path):
+        overrides = defaultdict(dict)
+        with open(res_path, encoding="utf-8-sig", newline="") as f:
+            for rr in csv.DictReader(f):
+                if rr["campo"] in COLUMNS:
+                    overrides[rr["id_ledger"]][rr["campo"]] = rr["valor"]
+        for r in rows:
+            for campo, valor in overrides.get(r["id"], {}).items():
+                r[campo] = valor
+
     ids = Counter(r["id"] for r in rows)
     dupes = {k: v for k, v in ids.items() if v > 1}
 
@@ -106,7 +120,22 @@ def merge():
 # ============================================================
 # 2. Recalculo independiente desde MyFinance.db
 # ============================================================
+def cargar_overrides_1money():
+    """Resoluciones manuales que pisan filas 1money (data/resoluciones.csv):
+    el recálculo independiente debe aplicarlas igual que el ledger para que
+    2b siga comparando manzanas con manzanas."""
+    path = P("data", "resoluciones.csv")
+    out = defaultdict(dict)
+    if os.path.exists(path):
+        with open(path, encoding="utf-8-sig", newline="") as f:
+            for r in csv.DictReader(f):
+                if r["campo"] in ("en_analisis", "monto_uyu", "monto", "tipo", "ambito"):
+                    out[r["id_ledger"]][r["campo"]] = r["valor"]
+    return out
+
+
 def recalc_db():
+    overrides = cargar_overrides_1money()
     con = sqlite3.connect(DB)
     con.row_factory = sqlite3.Row
     cur = con.cursor()
@@ -142,6 +171,15 @@ def recalc_db():
                             acc_cur=(t["accountCurrencyCode"] or "").strip())
         es_casa = acc.casefold() == "casa" or (cat or "").casefold() == "casa"
         if t["type"] == "Expense" and cat is not None:
+            # resoluciones manuales sobre esta fila (mismo id que en el ledger)
+            rid = hashlib.sha1(("1money" + uid).encode()).hexdigest()[:12]
+            ov = overrides.get(rid, {})
+            if ov.get("tipo") not in (None, "gasto"):
+                continue                                    # dejo de ser gasto
+            if ov.get("en_analisis") == "0":
+                continue                                    # sacada del analisis
+            if "monto_uyu" in ov:
+                uyu = float(ov["monto_uyu"])
             if es_casa and fecha >= CASA_CUTOFF and fecha[:7] not in MESES_SIN_PLANILLA:
                 casa_mensual_db[fecha[:7]] += uyu          # duplicado (en_analisis=0)
             else:

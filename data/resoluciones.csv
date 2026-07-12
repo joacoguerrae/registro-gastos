@@ -18,3 +18,72 @@ f1d3b1ff2dfc,motivo_resuelto,ambito_a_confirmar,confirmado por Joaco 12/7: la 82
 c3a37380a25e,motivo_resuelto,ambito_a_confirmar,confirmado por Joaco 12/7: la 8261 siempre es gastos de casa,2026-07-12
 34c6fc3e2019,motivo_resuelto,ambito_a_confirmar,confirmado por Joaco 12/7: la 8261 siempre es gastos de casa,2026-07-12
 6371620f4cc0,motivo_resuelto,ambito_a_confirmar,confirmado por Joaco 12/7: la 8261 siempre es gastos de casa,2026-07-12
+41e0c57ed0b2,cuenta,Cuenta Casa,origen del mail: Cuenta corriente = fondo casa,2026-07-12
+41e0c57ed0b2,categoria,Vivienda,,2026-07-12
+41e0c57ed0b2,ambito,casa,gastos comunes apto 801 (confirmado 12/7),2026-07-12
+41e0c57ed0b2,motivo_resuelto,transferencia_a_clasificar,,2026-07-12
+edcb5f29c99a,cuenta,Cuenta Casa,origen del mail: Cuenta corriente = fondo casa,2026-07-12
+edcb5f29c99a,categoria,Vivienda,,2026-07-12
+edcb5f29c99a,ambito,casa,seguro y contribucion del apto a Bea (confirmado 12/7),2026-07-12
+edcb5f29c99a,motivo_resuelto,transferencia_a_clasificar,,2026-07-12
+aab8a376e4b8,tipo,gasto,cuota Club Bigua que paga Lu y Joaco reintegra (confirmado 12/7),2026-07-12
+aab8a376e4b8,cuenta_destino,,,2026-07-12
+aab8a376e4b8,categoria,Club,,2026-07-12
+aab8a376e4b8,ambito,personal,,2026-07-12
+aab8a376e4b8,en_analisis,1,,2026-07-12
+aab8a376e4b8,comercio,Club Bigua (via Lu),,2026-07-12
+aab8a376e4b8,motivo_resuelto,transferencia_a_clasificar,,2026-07-12
+4f45ed514324,tipo,transferencia,pago tarjeta Santander UYU via Proyecto PAS (confirmado 12/7),2026-07-12
+4f45ed514324,cuenta_destino,Santander Platinum,,2026-07-12
+4f45ed514324,ambito,interno,,2026-07-12
+4f45ed514324,en_analisis,0,,2026-07-12
+4f45ed514324,categoria,,,2026-07-12
+4f45ed514324,descripcion,Pago tarjeta Santander $ (Proyecto PAS),,2026-07-12
+4f45ed514324,motivo_resuelto,sin_categoria,,2026-07-12
+e89f07151e87,tipo,transferencia,pago tarjeta Santander USD via Proyecto PAS (confirmado 12/7),2026-07-12
+e89f07151e87,cuenta_destino,Santander Platinum,,2026-07-12
+e89f07151e87,ambito,interno,,2026-07-12
+e89f07151e87,en_analisis,0,,2026-07-12
+e89f07151e87,categoria,,,2026-07-12
+e89f07151e87,descripcion,Pago tarjeta Santander USD (Proyecto PAS),,2026-07-12
+e89f07151e87,motivo_resuelto,sin_categoria,,2026-07-12
+e89f07151e87,motivo_resuelto,tc_estimado,debito sin estado de cuenta: estimacion aceptada,2026-07-12
+761e0058038c,categoria,Servicios,"Movistar celular, mitad con Agus (confirmado 12/7)",2026-07-12
+761e0058038c,subcategoria,Celular,,2026-07-12
+761e0058038c,monto,875.41,split 1/2: cargo real 1750.82 = 875.41 + 875.41 a Deudas,2026-07-12
+761e0058038c,monto_uyu,875.41,,2026-07-12
+761e0058038c,descripcion,Movistar celular (1/2 con Agus - sw:4549344291),,2026-07-12
+761e0058038c,motivo_resuelto,sin_categoria,,2026-07-12
+c0864e169a0e,categoria,Comer afuera / Delivery,Pizza (Hermanos de Marian),2026-07-12
+c0864e169a0e,motivo_resuelto,sin_categoria,,2026-07-12
+ccd3203d6b75,categoria,Regalos,Regalo papa,2026-07-12
+ccd3203d6b75,motivo_resuelto,sin_categoria,,2026-07-12
+15f8b8044162,categoria,Comer afuera / Delivery,Asado (Caqui Tapa),2026-07-12
+15f8b8044162,motivo_resuelto,sin_categoria,,2026-07-12
+468f6afc10f4,categoria,Casa & hogar,cafetera (confirmado 12/7),2026-07-12
+468f6afc10f4,ambito,casa,,2026-07-12
+468f6afc10f4,motivo_resuelto,sin_categoria,,2026-07-12
+e62421101491,motivo_resuelto,posible_duplicado,"se toma el del banco (402,79) como valido",2026-07-12
+007eb366e0ff,en_analisis,0,"Uber 516 tipeado en la app sin respaldo del banco; el periodo cierra con el de 402,79 (decision 12/7)",2026-07-12
+a7ad2ee2689b,motivo_resuelto,recibo_sin_matchear,suscripcion real confirmada 12/7,2026-07-12
+62ec22e319a9,cuenta,Cuenta Casa,"origen del mail: Cuenta corriente = fondo casa -> movimiento interno, no aporte (confirmado 12/7)",2026-07-12
+62ec22e319a9,descripcion,Movimiento interno del fondo casa (corriente -> MP),,2026-07-12
+a6ef3e758f12,motivo_resuelto,tc_estimado,estimacion aceptada (Visa sin estado por mail),2026-07-12
+8a25bdc16c66,motivo_resuelto,tc_estimado,estimacion aceptada (Visa sin estado por mail),2026-07-12
+54e12ba772cb,motivo_resuelto,tc_estimado,debito sin estado de cuenta: estimacion aceptada,2026-07-12
+d134e51ff3af,monto,266.50,split 1/2: cargo real 533 = 266.50 + 266.50 a Deudas (sw redondeo 528),2026-07-12
+d134e51ff3af,monto_uyu,266.50,,2026-07-12
+d134e51ff3af,descripcion,Picada y bebida Rudy (1/2 con amigos - sw:4544405047),,2026-07-12
+d134e51ff3af,motivo_resuelto,split_a_cargar,,2026-07-12
+34c6fc3e2019,motivo_resuelto,split_a_cargar,gasto casa 2/3 Lu / 1/3 Joaco (amigas de Lu) - en participaciones.csv,2026-07-12
+36d2419551ff,cuenta,Deudas,,2026-07-12
+36d2419551ff,cuenta_destino,Deudas,neteo interno Splitwise: deuda Sanky movida de personal a grupo (confirmado 12/7),2026-07-12
+36d2419551ff,en_analisis,0,,2026-07-12
+36d2419551ff,descripcion,Reorganizacion interna Splitwise (deuda Sanky personal -> grupo),,2026-07-12
+36d2419551ff,motivo_resuelto,transferencia_a_clasificar,,2026-07-12
+25f05775d912,motivo_resuelto,split_a_cargar,"misma deuda Sanky movida de personal a grupo: se netea, no es gasto",2026-07-12
+99a10738d36d,motivo_resuelto,split_a_cargar,"es el debito Proyecto PAS 1.750,82 del 3/7 (761e0058038c): split aplicado",2026-07-12
+a766454bd53d,motivo_resuelto,split_a_cargar,YouTube: el cargo Apple llega ~22/7; split recurrente configurado lo detecta,2026-07-12
+d0ed111eb136,motivo_resuelto,split_a_cargar,YouTube: idem,2026-07-12
+1f1a595f6c72,motivo_resuelto,split_a_cargar,"Burger 1.785,20 del 30/6 (6427, aviso pre-backfill): insertada fila manual con split 1/2",2026-07-12
+20fc230ab8e3,motivo_resuelto,split_a_cargar,"Helado = Market 518,36+40 del 30/6 (8261, pre-backfill): insertada fila manual con split 1/4",2026-07-12

@@ -65,7 +65,14 @@ with open(P("data", "casa.csv"), encoding="utf-8", newline="") as f:
         casa[(r["mes"], cat)][1] += max(lu, 0.0)
         casa[(r["mes"], cat)][2] += max(joaco, 0.0)
 
-# 2) nuevo: ledger ambito=casa desde 2026-07 (dividido por coeficiente)
+# 2) nuevo: ledger ambito=casa desde 2026-07 (dividido por coeficiente, salvo
+#    participaciones fijas por fila en data/participaciones.csv)
+participaciones = {}
+part_path = P("data", "participaciones.csv")
+if os.path.exists(part_path):
+    with open(part_path, encoding="utf-8-sig", newline="") as f:
+        participaciones = {r["id_ledger"]: (float(r["frac_lu"]), float(r["frac_joaco"]))
+                           for r in csv.DictReader(f)}
 ingresos = {}
 with open(P("config", "ingresos.csv"), encoding="utf-8-sig", newline="") as f:
     for r in csv.DictReader(f):
@@ -83,7 +90,7 @@ with open(P("data", "ledger.csv"), encoding="utf-8", newline="") as f:
         if (r["mes"] >= "2026-07" and r["tipo"] == "gasto"
                 and r["ambito"] == "casa" and r["en_analisis"] == "1"):
             total = num(r["monto_uyu"])
-            c_lu, c_jo = coefs(r["mes"])
+            c_lu, c_jo = participaciones.get(r["id"]) or coefs(r["mes"])
             cat = r["categoria"] or "(sin categoria)"
             casa[(r["mes"], cat)][0] += total
             casa[(r["mes"], cat)][1] += total * c_lu
