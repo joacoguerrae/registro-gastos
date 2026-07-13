@@ -74,6 +74,11 @@ RECIBO_SENDERS = ("no_reply@email.apple.com", "googleplay-noreply@google.com",
                   "info@mercadolibre.com.uy", "info@mercadopago.com")
 FACTURA_SENDERS = ("factura@antel.com.uy", "info_uy@email.directvla.com")
 
+# "Tu transferencia fue enviada" (Mercado Pago -> Santander): retorno del
+# fondo de casa que estuvo parqueado en MP. Se rutea aparte de "recibo"
+# porque no es un gasto sino un movimiento de fondos.
+MP_TRANSFER_PAT = re.compile(r"ya enviamos tu transferencia de\s*\$?\s*([\d.,]+)", re.I)
+
 MES_EN = {m: i + 1 for i, m in enumerate(
     ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"])}
 MES_ES = {m: i + 1 for i, m in enumerate(
@@ -310,6 +315,8 @@ def main():
             if subj.lower().startswith("aviso de transferencia"):
                 return "transferencia"
             return "ignorado"
+        if "mercadopago.com" in frm and "transferencia fue enviada" in subj.lower():
+            return "transferencia_mp"
         if any(s in frm for s in RECIBO_SENDERS):
             return "recibo"
         if any(s in frm for s in FACTURA_SENDERS):
@@ -476,6 +483,37 @@ def main():
         log_proc(mail, "transferencia", "insertado", r["id"],
                  f"{mail['subject']} | {titular} {concepto!r} {moneda} {fmt(monto)} {fecha} "
                  f"-> {r['tipo']}/{r['ambito']}/{r['categoria'] or '(sin categoria)'}")
+
+    # ------------------------------------- 2b. retorno de fondo casa desde MP
+    # "Tu transferencia fue enviada" (Mercado Pago -> Santander): la cuenta
+    # casa estuvo parqueada en MP y este mail es el fondo volviendo a
+    # Santander. Es un movimiento de fondos, no un aporte nuevo de nadie
+    # (Mercado Pago se trata como CUENTAS_CASA en scripts/cierre_casa.py).
+    for mail in mails:
+        if mail["message_id"] in ya_procesados or router(mail) != "transferencia_mp":
+            continue
+        b = mail["body_text"]
+        m = MP_TRANSFER_PAT.search(b)
+        if not m:
+            log_proc(mail, "transferencia_mp", "ignorado",
+                     detalle="patron de monto no encontrado en el cuerpo")
+            continue
+        monto = float(m.group(1).replace(".", "").replace(",", "."))
+        fecha_mail = dt.datetime.fromisoformat(mail["fecha_mail"].replace("Z", "+00:00"))
+        fecha = (fecha_mail - dt.timedelta(hours=3)).date().isoformat()
+        if fecha < BACKFILL_DESDE:
+            log_proc(mail, "transferencia_mp", "ignorado_pre_backfill",
+                     detalle=f"UYU {fmt(monto)} ({fecha})")
+            continue
+        r = fila_base(mail["message_id"])
+        r.update(fecha=fecha, mes=fecha[:7], tipo="transferencia",
+                 monto=fmt(monto), moneda="UYU", monto_uyu=fmt(monto),
+                 cuenta="Mercado Pago", cuenta_destino="Cuenta Casa",
+                 descripcion="Retorno fondo casa desde Mercado Pago",
+                 ambito="interno", en_analisis="0")
+        nuevos.append(r)
+        log_proc(mail, "transferencia_mp", "insertado", r["id"],
+                 f"MP -> Cuenta Casa UYU {fmt(monto)} ({fecha})")
 
     # -------------------------------------------------- 3. recibos (matching)
     def parse_recibo(mail):

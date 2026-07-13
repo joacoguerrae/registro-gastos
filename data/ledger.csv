@@ -4548,7 +4548,7 @@ f1d3b1ff2dfc,2026-07-03,2026-07,gasto,107.21,UYU,107.21,Cuenta Casa,,Super,,MONT
 2e5e22d04dea,2026-07-04,2026-07,gasto,566.56,UYU,566.56,Cuenta Casa,,Super,,MONTEVIDEO/ROSA DI IACOVO (AFU) VIS3,ROSA DI IACOVO (AFU),casa,mail,confirmado,1,19f2df63e026ff24
 41e0c57ed0b2,2026-07-04,2026-07,gasto,23768.00,UYU,23768.00,Cuenta Casa,,Vivienda,,Gastos Comunes VL,801,casa,mail,confirmado,1,19f2e5e5c9fc5eb5
 56ab9cc5e982,2026-07-04,2026-07,gasto,389.71,UYU,389.71,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA,DLOPEDIDOSYA,personal,mail,confirmado,1,19f2d724ca7a73f5
-59b7a6047475,2026-07-04,2026-07,gasto,3600.00,UYU,3600.00,Santander UYU,,Auto,,Martin Rodriguez Garage,Garage Vazquez Ledesma,casa,mail,confirmado,1,19f2e6bbeffc5abc
+59b7a6047475,2026-07-04,2026-07,gasto,3600.00,UYU,3600.00,Cuenta Casa,,Auto,,Martin Rodriguez Garage,Garage Vazquez Ledesma,casa,mail,confirmado,1,19f2e6bbeffc5abc
 692bfe8d54c7,2026-07-04,2026-07,gasto,108.39,UYU,108.39,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,casa,mail,confirmado,1,19f2e1a332dd299e
 9fb2d8abda43,2026-07-04,2026-07,gasto,796.72,UYU,796.72,Cuenta Casa,,Comer afuera / Delivery,,FKDMONTEVIDEO/EL TIMON     *HANDY*0VIS3,EL TIMON *HANDY*0,casa,mail,confirmado,1,19f2de450ebb16f2
 c3a37380a25e,2026-07-04,2026-07,gasto,467.21,UYU,467.21,Cuenta Casa,,Super,,MONTEVIDEO/PUESTO PLAVAN        VIS3,PUESTO PLAVAN,casa,mail,confirmado,1,19f2e01153573e3a
@@ -4572,4 +4572,5 @@ d67303385bbf,2026-07-09,2026-07,gasto,3794.00,UYU,3794.00,Santander Platinum,,Au
 36d2419551ff,2026-07-10,2026-07,transferencia,1156.50,UYU,1156.50,Deudas,Deudas,,,,Reorganizacion interna Splitwise (deuda Sanky personal -> grupo),interno,splitwise,confirmado,0,sw:4561539134
 54e12ba772cb,2026-07-10,2026-07,transferencia,150.37,USD,6064.42,Santander UYU,BBVA Crédito,,,INTERNET/Proyecto PAS,Pago tarjeta BBVA (Proyecto PAS),interno,mail,confirmado,0,19f4cc50713be2b9
 ccd3203d6b75,2026-07-10,2026-07,gasto,407.67,UYU,407.67,Deudas,,Regalos,Alimentos,,Regalo papa,split,splitwise,confirmado,1,sw:4562555128
+0a5e441cd7e9,2026-07-12,2026-07,transferencia,16938.28,UYU,16938.28,Mercado Pago,Cuenta Casa,,,,Retorno fondo casa desde Mercado Pago,interno,mail,confirmado,0,19f56d608e88460c
 c0864e169a0e,2026-07-12,2026-07,gasto,466.66,UYU,466.66,Deudas,,Comer afuera / Delivery,Restaurantes,,Pizza,split,splitwise,confirmado,1,sw:4566353446

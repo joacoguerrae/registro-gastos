@@ -1,29 +1,4 @@
 id_ledger,motivo,detalle,fecha_alta,resuelto
-a6ef3e758f12,tc_estimado,USD 1.99 x tc 40.33 = 80.26 UYU (corrige Fase 3),2026-07-12,1
-468f6afc10f4,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*DONALBERTOUY VIS3' sin regla,2026-07-12,1
-31165a77a9ba,ambito_a_confirmar,transicion jul-2026: confirmar vuelta de la casa a Santander (8261),2026-07-12,1
-5ebdde9d01a6,ambito_a_confirmar,transicion jul-2026: confirmar vuelta de la casa a Santander (8261),2026-07-12,1
-4f45ed514324,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-07-12,1
-e89f07151e87,tc_estimado,USD 530.47 x tc 40.33 = 21393.86 UYU (corrige Fase 3),2026-07-12,1
-e89f07151e87,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-07-12,1
-b3a8a5fd14e4,ambito_a_confirmar,transicion jul-2026: confirmar vuelta de la casa a Santander (8261),2026-07-12,1
-7bb209bbce30,ambito_a_confirmar,transicion jul-2026: confirmar vuelta de la casa a Santander (8261),2026-07-12,1
-761e0058038c,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-07-12,1
-f1d3b1ff2dfc,ambito_a_confirmar,transicion jul-2026: confirmar vuelta de la casa a Santander (8261),2026-07-12,1
-9fb2d8abda43,ambito_a_confirmar,transicion jul-2026: confirmar vuelta de la casa a Santander (8261),2026-07-12,1
-02e041677f95,ambito_a_confirmar,transicion jul-2026: confirmar vuelta de la casa a Santander (8261),2026-07-12,1
-2e5e22d04dea,ambito_a_confirmar,transicion jul-2026: confirmar vuelta de la casa a Santander (8261),2026-07-12,1
-c3a37380a25e,ambito_a_confirmar,transicion jul-2026: confirmar vuelta de la casa a Santander (8261),2026-07-12,1
-692bfe8d54c7,ambito_a_confirmar,transicion jul-2026: confirmar vuelta de la casa a Santander (8261),2026-07-12,1
-8a25bdc16c66,tc_estimado,USD 97.47 x tc 40.33 = 3930.97 UYU (corrige Fase 3),2026-07-12,1
-34c6fc3e2019,ambito_a_confirmar,transicion jul-2026: confirmar vuelta de la casa a Santander (8261),2026-07-12,1
-34c6fc3e2019,split_a_cargar,Comer afuera / Delivery por 1624.61 UYU (>= umbral 1500): cargar a Splitwise?,2026-07-12,1
-6371620f4cc0,ambito_a_confirmar,transicion jul-2026: confirmar vuelta de la casa a Santander (8261),2026-07-12,1
-54e12ba772cb,tc_estimado,USD 150.37 x tc 40.33 = 6064.42 UYU (corrige Fase 3),2026-07-12,1
-aab8a376e4b8,transferencia_a_clasificar,"a 'Lu pesos', concepto 'bigua', UYU 4715.00",2026-07-12,1
-41e0c57ed0b2,transferencia_a_clasificar,"a 'Gastos Comunes VL', concepto '801', UYU 23768.00: sin categoria",2026-07-12,1
-edcb5f29c99a,transferencia_a_clasificar,"a 'Bea Itau', concepto 'seguro y Contribucion', UYU 14278.00: sin categoria",2026-07-12,1
-a7ad2ee2689b,recibo_sin_matchear,Meli+ UYU 199.00 2026-07-01: sin aviso de tarjeta que matchee (posible pago con saldo MP),2026-07-12,1
 e62421101491,posible_duplicado,"el banco muestra Uber 402,79 el 27/6; la app tenia 'Uber 516,00' (007eb366e0ff) del 30/6 que el banco NO muestra en el periodo: decidir si fue el mismo viaje mal tipeado (-> en_analisis=0 al de 516)",2026-07-12,1
 c0864e169a0e,sin_categoria,gasto Splitwise 'Pizza' (Hermanos de Marian) sin regla,2026-07-12,1
 ccd3203d6b75,sin_categoria,gasto Splitwise 'Regalo papa' (Hermanos de Marian) sin regla,2026-07-12,1
@@ -36,3 +11,4 @@ a766454bd53d,split_a_cargar,"Splitwise sw:4546727817 'Youtube' USD 4.80 (2026-07
 d0ed111eb136,split_a_cargar,"Splitwise sw:4546727164 'Youtube' USD 14.40 (2026-07-01): yo pague 14.40, mi parte 0.00 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-07-12,1
 d134e51ff3af,split_a_cargar,"Splitwise sw:4544405047 'Picada y bebida' UYU 528.00 (2026-07-01): yo pague 528.00, mi parte 264.00 -> ajustar cargo d134e51ff3af y crear fila hermana -split",2026-07-12,1
 1f1a595f6c72,split_a_cargar,"Splitwise sw:4544350903 'Burger' UYU 1785.00 (2026-07-01): yo pague 1785.00, mi parte 892.50 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-07-12,1
+9793294efd2c,split_a_cargar,"Splitwise sw:4544405047 'Picada y bebida' UYU 528.00 (2026-07-01): yo pague 528.00, mi parte 264.00 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-07-12,

@@ -4,11 +4,11 @@ Generado por `scripts/merge_y_validar.py` el 2026-07-12. Todas las cifras de fue
 
 ## 1. Merge → data/ledger.csv
 
-- Filas totales: **4574** (3060 de 1money + 1465 de planilla_casa + 49 de otros origenes preservados: mail, etc.)
-- Por tipo: {'gasto': 3921, 'ingreso': 437, 'transferencia': 216}
+- Filas totales: **4575** (3060 de 1money + 1465 de planilla_casa + 50 de otros origenes preservados: mail, etc.)
+- Por tipo: {'gasto': 3921, 'ingreso': 437, 'transferencia': 217}
 - Rango de fechas: 2021-11-01 → 2026-07-12
 - IDs únicos: sí
-- Suma |monto_uyu| (todas las filas con valor): 16,003,436.94
+- Suma |monto_uyu| (todas las filas con valor): 16,020,375.22
 - Celdas vacías fuera de regla del esquema: ninguna
 - Gasto 2026 en análisis (en_analisis=1): **931,342.70 UYU**
 
@@ -149,9 +149,9 @@ Resultado: **10/10 OK**
 
 | Validación | Estado | Detalle |
 |---|---|---|
-| 1.merge | OK | 4574 filas ({'1money': 3060, 'planilla_casa': 1465, 'manual': 7, 'mail': 38, 'splitwise': 4}), tipos {'gasto': 3921, 'ingreso': 437, 'transferencia': 216}, rango 2021-11-01 -> 2026-07-12, ids duplicados: ninguno |
+| 1.merge | OK | 4575 filas ({'1money': 3060, 'planilla_casa': 1465, 'manual': 7, 'mail': 39, 'splitwise': 4}), tipos {'gasto': 3921, 'ingreso': 437, 'transferencia': 217}, rango 2021-11-01 -> 2026-07-12, ids duplicados: ninguno |
 | 1.vacios | OK | celdas vacias fuera de regla: 0 |
-| 1.suma | OK | suma \|monto_uyu\| todas las filas: 16003436.94 |
+| 1.suma | OK | suma \|monto_uyu\| todas las filas: 16020375.22 |
 | 2a.conteos | OK | DB: 2853 tx activas / 207 transfers; ledger 1money: 2853 tx / 207 transfers (esperado 2853/207) |
 | 2a.suma_uyu | DESVIO | suma monto_uyu transacciones 1money: ledger 12175685.86 vs DB 12175952.36 (diff -266.5000) |
 | 2b.gastos_anio | OK | 2021: ledger 50109.14 (1money d=0.00, planilla d=0.00); 2022: ledger 358189.06 (1money d=0.00, planilla d=0.00); 2023: ledger 641519.78 (1money d=0.00, planilla d=0.00); 2024: ledger 698941.83 (1money d=0.00, planilla d=0.00); 2025: ledger 1494135.34 (1money d=0.00, planilla d=0.00); 2026: ledger 833463.16 (1money d=-0.00, planilla d=0.00) |

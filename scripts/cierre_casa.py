@@ -46,9 +46,11 @@ CIERRE_COLS = ["mes", "parte_lu", "parte_joaco", "aportes_lu", "aportes_joaco",
                "posicion_lu", "posicion_joaco", "nota"]
 APORTES_COLS = ["mes", "fecha", "monto", "nota"]
 
-# Cuentas cuyo dinero YA es de la casa: pagar desde ellas no es aporte de
-# Joaco (la Mastercard es el credito de la casa y se paga desde Cuenta Casa).
-CUENTAS_CASA = {"Cuenta Casa", "Santander Mastercard"}
+# Cuentas cuyo dinero YA es de la casa: pagar desde ellas (o transferir desde
+# ellas a Cuenta Casa) no es aporte nuevo de Joaco. Mercado Pago fue la cuenta
+# casa temporal (jun-jul 2026): el retorno del fondo a Santander es un
+# movimiento interno, no un aporte (ver handler transferencia_mp).
+CUENTAS_CASA = {"Cuenta Casa", "Santander Mastercard", "Mercado Pago"}
 MESES_PROMEDIO = 3
 
 
