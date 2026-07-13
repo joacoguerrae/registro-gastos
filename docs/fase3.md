@@ -28,6 +28,18 @@ Contratos de la fase 3. Complementa esquema.md y pipeline-mails.md.
   4. **Cierre al peso**: suma de filas conciliadas+insertadas del período == total del estado (por moneda). Diferencia ≠ 0 → reporte con el detalle.
 - Como todavía no hay PDF reales en el repo, el motor de matching se desarrolla y testea con un estado SINTÉTICO generado desde los avisos capturados (script de test); el parser de PDF real se ajusta con el primer archivo que Joaco suelte.
 
+### 2.1 Caso real: reconciliación manual con extracto de Cuenta Casa (jul-2026)
+
+El 12/7 Joaco proveyó `data/estados/cuenta_casa_127.csv` (extracto real de movimientos, formato Santander con Débito/Crédito/Saldos). Se hizo un `conciliar_estado.py`-equivalente manual (comparación línea a línea por monto+fecha) contra el ledger. Hallazgos y correcciones aplicadas (todas en `data/ledger.csv` con `origen=manual`, `fuente_id` prefijo `mp-`, salvo las exclusiones):
+- **Aporte real de $37.000 (1/7, "CREDITO OPERACION EN BANCA DIGITAL")**: no estaba capturado (ningún mail lo generó) — agregado como transferencia Santander UYU → Cuenta Casa.
+- **2 comisiones de transferencia ($77,81 c/u)** y **1 comisión de transferencia a Mercado Pago ($78)**: gastos de casa que no generan aviso — agregados manualmente.
+- **2 Propinas de PedidosYa ($35 y $25, tarjeta 8261)**: sin aviso por mail — agregadas manualmente.
+- **Gasto invisible durante el parqueo en Mercado Pago ($3.061,72)**: de los $20.000 enviados a MP el 8/7 solo volvieron $16.938,28 el 12/7; la diferencia es gasto real hecho con el saldo de MP, que no genera mail. Se registró como gasto único `cuenta=Mercado Pago` con la nota de origen.
+- **Exclusiones confirmadas por Joaco**: la transferencia "Regalo agus" $2.224 (1/7) y el "Aporte" $12.000 (1/7, 1Money) NO aparecen en el extracto real de julio — son eventos de JUNIO que ya están dentro de la semilla (`config/cierre_exclusiones.csv`).
+- **Residual sin explicar tras todo esto: ~$589** (de un total mensual ~$68.000 de movimientos) — atribuible casi en su totalidad a una transacción ("Helado" $558,36, splitwise 30/6) que nuestro sistema fecha por el aviso (30/6, dentro de la semilla) pero el banco procesó el 1/7 (fuera de la semilla): un artefacto de borde de mes, no un error sistémico. No se persigue más allá de este punto.
+
+**Lección para `conciliar_estado.py` (Fase 3 automatizada)**: el motor de matching debe tolerar esta clase de borde de mes (transacción con fecha de aviso en el último día del mes anterior pero posteada por el banco al día siguiente) sin generar alarma — o al menos documentarlo como categoría de discrepancia esperada, no un error a resolver.
+
 ## 3. Cierre mensual de casa (cuenta continua)
 
 - Config semilla: `config/posicion_casa.json`: `{"fecha_corte": "2026-06-30", "lu": 11244.07, "joaco": -9692.04}` (Saldos Tarjeta de la planilla congelada; positivo = a favor).
