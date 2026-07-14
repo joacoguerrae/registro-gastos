@@ -4489,7 +4489,7 @@ fd37efa51535,2026-06-27,2026-06,gasto,504.94,UYU,504.94,Cuenta Casa,,Salud,Farma
 af5a9a61f9ee,2026-06-29,2026-06,gasto,10464.31,UYU,10464.31,Cuenta Casa,,Auto,Auto,,Service,casa,planilla_casa,confirmado,1,fila:1916
 007eb366e0ff,2026-06-30,2026-06,gasto,516.00,UYU,516.00,Santander Platinum,,Transporte,Transporte,,Uber,personal,1money,confirmado,0,5d1fd637-f811-4c12-a5d0-3f0a0cf84f4c
 030c3402782c,2026-06-30,2026-06,gasto,303.88,UYU,303.88,Cuenta Casa,,Transporte,Transporte,,Uber,casa,planilla_casa,confirmado,1,fila:1921
-0761fe0ab084,2026-06-30,2026-06,transferencia,266.50,UYU,266.50,Santander UYU,Deudas,,,,"Picada y bebida Rudy, 1/2 prestada (sw:4544405047)",interno,manual,confirmado,0,d134e51ff3af-split
+0761fe0ab084,2026-06-30,2026-06,transferencia,266.50,UYU,266.50,Cuenta Casa,Deudas,,,,"Picada y bebida Rudy, 1/2 prestada (sw:4544405047)",interno,manual,confirmado,0,d134e51ff3af-split
 0f42a84ac15e,2026-06-30,2026-06,gasto,1108.00,UYU,1108.00,Deudas,,Regalos,Regalos,,Pibes,split,1money,confirmado,1,c8fae025-1608-466d-ba56-d53564786c8a
 12e838e36cfb,2026-06-30,2026-06,gasto,562.97,UYU,562.97,Santander Platinum,,Viajes,Viaje,,Roig,personal,1money,confirmado,1,5c5c5adb-b3c1-416c-a5c0-e96c0a2614f0
 1c54443528a3,2026-06-30,2026-06,gasto,1457.00,UYU,1457.00,Cuenta Casa,,Regalos,Regalos,,,casa,1money,confirmado,0,ecc803f9-35f5-40b7-bae5-9a6fad5f3bde
@@ -4519,7 +4519,7 @@ bb8c836f09d8,2026-06-30,2026-06,gasto,16004.50,UYU,16004.50,Santander Platinum,,
 c0f663636b10,2026-06-30,2026-06,gasto,1475.00,UYU,1475.00,Cuenta Casa,,Vivienda,IMM,,,casa,1money,confirmado,0,de0dc066-3ffd-45d6-b6bb-cf9629e9dcd5
 c8dc13107fd3,2026-06-30,2026-06,gasto,1039.00,UYU,1039.00,Cuenta Casa,,Servicios,UTE,,,casa,1money,confirmado,0,cae839a0-85e7-490e-968b-c587ef1f9614
 d0f01e24a675,2026-06-30,2026-06,gasto,1045.00,UYU,1045.00,Cuenta Casa,,Viajes,Viaje,,,casa,1money,confirmado,0,71664570-d612-4ed2-9c72-9d60201ffddc
-d134e51ff3af,2026-06-30,2026-06,gasto,266.50,UYU,266.50,Santander UYU,,Comer afuera / Delivery,Pedir/Comer Afuera,,Picada y bebida Rudy (1/2 con amigos - sw:4544405047),personal,1money,confirmado,1,14fea158-9da4-441f-8256-c5b7b220a4fc
+d134e51ff3af,2026-06-30,2026-06,gasto,266.50,UYU,266.50,Cuenta Casa,,Comer afuera / Delivery,Pedir/Comer Afuera,,Picada y bebida Rudy (1/2 con amigos - sw:4544405047),casa,1money,confirmado,1,14fea158-9da4-441f-8256-c5b7b220a4fc
 d8ec851f9cd1,2026-06-30,2026-06,gasto,15577.00,UYU,15577.00,Cuenta Casa,,Auto,Auto,,,casa,1money,confirmado,0,5b618548-a480-4e2e-bb41-7f39cd767f1d
 dbc88dbbdf4e,2026-06-30,2026-06,gasto,1097.00,UYU,1097.00,Deudas,,Regalos,Regalos,,Pepi,split,1money,confirmado,1,a050d9ba-fbf7-402a-91a6-4fe2cd558393
 ee9ad0852712,2026-06-30,2026-06,gasto,284.24,UYU,284.24,Cuenta Casa,,Transporte,Transporte,,Uber,casa,planilla_casa,confirmado,1,fila:1919
@@ -4582,7 +4582,7 @@ ccd3203d6b75,2026-07-10,2026-07,gasto,407.67,UYU,407.67,Deudas,,Regalos,Alimento
 7e0857a287a0,2026-07-12,2026-07,gasto,203.61,UYU,203.61,Santander UYU,,Super,,MONTEVIDEO/KINKO                VIS3,KINKO,personal,mail,confirmado,1,19f570efc43c61d1
 c0864e169a0e,2026-07-12,2026-07,gasto,466.66,UYU,466.66,Deudas,,Comer afuera / Delivery,Restaurantes,,Pizza,split,splitwise,confirmado,1,sw:4566353446
 c2c5f3c8bf21,2026-07-12,2026-07,gasto,3061.72,UYU,3061.72,Mercado Pago,,Otros,,,"Gasto no identificado durante el parqueo en Mercado Pago (20.000 enviados el 8/7, solo 16.938,28 volvieron el 12/7; MP no manda mail por pago con saldo, cierra exacto contra el extracto real)",casa,manual,confirmado,1,mp-gasto-invisible-mp-202607
-1388d186e49f,2026-07-13,2026-07,gasto,708.29,UYU,708.29,Deudas,,,General,,Carpintero,split,splitwise,pendiente,1,sw:4568645643
+1388d186e49f,2026-07-13,2026-07,gasto,708.29,UYU,708.29,Deudas,,Regalos,General,,Carpintero,split,splitwise,confirmado,1,sw:4568645643
 734e80c7f966,2026-07-13,2026-07,gasto,101.00,UYU,101.00,Santander UYU,,Comer afuera / Delivery,,MONTEVIDEO/CAFETERIA INFINITO COVIS3,CAFETERIA INFINITO CO,personal,mail,confirmado,1,19f5d58cc41bdf8c
 76caa68c4cdc,2026-07-13,2026-07,gasto,171.15,UYU,171.15,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,casa,mail,confirmado,1,19f5d83182023810
 b59457cf353f,2026-07-13,2026-07,gasto,379.27,UYU,379.27,Santander UYU,,Comer afuera / Delivery,,MONTEVIDEO/LA ROTISERIA V       VIS3,LA ROTISERIA V,personal,mail,confirmado,1,19f5c16a4cd1a1ba

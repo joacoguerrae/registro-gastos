@@ -87,3 +87,9 @@ a766454bd53d,motivo_resuelto,split_a_cargar,YouTube: el cargo Apple llega ~22/7;
 d0ed111eb136,motivo_resuelto,split_a_cargar,YouTube: idem,2026-07-12
 1f1a595f6c72,motivo_resuelto,split_a_cargar,"Burger 1.785,20 del 30/6 (6427, aviso pre-backfill): insertada fila manual con split 1/2",2026-07-12
 20fc230ab8e3,motivo_resuelto,split_a_cargar,"Helado = Market 518,36+40 del 30/6 (8261, pre-backfill): insertada fila manual con split 1/4",2026-07-12
+d134e51ff3af,ambito,casa,"Picada y bebida Rudy: confirmado 14/7 que se pago con la tarjeta de casa (PedidosYa) -- reclasificado de personal a casa",2026-07-14
+d134e51ff3af,cuenta,Cuenta Casa,,2026-07-14
+0761fe0ab084,cuenta,Cuenta Casa,"fila hermana (prestamo a Deudas) del mismo evento, misma correccion",2026-07-14
+9793294efd2c,motivo_resuelto,split_a_cargar,"duplicado del mismo evento Splitwise sw:4544405047 ya resuelto en d134e51ff3af (12/7); el matching no lo encontro por el cambio de monto real (533 vs 528 en Splitwise) y fecha (30/6 vs 1/7 en Splitwise). Confirmado 14/7.",2026-07-14
+1388d186e49f,categoria,Regalos,"Carpintero (grupo Caqui Tapa) -- confirmado 14/7",2026-07-14
+1388d186e49f,motivo_resuelto,sin_categoria,,2026-07-14
