@@ -302,9 +302,29 @@ def main():
     suma_tx_ledger = sum(float(r["monto_uyu"]) for r in ledger
                          if r["origen"] == "1money" and r["tipo"] != "transferencia")
     diff_suma = suma_tx_ledger - db["total_monto_uyu"]
-    log("2a.suma_uyu", "OK" if abs(diff_suma) < 0.01 else "DESVIO",
+    # ajuste esperado: resoluciones que modifican a mano monto_uyu de una fila
+    # origen=1money (ej. splits que reducen el gasto a la parte propia) restan
+    # deliberadamente del total frente a la DB cruda — no es un desvio real.
+    ajuste_resoluciones = 0.0
+    ids_1money = {r["fuente_id"]: r["id"] for r in ledger if r["origen"] == "1money"}
+    res_path = P("data", "resoluciones.csv")
+    if os.path.exists(res_path):
+        with open(res_path, encoding="utf-8-sig", newline="") as f:
+            for res in csv.DictReader(f):
+                if res["campo"] != "monto_uyu":
+                    continue
+                fila_actual = next((r for r in ledger if r["id"] == res["id_ledger"]
+                                    and r["origen"] == "1money"), None)
+                if not fila_actual:
+                    continue
+                original = db["tx_rows"].get(fila_actual["fuente_id"], {}).get("uyu")
+                if original is not None:
+                    ajuste_resoluciones += float(res["valor"]) - original
+    diff_ajustado = diff_suma - ajuste_resoluciones
+    log("2a.suma_uyu", "OK" if abs(diff_ajustado) < 0.01 else "DESVIO",
         f"suma monto_uyu transacciones 1money: ledger {suma_tx_ledger:.2f} vs DB "
-        f"{db['total_monto_uyu']:.2f} (diff {diff_suma:.4f})")
+        f"{db['total_monto_uyu']:.2f} (diff crudo {diff_suma:.4f}, ajuste por "
+        f"resoluciones {ajuste_resoluciones:.4f}, diff neto {diff_ajustado:.4f})")
 
     # ---------- 2b. gastos por anio en_analisis=1 ----------
     led_gasto_anio = defaultdict(lambda: defaultdict(float))
