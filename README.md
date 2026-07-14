@@ -53,16 +53,18 @@ python scripts/merge_y_validar.py
 
 Carpeta [Sistema Gastos](https://drive.google.com/drive/folders/1vAPsrCr8_QbHpG_zyj24Erl3jPMzW-ad):
 
-- [gastos_resumen_mensual](https://docs.google.com/spreadsheets/d/10Tfth6Z7V0_W4WzVQJ-GCqro8HeSuV1y8Aj0nob4MDo) — mes × categoría × gasto (2021-11 → 2026-06), desde `out/resumen_mensual.csv`
-- [gastos_presupuesto_vs_real](https://docs.google.com/spreadsheets/d/1c-kDv0qQAdkQg1Qg_WFtg6qM2qgKG3pXlmIg941z1qo) — mes × categoría × presupuesto/real/diferencia (2025-01 → 2026-07), desde `out/presupuesto_vs_real.csv`
-- [gastos_casa_mensual](https://docs.google.com/spreadsheets/d/15YU1L7MFnqbYCkkP8IT0o2e8v7yTPJu8ADvbxHS6cPA) — gastos de la CASA por mes × categoría con la parte de Lu y de Joaco (2023-05 →), desde `out/casa_mensual.csv`
+- [gastos_resumen_mensual](https://docs.google.com/spreadsheets/d/10Tfth6Z7V0_W4WzVQJ-GCqro8HeSuV1y8Aj0nob4MDo) — mes × categoría × gasto, desde `out/resumen_mensual.csv`
+- [gastos_presupuesto_vs_real](https://docs.google.com/spreadsheets/d/1c-kDv0qQAdkQg1Qg_WFtg6qM2qgKG3pXlmIg941z1qo) — mes × categoría × presupuesto/real/diferencia, desde `out/presupuesto_vs_real.csv`
+- [gastos_casa_mensual](https://docs.google.com/spreadsheets/d/15YU1L7MFnqbYCkkP8IT0o2e8v7yTPJu8ADvbxHS6cPA) — gastos de la CASA por mes × categoría con la parte de Lu y de Joaco, desde `out/casa_mensual.csv`
+
+Los 3 Sheets se **refrescan solos en cada corrida** del pipeline (`scripts/actualizar_sheets.py`), escribiendo sobre los mismos archivos por su ID (no se recrean → la conexión de Looker no se rompe). Auth: cuenta de servicio en `config/gcp_service_account.json` (gitignored), con los 3 Sheets compartidos como Editor con su `client_email`.
 
 ## Estado
 
 - [x] Fase 1 — migración del histórico + validación (cierra 0,00 contra fuentes)
-- [x] Fase 1 — export a Google Sheets (falta conectar Looker Studio, 3 clicks del usuario)
+- [x] Fase 1 — export a Google Sheets + Looker Studio
 - [x] Fase 2 — pipeline de mails (parsers + backfill julio verificado 1:1 vs Gmail, ver docs/validacion-fase2.md; comandos /sync-gastos y /revisar-pendientes)
-- [ ] Fase 2.5 — automatización durable (OAuth Google: Gmail API para el pull + escritura de Sheets) — hoy el sync corre vía Claude (cron de sesión 2×/día)
+- [x] Fase 2.5 (parcial) — **refresh automático de los Sheets** vía cuenta de servicio (`scripts/actualizar_sheets.py`, integrado al pipeline). Pendiente: pull de Gmail sin Claude (hoy el fetch de mails corre vía Claude headless desde el Programador de tareas 2×/día).
 - [x] Fase 3 — Splitwise (cuenta Deudas, solo lectura, integrado a `scripts/correr_pipeline.cmd`), cierre continuo de casa (`scripts/cierre_casa.py`, `/cierre-mes`) y conciliación de saldos (`scripts/conciliar_saldos.py`) operativos. Motor de matching de estados de cuenta construido y testeado con estado sintético (`scripts/conciliar_estado.py` + `scripts/test_conciliacion.py`); falta calibrar los extractores de BBVA y Santander Mastercard con el primer PDF real (ver `data/estados/`).
 - [ ] Fase 4 — presupuesto integrado + alertas
 

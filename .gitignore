@@ -1,4 +1,5 @@
 config/secrets.local.json
+config/gcp_service_account.json
 .claude/settings.local.json
 out/sync_log.txt
 __pycache__/
