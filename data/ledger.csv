@@ -4579,5 +4579,12 @@ d67303385bbf,2026-07-09,2026-07,gasto,3794.00,UYU,3794.00,Santander Platinum,,Au
 54e12ba772cb,2026-07-10,2026-07,transferencia,150.37,USD,6064.42,Santander UYU,BBVA Crédito,,,INTERNET/Proyecto PAS,Pago tarjeta BBVA (Proyecto PAS),interno,mail,confirmado,0,19f4cc50713be2b9
 ccd3203d6b75,2026-07-10,2026-07,gasto,407.67,UYU,407.67,Deudas,,Regalos,Alimentos,,Regalo papa,split,splitwise,confirmado,1,sw:4562555128
 0a5e441cd7e9,2026-07-12,2026-07,transferencia,16938.28,UYU,16938.28,Mercado Pago,Cuenta Casa,,,,Retorno fondo casa desde Mercado Pago,interno,mail,confirmado,0,19f56d608e88460c
+7e0857a287a0,2026-07-12,2026-07,gasto,203.61,UYU,203.61,Santander UYU,,Super,,MONTEVIDEO/KINKO                VIS3,KINKO,personal,mail,confirmado,1,19f570efc43c61d1
 c0864e169a0e,2026-07-12,2026-07,gasto,466.66,UYU,466.66,Deudas,,Comer afuera / Delivery,Restaurantes,,Pizza,split,splitwise,confirmado,1,sw:4566353446
 c2c5f3c8bf21,2026-07-12,2026-07,gasto,3061.72,UYU,3061.72,Mercado Pago,,Otros,,,"Gasto no identificado durante el parqueo en Mercado Pago (20.000 enviados el 8/7, solo 16.938,28 volvieron el 12/7; MP no manda mail por pago con saldo, cierra exacto contra el extracto real)",casa,manual,confirmado,1,mp-gasto-invisible-mp-202607
+1388d186e49f,2026-07-13,2026-07,gasto,708.29,UYU,708.29,Deudas,,,General,,Carpintero,split,splitwise,pendiente,1,sw:4568645643
+734e80c7f966,2026-07-13,2026-07,gasto,101.00,UYU,101.00,Santander UYU,,Comer afuera / Delivery,,MONTEVIDEO/CAFETERIA INFINITO COVIS3,CAFETERIA INFINITO CO,personal,mail,confirmado,1,19f5d58cc41bdf8c
+76caa68c4cdc,2026-07-13,2026-07,gasto,171.15,UYU,171.15,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,casa,mail,confirmado,1,19f5d83182023810
+b59457cf353f,2026-07-13,2026-07,gasto,379.27,UYU,379.27,Santander UYU,,Comer afuera / Delivery,,MONTEVIDEO/LA ROTISERIA V       VIS3,LA ROTISERIA V,personal,mail,confirmado,1,19f5c16a4cd1a1ba
+c77114e2d481,2026-07-13,2026-07,gasto,343.28,UYU,343.28,Santander UYU,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa Plus   VIS3,DLO*PedidosYa Plus,personal,mail,confirmado,1,19f5bc3c195263e6
+cfb644daa9fa,2026-07-13,2026-07,gasto,35.00,UYU,35.00,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,19f5da529344bad7
