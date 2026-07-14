@@ -457,9 +457,13 @@ def main():
             resumen[(r["mes"], r["categoria"] or "(sin categoria)")] += float(r["monto_uyu"])
     with open(OUT_RESUMEN, "w", encoding="utf-8", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["mes", "categoria", "gasto_uyu"])
+        # "fecha" (YYYY-MM-01, ISO) ademas de "mes" (YYYY-MM): Looker Studio
+        # reconoce fechas ISO con guion como tipo Fecha automaticamente, pero
+        # "YYYY-MM" con guion NO calza con su formato "Año Mes" (que exige
+        # YYYYMM sin separador) -> "mes" quedaba ilegible como fecha en Looker.
+        w.writerow(["mes", "fecha", "categoria", "gasto_uyu"])
         for (mes, cat), v in sorted(resumen.items()):
-            w.writerow([mes, cat, f"{v:.2f}"])
+            w.writerow([mes, f"{mes}-01", cat, f"{v:.2f}"])
     log("4.resumen", "OK",
         f"{len(resumen)} filas (mes,categoria) -> out/resumen_mensual.csv; "
         f"suma total {sum(resumen.values()):.2f}")

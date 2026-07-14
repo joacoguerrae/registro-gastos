@@ -30,10 +30,13 @@ claves = sorted(set(ppto) | set(real))
 out_path = P("out", "presupuesto_vs_real.csv")
 with open(out_path, "w", encoding="utf-8", newline="") as f:
     w = csv.writer(f)
-    w.writerow(["mes", "categoria", "presupuesto", "gasto_real", "diferencia"])
+    # "fecha" (YYYY-MM-01, ISO): Looker Studio la reconoce como tipo Fecha
+    # automaticamente; "mes" (YYYY-MM con guion) no calza con su formato
+    # "Año Mes" (que exige YYYYMM sin separador) y quedaba ilegible como fecha.
+    w.writerow(["mes", "fecha", "categoria", "presupuesto", "gasto_real", "diferencia"])
     for mes, cat in claves:
         p, g = round(ppto.get((mes, cat), 0), 2), round(real.get((mes, cat), 0), 2)
-        w.writerow([mes, cat, p, g, round(g - p, 2)])
+        w.writerow([mes, f"{mes}-01", cat, p, g, round(g - p, 2)])
 
 print(f"{out_path}: {len(claves)} filas, "
       f"ppto total {sum(ppto.values()):,.0f}, real total {sum(real.values()):,.0f}")
@@ -99,10 +102,10 @@ with open(P("data", "ledger.csv"), encoding="utf-8", newline="") as f:
 out_casa = P("out", "casa_mensual.csv")
 with open(out_casa, "w", encoding="utf-8", newline="") as f:
     w = csv.writer(f)
-    w.writerow(["mes", "categoria", "gasto_total", "gasto_lu", "gasto_joaco"])
+    w.writerow(["mes", "fecha", "categoria", "gasto_total", "gasto_lu", "gasto_joaco"])
     for (mes, cat) in sorted(casa):
         t, lu, jo = casa[(mes, cat)]
-        w.writerow([mes, cat, round(t, 2), round(lu, 2), round(jo, 2)])
+        w.writerow([mes, f"{mes}-01", cat, round(t, 2), round(lu, 2), round(jo, 2)])
 
 tot = [sum(v[i] for v in casa.values()) for i in range(3)]
 print(f"{out_casa}: {len(casa)} filas, total {tot[0]:,.0f} "
