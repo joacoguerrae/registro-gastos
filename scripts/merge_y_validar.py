@@ -450,11 +450,41 @@ def main():
         f"{len(x['huerfanas'])} gastos de la planilla fuera de toda ventana "
         f"(no migrados al ledger), suma {hsum:.2f} UYU -> {hclas_txt}")
 
-    # ---------- 4. resumen mensual ----------
+    # ---------- 4. resumen mensual (PERSONAL: solo la parte de Joaco) ----------
+    # out/resumen_mensual.csv alimenta el presupuesto PERSONAL de Joaco (Sheet
+    # gastos_resumen_mensual y presupuesto_vs_real.csv). Un gasto ambito=casa
+    # es compartido con Lu: contar el monto_uyu completo duplicaria su parte
+    # dentro del presupuesto de Joaco. Se aplica el mismo coeficiente/
+    # participacion que usa el dashboard de casa (out/casa_mensual.csv) para
+    # quedarse solo con la porcion de Joaco.
+    ingresos_mes = {}
+    with open(P("config", "ingresos.csv"), encoding="utf-8-sig", newline="") as f:
+        for r in csv.DictReader(f):
+            tot_ing = float(r["ingreso_lu"]) + float(r["ingreso_joaco"])
+            ingresos_mes[r["mes"]] = float(r["ingreso_joaco"]) / tot_ing
+
+    def coef_joaco(mes):
+        if mes in ingresos_mes:
+            return ingresos_mes[mes]
+        previos = sorted(m for m in ingresos_mes if m <= mes)
+        return ingresos_mes[previos[-1]] if previos else 0.5
+
+    participaciones = {}
+    part_path = P("data", "participaciones.csv")
+    if os.path.exists(part_path):
+        with open(part_path, encoding="utf-8-sig", newline="") as f:
+            participaciones = {r["id_ledger"]: float(r["frac_joaco"])
+                               for r in csv.DictReader(f)}
+
     resumen = defaultdict(float)
     for r in ledger:
-        if r["tipo"] == "gasto" and r["en_analisis"] == "1":
-            resumen[(r["mes"], r["categoria"] or "(sin categoria)")] += float(r["monto_uyu"])
+        if r["tipo"] != "gasto" or r["en_analisis"] != "1":
+            continue
+        monto = float(r["monto_uyu"])
+        if r["ambito"] == "casa":
+            frac = participaciones.get(r["id"], coef_joaco(r["mes"]))
+            monto *= frac
+        resumen[(r["mes"], r["categoria"] or "(sin categoria)")] += monto
     with open(OUT_RESUMEN, "w", encoding="utf-8", newline="") as f:
         w = csv.writer(f)
         # "fecha" (YYYY-MM-01, ISO) ademas de "mes" (YYYY-MM): Looker Studio
@@ -465,7 +495,8 @@ def main():
         for (mes, cat), v in sorted(resumen.items()):
             w.writerow([mes, f"{mes}-01", cat, f"{v:.2f}"])
     log("4.resumen", "OK",
-        f"{len(resumen)} filas (mes,categoria) -> out/resumen_mensual.csv; "
+        f"{len(resumen)} filas (mes,categoria) -> out/resumen_mensual.csv "
+        f"(PERSONAL: casa dividida por coeficiente/participacion); "
         f"suma total {sum(resumen.values()):.2f}")
 
     gasto_2026 = sum(v for (m, _), v in resumen.items() if m.startswith("2026"))
