@@ -9,3 +9,5 @@ sender,info_uy@email.directvla.com,facturas DirecTV (informativo)
 denylist_subject,monitoreo de umbral,aviso de monitoreo — no es transaccion
 denylist_subject,rechazo de tarjeta,rechazo = la transaccion no se concreto
 denylist_subject,tarjeta rechazada,idem rechazo
+nota_fase3,bbvanetnotificacionesp@grupobbva.com.uy,estado de cuenta BBVA (PDF adjunto) - Fase 3: agregar como sender + guardar adjunto cuando se armen los extractores de PDF
+nota_fase3,Santander Mastercard,estado de cuenta MC - Fase 3 igual que BBVA

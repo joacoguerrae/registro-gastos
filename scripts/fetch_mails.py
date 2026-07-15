@@ -97,22 +97,39 @@ def leer_after():
     return d.strftime("%Y/%m/%d")
 
 
+BLOCK_TAGS = {"p", "div", "tr", "table", "li", "ul", "ol", "h1", "h2", "h3", "h4",
+              "h5", "h6", "td", "th", "section", "article", "header", "footer",
+              "blockquote"}
+
+
 def html_a_texto(html):
-    """HTML del mail -> texto plano determinístico, una línea por elemento de texto.
-    Compatible con campo_bloque()/campos_transferencia() de procesar_mails.py, que
-    esperan etiqueta y valor en líneas separadas (avisos) o 'Etiqueta: valor'
-    (transferencias)."""
+    """HTML del mail -> texto plano determinístico, UNA línea por bloque (celda/fila),
+    elementos inline unidos por espacio, SIN líneas en blanco.
+
+    Extrae a nivel de bloque (no por nodo de texto) para no partir etiquetas como
+    'VISA terminada en' cuyo interior tiene spans inline; y elimina líneas en blanco
+    para que etiqueta y valor queden adyacentes. Así funcionan los dos parsers de
+    procesar_mails.py: campo_bloque() (etiqueta\\nvalor\\nsiguiente en avisos) y
+    campos_transferencia() (etiqueta seguida del valor en la línea siguiente)."""
     soup = BeautifulSoup(html, "lxml")
     for tag in soup(["style", "script", "head", "title"]):
         tag.decompose()
-    txt = soup.get_text(separator="\n")
+    for br in soup.find_all("br"):
+        br.replace_with("\n")
+    for tag in soup.find_all(BLOCK_TAGS):
+        tag.append("\n")                  # salto de línea al cierre de cada bloque
+    txt = soup.get_text(separator=" ")    # inline unido por espacio
     out = []
-    for ln in txt.splitlines():
-        ln = ln.strip()
-        if ln == "" and (not out or out[-1] == ""):
-            continue                      # colapsa líneas en blanco consecutivas
-        out.append(ln)
-    return "\n".join(out).strip()
+    for ln in txt.split("\n"):
+        # Colapsa runs de espacio/tab/nbsp a uno solo. Necesario: get_text(separator=" ")
+        # inserta un espacio entre nodos inline, generando "VISA  terminada en" (doble)
+        # que si no rompe el match literal de la etiqueta en campo_bloque(). Efecto
+        # colateral benigno: el padding del establecimiento crudo (campo comercio) queda
+        # normalizado a un espacio — descripcion/categoria/monto/ambito no cambian.
+        ln = re.sub(r"[ \t\xa0]+", " ", ln).strip()
+        if ln:                            # descarta líneas vacías
+            out.append(ln)
+    return "\n".join(out)
 
 
 def ids_ya_vistos():

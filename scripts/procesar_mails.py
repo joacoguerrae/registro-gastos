@@ -541,11 +541,13 @@ def main():
         mon = lambda simbolo: {"US$": "USD", "USD": "USD", "€": "EUR"}.get(simbolo, "UYU")
 
         if "googleplay-noreply@google.com" in frm:
-            m = re.search(r"Total:\s*(US\$|\$|€)\s*([\d.,]+)", b)
+            # \s tolera el espacio ("Total :") y el salto de línea que introduce
+            # html_a_texto al partir la tabla en celdas (fetch determinístico).
+            m = re.search(r"Total\s*:\s*(US\$|\$|€)\s*([\d.,]+)", b)
             if not m:
                 return None
             out.update(moneda=mon(m.group(1)), monto=num(m.group(2)))
-            mp = re.search(r"(?m)^(.+?)\s*\(de .+?\)\s*(?:US\$|\$|€)", b)
+            mp = re.search(r"([^\n]+?)\s*\(de [^\n]+?\)\s*(?:US\$|\$|€)", b)
             out["producto"] = f"Google Play – {mp.group(1).strip()}" if mp else "Google Play"
             mt = re.search(r"Visa[- ]?(\d{4})", b)
             out["tarjeta"] = mt.group(1) if mt else ""
