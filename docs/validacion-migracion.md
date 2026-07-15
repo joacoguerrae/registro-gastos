@@ -5,11 +5,11 @@ Generado por `scripts/merge_y_validar.py` el 2026-07-15. Todas las cifras de fue
 ## 1. Merge → data/ledger.csv
 
 - Filas totales: **4602** (3060 de 1money + 1465 de planilla_casa + 77 de otros origenes preservados: mail, etc.)
-- Por tipo: {'gasto': 3946, 'ingreso': 437, 'transferencia': 219}
+- Por tipo: {'gasto': 3944, 'ingreso': 437, 'transferencia': 221}
 - Rango de fechas: 2021-11-01 → 2026-07-14
 - IDs únicos: sí
 - Suma |monto_uyu| (todas las filas con valor): 16,111,153.87
-- Celdas vacías fuera de regla del esquema: {'categoria': 2}
+- Celdas vacías fuera de regla del esquema: ninguna
 - Gasto 2026 en análisis (en_analisis=1): **809,893.92 UYU**
 
 ## 2a. Conteos vs MyFinance.db
@@ -149,8 +149,8 @@ Resultado: **10/10 OK**
 
 | Validación | Estado | Detalle |
 |---|---|---|
-| 1.merge | OK | 4602 filas ({'1money': 3060, 'planilla_casa': 1465, 'manual': 15, 'mail': 57, 'splitwise': 5}), tipos {'gasto': 3946, 'ingreso': 437, 'transferencia': 219}, rango 2021-11-01 -> 2026-07-14, ids duplicados: ninguno |
-| 1.vacios | DESVIO | celdas vacias fuera de regla: {'categoria': 2} |
+| 1.merge | OK | 4602 filas ({'1money': 3060, 'planilla_casa': 1465, 'manual': 15, 'mail': 57, 'splitwise': 5}), tipos {'gasto': 3944, 'ingreso': 437, 'transferencia': 221}, rango 2021-11-01 -> 2026-07-14, ids duplicados: ninguno |
+| 1.vacios | OK | celdas vacias fuera de regla: 0 |
 | 1.suma | OK | suma \|monto_uyu\| todas las filas: 16111153.87 |
 | 2a.conteos | OK | DB: 2853 tx activas / 207 transfers; ledger 1money: 2853 tx / 207 transfers (esperado 2853/207) |
 | 2a.suma_uyu | OK | suma monto_uyu transacciones 1money: ledger 12175685.86 vs DB 12175952.36 (diff crudo -266.5000, ajuste por resoluciones -266.5000, diff neto 0.0000) |

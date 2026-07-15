@@ -109,3 +109,5 @@ e2a0018c20eb,descripcion,"Aviso duplicado Proyecto PAS USD 530,47 (mismo pago)",
 e2a0018c20eb,motivo_resuelto,posible_duplicado,,2026-07-15
 e2a0018c20eb,motivo_resuelto,tc_estimado,,2026-07-15
 e2a0018c20eb,motivo_resuelto,sin_categoria,,2026-07-15
+cc9d9b3463de,tipo,transferencia,"duplicado de la transferencia e89f07151e87 (Proyecto PAS USD 530,47 del 1/7) - queda como transferencia interna igual que la real; evita DESVIO 1.vacios",2026-07-15
+e2a0018c20eb,tipo,transferencia,"duplicado de la transferencia e89f07151e87 (Proyecto PAS USD 530,47 del 1/7) - queda como transferencia interna igual que la real; evita DESVIO 1.vacios",2026-07-15
