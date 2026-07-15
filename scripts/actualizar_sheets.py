@@ -18,11 +18,12 @@ imprime un diagnostico claro (el pipeline lo trata como paso opcional).
 import csv
 import os
 import sys
+import json
 
 import gspread
 from google.oauth2.service_account import Credentials
 
-BASE = r"C:\Users\joaco\Desktop\proyectos claude\gastos"
+BASE = os.environ.get("GASTOS_BASE") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 P = lambda *a: os.path.join(BASE, *a)
 
 CREDS = P("config", "gcp_service_account.json")
@@ -58,11 +59,16 @@ def cargar(path):
 
 
 def main():
-    if not os.path.exists(CREDS):
-        print(f"ERROR: falta {CREDS} (cuenta de servicio). Ver docs/fase3.md / README.",
-              file=sys.stderr)
-        return 2
-    creds = Credentials.from_service_account_file(CREDS, scopes=SCOPES)
+    # Env var (GitHub Actions) tiene prioridad; si no, archivo local (corridas en la PC).
+    sa_json = os.environ.get("GCP_SA_JSON")
+    if sa_json:
+        creds = Credentials.from_service_account_info(json.loads(sa_json), scopes=SCOPES)
+    else:
+        if not os.path.exists(CREDS):
+            print(f"ERROR: falta {CREDS} (cuenta de servicio). Ver docs/fase3.md / README.",
+                  file=sys.stderr)
+            return 2
+        creds = Credentials.from_service_account_file(CREDS, scopes=SCOPES)
     gc = gspread.authorize(creds)
 
     errores = 0

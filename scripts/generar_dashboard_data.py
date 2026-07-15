@@ -10,7 +10,7 @@ import os
 import re
 from collections import defaultdict
 
-BASE = r"C:\Users\joaco\Desktop\proyectos claude\gastos"
+BASE = os.environ.get("GASTOS_BASE") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 P = lambda *a: os.path.join(BASE, *a)
 
 ppto = defaultdict(float)

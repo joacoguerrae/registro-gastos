@@ -38,7 +38,7 @@ from collections import Counter, defaultdict
 
 import requests
 
-BASE = r"C:\Users\joaco\Desktop\proyectos claude\gastos"
+BASE = os.environ.get("GASTOS_BASE") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 P = lambda *a: os.path.join(BASE, *a)
 
 LEDGER = P("data", "ledger.csv")
@@ -126,8 +126,11 @@ def traer_gastos(session):
 
 
 def main():
-    with open(SECRETS, encoding="utf-8") as f:
-        api_key = json.load(f)["splitwise_api_key"]
+    # Env var (GitHub Actions) tiene prioridad; si no, archivo local (corridas en la PC).
+    api_key = os.environ.get("SPLITWISE_API_KEY")
+    if not api_key:
+        with open(SECRETS, encoding="utf-8") as f:
+            api_key = json.load(f)["splitwise_api_key"]
     session = requests.Session()
     session.headers["Authorization"] = f"Bearer {api_key}"
 
