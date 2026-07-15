@@ -148,14 +148,29 @@ def campo_bloque(body, label, siguiente):
 
 
 def campos_transferencia(body):
-    """Parser por líneas: una etiqueta termina en ':'; el valor es la línea
-    siguiente si no es otra etiqueta."""
+    """Parser de pares etiqueta/valor de los avisos de transferencia. Tolera
+    los DOS layouts en que Claude renderiza el mail (varían entre corridas):
+      A) etiqueta sola en su línea, valor en la línea siguiente:
+           Monto:
+           UYU 1700,00
+      B) etiqueta y valor en la MISMA línea:
+           Monto: UYU 1700,00
+    """
     lines = [ln.strip() for ln in body.splitlines()]
     vals = defaultdict(str)
     for i, ln in enumerate(lines):
-        if ln.endswith(":"):
+        if ":" not in ln:
+            continue
+        etiqueta, _, resto = ln.partition(":")
+        clave = etiqueta.strip().lower()
+        resto = resto.strip()
+        if resto:                       # layout B: valor en la misma línea
+            vals[clave] = resto
+        else:                           # layout A: valor en la línea siguiente
             nxt = lines[i + 1] if i + 1 < len(lines) else ""
-            vals[ln[:-1].strip().lower()] = "" if nxt.endswith(":") else nxt
+            # la línea siguiente es un valor sólo si no es a su vez otra etiqueta
+            # "sola" (termina en ':' sin nada después)
+            vals[clave] = "" if nxt.endswith(":") else nxt
     return vals
 
 

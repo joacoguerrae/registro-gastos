@@ -51,3 +51,5 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 19f5d83182023810,2026-07-13T22:04:57Z,aviso_tarjeta,insertado,76caa68c4cdc,8261 UYU 171.15 MONTEVIDEO/DLO*PedidosYa Market VIS3 -> Cuenta Casa/casa/Super,8261||171.15||MONTEVIDEO/DLO*PedidosYa Market VIS3||2026-07-13T19:04:56,2026-07-14T12:04:11+00:00
 19f5da529344bad7,2026-07-13T22:42:10Z,aviso_tarjeta,insertado,cfb644daa9fa,8261 UYU 35.00 MONTEVIDEO/DLO*PedidosYa PropinaVIS3 -> Cuenta Casa/casa/Super,8261||35.00||MONTEVIDEO/DLO*PedidosYa PropinaVIS3||2026-07-13T19:42:09,2026-07-14T12:04:11+00:00
 19f5d65c0e4e7bd9,2026-07-13T21:32:48Z,factura,factura,,"Antel  venc  (informativo, no toca ledger)",,2026-07-14T12:04:11+00:00
+19f631c65b7d055e,2026-07-15T00:10:28Z,aviso_tarjeta,insertado,97f349ce20d4,6427 UYU 462.14 DLOPEDIDOSYA -> Santander Platinum/personal/Comer afuera / Delivery,6427||462.14||DLOPEDIDOSYA||2026-07-14T21:10:23,2026-07-15T01:45:39+00:00
+19f62a0f0fe92f98,2026-07-14T21:55:38Z,transferencia,insertado,4b143d8ed924,Aviso de transferencia en plaza | Yova 'Lu y Joaco a Yova' UYU 1700.00 2026-07-14 -> gasto/personal/(sin categoria),,2026-07-15T01:45:39+00:00
