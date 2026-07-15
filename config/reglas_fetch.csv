@@ -1,0 +1,11 @@
+tipo,valor,nota
+sender,notificaciones@santander.com.uy,avisos de tarjeta debito/credito + transferencias
+sender,no_reply@email.apple.com,recibos Apple
+sender,googleplay-noreply@google.com,recibos Google Play
+sender,info@mercadolibre.com.uy,recibos MercadoLibre / Meli+
+sender,info@mercadopago.com,recibos y transferencias MercadoPago
+sender,factura@antel.com.uy,facturas Antel (informativo)
+sender,info_uy@email.directvla.com,facturas DirecTV (informativo)
+denylist_subject,monitoreo de umbral,aviso de monitoreo — no es transaccion
+denylist_subject,rechazo de tarjeta,rechazo = la transaccion no se concreto
+denylist_subject,tarjeta rechazada,idem rechazo

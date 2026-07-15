@@ -49,6 +49,14 @@ def main():
         info = json.load(f)
     inst = info.get("installed") or info.get("web") or {}
 
+    # Guardar token local (gitignored) para que fetch_mails.py corra en la PC.
+    token_file = os.path.join(BASE, "config", "gmail_token.json")
+    with open(token_file, "w", encoding="utf-8") as f:
+        json.dump({"client_id": inst.get("client_id", ""),
+                   "client_secret": inst.get("client_secret", ""),
+                   "refresh_token": creds.refresh_token}, f, indent=2)
+    print(f"\nGuardado {token_file} (gitignored) para las corridas locales.")
+
     print("\n" + "=" * 64)
     print("SECRETOS PARA GITHUB  (repo -> Settings -> Secrets and variables -> Actions)")
     print("=" * 64)
