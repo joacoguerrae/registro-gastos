@@ -93,3 +93,6 @@ d134e51ff3af,cuenta,Cuenta Casa,,2026-07-14
 9793294efd2c,motivo_resuelto,split_a_cargar,"duplicado del mismo evento Splitwise sw:4544405047 ya resuelto en d134e51ff3af (12/7); el matching no lo encontro por el cambio de monto real (533 vs 528 en Splitwise) y fecha (30/6 vs 1/7 en Splitwise). Confirmado 14/7.",2026-07-14
 1388d186e49f,categoria,Regalos,"Carpintero (grupo Caqui Tapa) -- confirmado 14/7",2026-07-14
 1388d186e49f,motivo_resuelto,sin_categoria,,2026-07-14
+4b143d8ed924,categoria,Casa & hogar,Yova = limpieza de la casa (confirmado 14/7),2026-07-14
+4b143d8ed924,ambito,casa,,2026-07-14
+4b143d8ed924,motivo_resuelto,transferencia_a_clasificar,,2026-07-14
