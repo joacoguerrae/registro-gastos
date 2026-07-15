@@ -1,0 +1,103 @@
+name: Sync gastos
+
+# Corre el pipeline de gastos en la nube (reemplaza las tareas de Windows).
+# Fase 1 (fetch): fetch_mails.py (Gmail API determinística).
+# Fase 2 (pipeline): splitwise -> procesar_mails -> validación -> dashboard -> Sheets -> commit.
+#
+# MODO:
+#   - shadow (default): corre fetch + pipeline + validación pero NO commitea/pushea ni
+#     toca Sheets. Sirve para la semana de validación en paralelo (la PC sigue siendo dueña).
+#   - live: además genera dashboards, actualiza Sheets y hace commit+push.
+# Se controla con la variable de repo SYNC_MODE (Settings -> Variables) o el input del dispatch.
+
+on:
+  schedule:
+    - cron: '23 12 * * *'   # ~09:23 Uruguay (UTC-3)
+    - cron: '23 0 * * *'    # ~21:23 Uruguay
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'shadow (no push) | live (commit+push+sheets)'
+        type: choice
+        options: [shadow, live]
+        default: shadow
+
+concurrency:
+  group: sync-gastos
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      MODE: ${{ github.event.inputs.mode || vars.SYNC_MODE || 'shadow' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Fetch mails (Gmail API)
+        env:
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+        run: python scripts/fetch_mails.py
+
+      - name: Sync Splitwise
+        env:
+          SPLITWISE_API_KEY: ${{ secrets.SPLITWISE_API_KEY }}
+        run: |
+          python scripts/sync_splitwise.py || echo "(aviso: splitwise fallo, el pipeline sigue sin el)"
+
+      - name: Procesar mails
+        run: python scripts/procesar_mails.py
+
+      - name: Validar (falla si hay ERROR/DESVIO fuera del baseline 2c)
+        run: |
+          set -o pipefail
+          python scripts/merge_y_validar.py | tee /tmp/val.txt
+          if grep -E '\[(ERROR|DESVIO)\]' /tmp/val.txt | grep -vq '2c\.doble_conteo'; then
+            echo "::error::Validación con ERROR/DESVIO nuevo (fuera del baseline 2c documentado)"
+            grep -E '\[(ERROR|DESVIO)\]' /tmp/val.txt | grep -v '2c\.doble_conteo' || true
+            exit 1
+          fi
+
+      - name: Dashboards + Sheets + commit (solo live)
+        if: env.MODE == 'live'
+        env:
+          GCP_SA_JSON: ${{ secrets.GCP_SA_JSON }}
+        run: |
+          python scripts/generar_dashboard_data.py
+          python scripts/actualizar_sheets.py || echo "(aviso: Sheets falló, Looker usa datos previos)"
+          git config user.name "gastos-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "sin cambios para commitear"
+          else
+            git commit -m "sync automático (Actions) $(date -u +%Y-%m-%dT%H:%MZ)"
+            git pull --rebase origin ${{ github.ref_name }}
+            git push
+          fi
+
+      - name: Resumen shadow (no commitea)
+        if: env.MODE != 'live'
+        run: |
+          {
+            echo "### Modo SHADOW — no se commiteó (la PC sigue siendo dueña)"
+            echo "Cambios que el pipeline HABRÍA agregado:"
+            echo '```'
+            git status --short
+            echo "--- filas nuevas/cambiadas en ledger.csv ---"
+            git diff --stat data/ledger.csv data/pendientes.csv
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
