@@ -4535,9 +4535,9 @@ f7c5a9b846f5,2026-06-30,2026-06,gasto,2305.32,UYU,2305.32,Cuenta Casa,,Auto,Auto
 77c26159e14d,2026-07-01,2026-07,ingreso,3.00,UYU,3.00,Santander UYU,,,Ajuste saldo,,,interno,1money,confirmado,0,39601714-a704-4967-8949-1183a1aa2b31
 a6ef3e758f12,2026-07-01,2026-07,gasto,1.99,USD,80.26,Santander Platinum,,Suscripciones,,Google Play – 100 GB (Google One),GOOGLE,personal,mail,confirmado,1,19f1e0a3bdedcd85
 a7ad2ee2689b,2026-07-01,2026-07,gasto,199.00,UYU,199.00,Santander UYU,,Suscripciones,,Meli+,Meli+,personal,mail,confirmado,1,19f1ea948535c030
-cc9d9b3463de,2026-07-01,2026-07,gasto,530.47,USD,21393.86,Santander UYU,,,,INTERNET/Proyecto PAS,Proyecto PAS,personal,mail,pendiente,1,19f2003efb5b8b33
+cc9d9b3463de,2026-07-01,2026-07,gasto,530.47,USD,21393.86,Santander UYU,,,,INTERNET/Proyecto PAS,"Aviso duplicado Proyecto PAS USD 530,47 (mismo pago)",interno,mail,confirmado,0,19f2003efb5b8b33
 cd8675911f7c,2026-07-01,2026-07,transferencia,12000.00,UYU,12000.00,Santander UYU,Cuenta Casa,,,,Aporte,interno,1money,confirmado,0,0a13fd62-4a10-441c-a36f-6c2a2496ae95
-e2a0018c20eb,2026-07-01,2026-07,gasto,530.47,USD,21393.86,Santander UYU,,,,INTERNET/Proyecto PAS,Proyecto PAS,personal,mail,pendiente,1,19f2005c1e492a7d
+e2a0018c20eb,2026-07-01,2026-07,gasto,530.47,USD,21393.86,Santander UYU,,,,INTERNET/Proyecto PAS,"Aviso duplicado Proyecto PAS USD 530,47 (mismo pago)",interno,mail,confirmado,0,19f2005c1e492a7d
 e89f07151e87,2026-07-01,2026-07,transferencia,530.47,USD,21393.86,Santander UYU,Santander Platinum,,,INTERNET/Proyecto PAS,Pago tarjeta Santander USD (Proyecto PAS),interno,mail,confirmado,0,19f2003eeee734dc
 b3a8a5fd14e4,2026-07-02,2026-07,gasto,949.39,UYU,949.39,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa Bbc BurVIS3,DLO*PedidosYa Bbc Bur,casa,mail,confirmado,1,19f2563d431a6f60
 761e0058038c,2026-07-03,2026-07,gasto,875.41,UYU,875.41,Santander UYU,,Servicios,Celular,INTERNET/Proyecto PAS,Movistar celular (1/2 con Agus - sw:4549344291),personal,mail,confirmado,1,19f27c35c2b77ce0

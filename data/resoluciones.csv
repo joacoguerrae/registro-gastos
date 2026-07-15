@@ -97,3 +97,15 @@ d134e51ff3af,cuenta,Cuenta Casa,,2026-07-14
 4b143d8ed924,ambito,casa,,2026-07-14
 4b143d8ed924,motivo_resuelto,transferencia_a_clasificar,,2026-07-14
 7cdde12cefd9,motivo_resuelto,split_a_cargar,"Guasones: pague el total con 9071 (sin mail), es 100%% prestamo -> transferencia 9071->Deudas 1560. Confirmado 14/7.",2026-07-14
+cc9d9b3463de,en_analisis,0,"aviso duplicado del pago Proyecto PAS USD 530,47 del 1/7 (mismo pago que e89f07151e87) - confirmado 15/7",2026-07-15
+cc9d9b3463de,ambito,interno,,2026-07-15
+cc9d9b3463de,descripcion,"Aviso duplicado Proyecto PAS USD 530,47 (mismo pago)",,2026-07-15
+cc9d9b3463de,motivo_resuelto,posible_duplicado,,2026-07-15
+cc9d9b3463de,motivo_resuelto,tc_estimado,,2026-07-15
+cc9d9b3463de,motivo_resuelto,sin_categoria,,2026-07-15
+e2a0018c20eb,en_analisis,0,"aviso duplicado del pago Proyecto PAS USD 530,47 del 1/7 (mismo pago que e89f07151e87) - confirmado 15/7",2026-07-15
+e2a0018c20eb,ambito,interno,,2026-07-15
+e2a0018c20eb,descripcion,"Aviso duplicado Proyecto PAS USD 530,47 (mismo pago)",,2026-07-15
+e2a0018c20eb,motivo_resuelto,posible_duplicado,,2026-07-15
+e2a0018c20eb,motivo_resuelto,tc_estimado,,2026-07-15
+e2a0018c20eb,motivo_resuelto,sin_categoria,,2026-07-15
