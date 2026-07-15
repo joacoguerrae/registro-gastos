@@ -1,0 +1,6 @@
+# Archivos que corren en Ubuntu (GitHub Actions) deben tener line-endings LF.
+*.sh    text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+# Los .cmd son solo de Windows.
+*.cmd   text eol=crlf

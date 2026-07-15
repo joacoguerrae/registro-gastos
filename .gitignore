@@ -1,6 +1,9 @@
 config/secrets.local.json
 config/gcp_service_account.json
+config/oauth_client.json
+config/gmail_token.json
 .claude/settings.local.json
+.env
 out/sync_log.txt
 __pycache__/
 *.pyc
