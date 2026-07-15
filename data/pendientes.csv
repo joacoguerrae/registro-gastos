@@ -15,3 +15,9 @@ d134e51ff3af,split_a_cargar,"Splitwise sw:4544405047 'Picada y bebida' UYU 528.0
 1388d186e49f,sin_categoria,gasto Splitwise 'Carpintero' (Caqui Tapa) sin regla,2026-07-14,1
 7cdde12cefd9,split_a_cargar,"Splitwise sw:4570616819 'Guasones' UYU 1560.00 (2026-07-14): yo pague 1560.00, mi parte 0.00 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-07-14,1
 4b143d8ed924,transferencia_a_clasificar,"a 'Yova', concepto 'Lu y Joaco a Yova', UYU 1700.00: sin categoria",2026-07-14,1
+cc9d9b3463de,tc_estimado,USD 530.47 x tc 40.33 = 21393.86 UYU (corrige Fase 3),2026-07-15,
+cc9d9b3463de,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-07-15,
+cc9d9b3463de,posible_duplicado,"mismo (tarjeta,monto,establecimiento) que mail 19f2003eeee734dc a las 2026-07-01 20:29:12",2026-07-15,
+e2a0018c20eb,tc_estimado,USD 530.47 x tc 40.33 = 21393.86 UYU (corrige Fase 3),2026-07-15,
+e2a0018c20eb,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-07-15,
+e2a0018c20eb,posible_duplicado,"mismo (tarjeta,monto,establecimiento) que mail 19f2003eeee734dc a las 2026-07-01 20:29:12",2026-07-15,
