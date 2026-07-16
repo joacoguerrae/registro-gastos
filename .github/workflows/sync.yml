@@ -46,6 +46,17 @@ jobs:
       - name: Instalar dependencias
         run: pip install -r requirements.txt
 
+      # Guard barato: un BASE hardcodeado a la ruta de Windows de Joaco rompe el
+      # script solo en la nube (paso silenciosamente por 2 veces: conciliar_estado
+      # y cierre_casa). Se chequea la ASIGNACION, no los ejemplos de uso en docstrings.
+      - name: Guard - sin rutas hardcodeadas en los scripts
+        run: |
+          if grep -rnE '^[A-Za-z_]+ *= *(Path\()?r?"[A-Z]:' scripts/*.py; then
+            echo "::error::Hay un BASE/ruta hardcodeada a una ruta local: rompe en Actions. Usar GASTOS_BASE o __file__."
+            exit 1
+          fi
+          echo "sin rutas hardcodeadas"
+
       - name: Fetch mails (Gmail API)
         env:
           GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
@@ -57,7 +68,7 @@ jobs:
         env:
           SPLITWISE_API_KEY: ${{ secrets.SPLITWISE_API_KEY }}
         run: |
-          python scripts/sync_splitwise.py || echo "(aviso: splitwise fallo, el pipeline sigue sin el)"
+          python scripts/sync_splitwise.py || echo "::warning::sync_splitwise falló — el pipeline siguió sin Splitwise"
 
       - name: Procesar mails
         run: |
@@ -79,10 +90,10 @@ jobs:
         env:
           GCP_SA_JSON: ${{ secrets.GCP_SA_JSON }}
         run: |
-          python scripts/cierre_casa.py || echo "(aviso: cierre_casa falló, la posición de casa queda con el valor previo)"
+          python scripts/cierre_casa.py || echo "::warning::cierre_casa falló — la posición de casa quedó con el valor previo"
           python scripts/generar_dashboard_data.py
-          python scripts/generar_dashboard_html.py || echo "(aviso: dashboard HTML falló)"
-          python scripts/actualizar_sheets.py || echo "(aviso: Sheets falló, Looker usa datos previos)"
+          python scripts/generar_dashboard_html.py || echo "::warning::generar_dashboard_html falló — out/dashboard.html quedó con datos previos"
+          python scripts/actualizar_sheets.py || echo "::warning::actualizar_sheets falló — Looker quedó con datos previos"
           git config user.name "gastos-bot"
           git config user.email "actions@users.noreply.github.com"
           git add -A

@@ -18,13 +18,14 @@ Reglas (docs/esquema.md, seccion "data/presupuesto.csv" y "Presupuestos"):
   sin mapeo -> "Otros" y se reporta.
 - Gasto Real vacio en la hoja -> 0.00 (mes sin gasto registrado; p.ej. todo 2026-07).
 """
+import os
 import csv
 import io
 import re
 import sys
 from pathlib import Path
 
-BASE = Path(r"C:\Users\joaco\Desktop\proyectos claude\gastos")
+BASE = Path(os.environ.get("GASTOS_BASE") or Path(__file__).resolve().parent.parent)
 RAW_DIR = BASE / "data" / "raw" / "presupuestos"
 OUT_CSV = BASE / "data" / "presupuesto.csv"
 MAPEO_CSV = BASE / "config" / "mapeo_categorias.csv"

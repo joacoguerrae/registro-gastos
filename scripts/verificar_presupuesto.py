@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 """Verificacion de data/presupuesto.csv: conteos, sumas, muestra, NaN."""
+import os
 import sys
 import pandas as pd
 
 sys.stdout.reconfigure(encoding="utf-8")
-BASE = r"C:\Users\joaco\Desktop\proyectos claude\gastos"
+BASE = os.environ.get("GASTOS_BASE") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 df = pd.read_csv(BASE + r"\data\presupuesto.csv")
 print("shape:", df.shape)
 print("columnas:", list(df.columns))

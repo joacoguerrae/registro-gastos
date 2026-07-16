@@ -43,7 +43,7 @@ import openpyxl
 
 warnings.filterwarnings("ignore")
 
-BASE = r"C:\Users\joaco\Desktop\proyectos claude\gastos"
+BASE = os.environ.get("GASTOS_BASE") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 XLSX = os.path.join(BASE, "data", "raw", "casa.xlsx")
 MAPEO_CSV = os.path.join(BASE, "config", "mapeo_categorias.csv")
 CATEG_CSV = os.path.join(BASE, "config", "categorias.csv")

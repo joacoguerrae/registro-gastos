@@ -31,6 +31,7 @@ Reglas aplicadas (ver docs/esquema.md):
 - id = sha1('1money' + uid)[:12]; origen=1money; estado=confirmado;
   fuente_id=uid; comercio vacio.
 """
+import os
 import csv
 import hashlib
 import sqlite3
@@ -38,7 +39,7 @@ import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
-BASE = Path(r"C:\Users\joaco\Desktop\proyectos claude\gastos")
+BASE = Path(os.environ.get("GASTOS_BASE") or Path(__file__).resolve().parent.parent)
 DB = BASE / "data" / "raw" / "MyFinance.db"
 OUT = BASE / "data" / "staging" / "ledger_1money.csv"
 CUENTAS_CSV = BASE / "config" / "cuentas.csv"

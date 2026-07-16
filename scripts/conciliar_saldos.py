@@ -39,7 +39,7 @@ import datetime as dt
 import json
 import os
 
-BASE = r"C:\Users\joaco\Desktop\proyectos claude\gastos"
+BASE = os.environ.get("GASTOS_BASE") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 P = lambda *a: os.path.join(BASE, *a)
 
 LEDGER = P("data", "ledger.csv")
