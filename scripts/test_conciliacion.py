@@ -40,13 +40,30 @@ TC_REAL_USD = 41.10   # distinto del tc estimado (40.33, config/parametros.json)
 
 
 def cargar_filas_reales():
+    """Toma un subconjunto FIJO de 6 filas reales para armar el estado sintetico.
+
+    Antes exigia que el ledger tuviera exactamente 6 filas de la cuenta/periodo, y
+    el test se rompia solo cada vez que entraba un gasto nuevo (paso de 6 a 12). Ahora
+    pide un minimo, se queda con las 6 primeras en orden determinista, y devuelve un
+    ledger de prueba SIN las demas filas de esa cuenta/periodo: si quedaran, el motor
+    las marcaria como sin_respaldo (no estan en el estado sintetico) y ensuciarian la
+    asercion. El resto del ledger se conserva para que el test siga siendo realista.
+    """
     ledger_disco = ce.leer_csv(ce.LEDGER, ce.COLUMNS)
-    filas = [r for r in ledger_disco if r["cuenta"] == CUENTA and r["mes"] == PERIODO
-             and r["tipo"] == "gasto"]
-    assert len(filas) == 6, (
-        f"se esperaban 6 filas de gasto de {CUENTA} en {PERIODO}, se encontraron {len(filas)} "
-        "-- el ledger cambio; ajustar el test o revisar data/ledger.csv")
-    return ledger_disco, filas
+    filas = sorted([r for r in ledger_disco
+                    if r["cuenta"] == CUENTA and r["mes"] == PERIODO and r["tipo"] == "gasto"],
+                   key=lambda r: (r["fecha"], r["id"]))
+    assert len(filas) >= 6, (
+        f"se esperaban al menos 6 filas de gasto de {CUENTA} en {PERIODO} para armar el "
+        f"estado sintetico, se encontraron {len(filas)} -- revisar data/ledger.csv")
+    filas = filas[:6]
+    ids = {r["id"] for r in filas}
+    ledger_test = [r for r in ledger_disco
+                   if not (r["cuenta"] == CUENTA and r["mes"] == PERIODO
+                           and r["tipo"] == "gasto" and r["id"] not in ids)]
+    # se devuelven los dos: `ledger_disco` tal cual salio del archivo (para el chequeo
+    # de "el ledger real quedo intacto") y `ledger_test` recortado (para el motor).
+    return ledger_disco, ledger_test, filas
 
 
 def construir_estado_sintetico(filas):
@@ -81,13 +98,13 @@ def construir_estado_sintetico(filas):
 
 
 def main():
-    ledger_real_antes, filas_reales = cargar_filas_reales()
+    ledger_real_antes, ledger_test, filas_reales = cargar_filas_reales()
     estado, dejada_afuera, inventadas = construir_estado_sintetico(filas_reales)
     ids_en_estado = {r["id"] for r in filas_reales if r["id"] != dejada_afuera["id"]}
 
     # COPIA de prueba: deepcopy del ledger completo. El motor muta filas in
     # place (estado, monto_uyu) -- nunca debe tocar ledger_real_antes/disco.
-    ledger_copia = copy.deepcopy(ledger_real_antes)
+    ledger_copia = copy.deepcopy(ledger_test)
     reglas = ce.cargar_reglas()
 
     resultado = ce.conciliar(estado, ledger_copia, reglas)

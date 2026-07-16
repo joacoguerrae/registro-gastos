@@ -4,11 +4,14 @@ Fase 3 — Motor de conciliacion de estados de cuenta (docs/fase3.md seccion 2).
 
 Dos capas separadas a proposito:
 
-  (a) EXTRACTORES DE PDF por emisor (BBVA Visa, Santander Mastercard). Hoy son
-      stubs bien definidos: identifican el emisor por contenido y fallan con
-      ExtraccionPendienteError ("primer PDF real pendiente") hasta calibrarlos
-      con el primer archivo real que Joaco suelte en data/estados/. Tambien
-      vive aca el desbloqueo de PDF con contrasena (CI, en secrets).
+  (a) EXTRACTORES DE PDF por emisor. CALIBRADOS el 2026-07-16 contra 5 PDFs
+      reales (3 BBVA may/jun/jul + 2 Santander MC may/jun 2026), que ahora
+      fetch_mails.py baja solo de los adjuntos del mail. Validacion: la suma de
+      las lineas extraidas coincide EXACTO con el total declarado por cada
+      estado. Tambien vive aca el desbloqueo con contrasena (CI, en secrets):
+      BBVA viene sin encriptar, Santander encriptado.
+      OJO: el PDF de Santander no dice "MASTERCARD" ni "VISA" -> la tarjeta se
+      identifica por el numero de cuenta (config/cuentas_bancarias.csv).
 
   (b) MOTOR DE MATCHING (funcion `conciliar`): NO depende de PDF. Recibe un
       dict "estado" ya extraido (o generado a mano/sintetico) + una lista de
@@ -57,7 +60,7 @@ import os
 import re
 from collections import defaultdict
 
-BASE = r"C:\Users\joaco\Desktop\proyectos claude\gastos"
+BASE = os.environ.get("GASTOS_BASE") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 P = lambda *a: os.path.join(BASE, *a)
 
 LEDGER = P("data", "ledger.csv")
@@ -178,37 +181,161 @@ def detectar_emisor(texto):
     t = texto.upper()
     if "BBVA" in t:
         return "BBVA"
-    if "MASTERCARD" in t and "SANTANDER" in t:
-        return "SANTANDER_MC"
+    # OJO: el PDF de las tarjetas Santander NO dice "MASTERCARD" ni "VISA" (verificado
+    # con los estados reales de may/jun 2026). Se identifica el banco aca y la tarjeta
+    # concreta por el numero de cuenta -> _cuenta_santander().
+    if "SANTANDER" in t and "SU ESTADO DE CUENTA" in t:
+        return "SANTANDER_TARJETA"
     return None
 
 
+def _cuenta_santander(texto):
+    """Mapea el numero de cuenta que trae el estado (ej '800944254160') a la cuenta
+    del ledger, via config/cuentas_bancarias.csv. Como Mastercard y Visa Platinum
+    llegan del mismo remitente y con el mismo layout, el numero es lo unico que las
+    distingue: cuando llegue el primer estado de la Visa, alcanza con agregar su
+    numero a ese CSV (el error de abajo lista los candidatos encontrados)."""
+    path = P("config", "cuentas_bancarias.csv")
+    if os.path.exists(path):
+        with open(path, encoding="utf-8-sig", newline="") as f:
+            for r in csv.DictReader(f):
+                num = (r.get("numero") or "").strip()
+                if num and num in texto:
+                    return r["cuenta_ledger"].strip()
+    nums = sorted(set(re.findall(r"\b\d{10,14}\b", texto)))
+    raise ValueError(
+        "estado Santander: no pude identificar que tarjeta es. Numeros hallados en el "
+        f"PDF: {nums}. Agregá el que corresponda a config/cuentas_bancarias.csv "
+        "(numero -> cuenta_ledger: 'Santander Mastercard' o 'Santander Platinum').")
+
+
+def _num_us(s):
+    """'-1,647.16' -> -1647.16 (BBVA: coma=miles, punto=decimal)."""
+    return float(s.replace(",", ""))
+
+
+def _num_uy(s):
+    """'6.938,82' -> 6938.82 (Santander: punto=miles, coma=decimal)."""
+    return float(s.replace(".", "").replace(",", "."))
+
+
+RE_BBVA_LINEA = re.compile(r"^(\d{2}/\d{2}/\d{4})\s+(.+?)\s+(-?[\d,]+\.\d{2})\s+(-?[\d,]+\.\d{2})$")
+RE_BBVA_FEE = re.compile(r"^(SEGURO VIDA.*?)\s+(-?[\d,]+\.\d{2})\s+(-?[\d,]+\.\d{2})$")
+
+
 def extraer_bbva(texto):
-    """Parser del estado de cuenta BBVA Visa. STUB: BBVA no tiene avisos por
-    transaccion (config/cuentas.csv), por lo que ESTE PDF es la fuente
-    primaria de todos sus gastos -- calibrar apenas Joaco suelte el primero
-    en data/estados/ (secciones del PDF, columnas fecha/descripcion/monto,
-    formato de moneda, total y vencimiento)."""
-    raise ExtraccionPendienteError(
-        "extraer_bbva: primer PDF real de BBVA Visa pendiente para calibrar "
-        "el formato (fecha/descripcion/monto/total/vencimiento). Soltar un "
-        "estado real en data/estados/ y completar esta funcion.")
+    """Parser del estado BBVA Visa. Calibrado 2026-07-16 con 3 PDFs reales
+    (may/jun/jul 2026). BBVA NO manda avisos por transaccion -> este PDF es la
+    fuente primaria de todos sus consumos.
+
+    Formato (el PDF no esta encriptado):
+        Fecha de cierre 02/07/2026 Limite de credito 90,000.00
+        Vencimiento actual 16/07/2026 ...
+        Fecha Descripcion Pesos Dolares
+        SALDO ANTERIOR -1,647.16 173.05
+        04/06/2026 SU PAGO U$S 0.00 -173.05          <- pago, NO es consumo
+        SEGURO VIDA 2,5X1000 11.67 0.00              <- cargo sin fecha
+        28/05/2026 VELOV INTERNET (FR ,EUR, 4,00) 0.00 4.67
+        07/06/2026 MAPFRE 204.51 0.00
+        Total a pagar -1,430.98 150.37
+
+    Dos columnas de monto (Pesos, Dolares): la que no es 0 define la moneda.
+    Los consumos en EUR se facturan en USD y el PDF deja el original entre
+    parentesis en la descripcion. Numeros en formato US.
+    """
+    cierre = re.search(r"Fecha de cierre\s+(\d{2}/\d{2}/\d{4})", texto)
+    if not cierre:
+        raise ValueError("extraer_bbva: no encontre 'Fecha de cierre' (formato inesperado)")
+    f_cierre = dt.datetime.strptime(cierre.group(1), "%d/%m/%Y").date()
+    venc = re.search(r"Vencimiento actual\s+(\d{2}/\d{2}/\d{4})", texto)
+
+    lineas = []
+
+    def agregar(fecha, desc, pesos, dolares):
+        for monto, mon in ((_num_us(pesos), "UYU"), (_num_us(dolares), "USD")):
+            if monto > 0.005:          # negativos = pagos/creditos; 0 = la otra columna
+                lineas.append({"fecha": fecha, "descripcion": desc,
+                               "monto": round(monto, 2), "moneda": mon})
+
+    for ln in texto.splitlines():
+        s = ln.strip()
+        m = RE_BBVA_LINEA.match(s)
+        if m:
+            fecha, desc, pesos, dolares = m.groups()
+            if "SU PAGO" in desc.upper():
+                continue               # pago del periodo anterior
+            agregar(dt.datetime.strptime(fecha, "%d/%m/%Y").date().isoformat(),
+                    desc.strip(), pesos, dolares)
+            continue
+        m2 = RE_BBVA_FEE.match(s)      # cargos sin fecha -> se les pone la de cierre
+        if m2:
+            agregar(f_cierre.isoformat(), m2.group(1).strip(), m2.group(2), m2.group(3))
+
+    tot = re.search(r"Total a pagar\s+(-?[\d,]+\.\d{2})\s+(-?[\d,]+\.\d{2})", texto)
+    return {"periodo": f_cierre.strftime("%Y-%m"),
+            "vencimiento": (dt.datetime.strptime(venc.group(1), "%d/%m/%Y").date().isoformat()
+                            if venc else None),
+            "lineas": lineas,
+            "total": {"UYU": _num_us(tot.group(1)), "USD": _num_us(tot.group(2))} if tot else {}}
+
+
+RE_MC_LINEA = re.compile(r"^(\d{2}/\d{2}/\d{4})\s+(\d{2,4})\s+(.+?)\s+([\d.]+,\d{2})(-?)$")
 
 
 def extraer_santander_mc(texto):
-    """Parser del estado de cuenta Santander Mastercard (tarjeta de la casa,
-    protegido con contrasena = CI). STUB: sin avisos por transaccion
-    tampoco -- calibrar con el primer PDF real."""
-    raise ExtraccionPendienteError(
-        "extraer_santander_mc: primer PDF real de Santander Mastercard "
-        "pendiente para calibrar el formato (fecha/descripcion/monto/total/"
-        "vencimiento). Soltar un estado real en data/estados/ y completar "
-        "esta funcion.")
+    """Parser del estado Santander Mastercard (tarjeta de la casa; PDF con
+    contrasena = CI). Calibrado 2026-07-16 con 2 PDFs reales (may/jun 2026).
+    Tampoco manda avisos por transaccion -> el PDF es la fuente primaria.
+
+    Formato:
+        SALDO ANTERIOR 6.938,82 0,00
+        02/04/2026 103 PAGOS 6.938,82-        <- pago (sufijo '-'), NO es consumo
+        01/04/2026 103 DLO PEDIDOSYA DESMADRE 208,40
+        29/04/2026 103 RIOGAS POCITOS 1.097,00
+        03/05/2026 103 SEGURO SALDO DEUDOR 16,90
+        SALDO TOTAL 5.651,30 0,00
+
+    Numeros en formato uruguayo. El '103' es un codigo de tarjeta. El estado
+    tiene columna U$S pero en los PDFs reales disponibles vino siempre en 0, asi
+    que el formato de consumos en dolares NO esta calibrado: si aparece un total
+    en USD sin lineas en USD, se avisa (no se inventa).
+    """
+    lineas = []
+    for ln in texto.splitlines():
+        m = RE_MC_LINEA.match(ln.strip())
+        if not m:
+            continue
+        fecha, _cod, desc, monto, neg = m.groups()
+        desc = desc.strip()
+        if neg or "PAGOS" in desc.upper():
+            continue                   # pagos/creditos
+        lineas.append({"fecha": dt.datetime.strptime(fecha, "%d/%m/%Y").date().isoformat(),
+                       "descripcion": desc, "monto": round(_num_uy(monto), 2), "moneda": "UYU"})
+
+    tot = re.search(r"SALDO TOTAL\s+([\d.]+,\d{2})\s+([\d.]+,\d{2})", texto)
+    total = {"UYU": _num_uy(tot.group(1)), "USD": _num_uy(tot.group(2))} if tot else {}
+    # El PDF no rotula la fecha de cierre de forma parseable: el periodo sale del
+    # ultimo consumo (cierra pocos dias despues). Si no hay consumos (estado
+    # vacio), se usa la primera fecha que sigue a SALDO TOTAL (la de cierre).
+    periodo = max((l["fecha"] for l in lineas), default="")[:7]
+    if not periodo:
+        # estado sin consumos: la fecha de cierre es la primera que aparece despues
+        # de SALDO TOTAL (no necesariamente en la linea siguiente -- puede haber una
+        # tasa en el medio), de ahi el re.S.
+        f = re.search(r"SALDO TOTAL.*?(\d{2}/\d{2}/\d{4})", texto, re.S)
+        periodo = dt.datetime.strptime(f.group(1), "%d/%m/%Y").strftime("%Y-%m") if f else ""
+    if not periodo:
+        raise ValueError("extraer_santander_mc: no pude determinar el periodo del estado")
+    if total.get("USD", 0) and not any(l["moneda"] == "USD" for l in lineas):
+        print(f"  [!] Santander MC: el estado declara USD {total['USD']} pero no se parseo "
+              "ninguna linea en dolares -- falta calibrar ese formato con un PDF que las tenga.")
+    return {"periodo": periodo, "lineas": lineas, "total": total}
 
 
 EXTRACTORES = {
     "BBVA": (extraer_bbva, "BBVA Crédito"),
-    "SANTANDER_MC": (extraer_santander_mc, "Santander Mastercard"),
+    # cuenta=None -> se resuelve por numero (MC vs Visa comparten layout y remitente)
+    "SANTANDER_TARJETA": (extraer_santander_mc, None),
 }
 
 
@@ -222,7 +349,9 @@ def extraer_estado(pdf_path, password):
         raise ValueError(f"{pdf_path}: no se pudo identificar el emisor "
                           "(se esperaba 'BBVA' o 'MASTERCARD'+'SANTANDER' en el texto)")
     extractor, cuenta = EXTRACTORES[emisor]
-    estado = extractor(texto)          # nunca retorna hoy (stub) -- deja subir el error
+    estado = extractor(texto)
+    if cuenta is None:                 # Santander: la tarjeta sale del numero
+        cuenta = _cuenta_santander(texto)
     estado.setdefault("cuenta", cuenta)
     estado.setdefault("emisor", emisor)
     return estado
