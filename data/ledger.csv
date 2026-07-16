@@ -4587,7 +4587,7 @@ ccd3203d6b75,2026-07-10,2026-07,gasto,407.67,UYU,407.67,Deudas,,Regalos,Alimento
 c0864e169a0e,2026-07-12,2026-07,gasto,466.66,UYU,466.66,Deudas,,Comer afuera / Delivery,Restaurantes,,Pizza,split,splitwise,confirmado,1,sw:4566353446
 c2c5f3c8bf21,2026-07-12,2026-07,gasto,3061.72,UYU,3061.72,Mercado Pago,,Otros,,,"Gasto no identificado durante el parqueo en Mercado Pago (20.000 enviados el 8/7, solo 16.938,28 volvieron el 12/7; MP no manda mail por pago con saldo, cierra exacto contra el extracto real)",casa,manual,confirmado,1,mp-gasto-invisible-mp-202607
 1388d186e49f,2026-07-13,2026-07,gasto,708.29,UYU,708.29,Deudas,,Regalos,General,,Carpintero,split,splitwise,confirmado,1,sw:4568645643
-187fe46fc1ee,2026-07-13,2026-07,gasto,1560.00,UYU,1560.00,Cuenta Casa,,Salidas & ocio,,MONTEVIDEO/DLO*RedTickets SAS - VIS3,DLO*RedTickets SAS -,casa,mail,confirmado,1,19f5e268d19fad09
+187fe46fc1ee,2026-07-13,2026-07,gasto,1560.00,UYU,1560.00,Cuenta Casa,,Salidas & ocio,,MONTEVIDEO/DLO*RedTickets SAS - VIS3,DLO*RedTickets SAS -,casa,mail,pendiente,1,19f5e268d19fad09
 734e80c7f966,2026-07-13,2026-07,gasto,101.00,UYU,101.00,Santander UYU,,Comer afuera / Delivery,,MONTEVIDEO/CAFETERIA INFINITO COVIS3,CAFETERIA INFINITO CO,personal,mail,confirmado,1,19f5d58cc41bdf8c
 76caa68c4cdc,2026-07-13,2026-07,gasto,171.15,UYU,171.15,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,casa,mail,confirmado,1,19f5d83182023810
 b59457cf353f,2026-07-13,2026-07,gasto,379.27,UYU,379.27,Santander UYU,,Comer afuera / Delivery,,MONTEVIDEO/LA ROTISERIA V       VIS3,LA ROTISERIA V,personal,mail,confirmado,1,19f5c16a4cd1a1ba
@@ -4607,3 +4607,4 @@ c01eae0a556c,2026-07-14,2026-07,gasto,74.72,UYU,74.72,Cuenta Casa,,Super,,MONTEV
 9f2680fde1bf,2026-07-15,2026-07,gasto,245.00,UYU,245.00,Santander Platinum,,Transporte,,DLOUBERRIDES,DLOUBERRIDES,personal,mail,confirmado,1,19f668c83b6510ac
 c1b5b2cc3f7d,2026-07-15,2026-07,gasto,225.98,UYU,225.98,Santander Platinum,,Transporte,,DLOUBERRIDES,DLOUBERRIDES,personal,mail,confirmado,1,19f664f91dc29c5c
 e214c726ed9e,2026-07-15,2026-07,gasto,161.28,UYU,161.28,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,casa,mail,confirmado,1,19f672d98a002f0f
+e23310c4e1d4,2026-07-15,2026-07,transferencia,328.80,USD,,Deudas,Santander UYU,,,,Pago Splitwise de Lucia: Payment,interno,splitwise,pendiente,0,sw:4571314074

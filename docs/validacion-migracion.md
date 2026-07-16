@@ -4,8 +4,8 @@ Generado por `scripts/merge_y_validar.py` el 2026-07-15. Todas las cifras de fue
 
 ## 1. Merge → data/ledger.csv
 
-- Filas totales: **4608** (3060 de 1money + 1465 de planilla_casa + 83 de otros origenes preservados: mail, etc.)
-- Por tipo: {'gasto': 3950, 'ingreso': 437, 'transferencia': 221}
+- Filas totales: **4609** (3060 de 1money + 1465 de planilla_casa + 84 de otros origenes preservados: mail, etc.)
+- Por tipo: {'gasto': 3950, 'ingreso': 437, 'transferencia': 222}
 - Rango de fechas: 2021-11-01 → 2026-07-15
 - IDs únicos: sí
 - Suma |monto_uyu| (todas las filas con valor): 16,112,331.53
@@ -149,7 +149,7 @@ Resultado: **10/10 OK**
 
 | Validación | Estado | Detalle |
 |---|---|---|
-| 1.merge | OK | 4608 filas ({'1money': 3060, 'planilla_casa': 1465, 'manual': 15, 'mail': 63, 'splitwise': 5}), tipos {'gasto': 3950, 'ingreso': 437, 'transferencia': 221}, rango 2021-11-01 -> 2026-07-15, ids duplicados: ninguno |
+| 1.merge | OK | 4609 filas ({'1money': 3060, 'planilla_casa': 1465, 'manual': 15, 'mail': 63, 'splitwise': 6}), tipos {'gasto': 3950, 'ingreso': 437, 'transferencia': 222}, rango 2021-11-01 -> 2026-07-15, ids duplicados: ninguno |
 | 1.vacios | OK | celdas vacias fuera de regla: 0 |
 | 1.suma | OK | suma \|monto_uyu\| todas las filas: 16112331.53 |
 | 2a.conteos | OK | DB: 2853 tx activas / 207 transfers; ledger 1money: 2853 tx / 207 transfers (esperado 2853/207) |

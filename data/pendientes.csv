@@ -21,3 +21,5 @@ cc9d9b3463de,posible_duplicado,"mismo (tarjeta,monto,establecimiento) que mail 1
 e2a0018c20eb,tc_estimado,USD 530.47 x tc 40.33 = 21393.86 UYU (corrige Fase 3),2026-07-15,1
 e2a0018c20eb,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-07-15,1
 e2a0018c20eb,posible_duplicado,"mismo (tarjeta,monto,establecimiento) que mail 19f2003eeee734dc a las 2026-07-01 20:29:12",2026-07-15,1
+e23310c4e1d4,transferencia_a_clasificar,"pago Splitwise recibido USD 328.80 (2026-07-15, Lucia): confirmar a que cuenta entro",2026-07-15,
+187fe46fc1ee,split_a_cargar,"Splitwise sw:4570616819 'Guasones' UYU 1560.00 (2026-07-14): yo pague 1560.00, mi parte 0.00 -> ajustar cargo 187fe46fc1ee y crear fila hermana -split",2026-07-15,
