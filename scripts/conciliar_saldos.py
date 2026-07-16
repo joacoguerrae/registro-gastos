@@ -18,9 +18,15 @@ config/cuentas.csv (ej. "Santander Platinum USD", "Deudas USD", "Efectivo
 USD") se resuelven contra la cuenta base del ledger (se les saca el sufijo
 " USD") filtrando por moneda=USD.
 
-Saldos reales: se leen de un CSV `cuenta,moneda,saldo` (default
+Saldos reales: se leen de un CSV `cuenta,moneda,saldo,fecha_corte` (default
 data/staging/saldos_reales.csv) que la ceremonia /cierre-mes completa
-preguntandole a Joaco. Se appendea a data/saldos.csv:
+preguntandole a Joaco. fecha_corte dice DE CUANDO son esos saldos (una sola
+fecha para todo el archivo) y DEBE coincidir con la fecha que se concilia:
+comparar el calculado de hoy contra saldos de hace 4 dias inventa
+"diferencias" que son solo los gastos de esos dias y parecen descuadres
+(paso el 16/7: 6 falsas alarmas). Si no coincide, el script ABORTA -- un
+reporte silenciosamente erroneo es peor que no correr. Se appendea a
+data/saldos.csv:
   fecha_corte,cuenta,moneda,saldo_calculado,saldo_real,diferencia,comentario
 Si diferencia != 0, el comentario lista los movimientos "sospechosos" (los
 de mayor monto) del periodo posterior de esa cuenta -- NUNCA se ajusta a
@@ -54,7 +60,7 @@ COLUMNS = ["id", "fecha", "mes", "tipo", "monto", "moneda", "monto_uyu",
            "descripcion", "ambito", "origen", "estado", "en_analisis",
            "fuente_id"]
 INICIALES_COLS = ["cuenta", "fecha_corte", "saldo", "moneda", "fuente", "nota"]
-REALES_COLS = ["cuenta", "moneda", "saldo"]
+REALES_COLS = ["cuenta", "moneda", "saldo", "fecha_corte"]
 SALDOS_COLS = ["fecha_corte", "cuenta", "moneda", "saldo_calculado",
                "saldo_real", "diferencia", "comentario"]
 
@@ -135,10 +141,30 @@ def main():
     iniciales = leer_csv(SALDOS_INICIALES, INICIALES_COLS)
     if not iniciales:
         raise SystemExit(f"{SALDOS_INICIALES} vacio o inexistente")
-    reales_rows = leer_csv(args.reales, REALES_COLS)
+    try:
+        reales_rows = leer_csv(args.reales, REALES_COLS)
+    except AssertionError:
+        raise SystemExit(
+            f"{args.reales} tiene el formato viejo (sin columna fecha_corte). "
+            "Refrescalo preguntandole a Joaco los saldos de HOY y escribilo como "
+            "cuenta,moneda,saldo,fecha_corte -- la fecha dice de cuando son los saldos.")
     if not reales_rows:
         raise SystemExit(f"no hay saldos reales en {args.reales} "
-                          "(cuenta,moneda,saldo) -- cargarlos antes de conciliar")
+                          "(cuenta,moneda,saldo,fecha_corte) -- cargarlos antes de conciliar")
+
+    # Guard de vigencia (auditoria 2026-07 B10): los saldos reales solo sirven
+    # para conciliar EL DIA del que son.
+    fechas_reales = {(r["fecha_corte"] or "").strip() for r in reales_rows}
+    if len(fechas_reales) != 1:
+        raise SystemExit(f"{args.reales} mezcla fecha_corte distintas ({sorted(fechas_reales)}): "
+                         "todos los saldos del archivo deben ser del mismo dia")
+    fecha_reales = fechas_reales.pop()
+    if fecha_reales != fecha_corte:
+        raise SystemExit(
+            f"los saldos reales son del {fecha_reales} y estas conciliando al {fecha_corte}: "
+            f"cada dia de distancia aparece como una 'diferencia' falsa. O corre "
+            f"`conciliar_saldos.py {fecha_reales}`, o refresca {args.reales} "
+            "preguntandole a Joaco los saldos de hoy.")
     reales = {(r["cuenta"], r["moneda"]): float(r["saldo"]) for r in reales_rows}
 
     ledger = leer_csv(LEDGER, COLUMNS)

@@ -17,13 +17,13 @@ Cierre mensual del sistema de gastos. Contratos: docs/fase3.md (secciones 3 y 4)
    - **Saldo de cierre** de cada cuenta.
    Después corré `conciliar_debito.py --insertar` y aplicá las clasificaciones de Joaco vía `data/resoluciones.csv` (los ingresos entran con pendiente `ingreso_a_clasificar`).
 
-5. **Saldos reales por cuenta**: los saldos de las cuentas con extracto adjunto **salen del propio extracto** (los reporta el paso 4 — no se los pidas a Joaco). Pedile solo los que faltan: tarjetas de crédito (si no adjuntó el PDF), Mercado Pago, Splitwise, efectivo. Escribí `data/staging/saldos_reales.csv` (`cuenta,moneda,saldo`), sobrescribiendo el anterior.
+5. **Saldos reales por cuenta**: los saldos de las cuentas con extracto adjunto **salen del propio extracto** (los reporta el paso 4 — no se los pidas a Joaco). Pedile solo los que faltan: tarjetas de crédito (si no adjuntó el PDF), Mercado Pago, Splitwise, efectivo. Escribí `data/staging/saldos_reales.csv` (`cuenta,moneda,saldo,fecha_corte`), sobrescribiendo el anterior. **`fecha_corte` = el día del que son los saldos** (normalmente hoy, si los extractos se exportaron hoy y los saldos se preguntaron hoy) — una sola fecha para todo el archivo. Si un extracto es de otro día, pedile a Joaco el saldo actual de esa cuenta en vez de usar el del extracto: mezclar cosechas inventa diferencias falsas.
 
 6. **Estados de cuenta de crédito (PDF)**: si hay PDFs nuevos en `data/estados/`, corré `C:/Users/joaco/anaconda3/python.exe scripts/conciliar_estado.py` (sin argumento procesa todos los pendientes) y leé su salida. Recordá que **Santander Mastercard y BBVA Crédito NO mandan avisos por transacción**: sus consumos solo entran por acá.
 
 7. Corré, en este orden, y leé la salida completa de cada uno:
    - `C:/Users/joaco/anaconda3/python.exe scripts/cierre_casa.py <mes>`
-   - `C:/Users/joaco/anaconda3/python.exe scripts/conciliar_saldos.py <fecha_corte_de_hoy>` (usa por default `data/staging/saldos_reales.csv` del paso 5)
+   - `C:/Users/joaco/anaconda3/python.exe scripts/conciliar_saldos.py <fecha_corte del paso 5>` — la MISMA fecha que escribiste en `saldos_reales.csv`; el script aborta si no coinciden (guard B10: comparar el calculado de un día contra saldos de otro inventa diferencias falsas).
 
 8. Si `conciliar_saldos.py` reporta cuentas con diferencia ≠ 0: mostrale a Joaco el detalle (movimientos sospechosos del período) y preguntale la causa — anotala en el comentario de `data/saldos.csv` a mano si hace falta (NUNCA ajustar el saldo a ciegas).
 

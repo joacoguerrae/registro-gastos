@@ -14,7 +14,7 @@ cada una con su gate.
 |---|---|---|
 | 1 — Red de seguridad | A1 (parcial), M5, B4 | **pendiente** — A1 ya cerrado por la Fase 2 (exit code); falta el escalado a Issue y los reintentos |
 | 2 — Bombas de agosto | M1, M2, M3, A1 | ✅ **hecha** (2026-07-16, commit `f8d09a9`) |
-| 3 — Documentos de proceso | A2, M6, B10 | **pendiente** — ⚠️ A2 sigue abierto: `/revisar-pendientes` todavía dice de editar el ledger a mano |
+| 3 — Documentos de proceso | A2, M6, B10 | ✅ **hecha** (2026-07-16) |
 | 4 — Higiene de datos y deps | B1, B3, B5, B6, B9, B12, M4 | **pendiente** |
 | 5 — Hardening de GitHub | B2, B7, B8 | **pendiente** |
 
@@ -191,7 +191,7 @@ posición envenenada. Se agregó el guard que faltaba (`mes <= mes_semilla` → 
 además tapa un agujero preexistente: `cierre_casa.py 2026-06` ya corrompía los datos en
 silencio, sin que nada lo avisara.
 
-### Fase 3 — Corregir los documentos de proceso · cierra A2, M6, B10
+### Fase 3 — Corregir los documentos de proceso · cierra A2, M6, B10 ✅ HECHA
 
 1. Reescribir `/revisar-pendientes`: toda corrección vía `resoluciones.csv`, nunca el ledger,
    con el mapeo campo/valor por caso (categoría, ámbito, `en_analisis`, splits).
@@ -201,7 +201,21 @@ silencio, sin que nada lo avisara.
    `saldos_reales.csv` y hacer que `conciliar_saldos.py` **aborte** si el baseline está viejo
    (abortar, no advertir: el output silencioso-pero-erróneo es peor que no correr).
 
-**Gate:** dry-run de cada comando, leído de punta a punta contra los invariantes de CLAUDE.md.
+**Gate — pasado.** Resultados reales:
+
+- `conciliar_saldos.py` sin argumento contra saldos del 12/7 → **aborta** con el mensaje que
+  explica la falsa diferencia y las dos salidas; a la fecha correcta (2026-07-12) → corre y da
+  12 OK / 0 diferencias (es la semilla); archivo en formato viejo → mensaje que pide el
+  formato nuevo. Probado en copia aislada (`GASTOS_BASE`).
+- `data/staging/saldos_reales.csv` migrado: 12 filas con `fecha_corte=2026-07-12` (su cosecha
+  real, la de la semilla).
+- Los tres comandos releídos de punta a punta contra los invariantes de CLAUDE.md:
+  `/revisar-pendientes` ya no toca el ledger (todo por `resoluciones.csv`, con la tabla
+  campo/valor por caso, `motivo_resuelto`, splits con la fila hermana `origen=manual` como
+  único alta legítima, y el motivo nuevo `formato_nuevo` de la Fase 2);
+  `/sync-gastos` quedó alrededor de `fetch_mails.py` con el conector como fallback marcado
+  (incluida la advertencia de paridad del body_text y el gotcha `cmd /c`);
+  `/cierre-mes` concilia a la fecha de los saldos, no a "hoy".
 
 ### Fase 4 — Higiene de datos y dependencias · cierra B1, B3, B5, B6, B9, B12, M4
 

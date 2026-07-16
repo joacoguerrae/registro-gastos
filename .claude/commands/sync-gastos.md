@@ -1,16 +1,26 @@
 ---
-description: Trae los mails financieros nuevos de Gmail, los procesa al ledger y regenera los agregados del dashboard
+description: Trae los mails financieros nuevos de Gmail (fetch determinístico), los procesa al ledger y regenera los agregados del dashboard
 ---
 
 Sincronizá el ledger de gastos con Gmail. Contratos: docs/pipeline-mails.md y docs/esquema.md.
 
-> **Nota:** el sync automático ahora corre en GitHub Actions 2×/día con `fetch_mails.py` (Gmail API determinístico, sin Claude) — ver `.github/workflows/sync.yml` y docs/plan-migracion-fetch.md. Este comando queda para sync interactivo/manual. Alternativa determinística local: `python scripts/fetch_mails.py` + `cmd /c scripts\correr_pipeline.cmd`.
+> El sync automático corre solo, en GitHub Actions 2×/día (`.github/workflows/sync.yml`). Este comando es para cuando Joaco quiere el dato AHORA sin esperar al cron. Hace lo mismo que Actions, localmente y con reporte interactivo.
 
-1. Leé `config/estado_sync.json` → `ultima_fecha_mail`. La fecha de búsqueda es esa menos 2 días (formato Gmail `after:YYYY/MM/DD`). Si el archivo no existe, usá `after:2026/06/30`.
-2. Cargá las herramientas Gmail con ToolSearch usando la query `+gmail search_threads get_thread` (el nombre del servidor varía según el contexto: en el escritorio es `mcp__98094892-...`, en CLI headless es `mcp__claude_ai_Gmail__...` — usá las que aparezcan). Si el servidor Gmail no está disponible o el permiso es denegado, reportá "Gmail no disponible — se recupera en la próxima sesión interactiva" y terminá sin error: el watermark garantiza que no se pierde nada.
-3. Corré las 4 búsquedas del contrato (sección "Fetch" de docs/pipeline-mails.md) con el `after:` calculado, paginando con pageToken hasta agotar. Juntá los **thread IDs** que devuelvan.
-   **CRÍTICO — enumerar por thread completo, NO por la lista de search_threads:** `search_threads` NO devuelve todos los mensajes de un thread (Gmail agrupa muchos avisos "uso de tarjeta" en un mismo thread y la búsqueda solo trae un subconjunto → así se perdieron mails el 13-14/7, incluido un cargo de $1.560). Por cada thread ID, llamá `get_thread` (messageFormat MINIMAL) para listar TODOS sus mensajes. Recién sobre esa lista completa decidí qué bajar.
-4. Para CADA mensaje financiero que NO esté ya en `data/inbox_raw/` (comparar por message_id): llamá `get_message` FULL_CONTENT y guardalo como `data/inbox_raw/<message_id>.json` con el esquema {message_id, thread_id, fecha_mail, from, subject, body_text}. Incluí avisos de tarjeta débito/crédito, transferencias, recibos y facturas. IGNORÁ (no son transacciones): "Aviso de monitoreo de umbral", "Aviso: rechazo de tarjeta" (rechazo = no se concretó), marketing.
-5. Ejecutá EXACTAMENTE este comando (único punto de entrada — corre Splitwise, procesar_mails, validación, dashboard, actualiza Sheets y commit): `cmd /c scripts\correr_pipeline.cmd` — y leé su salida completa. No corras los scripts de Python por separado.
-6. Si la validación reporta ERROR o DESVIO nuevo (distinto del baseline 2c documentado), decilo en el reporte.
-7. Reportá: mails nuevos por tipo, filas insertadas por cuenta/categoría, pendientes nuevos por motivo, y gasto acumulado del mes en curso vs presupuesto. Los 3 Google Sheets se refrescan solos dentro de correr_pipeline.cmd (actualizar_sheets.py).
+## Flujo (determinístico — sin Claude en el fetch)
+
+1. `git pull` (regla de CLAUDE.md: los commits nacen en la nube).
+2. **Fetch:** corré con la tool Bash `python scripts/fetch_mails.py` y leé su salida (usa `config/gmail_token.json`; enumera por MENSAJE con watermark − 2 días; también baja los PDF de estados de cuenta). No armes búsquedas de Gmail a mano: el script ES el contrato del fetch.
+3. **Pipeline:** corré `scripts\correr_pipeline.cmd` **con la tool PowerShell**: `& "scripts\correr_pipeline.cmd"` — ⚠️ NUNCA `cmd /c` desde la tool Bash: abre una shell interactiva y cuelga hasta el timeout (gotcha documentado en CLAUDE.md). Leé la salida completa: corre Splitwise → procesar_mails → merge_y_validar → cierre_casa → dashboards → Sheets → commit.
+4. Si `merge_y_validar` falla (sale ≠0), el pipeline se detiene y NO commitea: reportá el invariante roto tal cual lo imprime — no lo "arregles" tocando datos; las correcciones van por `data/resoluciones.csv` (ver `/revisar-pendientes`).
+5. `git push` (el pipeline commitea local pero no pushea; sin push, GitHub y las corridas de Actions quedan atrás).
+6. Reportá: mails nuevos por tipo, filas insertadas por cuenta/categoría, pendientes nuevos por motivo (los `formato_nuevo` son mails que el parser no supo leer — mencionalos explícitamente), y gasto acumulado del mes en curso vs presupuesto.
+
+## Fallback — SOLO si `fetch_mails.py` falla
+
+(API caída, token vencido — el error dice cuál.) Reportá primero el error: casi siempre conviene arreglar la causa (`scripts/get_gmail_token.py` regenera el token) antes que el fallback. Si Joaco quiere seguir igual con el conector Gmail de Claude:
+
+- Buscá con las herramientas Gmail del contexto (ToolSearch `+gmail search_threads get_thread`) usando `after:` = `ultima_fecha_mail` de `config/estado_sync.json` menos 2 días.
+- **CRÍTICO — enumerar por thread completo, NO por la lista de `search_threads`:** Gmail agrupa avisos en threads y la búsqueda solo trae un subconjunto (así se perdieron mails el 13-14/7). Por cada thread ID, `get_thread` (MINIMAL) para listar TODOS sus mensajes; recién sobre esa lista decidí qué bajar.
+- Guardá cada mensaje financiero nuevo como `data/inbox_raw/<message_id>.json` con el esquema `{message_id, thread_id, fecha_mail, from, subject, body_text}`. IGNORÁ marketing, "Aviso de monitoreo de umbral" y "Aviso: rechazo de tarjeta" (rechazo = no se concretó).
+- ⚠️ El `body_text` que renderiza el conector NO es idéntico al de `fetch_mails.py` (paridad = invariante de CLAUDE.md): los parsers pueden dejar esos mails en pendientes. Avisale a Joaco que la próxima corrida por API los reprocesa bien (la idempotencia por `message_id` evita duplicados... los archivos ya guardados NO se re-bajan). Si un mail del fallback quedó mal parseado, borrá su JSON de `inbox_raw/` para que la API lo re-baje limpio.
+- Seguí desde el paso 3 del flujo normal.

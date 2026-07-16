@@ -25,10 +25,10 @@ Ledger único de gastos (personal + casa con Lu + Splitwise). Diseño: [docs/esq
 
 ## Auditoría abierta (2026-07-16)
 
-[docs/auditoria-2026-07.md](docs/auditoria-2026-07.md) — relevamiento e2e con hallazgos **sin corregir** y el plan por fases. Antes de tocar el pipeline, mirá si lo que vas a hacer ya está relevado ahí. Los dos que más muerden:
+[docs/auditoria-2026-07.md](docs/auditoria-2026-07.md) — relevamiento e2e y plan por fases; la tabla "Estado de las correcciones" al inicio dice qué sigue abierto (hechas: 2 y 3; abiertas: 1 —escalado de warnings—, 4 —higiene de datos— y 5 —hardening GitHub—). Antes de tocar el pipeline, mirá si lo que vas a hacer ya está relevado ahí.
 
-- **A2** — `/revisar-pendientes` todavía instruye editar `ledger.csv` a mano (viola el invariante de arriba). **Si corrés ese comando, usá `resoluciones.csv` igual**, hasta que se reescriba en Fase 3.
-- **M2** — el gate de validación exige 19 meses de presupuesto: **al cargar agosto la corrida se pone roja por diseño**. Se arregla en Fase 2.
+- `merge_y_validar.py` sin flags corre solo invariantes y **sale ≠0 si algo está roto** (el workflow confía en ese exit code); `--migracion` revalida contra las fuentes congeladas, solo al tocar un migrador.
+- Los pendientes `formato_nuevo` son mails que el parser no supo leer (el pipeline ya no se frena por eso): se resuelven en `/revisar-pendientes`.
 
 ## Comandos
 
