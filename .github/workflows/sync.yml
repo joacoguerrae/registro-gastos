@@ -4,11 +4,16 @@ name: Sync gastos
 # Fase 1 (fetch): fetch_mails.py (Gmail API determinística).
 # Fase 2 (pipeline): splitwise -> procesar_mails -> validación -> dashboard -> Sheets -> commit.
 #
-# MODO:
-#   - shadow (default): corre fetch + pipeline + validación pero NO commitea/pushea ni
-#     toca Sheets. Sirve para la semana de validación en paralelo (la PC sigue siendo dueña).
-#   - live: además genera dashboards, actualiza Sheets y hace commit+push.
-# Se controla con la variable de repo SYNC_MODE (Settings -> Variables) o el input del dispatch.
+# MODO (desde el cutover del 2026-07-16, Actions es el ÚNICO dueño del pipeline;
+# las tareas de Windows "Gastos Sync AM/PM" quedaron deshabilitadas):
+#   - live: corre todo y ADEMÁS genera dashboards, actualiza Sheets y hace commit+push.
+#     Es lo que corre siempre por cron. No depende de ninguna variable de repo: una
+#     variable mal seteada dejaría el pipeline sin commitear EN SILENCIO (= los datos
+#     dejan de actualizarse y nadie se entera). Para pausar el sync, deshabilitá el
+#     workflow desde la UI (Actions -> Sync gastos -> ... -> Disable workflow): eso se ve.
+#   - shadow: corre fetch + pipeline + validación pero NO commitea/pushea ni toca Sheets.
+#     Sirvió para la semana de validación en paralelo; hoy queda solo para probar a mano
+#     un cambio del pipeline sin ensuciar el repo (elegirlo en el dropdown del dispatch).
 
 on:
   schedule:
@@ -17,10 +22,10 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: 'shadow (no push) | live (commit+push+sheets)'
+        description: 'live (commit+push+sheets) | shadow (no push, para probar cambios)'
         type: choice
-        options: [shadow, live]
-        default: shadow
+        options: [live, shadow]
+        default: live
 
 concurrency:
   group: sync-gastos
@@ -35,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
-      MODE: ${{ github.event.inputs.mode || vars.SYNC_MODE || 'shadow' }}
+      MODE: ${{ github.event.inputs.mode || 'live' }}
     steps:
       - uses: actions/checkout@v4
 
