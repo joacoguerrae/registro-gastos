@@ -115,3 +115,6 @@ e23310c4e1d4,cuenta_destino,Santander USD,"pago de Lucia (repago de deuda) entro
 e23310c4e1d4,descripcion,Pago Splitwise recibido de Lucia (repago de deuda) -> entrada a Santander USD,,2026-07-15
 e23310c4e1d4,motivo_resuelto,transferencia_a_clasificar,,2026-07-15
 187fe46fc1ee,motivo_resuelto,split_a_cargar,"FALSO match: el gasto Splitwise Guasones (sw:4570616819, 1560 UYU) matchea por monto el cargo RedTickets (casa, 8261) que NO es split. Guasones ya contabilizado como prestamo manual 33893f89524c. RedTickets es gasto de casa.",2026-07-15
+5ed5d6db81b9,categoria,Servicios,"UTE (luz) pagada via Proyecto PAS con la tarjeta de casa 8261 - confirmado por Joaco 16/7",2026-07-16
+5ed5d6db81b9,descripcion,UTE (luz) via Proyecto PAS,,2026-07-16
+5ed5d6db81b9,motivo_resuelto,sin_categoria,,2026-07-16
