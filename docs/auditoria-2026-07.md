@@ -12,7 +12,7 @@ cada una con su gate.
 
 | Fase | Cierra | Estado |
 |---|---|---|
-| 1 — Red de seguridad | A1 (parcial), M5, B4 | **pendiente** — A1 ya cerrado por la Fase 2 (exit code); falta el escalado a Issue y los reintentos |
+| 1 — Red de seguridad | A1, M5, B4 | ✅ **hecha** (2026-07-16, commit `9096f0c`) |
 | 2 — Bombas de agosto | M1, M2, M3, A1 | ✅ **hecha** (2026-07-16, commit `f8d09a9`) |
 | 3 — Documentos de proceso | A2, M6, B10 | ✅ **hecha** (2026-07-16) |
 | 4 — Higiene de datos y deps | B1, B3, B5, B6, B9, B12, M4 | **pendiente** |
@@ -144,17 +144,38 @@ rotables — si alguno sirve como pregunta de seguridad bancaria, tratarlo como 
 Cada fase cierra con un gate verificable. Las fases son independientes salvo el orden
 sugerido (1 protege a las demás; 2 es la urgente por calendario).
 
-### Fase 1 — Tapar los agujeros de la red de seguridad · cierra A1, M5, B4
+### Fase 1 — Tapar los agujeros de la red de seguridad · cierra A1, M5, B4 ✅ HECHA (commit `9096f0c`)
 
-1. Gate del workflow: incluir `[FALLO]` en el grep.
-2. Escalado de warnings: cada paso no crítico deja marca si falla; la racha se guarda en
-   `config/estado_sync.json` (ya se commitea cada corrida); racha ≥3 → Issue con título
-   dedupeado → llega mail. Un fallo aislado sigue siendo solo warning (los errores
-   transitorios de Google existen).
-3. Reintentos en el fetch (`num_retries=3`).
+1. ~~Gate del workflow: incluir `[FALLO]` en el grep.~~ **Cerrado mejor en la Fase 2**: el
+   grep desapareció; `merge_y_validar.py` sale ≠0 y el workflow confía en el exit code.
+2. Escalado: `scripts/salud_pasos.py` envuelve cada paso no crítico
+   (`salud_pasos.py correr <paso> -- <comando>`), registra la racha y a las 3 seguidas abre un
+   Issue. Un solo Issue por racha; se cierra solo al recuperarse el paso.
+3. Reintentos en el fetch: los 5 llamados a la API de Gmail con `num_retries=3`.
 
-**Gate:** una corrida shadow con un `[FALLO]` inyectado debe ponerse roja; simular 3 fallos
-consecutivos de Sheets debe abrir exactamente 1 Issue.
+**Corrección al plan:** la racha **no** podía ir en `config/estado_sync.json` como decía
+arriba — `procesar_mails.py:825` reescribe ese archivo entero en cada corrida
+(`json.dump({"ultimo_sync", "ultima_fecha_mail"})`), así que la racha se habría borrado sola y
+nunca habría llegado a 3. El escalado habría quedado *mudo*, que es exactamente lo que venía a
+arreglar. Vive en `data/staging/salud_pasos.json`, archivo propio, también commiteado.
+
+Detalle de orden: el paso `escalar` corre **antes** del commit, porque marca el Issue como
+abierto en ese JSON; si no se commiteara, la corrida siguiente abriría otro Issue por la misma
+racha. Por eso "Dashboards + Sheets" y "Commit + push" quedaron como pasos separados — lo que
+además mantiene `GH_TOKEN` y `GCP_SA_JSON` en pasos distintos.
+
+**Gate — pasado.** Máquina de estados probada corrida por corrida: 1 y 2 → solo warning
+(diciendo cuánto falta para escalar); 3 → abre Issue; 4 y 5 → **no** abren otro; recuperación →
+lo cierra; racha nueva → vuelve a escalar. Camino real de `gh` probado de punta a punta contra
+el repo (Issue #1, abierto y cerrado por el propio script sobre un paso de prueba). Shadow
+verde en la nube.
+
+**Lo que el gate destapó** (segundo bug propio cazado por una prueba, después del de junio en
+la Fase 2): si `gh` devolvía una salida no parseable, el estado quedaba `issue_abierto=true`
+**sin** `issue_num` — y entonces no cerraba nunca (el cierre pide el número) ni volvía a
+escalar (la apertura ve que ya hay Issue). El paso se apagaba para siempre, en silencio: el
+mismo modo de falla que este script existe para eliminar. Ahora `issue_abierto` se resetea al
+recuperarse aunque falte el número, avisando que se cierre a mano.
 
 ### Fase 2 — Desactivar las bombas de agosto · cierra M1, M2, M3 ✅ HECHA (commit `f8d09a9`)
 
