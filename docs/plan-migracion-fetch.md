@@ -1,6 +1,18 @@
 # Plan de migración: fetch determinístico + GitHub Actions
 
-**Fecha:** 15/07/2026 · **Estado:** aprobado, pendiente de ejecución
+**Fecha:** 15/07/2026 · **Estado:** en ejecución (Fases 0-3 hechas, semana shadow por arrancar)
+
+## Estado de ejecución
+
+- [x] **Fase 0** — repo privado ✓; auditoría de secretos en historial (limpio) ✓; OAuth Gmail en producción + refresh token ✓; 5 secrets en GitHub ✓; inventario (MyFinance.db y casa.xlsx ya en repo) ✓.
+- [x] **Fase 1** — `scripts/fetch_mails.py` (Gmail API, enumeración por mensaje, `html_a_texto` determinístico, idempotente, fail-safe) + `config/reglas_fetch.csv` + `scripts/get_gmail_token.py`.
+- [x] **Fase 2** — parsers de `procesar_mails.py` tolerantes al formato nuevo. **GATE pasado:** pipeline completo sobre los 64 mails re-bajados por API → **57/57 filas `mail` idénticas, 0 diffs reales** (único delta: padding de espacios en el `comercio` crudo, cosmético; descripción/categoría/monto/ámbito byte-idénticos). Portabilidad de los 5 scripts (BASE computado + secretos por env var), `requirements.txt`, `.gitattributes`.
+- [x] **Fase 3** — `.github/workflows/sync.yml` (cron 2×/día, modo shadow/live, gate de validación, timeout 15min). Pre-flight de los 3 code-paths por env var: verde. Corrida shadow de prueba: **en verificación**.
+- [ ] **Fase 4** — semana shadow (≥12 corridas limpias, 0 diffs).
+- [ ] **Fase 5** — cutover (flip a live, deshabilitar tareas de Windows, `git pull` en CLAUDE.md ✓ ya documentado).
+
+---
+
 
 ## Motivación — los 4 incidentes que origina el fetch claudizado
 

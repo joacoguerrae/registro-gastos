@@ -4,6 +4,8 @@ description: Trae los mails financieros nuevos de Gmail, los procesa al ledger y
 
 Sincronizá el ledger de gastos con Gmail. Contratos: docs/pipeline-mails.md y docs/esquema.md.
 
+> **Nota:** el sync automático ahora corre en GitHub Actions 2×/día con `fetch_mails.py` (Gmail API determinístico, sin Claude) — ver `.github/workflows/sync.yml` y docs/plan-migracion-fetch.md. Este comando queda para sync interactivo/manual. Alternativa determinística local: `python scripts/fetch_mails.py` + `cmd /c scripts\correr_pipeline.cmd`.
+
 1. Leé `config/estado_sync.json` → `ultima_fecha_mail`. La fecha de búsqueda es esa menos 2 días (formato Gmail `after:YYYY/MM/DD`). Si el archivo no existe, usá `after:2026/06/30`.
 2. Cargá las herramientas Gmail con ToolSearch usando la query `+gmail search_threads get_thread` (el nombre del servidor varía según el contexto: en el escritorio es `mcp__98094892-...`, en CLI headless es `mcp__claude_ai_Gmail__...` — usá las que aparezcan). Si el servidor Gmail no está disponible o el permiso es denegado, reportá "Gmail no disponible — se recupera en la próxima sesión interactiva" y terminá sin error: el watermark garantiza que no se pierde nada.
 3. Corré las 4 búsquedas del contrato (sección "Fetch" de docs/pipeline-mails.md) con el `after:` calculado, paginando con pageToken hasta agotar. Juntá los **thread IDs** que devuelvan.

@@ -64,7 +64,8 @@ Los 3 Sheets se **refrescan solos en cada corrida** del pipeline (`scripts/actua
 - [x] Fase 1 — migración del histórico + validación (cierra 0,00 contra fuentes)
 - [x] Fase 1 — export a Google Sheets + Looker Studio
 - [x] Fase 2 — pipeline de mails (parsers + backfill julio verificado 1:1 vs Gmail, ver docs/validacion-fase2.md; comandos /sync-gastos y /revisar-pendientes)
-- [x] Fase 2.5 (parcial) — **refresh automático de los Sheets** vía cuenta de servicio (`scripts/actualizar_sheets.py`, integrado al pipeline). Pendiente: pull de Gmail sin Claude (hoy el fetch de mails corre vía Claude headless desde el Programador de tareas 2×/día).
+- [x] Fase 2.5 — **refresh automático de los Sheets** vía cuenta de servicio (`scripts/actualizar_sheets.py`, integrado al pipeline).
+- [~] **Migración a fetch determinístico + GitHub Actions** — `fetch_mails.py` (Gmail API, sin Claude) + `.github/workflows/sync.yml` corriendo 2×/día en la nube. Paridad validada 57/57 (ver docs/validacion-migracion.md). En **semana shadow** (Actions valida sin commitear, la PC sigue de dueña); al cutover se flipa a `live` y se deshabilitan las tareas de Windows. Plan: [docs/plan-migracion-fetch.md](docs/plan-migracion-fetch.md).
 - [x] Fase 3 — Splitwise (cuenta Deudas, solo lectura, integrado a `scripts/correr_pipeline.cmd`), cierre continuo de casa (`scripts/cierre_casa.py`, `/cierre-mes`) y conciliación de saldos (`scripts/conciliar_saldos.py`) operativos. Motor de matching de estados de cuenta construido y testeado con estado sintético (`scripts/conciliar_estado.py` + `scripts/test_conciliacion.py`); falta calibrar los extractores de BBVA y Santander Mastercard con el primer PDF real (ver `data/estados/`).
 - [ ] Fase 4 — presupuesto integrado + alertas
 
