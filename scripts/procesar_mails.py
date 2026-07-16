@@ -329,6 +329,8 @@ def main():
                 return "aviso_tarjeta"
             if subj.lower().startswith("aviso de transferencia"):
                 return "transferencia"
+            if "devoluci" in subj.lower() or "reintegro" in subj.lower():
+                return "devolucion"
             return "ignorado"
         if "mercadopago.com" in frm and "transferencia fue enviada" in subj.lower():
             return "transferencia_mp"
@@ -418,6 +420,80 @@ def main():
         log_proc(mail, "aviso_tarjeta", "insertado", r["id"],
                  f"{tarjeta} {moneda} {fmt(monto)} {est_crudo} -> {cuenta}/{ambito}/{categoria or '(sin categoria)'}",
                  dedupe_key="||".join([tarjeta, fmt(monto), est_crudo, fh.isoformat()]))
+
+    # -------------------------------------------------- 1b. devoluciones / reintegros
+    # Mismo formato de campos que un aviso de uso de tarjeta (VISA/Importe/
+    # Establecimento/Fecha y hora); cambia solo el encabezado. Se registra como
+    # gasto con monto NEGATIVO (revierte el cargo): así resta de la categoria en
+    # el resumen (que suma monto_uyu de tipo=gasto) y netea a 0 en la tarjeta para
+    # la conciliacion. Linkea al cargo original si lo encuentra.
+    for mail in mails:
+        if mail["message_id"] in ya_procesados or router(mail) != "devolucion":
+            continue
+        b = mail["body_text"]
+        tarjeta = campo_bloque(b, "VISA terminada en", "Importe")
+        moneda, monto = parse_importe(campo_bloque(b, "Importe", "Establecimento"))
+        est_crudo = campo_bloque(b, "Establecimento", "Fecha y hora")
+        fh_txt = campo_bloque(b, "Fecha y hora", "Para ver")
+        fh = dt.datetime.strptime(fh_txt[:19], "%d/%m/%Y %H:%M:%S")
+        fecha = fh.date().isoformat()
+
+        if fecha < BACKFILL_DESDE:
+            log_proc(mail, "devolucion", "ignorado_pre_backfill",
+                     detalle=f"{tarjeta} {moneda} {fmt(monto)} {est_crudo} ({fecha} < {BACKFILL_DESDE})")
+            continue
+
+        cuenta, ambito = tarjetas.get(tarjeta, ("", "personal"))
+        if not cuenta:
+            log_proc(mail, "devolucion", "ignorado", detalle=f"tarjeta desconocida {tarjeta}")
+            continue
+
+        categoria, amb_override, _ = categorizar(est_crudo, reglas)
+        if amb_override:
+            ambito = amb_override
+
+        # buscar el cargo original que revierte: mismo cuenta + importe + comercio,
+        # gasto positivo, fecha <= la del reintegro; el mas reciente gana. Si el
+        # cargo tenia categoria/ambito resueltos, el reintegro los hereda.
+        link = ""
+        candidatos_rev = [c for c in (nuevos + filas_mail_existentes)
+                          if c["tipo"] == "gasto" and c["cuenta"] == cuenta
+                          and c["monto"] == fmt(monto)
+                          and float(c["monto_uyu"] or 0) > 0
+                          and limpiar_establecimiento(c["comercio"]) == limpiar_establecimiento(est_crudo)
+                          and c["fecha"] <= fecha]
+        if candidatos_rev:
+            orig = max(candidatos_rev, key=lambda c: c["fecha"])
+            link = orig["id"]
+            if not categoria:
+                categoria, ambito = orig["categoria"], orig["ambito"]
+
+        monto_neg = -monto
+        r = fila_base(mail["message_id"])
+        r.update(fecha=fecha, mes=fecha[:7], tipo="gasto", monto=fmt(monto_neg),
+                 moneda=moneda, cuenta=cuenta, categoria=categoria, comercio=est_crudo,
+                 descripcion="Reintegro " + limpiar_establecimiento(est_crudo)
+                             + (f" (revierte {link})" if link else " (sin cargo original identificado)"),
+                 ambito=ambito)
+        if moneda == "UYU":
+            r["monto_uyu"] = fmt(monto_neg)
+        else:
+            r["monto_uyu"] = fmt(round(monto_neg * tc[moneda], 2))
+        motivos = []
+        if moneda != "UYU":
+            motivos.append(("tc_estimado",
+                            f"reintegro {moneda} {fmt(monto)} x tc {tc[moneda]} (corrige Fase 3)"))
+        if not categoria:
+            motivos.append(("sin_categoria",
+                            f"reintegro {est_crudo!r} sin regla ni cargo original"))
+        if motivos:
+            r["estado"] = "pendiente"
+            for mo, de in motivos:
+                pend(r["id"], mo, de)
+        nuevos.append(r)
+        log_proc(mail, "devolucion", "insertado", r["id"],
+                 f"{tarjeta} {moneda} -{fmt(monto)} {est_crudo} -> {cuenta}/{ambito}/{categoria or '(sin cat)'}"
+                 + (f" revierte {link}" if link else " (sin cargo original)"))
 
     # -------------------------------------------------- 2. transferencias
     for mail in mails:

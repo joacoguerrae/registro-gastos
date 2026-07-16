@@ -25,6 +25,7 @@ Desde **2026-07-01** (junio ya está en el ledger vía 1Money; los 1money transf
 | Remitente | Asunto | Handler |
 |---|---|---|
 | notificaciones@santander.com.uy | `Aviso: uso de tarjeta de débito/crédito` | aviso_tarjeta |
+| notificaciones@santander.com.uy | `Aviso: devolución en tarjeta…` / `…reintegro…` | devolucion |
 | notificaciones@santander.com.uy | `Aviso de Transferencia Instantánea…` / `…en plaza` / `…interna…` | transferencia |
 | no_reply@email.apple.com, googleplay-noreply@google.com, info@mercadolibre.com.uy, info@mercadopago.com | recibos | recibo (matching) |
 | factura@antel.com.uy, info_uy@email.directvla.com | facturas | factura (informativo) |
@@ -48,6 +49,14 @@ Campos del cuerpo: `VISA terminada en NNNN`, `Importe` (`UYU 28.170,00` / `USD 9
 - **Herencia PedidosYa**: `PedidosYa Propina` y `PedidosYa Envio` heredan categoría y ámbito del pedido que los originó (misma tarjeta, hasta 6 h antes): pedido Market → Super, pedido restaurante → Comer afuera / Delivery. Sin pedido previo en ventana → regla general (Delivery).
 - **Proyecto PAS** es el canal de pagos web de Santander (el destinatario varía) → siempre queda pendiente `sin_categoria` para clasificar a mano.
 - **Transición 8261 (jul-2026)**: hasta que Joaco confirme la vuelta de la casa a Santander, toda fila 8261 además va a pendientes con motivo `ambito_a_confirmar`.
+
+## Handler devolución / reintegro
+
+Los avisos de devolución (`Realizamos un reintegro a tu tarjeta`) tienen los MISMOS campos que un aviso de uso de tarjeta (`VISA terminada en`, `Importe`, `Establecimento`, `Fecha y hora`) — solo cambia el encabezado. Se reusa el mismo parser.
+
+- Fila ledger: `tipo=gasto` con **`monto` y `monto_uyu` NEGATIVOS** (revierte el cargo). Categoría/cuenta/ámbito por la tarjeta y el establecimiento, igual que el aviso. `en_analisis=1`.
+- **Por qué gasto negativo y no ingreso:** el resumen por categoría suma `monto_uyu` de `tipo=gasto` (ver `merge_y_validar.py`); un gasto negativo resta de la categoría del cargo, y en la tarjeta el cargo (+) y el reintegro (−) netean a 0 → la conciliación con el estado de cuenta cierra al peso. Un `ingreso` no restaría de la categoría.
+- **Link al cargo original:** busca un gasto previo con misma cuenta + importe + establecimiento (el más reciente con fecha ≤ la del reintegro) y lo referencia en `descripcion` (`Reintegro X (revierte <id>)`); si el cargo tenía categoría/ámbito resueltos, los hereda. Sin cargo original y sin regla de categoría → pendiente `sin_categoria`.
 
 ## Handler transferencia
 
