@@ -80,13 +80,15 @@ jobs:
           set -o pipefail
           python scripts/procesar_mails.py | tee /tmp/proc.txt
 
-      - name: Validar (falla si hay ERROR/DESVIO fuera del baseline 2c)
+      # El script decide: sale != 0 si algun invariante del ledger esta roto.
+      # Antes esto se decidia por grep sobre el stdout, y el grep NO miraba
+      # [FALLO] -- el estado que merge_y_validar reserva para ids duplicados.
+      # Un ledger corrupto pasaba en verde (auditoria 2026-07 A1).
+      - name: Validar invariantes del ledger (si falla, no se commitea)
         run: |
           set -o pipefail
-          python scripts/merge_y_validar.py | tee /tmp/val.txt
-          if grep -E '\[(ERROR|DESVIO)\]' /tmp/val.txt | grep -vq '2c\.doble_conteo'; then
-            echo "::error::Validación con ERROR/DESVIO nuevo (fuera del baseline 2c documentado)"
-            grep -E '\[(ERROR|DESVIO)\]' /tmp/val.txt | grep -v '2c\.doble_conteo' || true
+          if ! python scripts/merge_y_validar.py | tee /tmp/val.txt; then
+            echo "::error::Invariante del ledger roto: el pipeline se detiene y NO commitea. Ver el detalle arriba."
             exit 1
           fi
 

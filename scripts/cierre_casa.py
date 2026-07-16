@@ -111,15 +111,22 @@ def gasto_casa_mes(ledger, mes):
             and r["ambito"] == "casa" and r["en_analisis"] == "1"]
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("mes", nargs="?", default=dt.date.today().strftime("%Y-%m"),
-                    help="mes a cerrar YYYY-MM (default: mes actual)")
-    args = ap.parse_args()
-    mes = args.mes
-
+def cerrar(mes):
     with open(POSICION_SEED, encoding="utf-8") as f:
         seed = json.load(f)
+
+    # La semilla NO es "el saldo antes de todo": es la posicion AL CIERRE de su
+    # mes (fecha_corte = fin de mes). Cerrar ese mes, o uno anterior, sumaria sus
+    # gastos encima de una posicion que ya los tiene -> doble conteo, y el mes
+    # siguiente heredaria la posicion envenenada. Antes esto no se chequeaba y
+    # `cierre_casa.py <mes-de-la-semilla>` corrompia los datos en silencio.
+    mes_semilla = seed["fecha_corte"][:7]
+    if mes <= mes_semilla:
+        print(f"=== Cierre de casa {mes}: SALTEADO ===")
+        print(f"la semilla ({seed['fecha_corte']}) ya ES la posicion al cierre de "
+              f"{mes_semilla}: recalcular {mes} contaria sus gastos dos veces")
+        return
+
     ledger = leer_csv(LEDGER, COLUMNS)
     aportes_lu_rows = leer_csv(APORTES_LU, APORTES_COLS)
     cierres = [r for r in leer_csv(CIERRE, CIERRE_COLS)]
@@ -253,6 +260,38 @@ def main():
     print(f"  aporte sugerido proximo mes: Lu {fmt(sug_lu)} / Joaco {fmt(sug_joaco)}")
     print(f"  (coef x promedio - posicion; con eso la posicion tiende a 0 sin "
           "transferencias entre ellos)")
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("mes", nargs="?", default=None,
+                    help="mes a cerrar YYYY-MM. Sin argumento: refresca el mes "
+                         "ANTERIOR y el actual (lo que hace el pipeline diario).")
+    args = ap.parse_args()
+
+    if args.mes:
+        cerrar(args.mes)
+        return
+
+    # Sin argumento (pipeline diario): se refresca tambien el mes ANTERIOR.
+    #
+    # Por que: dt.date.today() en el runner es UTC, y el cron de la noche
+    # (00:23 UTC) cae cuando en Uruguay (UTC-3) todavia es el dia anterior. La
+    # corrida del 31/7 a la noche ya calcula "2026-08": julio quedaba congelado
+    # en su ultimo cierre de la mañana y perdia todo lo del 31 (auditoria M3).
+    # Refrescando ambos, el mes que cierra converge solo en las corridas
+    # siguientes en vez de esperar a /cierre-mes.
+    #
+    # El ORDEN importa: primero el anterior, despues el actual. La posicion es
+    # una cadena (cada mes arranca del cierre del previo), asi que si se
+    # recalculara el actual primero quedaria colgado del valor viejo del anterior.
+    # cerrar() re-lee data/cierre_casa.csv en cada llamada, por eso el segundo
+    # ve la fila que acaba de escribir el primero.
+    hoy = dt.date.today().strftime("%Y-%m")
+    for i, mes in enumerate((mes_anterior(hoy), hoy)):
+        if i:
+            print()
+        cerrar(mes)
 
 
 if __name__ == "__main__":

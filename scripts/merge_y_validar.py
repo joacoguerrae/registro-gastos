@@ -1,18 +1,35 @@
 # -*- coding: utf-8 -*-
 """
-Fusiona los staging (ledger_1money.csv + ledger_casa.csv) en data/ledger.csv
-y valida la migracion completa CONTRA LAS FUENTES CRUDAS (MyFinance.db,
-casa.xlsx, data/raw/presupuestos/*.txt) recalculando todo de forma
-independiente (no confia en los reportes de los migradores).
+Fusiona los staging (ledger_1money.csv + ledger_casa.csv) en data/ledger.csv,
+valida los INVARIANTES del ledger y produce out/resumen_mensual.csv.
+
+DOS MODOS (el motivo del split, ver docs/auditoria-2026-07.md M2):
+
+  sin flags (lo que corre el pipeline 2x/dia):
+    merge -> invariantes -> resumen_mensual.csv. Valida SOLO propiedades que
+    deben cumplirse siempre, sin importar cuantos meses de datos haya:
+    ids unicos, esquema, categorias del catalogo. EXIT != 0 si alguna falla.
+
+  --migracion (a mano, cuando se toca un migrador):
+    ademas revalida la migracion CONTRA LAS FUENTES CRUDAS (MyFinance.db,
+    casa.xlsx, data/presupuesto.csv) recalculando todo de forma independiente,
+    y escribe docs/validacion-migracion.md.
+
+Por que separados: las validaciones de migracion comparan contra un mundo
+CONGELADO (2853 tx / 207 transfers en la DB, exactamente 19 meses de
+presupuesto). Correrlas en cada sync hacia que agregar el presupuesto de un mes
+nuevo pusiera la corrida en rojo "por diseño". La migracion se valida cuando se
+toca un migrador; los invariantes, siempre.
 
 Salidas:
-  - data/ledger.csv                (merge ordenado por fecha, id)
-  - docs/validacion-migracion.md   (reporte completo)
-  - out/resumen_mensual.csv        (mes, categoria, gasto en_analisis=1)
+  - data/ledger.csv                (merge ordenado por fecha, id)     [siempre]
+  - out/resumen_mensual.csv        (mes, categoria, gasto en_analisis=1) [siempre]
+  - docs/validacion-migracion.md   (reporte completo)              [--migracion]
 
 Ejecutar:
-  C:/Users/joaco/anaconda3/python.exe scripts/merge_y_validar.py
+  C:/Users/joaco/anaconda3/python.exe scripts/merge_y_validar.py [--migracion]
 """
+import argparse
 import csv
 import datetime as dt
 import hashlib
@@ -20,6 +37,7 @@ import os
 import random
 import re
 import sqlite3
+import sys
 import warnings
 from collections import Counter, defaultdict
 
@@ -54,6 +72,12 @@ EXCL_PAT = re.compile(r"^\s*(cierre|ajuste|aporte)", re.I)
 # de ventana — ver docs/validacion-migracion.md 2c): ahí el volcado 1Money-Casa
 # vuelve a ser la fuente canónica (en_analisis=1) para no dejar el mes hueco.
 MESES_SIN_PLANILLA = {"2024-09"}
+
+# Secciones cuyo DESVIO es esperado y esta documentado: NO deben hacer fallar la
+# corrida. 2c compara la planilla de casa (fuente canonica) contra los volcados
+# manuales y agregados a 1Money: nunca calzaron mes a mes, por eso los volcados
+# quedan en en_analisis=0. Ver docs/validacion-migracion.md seccion 2c.
+DESVIOS_ESPERADOS = {"2c.doble_conteo"}
 
 results = []   # (seccion, estado, texto) para el .md
 
@@ -251,6 +275,12 @@ def recalc_xlsx():
 
 # ============================================================
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--migracion", action="store_true",
+                    help="ademas revalida la migracion contra las fuentes crudas "
+                         "(MyFinance.db, casa.xlsx) y escribe docs/validacion-migracion.md")
+    args = ap.parse_args()
+
     random.seed(20260711)
     os.makedirs(P("out"), exist_ok=True)
 
@@ -289,6 +319,116 @@ def main():
 
     suma_uyu_total = sum(float(r["monto_uyu"]) for r in ledger if r["monto_uyu"])
     log("1.suma", "OK", f"suma |monto_uyu| todas las filas: {suma_uyu_total:.2f}")
+
+    # ---------- 2d. categorias (INVARIANTE: corre siempre) ----------
+    with open(CATEG_CSV, encoding="utf-8-sig") as f:
+        categorias_validas = {r["categoria"].strip() for r in csv.DictReader(f)}
+    sin_cat = [r for r in ledger if r["tipo"] in ("gasto", "ingreso")
+               and r["en_analisis"] == "1" and r["categoria"] == ""
+               and r["estado"] != "pendiente"]  # pendientes: bandeja de revision (mail)
+    cats_ledger = {r["categoria"] for r in ledger if r["categoria"]}
+    cats_invalidas = cats_ledger - categorias_validas
+    log("2d.categorias", "OK" if not sin_cat and not cats_invalidas else "DESVIO",
+        f"gasto/ingreso en_analisis=1 sin categoria: {len(sin_cat)}; "
+        f"categorias fuera de catalogo: {sorted(cats_invalidas) or 'ninguna'}")
+
+    # ---------- 4. resumen mensual (PERSONAL: solo la parte de Joaco) ----------
+    # out/resumen_mensual.csv alimenta el presupuesto PERSONAL de Joaco (Sheet
+    # gastos_resumen_mensual y presupuesto_vs_real.csv). Un gasto ambito=casa
+    # es compartido con Lu: contar el monto_uyu completo duplicaria su parte
+    # dentro del presupuesto de Joaco. Se aplica el mismo coeficiente/
+    # participacion que usa el dashboard de casa (out/casa_mensual.csv) para
+    # quedarse solo con la porcion de Joaco.
+    ingresos_mes = {}
+    with open(P("config", "ingresos.csv"), encoding="utf-8-sig", newline="") as f:
+        for r in csv.DictReader(f):
+            tot_ing = float(r["ingreso_lu"]) + float(r["ingreso_joaco"])
+            ingresos_mes[r["mes"]] = float(r["ingreso_joaco"]) / tot_ing
+
+    def coef_joaco(mes):
+        if mes in ingresos_mes:
+            return ingresos_mes[mes]
+        previos = sorted(m for m in ingresos_mes if m <= mes)
+        return ingresos_mes[previos[-1]] if previos else 0.5
+
+    participaciones = {}
+    part_path = P("data", "participaciones.csv")
+    if os.path.exists(part_path):
+        with open(part_path, encoding="utf-8-sig", newline="") as f:
+            participaciones = {r["id_ledger"]: float(r["frac_joaco"])
+                               for r in csv.DictReader(f)}
+
+    resumen = defaultdict(float)
+    for r in ledger:
+        if r["tipo"] != "gasto" or r["en_analisis"] != "1":
+            continue
+        monto = float(r["monto_uyu"])
+        if r["ambito"] == "casa":
+            frac = participaciones.get(r["id"], coef_joaco(r["mes"]))
+            monto *= frac
+        resumen[(r["mes"], r["categoria"] or "(sin categoria)")] += monto
+    with open(OUT_RESUMEN, "w", encoding="utf-8", newline="") as f:
+        w = csv.writer(f)
+        # "fecha" (YYYY-MM-01, ISO) ademas de "mes" (YYYY-MM): Looker Studio
+        # reconoce fechas ISO con guion como tipo Fecha automaticamente, pero
+        # "YYYY-MM" con guion NO calza con su formato "Año Mes" (que exige
+        # YYYYMM sin separador) -> "mes" quedaba ilegible como fecha en Looker.
+        w.writerow(["mes", "fecha", "categoria", "gasto_uyu"])
+        for (mes, cat), v in sorted(resumen.items()):
+            w.writerow([mes, f"{mes}-01", cat, f"{v:.2f}"])
+    log("4.resumen", "OK",
+        f"{len(resumen)} filas (mes,categoria) -> out/resumen_mensual.csv "
+        f"(PERSONAL: casa dividida por coeficiente/participacion); "
+        f"suma total {sum(resumen.values()):.2f}")
+
+    gasto_2026 = sum(v for (m, _), v in resumen.items() if m.startswith("2026"))
+    log("total.2026", "INFO", f"gasto 2026 en_analisis=1: {gasto_2026:.2f} UYU")
+
+    # ---------- validacion de la migracion (SOLO --migracion) ----------
+    if args.migracion:
+        validar_migracion(ledger, dict(
+            n_total=n_total, por_origen=por_origen, por_tipo=por_tipo, rango=rango,
+            dupes=dupes, problemas_vacios=problemas_vacios,
+            suma_uyu_total=suma_uyu_total, gasto_2026=gasto_2026,
+            sin_cat=sin_cat, cats_invalidas=cats_invalidas))
+
+    # muestra 5 filas del ledger final
+    print("\nmuestra 5 filas ledger.csv:")
+    for i in (0, n_total // 4, n_total // 2, 3 * n_total // 4, n_total - 1):
+        print(" ", [ledger[i][c] for c in ("id", "fecha", "tipo", "monto", "moneda",
+                                           "monto_uyu", "cuenta", "categoria",
+                                           "ambito", "origen", "en_analisis")])
+
+    # ---------- exit code: los invariantes son BLOQUEANTES ----------
+    # Antes este script salia SIEMPRE con 0 y el workflow decidia por grep sobre
+    # el stdout -- que ademas no miraba FALLO, el estado reservado para ids
+    # duplicados (auditoria 2026-07 A1): un ledger corrupto se commiteaba en
+    # verde. Ahora el codigo de salida es la verdad y el pipeline se detiene solo.
+    fallos = [(s, t) for s, st, t in results if st == "FALLO"]
+    desvios = [(s, t) for s, st, t in results if st == "DESVIO"
+               and s not in DESVIOS_ESPERADOS]
+    if fallos or desvios:
+        print("\n=== VALIDACION NO PASA ===")
+        for s, t in fallos:
+            print(f"  [FALLO]  {s}: {t}")
+        for s, t in desvios:
+            print(f"  [DESVIO] {s}: {t}")
+        return 1
+    esperados = sorted({s for s, st, _ in results
+                        if st == "DESVIO" and s in DESVIOS_ESPERADOS})
+    nota = f"; desvios documentados: {', '.join(esperados)}" if esperados else ""
+    print(f"\nvalidacion OK ({len(results)} chequeos{nota})")
+    return 0
+
+
+def validar_migracion(ledger, ctx):
+    """Revalida la migracion contra las fuentes crudas. NO corre en el pipeline:
+    compara contra un mundo congelado (conteos de MyFinance.db, cantidad de meses
+    de presupuesto) que agregar datos nuevos rompe por diseño."""
+    n_total = ctx["n_total"]
+    por_origen, por_tipo, rango, dupes = ctx["por_origen"], ctx["por_tipo"], ctx["rango"], ctx["dupes"]
+    problemas_vacios, suma_uyu_total = ctx["problemas_vacios"], ctx["suma_uyu_total"]
+    gasto_2026, sin_cat, cats_invalidas = ctx["gasto_2026"], ctx["sin_cat"], ctx["cats_invalidas"]
 
     # ---------- 2a. conteos vs DB ----------
     db = recalc_db()
@@ -369,18 +509,6 @@ def main():
         + (", ".join(f"{m} (planilla {pj:.0f} vs 1money {dm:.0f}, {pct:.0f}%)"
                      for m, pj, dm, pct in desvios_c) or "ninguno"))
 
-    # ---------- 2d. categorias ----------
-    with open(CATEG_CSV, encoding="utf-8-sig") as f:
-        categorias_validas = {r["categoria"].strip() for r in csv.DictReader(f)}
-    sin_cat = [r for r in ledger if r["tipo"] in ("gasto", "ingreso")
-               and r["en_analisis"] == "1" and r["categoria"] == ""
-               and r["estado"] != "pendiente"]  # pendientes: bandeja de revision (mail)
-    cats_ledger = {r["categoria"] for r in ledger if r["categoria"]}
-    cats_invalidas = cats_ledger - categorias_validas
-    log("2d.categorias", "OK" if not sin_cat and not cats_invalidas else "DESVIO",
-        f"gasto/ingreso en_analisis=1 sin categoria: {len(sin_cat)}; "
-        f"categorias fuera de catalogo: {sorted(cats_invalidas) or 'ninguna'}")
-
     # ---------- 2e. presupuesto ----------
     with open(PRESUPUESTO_CSV, encoding="utf-8-sig", newline="") as f:
         pres = list(csv.DictReader(f))
@@ -449,58 +577,6 @@ def main():
     log("2c.huerfanas", "INFO",
         f"{len(x['huerfanas'])} gastos de la planilla fuera de toda ventana "
         f"(no migrados al ledger), suma {hsum:.2f} UYU -> {hclas_txt}")
-
-    # ---------- 4. resumen mensual (PERSONAL: solo la parte de Joaco) ----------
-    # out/resumen_mensual.csv alimenta el presupuesto PERSONAL de Joaco (Sheet
-    # gastos_resumen_mensual y presupuesto_vs_real.csv). Un gasto ambito=casa
-    # es compartido con Lu: contar el monto_uyu completo duplicaria su parte
-    # dentro del presupuesto de Joaco. Se aplica el mismo coeficiente/
-    # participacion que usa el dashboard de casa (out/casa_mensual.csv) para
-    # quedarse solo con la porcion de Joaco.
-    ingresos_mes = {}
-    with open(P("config", "ingresos.csv"), encoding="utf-8-sig", newline="") as f:
-        for r in csv.DictReader(f):
-            tot_ing = float(r["ingreso_lu"]) + float(r["ingreso_joaco"])
-            ingresos_mes[r["mes"]] = float(r["ingreso_joaco"]) / tot_ing
-
-    def coef_joaco(mes):
-        if mes in ingresos_mes:
-            return ingresos_mes[mes]
-        previos = sorted(m for m in ingresos_mes if m <= mes)
-        return ingresos_mes[previos[-1]] if previos else 0.5
-
-    participaciones = {}
-    part_path = P("data", "participaciones.csv")
-    if os.path.exists(part_path):
-        with open(part_path, encoding="utf-8-sig", newline="") as f:
-            participaciones = {r["id_ledger"]: float(r["frac_joaco"])
-                               for r in csv.DictReader(f)}
-
-    resumen = defaultdict(float)
-    for r in ledger:
-        if r["tipo"] != "gasto" or r["en_analisis"] != "1":
-            continue
-        monto = float(r["monto_uyu"])
-        if r["ambito"] == "casa":
-            frac = participaciones.get(r["id"], coef_joaco(r["mes"]))
-            monto *= frac
-        resumen[(r["mes"], r["categoria"] or "(sin categoria)")] += monto
-    with open(OUT_RESUMEN, "w", encoding="utf-8", newline="") as f:
-        w = csv.writer(f)
-        # "fecha" (YYYY-MM-01, ISO) ademas de "mes" (YYYY-MM): Looker Studio
-        # reconoce fechas ISO con guion como tipo Fecha automaticamente, pero
-        # "YYYY-MM" con guion NO calza con su formato "Año Mes" (que exige
-        # YYYYMM sin separador) -> "mes" quedaba ilegible como fecha en Looker.
-        w.writerow(["mes", "fecha", "categoria", "gasto_uyu"])
-        for (mes, cat), v in sorted(resumen.items()):
-            w.writerow([mes, f"{mes}-01", cat, f"{v:.2f}"])
-    log("4.resumen", "OK",
-        f"{len(resumen)} filas (mes,categoria) -> out/resumen_mensual.csv "
-        f"(PERSONAL: casa dividida por coeficiente/participacion); "
-        f"suma total {sum(resumen.values()):.2f}")
-
-    gasto_2026 = sum(v for (m, _), v in resumen.items() if m.startswith("2026"))
-    log("total.2026", "INFO", f"gasto 2026 en_analisis=1: {gasto_2026:.2f} UYU")
 
     # ---------- 3. reporte md ----------
     md = []
@@ -615,13 +691,6 @@ def main():
         f.write("\n".join(md) + "\n")
     print(f"\nMD -> {OUT_MD}")
 
-    # muestra 5 filas del ledger final
-    print("\nmuestra 5 filas ledger.csv:")
-    for i in (0, n_total // 4, n_total // 2, 3 * n_total // 4, n_total - 1):
-        print(" ", [ledger[i][c] for c in ("id", "fecha", "tipo", "monto", "moneda",
-                                           "monto_uyu", "cuenta", "categoria",
-                                           "ambito", "origen", "en_analisis")])
-
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

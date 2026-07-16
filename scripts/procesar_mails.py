@@ -183,6 +183,33 @@ def parse_fecha_valor(s):
     return dt.date(int(m.group(3)), mes, int(m.group(2)))
 
 
+# Estas dos funciones son el UNICO punto donde un cambio de layout del banco
+# puede romper el pipeline: extraen campos por etiqueta literal. Estan aisladas
+# para que quien las llama pueda cazar la excepcion y dejar ESE mail como
+# pendiente `formato_nuevo`, en vez de frenar la corrida entera (auditoria
+# 2026-07 M1). Lanzan a proposito: el que llama decide que hacer.
+def parse_aviso(body):
+    """Aviso de uso de tarjeta y aviso de devolucion (mismo layout, cambia solo
+    el encabezado). -> (tarjeta, moneda, monto, establecimiento_crudo, fecha_hora)"""
+    tarjeta = campo_bloque(body, "VISA terminada en", "Importe")
+    moneda, monto = parse_importe(campo_bloque(body, "Importe", "Establecimento"))
+    est_crudo = campo_bloque(body, "Establecimento", "Fecha y hora")
+    fh_txt = campo_bloque(body, "Fecha y hora", "Para ver")
+    fh = dt.datetime.strptime(fh_txt[:19], "%d/%m/%Y %H:%M:%S")
+    return tarjeta, moneda, monto, est_crudo, fh
+
+
+def parse_transferencia(body):
+    """Aviso de transferencia.
+    -> (titular, concepto, moneda, monto, fecha_iso, tipo_cuenta_origen)"""
+    v = campos_transferencia(body)
+    titular = v["titular"]
+    concepto = " ".join(x for x in (v["concepto origen"], v["concepto destino"]) if x).strip()
+    moneda, monto = parse_importe(v["monto"])
+    fecha = parse_fecha_valor(v["fecha valor"]).isoformat()
+    return titular, concepto, moneda, monto, fecha, (v["tipo"] or "").lower()
+
+
 def hid(message_id):
     return hashlib.sha1(("mail" + message_id).encode()).hexdigest()[:12]
 
@@ -322,6 +349,22 @@ def main():
         pend_nuevos.append(dict(id_ledger=id_ledger, motivo=motivo,
                                 detalle=detalle, fecha_alta=hoy, resuelto=""))
 
+    def formato_nuevo(mail, handler, exc):
+        """Un mail que el parser no supo leer NO frena la corrida: queda como
+        pendiente y el resto sigue. Antes una excepcion aca cortaba el pipeline
+        entero -- Splitwise, dashboard y Sheets incluidos -- hasta arreglo a mano
+        (auditoria 2026-07 M1). El contrato de diseño siempre fue este: formato
+        desconocido -> pendiente, nunca perdido en silencio.
+
+        El id_ledger es el que la fila HABRIA tenido (no hay fila que apuntar):
+        misma convencion que los pendientes de Splitwise que nunca insertan fila.
+        Se loguea en procesados.csv para no reintentar en cada corrida; para
+        recuperarlo: arreglar el parser y correr con --reprocesar."""
+        detalle = (f"{mail['from']} | {mail['subject']!r} -> "
+                   f"{type(exc).__name__}: {exc}")
+        pend(hid(mail["message_id"]), "formato_nuevo", detalle)
+        log_proc(mail, handler, "formato_nuevo", hid(mail["message_id"]), detalle)
+
     def router(mail):
         frm, subj = mail["from"].lower(), mail["subject"]
         if "notificaciones@santander.com.uy" in frm:
@@ -347,12 +390,11 @@ def main():
     for mail in mails:
         if mail["message_id"] in ya_procesados or router(mail) != "aviso_tarjeta":
             continue
-        b = mail["body_text"]
-        tarjeta = campo_bloque(b, "VISA terminada en", "Importe")
-        moneda, monto = parse_importe(campo_bloque(b, "Importe", "Establecimento"))
-        est_crudo = campo_bloque(b, "Establecimento", "Fecha y hora")
-        fh_txt = campo_bloque(b, "Fecha y hora", "Para ver")
-        fh = dt.datetime.strptime(fh_txt[:19], "%d/%m/%Y %H:%M:%S")
+        try:
+            tarjeta, moneda, monto, est_crudo, fh = parse_aviso(mail["body_text"])
+        except Exception as e:
+            formato_nuevo(mail, "aviso_tarjeta", e)
+            continue
         fecha = fh.date().isoformat()
 
         if fecha < BACKFILL_DESDE:
@@ -430,12 +472,11 @@ def main():
     for mail in mails:
         if mail["message_id"] in ya_procesados or router(mail) != "devolucion":
             continue
-        b = mail["body_text"]
-        tarjeta = campo_bloque(b, "VISA terminada en", "Importe")
-        moneda, monto = parse_importe(campo_bloque(b, "Importe", "Establecimento"))
-        est_crudo = campo_bloque(b, "Establecimento", "Fecha y hora")
-        fh_txt = campo_bloque(b, "Fecha y hora", "Para ver")
-        fh = dt.datetime.strptime(fh_txt[:19], "%d/%m/%Y %H:%M:%S")
+        try:
+            tarjeta, moneda, monto, est_crudo, fh = parse_aviso(mail["body_text"])
+        except Exception as e:
+            formato_nuevo(mail, "devolucion", e)
+            continue
         fecha = fh.date().isoformat()
 
         if fecha < BACKFILL_DESDE:
@@ -499,11 +540,12 @@ def main():
     for mail in mails:
         if mail["message_id"] in ya_procesados or router(mail) != "transferencia":
             continue
-        v = campos_transferencia(mail["body_text"])
-        titular = v["titular"]
-        concepto = " ".join(x for x in (v["concepto origen"], v["concepto destino"]) if x).strip()
-        moneda, monto = parse_importe(v["monto"])
-        fecha = parse_fecha_valor(v["fecha valor"]).isoformat()
+        try:
+            titular, concepto, moneda, monto, fecha, tipo_origen = \
+                parse_transferencia(mail["body_text"])
+        except Exception as e:
+            formato_nuevo(mail, "transferencia", e)
+            continue
 
         if fecha < BACKFILL_DESDE:
             log_proc(mail, "transferencia", "ignorado_pre_backfill",
@@ -527,7 +569,6 @@ def main():
 
         # cuenta origen segun el mail: la corriente es el fondo de la casa,
         # la caja de ahorro es la plata personal (confirmado 12/7)
-        tipo_origen = (v["tipo"] or "").lower()
         cuenta_origen = "Cuenta Casa" if "corriente" in tipo_origen else "Santander UYU"
 
         r = fila_base(mail["message_id"])
