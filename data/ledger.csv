@@ -4607,5 +4607,5 @@ c01eae0a556c,2026-07-14,2026-07,gasto,74.72,UYU,74.72,Cuenta Casa,,Super,,MONTEV
 9f2680fde1bf,2026-07-15,2026-07,gasto,245.00,UYU,245.00,Santander Platinum,,Transporte,,DLOUBERRIDES,DLOUBERRIDES,personal,mail,confirmado,1,19f668c83b6510ac
 c1b5b2cc3f7d,2026-07-15,2026-07,gasto,225.98,UYU,225.98,Santander Platinum,,Transporte,,DLOUBERRIDES,DLOUBERRIDES,personal,mail,confirmado,1,19f664f91dc29c5c
 e214c726ed9e,2026-07-15,2026-07,gasto,161.28,UYU,161.28,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,casa,mail,confirmado,1,19f672d98a002f0f
-e23310c4e1d4,2026-07-15,2026-07,transferencia,328.80,USD,,Deudas,Santander UYU,,,,Pago Splitwise de Lucia: Payment,interno,splitwise,pendiente,0,sw:4571314074
+e23310c4e1d4,2026-07-15,2026-07,transferencia,328.80,USD,,Deudas,Santander USD,,,,Pago Splitwise recibido de Lucia (repago de deuda) -> entrada a Santander USD,interno,splitwise,confirmado,0,sw:4571314074
 f2b560128a89,2026-07-15,2026-07,gasto,-225.94,UYU,-225.94,Santander Platinum,,Transporte,,DLOUBERRIDES,Reintegro DLOUBERRIDES (revierte 82df163851c5),personal,mail,confirmado,1,19f664f8befc945d
