@@ -118,3 +118,9 @@ e23310c4e1d4,motivo_resuelto,transferencia_a_clasificar,,2026-07-15
 5ed5d6db81b9,categoria,Servicios,"UTE (luz) pagada via Proyecto PAS con la tarjeta de casa 8261 - confirmado por Joaco 16/7",2026-07-16
 5ed5d6db81b9,descripcion,UTE (luz) via Proyecto PAS,,2026-07-16
 5ed5d6db81b9,motivo_resuelto,sin_categoria,,2026-07-16
+d50e9ed860cf,tipo,transferencia,"compra de la madre de Lu con nuestra tarjeta por el descuento; no es gasto nuestro, ella nos lo transfiere a la cuenta (Joaco, 16/7)",2026-07-16
+d50e9ed860cf,cuenta_destino,Deudas,el importe queda como cuenta a cobrar hasta que transfiera,2026-07-16
+d50e9ed860cf,ambito,interno,no es consumo de la casa ni personal: es plata de un tercero,2026-07-16
+d50e9ed860cf,en_analisis,0,no debe contar en ningun agregado de gasto,2026-07-16
+d50e9ed860cf,descripcion,CHIC PARISIEN - compra de la madre de Lu (nos la devuelve),"compra de la madre de Lu con nuestra tarjeta por el descuento; no es gasto nuestro, ella nos lo transfiere a la cuenta (Joaco, 16/7)",2026-07-16
+d50e9ed860cf,motivo_resuelto,sin_categoria,"no lleva categoria: no es un gasto, es una transferencia",2026-07-16

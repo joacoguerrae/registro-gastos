@@ -17,7 +17,7 @@ Columnas: `id_ledger,campo,valor,nota,fecha`. Una fila por corrección:
 | Duplicado confirmado | `<id>,en_analisis,0,duplicado de <otro id>,<hoy>` |
 | Cerrar un pendiente sin tocar datos | `<id>,motivo_resuelto,<motivo>,<decisión>,<hoy>` |
 
-- `motivo_resuelto` es especial: cierra el pendiente `(id, motivo)` y **suprime su regeneración** en toda corrida futura. Usalo SIEMPRE que resuelvas un pendiente cuya causa no desaparece sola con el override (p.ej. `split_a_cargar`, `posible_duplicado` descartado, `transferencia_a_clasificar`). Para `sin_categoria` alcanza el override de `categoria` (la causa desaparece); no hace falta la fila extra.
+- `motivo_resuelto` es especial: cierra el pendiente `(id, motivo)` y **suprime su regeneración** en toda corrida futura. **Va SIEMPRE, para todo motivo — incluido `sin_categoria`.** Los handlers crean los pendientes ANTES de que se apliquen las resoluciones (`procesar_mails.py`: handlers en los pasos 1-4, overrides en el 5), así que un override de `categoria` NO evita que el pendiente vuelva a nacer: en un `--reprocesar` la fila queda bien categorizada pero con `estado=pendiente` y de vuelta en la bandeja, para siempre. La única fila que suprime es `motivo_resuelto`. (Verificado el 16/7 fabricando el caso; una versión previa de este comando decía lo contrario.)
 - No marques `resuelto=1` en `pendientes.csv` a mano: lo hace `procesar_mails.py` al ver el `motivo_resuelto`.
 - El `estado` de la fila (`pendiente`→`confirmado`) también lo recalcula el pipeline solo.
 
