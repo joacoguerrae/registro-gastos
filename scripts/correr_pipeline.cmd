@@ -7,6 +7,7 @@ C:\Users\joaco\anaconda3\python.exe scripts\sync_splitwise.py || echo (aviso: sy
 C:\Users\joaco\anaconda3\python.exe scripts\procesar_mails.py || exit /b 1
 C:\Users\joaco\anaconda3\python.exe scripts\merge_y_validar.py || exit /b 1
 C:\Users\joaco\anaconda3\python.exe scripts\generar_dashboard_data.py || exit /b 1
+C:\Users\joaco\anaconda3\python.exe scripts\generar_dashboard_html.py || echo (aviso: generar_dashboard_html.py fallo -- el dashboard HTML queda con datos previos)
 C:\Users\joaco\anaconda3\python.exe scripts\actualizar_sheets.py || echo (aviso: actualizar_sheets.py fallo -- Looker queda con datos previos, se recupera en la proxima corrida)
 git add -A
 git commit -m "sync automatico %date% %time%" -m "Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>" || echo (sin cambios para commitear)

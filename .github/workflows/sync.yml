@@ -77,6 +77,7 @@ jobs:
           GCP_SA_JSON: ${{ secrets.GCP_SA_JSON }}
         run: |
           python scripts/generar_dashboard_data.py
+          python scripts/generar_dashboard_html.py || echo "(aviso: dashboard HTML falló)"
           python scripts/actualizar_sheets.py || echo "(aviso: Sheets falló, Looker usa datos previos)"
           git config user.name "gastos-bot"
           git config user.email "actions@users.noreply.github.com"
