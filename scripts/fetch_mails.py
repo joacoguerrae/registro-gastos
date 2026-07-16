@@ -43,6 +43,7 @@ def P(*a):
 
 
 INBOX = P("data", "inbox_raw")
+ESTADOS = P("data", "estados")
 PROCESADOS = P("data", "staging", "procesados.csv")
 ESTADO_SYNC = P("config", "estado_sync.json")
 REGLAS_FETCH = P("config", "reglas_fetch.csv")
@@ -50,6 +51,7 @@ TOKEN_FILE = P("config", "gmail_token.json")
 
 DEFAULT_AFTER = "2026/06/30"   # si no hay watermark
 OVERLAP_DAYS = 2               # solapamiento seguro; la idempotencia absorbe repetidos
+ESTADOS_LOOKBACK_DIAS = 90     # ventana para estados de cuenta (son mensuales)
 
 
 def creds_gmail():
@@ -72,7 +74,11 @@ def creds_gmail():
 
 
 def cargar_reglas_fetch():
-    senders, denylist = [], []
+    """-> (senders, denylist, estado_senders). Los `sender_estado` son remitentes de
+    estados de cuenta: se bajan como cualquier mail Y ademas se les guarda el PDF
+    adjunto en data/estados/ (es la unica via para la Mastercard y la BBVA, que no
+    mandan avisos por transaccion)."""
+    senders, denylist, estado_senders = [], [], []
     with open(REGLAS_FETCH, encoding="utf-8-sig") as f:
         for row in csv.DictReader(f):
             tipo, val = row["tipo"].strip(), row["valor"].strip()
@@ -80,9 +86,12 @@ def cargar_reglas_fetch():
                 continue
             if tipo == "sender":
                 senders.append(val)
+            elif tipo == "sender_estado":
+                senders.append(val)
+                estado_senders.append(val)
             elif tipo == "denylist_subject":
                 denylist.append(val)
-    return senders, denylist
+    return senders, denylist, estado_senders
 
 
 def leer_after():
@@ -174,6 +183,66 @@ def extraer_cuerpo(payload):
     return html, plain
 
 
+def emisor_slug(frm):
+    f = frm.lower()
+    if "bbva" in f:
+        return "bbva"
+    if "santander" in f:
+        return "santander"
+    if "itau" in f:
+        return "itau"
+    return re.sub(r"[^a-z0-9]+", "", f.split("@")[-1].split(".")[0])[:12] or "otro"
+
+
+def bajar_estados_pdf(svc, estado_senders, dias=ESTADOS_LOOKBACK_DIAS):
+    """Guarda en data/estados/ los PDF adjuntos de los mails de estado de cuenta.
+
+    Ventana propia (90d) y NO el watermark: los estados son mensuales, con la
+    ventana de 2 dias del fetch solo se cazarian el dia exacto que llegan.
+    Idempotente por nombre de archivo, e independiente del skip de mensajes ya
+    vistos: si el mail ya estaba en inbox_raw pero el PDF falta, igual lo baja.
+    El nombre lleva fecha + emisor porque BBVA manda siempre 'EC Visa .pdf'
+    (sin prefijo se pisarian los meses)."""
+    if not estado_senders:
+        return []
+    os.makedirs(ESTADOS, exist_ok=True)
+    after = (dt.date.today() - dt.timedelta(days=dias)).strftime("%Y/%m/%d")
+    query = "(" + " OR ".join(f"from:{s}" for s in estado_senders) + f") has:attachment after:{after}"
+    ids = []
+    req = svc.users().messages().list(userId="me", q=query, maxResults=100)
+    while req is not None:
+        resp = req.execute()
+        ids += [m["id"] for m in resp.get("messages", [])]
+        req = svc.users().messages().list_next(req, resp)
+
+    guardados = []
+    for mid in ids:
+        msg = svc.users().messages().get(userId="me", id=mid, format="full").execute()
+        payload = msg["payload"]
+        slug = emisor_slug(parseaddr(header(payload, "From"))[1])
+        fecha = fecha_mail_iso(msg)[:10] or "sinfecha"
+        pend = [payload]
+        while pend:
+            p = pend.pop()
+            pend += p.get("parts", []) or []
+            fn = (p.get("filename") or "").strip()
+            if not fn.lower().endswith(".pdf"):
+                continue                      # ignora logos/imagenes del mail
+            safe = re.sub(r"[^A-Za-z0-9._-]+", "_", fn).strip("_")
+            destino = os.path.join(ESTADOS, f"{fecha}_{slug}_{safe}")
+            if os.path.exists(destino):
+                continue
+            aid = p.get("body", {}).get("attachmentId")
+            if not aid:
+                continue
+            adj = svc.users().messages().attachments().get(
+                userId="me", messageId=mid, id=aid).execute()
+            with open(destino, "wb") as f:
+                f.write(base64.urlsafe_b64decode(adj["data"].encode("utf-8")))
+            guardados.append(os.path.basename(destino))
+    return guardados
+
+
 def fecha_mail_iso(msg):
     ms = msg.get("internalDate")
     if ms:
@@ -187,7 +256,7 @@ def fecha_mail_iso(msg):
 
 
 def main():
-    senders, denylist = cargar_reglas_fetch()
+    senders, denylist, estado_senders = cargar_reglas_fetch()
     after = leer_after()
     svc = build("gmail", "v1", credentials=creds_gmail(), cache_discovery=False)
 
@@ -232,6 +301,14 @@ def main():
           f"{len(nuevos)} no vistos | {guardados} guardados | {len(saltados)} saltados (denylist)")
     for mid, subj in saltados:
         print(f"  skip {mid}: {subj!r}")
+
+    # estados de cuenta: guardar los PDF adjuntos (unica via para Mastercard/BBVA,
+    # que no mandan avisos por transaccion). Los procesa conciliar_estado.py.
+    pdfs = bajar_estados_pdf(svc, estado_senders)
+    if pdfs:
+        print(f"estados de cuenta: {len(pdfs)} PDF nuevos en data/estados/")
+        for p in pdfs:
+            print(f"  + {p}")
     return 0
 
 

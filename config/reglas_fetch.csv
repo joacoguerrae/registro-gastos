@@ -6,6 +6,8 @@ sender,info@mercadolibre.com.uy,recibos MercadoLibre / Meli+
 sender,info@mercadopago.com,recibos y transferencias MercadoPago
 sender,factura@antel.com.uy,facturas Antel (informativo)
 sender,info_uy@email.directvla.com,facturas DirecTV (informativo)
+sender_estado,envio@tuestadodecuenta.santander.com.uy,estado de cuenta Santander (Mastercard casa + Visa Platinum 6427) - PDF adjunto se guarda en data/estados/ (password=CI)
+sender_estado,bbvanetnotificacionesp@grupobbva.com.uy,estado de cuenta BBVA Visa - PDF adjunto se guarda en data/estados/ (password=CI)
 denylist_subject,monitoreo de umbral,aviso de monitoreo — no es transaccion
 denylist_subject,rechazo de tarjeta,rechazo = la transaccion no se concreto
 denylist_subject,tarjeta rechazada,idem rechazo
