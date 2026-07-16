@@ -105,7 +105,7 @@ Problema: Joaco paga el 100% (ej. YouTube familiar, un asado) pero su gasto real
 
 ## data/pendientes.csv — bandeja de revisión
 
-`id_ledger,motivo,detalle,fecha_alta,resuelto` — motivos: `sin_categoria`, `ambito_a_confirmar`, `posible_duplicado`, `transferencia_a_clasificar`, `recibo_sin_matchear`, `tc_estimado`, `split_a_cargar`, `sin_respaldo_estado` (Fase 3 — fila del ledger sin línea correspondiente en el estado de cuenta del período; ver docs/fase3.md §2).
+`id_ledger,motivo,detalle,fecha_alta,resuelto` — motivos: `sin_categoria`, `ambito_a_confirmar`, `posible_duplicado`, `transferencia_a_clasificar`, `recibo_sin_matchear`, `tc_estimado`, `split_a_cargar`, `formato_nuevo`, `sin_respaldo_estado` (Fase 3 — fila del ledger sin línea correspondiente en el estado de cuenta del período; ver docs/fase3.md §2), `ingreso_a_clasificar` (crédito detectado en el extracto de una cuenta de débito por `scripts/conciliar_debito.py`: los ingresos no generan mail — Joaco define `Sueldo` / `Otros ingresos` / `Devoluciones & cashback`, o transferencia interna → `en_analisis=0`).
 Revisión semanal: Claude presenta los no resueltos, Joaco decide, se actualizan ledger y reglas (los fallos de categoría alimentan `reglas_comercio.csv` para que no se repitan).
 
 ## Fase 3 — conciliación (diseño, para no duplicar ni descuadrar)
