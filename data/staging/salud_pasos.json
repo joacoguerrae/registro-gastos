@@ -1,0 +1,22 @@
+{
+  "actualizar_sheets": {
+    "fallos_seguidos": 0,
+    "issue_abierto": false,
+    "ultimo_ok": "2026-07-16T20:36:51+00:00"
+  },
+  "cierre_casa": {
+    "fallos_seguidos": 0,
+    "issue_abierto": false,
+    "ultimo_ok": "2026-07-16T20:36:45+00:00"
+  },
+  "generar_dashboard_html": {
+    "fallos_seguidos": 0,
+    "issue_abierto": false,
+    "ultimo_ok": "2026-07-16T20:36:46+00:00"
+  },
+  "sync_splitwise": {
+    "fallos_seguidos": 0,
+    "issue_abierto": false,
+    "ultimo_ok": "2026-07-16T20:36:25+00:00"
+  }
+}

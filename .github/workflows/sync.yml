@@ -69,11 +69,14 @@ jobs:
           GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
         run: python scripts/fetch_mails.py
 
+      # Los pasos NO CRITICOS van envueltos en salud_pasos.py: no frenan la
+      # corrida si fallan, pero la racha queda registrada y a las 3 seguidas se
+      # abre un Issue (auditoria 2026-07 M5). Con `|| echo ::warning::` a secas,
+      # un paso podia fallar todos los dias sin que nadie se enterara.
       - name: Sync Splitwise
         env:
           SPLITWISE_API_KEY: ${{ secrets.SPLITWISE_API_KEY }}
-        run: |
-          python scripts/sync_splitwise.py || echo "::warning::sync_splitwise falló — el pipeline siguió sin Splitwise"
+        run: python scripts/salud_pasos.py correr sync_splitwise -- python scripts/sync_splitwise.py
 
       - name: Procesar mails
         run: |
@@ -92,15 +95,28 @@ jobs:
             exit 1
           fi
 
-      - name: Dashboards + Sheets + commit (solo live)
+      - name: Dashboards + Sheets (solo live)
         if: env.MODE == 'live'
         env:
           GCP_SA_JSON: ${{ secrets.GCP_SA_JSON }}
         run: |
-          python scripts/cierre_casa.py || echo "::warning::cierre_casa falló — la posición de casa quedó con el valor previo"
+          python scripts/salud_pasos.py correr cierre_casa -- python scripts/cierre_casa.py
           python scripts/generar_dashboard_data.py
-          python scripts/generar_dashboard_html.py || echo "::warning::generar_dashboard_html falló — out/dashboard.html quedó con datos previos"
-          python scripts/actualizar_sheets.py || echo "::warning::actualizar_sheets falló — Looker quedó con datos previos"
+          python scripts/salud_pasos.py correr generar_dashboard_html -- python scripts/generar_dashboard_html.py
+          python scripts/salud_pasos.py correr actualizar_sheets -- python scripts/actualizar_sheets.py
+
+      # Va ANTES del commit: escalar() marca el Issue como abierto en
+      # data/staging/salud_pasos.json, y si eso no se commiteara, la corrida
+      # siguiente abriria otro Issue por la misma racha.
+      - name: Escalar pasos que fallan hace varias corridas (solo live)
+        if: env.MODE == 'live'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/salud_pasos.py escalar
+
+      - name: Commit + push (solo live)
+        if: env.MODE == 'live'
+        run: |
           git config user.name "gastos-bot"
           git config user.email "actions@users.noreply.github.com"
           git add -A

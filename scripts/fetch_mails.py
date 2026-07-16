@@ -53,6 +53,11 @@ DEFAULT_AFTER = "2026/06/30"   # si no hay watermark
 OVERLAP_DAYS = 2               # solapamiento seguro; la idempotencia absorbe repetidos
 ESTADOS_LOOKBACK_DIAS = 90     # ventana para estados de cuenta (son mensuales)
 
+# Reintentos ante errores transitorios de la API (5xx, rate limit). googleapiclient
+# los hace con backoff exponencial. Sin esto, un 503 de Google tiraba la corrida
+# entera y los mails esperaban hasta la siguiente (auditoria 2026-07 B4).
+REINTENTOS = 3
+
 
 def creds_gmail():
     cid = os.environ.get("GMAIL_CLIENT_ID")
@@ -211,13 +216,14 @@ def bajar_estados_pdf(svc, estado_senders, dias=ESTADOS_LOOKBACK_DIAS):
     ids = []
     req = svc.users().messages().list(userId="me", q=query, maxResults=100)
     while req is not None:
-        resp = req.execute()
+        resp = req.execute(num_retries=REINTENTOS)
         ids += [m["id"] for m in resp.get("messages", [])]
         req = svc.users().messages().list_next(req, resp)
 
     guardados = []
     for mid in ids:
-        msg = svc.users().messages().get(userId="me", id=mid, format="full").execute()
+        msg = svc.users().messages().get(userId="me", id=mid,
+                                         format="full").execute(num_retries=REINTENTOS)
         payload = msg["payload"]
         slug = emisor_slug(parseaddr(header(payload, "From"))[1])
         fecha = fecha_mail_iso(msg)[:10] or "sinfecha"
@@ -236,7 +242,7 @@ def bajar_estados_pdf(svc, estado_senders, dias=ESTADOS_LOOKBACK_DIAS):
             if not aid:
                 continue
             adj = svc.users().messages().attachments().get(
-                userId="me", messageId=mid, id=aid).execute()
+                userId="me", messageId=mid, id=aid).execute(num_retries=REINTENTOS)
             with open(destino, "wb") as f:
                 f.write(base64.urlsafe_b64decode(adj["data"].encode("utf-8")))
             guardados.append(os.path.basename(destino))
@@ -266,7 +272,7 @@ def main():
     ids = []
     req = svc.users().messages().list(userId="me", q=query, maxResults=500)
     while req is not None:
-        resp = req.execute()
+        resp = req.execute(num_retries=REINTENTOS)
         ids += [m["id"] for m in resp.get("messages", [])]
         req = svc.users().messages().list_next(req, resp)
 
@@ -277,7 +283,8 @@ def main():
     deny_re = [re.compile(p, re.I) for p in denylist]
     guardados, saltados = 0, []
     for mid in nuevos:
-        msg = svc.users().messages().get(userId="me", id=mid, format="full").execute()
+        msg = svc.users().messages().get(userId="me", id=mid,
+                                         format="full").execute(num_retries=REINTENTOS)
         payload = msg["payload"]
         subject = header(payload, "Subject")
         if any(r.search(subject) for r in deny_re):
