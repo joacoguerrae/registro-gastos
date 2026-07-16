@@ -71,3 +71,4 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 19f619bcba08541f,2026-07-14T17:10:27Z,recibo,ignorado,,recibo no parseable,,2026-07-16T00:57:43+00:00
 19f3ff031a0a6abe,2026-07-07T15:05:53Z,ignorado,estado_cuenta_pendiente_f3,,bbvanetnotificacionesp@grupobbva.com.uy | Estado de Cuenta de su Tarjeta de Crédito Visa BBVA,,2026-07-16T00:57:43+00:00
 19f5d65c0e4e7bd9,2026-07-13T21:32:48Z,factura,factura,,"Antel  venc  (informativo, no toca ledger)",,2026-07-16T00:57:43+00:00
+19f68a5c4b9714d2,2026-07-16T01:58:34Z,aviso_tarjeta,insertado,5ed5d6db81b9,8261 UYU 2616.81 INTERNET/Proyecto PAS -> Cuenta Casa/casa/(sin categoria),8261||2616.81||INTERNET/Proyecto PAS||2026-07-15T22:49:47,2026-07-16T12:28:16+00:00
