@@ -9,8 +9,8 @@ Ledger único de gastos (personal + casa con Lu + Splitwise). Diseño: [docs/esq
 ## Modelo operativo
 
 - **Fetch + pipeline automáticos:** GitHub Actions 2×/día (`.github/workflows/sync.yml`) → `fetch_mails.py` (Gmail API determinístico) → `sync_splitwise` → `procesar_mails` → `merge_y_validar` → `cierre_casa` (refresca la posición) → dashboards (`out/dashboard.html`) → Sheets → commit. Si quedan pendientes nuevos, abre un Issue (te llega mail).
-- **Estado (2026-07-15):** migración en **semana shadow** — Actions corre en modo `shadow` (valida, no commitea) y la PC sigue siendo la dueña vía tareas de Windows. Al cutover se flipa a `live` y se deshabilitan las tareas. Plan y checklist: [docs/plan-migracion-fetch.md](docs/plan-migracion-fetch.md).
-- **Fallback manual local:** `cmd /c scripts\correr_pipeline.cmd` (corre todo menos el fetch). El fetch local de respaldo: `python scripts/fetch_mails.py` con `config/gmail_token.json` (gitignored).
+- **Estado (2026-07-16):** migración en **semana shadow** — Actions corre en `shadow` (valida, no commitea) y la PC sigue siendo la dueña vía las tareas de Windows "Gastos Sync AM/PM" (9:23 y 21:23), que desde el 16/7 corren `scripts\sync_local.cmd`: **100% determinístico** (pull → `fetch_mails.py` → pipeline → commit → **push**). Claude ya no participa del fetch ni localmente. Al cutover se flipa Actions a `live` y se deshabilitan las tareas. Plan: [docs/plan-migracion-fetch.md](docs/plan-migracion-fetch.md).
+- **Corrida manual local:** `scripts\sync_local.cmd` (todo: pull, fetch, pipeline, push). Solo el pipeline sin fetch: `scripts\correr_pipeline.cmd`. ⚠️ **`cmd /c` desde la tool Bash NO ejecuta los .cmd** (abre shell interactiva y cuelga): correrlos con la tool PowerShell → `& "scripts\sync_local.cmd"`.
 - **Claude NO está en el camino crítico del fetch** (era la causa de los 4 incidentes de julio: mails perdidos, crash por layouts, timeout, dependencia de la PC). Claude es para lo que requiere criterio: `/revisar-pendientes`, `/cierre-mes`, análisis.
 
 ## Invariantes (no romper)
