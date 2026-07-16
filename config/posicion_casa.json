@@ -1,6 +1,6 @@
 {
   "fecha_corte": "2026-06-30",
-  "lu": 11244.07,
-  "joaco": -9692.04,
-  "_nota": "Posicion semilla de la cuenta continua de casa (Saldos Tarjeta de la planilla congelada al 2026-06-30). Positivo = a favor. Desde 2026-07 la posicion vive en data/cierre_casa.csv (scripts/cierre_casa.py); este archivo NO se edita mas."
+  "lu": 11233.06,
+  "joaco": -9711.80,
+  "_nota": "Recalibrado 2026-07-15 contra el saldo real de la Cuenta Casa al cierre de junio (1521.26, del extracto Santander corriente). La planilla tenia 1637 (Lu 11273, Joaco -9636); la diferencia de 115.74 se prorrateo por el coeficiente de jun-2026 (Joaco 0.65492, Lu 0.34508) para que lu+joaco = 1521.26. Valores previos: lu 11244.07 / joaco -9692.04."
 }
