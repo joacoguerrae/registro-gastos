@@ -380,11 +380,14 @@ function renderCat(){
   bcard.appendChild(el("div",null,hbars(bitems))); row.appendChild(bcard); w.appendChild(row);
 
   const tc=el("div","card");
-  const multi=selCats&&selCats.size>=1&&selCats.size<=6;
-  tc.appendChild(el("div",null,`<h3>Evolución</h3><div class="sub">${multi?'por categoría · ':''}últimos 6 meses${multi?'':' (gasto personal'+(selCats?' filtrado':'')+')'}</div>`));
-  const series=trendSeries((m,cat)=>(D.personal[m]||[]).filter(x=>cat?x.cat===cat:catOk(x.cat)).reduce((t,x)=>t+x.gasto,0));
-  tc.appendChild(el("div","tscroll",lineChart(series,"Evolución")));
-  if(series.length>1){const lg2=el("div","legend"); series.forEach(s=>lg2.appendChild(el("div","it",`<span class="sw" style="background:${cssvar(s.cvar)}"></span>${s.name}`))); tc.appendChild(lg2);}
+  if(selCats&&selCats.size===0){ tc.appendChild(el("div",null,`<h3>Evolución</h3><div class="sub">Elegí una o más categorías en el filtro para ver su evolución.</div>`)); }
+  else {
+    const multi=selCats&&selCats.size>=1&&selCats.size<=6;
+    tc.appendChild(el("div",null,`<h3>Evolución</h3><div class="sub">${multi?'por categoría · ':''}últimos 6 meses${multi?'':' (gasto personal'+(selCats?' filtrado':'')+')'}</div>`));
+    const series=trendSeries((m,cat)=>(D.personal[m]||[]).filter(x=>cat?x.cat===cat:catOk(x.cat)).reduce((t,x)=>t+x.gasto,0));
+    tc.appendChild(el("div","tscroll",lineChart(series,"Evolución")));
+    if(series.length>1){const lg2=el("div","legend"); series.forEach(s=>lg2.appendChild(el("div","it",`<span class="sw" style="background:${cssvar(s.cvar)}"></span>${s.name}`))); tc.appendChild(lg2);}
+  }
   w.appendChild(tc);
   wireDonut(dcard,items,total); wireLine(tc);
 }
@@ -441,11 +444,15 @@ function renderCasa(){
   const cl=Object.entries(cats).map(([cat,v])=>({cat,...v})).sort((a,b)=>b.total-a.total);
   const maxc=Math.max(1,...cl.map(x=>x.total));
   scard.appendChild(el("div","bars",cl.map(x=>`<div class="bar-row"><span class="lbl" title="${x.cat}">${x.cat}</span><div class="bar-track" style="display:flex;height:15px;gap:2px;background:none"><div style="width:${x.joaco/maxc*100}%;background:${cssvar('--c1')};border-radius:5px 0 0 5px"></div><div style="width:${x.lu/maxc*100}%;background:${cssvar('--c2')};border-radius:0 5px 5px 0"></div></div><span class="amt">${fmt(x.total)}</span></div>`).join(""))); row.appendChild(scard);
-  const ec=el("div","card"); const multi=selCats&&selCats.size>=1&&selCats.size<=6;
-  ec.appendChild(el("div",null,`<h3>Evolución</h3><div class="sub">${multi?'por categoría · ':''}gasto de casa · últimos 6 meses</div>`));
-  const series=trendSeries((m,cat)=>{const c=D.casa[m]; if(!c)return 0; return c.cats.filter(x=>cat?x.cat===cat:catOk(x.cat)).reduce((t,x)=>t+x.total,0);});
-  ec.appendChild(el("div","tscroll",lineChart(series,"Evolución casa")));
-  if(series.length>1){const lg=el("div","legend"); series.forEach(s=>lg.appendChild(el("div","it",`<span class="sw" style="background:${cssvar(s.cvar)}"></span>${s.name}`))); ec.appendChild(lg);}
+  const ec=el("div","card");
+  if(selCats&&selCats.size===0){ ec.appendChild(el("div",null,`<h3>Evolución</h3><div class="sub">Elegí una o más categorías en el filtro para ver su evolución.</div>`)); }
+  else {
+    const multi=selCats&&selCats.size>=1&&selCats.size<=6;
+    ec.appendChild(el("div",null,`<h3>Evolución</h3><div class="sub">${multi?'por categoría · ':''}gasto de casa · últimos 6 meses</div>`));
+    const series=trendSeries((m,cat)=>{const c=D.casa[m]; if(!c)return 0; return c.cats.filter(x=>cat?x.cat===cat:catOk(x.cat)).reduce((t,x)=>t+x.total,0);});
+    ec.appendChild(el("div","tscroll",lineChart(series,"Evolución casa")));
+    if(series.length>1){const lg=el("div","legend"); series.forEach(s=>lg.appendChild(el("div","it",`<span class="sw" style="background:${cssvar(s.cvar)}"></span>${s.name}`))); ec.appendChild(lg);}
+  }
   row.appendChild(ec); w.appendChild(row); wireLine(ec);
 }
 function wireDonut(card,items,total){ card.querySelectorAll("path[data-i]").forEach(p=>{ p.addEventListener("mousemove",e=>{const it=items[+p.dataset.i]; showTip(`${it.label}<br><b>${fmt(it.value)}</b> · ${(it.value/total*100).toFixed(1)}%`,e.clientX,e.clientY);}); p.addEventListener("mouseleave",hideTip);});}
@@ -465,6 +472,7 @@ function multiSelect(host, {label, options, isSel, setSel, colorFor}){
   const quick=el("div","quick"); const bAll=el("button",null,"Todas"); quick.appendChild(bAll);
   bAll.onclick=()=>{ setSel(options.map(o=>o.value)); repaintPanel(); };
   if(label==="Meses"){ const bMes=el("button",null,"Mes actual"); quick.appendChild(bMes); bMes.onclick=()=>{ setSel([D.mes_default]); repaintPanel(); }; }
+  if(label==="Categorías"){ const bNone=el("button",null,"Ninguna"); quick.appendChild(bNone); bNone.onclick=()=>{ setSel([]); repaintPanel(); }; }
   panel.appendChild(quick);
   options.forEach(o=>{ const row=el("label","opt");
     const sw=colorFor?`<span class="sw" style="background:${colorFor(o.value)}"></span>`:"";
@@ -484,7 +492,7 @@ function buildFilters(){
   multiSelect(document.getElementById("ms-cat"),{ label:"Categorías", options:opCat,
     isSel:v=> selCats? selCats.has(v) : true,
     colorFor:v=>cssvar(CAT_COLORS[D.categorias.indexOf(v)%8]),
-    setSel:a=>{ selCats = (a.length===0||a.length===D.categorias.length)?null:new Set(a); refresh(); } });
+    setSel:a=>{ selCats = (a.length===D.categorias.length)?null:new Set(a); refresh(); } });
 }
 document.addEventListener("click",()=>document.querySelectorAll(".ms-panel").forEach(p=>p.classList.remove("open")));
 
