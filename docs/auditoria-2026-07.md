@@ -5,8 +5,25 @@ dueño del pipeline, tareas de Windows deshabilitadas), antes de la primera corr
 automática sin red local. Alcance: pipeline, workflow de Actions, integridad de datos,
 seguridad, configuración del repo, y costos/límites.
 
-**Nada de lo hallado se corrigió en esta pasada.** Este documento es el relevamiento y el
-plan; las correcciones van por fases (ver el final), cada una con su gate.
+Este documento es el relevamiento y el plan. Las correcciones van por fases (ver el final),
+cada una con su gate.
+
+## Estado de las correcciones
+
+| Fase | Cierra | Estado |
+|---|---|---|
+| 1 — Red de seguridad | A1 (parcial), M5, B4 | **pendiente** — A1 ya cerrado por la Fase 2 (exit code); falta el escalado a Issue y los reintentos |
+| 2 — Bombas de agosto | M1, M2, M3, A1 | ✅ **hecha** (2026-07-16, commit `f8d09a9`) |
+| 3 — Documentos de proceso | A2, M6, B10 | **pendiente** — ⚠️ A2 sigue abierto: `/revisar-pendientes` todavía dice de editar el ledger a mano |
+| 4 — Higiene de datos y deps | B1, B3, B5, B6, B9, B12, M4 | **pendiente** |
+| 5 — Hardening de GitHub | B2, B7, B8 | **pendiente** |
+
+Hallazgo nuevo, encontrado *por* la Fase 2 (ver el detalle en su sección): **la semilla de
+`posicion_casa.json` no estaba protegida** — `cierre_casa.py <mes-de-la-semilla>` contaba los
+gastos de ese mes dos veces, en silencio. Corregido con un guard en el mismo commit.
+
+Menor, sin asignar a fase: el `generado` del dashboard usa hora local naive, así que una
+corrida de Actions lo estampa en UTC (dice "18:11" para algo generado 15:11 en Uruguay).
 
 ## Método
 
@@ -139,7 +156,7 @@ sugerido (1 protege a las demás; 2 es la urgente por calendario).
 **Gate:** una corrida shadow con un `[FALLO]` inyectado debe ponerse roja; simular 3 fallos
 consecutivos de Sheets debe abrir exactamente 1 Issue.
 
-### Fase 2 — Desactivar las bombas de agosto · cierra M1, M2, M3
+### Fase 2 — Desactivar las bombas de agosto · cierra M1, M2, M3 ✅ HECHA (commit `f8d09a9`)
 
 1. Partir `merge_y_validar.py`: los invariantes de pipeline (dupes, esquema, categorías,
    agregados) corren siempre; la validación de migración (conteos congelados, presupuesto de
@@ -149,9 +166,30 @@ consecutivos de Sheets debe abrir exactamente 1 Issue.
 3. `procesar_mails.py`: try/except por mail → pendiente `formato_nuevo` con el subject; el
    resto de la corrida sigue.
 
-**Gate:** simular agosto (presupuesto con mes extra + fecha 2026-08-01) → la corrida debe
-quedar verde; un mail sintético malformado debe generar pendiente sin frenar el pipeline; el
-recompute de julio debe dar idéntico a hoy.
+**Gate — pasado.** Resultados reales:
+
+- **Agosto simulado** (presupuesto con 20 meses + un gasto de 2026-08): modo pipeline
+  **verde**; `--migracion` **exit 1** cazando `2e`. O sea: la bomba está desactivada y la
+  validación sigue viva, solo salió del camino diario. Ese `exit 1` es literalmente lo que
+  habría puesto la corrida en rojo el 1/8.
+- **Mail malformado** (un aviso real con la etiqueta `Importe` renombrada): el código viejo
+  tira `ValueError: importe no parseable: ''` y sale 1; el nuevo deja el pendiente
+  `formato_nuevo`, sigue con el resto de los mails y sale 0.
+- **1/8 simulado** (`dt.date.today()` mockeado + un gasto de casa el 31/7 a la noche): julio
+  se recalcula primero y levanta ese gasto (62.741 → 66.741), y agosto arranca de
+  `cierre 2026-07`, no de la semilla. Sin el fix, ese gasto quedaba fuera del cierre de julio.
+- **Sin cambio de datos**: `ledger.csv` y `resumen_mensual.csv` idénticos byte a byte al
+  baseline; `dashboard.html` idéntico salvo el timestamp; `validacion-migracion.md` solo mueve
+  3 filas de la tabla resumen (los invariantes ahora corren antes). `test_conciliacion` pasa.
+- **En la nube**: corrida shadow verde antes del cron.
+
+**Lo que el gate destapó** (y por qué vale la pena tener gates): el paso 2 del plan,
+"recomputar el mes anterior", habría **corrompido junio en la primera corrida**. La semilla
+`posicion_casa.json` está fechada 2026-06-30, o sea que ya *es* la posición al cierre de
+junio; recalcular junio encima sumaba sus gastos por segunda vez, y julio heredaba esa
+posición envenenada. Se agregó el guard que faltaba (`mes <= mes_semilla` → saltear), que
+además tapa un agujero preexistente: `cierre_casa.py 2026-06` ya corrompía los datos en
+silencio, sin que nada lo avisara.
 
 ### Fase 3 — Corregir los documentos de proceso · cierra A2, M6, B10
 
