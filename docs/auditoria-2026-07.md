@@ -1,0 +1,199 @@
+# Auditoría e2e — sistema de gastos (2026-07-16)
+
+Auditoría completa del sistema el mismo día del **cutover** (Actions pasó a ser el único
+dueño del pipeline, tareas de Windows deshabilitadas), antes de la primera corrida
+automática sin red local. Alcance: pipeline, workflow de Actions, integridad de datos,
+seguridad, configuración del repo, y costos/límites.
+
+**Nada de lo hallado se corrigió en esta pasada.** Este documento es el relevamiento y el
+plan; las correcciones van por fases (ver el final), cada una con su gate.
+
+## Método
+
+Lo que se verificó de verdad, no por lectura:
+
+- **Datos:** recálculo independiente de los agregados desde `data/ledger.csv` (4.613 filas)
+  reproduciendo la regla de `merge_y_validar.py` desde cero, y comparación celda a celda
+  contra los CSV publicados. Chequeos de esquema, duplicados, invariantes y rangos.
+- **Seguridad:** los 64 commits de **todas las refs + reflog**, buscando los *valores reales*
+  de los 11 secretos locales (leídos de los archivos gitignored, comparados enmascarados)
+  además de 14 patrones genéricos. Grep binario sobre `MyFinance.db`, el `.mmbackup` y los PDF.
+- **GitHub:** API vía `gh` — visibilidad, forks, Pages, colaboradores, webhooks, deploy keys,
+  secrets, variables, protección de branch, permisos del token, historial de corridas.
+- **Código:** lectura completa de los scripts del pipeline + `py_compile` de todos, test del
+  motor de conciliación, y validación del YAML con resolución de `MODE` en los tres casos.
+
+## Veredicto
+
+**El núcleo es confiable.** Los datos están sanos al peso (0 ids duplicados en 4.613 filas;
+los tres agregados publicados se reproducen exactos desde el ledger — 642 celdas de resumen,
+311 de presupuesto, toda la serie de casa, diferencia máxima $0,01 por redondeo). El historial
+de git está limpio de secretos y **no hay forks** de la ventana en que el repo estuvo público.
+Las 5 corridas de Actions salieron exitosas.
+
+**El riesgo no está en lo que corre hoy**, sino en tres frentes: agujeros en la red de
+seguridad (cosas que fallarían sin avisar), bombas de tiempo de calendario (agosto), y
+documentos de proceso que enseñan prácticas que corrompen datos.
+
+## Lo verificado sano
+
+| Área | Evidencia |
+|---|---|
+| Integridad | 0 ids duplicados (4.613 filas); 0 filas malformadas (fecha/monto/mes/moneda/`en_analisis`); agregados = ledger en 642+311 celdas + 39 meses de casa; 0 fechas fuera de rango (2021-11-01 → 2026-07-15); `fecha_corte` única en `saldos_iniciales.csv` |
+| Resoluciones | 119 filas, todas aplicadas al ledger; 0 campos inválidos. Las 8 "huérfanas" son `motivo_resuelto` de pendientes Splitwise que **por diseño nunca insertan fila** — borrarlas los resucitaría |
+| Pendientes | 18 filas, **todas resueltas**; 0 abiertos, 0 con >14 días |
+| Seguridad | 0 valores de secreto en 64 commits + reflog; 0 apariciones de la cédula en cualquier archivo trackeado; scopes mínimos (`gmail.readonly`, solo `spreadsheets`); secrets pasados por paso; sin `set -x`/`echo` de secrets; sin triggers que permitan ejecución por terceros |
+| Repo | Privado; **0 forks**; 0 webhooks; 0 deploy keys; Pages desactivado; 1 solo colaborador (admin); token default de solo-lectura |
+| Operación | 5/5 corridas exitosas, ~1 min c/u; ≈60-90 min/mes sobre 2.000 gratis; repo ~7 MB creciendo ~1-2 MB/mes |
+| Código | Todos los scripts compilan; test del motor de conciliación pasa entero; paridad del fetch 57/57; idempotencia y watermark sólidos; core de dependencias pinneado |
+
+**Puntualidad del cron (medido):** dispara con **+2 h a +3,3 h de atraso** (corridas de hoy:
++123 min y +199 min). Es el comportamiento normal de GitHub y el watermark lo absorbe sin
+pérdida de datos — pero significa que "la corrida de las 21:23" puede caer a las 23-24 h.
+
+**`SYNC_MODE` nunca existió como variable de repo** (`gh variable list` → vacío). Durante la
+semana shadow el modo salía del default `'shadow'` en el YAML. No hay ninguna variable que
+borrar; el cutover del 16/7 (default → `live`) es lo único que gobierna el modo.
+
+## Hallazgos
+
+Los IDs son estables: sirven para referenciarlos en los commits que los cierren.
+
+### Alta — la red de seguridad tiene agujeros
+
+| ID | Hallazgo | Impacto |
+|---|---|---|
+| **A1** | El gate del workflow filtra `[ERROR]`/`[DESVIO]` pero **no `[FALLO]`**, que es el estado que `merge_y_validar.py` reserva para lo peor: ids duplicados en el ledger y muestreo que no rastrea a la fuente | Un ledger corrupto se commitearía con tick verde |
+| **A2** | `.claude/commands/revisar-pendientes.md` (pasos 3 y 5b) instruye **editar `data/ledger.csv` a mano** — el comando es anterior a que existiera `resoluciones.csv` | Una sesión que lo siga hace correcciones que *parecen* guardadas pero se borran en el próximo `--reprocesar`. Viola el invariante central del proyecto |
+
+### Media — bombas de tiempo y robustez
+
+| ID | Hallazgo | Detalle |
+|---|---|---|
+| **M1** | Un mail con layout nuevo **crashea el pipeline entero**: `procesar_mails.py` no tiene try/except por mail, y `parse_importe`/`campo_bloque` lanzan excepción | El diseño prometía pendiente `formato_nuevo`; nunca se implementó. Es ruidoso (no silencioso), pero bloquea Splitwise, dashboard y Sheets hasta arreglo manual |
+| **M2** | El gate valida un mundo congelado: `2e.presupuesto` exige **exactamente 19 meses**, `2a.conteos` exige 2853/207 | **El 1/8, al cargar el presupuesto de agosto, la corrida se pone roja por diseño.** La validación de migración (una vez) y los invariantes del pipeline (siempre) están mezclados en un solo script |
+| **M3** | Cambio de mes en UTC: la corrida PM del 31/7 (00:23 UTC = ya 1/8) computa agosto | Julio queda congelado en su snapshot de la mañana y agosto arrastra el desfase hasta que `/cierre-mes` recierre julio. Autosanable, pero silencioso mientras tanto |
+| **M4** | **6 grupos de posibles dobles conteos legado**: misma (fecha, monto, cuenta, descripción) con `en_analisis=1` en ambas, todos `origen=planilla_casa` con `fuente_id` distinto | Exposición máxima **3.345,28 UYU** (7 filas extra) entre 2025-03 y 2026-01. No toca meses corrientes. Vienen de filas distintas de la fuente cruda → pueden ser compras repetidas reales: **requiere criterio humano** |
+| **M5** | Los fallos no críticos (Sheets, dashboard, `cierre_casa`) son `::warning::` que nadie ve si no abre la corrida | Si algo falla todos los días, nadie se entera. Política elegida: escalar a Issue si persiste — falta implementarla |
+| **M6** | `.claude/commands/sync-gastos.md` enseña el fetch viejo (conector + `search_threads`) como flujo principal; el determinístico está relegado a una nota | Es el método que causó los incidentes de julio (mails perdidos) |
+
+**Detalle de M4** — los 6 grupos: `Cookies` 22,50 ×2 (2025-03-17) · `Lavado Auto` 188,14 ×2
+(2025-04-28) · `Pantalon` 359,00 ×2 (2025-08-15) · `Nafta` 1.512,25 ×2 (2025-10-29) ·
+`Productos Limpieza` 298,07 **×3** (2025-11-30) · `Picada` 667,25 ×2 (2026-01-02).
+(Otros 20 grupos con monto coincidente pero descripción distinta se revisaron y son legítimos.)
+
+### Baja
+
+| ID | Hallazgo |
+|---|---|
+| **B1** | `pypdf>=5,<7` y `google-api-python-client>=2.100,<3` sin pin exacto: una versión nueva comprometida correría con los secrets del job (supply chain). El resto ya está en `==` |
+| **B2** | `git add -A` (workflow y `correr_pipeline.cmd`): un archivo sensible futuro no previsto en `.gitignore` se commitearía solo |
+| **B3** | Un crash entre la escritura de `ledger.csv` y la de `procesados.csv` duplica filas en la corrida siguiente (falta skip por id ya presente) |
+| **B4** | Sin reintentos ante errores transitorios de la API de Gmail |
+| **B5** | `extraer_cuerpo()` decodifica UTF-8 hardcodeado; un mail en otro charset corrompería acentos en vez de fallar |
+| **B6** | **"Mercado Pago" usada en el ledger pero sin definir en `config/cuentas.csv`** — 2 filas de julio, una con `en_analisis=1`. No altera agregados, pero la deja sin `tipo` para conciliación de saldos (las otras 18 cuentas sin definir son legado 1money congelado, previo al corte de saldos) |
+| **B7** | `master` sin protección contra force-push ni borrado |
+| **B8** | Actions referenciadas por tag (`@v4`) en vez de SHA; policy `allowed_actions: all` |
+| **B9** | Conviven **dos modelados de devolución**: histórico (141 filas `tipo=ingreso`, categoría "Devoluciones & cashback", 2023-03→2026-06) y nuevo (gasto negativo). El histórico no descuenta de la categoría del gasto; el nuevo sí. No viola ningún invariante, pero sesga comparaciones inter-era por categoría → **documentar, no tocar** |
+| **B10** | `conciliar_saldos.py` compara contra `saldos_reales.csv`, que **no tiene fecha**: con un baseline viejo inventa diferencias que parecen descuadres (pasó el 16/7: 6 falsas alarmas, eran 4 días de gastos) |
+| **B11** | `get_gmail_token.py:63-68` imprime client_secret y refresh_token a stdout **por diseño** (one-shot local; no puede correr en Actions). Quedan en el historial de la consola local |
+| **B12** | Colisión teórica de nombres de PDF: Santander se salva por el nro de cuenta en el nombre; BBVA (siempre `EC Visa .pdf`) depende de la fecha del mail |
+| **B13** | 48 filas con `monto_uyu` vacío — todas `transferencia USD en_analisis=0` de la era 1money. Ninguna entra en agregados; críticas (gasto + `en_analisis=1` + sin `monto_uyu`): **0** |
+
+### Condicional — solo si el repo volviera a ser público
+
+**No es una acción pendiente: es el inventario de por qué el repo NUNCA debe volver a ser
+público** (ni usar GitHub Pages).
+
+- Los PDF de Santander están cifrados con una clave **numérica corta**, crackeable offline en
+  horas con hardware común; y el repo documenta en config el formato de esa clave. No cuentan
+  como protegidos.
+- Hay datos de **terceros** trackeados (el ingreso de Lu en `config/ingresos.csv`, nombres y
+  deudas de amigos en `data/splitwise.csv`).
+- Trackeado además: historia financiera completa (`MyFinance.db`, `.mmbackup`, `casa.xlsx`,
+  `ledger.csv`), 108 mails bancarios crudos, números de cuenta reales, y el dashboard con la
+  posición de casa.
+
+**Cierre del incidente de exposición (11/7 20:48 → 15/7):** lo que estuvo efectivamente
+público fue historia financiera (`MyFinance.db`, `.mmbackup`, `casa.xlsx`, `ledger.csv`,
+72 mails, `ingresos.csv`, `splitwise.csv`, `saldos.csv`). **No** estuvieron públicos los PDF,
+`cuentas_bancarias.csv` ni el dashboard (se agregaron el 16/7, ya en privado). **Cero
+credenciales, cero cédula, cero forks.** No se requiere rotar nada. Las credenciales actuales
+se crearon el 15-16/7, después del flip a privado. Único residual: los datos expuestos no son
+rotables — si alguno sirve como pregunta de seguridad bancaria, tratarlo como conocido.
+
+## Workflow de corrección
+
+Cada fase cierra con un gate verificable. Las fases son independientes salvo el orden
+sugerido (1 protege a las demás; 2 es la urgente por calendario).
+
+### Fase 1 — Tapar los agujeros de la red de seguridad · cierra A1, M5, B4
+
+1. Gate del workflow: incluir `[FALLO]` en el grep.
+2. Escalado de warnings: cada paso no crítico deja marca si falla; la racha se guarda en
+   `config/estado_sync.json` (ya se commitea cada corrida); racha ≥3 → Issue con título
+   dedupeado → llega mail. Un fallo aislado sigue siendo solo warning (los errores
+   transitorios de Google existen).
+3. Reintentos en el fetch (`num_retries=3`).
+
+**Gate:** una corrida shadow con un `[FALLO]` inyectado debe ponerse roja; simular 3 fallos
+consecutivos de Sheets debe abrir exactamente 1 Issue.
+
+### Fase 2 — Desactivar las bombas de agosto · cierra M1, M2, M3
+
+1. Partir `merge_y_validar.py`: los invariantes de pipeline (dupes, esquema, categorías,
+   agregados) corren siempre; la validación de migración (conteos congelados, presupuesto de
+   19 meses, 2b/2c/2f) pasa a `--migracion`, on-demand.
+2. `cierre_casa.py`: la corrida diaria recomputa también el **mes anterior** (es idempotente y
+   determinístico — julio queda vivo hasta que sus insumos dejen de cambiar).
+3. `procesar_mails.py`: try/except por mail → pendiente `formato_nuevo` con el subject; el
+   resto de la corrida sigue.
+
+**Gate:** simular agosto (presupuesto con mes extra + fecha 2026-08-01) → la corrida debe
+quedar verde; un mail sintético malformado debe generar pendiente sin frenar el pipeline; el
+recompute de julio debe dar idéntico a hoy.
+
+### Fase 3 — Corregir los documentos de proceso · cierra A2, M6, B10
+
+1. Reescribir `/revisar-pendientes`: toda corrección vía `resoluciones.csv`, nunca el ledger,
+   con el mapeo campo/valor por caso (categoría, ámbito, `en_analisis`, splits).
+2. Reescribir `/sync-gastos` alrededor de `fetch_mails.py`; el conector queda como fallback
+   explícitamente marcado "solo si la API falla".
+3. `/cierre-mes`: conciliar a la **fecha del extracto** (no "hoy"); agregar fecha a
+   `saldos_reales.csv` y hacer que `conciliar_saldos.py` **aborte** si el baseline está viejo
+   (abortar, no advertir: el output silencioso-pero-erróneo es peor que no correr).
+
+**Gate:** dry-run de cada comando, leído de punta a punta contra los invariantes de CLAUDE.md.
+
+### Fase 4 — Higiene de datos y dependencias · cierra B1, B3, B5, B6, B9, B12, M4
+
+1. Alta de "Mercado Pago" en `config/cuentas.csv`; pin exacto de `pypdf` y
+   `google-api-python-client`; skip por id ya presente en `procesar_mails`; charset del mail
+   respetando el header MIME; sufijo `message_id` en los nombres de PDF.
+2. Los 6 posibles dobles legado (M4) → se presentan en la próxima `/revisar-pendientes`;
+   decisión de Joaco, con `en_analisis=0` vía `resoluciones.csv` si los confirma.
+3. Documentar en `docs/esquema.md` la coexistencia de los dos modelados de devolución (B9).
+
+**Gate:** validación verde + agregados idénticos antes/después (salvo lo que se resuelva en 4.2).
+
+### Fase 5 — Hardening de GitHub · cierra B2, B7, B8
+
+1. Ruleset en `master`: bloquear force-push y borrado del branch (no molesta al bot).
+2. `git add -A` → lista explícita de paths, en el workflow y en `correr_pipeline.cmd`.
+3. Opcional: policy de actions "selected" + pin por SHA de `checkout`/`setup-python`.
+
+**Gate:** una corrida live completa post-cambios, con commit y push normales.
+
+## Qué NO se auditó
+
+Para que el alcance quede honesto:
+
+- **La lógica de negocio de los parsers** contra mails reales nuevos (se validó la paridad
+  57/57 en la migración, no cada layout posible de cada banco).
+- **Correctitud contable de los datos históricos** pre-migración más allá de los invariantes
+  estructurales: el ledger reproduce sus fuentes, pero si una fuente ya tenía un error, se
+  arrastra. M4 es el único caso donde el arrastre es detectable estructuralmente.
+- **`conciliar_estado.py` / `conciliar_debito.py`** en profundidad: no están en el pipeline
+  automático (corren en `/cierre-mes`). Su motor de matching sí está cubierto por
+  `test_conciliacion.py`, que pasa.
+- **Los Google Sheets y Looker** aguas abajo del push.

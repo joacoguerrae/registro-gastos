@@ -21,6 +21,14 @@ Ledger único de gastos (personal + casa con Lu + Splitwise). Diseño: [docs/esq
 - **Paridad del fetch:** `fetch_mails.py` debe producir el mismo `body_text` que consumen los parsers de `procesar_mails.py`. Cambios ahí se validan re-bajando por API y comparando filas `mail` (test en [docs/validacion-migracion.md](docs/validacion-migracion.md)).
 - **Split (gasto compartido):** fila original ajustada a la fracción propia + fila hermana `transferencia` a Deudas por el resto; la suma = cargo real de la tarjeta.
 - **Secretos:** nunca commitear `config/secrets.local.json`, `config/gcp_service_account.json`, `config/gmail_token.json`, `config/oauth_client.json` (todos gitignored). En Actions van como repository secrets.
+- **El repo NUNCA vuelve a ser público** (ni GitHub Pages): tiene historia financiera completa, datos de terceros (ingreso de Lu, deudas de amigos) y PDF cifrados con una clave débil. Inventario de lo que quedaría expuesto: [docs/auditoria-2026-07.md](docs/auditoria-2026-07.md#condicional--solo-si-el-repo-volviera-a-ser-público).
+
+## Auditoría abierta (2026-07-16)
+
+[docs/auditoria-2026-07.md](docs/auditoria-2026-07.md) — relevamiento e2e con hallazgos **sin corregir** y el plan por fases. Antes de tocar el pipeline, mirá si lo que vas a hacer ya está relevado ahí. Los dos que más muerden:
+
+- **A2** — `/revisar-pendientes` todavía instruye editar `ledger.csv` a mano (viola el invariante de arriba). **Si corrés ese comando, usá `resoluciones.csv` igual**, hasta que se reescriba en Fase 3.
+- **M2** — el gate de validación exige 19 meses de presupuesto: **al cargar agosto la corrida se pone roja por diseño**. Se arregla en Fase 2.
 
 ## Comandos
 
