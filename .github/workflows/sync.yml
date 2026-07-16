@@ -28,6 +28,7 @@ concurrency:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   sync:
@@ -59,7 +60,9 @@ jobs:
           python scripts/sync_splitwise.py || echo "(aviso: splitwise fallo, el pipeline sigue sin el)"
 
       - name: Procesar mails
-        run: python scripts/procesar_mails.py
+        run: |
+          set -o pipefail
+          python scripts/procesar_mails.py | tee /tmp/proc.txt
 
       - name: Validar (falla si hay ERROR/DESVIO fuera del baseline 2c)
         run: |
@@ -88,6 +91,22 @@ jobs:
             git commit -m "sync automático (Actions) $(date -u +%Y-%m-%dT%H:%MZ)"
             git pull --rebase origin ${{ github.ref_name }}
             git push
+          fi
+
+      - name: Avisar pendientes nuevos (abre Issue -> te llega mail)
+        if: env.MODE == 'live'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          N=$(grep -oE 'pendientes nuevos: *[0-9]+' /tmp/proc.txt | grep -oE '[0-9]+' | head -1 || true)
+          N=${N:-0}
+          if [ "$N" -gt 0 ]; then
+            DET=$(grep -A6 'pendientes nuevos:' /tmp/proc.txt | tail -n +2 | grep -E '^\s+\S' | head -6 || true)
+            BODY=$(printf 'La corrida automática dejó **%s pendiente(s)** para revisar:\n\n```\n%s\n```\n\nPara resolverlos: abrí una sesión de Claude y corré `/revisar-pendientes`.\n' "$N" "$DET")
+            gh issue create --title "🔎 $N pendiente(s) nuevo(s) en el sync de gastos" --body "$BODY" \
+              || echo "(aviso: no se pudo crear el Issue)"
+          else
+            echo "sin pendientes nuevos"
           fi
 
       - name: Resumen shadow (no commitea)
