@@ -6,6 +6,9 @@ cd /d "C:\Users\joaco\Desktop\proyectos claude\gastos"
 C:\Users\joaco\anaconda3\python.exe scripts\sync_splitwise.py || echo (aviso: sync_splitwise.py fallo -- sin red o API caida, el pipeline sigue sin Splitwise)
 C:\Users\joaco\anaconda3\python.exe scripts\procesar_mails.py || exit /b 1
 C:\Users\joaco\anaconda3\python.exe scripts\merge_y_validar.py || exit /b 1
+rem posicion de casa: deterministica (ledger + ingresos.csv + aportes_lu.csv) -> refresca la
+rem posicion del dashboard cada corrida. No es critica: si falla, queda el valor previo.
+C:\Users\joaco\anaconda3\python.exe scripts\cierre_casa.py || echo (aviso: cierre_casa.py fallo -- la posicion de casa queda con el valor previo)
 C:\Users\joaco\anaconda3\python.exe scripts\generar_dashboard_data.py || exit /b 1
 C:\Users\joaco\anaconda3\python.exe scripts\generar_dashboard_html.py || echo (aviso: generar_dashboard_html.py fallo -- el dashboard HTML queda con datos previos)
 C:\Users\joaco\anaconda3\python.exe scripts\actualizar_sheets.py || echo (aviso: actualizar_sheets.py fallo -- Looker queda con datos previos, se recupera en la proxima corrida)

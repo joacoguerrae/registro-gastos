@@ -79,6 +79,7 @@ jobs:
         env:
           GCP_SA_JSON: ${{ secrets.GCP_SA_JSON }}
         run: |
+          python scripts/cierre_casa.py || echo "(aviso: cierre_casa falló, la posición de casa queda con el valor previo)"
           python scripts/generar_dashboard_data.py
           python scripts/generar_dashboard_html.py || echo "(aviso: dashboard HTML falló)"
           python scripts/actualizar_sheets.py || echo "(aviso: Sheets falló, Looker usa datos previos)"
