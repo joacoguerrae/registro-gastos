@@ -4,3 +4,20 @@
 *.yaml  text eol=lf
 # Los .cmd son solo de Windows.
 *.cmd   text eol=crlf
+
+# Datos y codigo: LF SIEMPRE, en el repo y en el working tree.
+#
+# Por que: csv.writer de Python escribe CRLF en TODAS las plataformas, pero git
+# no lo trata igual en cada una: en Windows (core.autocrlf=true) normaliza a LF
+# al commitear, y en Linux (Actions) guarda el CRLF tal cual. Resultado: el mismo
+# ledger alternaba entre un blob LF (commit local) y uno CRLF (commit de Actions),
+# reescribiendo las 4.614 filas enteras en cada corrida y generando conflictos.
+# Fijando eol=lf, los dos lados producen el mismo blob y solo diffean las filas
+# que de verdad cambiaron.
+*.csv   text eol=lf
+*.json  text eol=lf
+*.md    text eol=lf
+*.html  text eol=lf
+*.py    text eol=lf
+# Los PDF de estados de cuenta son binarios: git no debe tocarlos.
+*.pdf   binary
