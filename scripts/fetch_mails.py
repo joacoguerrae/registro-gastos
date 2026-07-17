@@ -166,6 +166,35 @@ def header(payload, name):
     return ""
 
 
+def decodificar(raw, content_type):
+    """Bytes de una parte MIME -> str.
+
+    UTF-8 PRIMERO, aunque el header declare otra cosa. Los mails de Mercado
+    Libre y Mercado Pago declaran charset=iso-8859-1 y mandan UTF-8 igual:
+    verificado el 16/7 sobre los mails reales ya bajados, donde los acentos
+    llegan perfectos (U+00E1, U+00F3...) justamente porque hoy se decodifica
+    utf-8 a la fuerza. Confiar en el charset declarado los ROMPERIA: "ó"
+    (bytes C3 B3) leido como iso-8859-1 da "Ã³".
+
+    El fallback al charset del header cubre el caso que la auditoria B5 queria
+    atacar -- un remitente que de verdad mande iso-8859-1 -- sin tocar lo que
+    hoy funciona: si los bytes son UTF-8 validos, gana UTF-8 y el body_text
+    sale identico (invariante de paridad, CLAUDE.md).
+    """
+    try:
+        return raw.decode("utf-8")
+    except UnicodeDecodeError:
+        pass
+    m = re.search(r'charset="?([\w-]+)"?', content_type or "", re.I)
+    candidatos = ([m.group(1)] if m else []) + ["cp1252", "latin-1"]
+    for cs in candidatos:
+        try:
+            return raw.decode(cs)
+        except (UnicodeDecodeError, LookupError):
+            continue
+    return raw.decode("utf-8", errors="replace")   # inalcanzable: latin-1 nunca falla
+
+
 def extraer_cuerpo(payload):
     """Recorre las partes MIME y devuelve (html, plain)."""
     html = plain = ""
@@ -176,7 +205,7 @@ def extraer_cuerpo(payload):
         data = p.get("body", {}).get("data")
         if data:
             raw = base64.urlsafe_b64decode(data.encode("utf-8"))
-            txt = raw.decode("utf-8", errors="replace")
+            txt = decodificar(raw, header(p, "Content-Type"))
             if mt == "text/html" and not html:
                 html = txt
             elif mt == "text/plain" and not plain:
@@ -236,8 +265,19 @@ def bajar_estados_pdf(svc, estado_senders, dias=ESTADOS_LOOKBACK_DIAS):
                 continue                      # ignora logos/imagenes del mail
             safe = re.sub(r"[^A-Za-z0-9._-]+", "_", fn).strip("_")
             destino = os.path.join(ESTADOS, f"{fecha}_{slug}_{safe}")
+            tam = p.get("body", {}).get("size")
             if os.path.exists(destino):
-                continue
+                if tam is None or os.path.getsize(destino) == tam:
+                    continue                  # ya lo tenemos: nada que hacer
+                # Mismo nombre, contenido DISTINTO: son dos estados distintos del
+                # mismo emisor y dia. BBVA manda siempre 'EC Visa .pdf', sin nada
+                # que los diferencie, asi que el segundo caia en este `continue` y
+                # se perdia EN SILENCIO (auditoria 2026-07 B12). Se desambigua con
+                # el message_id, y los nombres ya existentes quedan intactos: si se
+                # renombraran todos, la proxima corrida re-bajaria cada PDF.
+                destino = os.path.join(ESTADOS, f"{fecha}_{slug}_{mid[:8]}_{safe}")
+                if os.path.exists(destino):
+                    continue
             aid = p.get("body", {}).get("attachmentId")
             if not aid:
                 continue

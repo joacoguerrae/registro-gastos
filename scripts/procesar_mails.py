@@ -298,6 +298,17 @@ def main():
         procesados = []
 
     ya_procesados = {r["message_id"] for r in procesados}
+    # Red de seguridad (auditoria 2026-07 B3): el ledger y procesados.csv se
+    # escriben en dos pasos. Si una corrida muere entre medio, el mail queda en el
+    # ledger pero NO en el log -> la corrida siguiente lo reprocesa e inserta la
+    # fila de nuevo. Como el id es determinista (hid(message_id)), serian dos filas
+    # con el MISMO id: merge_y_validar lo caza como FALLO y frena el pipeline hasta
+    # arreglo a mano. Se saltea todo mail cuya fila ya existe en el ledger.
+    # fuente_id de una fila origen=mail ES su message_id. Va despues del filtro de
+    # --reprocesar, que ya vacio las filas mail: ahi el set queda vacio y no
+    # interfiere con la regeneracion.
+    ya_procesados |= {r["fuente_id"] for r in ledger
+                      if r["origen"] == "mail" and r["fuente_id"]}
 
     # transferencias 1money para el dedupe cruzado
     transfers_1m = [r for r in ledger

@@ -32,6 +32,19 @@ Contrato de datos del ledger único. Toda pieza del sistema (migradores, parsers
 | en_analisis | 1 \| 0 | 0 = se conserva para auditoría pero NO cuenta en análisis de gasto (evita doble conteo). Reglas abajo. |
 | fuente_id | string | uid de 1Money / `fila:N` de planilla / message-id de mail |
 
+### Devoluciones y reintegros — conviven DOS modelados
+
+No unificarlos sin pensarlo: cada uno es correcto en su era, y la frontera es limpia (el 2026-06-30, cuando terminó 1Money).
+
+| Era | Modelado | Filas | Efecto en el resumen |
+|---|---|---|---|
+| Histórico (`origen=1money`, 2023-03 → 2026-06-30) | `tipo=ingreso`, `categoria=Devoluciones & cashback` | 141 | **No** descuenta de la categoría del gasto original: aparece como ingreso aparte |
+| Actual (`origen=mail`, desde jul-2026) | `tipo=gasto` con **monto NEGATIVO** | 1 | **Sí** descuenta de la categoría del gasto que revierte, y netea a 0 en la tarjeta |
+
+El modelado actual es negativo y no `ingreso` porque `out/resumen_mensual.csv` suma solo `tipo=gasto`: un `ingreso` no compensaría nada y la categoría quedaría inflada. El parser linkea el reintegro con su cargo original (mismo cuenta+importe+comercio, el más reciente ≤ la fecha) y hereda su categoría/ámbito.
+
+**Consecuencia a tener presente:** comparar una categoría entre eras es comparar cosas distintas — antes de jul-2026 los reintegros no la bajan, después sí. Documentado, no corregido: reescribir 141 filas históricas cambiaría agregados ya validados contra las fuentes crudas (auditoría 2026-07 B9).
+
 ### Reglas de ámbito
 
 - 1Money cuenta "Casa" → `casa`. Cuenta "Deudas" → `split`. Resto → `personal`.
@@ -50,7 +63,8 @@ La planilla "Gastos Vazquez Ledesma" queda **congelada como histórico** (migrad
 - Retiros personales del fondo: gastos ámbito personal/split o préstamos a Deudas pagados desde cuentas de la casa **restan** del aporte de Joaco en el cierre.
 - Las resoluciones (data/resoluciones.csv) son la única vía de corrección manual y se re-aplican en TODA reconstrucción del ledger (procesar_mails y merge_y_validar).
 - **Gastos ámbito=casa pagados desde cuentas/tarjetas personales de Joaco** (ej. seguro del auto en la Platinum): cuentan doble en el cierre — como gasto de casa (se divide por coeficiente) y como aporte implícito de Joaco por el total que pagó.
-- **Cierre mensual (cuenta continua, SIN transferencia de ajuste)**: la cuenta casa es continua; nadie le transfiere al otro. El cierre calcula la posición acumulada de cada uno (aportes acumulados − parte acumulada de los gastos) y sugiere cuánto debería aportar cada uno el mes siguiente para converger a cero. Posición semilla al 2026-06-30 (de la planilla congelada): Lu **+11.244,07** / Joaco **−9.692,04**. Aportes de Joaco = transferencias a Cuenta Casa (capturadas por mail/ledger) + gastos casa pagados desde sus cuentas personales (aporte implícito). Aportes de Lu = invisibles para el pipeline (transferencias entrantes no generan mail) → input manual en el cierre. Detalle operativo en docs/fase3.md.
+- **Cierre mensual (cuenta continua, SIN transferencia de ajuste)**: la cuenta casa es continua; nadie le transfiere al otro. El cierre calcula la posición acumulada de cada uno (aportes acumulados − parte acumulada de los gastos) y sugiere cuánto debería aportar cada uno el mes siguiente para converger a cero. Aportes de Joaco = transferencias a Cuenta Casa (capturadas por mail/ledger) + gastos casa pagados desde sus cuentas personales (aporte implícito). Aportes de Lu = invisibles para el pipeline (transferencias entrantes no generan mail) → input manual en el cierre. Detalle operativo en docs/fase3.md.
+- **Posición semilla**: la fuente de verdad es `config/posicion_casa.json` (no este documento: se recalibró una vez y esta línea quedó vieja meses). Al 2026-06-30 vale Lu **+11.233,06** / Joaco **−9.711,80**, que suman el saldo real del extracto (1.521,26). Es la posición **al cierre** de ese mes, no antes: por eso `cierre_casa.py` **saltea** todo mes ≤ el de la semilla — cerrarlo contaría sus gastos dos veces.
 
 ## config/ingresos.csv
 

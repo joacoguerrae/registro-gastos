@@ -2,6 +2,7 @@ cuenta,alias_1money,tarjetas,moneda,tipo,activa,notas
 Santander UYU,$ Santander,9071,UYU,banco,si,"= caja de ahorro Santander UYU (suc. Ciudad Vieja), tarjeta 9071 — plata personal (confirmado 12/7)"
 Santander USD,USD Santander,,USD,banco,si,caja de ahorro USD (ahorro)
 Cuenta Casa,Casa,8261,UYU,conjunta,si,"= cuenta corriente Santander UYU (suc. Ombú), tarjeta 8261 — fondo casa (confirmado 12/7; el fondo volvió de MP el 12/7). Mercado Pago fue la cuenta casa jun-jul 2026"
+Mercado Pago,,,UYU,banco,no,"alojó el fondo de la casa entre jun-2026 y el 12/7/2026, cuando volvió a la cuenta corriente Santander (8261). cierre_casa la trata como CUENTAS_CASA: mover el fondo entre MP y Cuenta Casa no es un aporte de nadie. Se da de alta acá aunque esté inactiva porque tiene filas en el ledger y conciliar_saldos necesita su `tipo` (auditoría 2026-07 B6)"
 Deudas,Deudas,,UYU,virtual,si,splits con amigos y hermanos (Splitwise)
 BBVA Crédito,BBVA Credito,,UYU,tarjeta_credito,si,sin avisos por transacción; solo estado de cuenta mensual PDF
 Santander Platinum,Santander Credito,6427,UYU,tarjeta_credito,si,avisos por transacción por mail

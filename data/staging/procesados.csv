@@ -73,3 +73,4 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 19f5d65c0e4e7bd9,2026-07-13T21:32:48Z,factura,factura,,"Antel  venc  (informativo, no toca ledger)",,2026-07-16T00:57:43+00:00
 19f68a5c4b9714d2,2026-07-16T01:58:34Z,aviso_tarjeta,insertado,5ed5d6db81b9,8261 UYU 2616.81 INTERNET/Proyecto PAS -> Cuenta Casa/casa/(sin categoria),8261||2616.81||INTERNET/Proyecto PAS||2026-07-15T22:49:47,2026-07-16T12:28:16+00:00
 19f6ca3d07f8056c,2026-07-16T20:34:59Z,aviso_tarjeta,insertado,d50e9ed860cf,8261 UYU 1685.89 MONTEVIDEO/CHIC PARISIEN VIS3 -> Cuenta Casa/casa/(sin categoria),8261||1685.89||MONTEVIDEO/CHIC PARISIEN VIS3||2026-07-16T17:34:59,2026-07-16T20:36:44+00:00
+19f6db0a019764d2,2026-07-17T01:28:37Z,aviso_tarjeta,insertado,4066557c3909,8261 UYU 2883.50 MONTEVIDEO/ANCAP TROUVILLE VIS3 -> Cuenta Casa/casa/Auto,8261||2883.50||MONTEVIDEO/ANCAP TROUVILLE VIS3||2026-07-16T22:28:36,2026-07-17T01:37:54+00:00
