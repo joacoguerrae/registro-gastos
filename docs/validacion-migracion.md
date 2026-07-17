@@ -1,16 +1,16 @@
 # Validación de la migración — ledger unificado
 
-Generado por `scripts/merge_y_validar.py` el 2026-07-16. Todas las cifras de fuentes se recalcularon directamente desde `data/raw/MyFinance.db`, `data/raw/casa.xlsx` y `data/presupuesto.csv` (independiente de los reportes de los migradores).
+Generado por `scripts/merge_y_validar.py` el 2026-07-17. Todas las cifras de fuentes se recalcularon directamente desde `data/raw/MyFinance.db`, `data/raw/casa.xlsx` y `data/presupuesto.csv` (independiente de los reportes de los migradores).
 
 ## 1. Merge → data/ledger.csv
 
-- Filas totales: **4615** (3060 de 1money + 1465 de planilla_casa + 90 de otros origenes preservados: mail, etc.)
-- Por tipo: {'gasto': 3955, 'ingreso': 437, 'transferencia': 223}
-- Rango de fechas: 2021-11-01 → 2026-07-16
+- Filas totales: **4617** (3060 de 1money + 1465 de planilla_casa + 92 de otros origenes preservados: mail, etc.)
+- Por tipo: {'gasto': 3956, 'ingreso': 437, 'transferencia': 224}
+- Rango de fechas: 2021-11-01 → 2026-07-17
 - IDs únicos: sí
-- Suma |monto_uyu| (todas las filas con valor): 16,119,850.15
+- Suma |monto_uyu| (todas las filas con valor): 16,121,536.04
 - Celdas vacías fuera de regla del esquema: ninguna
-- Gasto 2026 en análisis (en_analisis=1): **812,699.08 UYU**
+- Gasto 2026 en análisis (en_analisis=1): **812,680.72 UYU**
 
 ## 2a. Conteos vs MyFinance.db
 
@@ -148,12 +148,12 @@ Resultado: **10/10 OK**
 
 | Validación | Estado | Detalle |
 |---|---|---|
-| 1.merge | OK | 4615 filas ({'1money': 3060, 'planilla_casa': 1465, 'manual': 17, 'mail': 67, 'splitwise': 6}), tipos {'gasto': 3955, 'ingreso': 437, 'transferencia': 223}, rango 2021-11-01 -> 2026-07-16, ids duplicados: ninguno |
+| 1.merge | OK | 4617 filas ({'1money': 3060, 'planilla_casa': 1465, 'manual': 19, 'mail': 67, 'splitwise': 6}), tipos {'gasto': 3956, 'ingreso': 437, 'transferencia': 224}, rango 2021-11-01 -> 2026-07-17, ids duplicados: ninguno |
 | 1.vacios | OK | celdas vacias fuera de regla: 0 |
-| 1.suma | OK | suma \|monto_uyu\| todas las filas: 16119850.15 |
+| 1.suma | OK | suma \|monto_uyu\| todas las filas: 16121536.04 |
 | 2d.categorias | OK | gasto/ingreso en_analisis=1 sin categoria: 0; categorias fuera de catalogo: ninguna |
-| 4.resumen | OK | 642 filas (mes,categoria) -> out/resumen_mensual.csv (PERSONAL: casa dividida por coeficiente/participacion); suma total 3572241.98 |
-| total.2026 | INFO | gasto 2026 en_analisis=1: 812699.08 UYU |
+| 4.resumen | OK | 642 filas (mes,categoria) -> out/resumen_mensual.csv (PERSONAL: casa dividida por coeficiente/participacion); suma total 3572223.62 |
+| total.2026 | INFO | gasto 2026 en_analisis=1: 812680.72 UYU |
 | 2a.conteos | OK | DB: 2853 tx activas / 207 transfers; ledger 1money: 2853 tx / 207 transfers (esperado 2853/207) |
 | 2a.suma_uyu | OK | suma monto_uyu transacciones 1money: ledger 12175685.86 vs DB 12175952.36 (diff crudo -266.5000, ajuste por resoluciones -266.5000, diff neto 0.0000) |
 | 2b.gastos_anio | OK | (8 filas de planilla excluidas por resolucion, aplicadas a los dos lados) 2021: ledger 50109.14 (1money d=0.00, planilla d=0.00); 2022: ledger 358189.06 (1money d=0.00, planilla d=0.00); 2023: ledger 641519.78 (1money d=0.00, planilla d=0.00); 2024: ledger 698941.83 (1money d=0.00, planilla d=0.00); 2025: ledger 1491156.50 (1money d=0.00, planilla d=0.00); 2026: ledger 832795.91 (1money d=-0.00, planilla d=0.00) |
