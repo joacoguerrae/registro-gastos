@@ -15,7 +15,7 @@ cada una con su gate.
 | 1 — Red de seguridad | A1, M5, B4 | ✅ **hecha** (2026-07-16, commit `9096f0c`) |
 | 2 — Bombas de agosto | M1, M2, M3, A1 | ✅ **hecha** (2026-07-16, commit `f8d09a9`) |
 | 3 — Documentos de proceso | A2, M6, B10 | ✅ **hecha** (2026-07-16) |
-| 4 — Higiene de datos y deps | B1, B3, B5, B6, B9, B12, M4 | **pendiente** |
+| 4 — Higiene de datos y deps | B1, B3, B5, B6, B9, B12, M4 | ✅ **hecha** (2026-07-16) |
 | 5 — Hardening de GitHub | B2, B7, B8 | **pendiente** |
 
 Hallazgo nuevo, encontrado *por* la Fase 2 (ver el detalle en su sección): **la semilla de
@@ -238,7 +238,7 @@ silencio, sin que nada lo avisara.
   (incluida la advertencia de paridad del body_text y el gotcha `cmd /c`);
   `/cierre-mes` concilia a la fecha de los saldos, no a "hoy".
 
-### Fase 4 — Higiene de datos y dependencias · cierra B1, B3, B5, B6, B9, B12, M4
+### Fase 4 — Higiene de datos y dependencias · cierra B1, B3, B5, B6, B9, B12, M4 ✅ HECHA
 
 1. Alta de "Mercado Pago" en `config/cuentas.csv`; pin exacto de `pypdf` y
    `google-api-python-client`; skip por id ya presente en `procesar_mails`; charset del mail
@@ -247,7 +247,39 @@ silencio, sin que nada lo avisara.
    decisión de Joaco, con `en_analisis=0` vía `resoluciones.csv` si los confirma.
 3. Documentar en `docs/esquema.md` la coexistencia de los dos modelados de devolución (B9).
 
-**Gate:** validación verde + agregados idénticos antes/después (salvo lo que se resuelva en 4.2).
+**Gate — pasado.** Validación verde en los dos modos, `test_conciliacion` pasa, y los agregados
+no se movieron: el único delta observado fue exactamente el mail que trajo el fetch en el medio
+(ANCAP Trouville 2.883,50 × coef. de julio 0,630747 = 1.818,76, al centavo).
+
+**Correcciones al plan, encontradas al ejecutarlo:**
+
+- **B5 estaba mal y "arreglarlo" habría roto datos.** Mercado Libre y Mercado Pago declaran
+  `charset=iso-8859-1` y mandan UTF-8 igual: verificado sobre los mails reales, donde los
+  acentos llegan perfectos *porque* hoy se decodifica UTF-8 a la fuerza. Respetar el header
+  habría convertido cada "ó" en "Ã³". El fix va al revés: UTF-8 primero, header solo como plan
+  B. Paridad verificada re-bajando los 74 mails y decodificando de las dos formas: 74/74
+  idénticos. (El primer intento de test comparó contra los mails guardados por el conector
+  viejo y dio 34 diferencias — todas del delta cosmético conocido de la migración, ninguna
+  mía. El test correcto aísla el cambio.)
+- **M4 eran 7 grupos, no 6** — la auditoría se comió "Estacion" (300,81). Exposición real
+  3.646,09 (parte de Joaco) / 6.373,00 (gasto total de casa).
+- **M4 tenía un segundo consumidor no previsto.** Sacar las filas vía `resoluciones.csv`
+  corrige el ledger, pero la pestaña de casa del dashboard se arma de `data/casa.csv`, que es
+  **otro artefacto de la misma planilla** y no pasa por las resoluciones. Sin eso, el mismo
+  gasto quedaba con dos números distintos según la pestaña. Se aplicó el mismo filtro en
+  `generar_dashboard_data.py`.
+- **M4 rompía la validación de migración, como estaba previsto**: `2b` comparaba un ledger
+  corregido contra una planilla cruda (`planilla d=-2978.84`). Se agregó
+  `filas_planilla_excluidas()` en `merge_y_validar.py`, espejo de `cargar_overrides_1money()`,
+  y `2b` volvió a 0,00 en todos los años.
+- **Las posiciones de casa NO cambiaron** con M4: los 7 grupos son de 2025-03 → 2026-01, todos
+  anteriores a la semilla (2026-06-30), que sale del extracto bancario y no de sumar la
+  planilla. La corrección afecta la foto histórica, no lo que cada uno debe.
+
+**Hallazgo extra:** `docs/esquema.md` documentaba la semilla de casa con los valores **viejos**
+(Lu 11.244,07 / Joaco −9.692,04), de antes de reconciliar contra el banco — el propio
+`posicion_casa.json` los lista como "valores previos". Corregido, y ahora apunta al JSON como
+fuente de verdad en vez de repetir el número.
 
 ### Fase 5 — Hardening de GitHub · cierra B2, B7, B8
 

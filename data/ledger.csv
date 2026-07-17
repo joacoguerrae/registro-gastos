@@ -2913,7 +2913,7 @@ e3e1e059775d,2025-03-14,2025-03,gasto,1011.00,UYU,1011.00,Cuenta Casa,,Servicios
 ffc6ce43f2ef,2025-03-14,2025-03,gasto,57.50,UYU,57.50,Cuenta Casa,,Super,Super,,Devoto,casa,planilla_casa,confirmado,1,fila:942
 002bf9d15d42,2025-03-17,2025-03,gasto,242.00,UYU,242.00,Cuenta Casa,,Comer afuera / Delivery,Salir a Comer / Delivery,,Empanadas,casa,planilla_casa,confirmado,1,fila:945
 05f8d400e2da,2025-03-17,2025-03,gasto,126.00,UYU,126.00,Cuenta Casa,,Suscripciones,Suscripciones,,Prime,casa,planilla_casa,confirmado,1,fila:953
-1e6f64ed9ccb,2025-03-17,2025-03,gasto,22.50,UYU,22.50,Cuenta Casa,,Super,Super,,Cookies,casa,planilla_casa,confirmado,1,fila:957
+1e6f64ed9ccb,2025-03-17,2025-03,gasto,22.50,UYU,22.50,Cuenta Casa,,Super,Super,,Cookies,casa,planilla_casa,confirmado,0,fila:957
 2e3910ba806f,2025-03-17,2025-03,gasto,257.00,UYU,257.00,Cuenta Casa,,Salud,Farmacia,,Fasrmashop,casa,planilla_casa,confirmado,1,fila:963
 496dad8c3014,2025-03-17,2025-03,gasto,152.50,UYU,152.50,Cuenta Casa,,Super,Super,,Devoto,casa,planilla_casa,confirmado,1,fila:944
 54dbf39a00ce,2025-03-17,2025-03,ingreso,5929.19,UYU,5929.19,Santander USD,,Otros ingresos,Otros,,Casa PdE transferencias,personal,1money,confirmado,1,9d7c4a3d-c961-4fb4-8cb4-1b9da9dbdd64
@@ -3047,7 +3047,7 @@ d616454f4871,2025-04-21,2025-04,gasto,1597.57,UYU,1597.57,Cuenta Casa,,Servicios
 a141b0a6fd01,2025-04-28,2025-04,gasto,51.41,UYU,51.41,Cuenta Casa,,Comer afuera / Delivery,Salir a Comer / Delivery,,Comida Lu,casa,planilla_casa,confirmado,1,fila:1073
 aaf01fd22699,2025-04-28,2025-04,gasto,1162.77,UYU,1162.77,Cuenta Casa,,Vivienda,IMM,,IMM,casa,planilla_casa,confirmado,1,fila:1064
 c08781b8013f,2025-04-28,2025-04,gasto,409.65,UYU,409.65,Cuenta Casa,,Comer afuera / Delivery,Salir a Comer / Delivery,,Chezpi,casa,planilla_casa,confirmado,1,fila:1070
-def7eed91db2,2025-04-28,2025-04,gasto,188.14,UYU,188.14,Cuenta Casa,,Auto,Auto,,Lavado Auto,casa,planilla_casa,confirmado,1,fila:1060
+def7eed91db2,2025-04-28,2025-04,gasto,188.14,UYU,188.14,Cuenta Casa,,Auto,Auto,,Lavado Auto,casa,planilla_casa,confirmado,0,fila:1060
 f3bfad21d120,2025-04-28,2025-04,gasto,328.70,UYU,328.70,Cuenta Casa,,Super,Super,,Pescado,casa,planilla_casa,confirmado,1,fila:1071
 f45be3b1e34c,2025-04-28,2025-04,gasto,218.77,UYU,218.77,Cuenta Casa,,Auto,Auto,,Lavado Auto,casa,planilla_casa,confirmado,1,fila:1068
 ff54fd02512a,2025-04-28,2025-04,gasto,565.52,UYU,565.52,Cuenta Casa,,Super,Super,,Frutas,casa,planilla_casa,confirmado,1,fila:1066
@@ -3154,7 +3154,7 @@ a1328e50072e,2025-05-23,2025-05,gasto,950.85,UYU,950.85,Cuenta Casa,,Casa & hoga
 bdcc02a4433e,2025-05-23,2025-05,gasto,300.81,UYU,300.81,Cuenta Casa,,Super,Super,,Condimentos,casa,planilla_casa,confirmado,1,fila:1145
 c3bca87573a3,2025-05-23,2025-05,gasto,233.54,UYU,233.54,Cuenta Casa,,Super,Super,,Peya,casa,planilla_casa,confirmado,1,fila:1139
 de2cfc1cf9c5,2025-05-23,2025-05,gasto,875.08,UYU,875.08,Cuenta Casa,,Casa & hogar,Cosas Casa,,Estacion,casa,planilla_casa,confirmado,1,fila:1135
-f531c19533b3,2025-05-23,2025-05,gasto,300.81,UYU,300.81,Cuenta Casa,,Super,Super,,Estacion,casa,planilla_casa,confirmado,1,fila:1129
+f531c19533b3,2025-05-23,2025-05,gasto,300.81,UYU,300.81,Cuenta Casa,,Super,Super,,Estacion,casa,planilla_casa,confirmado,0,fila:1129
 f6b2bbbd9a88,2025-05-23,2025-05,gasto,300.81,UYU,300.81,Cuenta Casa,,Super,Super,,Estacion,casa,planilla_casa,confirmado,1,fila:1127
 fd118f768585,2025-05-23,2025-05,gasto,161.32,UYU,161.32,Cuenta Casa,,Super,Super,,Peya,casa,planilla_casa,confirmado,1,fila:1120
 059673268485,2025-05-26,2025-05,gasto,794.00,UYU,794.00,Santander UYU,,Salud,Salud,,Colageno,personal,1money,confirmado,1,e99a836e-6685-4af7-87cc-1debe854fdcc
@@ -3400,7 +3400,7 @@ a30ce646ea9c,2025-08-15,2025-08,gasto,530.00,UYU,530.00,Santander UYU,,Compras p
 c3d47ce9a087,2025-08-15,2025-08,gasto,17.33,UYU,17.33,Cuenta Casa,,Super,Super,,Peya,casa,planilla_casa,confirmado,1,fila:1277
 cdbdafda0d84,2025-08-15,2025-08,gasto,981.73,UYU,981.73,Cuenta Casa,,Regalos,Regalos,,Regalo Mama,casa,planilla_casa,confirmado,1,fila:1291
 e99e832d1e51,2025-08-15,2025-08,gasto,359.00,UYU,359.00,Cuenta Casa,,Compras personales,Ropa / Peluqueria,,Pantalon,casa,planilla_casa,confirmado,1,fila:1279
-ea2a27a48c48,2025-08-15,2025-08,gasto,359.00,UYU,359.00,Cuenta Casa,,Compras personales,Ropa / Peluqueria,,Pantalon,casa,planilla_casa,confirmado,1,fila:1285
+ea2a27a48c48,2025-08-15,2025-08,gasto,359.00,UYU,359.00,Cuenta Casa,,Compras personales,Ropa / Peluqueria,,Pantalon,casa,planilla_casa,confirmado,0,fila:1285
 9b9bd6437cf4,2025-08-18,2025-08,gasto,281.00,UYU,281.00,Santander UYU,,Servicios,Celular,,Movistae,personal,1money,confirmado,1,0ab54db3-edec-4a4b-94ce-358d3174e81a
 ad21860c56bd,2025-08-18,2025-08,gasto,497.74,UYU,497.74,Cuenta Casa,,Comer afuera / Delivery,Salir a Comer / Delivery,,Cabano,casa,planilla_casa,confirmado,1,fila:1295
 c4ad4f2bc06f,2025-08-18,2025-08,gasto,430.00,UYU,430.00,Santander UYU,,Regalos,Regalos,,Gaia,personal,1money,confirmado,1,8daa0235-4f93-4ce8-8dea-e4002099c60e
@@ -3614,7 +3614,7 @@ b5c892921ce9,2025-10-29,2025-10,gasto,461.00,UYU,461.00,Santander UYU,,Salud,Sal
 b672a68ea7eb,2025-10-29,2025-10,gasto,445.20,UYU,445.20,Cuenta Casa,,Comer afuera / Delivery,Salir a Comer / Delivery,,Wantan,casa,planilla_casa,confirmado,1,fila:1441
 c3b7a514d2db,2025-10-29,2025-10,gasto,311.20,UYU,311.20,Cuenta Casa,,Super,Super,,Feria,casa,planilla_casa,confirmado,1,fila:1425
 da1d2a5fdce9,2025-10-29,2025-10,gasto,764.06,UYU,764.06,Cuenta Casa,,Comer afuera / Delivery,Salir a Comer / Delivery,,Almuerzo,casa,planilla_casa,confirmado,1,fila:1439
-db1bf5417e0b,2025-10-29,2025-10,gasto,1512.25,UYU,1512.25,Cuenta Casa,,Auto,Auto,,Nafta,casa,planilla_casa,confirmado,1,fila:1429
+db1bf5417e0b,2025-10-29,2025-10,gasto,1512.25,UYU,1512.25,Cuenta Casa,,Auto,Auto,,Nafta,casa,planilla_casa,confirmado,0,fila:1429
 dbcbabf430bc,2025-10-29,2025-10,gasto,929.77,UYU,929.77,Cuenta Casa,,Casa & hogar,Limpieza,,Yova,casa,planilla_casa,confirmado,1,fila:1421
 e8fd053234b6,2025-10-29,2025-10,gasto,1512.25,UYU,1512.25,Cuenta Casa,,Auto,Auto,,Nafta,casa,planilla_casa,confirmado,1,fila:1419
 f1ae55b4dfe3,2025-10-29,2025-10,gasto,282.76,UYU,282.76,Cuenta Casa,,Super,Super,,Pasta Dientes,casa,planilla_casa,confirmado,1,fila:1423
@@ -3685,8 +3685,8 @@ ed5dbe6bc532,2025-11-27,2025-11,gasto,2500.00,UYU,2500.00,Santander UYU,,Casa & 
 2c3e16334f63,2025-11-30,2025-11,gasto,570.44,UYU,570.44,Cuenta Casa,,Salud,Salud,,Farmashop,casa,planilla_casa,confirmado,1,fila:1480
 620e7956160e,2025-11-30,2025-11,gasto,1723.91,UYU,1723.91,Cuenta Casa,,Salidas & ocio,Otras Salidas,,Entradas Plan,casa,planilla_casa,confirmado,1,fila:1504
 6c38c81c78b9,2025-11-30,2025-11,gasto,826.41,UYU,826.41,Cuenta Casa,,Super,Super,,Devoto,casa,planilla_casa,confirmado,1,fila:1490
-6fdbfd9c226d,2025-11-30,2025-11,gasto,298.07,UYU,298.07,Cuenta Casa,,Casa & hogar,Limpieza,,Productos Limpieza,casa,planilla_casa,confirmado,1,fila:1494
-7280529d1a93,2025-11-30,2025-11,gasto,298.07,UYU,298.07,Cuenta Casa,,Casa & hogar,Limpieza,,Productos Limpieza,casa,planilla_casa,confirmado,1,fila:1500
+6fdbfd9c226d,2025-11-30,2025-11,gasto,298.07,UYU,298.07,Cuenta Casa,,Casa & hogar,Limpieza,,Productos Limpieza,casa,planilla_casa,confirmado,0,fila:1494
+7280529d1a93,2025-11-30,2025-11,gasto,298.07,UYU,298.07,Cuenta Casa,,Casa & hogar,Limpieza,,Productos Limpieza,casa,planilla_casa,confirmado,0,fila:1500
 8ebfaad798bb,2025-11-30,2025-11,gasto,303.00,UYU,303.00,Cuenta Casa,,Super,Super,,Granola,casa,planilla_casa,confirmado,1,fila:1486
 a14b706b4432,2025-11-30,2025-11,gasto,298.07,UYU,298.07,Cuenta Casa,,Casa & hogar,Limpieza,,Productos Limpieza,casa,planilla_casa,confirmado,1,fila:1478
 a31563532487,2025-11-30,2025-11,gasto,273.46,UYU,273.46,Cuenta Casa,,Salidas & ocio,Otras Salidas,,Peaje,casa,planilla_casa,confirmado,1,fila:1484
@@ -3847,7 +3847,7 @@ ff56f7c3ebee,2025-12-31,2025-12,gasto,3473.00,UYU,3473.00,Santander UYU,,Regalos
 53c000793f7e,2026-01-02,2026-01,ingreso,12.00,UYU,12.00,Santander UYU,,Devoluciones & cashback,Descuentos Tarjeta,,Peya,personal,1money,confirmado,1,925d0b74-f439-48a8-a88b-5d4770c97621
 673f8e482bac,2026-01-02,2026-01,gasto,366.45,UYU,366.45,Cuenta Casa,,Otros,Tarjetas,,Comision,casa,planilla_casa,confirmado,1,fila:1577
 8010da8607e2,2026-01-02,2026-01,gasto,168.45,UYU,168.45,Cuenta Casa,,Super,Super,,Peya,casa,planilla_casa,confirmado,1,fila:1580
-937e886cbc2b,2026-01-02,2026-01,gasto,667.25,UYU,667.25,Cuenta Casa,,Super,Super,,Picada,casa,planilla_casa,confirmado,1,fila:1588
+937e886cbc2b,2026-01-02,2026-01,gasto,667.25,UYU,667.25,Cuenta Casa,,Super,Super,,Picada,casa,planilla_casa,confirmado,0,fila:1588
 9b17bca1f365,2026-01-02,2026-01,gasto,9470.57,UYU,9470.57,Cuenta Casa,,Auto,Auto,,Patente,casa,planilla_casa,confirmado,1,fila:1600
 9cc212c39860,2026-01-02,2026-01,gasto,1607.96,UYU,1607.96,Cuenta Casa,,Auto,Auto,,Nafta,casa,planilla_casa,confirmado,1,fila:1596
 a6a72a256fb7,2026-01-02,2026-01,gasto,587.00,UYU,587.00,Santander UYU,,Super,Super,,Devoto,personal,1money,confirmado,1,2302a0ef-8657-4812-b90b-e54c0bc4a00e

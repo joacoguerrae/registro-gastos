@@ -6,12 +6,40 @@
   espejo de las ventanas del ledger) + jul-2026 en adelante desde data/ledger.csv
   (ambito=casa, dividido por coeficiente de config/ingresos.csv)."""
 import csv
+import hashlib
 import os
 import re
 from collections import defaultdict
 
 BASE = os.environ.get("GASTOS_BASE") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 P = lambda *a: os.path.join(BASE, *a)
+
+
+def filas_planilla_excluidas():
+    """Filas de la planilla sacadas del analisis por resolucion (en_analisis=0).
+
+    OJO -- data/casa.csv y data/ledger.csv son DOS artefactos distintos de la
+    MISMA planilla: el ledger lo reconstruyen procesar_mails/merge_y_validar
+    aplicando data/resoluciones.csv, pero casa.csv no pasa por ahi y se lee
+    directo. Sin este filtro, una fila excluida desaparece de los agregados
+    personales pero sigue contando en la pestaña de casa del dashboard: dos
+    numeros distintos para el mismo gasto.
+
+    El id se recalcula con la misma formula del migrador: sha1(origen+fuente_id).
+    """
+    path = P("data", "resoluciones.csv")
+    if not os.path.exists(path):
+        return set()
+    with open(path, encoding="utf-8-sig", newline="") as f:
+        return {r["id_ledger"] for r in csv.DictReader(f)
+                if r["campo"] == "en_analisis" and r["valor"] == "0"}
+
+
+EXCLUIDAS = filas_planilla_excluidas()
+
+
+def id_planilla(fila):
+    return hashlib.sha1(("planilla_casa" + f"fila:{fila}").encode()).hexdigest()[:12]
 
 ppto = defaultdict(float)
 meses_ppto = set()
@@ -57,6 +85,8 @@ with open(P("data", "casa.csv"), encoding="utf-8", newline="") as f:
             continue
         if EXCL.match(r["descripcion"] or ""):
             continue
+        if id_planilla(r["fila"]) in EXCLUIDAS:
+            continue          # sacada del analisis por resolucion (ver arriba)
         cat = r["categoria"] or "(sin categoria)"
         if r["era"] == "pre-sistema":
             lu = joaco = egreso / 2          # misma regla que la ventana A del ledger

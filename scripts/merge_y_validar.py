@@ -217,7 +217,33 @@ def recalc_db():
 # ============================================================
 # 3. Recalculo independiente desde casa.xlsx (parte Joaco)
 # ============================================================
+def filas_planilla_excluidas():
+    """Nros de fila de casa.xlsx sacadas del analisis por resolucion (en_analisis=0).
+
+    El recalculo desde el xlsx tiene que aplicar las mismas resoluciones que el
+    ledger. Si no, 2b compara un ledger corregido contra una planilla cruda y
+    reporta DESVIO por una correccion DELIBERADA. Mismo criterio que
+    cargar_overrides_1money() para las filas de 1Money.
+
+    Caso real (auditoria 2026-07 M4): la planilla tiene 7 grupos de gastos con
+    fecha/importe/descripcion identicos el mismo dia (ej. Nafta 2.765 dos veces
+    el 29/10, Productos Limpieza 545 tres veces el 30/11). Revisados con Joaco el
+    16/7: son cargas repetidas, no compras repetidas. Se conserva la primera fila
+    de cada grupo y las demas quedan en_analisis=0.
+    """
+    path = P("data", "resoluciones.csv")
+    if not os.path.exists(path):
+        return set()
+    fuera = set()
+    with open(path, encoding="utf-8-sig", newline="") as f:
+        for r in csv.DictReader(f):
+            if r["campo"] == "en_analisis" and r["valor"] == "0":
+                fuera.add(r["id_ledger"])
+    return fuera
+
+
 def recalc_xlsx():
+    excluidas = filas_planilla_excluidas()
     wb = openpyxl.load_workbook(XLSX, data_only=True)
     ws = wb["Planilla de Gastos"]
     num = lambda v: float(v) if isinstance(v, (int, float)) and not isinstance(v, bool) else None
@@ -241,10 +267,14 @@ def recalc_xlsx():
         row["fecha_ref"] = row["fecha"] or prev
 
     joaco_mensual = defaultdict(float)  # (2c) y (2b)
-    n_a = n_b = 0
+    n_a = n_b = n_excl = 0
     huerfanas = []
     for row in raw:
         if not (row["egreso"] and row["egreso"] > 0) or EXCL_PAT.match(row["desc"]):
+            continue
+        rid = hashlib.sha1(("planilla_casa" + f"fila:{row['fila']}").encode()).hexdigest()[:12]
+        if rid in excluidas:
+            n_excl += 1      # sacada del analisis por resolucion: no es huerfana
             continue
         f = row["fecha_ref"]
         if f and WIN_A_INI <= f < WIN_B_INI and row["origen"] == "":
@@ -269,7 +299,7 @@ def recalc_xlsx():
         hclas[k][0] += 1
         hclas[k][1] += h["egreso"]
     return dict(joaco_mensual=dict(joaco_mensual), n_a=n_a, n_b=n_b,
-                huerfanas=huerfanas, hclas=dict(hclas),
+                n_excl=n_excl, huerfanas=huerfanas, hclas=dict(hclas),
                 raw={r["fila"]: r for r in raw})
 
 
@@ -489,8 +519,9 @@ def validar_migracion(ledger, ctx):
             ok_b = False
         tabla_b.append((anio, l1, f1, d1, l2, f2, d2, l1 + l2))
     log("2b.gastos_anio", "OK" if ok_b else "DESVIO",
-        "; ".join(f"{a}: ledger {t:.2f} (1money d={d1:.2f}, planilla d={d2:.2f})"
-                  for a, _, _, d1, _, _, d2, t in tabla_b))
+        f"({x['n_excl']} filas de planilla excluidas por resolucion, aplicadas a los dos lados) "
+        + "; ".join(f"{a}: ledger {t:.2f} (1money d={d1:.2f}, planilla d={d2:.2f})"
+                    for a, _, _, d1, _, _, d2, t in tabla_b))
 
     # ---------- 2c. anti doble conteo casa ----------
     meses = sorted(set(x["joaco_mensual"]) | set(db["casa_mensual"]))
