@@ -113,6 +113,13 @@ jobs:
       # Dashboard con URL fija: Cloudflare Pages (deploy) + Access (candado).
       # No critico: si falla, la URL queda con la version anterior.
       #
+      # SEGURIDAD (verificado 19/7): la app de Access DEBE cubrir DOS destinos:
+      #   gastos-joacoguerrae.pages.dev   Y   *.gastos-joacoguerrae.pages.dev
+      # Cada deploy crea una URL de preview inmutable (<hash>.gastos-...pages.dev)
+      # que es publica: sin el comodin, el dashboard con datos financieros queda
+      # accesible en esa URL sin login. El Path de cada destino va VACIO (un path
+      # como '*.' no matchea la home '/' y deja pasar todo).
+      #
       # PLACEHOLDER=1 durante el setup: hasta que el Access este configurado y
       # VERIFICADO, se publica una pagina vacia -- el dashboard real tiene datos
       # financieros y la URL seria publica mientras tanto. Flip a "0" recien
