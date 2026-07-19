@@ -124,7 +124,11 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          PLACEHOLDER: "1"
+          # Access (candado) configurado y VERIFICADO desde afuera el 19/7: las
+          # URLs de gastos-joacoguerrae.pages.dev dan 302 -> cloudflareaccess.com
+          # (login por mail joacoguerrae@gmail.com). Recien por eso PLACEHOLDER=0:
+          # ya se puede publicar el dashboard real con datos financieros.
+          PLACEHOLDER: "0"
         run: |
           if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
             echo "::notice::Cloudflare sin configurar (faltan secrets): se salta el deploy"
