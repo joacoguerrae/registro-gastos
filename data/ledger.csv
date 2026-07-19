@@ -4621,3 +4621,12 @@ d50e9ed860cf,2026-07-16,2026-07,transferencia,1685.89,UYU,1685.89,Cuenta Casa,De
 a05b52e7aeea,2026-07-17,2026-07,gasto,398.36,UYU,398.36,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,casa,mail,confirmado,1,19f72360afdc8605
 d6abca869122,2026-07-17,2026-07,transferencia,1715.00,UYU,1715.00,Deudas,Cuenta Casa,,,,Repago madre de Lu por CHIC PARISIEN (revierte d50e9ed860cf; redondeo 29.11 a favor del fondo),interno,manual,confirmado,0,d50e9ed860cf-repago
 115f0367420c,2026-07-18,2026-07,gasto,851.21,UYU,851.21,Cuenta Casa,,,,MONTEVIDEO/DLO*Arcos Dorados UruVIS3,DLO*Arcos Dorados Uru,casa,mail,pendiente,1,19f7375cd2d5004d
+19538fd1568b,2026-07-18,2026-07,gasto,5.90,UYU,5.90,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa Envio VIS3,DLO*PedidosYa Envio,casa,mail,confirmado,1,19f775ba9efb495c
+1c45035d190b,2026-07-18,2026-07,gasto,167.21,UYU,167.21,Cuenta Casa,,Comer afuera / Delivery,,FKDMONTEVIDEO/EL TIMON *HANDY*0VIS3,EL TIMON *HANDY*0,casa,mail,confirmado,1,19f75edcc48520a8
+283a8e2372b8,2026-07-18,2026-07,gasto,1780.00,UYU,1780.00,Cuenta Casa,,,,macarena herrera,Protectores,personal,mail,pendiente,1,19f76842d3d0221a
+42d61c366c7d,2026-07-18,2026-07,gasto,594.93,UYU,594.93,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,casa,mail,confirmado,1,19f775b164842900
+435a18bcd7ce,2026-07-18,2026-07,gasto,832.13,UYU,832.13,Cuenta Casa,,Super,,MONTEVIDEO/ROSA DI IACOVO (AFU) VIS3,ROSA DI IACOVO (AFU),casa,mail,confirmado,1,19f75f7d0d6db2c6
+4d1714cdc1e4,2026-07-18,2026-07,gasto,30.00,UYU,30.00,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,19f77fbc444cda16
+56b59e15f507,2026-07-18,2026-07,gasto,527.95,UYU,527.95,Santander Platinum,,,,MEDIALUNAS CALE,MEDIALUNAS CALE,personal,mail,pendiente,1,19f76b7a09c4dfe7
+7663d24b6ce4,2026-07-18,2026-07,gasto,1342.62,UYU,1342.62,Cuenta Casa,,Super,,MONTEVIDEO/PUESTO PLAVAN VIS3,PUESTO PLAVAN,casa,mail,confirmado,1,19f75fe366f72734
+b9f2ed23d417,2026-07-18,2026-07,transferencia,719.00,UYU,719.00,Cuenta Casa,Lu,,,,Jabon Ropa,interno,mail,pendiente,0,19f76c4e652840c2
