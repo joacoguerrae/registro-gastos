@@ -24,3 +24,7 @@ d50e9ed860cf,sin_categoria,establecimiento 'MONTEVIDEO/CHIC PARISIEN VIS3' sin r
 56b59e15f507,sin_categoria,establecimiento 'MEDIALUNAS CALE' sin regla,2026-07-19,1
 283a8e2372b8,transferencia_a_clasificar,"a 'macarena herrera', concepto 'Protectores', UYU 1780.00: sin categoria",2026-07-19,1
 b9f2ed23d417,transferencia_a_clasificar,"a 'Lu', concepto 'Jabon Ropa', UYU 719.00",2026-07-19,1
+dfa33eceea23,tc_estimado,USD 1.00 x tc 40.33 = 40.33 UYU (corrige Fase 3),2026-07-19,
+dfa33eceea23,sin_categoria,establecimiento 'CLOUDFLARE' sin regla,2026-07-19,
+1b281aeb4913,tc_estimado,reintegro USD 1.00 x tc 40.33 (corrige Fase 3),2026-07-19,
+1b281aeb4913,sin_categoria,reintegro 'CLOUDFLARE' sin regla ni cargo original,2026-07-19,

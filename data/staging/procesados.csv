@@ -89,3 +89,5 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 19f784f0a2083793,2026-07-19T02:57:52Z,aviso_tarjeta,ignorado,,tarjeta desconocida ,,2026-07-19T03:59:30+00:00
 19f76842d3d0221a,2026-07-18T18:36:38Z,transferencia,insertado,283a8e2372b8,Aviso de Transferencia interna en el banco | macarena herrera 'Protectores' UYU 1780.00 2026-07-18 -> gasto/personal/(sin categoria),,2026-07-19T03:59:30+00:00
 19f76c4e652840c2,2026-07-18T19:47:22Z,transferencia,insertado,b9f2ed23d417,Aviso de Transferencia interna en el banco | Lu 'Jabon Ropa' UYU 719.00 2026-07-18 -> transferencia/interno/(sin categoria),,2026-07-19T03:59:30+00:00
+19f7ab2483b0f567,2026-07-19T14:05:30Z,aviso_tarjeta,insertado,dfa33eceea23,6427 USD 1.00 CLOUDFLARE -> Santander Platinum/personal/(sin categoria),6427||1.00||CLOUDFLARE||2026-07-19T11:05:26,2026-07-19T14:26:21+00:00
+19f7ab2de9dcce5f,2026-07-19T14:06:08Z,devolucion,insertado,1b281aeb4913,6427 USD -1.00 CLOUDFLARE -> Santander Platinum/personal/(sin cat) revierte dfa33eceea23,,2026-07-19T14:26:21+00:00
