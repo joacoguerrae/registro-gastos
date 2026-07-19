@@ -42,9 +42,14 @@ jobs:
     env:
       MODE: ${{ github.event.inputs.mode || 'live' }}
     steps:
-      - uses: actions/checkout@v4
+      # Pinneadas por SHA, no por tag (auditoria 2026-07 B8): el job corre con los
+      # secrets de Gmail/Splitwise/service-account en el entorno, y un tag (v4) es
+      # movible -- quien controle el repo de la action puede reapuntarlo a codigo
+      # nuevo. El SHA es inmutable. Para actualizar: resolver el SHA nuevo con
+      #   gh api repos/actions/checkout/commits/vX --jq .sha
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5  # v4
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065  # v5
         with:
           python-version: '3.12'
 
@@ -119,7 +124,11 @@ jobs:
         run: |
           git config user.name "gastos-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add -A
+          # Paths EXPLICITOS, no -A (auditoria 2026-07 B2): el pipeline solo
+          # escribe en data/, out/ y el watermark. Con -A, cualquier archivo
+          # inesperado que aparezca en el arbol (un token volcado por error, un
+          # temporal) se commitearia solo y en silencio.
+          git add data out config/estado_sync.json
           if git diff --cached --quiet; then
             echo "sin cambios para commitear"
           else

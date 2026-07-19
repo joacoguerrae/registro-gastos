@@ -16,7 +16,7 @@ cada una con su gate.
 | 2 — Bombas de agosto | M1, M2, M3, A1 | ✅ **hecha** (2026-07-16, commit `f8d09a9`) |
 | 3 — Documentos de proceso | A2, M6, B10 | ✅ **hecha** (2026-07-16) |
 | 4 — Higiene de datos y deps | B1, B3, B5, B6, B9, B12, M4 | ✅ **hecha** (2026-07-16) |
-| 5 — Hardening de GitHub | B2, B7, B8 | **pendiente** |
+| 5 — Hardening de GitHub | B2, B7, B8 | ✅ **hecha** (2026-07-19) — auditoría completa, 5/5 |
 
 Hallazgo nuevo, encontrado *por* la Fase 2 (ver el detalle en su sección): **la semilla de
 `posicion_casa.json` no estaba protegida** — `cierre_casa.py <mes-de-la-semilla>` contaba los
@@ -281,13 +281,24 @@ no se movieron: el único delta observado fue exactamente el mail que trajo el f
 `posicion_casa.json` los lista como "valores previos". Corregido, y ahora apunta al JSON como
 fuente de verdad en vez de repetir el número.
 
-### Fase 5 — Hardening de GitHub · cierra B2, B7, B8
+### Fase 5 — Hardening de GitHub · cierra B2, B7, B8 ✅ HECHA (2026-07-19)
 
-1. Ruleset en `master`: bloquear force-push y borrado del branch (no molesta al bot).
-2. `git add -A` → lista explícita de paths, en el workflow y en `correr_pipeline.cmd`.
-3. Opcional: policy de actions "selected" + pin por SHA de `checkout`/`setup-python`.
+1. **Ruleset `proteger-master`** (id 19169294): bloquea force-push (`non_fast_forward`) y
+   borrado del branch, `enforcement: active`, sin bypass para nadie — para forzar un push hay
+   que editar el ruleset primero (fricción visible, a propósito). Nota de plan: los rulesets
+   básicos SÍ están disponibles en repos privados del plan Free; las *branch protection rules*
+   clásicas no — por eso se fue por ruleset.
+2. **`git add -A` → `git add data out config/estado_sync.json`** en el workflow y en
+   `correr_pipeline.cmd`: el pipeline solo escribe ahí; un archivo inesperado en el árbol ya
+   no se commitea solo.
+3. **Actions pinneadas por SHA** (`checkout@34e11487…`, `setup-python@a26af69b…`) y policy del
+   repo en `selected` con solo GitHub-owned: un tag `v4` es movible, el SHA no.
 
-**Gate:** una corrida live completa post-cambios, con commit y push normales.
+Extra del mismo día: el workflow abre Issues de pendientes pero nada los cerraba (se
+acumularon #2-#4 con la bandeja ya en 0). `/revisar-pendientes` ahora los cierra al final.
+
+**Gate:** el push de este mismo commit pasó por el ruleset recién activo (push normal OK), y
+la siguiente corrida live valida el `git add` acotado end-to-end.
 
 ## Qué NO se auditó
 

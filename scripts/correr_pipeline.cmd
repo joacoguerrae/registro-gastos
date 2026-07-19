@@ -19,6 +19,8 @@ C:\Users\joaco\anaconda3\python.exe scripts\salud_pasos.py correr generar_dashbo
 C:\Users\joaco\anaconda3\python.exe scripts\salud_pasos.py correr actualizar_sheets -- C:\Users\joaco\anaconda3\python.exe scripts\actualizar_sheets.py
 rem escalar necesita gh autenticado; en local puede no estarlo -> no es critico
 C:\Users\joaco\anaconda3\python.exe scripts\salud_pasos.py escalar || echo (aviso: escalar fallo -- se reintenta en la proxima corrida)
-git add -A
+rem paths explicitos, no -A (auditoria B2): igual que en Actions, para que un
+rem archivo inesperado en el arbol no se commitee solo.
+git add data out config/estado_sync.json
 git commit -m "sync automatico %date% %time%" -m "Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>" || echo (sin cambios para commitear)
 exit /b 0
