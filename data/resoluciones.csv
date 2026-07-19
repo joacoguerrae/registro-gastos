@@ -132,3 +132,23 @@ db1bf5417e0b,en_analisis,0,duplicado de e8fd053234b6 (fila:1419): la planilla ti
 6fdbfd9c226d,en_analisis,0,duplicado de a14b706b4432 (fila:1478): la planilla tiene 3 filas identicas (misma fecha/importe/descripcion) el 2025-11-30; se conserva la primera. Revisado con Joaco 16/7 (auditoria M4),2026-07-16
 7280529d1a93,en_analisis,0,duplicado de a14b706b4432 (fila:1478): la planilla tiene 3 filas identicas (misma fecha/importe/descripcion) el 2025-11-30; se conserva la primera. Revisado con Joaco 16/7 (auditoria M4),2026-07-16
 937e886cbc2b,en_analisis,0,duplicado de 2291564d1d53 (fila:1578): la planilla tiene 2 filas identicas (misma fecha/importe/descripcion) el 2026-01-02; se conserva la primera. Revisado con Joaco 16/7 (auditoria M4),2026-07-16
+4a12ce10e011,categoria,Salidas & ocio,"bar Sala del Museo, consumo de la noche (Joaco 19/7)",2026-07-19
+4a12ce10e011,motivo_resuelto,sin_categoria,categorizado Salidas & ocio,2026-07-19
+67a046846948,categoria,Salidas & ocio,"bar Sala del Museo, mismo consumo (Joaco 19/7)",2026-07-19
+67a046846948,motivo_resuelto,sin_categoria,categorizado Salidas & ocio,2026-07-19
+115f0367420c,categoria,Comer afuera / Delivery,McDonald's (Arcos Dorados) por delivery (Joaco 19/7),2026-07-19
+115f0367420c,motivo_resuelto,sin_categoria,categorizado Comer afuera / Delivery,2026-07-19
+56b59e15f507,categoria,Comer afuera / Delivery,panaderia/cafe Cale (Joaco 19/7),2026-07-19
+56b59e15f507,motivo_resuelto,sin_categoria,categorizado Comer afuera / Delivery,2026-07-19
+283a8e2372b8,tipo,gasto,"transf a Macarena Herrera por 'Protectores': es una compra, no un movimiento entre cuentas propias (Joaco 19/7)",2026-07-19
+283a8e2372b8,categoria,Casa & hogar,Protectores para la casa (Joaco 19/7),2026-07-19
+283a8e2372b8,ambito,casa,cosa de la casa: se divide con Lu (Joaco 19/7),2026-07-19
+283a8e2372b8,descripcion,Protectores (transf a Macarena Herrera),,2026-07-19
+283a8e2372b8,motivo_resuelto,transferencia_a_clasificar,clasificada gasto Casa & hogar casa,2026-07-19
+b9f2ed23d417,tipo,gasto,"transf a Lu reembolsando 'Jabon Ropa' que compro ella: es un gasto de la casa, no un movimiento interno (Joaco 19/7)",2026-07-19
+b9f2ed23d417,categoria,Casa & hogar,"jabon de ropa = limpieza, como se categoriza siempre (Joaco 19/7)",2026-07-19
+b9f2ed23d417,ambito,casa,"gasto de la casa, se divide con Lu (Joaco 19/7)",2026-07-19
+b9f2ed23d417,cuenta_destino,,era transferencia a Lu; al pasar a gasto no lleva destino,2026-07-19
+b9f2ed23d417,comercio,Jabon Ropa (via Lu),,2026-07-19
+b9f2ed23d417,motivo_resuelto,transferencia_a_clasificar,clasificada gasto Casa & hogar casa,2026-07-19
+b9f2ed23d417,en_analisis,1,"al pasar de transferencia a gasto hay que prender en_analisis: si no, no cuenta en ningun agregado (Joaco 19/7)",2026-07-19

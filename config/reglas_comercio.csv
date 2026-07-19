@@ -11,7 +11,7 @@ ANTEL,Servicios,casa,
 IMM |INTENDENCIA,Vivienda,casa,
 ANCAP|ESSO|AXION|PETROBRAS|NAFTA,Auto,,
 SUCIVE|PATENTE,Auto,,
-BANCO DE SEGURO|BSE,Auto,casa,"seguro del auto en BSE — es gasto de casa aunque lo pague Joaco (cuenta como aporte suyo en el cierre)"
+BANCO DE SEGURO|BSE,Auto,casa,seguro del auto en BSE — es gasto de casa aunque lo pague Joaco (cuenta como aporte suyo en el cierre)
 GARAGE,Auto,casa,
 FARMACIA|FARMASHOP|SAN ROQUE,Salud,,
 MEDICINA PERSONALIZAD|CLINICA|ASOCIACION ESPANOLA|MEDICA URUGUAYA|COSEM|SUMMUM,Salud,,
@@ -33,3 +33,6 @@ Asado|Pizza|Picada|Burger|Helado|Chivito|Milanesa,Comer afuera / Delivery,,comid
 Regalo,Regalos,,regalos en descripciones de Splitwise (Regalo papa / Regalopepi / etc.)
 Yova,Casa & hogar,casa,limpieza (persona) - confirmado 14/7
 RedTickets|RED TICKETS,Salidas & ocio,,entradas de shows (el ambito lo da la tarjeta)
+Arcos Dorados,Comer afuera / Delivery,,"McDonald's (Arcos Dorados), suele venir DLO*Arcos Dorados"
+MEDIALUNAS CALE|CALE|Medialunas,Comer afuera / Delivery,,panaderia/cafe Cale
+SALA DEL MUSEO,Salidas & ocio,,bar Sala del Museo
