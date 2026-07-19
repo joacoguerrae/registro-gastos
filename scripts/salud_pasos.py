@@ -49,6 +49,7 @@ QUE_IMPLICA = {
     "cierre_casa": "la posicion de casa queda con el valor previo (el dashboard la muestra vieja)",
     "generar_dashboard_html": "out/dashboard.html queda con los datos de la corrida anterior",
     "actualizar_sheets": "los Google Sheets y Looker quedan con los datos de la corrida anterior",
+    "deploy_dashboard": "la URL del dashboard (Cloudflare Pages) queda con la version anterior",
 }
 
 

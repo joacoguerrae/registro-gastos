@@ -110,6 +110,35 @@ jobs:
           python scripts/salud_pasos.py correr generar_dashboard_html -- python scripts/generar_dashboard_html.py
           python scripts/salud_pasos.py correr actualizar_sheets -- python scripts/actualizar_sheets.py
 
+      # Dashboard con URL fija: Cloudflare Pages (deploy) + Access (candado).
+      # No critico: si falla, la URL queda con la version anterior.
+      #
+      # PLACEHOLDER=1 durante el setup: hasta que el Access este configurado y
+      # VERIFICADO, se publica una pagina vacia -- el dashboard real tiene datos
+      # financieros y la URL seria publica mientras tanto. Flip a "0" recien
+      # cuando curl a la URL devuelva el redirect a cloudflareaccess.com.
+      # wrangler va pinneado exacto y via npx (sin action de terceros: la policy
+      # del repo es solo-GitHub-owned, y el runner ya trae node).
+      - name: Deploy dashboard a Cloudflare Pages (solo live)
+        if: env.MODE == 'live'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          PLACEHOLDER: "1"
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "::notice::Cloudflare sin configurar (faltan secrets): se salta el deploy"
+            exit 0
+          fi
+          mkdir -p /tmp/site
+          if [ "$PLACEHOLDER" = "1" ]; then
+            printf '<!doctype html><meta charset="utf-8"><title>pendiente</title><p>Configuración en curso.</p>' > /tmp/site/index.html
+          else
+            cp out/dashboard.html /tmp/site/index.html
+          fi
+          npx --yes wrangler@4.112.0 pages project create gastos-joacoguerrae --production-branch=master 2>/dev/null || true
+          python scripts/salud_pasos.py correr deploy_dashboard -- npx --yes wrangler@4.112.0 pages deploy /tmp/site --project-name=gastos-joacoguerrae --branch=master --commit-dirty=true
+
       # Va ANTES del commit: escalar() marca el Issue como abierto en
       # data/staging/salud_pasos.json, y si eso no se commiteara, la corrida
       # siguiente abriria otro Issue por la misma racha.
