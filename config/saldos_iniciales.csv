@@ -7,7 +7,7 @@ BBVA Crédito,2026-07-12,204.51,UYU,saldos reales reportados por Joaco,"deuda de
 Santander Platinum,2026-07-12,28987.50,UYU,saldos reales reportados por Joaco,"deuda UYU del período según Joaco; ver discrepancias BSE/Uber en data/saldos.csv"
 Santander Platinum USD,2026-07-12,99.46,USD,saldos reales reportados por Joaco,"deuda USD del período (Google One + Anthropic)"
 Santander Mastercard,2026-07-12,0.00,UYU,saldos reales reportados por Joaco,
-Deudas,2026-07-12,-1340.34,UYU,Splitwise segun Joaco,"negativo = debo"
+Deudas,2026-07-12,-1807.00,UYU,Splitwise segun Joaco + Pizza,"negativo = debo. Corregido 19/7: la lectura original (-1340.34) fue de la mañana del 12/7, y Rodrigo cargó 'Pizza' (sw:4566353446, parte de Joaco 466.66) ese mismo día 13:37 UY — fechada 12/7 quedaba fuera del cálculo (fecha<=corte) y fuera de la foto: el chequeo de sync_splitwise daba diff -466.66 permanente. La semilla debe ser la posición al CIERRE del día del corte. Verificado: -1807.00 -708.29 (Carpintero) +1560 (Guasones) = -955.29 = API get_friends exacto"
 Deudas USD,2026-07-12,1547.76,USD,Splitwise segun Joaco,"positivo = me deben"
 Efectivo,2026-07-12,0.00,UYU,saldos reales reportados por Joaco,
 Efectivo USD,2026-07-12,30.00,USD,saldos reales reportados por Joaco,
