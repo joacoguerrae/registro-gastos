@@ -152,3 +152,13 @@ b9f2ed23d417,cuenta_destino,,era transferencia a Lu; al pasar a gasto no lleva d
 b9f2ed23d417,comercio,Jabon Ropa (via Lu),,2026-07-19
 b9f2ed23d417,motivo_resuelto,transferencia_a_clasificar,clasificada gasto Casa & hogar casa,2026-07-19
 b9f2ed23d417,en_analisis,1,"al pasar de transferencia a gasto hay que prender en_analisis: si no, no cuenta en ningun agregado (Joaco 19/7)",2026-07-19
+dfa33eceea23,categoria,Otros,"cargo de verificacion de tarjeta de Cloudflare (US$1), reintegrado el mismo dia: netea a 0 (Joaco 20/7)",2026-07-20
+dfa33eceea23,motivo_resuelto,sin_categoria,Otros: verificacion Cloudflare neteada,2026-07-20
+dfa33eceea23,motivo_resuelto,tc_estimado,el par cargo+reintegro netea a 0 con cualquier tc: la estimacion no afecta,2026-07-20
+1b281aeb4913,categoria,Otros,"reintegro de la verificacion de Cloudflare, revierte dfa33eceea23 (Joaco 20/7)",2026-07-20
+1b281aeb4913,motivo_resuelto,sin_categoria,Otros: reintegro Cloudflare neteado,2026-07-20
+1b281aeb4913,motivo_resuelto,tc_estimado,netea a 0 con cualquier tc,2026-07-20
+b9a8d1f5818a,monto,46.25,split Caqui Tapa 'Carbon + hielo': parte de Joaco 45.84 (Splitwise) + 0.41 de redondeo que comio (tarjeta 275.41 vs Splitwise 275.00). Resto 229.16 a Deudas (Joaco 20/7),2026-07-20
+b9a8d1f5818a,monto_uyu,46.25,idem: parte propia + redondeo,2026-07-20
+b9a8d1f5818a,motivo_resuelto,split_a_cargar,dividido: 46.25 propio + 229.16 a Deudas (sw:4578748115),2026-07-20
+ce36af28daa3,motivo_resuelto,split_a_cargar,"mismo gasto que b9a8d1f5818a (Devoto Express 275.41), ya dividido. La deuda del grupo (229.16) la trackea Splitwise (Joaco 20/7)",2026-07-20
