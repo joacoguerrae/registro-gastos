@@ -4635,6 +4635,6 @@ b9f2ed23d417,2026-07-18,2026-07,gasto,719.00,UYU,719.00,Cuenta Casa,,Casa & hoga
 279c6134c5c1,2026-07-19,2026-07,gasto,20.00,UYU,20.00,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,19f7bf547ba90a67
 5954f0d89b49,2026-07-19,2026-07,gasto,518.69,UYU,518.69,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa Movie MVIS3,DLO*PedidosYa Movie M,casa,mail,confirmado,1,19f7b80d5bd1a03e
 8cad2d6df234,2026-07-19,2026-07,gasto,415.88,UYU,415.88,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa Movie MVIS3,DLO*PedidosYa Movie M,casa,mail,confirmado,1,19f7b8901c7d969e
-b9a8d1f5818a,2026-07-19,2026-07,gasto,275.41,UYU,275.41,Santander UYU,,Super,,PARQUE MIRAMA/DEVOTO EXPRESS VIS3,PARQUE MIRAMA/DEVOTO EXPRESS,personal,mail,confirmado,1,19f7b1d046e5cfde
+b9a8d1f5818a,2026-07-19,2026-07,gasto,275.41,UYU,275.41,Santander UYU,,Super,,PARQUE MIRAMA/DEVOTO EXPRESS VIS3,PARQUE MIRAMA/DEVOTO EXPRESS,personal,mail,pendiente,1,19f7b1d046e5cfde
 dfa33eceea23,2026-07-19,2026-07,gasto,1.00,USD,40.33,Santander Platinum,,,,CLOUDFLARE,CLOUDFLARE,personal,mail,pendiente,1,19f7ab2483b0f567
 fca72eec6148,2026-07-19,2026-07,transferencia,3000.00,UYU,3000.00,Santander UYU,Cuenta Casa,,,,"Aporte Joaco (transf caja de ahorro -> Cuenta Casa, informado el 19/7; sin mail: las transf entre cuentas propias no generan aviso, entra por extracto en el cierre)",interno,manual,confirmado,0,mp-aporte-3000-20260719
