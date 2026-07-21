@@ -618,6 +618,17 @@ def main():
             if not categoria:
                 motivos.append(("transferencia_a_clasificar",
                                 f"a {titular!r}, concepto {concepto!r}, {moneda} {fmt(monto)}: sin categoria"))
+        # Una transferencia clasificada como GASTO en moneda extranjera necesita
+        # monto_uyu: los agregados suman monto_uyu de tipo=gasto, y sin el la fila
+        # queda invisible o crashea el reporte. El monto_uyu se setea arriba solo
+        # para UYU (antes de saber el tipo); aca, ya decidido el tipo, se completa
+        # para el resto de las monedas -- igual que el handler de avisos. Lo
+        # destapo una seña de auto de USD 2000 el 21/7. tc estimado: corrige Fase 3.
+        if r["tipo"] == "gasto" and r["moneda"] != "UYU" and not r["monto_uyu"]:
+            r["monto_uyu"] = fmt(round(monto * tc[moneda], 2))
+            motivos.append(("tc_estimado",
+                            f"transferencia {moneda} {fmt(monto)} x tc {tc[moneda]} = "
+                            f"{r['monto_uyu']} UYU (corrige Fase 3)"))
         if motivos:
             r["estado"] = "pendiente"
             for mo, de in motivos:
@@ -850,14 +861,25 @@ def main():
     print(f"pendientes nuevos: {len(pend_nuevos)}")
     for k, n in sorted(Counter(p["motivo"] for p in pend_nuevos).items()):
         print(f"  {k:26s} {n}")
-    jul = defaultdict(float)
+    # Mes del reporte: el ultimo presente en el ledger, no hardcodeado (antes
+    # decia "2026-07" fijo; en agosto habria mostrado julio -- misma bomba que la
+    # Fase 2). Y tolera monto_uyu vacio: este es un RESUMEN, no debe crashear el
+    # pipeline (lo hizo el 21/7 con una seña de auto en USD). El guard de verdad
+    # es merge_y_validar, que sale !=0 si un gasto no tiene monto_uyu.
+    mes_rep = max((r["mes"] for r in ledger_final if r["mes"]), default="")
+    jul, sin_uyu = defaultdict(float), 0
     for r in ledger_final:
-        if r["mes"] == "2026-07" and r["tipo"] == "gasto" and r["en_analisis"] == "1":
-            jul[r["categoria"] or "(sin categoria)"] += float(r["monto_uyu"])
-    print("gasto 2026-07 por categoria (en_analisis=1, todos los origenes):")
+        if r["mes"] == mes_rep and r["tipo"] == "gasto" and r["en_analisis"] == "1":
+            try:
+                jul[r["categoria"] or "(sin categoria)"] += float(r["monto_uyu"])
+            except ValueError:
+                sin_uyu += 1
+    print(f"gasto {mes_rep} por categoria (en_analisis=1, todos los origenes):")
     for c, v in sorted(jul.items(), key=lambda kv: -kv[1]):
         print(f"  {c:26s} {v:12.2f}")
     print(f"  {'TOTAL':26s} {sum(jul.values()):12.2f}")
+    if sin_uyu:
+        print(f"  OJO: {sin_uyu} fila(s) gasto sin monto_uyu -- las bloquea merge_y_validar")
 
 
 if __name__ == "__main__":

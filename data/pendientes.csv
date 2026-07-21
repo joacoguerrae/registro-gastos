@@ -15,18 +15,8 @@ d134e51ff3af,split_a_cargar,"Splitwise sw:4544405047 'Picada y bebida' UYU 528.0
 1388d186e49f,sin_categoria,gasto Splitwise 'Carpintero' (Caqui Tapa) sin regla,2026-07-14,1
 7cdde12cefd9,split_a_cargar,"Splitwise sw:4570616819 'Guasones' UYU 1560.00 (2026-07-14): yo pague 1560.00, mi parte 0.00 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-07-14,1
 e23310c4e1d4,transferencia_a_clasificar,"pago Splitwise recibido USD 328.80 (2026-07-15, Lucia): confirmar a que cuenta entro",2026-07-15,1
-187fe46fc1ee,split_a_cargar,"Splitwise sw:4570616819 'Guasones' UYU 1560.00 (2026-07-14): yo pague 1560.00, mi parte 0.00 -> ajustar cargo 187fe46fc1ee y crear fila hermana -split",2026-07-15,1
-5ed5d6db81b9,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-07-16,1
-d50e9ed860cf,sin_categoria,establecimiento 'MONTEVIDEO/CHIC PARISIEN VIS3' sin regla,2026-07-16,1
-4a12ce10e011,sin_categoria,establecimiento 'MONTEVIDEO/SALA DEL MUSEO BARRA VIS3' sin regla,2026-07-18,1
-67a046846948,sin_categoria,establecimiento 'MONTEVIDEO/SALA DEL MUSEO BARRA VIS3' sin regla,2026-07-18,1
-115f0367420c,sin_categoria,establecimiento 'MONTEVIDEO/DLO*Arcos Dorados UruVIS3' sin regla,2026-07-18,1
-56b59e15f507,sin_categoria,establecimiento 'MEDIALUNAS CALE' sin regla,2026-07-19,1
-283a8e2372b8,transferencia_a_clasificar,"a 'macarena herrera', concepto 'Protectores', UYU 1780.00: sin categoria",2026-07-19,1
-b9f2ed23d417,transferencia_a_clasificar,"a 'Lu', concepto 'Jabon Ropa', UYU 719.00",2026-07-19,1
-dfa33eceea23,tc_estimado,USD 1.00 x tc 40.33 = 40.33 UYU (corrige Fase 3),2026-07-19,1
-dfa33eceea23,sin_categoria,establecimiento 'CLOUDFLARE' sin regla,2026-07-19,1
-1b281aeb4913,tc_estimado,reintegro USD 1.00 x tc 40.33 (corrige Fase 3),2026-07-19,1
-1b281aeb4913,sin_categoria,reintegro 'CLOUDFLARE' sin regla ni cargo original,2026-07-19,1
 ce36af28daa3,split_a_cargar,"Splitwise sw:4578748115 'Carbon + hielo' UYU 275.00 (2026-07-19): yo pague 275.00, mi parte 45.84 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-07-20,1
-b9a8d1f5818a,split_a_cargar,"Splitwise sw:4578748115 'Carbon + hielo' UYU 275.00 (2026-07-19): yo pague 275.00, mi parte 45.84 -> ajustar cargo b9a8d1f5818a y crear fila hermana -split",2026-07-20,1
+e31a0314c816,transferencia_a_clasificar,"a 'maria ines ribas', concepto 'Torta Cumple Joaco', UYU 3100.00: sin categoria",2026-07-21,
+011c717cecce,transferencia_a_clasificar,"a 'Panes', concepto 'Panes Cumple', UYU 1320.00: sin categoria",2026-07-21,
+08f2c58f4e85,transferencia_a_clasificar,"a 'Pak Automoviles', concepto 'Sena Geely EX2 Decaux', USD 2000.00: sin categoria",2026-07-21,
+08f2c58f4e85,tc_estimado,transferencia USD 2000.00 x tc 40.33 = 80660.00 UYU (corrige Fase 3),2026-07-21,

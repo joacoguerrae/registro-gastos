@@ -4639,3 +4639,6 @@ b9a8d1f5818a,2026-07-19,2026-07,gasto,46.25,UYU,46.25,Santander UYU,,Super,,PARQ
 c228d8e0387d,2026-07-19,2026-07,transferencia,229.16,UYU,229.16,Santander UYU,Deudas,,,,"Resto del grupo Caqui Tapa por 'Carbon + hielo' (split de b9a8d1f5818a, lo trackea sw:4578748115)",interno,manual,confirmado,0,b9a8d1f5818a-split
 dfa33eceea23,2026-07-19,2026-07,gasto,1.00,USD,40.33,Santander Platinum,,Otros,,CLOUDFLARE,CLOUDFLARE,personal,mail,confirmado,1,19f7ab2483b0f567
 fca72eec6148,2026-07-19,2026-07,transferencia,3000.00,UYU,3000.00,Santander UYU,Cuenta Casa,,,,"Aporte Joaco (transf caja de ahorro -> Cuenta Casa, informado el 19/7; sin mail: las transf entre cuentas propias no generan aviso, entra por extracto en el cierre)",interno,manual,confirmado,0,mp-aporte-3000-20260719
+011c717cecce,2026-07-20,2026-07,gasto,1320.00,UYU,1320.00,Santander UYU,,,,Panes,Panes Cumple,personal,mail,pendiente,1,19f80357a6fecaba
+08f2c58f4e85,2026-07-20,2026-07,gasto,2000.00,USD,80660.00,Santander UYU,,,,Pak Automoviles,Sena Geely EX2 Decaux,personal,mail,pendiente,1,19f81909f698cffc
+e31a0314c816,2026-07-20,2026-07,gasto,3100.00,UYU,3100.00,Santander UYU,,,,maria ines ribas,Torta Cumple Joaco,personal,mail,pendiente,1,19f7ffca23111aec
