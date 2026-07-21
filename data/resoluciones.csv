@@ -162,3 +162,12 @@ b9a8d1f5818a,monto,46.25,split Caqui Tapa 'Carbon + hielo': parte de Joaco 45.84
 b9a8d1f5818a,monto_uyu,46.25,idem: parte propia + redondeo,2026-07-20
 b9a8d1f5818a,motivo_resuelto,split_a_cargar,dividido: 46.25 propio + 229.16 a Deudas (sw:4578748115),2026-07-20
 ce36af28daa3,motivo_resuelto,split_a_cargar,"mismo gasto que b9a8d1f5818a (Devoto Express 275.41), ya dividido. La deuda del grupo (229.16) la trackea Splitwise (Joaco 20/7)",2026-07-20
+e31a0314c816,categoria,Salidas & ocio,torta del cumple de Joaco (via transf a maria ines ribas) (Joaco 21/7),2026-07-21
+e31a0314c816,motivo_resuelto,transferencia_a_clasificar,categorizada Salidas & ocio,2026-07-21
+011c717cecce,categoria,Salidas & ocio,panes del cumple de Joaco (Joaco 21/7),2026-07-21
+011c717cecce,motivo_resuelto,transferencia_a_clasificar,categorizada Salidas & ocio,2026-07-21
+08f2c58f4e85,categoria,Auto,seña del Geely EX2 (Pak Automoviles) (Joaco 21/7),2026-07-21
+08f2c58f4e85,en_analisis,0,"compra de auto: gasto EXTRAORDINARIO de capital, no consumo corriente. No debe contar en el gasto mensual ni en el presupuesto (Joaco 21/7)",2026-07-21
+08f2c58f4e85,cuenta,Santander USD,"los USD 2000 salieron de la caja de ahorro USD, no de la cuenta en pesos (el parser pone Santander UYU por defecto) (Joaco 21/7)",2026-07-21
+08f2c58f4e85,motivo_resuelto,transferencia_a_clasificar,clasificada Auto extraordinaria,2026-07-21
+08f2c58f4e85,motivo_resuelto,tc_estimado,en_analisis=0: no afecta agregados; el monto USD real se concilia contra el extracto en el cierre,2026-07-21
