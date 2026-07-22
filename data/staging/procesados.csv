@@ -105,3 +105,8 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 19f86a2f9ec763b2,2026-07-21T21:44:12Z,transferencia,insertado,53af04683257,Aviso de Transferencia Instantánea en Uruguay   | Lucho Royal Barber 'barberia joaco' UYU 590.00 2026-07-21 -> gasto/personal/Compras personales,,2026-07-22T03:51:02+00:00
 19f86e736c5d9c05,2026-07-21T22:58:46Z,transferencia,insertado,25d016bfb77e,Aviso de Transferencia Instantánea en Uruguay   | Yova 'lu y joaco' UYU 1700.00 2026-07-21 -> gasto/casa/Casa & hogar,,2026-07-22T03:51:02+00:00
 19f87c96970ca2e5,2026-07-22T03:05:49Z,factura,factura,,"DirecTV 1705.00 venc  (informativo, no toca ledger)",,2026-07-22T03:51:02+00:00
+19f89b0c0aede848,2026-07-22T11:58:04Z,aviso_tarjeta,insertado,948d7f29076c,6427 UYU 729.87 DLOPEDIDOSYA -> Santander Platinum/personal/Comer afuera / Delivery,6427||729.87||DLOPEDIDOSYA||2026-07-22T08:58:00,2026-07-22T14:27:36+00:00
+19f89d199ea86a46,2026-07-22T12:34:01Z,aviso_tarjeta,insertado,8b6bcc54cd1e,6427 UYU 30.00 DLOPEDIDOSYA P -> Santander Platinum/personal/Comer afuera / Delivery,6427||30.00||DLOPEDIDOSYA P||2026-07-22T09:33:56,2026-07-22T14:27:36+00:00
+19f88a3f3bb3f80f,2026-07-22T07:04:32Z,recibo,ignorado,,recibo no parseable,,2026-07-22T14:27:36+00:00
+19f89e1c0c54cbbc,2026-07-22T12:51:40Z,recibo,ignorado,,recibo no parseable,,2026-07-22T14:27:36+00:00
+19f89e7043c15487,2026-07-22T12:57:25Z,recibo,ignorado,,recibo no parseable,,2026-07-22T14:27:36+00:00
