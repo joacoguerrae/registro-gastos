@@ -115,3 +115,4 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 19f8bbea016fcbbf,2026-07-22T21:32:31Z,aviso_tarjeta,insertado,d709fa0022d4,6427 UYU 40.00 DLOPEDIDOSYA P -> Santander Platinum/personal/Comer afuera / Delivery,6427||40.00||DLOPEDIDOSYA P||2026-07-22T18:32:25,2026-07-23T03:48:49+00:00
 19f8c5b264b5b7a0,2026-07-23T00:23:30Z,aviso_tarjeta,insertado,7dbe2fb81f67,6427 UYU 2993.93 REST CHEZ PINEY -> Santander Platinum/personal/(sin categoria),6427||2993.93||REST CHEZ PINEY||2026-07-22T21:23:26,2026-07-23T03:48:49+00:00
 19f8c43a1fab78e5,2026-07-22T23:57:48Z,transferencia,insertado,512d22da1038,Aviso de Transferencia interna en el banco | Maria Rariz 'Lucia Decaux tramites aut' UYU 6430.00 2026-07-22 -> gasto/personal/(sin categoria),,2026-07-23T03:48:49+00:00
+19f8f3214963513b,2026-07-23T13:37:30Z,recibo,ignorado,,recibo no parseable,,2026-07-23T14:36:21+00:00
