@@ -171,3 +171,5 @@ e31a0314c816,motivo_resuelto,transferencia_a_clasificar,categorizada Salidas & o
 08f2c58f4e85,cuenta,Santander USD,"los USD 2000 salieron de la caja de ahorro USD, no de la cuenta en pesos (el parser pone Santander UYU por defecto) (Joaco 21/7)",2026-07-21
 08f2c58f4e85,motivo_resuelto,transferencia_a_clasificar,clasificada Auto extraordinaria,2026-07-21
 08f2c58f4e85,motivo_resuelto,tc_estimado,en_analisis=0: no afecta agregados; el monto USD real se concilia contra el extracto en el cierre,2026-07-21
+4fcbd07bd39a,ambito,casa,"PedidosYa 1242.07 compartido con Lu, pagado con la Platinum de Joaco. Casa: se divide por coeficiente Y cuenta como aporte implicito de Joaco por el total (Joaco 22/7)",2026-07-22
+5d69bdf7c7e9,ambito,casa,propina (40) del mismo pedido PedidosYa 1242.07: sigue al pedido a casa (Joaco 22/7),2026-07-22
