@@ -118,3 +118,5 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 19f8f3214963513b,2026-07-23T13:37:30Z,recibo,ignorado,,recibo no parseable,,2026-07-23T14:36:21+00:00
 19f90fc31e094d38,2026-07-23T21:57:52Z,aviso_tarjeta,insertado,803d9b0fa81d,6427 UYU 1613.56 EL PALACIO DE L -> Santander Platinum/personal/(sin categoria),6427||1613.56||EL PALACIO DE L||2026-07-23T18:57:47,2026-07-24T03:47:46+00:00
 19f911c1e7a7cd0e,2026-07-23T22:32:44Z,aviso_tarjeta,ignorado,,tarjeta desconocida ,,2026-07-24T03:47:46+00:00
+19f942ae3df2387a,2026-07-24T12:47:44Z,aviso_tarjeta,ignorado,,tarjeta desconocida ,,2026-07-24T14:16:36+00:00
+19f947145dbf66f3,2026-07-24T14:04:34Z,aviso_tarjeta,insertado,6904fbcce15a,6427 UYU 1506.00 DLOPEDIDOSYA -> Santander Platinum/personal/Comer afuera / Delivery,6427||1506.00||DLOPEDIDOSYA||2026-07-24T11:04:27,2026-07-24T14:16:36+00:00
