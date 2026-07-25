@@ -4661,3 +4661,6 @@ d709fa0022d4,2026-07-22,2026-07,gasto,40.00,UYU,40.00,Santander Platinum,,Comer 
 6904fbcce15a,2026-07-24,2026-07,gasto,1506.00,UYU,1506.00,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA,DLOPEDIDOSYA,casa,mail,confirmado,1,19f947145dbf66f3
 91f432a653b1,2026-07-24,2026-07,gasto,45.00,UYU,45.00,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA P,DLOPEDIDOSYA P,casa,mail,confirmado,1,19f94989d8855988
 fc42225b6729,2026-07-24,2026-07,gasto,211.87,UYU,211.87,Santander UYU,,Super,,MONTEVIDEO/FROG VIS3,FROG,personal,mail,confirmado,1,19f951ebe33ef9a3
+114706aaa98c,2026-07-25,2026-07,gasto,364.00,UYU,364.00,Lu tarjeta,,Transporte,,Uber,"Uber (pagado por Lu con su tarjeta, aporte suyo)",casa,manual,confirmado,1,lu-casa-uber-202607
+486ccd1c69c2,2026-07-25,2026-07,gasto,4100.00,UYU,4100.00,Lu tarjeta,,Auto,,Arreglo parabrisas del auto para poder venderlo,Arreglo parabrisas del auto para poder venderlo (pagado por Lu),casa,manual,confirmado,1,lu-casa-parabrisas-202607
+4d74567ddb2b,2026-07-25,2026-07,gasto,1675.00,UYU,1675.00,Lu tarjeta,,Auto,,Revision del auto para poder venderlo,"Revision del auto para poder venderlo (tramite venta, pagado por Lu)",casa,manual,confirmado,1,lu-casa-revision-202607
