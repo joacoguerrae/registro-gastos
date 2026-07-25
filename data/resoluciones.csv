@@ -201,3 +201,6 @@ aa1e12303261,motivo_resuelto,sin_respaldo_estado,"duplicado ya marcado en_analis
 32aa7165a49c,categoria,Transporte,"recarga de tarjeta STM (transporte), pagada desde la cuenta de casa (Joaco 25/7)",2026-07-25
 32aa7165a49c,ambito,casa,salio de la cuenta de casa: se divide con Lu (Joaco 25/7),2026-07-25
 32aa7165a49c,motivo_resuelto,sin_categoria,Transporte casa,2026-07-25
+512d22da1038,cuenta,Santander USD,"el debito fue de la caja de ahorro USD, no la de pesos (Joaco 25/7)",2026-07-25
+512d22da1038,moneda,USD,"transferencia CRUZADA: salieron USD 163.61 de la caja de ahorro USD y Maria Rariz (escribana) recibio UYU 6430. El parser tomo el monto del DESTINO (6430 UYU) y asumio Santander UYU. Lo real que se mueve es el USD. monto_uyu 6430 es EXACTO (lo dice el mail), no estimado. Confirmado por Joaco 25/7",2026-07-25
+512d22da1038,monto,163.61,lo que efectivamente se debito: USD 163.61 (Joaco 25/7),2026-07-25

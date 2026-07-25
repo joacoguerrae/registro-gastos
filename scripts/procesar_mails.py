@@ -199,6 +199,29 @@ def parse_aviso(body):
     return tarjeta, moneda, monto, est_crudo, fh
 
 
+def debito_origen_transferencia(body):
+    """(moneda, monto) de lo que REALMENTE se debita, si el aviso lo declara.
+
+    En una transferencia CRUZADA (sale USD, llega UYU) el campo 'Monto:' del
+    aviso es lo que RECIBE el destinatario, no lo que sale de la cuenta. El
+    bloque 'Cuenta Origen' trae 'Moneda: USD 163,61' -> moneda Y monto del
+    debito real. campos_transferencia() no sirve para esto: hay dos etiquetas
+    'Moneda:' (origen y destino) y la del destino pisa a la del origen.
+
+    Lo destapo la transferencia a la escribana del 22/7 (auditoria: salieron
+    USD 163,61 y se habian registrado 6.430 UYU de la cuenta en pesos).
+    Devuelve None si el aviso no declara monto en el bloque origen (layouts
+    viejos): ahi se sigue usando el 'Monto:' como antes.
+    """
+    m = re.search(r"Cuenta Origen(.*?)Cuenta Destino", body, re.S)
+    if not m:
+        return None
+    m2 = re.search(r"Moneda:\s*\n?\s*(UYU|USD|EUR)\s*([\d.]+(?:,\d+)?)", m.group(1))
+    if not m2:
+        return None
+    return m2.group(1), float(m2.group(2).replace(".", "").replace(",", "."))
+
+
 def parse_transferencia(body):
     """Aviso de transferencia.
     -> (titular, concepto, moneda, monto, fecha_iso, tipo_cuenta_origen)"""
@@ -578,15 +601,32 @@ def main():
                              f"{dup['id']} ({dup['fecha']} {dup['monto']} {dup['descripcion']})")
             continue
 
+        # Transferencia CRUZADA: si el bloque 'Cuenta Origen' declara otra moneda,
+        # ESA es la que se debita ('Monto:' es lo que recibe el destinatario).
+        # Se guarda el importe del destino: si es UYU, es el monto_uyu EXACTO de
+        # la operacion (mejor que estimarlo por tc).
+        moneda_dst, monto_dst = moneda, monto
+        deb = debito_origen_transferencia(mail["body_text"])
+        if deb and deb[0] != moneda:
+            moneda, monto = deb
+
         # cuenta origen segun el mail: la corriente es el fondo de la casa,
-        # la caja de ahorro es la plata personal (confirmado 12/7)
-        cuenta_origen = "Cuenta Casa" if "corriente" in tipo_origen else "Santander UYU"
+        # la caja de ahorro es la plata personal (confirmado 12/7); si el debito
+        # es en USD, es la caja de ahorro en dolares.
+        if moneda == "USD":
+            cuenta_origen = "Santander USD"
+        elif "corriente" in tipo_origen:
+            cuenta_origen = "Cuenta Casa"
+        else:
+            cuenta_origen = "Santander UYU"
 
         r = fila_base(mail["message_id"])
         r.update(fecha=fecha, mes=fecha[:7], monto=fmt(monto), moneda=moneda,
                  cuenta=cuenta_origen, descripcion=concepto)
         if moneda == "UYU":
             r["monto_uyu"] = fmt(monto)
+        elif moneda_dst == "UYU":
+            r["monto_uyu"] = fmt(monto_dst)   # exacto: lo declara el aviso
         texto = f"{titular} {concepto}"
         motivos = []
 
