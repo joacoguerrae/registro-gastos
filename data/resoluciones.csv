@@ -191,3 +191,13 @@ a3caac2ad558,motivo_resuelto,split_a_cargar,"YouTube Premium plan familiar (herm
 6904fbcce15a,ambito,casa,"PedidosYa compartido con Lu, pagado con la Platinum de Joaco -> aporte implicito + dividido (Joaco 25/7)",2026-07-25
 6904fbcce15a,motivo_resuelto,split_a_cargar,"es compartido con Lu (casa), no split con amigos",2026-07-25
 91f432a653b1,ambito,casa,propina del mismo PedidosYa 1506: sigue al pedido a casa (Joaco 25/7),2026-07-25
+0bd2d13729c2,motivo_resuelto,sin_respaldo_estado,"'Regalo agus' es una asignacion contable desde la tarjeta de credito (espejo de junio, ya en cierre_exclusiones), no un movimiento bancario: NUNCA va a estar en el extracto (Joaco 25/7)",2026-07-25
+cd8675911f7c,motivo_resuelto,sin_respaldo_estado,"'Aporte 12.000' es de JUNIO (ya dentro de la semilla), fechado 1/7 por 1Money: el extracto de julio no lo tiene y no debe tenerlo (confirmado 12/7)",2026-07-25
+683b64f4ff3f,motivo_resuelto,sin_respaldo_estado,duplicado ya marcado en_analisis=0: la linea del extracto (25 del 6/7) la respalda la fila de mail 653cd7add456. Verificado 25/7,2026-07-25
+aa1e12303261,motivo_resuelto,sin_respaldo_estado,"duplicado ya marcado en_analisis=0: la linea del extracto (35 del 6/7) la respalda la fila de mail dbf967f339c4 (4/7, dentro de la tolerancia). Verificado 25/7",2026-07-25
+3ba6595cfd6f,en_analisis,0,"es el APORTE DE LU de julio (30.000, transf de Lucia Decaux el 3/7), ya trackeado en data/aportes_lu.csv. Se conserva la fila porque es un movimiento real del banco, pero no debe contar como ingreso de Joaco (Joaco 25/7)",2026-07-25
+3ba6595cfd6f,categoria,Otros ingresos,aporte de Lu a la cuenta casa,2026-07-25
+3ba6595cfd6f,motivo_resuelto,ingreso_a_clasificar,"es el aporte de Lu, ya en aportes_lu.csv; en_analisis=0 para no contarlo dos veces",2026-07-25
+32aa7165a49c,categoria,Transporte,"recarga de tarjeta STM (transporte), pagada desde la cuenta de casa (Joaco 25/7)",2026-07-25
+32aa7165a49c,ambito,casa,salio de la cuenta de casa: se divide con Lu (Joaco 25/7),2026-07-25
+32aa7165a49c,motivo_resuelto,sin_categoria,Transporte casa,2026-07-25
