@@ -173,3 +173,21 @@ e31a0314c816,motivo_resuelto,transferencia_a_clasificar,categorizada Salidas & o
 08f2c58f4e85,motivo_resuelto,tc_estimado,en_analisis=0: no afecta agregados; el monto USD real se concilia contra el extracto en el cierre,2026-07-21
 4fcbd07bd39a,ambito,casa,"PedidosYa 1242.07 compartido con Lu, pagado con la Platinum de Joaco. Casa: se divide por coeficiente Y cuenta como aporte implicito de Joaco por el total (Joaco 22/7)",2026-07-22
 5d69bdf7c7e9,ambito,casa,propina (40) del mismo pedido PedidosYa 1242.07: sigue al pedido a casa (Joaco 22/7),2026-07-22
+584b95697a62,categoria,Salidas & ocio,"cocas para ver la final, split con amigos (Joaco 25/7)",2026-07-25
+584b95697a62,motivo_resuelto,sin_categoria,Salidas & ocio,2026-07-25
+44a5278e1a4f,categoria,Salidas & ocio,"picada (limones/pan/paltas) para la final, split (Joaco 25/7)",2026-07-25
+44a5278e1a4f,motivo_resuelto,sin_categoria,Salidas & ocio,2026-07-25
+ba48b8a9ce04,categoria,Salidas & ocio,"la final (entradas/costo), split con amigos (Joaco 25/7)",2026-07-25
+ba48b8a9ce04,motivo_resuelto,sin_categoria,Salidas & ocio,2026-07-25
+66311dae6ecd,motivo_resuelto,tc_estimado,"suscripcion USD, se acepta el tc estimado; se concilia en el cierre (Joaco 25/7)",2026-07-25
+a3caac2ad558,motivo_resuelto,split_a_cargar,"YouTube Premium plan familiar (hermanos), lo trackea Splitwise; sin cargo de tarjeta en el ledger (Joaco 25/7)",2026-07-25
+7dbe2fb81f67,categoria,Salidas & ocio,"restaurante, invito amigos por su cumple (Joaco 25/7)",2026-07-25
+7dbe2fb81f67,motivo_resuelto,sin_categoria,Salidas & ocio,2026-07-25
+803d9b0fa81d,categoria,Salidas & ocio,carne para el festejo de cumple (Joaco 25/7),2026-07-25
+803d9b0fa81d,motivo_resuelto,sin_categoria,Salidas & ocio,2026-07-25
+512d22da1038,categoria,Auto,tramite del Geely via Maria Rariz; corresponde a Joaco y Lu por igual (Joaco 25/7),2026-07-25
+512d22da1038,ambito,casa,"gasto compartido con Lu: 50/50, pagado por Joaco -> aporte implicito + gasto casa (Joaco 25/7)",2026-07-25
+512d22da1038,motivo_resuelto,transferencia_a_clasificar,clasificada Auto casa 50/50,2026-07-25
+6904fbcce15a,ambito,casa,"PedidosYa compartido con Lu, pagado con la Platinum de Joaco -> aporte implicito + dividido (Joaco 25/7)",2026-07-25
+6904fbcce15a,motivo_resuelto,split_a_cargar,"es compartido con Lu (casa), no split con amigos",2026-07-25
+91f432a653b1,ambito,casa,propina del mismo PedidosYa 1506: sigue al pedido a casa (Joaco 25/7),2026-07-25
