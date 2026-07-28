@@ -4666,4 +4666,7 @@ fc42225b6729,2026-07-24,2026-07,gasto,211.87,UYU,211.87,Santander UYU,,Super,,MO
 486ccd1c69c2,2026-07-25,2026-07,gasto,4100.00,UYU,4100.00,Lu tarjeta,,Auto,,Arreglo parabrisas del auto para poder venderlo,Arreglo parabrisas del auto para poder venderlo (pagado por Lu),casa,manual,confirmado,1,lu-casa-parabrisas-202607
 4d74567ddb2b,2026-07-25,2026-07,gasto,1675.00,UYU,1675.00,Lu tarjeta,,Auto,,Revision del auto para poder venderlo,"Revision del auto para poder venderlo (tramite venta, pagado por Lu)",casa,manual,confirmado,1,lu-casa-revision-202607
 f418365af05a,2026-07-26,2026-07,gasto,790.00,UYU,790.00,Santander UYU,,,,MONTEVIDEO/MERPAGO*MERCADOLIBRE VIS3,MERPAGO*MERCADOLIBRE,personal,mail,pendiente,1,19f9ec1c287e1827
+2bb0d42db9ae,2026-07-27,2026-07,gasto,191.80,UYU,191.80,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,casa,mail,confirmado,1,19fa5ebd1d568dc2
 32aa7165a49c,2026-07-27,2026-07,gasto,500.00,UYU,500.00,Cuenta Casa,,Transporte,,DEBITO OPERACION EN BANCA DIGITAL STM       REC RECARGAS S,DEBITO OPERACION EN BANCA DIGITAL STM       REC RECARGAS S,casa,estado_cuenta,pendiente,1,estado:Cuenta Casa:2026-07-27:-500.00:DEBITO OPERACION EN BANCA DIGITAL STM   
+6679d8f4585a,2026-07-27,2026-07,gasto,35.00,UYU,35.00,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,19fa6140d2b49274
+6b79963c1325,2026-07-27,2026-07,gasto,118.03,UYU,118.03,Santander UYU,,Super,,MONTEVIDEO/PANADERIA DIAGO VIS3,PANADERIA DIAGO,personal,mail,confirmado,1,19fa57d0f56e0330
