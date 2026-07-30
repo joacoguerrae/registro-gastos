@@ -133,3 +133,4 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 19faea1d7220ff27,2026-07-29T16:07:47Z,aviso_tarjeta,insertado,236acad0b784,6427 UYU 212.00 DLOUBERRIDES -> Santander Platinum/personal/Transporte,6427||212.00||DLOUBERRIDES||2026-07-29T13:07:41,2026-07-30T03:33:30+00:00
 19fae6d0c869e44b,2026-07-29T15:10:06Z,devolucion,insertado,80931256f10b,6427 UYU -147.94 UBER -> Santander Platinum/personal/Transporte (sin cargo original),,2026-07-30T03:33:30+00:00
 19faf161a4e886a6,2026-07-29T18:14:46Z,transferencia,insertado,7eb42ad461b4,Aviso de Transferencia Instantánea en Uruguay   | Fefo Bentancur 'pizzas oso' UYU 380.00 2026-07-29 -> gasto/personal/Comer afuera / Delivery,,2026-07-30T03:33:30+00:00
+19fb2e6b84a2822f,2026-07-30T12:01:31Z,factura,factura,,"DirecTV  venc  (informativo, no toca ledger)",,2026-07-30T14:36:14+00:00
