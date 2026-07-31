@@ -136,3 +136,5 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 19fb2e6b84a2822f,2026-07-30T12:01:31Z,factura,factura,,"DirecTV  venc  (informativo, no toca ledger)",,2026-07-30T14:36:14+00:00
 19fb3bd833a224fc,2026-07-30T15:56:06Z,aviso_tarjeta,insertado,8b373dc86e3a,9071 UYU 375.60 MONTEVIDEO/LA ROTISERIA V VIS3 -> Santander UYU/personal/Comer afuera / Delivery,9071||375.60||MONTEVIDEO/LA ROTISERIA V VIS3||2026-07-30T12:56:05,2026-07-31T03:54:15+00:00
 19fb3ee953b9bbfc,2026-07-30T16:49:36Z,aviso_tarjeta,ignorado,,tarjeta desconocida ,,2026-07-31T03:54:15+00:00
+19fb834278b71b06,2026-07-31T12:44:11Z,aviso_tarjeta,insertado,870fcd196692,6427 UYU 550.00 DLOUBERRIDES -> Santander Platinum/personal/Transporte,6427||550.00||DLOUBERRIDES||2026-07-31T09:44:05,2026-07-31T14:39:57+00:00
+19fb79af0fe37e0f,2026-07-31T09:56:39Z,ignorado,estado_cuenta_pendiente_f3,,envio@tuestadodecuenta.santander.com.uy | Estado de Cuenta Santander VISA,,2026-07-31T14:39:57+00:00
