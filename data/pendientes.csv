@@ -39,3 +39,5 @@ f418365af05a,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*MERCADOLIBRE VIS3
 0da801f426ab,sin_categoria,establecimiento 'MER' sin regla,2026-07-29,
 391a6feaa80d,transferencia_a_clasificar,"pago Splitwise recibido USD 25.26 (2026-07-29, Rodrigo): confirmar a que cuenta entro",2026-07-30,
 0da801f426ab,split_a_cargar,"Splitwise sw:4596929769 'Regalo mama' UYU 2608.00 (2026-07-29): yo pague 2608.00, mi parte 1304.00 -> ajustar cargo 0da801f426ab y crear fila hermana -split",2026-07-30,
+bb0d7f3f7445,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*MELI VIS3' sin regla,2026-08-01,
+c208ef680230,sin_categoria,establecimiento 'REST NAMASTE' sin regla,2026-08-01,
