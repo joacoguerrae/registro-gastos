@@ -1,491 +1,508 @@
 mes,concepto_original,categoria,tipo,presupuesto,gasto_real_registrado,comentario
-2025-01,Gastos Comunes,Vivienda,Fijo,10000.00,9676.00,
+2025-01,Auto,Auto,Variable,3000.00,12282.00,PATENTE
+2025-01,Pago Auto,Auto,Variable,16000.00,12806.00,USD
+2025-01,Cosas Casa,Casa & hogar,Variable,6000.00,4543.00,
+2025-01,Limpieza,Casa & hogar,Variable,1500.00,793.00,
+2025-01,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,10000.00,9754.00,
+2025-01,Ropa / Peluqueria,Compras personales,Variable,4000.00,4442.00,
+2025-01,Educacion,Educación,Variable,1000.00,0.00,
+2025-01,Tarjetas,Otros,Variable,1000.00,724.00,
+2025-01,Chia,Otros,Variable,0.00,0.00,
+2025-01,Tramites,Otros,Variable,0.00,0.00,
+2025-01,Regalos,Regalos,Variable,1000.00,2907.00,
+2025-01,Eventos,Salidas & ocio,Variable,0.00,0.00,
+2025-01,Gastos Roja,Salidas & ocio,Variable,0.00,0.00,
+2025-01,Otras Salidas,Salidas & ocio,Variable,2000.00,1300.00,
+2025-01,Salud,Salud,Variable,5100.00,3600.00,
+2025-01,Farmacia,Salud,Variable,800.00,1260.00,
 2025-01,UTE,Servicios,Fijo,1600.00,962.00,
 2025-01,Antel,Servicios,Fijo,980.00,963.00,
-2025-01,IMM,Vivienda,Fijo,0.00,0.00,
-2025-01,Salud,Salud,Variable,5100.00,3600.00,
-2025-01,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,10000.00,9754.00,
-2025-01,Super,Super,Variable,6000.00,5848.00,
-2025-01,Cosas Casa,Casa & hogar,Variable,6000.00,4543.00,
-2025-01,Transporte,Transporte,Variable,500.00,888.00,
-2025-01,Eventos,Salidas & ocio,Variable,0.00,0.00,
-2025-01,Educacion,Educación,Variable,1000.00,0.00,
-2025-01,Gastos Roja,Salidas & ocio,Variable,0.00,0.00,
-2025-01,Farmacia,Salud,Variable,800.00,1260.00,
-2025-01,Ropa / Peluqueria,Compras personales,Variable,4000.00,4442.00,
-2025-01,Otras Salidas,Salidas & ocio,Variable,2000.00,1300.00,
-2025-01,Limpieza,Casa & hogar,Variable,1500.00,793.00,
-2025-01,Wanderers,Wanderers,Variable,900.00,900.00,
-2025-01,Tarjetas,Otros,Variable,1000.00,724.00,
-2025-01,Regalos,Regalos,Variable,1000.00,2907.00,
-2025-01,Chia,Otros,Variable,0.00,0.00,
 2025-01,Garrafa,Servicios,Variable,0.00,0.00,
-2025-01,Viajes / Escapadas,Viajes,Variable,3000.00,37804.00,RIO
 2025-01,Celular,Servicios,Variable,1000.00,0.00,
+2025-01,Super,Super,Variable,6000.00,5848.00,
 2025-01,Suscripciones,Suscripciones,Variable,300.00,44.00,
-2025-01,Auto,Auto,Variable,3000.00,12282.00,PATENTE
-2025-01,Tramites,Otros,Variable,0.00,0.00,
-2025-01,Pago Auto,Auto,Variable,16000.00,12806.00,USD
-2025-02,Gastos Comunes,Vivienda,Fijo,10000.00,10205.00,
+2025-01,Transporte,Transporte,Variable,500.00,888.00,
+2025-01,Viajes / Escapadas,Viajes,Variable,3000.00,37804.00,RIO
+2025-01,Gastos Comunes,Vivienda,Fijo,10000.00,9676.00,
+2025-01,IMM,Vivienda,Fijo,0.00,0.00,
+2025-01,Wanderers,Wanderers,Variable,900.00,900.00,
+2025-02,Auto,Auto,Variable,3000.00,5686.00,
+2025-02,Pago Auto,Auto,Variable,16000.00,15498.00,USD
+2025-02,Cosas Casa,Casa & hogar,Variable,3000.00,500.00,
+2025-02,Limpieza,Casa & hogar,Variable,1500.00,1584.00,
+2025-02,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,6000.00,5194.00,
+2025-02,Ropa / Peluqueria,Compras personales,Variable,6000.00,4761.00,
+2025-02,Educacion,Educación,Variable,1000.00,0.00,
+2025-02,Tarjetas,Otros,Variable,1000.00,1156.00,
+2025-02,Chia,Otros,Variable,0.00,0.00,
+2025-02,Tramites,Otros,Variable,0.00,0.00,
+2025-02,Regalos,Regalos,Variable,3000.00,3230.00,
+2025-02,Eventos,Salidas & ocio,Variable,0.00,0.00,
+2025-02,Gastos Roja,Salidas & ocio,Variable,0.00,0.00,
+2025-02,Otras Salidas,Salidas & ocio,Variable,2000.00,2714.00,
+2025-02,Salud,Salud,Variable,6400.00,9000.00,
+2025-02,Farmacia,Salud,Variable,1000.00,0.00,
 2025-02,UTE,Servicios,Fijo,1600.00,1608.00,
 2025-02,Antel,Servicios,Fijo,980.00,1011.00,
-2025-02,IMM,Vivienda,Fijo,1050.00,1063.00,
-2025-02,Salud,Salud,Variable,6400.00,9000.00,
-2025-02,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,6000.00,5194.00,
-2025-02,Super,Super,Variable,6000.00,7084.00,
-2025-02,Cosas Casa,Casa & hogar,Variable,3000.00,500.00,
-2025-02,Transporte,Transporte,Variable,800.00,294.00,
-2025-02,Eventos,Salidas & ocio,Variable,0.00,0.00,
-2025-02,Educacion,Educación,Variable,1000.00,0.00,
-2025-02,Gastos Roja,Salidas & ocio,Variable,0.00,0.00,
-2025-02,Farmacia,Salud,Variable,1000.00,0.00,
-2025-02,Ropa / Peluqueria,Compras personales,Variable,6000.00,4761.00,
-2025-02,Otras Salidas,Salidas & ocio,Variable,2000.00,2714.00,
-2025-02,Limpieza,Casa & hogar,Variable,1500.00,1584.00,
-2025-02,Wanderers,Wanderers,Variable,1950.00,1950.00,
-2025-02,Tarjetas,Otros,Variable,1000.00,1156.00,
-2025-02,Regalos,Regalos,Variable,3000.00,3230.00,
-2025-02,Chia,Otros,Variable,0.00,0.00,
 2025-02,Garrafa,Servicios,Variable,0.00,0.00,
-2025-02,Viajes / Escapadas,Viajes,Variable,1500.00,0.00,
 2025-02,Celular,Servicios,Variable,1000.00,0.00,
+2025-02,Super,Super,Variable,6000.00,7084.00,
 2025-02,Suscripciones,Suscripciones,Variable,300.00,87.00,
-2025-02,Auto,Auto,Variable,3000.00,5686.00,
-2025-02,Tramites,Otros,Variable,0.00,0.00,
-2025-02,Pago Auto,Auto,Variable,16000.00,15498.00,USD
-2025-03,Gastos Comunes,Vivienda,Fijo,10200.00,10204.00,
-2025-03,UTE,Servicios,Fijo,1610.00,1578.00,
-2025-03,Antel,Servicios,Fijo,980.00,1011.00,
-2025-03,IMM,Vivienda,Fijo,0.00,0.00,
-2025-03,Salud,Salud,Variable,6400.00,5400.00,
-2025-03,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,6500.00,2825.00,
-2025-03,Super,Super,Variable,6500.00,4211.00,
-2025-03,Cosas Casa,Casa & hogar,Variable,2000.00,995.00,
-2025-03,Transporte,Transporte,Variable,500.00,737.00,
-2025-03,Educacion,Educación,Variable,500.00,20922.00,cuota ort
-2025-03,Gastos Roja,Salidas & ocio,Variable,0.00,530.00,
-2025-03,Farmacia,Salud,Variable,500.00,1152.00,
-2025-03,Ropa / Peluqueria,Compras personales,Variable,4000.00,530.00,
-2025-03,Otras Salidas,Salidas & ocio,Variable,3000.00,3472.00,
-2025-03,Limpieza,Casa & hogar,Variable,1550.00,891.00,
-2025-03,Wanderers,Wanderers,Variable,1000.00,0.00,
-2025-03,Tarjetas,Otros,Variable,3000.00,2989.00,
-2025-03,Regalos,Regalos,Variable,2000.00,5140.00,
-2025-03,Chia,Otros,Variable,0.00,0.00,
-2025-03,Garrafa,Servicios,Variable,0.00,0.00,
-2025-03,Viajes / Escapadas,Viajes,Variable,0.00,0.00,
-2025-03,Celular,Servicios,Variable,1000.00,0.00,
-2025-03,Suscripciones,Suscripciones,Variable,300.00,211.00,
+2025-02,Transporte,Transporte,Variable,800.00,294.00,
+2025-02,Viajes / Escapadas,Viajes,Variable,1500.00,0.00,
+2025-02,Gastos Comunes,Vivienda,Fijo,10000.00,10205.00,
+2025-02,IMM,Vivienda,Fijo,1050.00,1063.00,
+2025-02,Wanderers,Wanderers,Variable,1950.00,1950.00,
 2025-03,Auto,Auto,Variable,4000.00,8514.00,Poder
+2025-03,Pago Auto,Auto,Variable,16000.00,15966.00,USD
+2025-03,Cosas Casa,Casa & hogar,Variable,2000.00,995.00,
+2025-03,Limpieza,Casa & hogar,Variable,1550.00,891.00,
+2025-03,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,6500.00,2825.00,
+2025-03,Ropa / Peluqueria,Compras personales,Variable,4000.00,530.00,
+2025-03,Educacion,Educación,Variable,500.00,20922.00,cuota ort
+2025-03,Tarjetas,Otros,Variable,3000.00,2989.00,
+2025-03,Chia,Otros,Variable,0.00,0.00,
 2025-03,Tramites,Otros,Variable,0.00,0.00,
 2025-03,Otos Gastos,Otros,Variable,0.00,647.00,
-2025-03,Pago Auto,Auto,Variable,16000.00,15966.00,USD
-2025-04,Gastos Comunes,Vivienda,Fijo,10205.00,11163.00,
-2025-04,UTE,Servicios,Fijo,1600.00,1598.00,
-2025-04,Antel,Servicios,Fijo,1010.00,1124.00,
-2025-04,IMM,Vivienda,Fijo,1063.00,1163.00,
-2025-04,Salud,Salud,Variable,7200.00,3600.00,
-2025-04,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,7500.00,8301.00,
-2025-04,Super,Super,Variable,6000.00,3844.00,
-2025-04,Cosas Casa,Casa & hogar,Variable,2000.00,47.00,
-2025-04,Transporte,Transporte,Variable,700.00,325.00,
-2025-04,Educacion,Educación,Variable,1000.00,0.00,
-2025-04,Gastos Roja,Salidas & ocio,Variable,600.00,782.00,
-2025-04,Farmacia,Salud,Variable,1000.00,1396.00,
-2025-04,Ropa / Peluqueria,Compras personales,Variable,1500.00,990.00,
-2025-04,Otras Salidas,Salidas & ocio,Variable,1500.00,0.00,
-2025-04,Limpieza,Casa & hogar,Variable,1200.00,0.00,
-2025-04,Wanderers,Wanderers,Variable,500.00,0.00,
-2025-04,Tarjetas,Otros,Variable,2900.00,3013.00,
-2025-04,Regalos,Regalos,Variable,1000.00,0.00,
-2025-04,Chia,Otros,Variable,0.00,0.00,
-2025-04,Garrafa,Servicios,Variable,600.00,620.00,
-2025-04,Viajes / Escapadas,Viajes,Variable,1720.00,8777.00,Parte de Praia
-2025-04,Celular,Servicios,Variable,271.00,0.00,
-2025-04,Suscripciones,Suscripciones,Variable,250.00,258.00,
+2025-03,Regalos,Regalos,Variable,2000.00,5140.00,
+2025-03,Gastos Roja,Salidas & ocio,Variable,0.00,530.00,
+2025-03,Otras Salidas,Salidas & ocio,Variable,3000.00,3472.00,
+2025-03,Salud,Salud,Variable,6400.00,5400.00,
+2025-03,Farmacia,Salud,Variable,500.00,1152.00,
+2025-03,UTE,Servicios,Fijo,1610.00,1578.00,
+2025-03,Antel,Servicios,Fijo,980.00,1011.00,
+2025-03,Garrafa,Servicios,Variable,0.00,0.00,
+2025-03,Celular,Servicios,Variable,1000.00,0.00,
+2025-03,Super,Super,Variable,6500.00,4211.00,
+2025-03,Suscripciones,Suscripciones,Variable,300.00,211.00,
+2025-03,Transporte,Transporte,Variable,500.00,737.00,
+2025-03,Viajes / Escapadas,Viajes,Variable,0.00,0.00,
+2025-03,Gastos Comunes,Vivienda,Fijo,10200.00,10204.00,
+2025-03,IMM,Vivienda,Fijo,0.00,0.00,
+2025-03,Wanderers,Wanderers,Variable,1000.00,0.00,
 2025-04,Auto,Auto,Variable,6000.00,10523.00,TALLER
+2025-04,Pago Auto,Auto,Variable,16000.00,12615.00,USD
+2025-04,Cosas Casa,Casa & hogar,Variable,2000.00,47.00,
+2025-04,Limpieza,Casa & hogar,Variable,1200.00,0.00,
+2025-04,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,7500.00,8301.00,
+2025-04,Ropa / Peluqueria,Compras personales,Variable,1500.00,990.00,
+2025-04,Educacion,Educación,Variable,1000.00,0.00,
+2025-04,Tarjetas,Otros,Variable,2900.00,3013.00,
+2025-04,Chia,Otros,Variable,0.00,0.00,
 2025-04,Tramites,Otros,Variable,0.00,0.00,
 2025-04,Otos Gastos,Otros,Variable,1000.00,0.00,
-2025-04,Pago Auto,Auto,Variable,16000.00,12615.00,USD
-2025-05,Gastos Comunes,Vivienda,Fijo,11100.00,12343.00,
-2025-05,UTE,Servicios,Fijo,1600.00,1224.00,
-2025-05,Antel,Servicios,Fijo,1150.00,1080.00,
-2025-05,IMM,Vivienda,Fijo,0.00,0.00,
-2025-05,Salud,Salud,Variable,9000.00,12175.00,
-2025-05,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,7500.00,6137.00,
-2025-05,Super,Super,Variable,6000.00,7269.00,
-2025-05,Cosas Casa,Casa & hogar,Variable,2000.00,3804.00,
-2025-05,Transporte,Transporte,Variable,1500.00,1147.00,
-2025-05,Educacion,Educación,Variable,28000.00,31840.00,ORT
-2025-05,Gastos Roja,Salidas & ocio,Variable,800.00,0.00,
-2025-05,Farmacia,Salud,Variable,1000.00,0.00,
-2025-05,Ropa / Peluqueria,Compras personales,Variable,1500.00,2360.00,
-2025-05,Otras Salidas,Salidas & ocio,Variable,1500.00,587.00,
-2025-05,Limpieza,Casa & hogar,Variable,1500.00,1902.00,
-2025-05,Wanderers,Wanderers,Variable,900.00,280.00,
-2025-05,Tarjetas,Otros,Variable,2700.00,2888.00,
-2025-05,Regalos,Regalos,Variable,1000.00,0.00,
-2025-05,Chia,Otros,Variable,0.00,0.00,
-2025-05,Garrafa,Servicios,Variable,0.00,0.00,
-2025-05,Viajes / Escapadas,Viajes,Variable,20000.00,23848.00,BRASIL
-2025-05,Celular,Servicios,Variable,813.00,2017.00,
-2025-05,Suscripciones,Suscripciones,Variable,250.00,1018.00,
+2025-04,Regalos,Regalos,Variable,1000.00,0.00,
+2025-04,Gastos Roja,Salidas & ocio,Variable,600.00,782.00,
+2025-04,Otras Salidas,Salidas & ocio,Variable,1500.00,0.00,
+2025-04,Salud,Salud,Variable,7200.00,3600.00,
+2025-04,Farmacia,Salud,Variable,1000.00,1396.00,
+2025-04,UTE,Servicios,Fijo,1600.00,1598.00,
+2025-04,Antel,Servicios,Fijo,1010.00,1124.00,
+2025-04,Garrafa,Servicios,Variable,600.00,620.00,
+2025-04,Celular,Servicios,Variable,271.00,0.00,
+2025-04,Super,Super,Variable,6000.00,3844.00,
+2025-04,Suscripciones,Suscripciones,Variable,250.00,258.00,
+2025-04,Transporte,Transporte,Variable,700.00,325.00,
+2025-04,Viajes / Escapadas,Viajes,Variable,1720.00,8777.00,Parte de Praia
+2025-04,Gastos Comunes,Vivienda,Fijo,10205.00,11163.00,
+2025-04,IMM,Vivienda,Fijo,1063.00,1163.00,
+2025-04,Wanderers,Wanderers,Variable,500.00,0.00,
 2025-05,Auto,Auto,Variable,6000.00,3765.00,
+2025-05,Pago Auto,Auto,Variable,16000.00,17616.00,USD
+2025-05,Cosas Casa,Casa & hogar,Variable,2000.00,3804.00,
+2025-05,Limpieza,Casa & hogar,Variable,1500.00,1902.00,
+2025-05,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,7500.00,6137.00,
+2025-05,Ropa / Peluqueria,Compras personales,Variable,1500.00,2360.00,
+2025-05,Educacion,Educación,Variable,28000.00,31840.00,ORT
+2025-05,Tarjetas,Otros,Variable,2700.00,2888.00,
+2025-05,Chia,Otros,Variable,0.00,0.00,
 2025-05,Tramites,Otros,Variable,0.00,0.00,
 2025-05,Otos Gastos,Otros,Variable,1000.00,0.00,
-2025-05,Pago Auto,Auto,Variable,16000.00,17616.00,USD
-2025-06,Gastos Comunes,Vivienda,Fijo,12300.00,12273.00,
-2025-06,UTE,Servicios,Fijo,1500.00,1728.00,
-2025-06,Antel,Servicios,Fijo,1100.00,1074.00,
-2025-06,IMM,Vivienda,Fijo,1150.00,1165.00,
-2025-06,Salud,Salud,Variable,12000.00,2735.00,Psico en Julio
-2025-06,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,6500.00,4397.00,
-2025-06,Super,Super,Variable,7500.00,5085.00,
-2025-06,Cosas Casa,Casa & hogar,Variable,2500.00,943.00,
-2025-06,Transporte,Transporte,Variable,1200.00,362.00,
-2025-06,Educacion,Educación,Variable,27000.00,26813.00,
-2025-06,Gastos Roja,Salidas & ocio,Variable,800.00,270.00,
-2025-06,Farmacia,Salud,Variable,0.00,0.00,Migro todo a Salud
-2025-06,Ropa / Peluqueria,Compras personales,Variable,2000.00,2021.00,
-2025-06,Otras Salidas,Salidas & ocio,Variable,1500.00,3781.00,
-2025-06,Limpieza,Casa & hogar,Variable,1500.00,945.00,
-2025-06,Wanderers,Wanderers,Variable,1050.00,1050.00,
-2025-06,Tarjetas,Otros,Variable,1000.00,902.00,
-2025-06,Regalos,Regalos,Variable,6000.00,7668.00,
-2025-06,Chia,Otros,Variable,0.00,0.00,
-2025-06,Garrafa,Servicios,Variable,0.00,0.00,
-2025-06,Viajes / Escapadas,Viajes,Variable,0.00,0.00,
-2025-06,Celular,Servicios,Variable,813.00,0.00,
-2025-06,Suscripciones,Suscripciones,Variable,1000.00,119.00,
+2025-05,Regalos,Regalos,Variable,1000.00,0.00,
+2025-05,Gastos Roja,Salidas & ocio,Variable,800.00,0.00,
+2025-05,Otras Salidas,Salidas & ocio,Variable,1500.00,587.00,
+2025-05,Salud,Salud,Variable,9000.00,12175.00,
+2025-05,Farmacia,Salud,Variable,1000.00,0.00,
+2025-05,UTE,Servicios,Fijo,1600.00,1224.00,
+2025-05,Antel,Servicios,Fijo,1150.00,1080.00,
+2025-05,Garrafa,Servicios,Variable,0.00,0.00,
+2025-05,Celular,Servicios,Variable,813.00,2017.00,
+2025-05,Super,Super,Variable,6000.00,7269.00,
+2025-05,Suscripciones,Suscripciones,Variable,250.00,1018.00,
+2025-05,Transporte,Transporte,Variable,1500.00,1147.00,
+2025-05,Viajes / Escapadas,Viajes,Variable,20000.00,23848.00,BRASIL
+2025-05,Gastos Comunes,Vivienda,Fijo,11100.00,12343.00,
+2025-05,IMM,Vivienda,Fijo,0.00,0.00,
+2025-05,Wanderers,Wanderers,Variable,900.00,280.00,
 2025-06,Auto,Auto,Variable,4000.00,3449.00,
+2025-06,Pago Auto,Auto,Variable,16000.00,14915.00,USD
+2025-06,Cosas Casa,Casa & hogar,Variable,2500.00,943.00,
+2025-06,Limpieza,Casa & hogar,Variable,1500.00,945.00,
+2025-06,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,6500.00,4397.00,
+2025-06,Ropa / Peluqueria,Compras personales,Variable,2000.00,2021.00,
+2025-06,Educacion,Educación,Variable,27000.00,26813.00,
+2025-06,Tarjetas,Otros,Variable,1000.00,902.00,
+2025-06,Chia,Otros,Variable,0.00,0.00,
 2025-06,Tramites,Otros,Variable,0.00,0.00,
 2025-06,Otos Gastos,Otros,Variable,1000.00,0.00,
-2025-06,Pago Auto,Auto,Variable,16000.00,14915.00,USD
-2025-07,Gastos Comunes,Vivienda,Fijo,12300.00,12070.00,
-2025-07,UTE,Servicios,Fijo,1800.00,1623.00,
-2025-07,Antel,Servicios,Fijo,1100.00,1056.00,
-2025-07,IMM,Vivienda,Fijo,0.00,0.00,
-2025-07,Salud,Salud,Variable,11000.00,11028.00,Psico de junio
-2025-07,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,6000.00,2707.00,
-2025-07,Super,Super,Variable,6000.00,6166.00,
-2025-07,Cosas Casa,Casa & hogar,Variable,2000.00,0.00,
-2025-07,Transporte,Transporte,Variable,1500.00,1465.00,
-2025-07,Educacion,Educación,Variable,27000.00,26813.00,
-2025-07,Gastos Roja,Salidas & ocio,Variable,500.00,0.00,
-2025-07,Ropa / Peluqueria,Compras personales,Variable,3000.00,5759.00,
-2025-07,Otras Salidas,Salidas & ocio,Variable,10000.00,3706.00,CUMPLE
-2025-07,Limpieza,Casa & hogar,Variable,1000.00,929.00,
-2025-07,Wanderers,Wanderers,Variable,400.00,390.00,
-2025-07,Tarjetas,Otros,Variable,1000.00,1357.00,
-2025-07,Regalos,Regalos,Variable,2000.00,6085.00,Casamiento
-2025-07,Garrafa,Servicios,Variable,620.00,628.00,
-2025-07,Viajes / Escapadas,Viajes,Variable,0.00,0.00,
-2025-07,Celular,Servicios,Variable,813.00,832.00,
-2025-07,Suscripciones,Suscripciones,Variable,1000.00,464.00,
+2025-06,Regalos,Regalos,Variable,6000.00,7668.00,
+2025-06,Gastos Roja,Salidas & ocio,Variable,800.00,270.00,
+2025-06,Otras Salidas,Salidas & ocio,Variable,1500.00,3781.00,
+2025-06,Salud,Salud,Variable,12000.00,2735.00,Psico en Julio
+2025-06,Farmacia,Salud,Variable,0.00,0.00,Migro todo a Salud
+2025-06,UTE,Servicios,Fijo,1500.00,1728.00,
+2025-06,Antel,Servicios,Fijo,1100.00,1074.00,
+2025-06,Garrafa,Servicios,Variable,0.00,0.00,
+2025-06,Celular,Servicios,Variable,813.00,0.00,
+2025-06,Super,Super,Variable,7500.00,5085.00,
+2025-06,Suscripciones,Suscripciones,Variable,1000.00,119.00,
+2025-06,Transporte,Transporte,Variable,1200.00,362.00,
+2025-06,Viajes / Escapadas,Viajes,Variable,0.00,0.00,
+2025-06,Gastos Comunes,Vivienda,Fijo,12300.00,12273.00,
+2025-06,IMM,Vivienda,Fijo,1150.00,1165.00,
+2025-06,Wanderers,Wanderers,Variable,1050.00,1050.00,
 2025-07,Auto,Auto,Variable,4000.00,4849.00,
+2025-07,Pago Auto,Auto,Variable,16000.00,15188.00,USD
+2025-07,Cosas Casa,Casa & hogar,Variable,2000.00,0.00,
+2025-07,Limpieza,Casa & hogar,Variable,1000.00,929.00,
+2025-07,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,6000.00,2707.00,
+2025-07,Ropa / Peluqueria,Compras personales,Variable,3000.00,5759.00,
+2025-07,Educacion,Educación,Variable,27000.00,26813.00,
+2025-07,Tarjetas,Otros,Variable,1000.00,1357.00,
 2025-07,Tramites,Otros,Variable,0.00,0.00,
 2025-07,Otos Gastos,Otros,Variable,0.00,0.00,
-2025-07,Pago Auto,Auto,Variable,16000.00,15188.00,USD
-2025-08,Gastos Comunes,Vivienda,Fijo,12300.00,12130.00,
-2025-08,UTE,Servicios,Fijo,1700.00,1760.00,
-2025-08,Antel,Servicios,Fijo,1100.00,1062.00,
-2025-08,IMM,Vivienda,Fijo,1200.00,1146.00,
-2025-08,Salud,Salud,Variable,16500.00,12433.00,Psico + hialuronico; No pague hialuronico
-2025-08,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,7000.00,8506.00,Quede muy arriba pibes
-2025-08,Super,Super,Variable,6000.00,5731.00,
-2025-08,Cosas Casa,Casa & hogar,Variable,11000.00,10586.00,Persiana
-2025-08,Transporte,Transporte,Variable,600.00,1120.00,
-2025-08,Educacion,Educación,Variable,28000.00,26813.00,
-2025-08,Gastos Roja,Salidas & ocio,Variable,500.00,0.00,
-2025-08,Ropa / Peluqueria,Compras personales,Variable,1500.00,1248.00,
-2025-08,Otras Salidas,Salidas & ocio,Variable,25000.00,24545.00,CUMPLE
-2025-08,Limpieza,Casa & hogar,Variable,1000.00,933.00,
-2025-08,Wanderers,Wanderers,Variable,900.00,90.00,
-2025-08,Tarjetas,Otros,Variable,1000.00,804.00,
-2025-08,Regalos,Regalos,Variable,2000.00,1942.00,
-2025-08,Garrafa,Servicios,Variable,0.00,0.00,
-2025-08,Viajes / Escapadas,Viajes,Variable,0.00,0.00,
-2025-08,Celular,Servicios,Variable,813.00,811.00,
-2025-08,Suscripciones,Suscripciones,Variable,1000.00,820.00,
+2025-07,Regalos,Regalos,Variable,2000.00,6085.00,Casamiento
+2025-07,Gastos Roja,Salidas & ocio,Variable,500.00,0.00,
+2025-07,Otras Salidas,Salidas & ocio,Variable,10000.00,3706.00,CUMPLE
+2025-07,Salud,Salud,Variable,11000.00,11028.00,Psico de junio
+2025-07,UTE,Servicios,Fijo,1800.00,1623.00,
+2025-07,Antel,Servicios,Fijo,1100.00,1056.00,
+2025-07,Garrafa,Servicios,Variable,620.00,628.00,
+2025-07,Celular,Servicios,Variable,813.00,832.00,
+2025-07,Super,Super,Variable,6000.00,6166.00,
+2025-07,Suscripciones,Suscripciones,Variable,1000.00,464.00,
+2025-07,Transporte,Transporte,Variable,1500.00,1465.00,
+2025-07,Viajes / Escapadas,Viajes,Variable,0.00,0.00,
+2025-07,Gastos Comunes,Vivienda,Fijo,12300.00,12070.00,
+2025-07,IMM,Vivienda,Fijo,0.00,0.00,
+2025-07,Wanderers,Wanderers,Variable,400.00,390.00,
 2025-08,Auto,Auto,Variable,4000.00,6205.00,Fuimos a Rocha
+2025-08,Cosas Casa,Casa & hogar,Variable,11000.00,10586.00,Persiana
+2025-08,Limpieza,Casa & hogar,Variable,1000.00,933.00,
+2025-08,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,7000.00,8506.00,Quede muy arriba pibes
+2025-08,Ropa / Peluqueria,Compras personales,Variable,1500.00,1248.00,
+2025-08,Educacion,Educación,Variable,28000.00,26813.00,
+2025-08,Tarjetas,Otros,Variable,1000.00,804.00,
 2025-08,Tramites,Otros,Variable,0.00,0.00,
 2025-08,Otos Gastos,Otros,Variable,0.00,0.00,
-2025-09,Gastos Comunes,Vivienda,Fijo,12300.00,12618.00,
-2025-09,UTE,Servicios,Fijo,1700.00,1657.00,
-2025-09,Antel,Servicios,Fijo,1100.00,1062.00,
-2025-09,IMM,Vivienda,Fijo,0.00,0.00,
-2025-09,Salud,Salud,Variable,14100.00,17302.00,Hialuronico + Psico; Ezentius y Colageno
-2025-09,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,10000.00,11389.00,Por regalo sanky / Saldo a favor
-2025-09,Super,Super,Variable,6000.00,5957.00,
-2025-09,Cosas Casa,Casa & hogar,Variable,4000.00,0.00,Algo Cuarto?
-2025-09,Transporte,Transporte,Variable,1200.00,1654.00,Cargue bondis
-2025-09,Educacion,Educación,Variable,28000.00,27483.00,
-2025-09,Gastos Roja,Salidas & ocio,Variable,500.00,3172.00,Mucha juntada + 730 a favor
-2025-09,Ropa / Peluqueria,Compras personales,Variable,1500.00,558.00,
-2025-09,Otras Salidas,Salidas & ocio,Variable,2000.00,4182.00,La vela + Tacua
-2025-09,Limpieza,Casa & hogar,Variable,1500.00,2313.00,2 Yova
-2025-09,Wanderers,Wanderers,Variable,900.00,0.00,
-2025-09,Tarjetas,Otros,Variable,1000.00,1569.00,
-2025-09,Regalos,Regalos,Variable,4000.00,4834.00,Aniversario + Sanky; Isa
-2025-09,Garrafa,Servicios,Variable,0.00,0.00,
-2025-09,Viajes / Escapadas,Viajes,Variable,11000.00,11035.00,Pasaje Rio
-2025-09,Celular,Servicios,Variable,813.00,0.00,
-2025-09,Suscripciones,Suscripciones,Variable,1000.00,518.00,
+2025-08,Regalos,Regalos,Variable,2000.00,1942.00,
+2025-08,Gastos Roja,Salidas & ocio,Variable,500.00,0.00,
+2025-08,Otras Salidas,Salidas & ocio,Variable,25000.00,24545.00,CUMPLE
+2025-08,Salud,Salud,Variable,16500.00,12433.00,Psico + hialuronico; No pague hialuronico
+2025-08,UTE,Servicios,Fijo,1700.00,1760.00,
+2025-08,Antel,Servicios,Fijo,1100.00,1062.00,
+2025-08,Garrafa,Servicios,Variable,0.00,0.00,
+2025-08,Celular,Servicios,Variable,813.00,811.00,
+2025-08,Super,Super,Variable,6000.00,5731.00,
+2025-08,Suscripciones,Suscripciones,Variable,1000.00,820.00,
+2025-08,Transporte,Transporte,Variable,600.00,1120.00,
+2025-08,Viajes / Escapadas,Viajes,Variable,0.00,0.00,
+2025-08,Gastos Comunes,Vivienda,Fijo,12300.00,12130.00,
+2025-08,IMM,Vivienda,Fijo,1200.00,1146.00,
+2025-08,Wanderers,Wanderers,Variable,900.00,90.00,
 2025-09,Auto,Auto,Variable,4000.00,5287.00,2 naftas + limpieza
+2025-09,Cosas Casa,Casa & hogar,Variable,4000.00,0.00,Algo Cuarto?
+2025-09,Limpieza,Casa & hogar,Variable,1500.00,2313.00,2 Yova
+2025-09,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,10000.00,11389.00,Por regalo sanky / Saldo a favor
+2025-09,Ropa / Peluqueria,Compras personales,Variable,1500.00,558.00,
+2025-09,Educacion,Educación,Variable,28000.00,27483.00,
+2025-09,Tarjetas,Otros,Variable,1000.00,1569.00,
 2025-09,Tramites,Otros,Variable,0.00,0.00,
 2025-09,Otos Gastos,Otros,Variable,0.00,0.00,
-2025-10,Gastos Comunes,Vivienda,Fijo,12650.00,12496.00,
-2025-10,UTE,Servicios,Fijo,1700.00,1621.00,
-2025-10,Antel,Servicios,Fijo,1100.00,1094.00,
-2025-10,IMM,Vivienda,Fijo,1200.00,1181.00,
-2025-10,Salud,Salud,Variable,7000.00,8245.00,Psico + Medicamentos
-2025-10,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,7000.00,9521.00,
-2025-10,Super,Super,Variable,6000.00,8515.00,
-2025-10,Cosas Casa,Casa & hogar,Variable,4000.00,0.00,
-2025-10,Transporte,Transporte,Variable,1000.00,610.00,
-2025-10,Educacion,Educación,Variable,28000.00,27483.00,
-2025-10,Gastos Roja,Salidas & ocio,Variable,1500.00,1720.00,
-2025-10,Ropa / Peluqueria,Compras personales,Variable,5000.00,3530.00,
-2025-10,Otras Salidas,Salidas & ocio,Variable,2000.00,2493.00,
-2025-10,Limpieza,Casa & hogar,Variable,2000.00,930.00,
-2025-10,Wanderers,Wanderers,Variable,900.00,350.00,
-2025-10,Tarjetas,Otros,Variable,1500.00,1010.00,
-2025-10,Regalos,Regalos,Variable,1000.00,2694.00,
-2025-10,Garrafa,Servicios,Variable,650.00,698.00,
-2025-10,Viajes / Escapadas,Viajes,Variable,10000.00,19984.00,Rio
-2025-10,Celular,Servicios,Variable,1650.00,1727.00,
-2025-10,Suscripciones,Suscripciones,Variable,600.00,418.00,
+2025-09,Regalos,Regalos,Variable,4000.00,4834.00,Aniversario + Sanky; Isa
+2025-09,Gastos Roja,Salidas & ocio,Variable,500.00,3172.00,Mucha juntada + 730 a favor
+2025-09,Otras Salidas,Salidas & ocio,Variable,2000.00,4182.00,La vela + Tacua
+2025-09,Salud,Salud,Variable,14100.00,17302.00,Hialuronico + Psico; Ezentius y Colageno
+2025-09,UTE,Servicios,Fijo,1700.00,1657.00,
+2025-09,Antel,Servicios,Fijo,1100.00,1062.00,
+2025-09,Garrafa,Servicios,Variable,0.00,0.00,
+2025-09,Celular,Servicios,Variable,813.00,0.00,
+2025-09,Super,Super,Variable,6000.00,5957.00,
+2025-09,Suscripciones,Suscripciones,Variable,1000.00,518.00,
+2025-09,Transporte,Transporte,Variable,1200.00,1654.00,Cargue bondis
+2025-09,Viajes / Escapadas,Viajes,Variable,11000.00,11035.00,Pasaje Rio
+2025-09,Gastos Comunes,Vivienda,Fijo,12300.00,12618.00,
+2025-09,IMM,Vivienda,Fijo,0.00,0.00,
+2025-09,Wanderers,Wanderers,Variable,900.00,0.00,
 2025-10,Auto,Auto,Variable,4500.00,6405.00,
+2025-10,Cosas Casa,Casa & hogar,Variable,4000.00,0.00,
+2025-10,Limpieza,Casa & hogar,Variable,2000.00,930.00,
+2025-10,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,7000.00,9521.00,
+2025-10,Ropa / Peluqueria,Compras personales,Variable,5000.00,3530.00,
+2025-10,Educacion,Educación,Variable,28000.00,27483.00,
+2025-10,Tarjetas,Otros,Variable,1500.00,1010.00,
 2025-10,Tramites,Otros,Variable,0.00,463.00,
 2025-10,Otos Gastos,Otros,Variable,0.00,0.00,
-2025-11,Gastos Comunes,Vivienda,Fijo,12500.00,10985.00,
-2025-11,UTE,Servicios,Fijo,1700.00,1530.00,
-2025-11,Antel,Servicios,Fijo,1100.00,1089.00,
-2025-11,IMM,Vivienda,Fijo,0.00,0.00,
-2025-11,Salud,Salud,Variable,10000.00,11556.00,3 Psico + remedios
-2025-11,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,7000.00,6089.00,
-2025-11,Super,Super,Variable,7000.00,5891.00,
-2025-11,Cosas Casa,Casa & hogar,Variable,2000.00,1631.00,
-2025-11,Transporte,Transporte,Variable,1200.00,1224.00,
-2025-11,Educacion,Educación,Variable,28500.00,28152.00,Libro + ORT
-2025-11,Gastos Roja,Salidas & ocio,Variable,1000.00,0.00,
-2025-11,Ropa / Peluqueria,Compras personales,Variable,4000.00,3798.00,Birken + Pelu
-2025-11,Otras Salidas,Salidas & ocio,Variable,2000.00,4203.00,Entradas Medio y Medio
-2025-11,Limpieza,Casa & hogar,Variable,1500.00,2781.00,2 Yova
-2025-11,Wanderers,Wanderers,Variable,900.00,1050.00,
-2025-11,Tarjetas,Otros,Variable,1100.00,1279.00,
-2025-11,Regalos,Regalos,Variable,1000.00,26.00,
-2025-11,Garrafa,Servicios,Variable,0.00,0.00,
-2025-11,Viajes / Escapadas,Viajes,Variable,12000.00,12127.00,RIO; RIO
-2025-11,Celular,Servicios,Variable,1650.00,0.00,
-2025-11,Suscripciones,Suscripciones,Variable,500.00,761.00,
+2025-10,Regalos,Regalos,Variable,1000.00,2694.00,
+2025-10,Gastos Roja,Salidas & ocio,Variable,1500.00,1720.00,
+2025-10,Otras Salidas,Salidas & ocio,Variable,2000.00,2493.00,
+2025-10,Salud,Salud,Variable,7000.00,8245.00,Psico + Medicamentos
+2025-10,UTE,Servicios,Fijo,1700.00,1621.00,
+2025-10,Antel,Servicios,Fijo,1100.00,1094.00,
+2025-10,Garrafa,Servicios,Variable,650.00,698.00,
+2025-10,Celular,Servicios,Variable,1650.00,1727.00,
+2025-10,Super,Super,Variable,6000.00,8515.00,
+2025-10,Suscripciones,Suscripciones,Variable,600.00,418.00,
+2025-10,Transporte,Transporte,Variable,1000.00,610.00,
+2025-10,Viajes / Escapadas,Viajes,Variable,10000.00,19984.00,Rio
+2025-10,Gastos Comunes,Vivienda,Fijo,12650.00,12496.00,
+2025-10,IMM,Vivienda,Fijo,1200.00,1181.00,
+2025-10,Wanderers,Wanderers,Variable,900.00,350.00,
 2025-11,Auto,Auto,Variable,5000.00,6749.00,Ida a Colonia
+2025-11,Cosas Casa,Casa & hogar,Variable,2000.00,1631.00,
+2025-11,Limpieza,Casa & hogar,Variable,1500.00,2781.00,2 Yova
+2025-11,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,7000.00,6089.00,
+2025-11,Ropa / Peluqueria,Compras personales,Variable,4000.00,3798.00,Birken + Pelu
+2025-11,Educacion,Educación,Variable,28500.00,28152.00,Libro + ORT
+2025-11,Tarjetas,Otros,Variable,1100.00,1279.00,
 2025-11,Tramites,Otros,Variable,0.00,0.00,
 2025-11,Otos Gastos,Otros,Variable,0.00,0.00,
-2025-12,Gastos Comunes,Vivienda,Fijo,11000.00,11117.00,
-2025-12,UTE,Servicios,Fijo,1700.00,1621.00,
-2025-12,Antel,Servicios,Fijo,1100.00,1122.00,
-2025-12,IMM,Vivienda,Fijo,1201.00,1211.00,
-2025-12,Salud,Salud,Variable,8000.00,17352.00,2 psico + medicamentos; Pague 2 psicos de Diciembre
-2025-12,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,7000.00,9228.00,
-2025-12,Super,Super,Variable,7000.00,7688.00,
-2025-12,Cosas Casa,Casa & hogar,Variable,2500.00,0.00,
-2025-12,Transporte,Transporte,Variable,1200.00,1017.00,
-2025-12,Educacion,Educación,Variable,28000.00,27483.00,
-2025-12,Gastos Roja,Salidas & ocio,Variable,500.00,0.00,
-2025-12,Ropa / Cosas pa Uno,Compras personales,Variable,4000.00,6657.00,Termo + Creatina
-2025-12,Otras Salidas,Salidas & ocio,Variable,2000.00,8186.00,Pendientes Colonia
-2025-12,Limpieza,Casa & hogar,Variable,2000.00,985.00,
-2025-12,Wanderers,Wanderers,Variable,1050.00,0.00,
-2025-12,Tarjetas,Otros,Variable,1300.00,1146.00,
-2025-12,Regalos,Regalos,Variable,12000.00,0.00,Regalo Quini + navidad
-2025-12,Garrafa,Servicios,Variable,0.00,0.00,
-2025-12,Viajes / Escapadas,Viajes,Variable,5000.00,39855.00,pendientes rio; Pasaje Europa
-2025-12,Celular,Servicios,Variable,860.00,849.00,
-2025-12,Suscripciones,Suscripciones,Variable,800.00,1151.00,Colab
+2025-11,Regalos,Regalos,Variable,1000.00,26.00,
+2025-11,Gastos Roja,Salidas & ocio,Variable,1000.00,0.00,
+2025-11,Otras Salidas,Salidas & ocio,Variable,2000.00,4203.00,Entradas Medio y Medio
+2025-11,Salud,Salud,Variable,10000.00,11556.00,3 Psico + remedios
+2025-11,UTE,Servicios,Fijo,1700.00,1530.00,
+2025-11,Antel,Servicios,Fijo,1100.00,1089.00,
+2025-11,Garrafa,Servicios,Variable,0.00,0.00,
+2025-11,Celular,Servicios,Variable,1650.00,0.00,
+2025-11,Super,Super,Variable,7000.00,5891.00,
+2025-11,Suscripciones,Suscripciones,Variable,500.00,761.00,
+2025-11,Transporte,Transporte,Variable,1200.00,1224.00,
+2025-11,Viajes / Escapadas,Viajes,Variable,12000.00,12127.00,RIO; RIO
+2025-11,Gastos Comunes,Vivienda,Fijo,12500.00,10985.00,
+2025-11,IMM,Vivienda,Fijo,0.00,0.00,
+2025-11,Wanderers,Wanderers,Variable,900.00,1050.00,
 2025-12,Auto,Auto,Variable,8000.00,11643.00,Nafta y mecanico; 2 Naftas + Garage + Mecanico
+2025-12,Cosas Casa,Casa & hogar,Variable,2500.00,0.00,
+2025-12,Limpieza,Casa & hogar,Variable,2000.00,985.00,
+2025-12,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,7000.00,9228.00,
+2025-12,Ropa / Cosas pa Uno,Compras personales,Variable,4000.00,6657.00,Termo + Creatina
+2025-12,Peluquería,Compras personales,Variable,590.00,590.00,
+2025-12,Educacion,Educación,Variable,28000.00,27483.00,
+2025-12,Tarjetas,Otros,Variable,1300.00,1146.00,
 2025-12,Tramites,Otros,Variable,0.00,0.00,
 2025-12,Otos Gastos,Otros,Variable,0.00,0.00,
-2025-12,Peluquería,Compras personales,Variable,590.00,590.00,
-2026-01,Gastos Comunes,Vivienda,Fijo,11150.00,11075.00,
-2026-01,UTE,Servicios,Fijo,1700.00,1806.00,
-2026-01,Antel,Servicios,Fijo,1150.00,1098.00,
-2026-01,IMM,Vivienda,Fijo,0.00,0.00,
-2026-01,Club,Club,Fijo,0.00,4715.00,
-2026-01,Salud,Salud,Variable,3500.00,0.00,0 Psico + Medicamentos
-2026-01,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,8000.00,4820.00,
-2026-01,Super,Super,Variable,7000.00,9479.00,
-2026-01,Cosas Casa,Casa & hogar,Variable,3000.00,688.00,
-2026-01,Transporte,Transporte,Variable,1100.00,1795.00,
-2026-01,Educacion,Educación,Variable,28200.00,28200.00,
-2026-01,Gastos Roja,Salidas & ocio,Variable,0.00,0.00,
-2026-01,Ropa / Otras Compras,Compras personales,Variable,2000.00,1169.00,
-2026-01,Otras Salidas,Salidas & ocio,Variable,6000.00,451.00,Medio y Medio
-2026-01,Limpieza,Casa & hogar,Variable,2000.00,1893.00,
-2026-01,Wanderers,Wanderers,Variable,1500.00,1550.00,
-2026-01,Tarjetas,Otros,Variable,850.00,1871.00,
-2026-01,Regalos,Regalos,Variable,8000.00,1902.00,Navidad
-2026-01,Garrafa,Servicios,Variable,700.00,0.00,
-2026-01,Viajes / Escapadas,Viajes,Variable,2500.00,34992.00,
-2026-01,Celular,Servicios,Variable,850.00,849.00,
-2026-01,Suscripciones,Suscripciones,Variable,800.00,720.00,
+2025-12,Regalos,Regalos,Variable,12000.00,0.00,Regalo Quini + navidad
+2025-12,Gastos Roja,Salidas & ocio,Variable,500.00,0.00,
+2025-12,Otras Salidas,Salidas & ocio,Variable,2000.00,8186.00,Pendientes Colonia
+2025-12,Salud,Salud,Variable,8000.00,17352.00,2 psico + medicamentos; Pague 2 psicos de Diciembre
+2025-12,UTE,Servicios,Fijo,1700.00,1621.00,
+2025-12,Antel,Servicios,Fijo,1100.00,1122.00,
+2025-12,Garrafa,Servicios,Variable,0.00,0.00,
+2025-12,Celular,Servicios,Variable,860.00,849.00,
+2025-12,Super,Super,Variable,7000.00,7688.00,
+2025-12,Suscripciones,Suscripciones,Variable,800.00,1151.00,Colab
+2025-12,Transporte,Transporte,Variable,1200.00,1017.00,
+2025-12,Viajes / Escapadas,Viajes,Variable,5000.00,39855.00,pendientes rio; Pasaje Europa
+2025-12,Gastos Comunes,Vivienda,Fijo,11000.00,11117.00,
+2025-12,IMM,Vivienda,Fijo,1201.00,1211.00,
+2025-12,Wanderers,Wanderers,Variable,1050.00,0.00,
 2026-01,Auto,Auto,Variable,20600.00,21500.00,Patente + Seguro + Nafta + Garage
+2026-01,Cosas Casa,Casa & hogar,Variable,3000.00,688.00,
+2026-01,Limpieza,Casa & hogar,Variable,2000.00,1893.00,
+2026-01,Club,Club,Fijo,0.00,4715.00,
+2026-01,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,8000.00,4820.00,
+2026-01,Ropa / Otras Compras,Compras personales,Variable,2000.00,1169.00,
+2026-01,Peluquería,Compras personales,Variable,590.00,1229.00,
+2026-01,Educacion,Educación,Variable,28200.00,28200.00,
+2026-01,Tarjetas,Otros,Variable,850.00,1871.00,
 2026-01,Tramites,Otros,Variable,300.00,0.00,
 2026-01,Otos Gastos,Otros,Variable,0.00,0.00,
-2026-01,Peluquería,Compras personales,Variable,590.00,1229.00,
-2026-02,Gastos Comunes,Vivienda,Fijo,11100.00,12254.00,Subio + Ponderado
-2026-02,UTE,Servicios,Fijo,2000.00,2000.00,
-2026-02,Antel,Servicios,Fijo,1150.00,1223.00,Ponderacion
-2026-02,IMM,Vivienda,Fijo,1250.00,1281.00,
-2026-02,Club,Club,Fijo,4715.00,4715.00,
-2026-02,Salud,Salud,Variable,11500.00,10285.00,3 Psico + Farmacia; ok
-2026-02,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,7000.00,6818.00,
-2026-02,Super,Super,Variable,7000.00,8425.00,
-2026-02,Cosas Casa,Casa & hogar,Variable,2000.00,1081.00,
-2026-02,Transporte,Transporte,Variable,1500.00,2392.00,Peajes
-2026-02,Educacion,Educación,Variable,56400.00,56340.00,Pague 2 cuotas
-2026-02,Gastos Roja,Salidas & ocio,Variable,0.00,0.00,
-2026-02,Ropa / Otras Compras,Compras personales,Variable,2000.00,245.00,
-2026-02,Otras Salidas,Salidas & ocio,Variable,2000.00,1490.00,
-2026-02,Limpieza,Casa & hogar,Variable,2000.00,1278.00,
-2026-02,Wanderers,Wanderers,Variable,1500.00,0.00,
-2026-02,Tarjetas,Otros,Variable,2500.00,3618.00,ITAU
-2026-02,Regalos,Regalos,Variable,2500.00,5166.00,Jojo; Dai
-2026-02,Garrafa,Servicios,Variable,0.00,0.00,
-2026-02,Viajes / Escapadas,Viajes,Variable,0.00,6479.00,Viaje Avion
-2026-02,Celular,Servicios,Variable,850.00,875.00,
-2026-02,Suscripciones,Suscripciones,Variable,800.00,642.00,
+2026-01,Regalos,Regalos,Variable,8000.00,1902.00,Navidad
+2026-01,Gastos Roja,Salidas & ocio,Variable,0.00,0.00,
+2026-01,Otras Salidas,Salidas & ocio,Variable,6000.00,451.00,Medio y Medio
+2026-01,Salud,Salud,Variable,3500.00,0.00,0 Psico + Medicamentos
+2026-01,UTE,Servicios,Fijo,1700.00,1806.00,
+2026-01,Antel,Servicios,Fijo,1150.00,1098.00,
+2026-01,Garrafa,Servicios,Variable,700.00,0.00,
+2026-01,Celular,Servicios,Variable,850.00,849.00,
+2026-01,Super,Super,Variable,7000.00,9479.00,
+2026-01,Suscripciones,Suscripciones,Variable,800.00,720.00,
+2026-01,Transporte,Transporte,Variable,1100.00,1795.00,
+2026-01,Viajes / Escapadas,Viajes,Variable,2500.00,34992.00,
+2026-01,Gastos Comunes,Vivienda,Fijo,11150.00,11075.00,
+2026-01,IMM,Vivienda,Fijo,0.00,0.00,
+2026-01,Wanderers,Wanderers,Variable,1500.00,1550.00,
 2026-02,Auto,Auto,Variable,15000.00,11083.00,Seguro cuota 2/4
+2026-02,Cosas Casa,Casa & hogar,Variable,2000.00,1081.00,
+2026-02,Limpieza,Casa & hogar,Variable,2000.00,1278.00,
+2026-02,Club,Club,Fijo,4715.00,4715.00,
+2026-02,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,7000.00,6818.00,
+2026-02,Ropa / Otras Compras,Compras personales,Variable,2000.00,245.00,
+2026-02,Peluquería,Compras personales,Variable,590.00,0.00,
+2026-02,Educacion,Educación,Variable,56400.00,56340.00,Pague 2 cuotas
+2026-02,Tarjetas,Otros,Variable,2500.00,3618.00,ITAU
 2026-02,Tramites,Otros,Variable,0.00,0.00,
 2026-02,Otos Gastos,Otros,Variable,0.00,0.00,
-2026-02,Peluquería,Compras personales,Variable,590.00,0.00,
-2026-03,Gastos Comunes,Vivienda,Fijo,12250.00,12753.00,
-2026-03,UTE,Servicios,Fijo,1800.00,1638.00,
-2026-03,Antel,Servicios,Fijo,1150.00,1209.00,
-2026-03,IMM,Vivienda,Fijo,0.00,0.00,
-2026-03,Club,Club,Fijo,5115.00,5115.00,Cierre Pretemp
-2026-03,Salud,Salud,Variable,11500.00,16997.00,3 Psico + Medicamentos; Farmacia BSAS
-2026-03,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,8000.00,4504.00,
-2026-03,Super,Super,Variable,7000.00,7177.00,
-2026-03,Cosas Casa,Casa & hogar,Variable,2000.00,2389.00,
-2026-03,Transporte,Transporte,Variable,2000.00,45.00,
-2026-03,Educacion,Educación,Variable,28170.00,28170.00,Cuadernolas; facu con credito
-2026-03,Gastos Roja,Salidas & ocio,Variable,1000.00,1060.00,
-2026-03,Ropa / Otras Compras,Compras personales,Variable,2500.00,6688.00,Compras bsas
-2026-03,Otras Salidas,Salidas & ocio,Variable,2000.00,3605.00,Cosquin
-2026-03,Limpieza,Casa & hogar,Variable,2000.00,1700.00,
-2026-03,Wanderers,Wanderers,Variable,1000.00,541.00,
-2026-03,Tarjetas,Otros,Variable,1500.00,1222.00,
-2026-03,Regalos,Regalos,Variable,2500.00,3277.00,bsas
-2026-03,Garrafa,Servicios,Variable,800.00,0.00,
-2026-03,Viajes / Escapadas,Viajes,Variable,2000.00,6267.00,bsas + lyon
-2026-03,Celular,Servicios,Variable,875.00,875.00,
-2026-03,Suscripciones,Suscripciones,Variable,1500.00,2394.00,Chat
+2026-02,Regalos,Regalos,Variable,2500.00,5166.00,Jojo; Dai
+2026-02,Gastos Roja,Salidas & ocio,Variable,0.00,0.00,
+2026-02,Otras Salidas,Salidas & ocio,Variable,2000.00,1490.00,
+2026-02,Salud,Salud,Variable,11500.00,10285.00,3 Psico + Farmacia; ok
+2026-02,UTE,Servicios,Fijo,2000.00,2000.00,
+2026-02,Antel,Servicios,Fijo,1150.00,1223.00,Ponderacion
+2026-02,Garrafa,Servicios,Variable,0.00,0.00,
+2026-02,Celular,Servicios,Variable,850.00,875.00,
+2026-02,Super,Super,Variable,7000.00,8425.00,
+2026-02,Suscripciones,Suscripciones,Variable,800.00,642.00,
+2026-02,Transporte,Transporte,Variable,1500.00,2392.00,Peajes
+2026-02,Viajes / Escapadas,Viajes,Variable,0.00,6479.00,Viaje Avion
+2026-02,Gastos Comunes,Vivienda,Fijo,11100.00,12254.00,Subio + Ponderado
+2026-02,IMM,Vivienda,Fijo,1250.00,1281.00,
+2026-02,Wanderers,Wanderers,Variable,1500.00,0.00,
 2026-03,Auto,Auto,Variable,12000.00,13142.00,Floresta
+2026-03,Cosas Casa,Casa & hogar,Variable,2000.00,2389.00,
+2026-03,Limpieza,Casa & hogar,Variable,2000.00,1700.00,
+2026-03,Club,Club,Fijo,5115.00,5115.00,Cierre Pretemp
+2026-03,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,8000.00,4504.00,
+2026-03,Ropa / Otras Compras,Compras personales,Variable,2500.00,6688.00,Compras bsas
+2026-03,Peluquería,Compras personales,Variable,590.00,590.00,
+2026-03,Educacion,Educación,Variable,28170.00,28170.00,Cuadernolas; facu con credito
+2026-03,Tarjetas,Otros,Variable,1500.00,1222.00,
 2026-03,Tramites,Otros,Variable,0.00,0.00,
 2026-03,Otos Gastos,Otros,Variable,0.00,342.00,
-2026-03,Peluquería,Compras personales,Variable,590.00,590.00,
-2026-04,Gastos Comunes,Vivienda,Fijo,18500.00,18507.00,Gastos Comunes + Contribucion
-2026-04,UTE,Servicios,Fijo,1900.00,1810.00,
-2026-04,Antel,Servicios,Fijo,1280.00,1231.00,
-2026-04,IMM,Vivienda,Fijo,1322.00,1289.00,
-2026-04,Club,Club,Fijo,4715.00,4715.00,
-2026-04,Salud,Salud,Variable,11000.00,14835.00,Medicacion Viaje
-2026-04,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,7000.00,5993.00,
-2026-04,Super,Super,Variable,7500.00,4662.00,
-2026-04,Cosas Casa,Casa & hogar,Variable,2000.00,2081.00,
-2026-04,Transporte,Transporte,Variable,1500.00,1278.00,
-2026-04,Educacion,Educación,Variable,28170.00,28170.00,
-2026-04,Gastos Roja,Salidas & ocio,Variable,1000.00,657.00,
-2026-04,Ropa / Otras Compras,Compras personales,Variable,2000.00,0.00,
-2026-04,Otras Salidas,Salidas & ocio,Variable,1500.00,2359.00,Zeballos
-2026-04,Limpieza,Casa & hogar,Variable,1700.00,1989.00,
-2026-04,Wanderers,Wanderers,Variable,1500.00,1638.00,
-2026-04,Tarjetas,Otros,Variable,1500.00,835.00,
-2026-04,Regalos,Regalos,Variable,1500.00,10088.00,Baby shower + Viaje + Lu
-2026-04,Garrafa,Servicios,Variable,800.00,642.00,
-2026-04,Viajes / Escapadas,Viajes,Variable,2000.00,8075.00,Viaje
-2026-04,Celular,Servicios,Variable,875.00,0.00,
-2026-04,Suscripciones,Suscripciones,Variable,1500.00,2466.00,
+2026-03,Regalos,Regalos,Variable,2500.00,3277.00,bsas
+2026-03,Gastos Roja,Salidas & ocio,Variable,1000.00,1060.00,
+2026-03,Otras Salidas,Salidas & ocio,Variable,2000.00,3605.00,Cosquin
+2026-03,Salud,Salud,Variable,11500.00,16997.00,3 Psico + Medicamentos; Farmacia BSAS
+2026-03,UTE,Servicios,Fijo,1800.00,1638.00,
+2026-03,Antel,Servicios,Fijo,1150.00,1209.00,
+2026-03,Garrafa,Servicios,Variable,800.00,0.00,
+2026-03,Celular,Servicios,Variable,875.00,875.00,
+2026-03,Super,Super,Variable,7000.00,7177.00,
+2026-03,Suscripciones,Suscripciones,Variable,1500.00,2394.00,Chat
+2026-03,Transporte,Transporte,Variable,2000.00,45.00,
+2026-03,Viajes / Escapadas,Viajes,Variable,2000.00,6267.00,bsas + lyon
+2026-03,Gastos Comunes,Vivienda,Fijo,12250.00,12753.00,
+2026-03,IMM,Vivienda,Fijo,0.00,0.00,
+2026-03,Wanderers,Wanderers,Variable,1000.00,541.00,
 2026-04,Auto,Auto,Variable,5500.00,6027.00,
+2026-04,Cosas Casa,Casa & hogar,Variable,2000.00,2081.00,
+2026-04,Limpieza,Casa & hogar,Variable,1700.00,1989.00,
+2026-04,Club,Club,Fijo,4715.00,4715.00,
+2026-04,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,7000.00,5993.00,
+2026-04,Ropa / Otras Compras,Compras personales,Variable,2000.00,0.00,
+2026-04,Peluquería,Compras personales,Variable,590.00,0.00,
+2026-04,Educacion,Educación,Variable,28170.00,28170.00,
+2026-04,Tarjetas,Otros,Variable,1500.00,835.00,
 2026-04,Tramites,Otros,Variable,0.00,0.00,
 2026-04,Otos Gastos,Otros,Variable,0.00,0.00,
-2026-04,Peluquería,Compras personales,Variable,590.00,0.00,
-2026-05,Gastos Comunes,Vivienda,Fijo,18507.00,20042.00,Gastos Comunes + Contribucion
-2026-05,UTE,Servicios,Fijo,1810.00,1685.00,
-2026-05,Antel,Servicios,Fijo,1231.00,1231.00,
-2026-05,IMM,Vivienda,Fijo,0.00,0.00,
-2026-05,Club,Club,Fijo,4715.00,4715.00,
-2026-05,Salud,Salud,Variable,11000.00,8291.00,8100 psico + medicamentos viaje
-2026-05,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,1000.00,1081.00,Viaje
-2026-05,Super,Super,Variable,2000.00,1439.00,
-2026-05,Cosas Casa,Casa & hogar,Variable,2000.00,2603.00,
-2026-05,Transporte,Transporte,Variable,1000.00,0.00,
-2026-05,Educacion,Educación,Variable,28170.00,28170.00,
-2026-05,Gastos Roja,Salidas & ocio,Variable,0.00,0.00,
-2026-05,Ropa / Otras Compras,Compras personales,Variable,1500.00,0.00,
-2026-05,Otras Salidas,Salidas & ocio,Variable,1500.00,0.00,
-2026-05,Limpieza,Casa & hogar,Variable,1000.00,995.00,
-2026-05,Wanderers,Wanderers,Variable,0.00,0.00,
-2026-05,Tarjetas,Otros,Variable,1000.00,799.00,
-2026-05,Regalos,Regalos,Variable,5000.00,0.00,
-2026-05,Garrafa,Servicios,Variable,0.00,0.00,
-2026-05,Viajes / Escapadas,Viajes,Variable,80000.00,6696.00,Viaje; mes que viene
-2026-05,Celular,Servicios,Variable,1800.00,1766.00,2 meses
-2026-05,Suscripciones,Suscripciones,Variable,1700.00,1472.00,
+2026-04,Regalos,Regalos,Variable,1500.00,10088.00,Baby shower + Viaje + Lu
+2026-04,Gastos Roja,Salidas & ocio,Variable,1000.00,657.00,
+2026-04,Otras Salidas,Salidas & ocio,Variable,1500.00,2359.00,Zeballos
+2026-04,Salud,Salud,Variable,11000.00,14835.00,Medicacion Viaje
+2026-04,UTE,Servicios,Fijo,1900.00,1810.00,
+2026-04,Antel,Servicios,Fijo,1280.00,1231.00,
+2026-04,Garrafa,Servicios,Variable,800.00,642.00,
+2026-04,Celular,Servicios,Variable,875.00,0.00,
+2026-04,Super,Super,Variable,7500.00,4662.00,
+2026-04,Suscripciones,Suscripciones,Variable,1500.00,2466.00,
+2026-04,Transporte,Transporte,Variable,1500.00,1278.00,
+2026-04,Viajes / Escapadas,Viajes,Variable,2000.00,8075.00,Viaje
+2026-04,Gastos Comunes,Vivienda,Fijo,18500.00,18507.00,Gastos Comunes + Contribucion
+2026-04,IMM,Vivienda,Fijo,1322.00,1289.00,
+2026-04,Wanderers,Wanderers,Variable,1500.00,1638.00,
 2026-05,Auto,Auto,Variable,6000.00,1585.00,viaje
+2026-05,Cosas Casa,Casa & hogar,Variable,2000.00,2603.00,
+2026-05,Limpieza,Casa & hogar,Variable,1000.00,995.00,
+2026-05,Club,Club,Fijo,4715.00,4715.00,
+2026-05,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,1000.00,1081.00,Viaje
+2026-05,Ropa / Otras Compras,Compras personales,Variable,1500.00,0.00,
+2026-05,Peluquería,Compras personales,Variable,600.00,0.00,
+2026-05,Educacion,Educación,Variable,28170.00,28170.00,
+2026-05,Tarjetas,Otros,Variable,1000.00,799.00,
 2026-05,Tramites,Otros,Variable,0.00,0.00,
 2026-05,Otos Gastos,Otros,Variable,0.00,0.00,
-2026-05,Peluquería,Compras personales,Variable,600.00,0.00,
-2026-06,Gastos Comunes,Vivienda,Fijo,20000.00,22483.00,
-2026-06,UTE,Servicios,Fijo,1700.00,1039.00,
-2026-06,Antel,Servicios,Fijo,1250.00,1377.00,
-2026-06,IMM,Vivienda,Fijo,1300.00,1475.00,
-2026-06,Club,Club,Fijo,4715.00,4715.00,
-2026-06,Salud,Salud,Variable,4000.00,1564.00,medicamentos
-2026-06,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,4500.00,2994.00,
-2026-06,Super,Super,Variable,4000.00,3803.00,
-2026-06,Cosas Casa,Casa & hogar,Variable,2500.00,582.00,
-2026-06,Transporte,Transporte,Variable,1000.00,1343.00,bastante uber por auto roto
-2026-06,Educacion,Educación,Variable,28170.00,28170.00,
-2026-06,Gastos Roja,Salidas & ocio,Variable,1000.00,0.00,
-2026-06,Ropa / Otras Compras,Compras personales,Variable,0.00,21746.00,silla
-2026-06,Otras Salidas,Salidas & ocio,Variable,1000.00,0.00,
-2026-06,Limpieza,Casa & hogar,Variable,1000.00,0.00,
-2026-06,Wanderers,Wanderers,Variable,1500.00,0.00,
-2026-06,Tarjetas,Otros,Variable,1000.00,248.00,
-2026-06,Regalos,Regalos,Variable,2500.00,3662.00,
-2026-06,Garrafa,Servicios,Variable,0.00,0.00,
-2026-06,Viajes / Escapadas,Viajes,Variable,80000.00,148039.00,viaje; viaje
-2026-06,Celular,Servicios,Variable,1000.00,1271.00,
-2026-06,Suscripciones,Suscripciones,Variable,1700.00,2233.00,
+2026-05,Regalos,Regalos,Variable,5000.00,0.00,
+2026-05,Gastos Roja,Salidas & ocio,Variable,0.00,0.00,
+2026-05,Otras Salidas,Salidas & ocio,Variable,1500.00,0.00,
+2026-05,Salud,Salud,Variable,11000.00,8291.00,8100 psico + medicamentos viaje
+2026-05,UTE,Servicios,Fijo,1810.00,1685.00,
+2026-05,Antel,Servicios,Fijo,1231.00,1231.00,
+2026-05,Garrafa,Servicios,Variable,0.00,0.00,
+2026-05,Celular,Servicios,Variable,1800.00,1766.00,2 meses
+2026-05,Super,Super,Variable,2000.00,1439.00,
+2026-05,Suscripciones,Suscripciones,Variable,1700.00,1472.00,
+2026-05,Transporte,Transporte,Variable,1000.00,0.00,
+2026-05,Viajes / Escapadas,Viajes,Variable,80000.00,6696.00,Viaje; mes que viene
+2026-05,Gastos Comunes,Vivienda,Fijo,18507.00,20042.00,Gastos Comunes + Contribucion
+2026-05,IMM,Vivienda,Fijo,0.00,0.00,
+2026-05,Wanderers,Wanderers,Variable,0.00,0.00,
 2026-06,Auto,Auto,Variable,6000.00,15577.00,Service
+2026-06,Cosas Casa,Casa & hogar,Variable,2500.00,582.00,
+2026-06,Limpieza,Casa & hogar,Variable,1000.00,0.00,
+2026-06,Club,Club,Fijo,4715.00,4715.00,
+2026-06,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,4500.00,2994.00,
+2026-06,Ropa / Otras Compras,Compras personales,Variable,0.00,21746.00,silla
+2026-06,Peluquería,Compras personales,Variable,0.00,0.00,
+2026-06,Educacion,Educación,Variable,28170.00,28170.00,
+2026-06,Tarjetas,Otros,Variable,1000.00,248.00,
 2026-06,Tramites,Otros,Variable,0.00,0.00,
 2026-06,Otos Gastos,Otros,Variable,0.00,0.00,
-2026-06,Peluquería,Compras personales,Variable,0.00,0.00,
-2026-07,Gastos Comunes,Vivienda,Fijo,22400.00,0.00,
-2026-07,UTE,Servicios,Fijo,1800.00,0.00,
-2026-07,Antel,Servicios,Fijo,1200.00,0.00,
-2026-07,IMM,Vivienda,Fijo,0.00,0.00,
-2026-07,Club,Club,Fijo,4715.00,0.00,
-2026-07,Salud,Salud,Variable,4000.00,0.00,medicamentos
-2026-07,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,6000.00,0.00,
-2026-07,Super,Super,Variable,7500.00,0.00,
-2026-07,Cosas Casa,Casa & hogar,Variable,11000.00,0.00,cortinas?
-2026-07,Transporte,Transporte,Variable,1000.00,0.00,
-2026-07,Educacion,Educación,Variable,28170.00,0.00,
-2026-07,Gastos Roja,Salidas & ocio,Variable,500.00,0.00,
-2026-07,Ropa / Otras Compras,Compras personales,Variable,2000.00,0.00,
-2026-07,Otras Salidas,Salidas & ocio,Variable,2000.00,0.00,
-2026-07,Limpieza,Casa & hogar,Variable,1700.00,0.00,
-2026-07,Wanderers,Wanderers,Variable,1500.00,0.00,
-2026-07,Tarjetas,Otros,Variable,1000.00,0.00,
-2026-07,Regalos,Regalos,Variable,1000.00,0.00,
-2026-07,Garrafa,Servicios,Variable,0.00,0.00,
-2026-07,Viajes / Escapadas,Viajes,Variable,2000.00,0.00,
-2026-07,Celular,Servicios,Variable,1000.00,0.00,
-2026-07,Suscripciones,Suscripciones,Variable,2200.00,0.00,
+2026-06,Regalos,Regalos,Variable,2500.00,3662.00,
+2026-06,Gastos Roja,Salidas & ocio,Variable,1000.00,0.00,
+2026-06,Otras Salidas,Salidas & ocio,Variable,1000.00,0.00,
+2026-06,Salud,Salud,Variable,4000.00,1564.00,medicamentos
+2026-06,UTE,Servicios,Fijo,1700.00,1039.00,
+2026-06,Antel,Servicios,Fijo,1250.00,1377.00,
+2026-06,Garrafa,Servicios,Variable,0.00,0.00,
+2026-06,Celular,Servicios,Variable,1000.00,1271.00,
+2026-06,Super,Super,Variable,4000.00,3803.00,
+2026-06,Suscripciones,Suscripciones,Variable,1700.00,2233.00,
+2026-06,Transporte,Transporte,Variable,1000.00,1343.00,bastante uber por auto roto
+2026-06,Viajes / Escapadas,Viajes,Variable,80000.00,148039.00,viaje; viaje
+2026-06,Gastos Comunes,Vivienda,Fijo,20000.00,22483.00,
+2026-06,IMM,Vivienda,Fijo,1300.00,1475.00,
+2026-06,Wanderers,Wanderers,Variable,1500.00,0.00,
 2026-07,Auto,Auto,Variable,4500.00,0.00,
+2026-07,Cosas Casa,Casa & hogar,Variable,11000.00,0.00,cortinas?
+2026-07,Limpieza,Casa & hogar,Variable,1700.00,0.00,
+2026-07,Club,Club,Fijo,4715.00,0.00,
+2026-07,Salir a Comer / Delivery,Comer afuera / Delivery,Variable,6000.00,0.00,
+2026-07,Ropa / Otras Compras,Compras personales,Variable,2000.00,0.00,
+2026-07,Peluquería,Compras personales,Variable,560.00,0.00,
+2026-07,Educacion,Educación,Variable,28170.00,0.00,
+2026-07,Tarjetas,Otros,Variable,1000.00,0.00,
 2026-07,Tramites,Otros,Variable,0.00,0.00,
 2026-07,Otos Gastos,Otros,Variable,0.00,0.00,
-2026-07,Peluquería,Compras personales,Variable,560.00,0.00,
+2026-07,Regalos,Regalos,Variable,1000.00,0.00,
+2026-07,Gastos Roja,Salidas & ocio,Variable,500.00,0.00,
+2026-07,Otras Salidas,Salidas & ocio,Variable,2000.00,0.00,
+2026-07,Salud,Salud,Variable,4000.00,0.00,medicamentos
+2026-07,UTE,Servicios,Fijo,1800.00,0.00,
+2026-07,Antel,Servicios,Fijo,1200.00,0.00,
+2026-07,Garrafa,Servicios,Variable,0.00,0.00,
+2026-07,Celular,Servicios,Variable,1000.00,0.00,
+2026-07,Super,Super,Variable,7500.00,0.00,
+2026-07,Suscripciones,Suscripciones,Variable,2200.00,0.00,
+2026-07,Transporte,Transporte,Variable,1000.00,0.00,
+2026-07,Viajes / Escapadas,Viajes,Variable,2000.00,0.00,
+2026-07,Gastos Comunes,Vivienda,Fijo,22400.00,0.00,
+2026-07,IMM,Vivienda,Fijo,0.00,0.00,
+2026-07,Wanderers,Wanderers,Variable,1500.00,0.00,
+2026-08,Auto,Auto,Variable,5280,0,"mi parte, sin los gastos de venta del auto viejo | armado 2/8 con Joaco a partir del real de julio"
+2026-08,Casa & hogar,Casa & hogar,Variable,6000,0,julio real 5.265; el presupuesto de 12.700 estaba alto | armado 2/8 con Joaco a partir del real de julio
+2026-08,Club,Club,Variable,4715,0,cuota fija | armado 2/8 con Joaco a partir del real de julio
+2026-08,Comer afuera / Delivery,Comer afuera / Delivery,Variable,6000,0,igual que julio (decision de Joaco) | armado 2/8 con Joaco a partir del real de julio
+2026-08,Compras personales,Compras personales,Variable,2560,0, | armado 2/8 con Joaco a partir del real de julio
+2026-08,Educación,Educación,Variable,28170,0,"ORT, cuota fija | armado 2/8 con Joaco a partir del real de julio"
+2026-08,Otros,Otros,Variable,1000,0, | armado 2/8 con Joaco a partir del real de julio
+2026-08,Regalos,Regalos,Variable,2000,0,julio real 2.420 | armado 2/8 con Joaco a partir del real de julio
+2026-08,Salidas & ocio,Salidas & ocio,Variable,3000,0, | armado 2/8 con Joaco a partir del real de julio
+2026-08,Salud,Salud,Variable,14800,0,"4.000 de siempre + 10.800 de psicologa (mensual, nuevo desde agosto) | armado 2/8 con Joaco a partir del real de julio"
+2026-08,Servicios,Servicios,Variable,3500,0, | armado 2/8 con Joaco a partir del real de julio
+2026-08,Super,Super,Variable,7500,0,igual que julio (decision de Joaco) | armado 2/8 con Joaco a partir del real de julio
+2026-08,Suscripciones,Suscripciones,Variable,5000,0,"el real viene en 5.377, el presupuesto de 2.200 quedo corto | armado 2/8 con Joaco a partir del real de julio"
+2026-08,Transporte,Transporte,Variable,1000,0, | armado 2/8 con Joaco a partir del real de julio
+2026-08,Viajes,Viajes,Variable,2000,0, | armado 2/8 con Joaco a partir del real de julio
+2026-08,Vivienda,Vivienda,Variable,15890,0,mi parte: GC 17.000 + contribucion neta 6.690 + IMM 1.500 | armado 2/8 con Joaco a partir del real de julio
+2026-08,Wanderers,Wanderers,Variable,1500,0, | armado 2/8 con Joaco a partir del real de julio
