@@ -1,0 +1,3 @@
+archivo,emisor,cuenta,periodo,procesado_en,matcheadas,insertadas,sin_respaldo,diferencia_cierre
+EC_0726_BBVA.pdf,BBVA,BBVA Crédito,2026-07,2026-08-02,0,1,0,USD:0.00; UYU:0.00
+2026-07-31_santander_770054522300_20260728.pdf,SANTANDER_TARJETA,Santander Platinum,2026-07,2026-08-02,27,4,14,USD:-3.77; UYU:-0.04

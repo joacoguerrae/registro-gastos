@@ -234,3 +234,19 @@ b9a8d1f5818a,motivo_resuelto,sin_respaldo_estado,"PATRON CONOCIDO (no es un erro
 c228d8e0387d,motivo_resuelto,sin_respaldo_estado,"PATRON CONOCIDO (no es un error): esta fila es parte de un SPLIT. El banco tiene UNA linea por el total y el ledger lo tiene partido, asi que los importes nunca coinciden y el matcher la reporta sin respaldo. El total si esta respaldado: 46,25 + 229,16 = 275,41 de Devoto Express del 20/7. Revisado 2/8",2026-08-02
 77c26159e14d,motivo_resuelto,sin_respaldo_estado,"fila legado de la migracion 1money (ingreso de 3,00 sin descripcion, fechada 1/7). Anterior a la semilla del 12/7: no afecta ningun saldo. Revisado 2/8",2026-08-02
 a7ad2ee2689b,motivo_resuelto,sin_respaldo_estado,"suscripcion Meli+ de 199 del 1/7 (aviso por mail). No encontre su linea en el extracto de julio -- probablemente el banco la posteo en junio. Anterior a la semilla del 12/7: no afecta saldos. Revisado 2/8, queda documentado sin explicacion cerrada",2026-08-02
+2ee0a35c0607,categoria,Servicios,seguro Zurich cobrado en la tarjeta (Joaco 2/8),2026-08-02
+2ee0a35c0607,motivo_resuelto,sin_categoria,Servicios,2026-08-02
+a5d2a4cb055f,categoria,Servicios,seguro Zurich cobrado en la tarjeta (Joaco 2/8),2026-08-02
+a5d2a4cb055f,motivo_resuelto,sin_categoria,Servicios,2026-08-02
+9a5eb9e1ad68,categoria,Servicios,seguro de saldo deudor de la tarjeta (Joaco 2/8),2026-08-02
+9a5eb9e1ad68,motivo_resuelto,sin_categoria,Servicios,2026-08-02
+0974897813b8,categoria,Servicios,seguro de saldo deudor de la tarjeta (Joaco 2/8),2026-08-02
+0974897813b8,motivo_resuelto,sin_categoria,Servicios,2026-08-02
+9884c01dc9d2,categoria,Servicios,"seguro Mapfre, unico consumo del BBVA en julio (Joaco 2/8)",2026-08-02
+9884c01dc9d2,motivo_resuelto,sin_categoria,Servicios,2026-08-02
+13cd01090541,categoria,Devoluciones & cashback,EPAY TAX FREE: devolucion de impuestos de una compra en el exterior (Joaco 2/8),2026-08-02
+13cd01090541,motivo_resuelto,sin_categoria,Devoluciones & cashback,2026-08-02
+78c84a7dd33f,categoria,Comer afuera / Delivery,bar/restaurante Desborde ('Handy' es la terminal de cobro) (Joaco 2/8),2026-08-02
+78c84a7dd33f,motivo_resuelto,sin_categoria,Comer afuera / Delivery,2026-08-02
+78c84a7dd33f,en_analisis,0,"DUPLICADO: el estado trae la linea entera (1.785,20 del 1/7, el banco la postea un dia despues) y el ledger ya la tiene partida en el split del 30/6: b9e1bef414e0 (892,60 mitad de Joaco) + 661d85e8d810 (892,60 prestados al amigo, via Splitwise). Suma exacta. Confirmado por Joaco 2/8",2026-08-02
+b9e1bef414e0,ambito,casa,"la mitad que no fue al amigo la consumieron Joaco y Lu: es gasto de casa, no personal (Joaco 2/8)",2026-08-02

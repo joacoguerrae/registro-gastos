@@ -21,3 +21,15 @@ fecha_corte,cuenta,moneda,saldo_calculado,saldo_real,diferencia,comentario
 2026-07-12,Santander cuenta corriente,UYU,,383.96,,"física; hipótesis: es la cuenta de la casa (tarjeta 8261) — a confirmar. Recibe en el día 16.938,28 desde MP (vuelta de la casa a Santander)"
 2026-07-12,Splitwise,USD,,1547.76,,"me deben USD 1.547,76 — vs cuenta Deudas de la app (7.678,42 UYU, desactualizada): la API de Splitwise (F3) la mantiene sola"
 2026-07-12,Splitwise,UYU,,-1340.34,,"debo $ 1.340,34"
+2026-07-31,BBVA Crédito,UYU,204.51,,,SIN saldo real reportado
+2026-07-31,BBVA USD,USD,692.93,,,SIN saldo real reportado
+2026-07-31,Cuenta Casa,UYU,49.70,49.70,0.00,"= corriente Santander 383,96 + 16.938,28 que llegan de MP el 12/7; hipótesis corriente=casa (8261) a confirmar"
+2026-07-31,Deudas,UYU,-2643.77,,,SIN saldo real reportado
+2026-07-31,Deudas USD,USD,1193.70,,,SIN saldo real reportado
+2026-07-31,Efectivo,UYU,0.00,,,SIN saldo real reportado
+2026-07-31,Efectivo USD,USD,30.00,,,SIN saldo real reportado
+2026-07-31,Santander Mastercard,UYU,0.00,,,SIN saldo real reportado
+2026-07-31,Santander Platinum,UYU,51473.43,,,SIN saldo real reportado
+2026-07-31,Santander Platinum USD,USD,131.80,,,SIN saldo real reportado
+2026-07-31,Santander USD,USD,6238.49,,,SIN saldo real reportado
+2026-07-31,Santander UYU,UYU,1797.15,1797.15,0.00,"caja de ahorro personal (tarjeta 9071). Corregido 2/8/2026: la lectura original (16016.13) era del mediodia del 12/7 (domingo) y no incluia KINKO 203,61, que se compro ese dia y el banco posteo el lunes 13. La semilla debe ser el saldo al CIERRE del dia del corte. Verificado: con esto el extracto de julio concilia exacto (hist: DIFERENCIA 71.80. sospechosos: 2026-07-19 transf-origen -3000.00 UYU (Aporte Joaco (transf caja de ahorro -> Cuenta Casa, informado el 19/7; sin mail: las transf entre cuentas propias no generan aviso, entra por extracto en el cierre)); 2026-07-20 gasto -3100.00 UYU (Torta Cumple Joaco))"

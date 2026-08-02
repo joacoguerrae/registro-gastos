@@ -1,13 +1,13 @@
 cuenta,fecha_corte,saldo,moneda,fuente,nota
 Cuenta Casa,2026-07-12,17322.24,UYU,saldos reales reportados por Joaco,"= corriente Santander 383,96 + 16.938,28 que llegan de MP el 12/7; hipótesis corriente=casa (8261) a confirmar"
-Santander UYU,2026-07-12,16016.13,UYU,saldos reales reportados por Joaco,caja de ahorro personal (hipótesis: tarjeta 9071)
+Santander UYU,2026-07-12,15812.52,UYU,saldos reales reportados por Joaco,"caja de ahorro personal (tarjeta 9071). Corregido 2/8/2026: la lectura original (16016.13) era del mediodia del 12/7 (domingo) y no incluia KINKO 203,61, que se compro ese dia y el banco posteo el lunes 13. La semilla debe ser el saldo al CIERRE del dia del corte. Verificado: con esto el extracto de julio concilia exacto"
 Santander USD,2026-07-12,8073.30,USD,saldos reales reportados por Joaco,
-BBVA USD,2026-07-12,692.93,USD,saldos reales reportados por Joaco,"incluye 200 USD de amigos (deuda con ellos)"
-BBVA Crédito,2026-07-12,204.51,UYU,saldos reales reportados por Joaco,"deuda del período (Mapfre); nada impago"
-Santander Platinum,2026-07-12,28987.50,UYU,saldos reales reportados por Joaco,"deuda UYU del período según Joaco; ver discrepancias BSE/Uber en data/saldos.csv"
-Santander Platinum USD,2026-07-12,99.46,USD,saldos reales reportados por Joaco,"deuda USD del período (Google One + Anthropic)"
+BBVA USD,2026-07-12,692.93,USD,saldos reales reportados por Joaco,incluye 200 USD de amigos (deuda con ellos)
+BBVA Crédito,2026-07-12,204.51,UYU,saldos reales reportados por Joaco,deuda del período (Mapfre); nada impago
+Santander Platinum,2026-07-12,28987.50,UYU,saldos reales reportados por Joaco,deuda UYU del período según Joaco; ver discrepancias BSE/Uber en data/saldos.csv
+Santander Platinum USD,2026-07-12,99.46,USD,saldos reales reportados por Joaco,deuda USD del período (Google One + Anthropic)
 Santander Mastercard,2026-07-12,0.00,UYU,saldos reales reportados por Joaco,
 Deudas,2026-07-12,-1807.00,UYU,Splitwise segun Joaco + Pizza,"negativo = debo. Corregido 19/7: la lectura original (-1340.34) fue de la mañana del 12/7, y Rodrigo cargó 'Pizza' (sw:4566353446, parte de Joaco 466.66) ese mismo día 13:37 UY — fechada 12/7 quedaba fuera del cálculo (fecha<=corte) y fuera de la foto: el chequeo de sync_splitwise daba diff -466.66 permanente. La semilla debe ser la posición al CIERRE del día del corte. Verificado: -1807.00 -708.29 (Carpintero) +1560 (Guasones) = -955.29 = API get_friends exacto"
-Deudas USD,2026-07-12,1547.76,USD,Splitwise segun Joaco,"positivo = me deben"
+Deudas USD,2026-07-12,1547.76,USD,Splitwise segun Joaco,positivo = me deben
 Efectivo,2026-07-12,0.00,UYU,saldos reales reportados por Joaco,
 Efectivo USD,2026-07-12,30.00,USD,saldos reales reportados por Joaco,

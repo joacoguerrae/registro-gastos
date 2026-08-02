@@ -58,9 +58,14 @@ def cargar_filas_reales():
         f"estado sintetico, se encontraron {len(filas)} -- revisar data/ledger.csv")
     filas = filas[:6]
     ids = {r["id"] for r in filas}
+    # Se sacan TODAS las demas filas de gasto de la cuenta, no solo las del mes:
+    # el motor elige candidatas por la VENTANA DE FECHAS del estado (de cierre a
+    # cierre, que cruza meses), no por mes calendario. Filtrando por mes, las
+    # filas del mes anterior se colaban como candidatas y ensuciaban la asercion
+    # de sin_respaldo (actualizado 2026-08-02 junto con ese cambio del motor).
     ledger_test = [r for r in ledger_disco
-                   if not (r["cuenta"] == CUENTA and r["mes"] == PERIODO
-                           and r["tipo"] == "gasto" and r["id"] not in ids)]
+                   if not (r["cuenta"] == CUENTA and r["tipo"] == "gasto"
+                           and r["id"] not in ids)]
     # se devuelven los dos: `ledger_disco` tal cual salio del archivo (para el chequeo
     # de "el ledger real quedo intacto") y `ledger_test` recortado (para el motor).
     return ledger_disco, ledger_test, filas

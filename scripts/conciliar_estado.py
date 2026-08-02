@@ -70,6 +70,7 @@ ESTADOS_DIR = P("data", "estados")
 ESTADOS_PROCESADOS = P("data", "staging", "estados_procesados.csv")
 CUENTAS_CSV = P("config", "cuentas.csv")
 REGLAS_CSV = P("config", "reglas_comercio.csv")
+PARAMETROS = P("config", "parametros.json")
 SECRETS = P("config", "secrets.local.json")
 
 COLUMNS = ["id", "fecha", "mes", "tipo", "monto", "moneda", "monto_uyu",
@@ -89,6 +90,14 @@ PROC_COLS = ["archivo", "emisor", "cuenta", "periodo", "procesado_en",
 TOL_MONTO_PCT = 0.005
 TOL_MONTO_MIN = 0.01
 TOL_DIAS = 3
+# Compras en MONEDA EXTRANJERA: el aviso por mail trae el importe del comercio y
+# el estado el que factura el banco, que le suma un recargo fijo (~3% medido el
+# 2/8/2026 sobre Google One 1,99->2,05 | Anthropic 97,47->100,45 | Apple
+# 23,99->24,72). Con la tolerancia de 0,5% no matcheaban y cada suscripcion
+# mensual se insertaba DUPLICADA. Se afloja solo para no-UYU; el riesgo de falso
+# positivo lo acota que ademas tienen que coincidir fecha (+-3 dias) y
+# descripcion (UMBRAL_FUZZY_MINIMO). El estado manda: el monto se corrige al suyo.
+TOL_MONTO_PCT_ME = 0.06
 UMBRAL_FUZZY_MINIMO = 0.20   # piso de cordura; por debajo, no se acepta ni de casualidad
 
 # ambito por cuenta para filas INSERTADAS (origen=estado_cuenta): mismas
@@ -250,6 +259,7 @@ def extraer_bbva(texto):
     venc = re.search(r"Vencimiento actual\s+(\d{2}/\d{2}/\d{4})", texto)
 
     lineas = []
+    pagos = {"UYU": 0.0, "USD": 0.0}
 
     def agregar(fecha, desc, pesos, dolares):
         for monto, mon in ((_num_us(pesos), "UYU"), (_num_us(dolares), "USD")):
@@ -263,7 +273,11 @@ def extraer_bbva(texto):
         if m:
             fecha, desc, pesos, dolares = m.groups()
             if "SU PAGO" in desc.upper():
-                continue               # pago del periodo anterior
+                # pago del saldo anterior: no es consumo, pero hace falta para
+                # cuadrar el total declarado (ver nota de abajo)
+                pagos["UYU"] += _num_us(pesos)
+                pagos["USD"] += _num_us(dolares)
+                continue
             agregar(dt.datetime.strptime(fecha, "%d/%m/%Y").date().isoformat(),
                     desc.strip(), pesos, dolares)
             continue
@@ -271,12 +285,28 @@ def extraer_bbva(texto):
         if m2:
             agregar(f_cierre.isoformat(), m2.group(1).strip(), m2.group(2), m2.group(3))
 
+    # 'Total a pagar' del BBVA es un SALDO, no el consumo del periodo: arrastra el
+    # saldo anterior (Joaco tiene saldo A FAVOR en esta tarjeta desde hace meses,
+    # por eso da negativo). La identidad del estado es
+    #     total = saldo_anterior + pagos + consumos
+    # asi que el consumo del periodo -- que es lo que tienen que sumar las lineas
+    # extraidas, y lo que el motor compara -- sale despejando. Sin esto el chequeo
+    # de cierre comparaba peras con manzanas y reportaba una diferencia enorme
+    # que no era ningun error (calibrado 2026-08-02 con los estados de jul/ago).
     tot = re.search(r"Total a pagar\s+(-?[\d,]+\.\d{2})\s+(-?[\d,]+\.\d{2})", texto)
+    ant = re.search(r"SALDO ANTERIOR\s+(-?[\d,]+\.\d{2})\s+(-?[\d,]+\.\d{2})", texto)
+    saldo_cierre, total = {}, {}
+    if tot:
+        saldo_cierre = {"UYU": _num_us(tot.group(1)), "USD": _num_us(tot.group(2))}
+        anterior = ({"UYU": _num_us(ant.group(1)), "USD": _num_us(ant.group(2))}
+                    if ant else {"UYU": 0.0, "USD": 0.0})
+        total = {m: round(saldo_cierre[m] - anterior[m] - pagos[m], 2) for m in saldo_cierre}
     return {"periodo": f_cierre.strftime("%Y-%m"),
             "vencimiento": (dt.datetime.strptime(venc.group(1), "%d/%m/%Y").date().isoformat()
                             if venc else None),
             "lineas": lineas,
-            "total": {"UYU": _num_us(tot.group(1)), "USD": _num_us(tot.group(2))} if tot else {}}
+            "total": total,              # consumo del periodo (lo que suman las lineas)
+            "saldo_cierre": saldo_cierre}  # saldo de la tarjeta (para conciliar_saldos)
 
 
 RE_MC_LINEA = re.compile(r"^(\d{2}/\d{2}/\d{4})\s+(\d{2,4})\s+(.+?)\s+([\d.]+,\d{2})(-?)$")
@@ -295,25 +325,57 @@ def extraer_santander_mc(texto):
         03/05/2026 103 SEGURO SALDO DEUDOR 16,90
         SALDO TOTAL 5.651,30 0,00
 
-    Numeros en formato uruguayo. El '103' es un codigo de tarjeta. El estado
-    tiene columna U$S pero en los PDFs reales disponibles vino siempre en 0, asi
-    que el formato de consumos en dolares NO esta calibrado: si aparece un total
-    en USD sin lineas en USD, se avisa (no se inventa).
+    Numeros en formato uruguayo. El '103' es un codigo de tarjeta.
+
+    DOS SECCIONES (calibrado 2026-08-02 con el 1er estado de la Visa Platinum):
+    el PDF trae primero TODOS los consumos en pesos y despues los de dolares,
+    consecutivos y SIN separador ni rotulo; lo unico que se nota es que las
+    fechas de la 2da vuelven para atras. Con los PDFs de la Mastercard no se
+    veia porque su columna U$S venia siempre en 0.
+    El corte se detecta por SUMA: se busca el unico k tal que las primeras k
+    lineas suman el total en pesos declarado y las restantes el total en dolares.
+    Es autovalidante -- si no hay corte exacto no se adivina: se avisa y todo
+    queda en UYU (que es como se comportaba antes de esta calibracion).
+
+    Las lineas con sufijo '-' son descuentos/reintegros (DESC ..., EPAY TAX
+    FREE) y SI cuentan, en negativo: sin ellas las sumas no dan los totales
+    declarados. Los 'PAGOS' (cancelacion del saldo anterior) se excluyen: no son
+    consumo del periodo.
     """
-    lineas = []
+    crudas = []
     for ln in texto.splitlines():
         m = RE_MC_LINEA.match(ln.strip())
         if not m:
             continue
         fecha, _cod, desc, monto, neg = m.groups()
         desc = desc.strip()
-        if neg or "PAGOS" in desc.upper():
-            continue                   # pagos/creditos
-        lineas.append({"fecha": dt.datetime.strptime(fecha, "%d/%m/%Y").date().isoformat(),
-                       "descripcion": desc, "monto": round(_num_uy(monto), 2), "moneda": "UYU"})
+        if "PAGOS" in desc.upper():
+            continue                   # cancelacion del saldo anterior, no es consumo
+        crudas.append({"fecha": dt.datetime.strptime(fecha, "%d/%m/%Y").date().isoformat(),
+                       "descripcion": desc,
+                       "monto": round(_num_uy(monto) * (-1 if neg else 1), 2),
+                       "moneda": "UYU"})
 
-    tot = re.search(r"SALDO TOTAL\s+([\d.]+,\d{2})\s+([\d.]+,\d{2})", texto)
+    tot = re.search(r"SALDO (?:TOTAL|CONTADO)\s+([\d.]+,\d{2})\s+([\d.]+,\d{2})", texto)
     total = {"UYU": _num_uy(tot.group(1)), "USD": _num_uy(tot.group(2))} if tot else {}
+
+    # corte pesos/dolares por suma contra los totales declarados
+    lineas = crudas
+    if total.get("USD"):
+        corte = None
+        for k in range(len(crudas) + 1):
+            uyu = round(sum(l["monto"] for l in crudas[:k]), 2)
+            usd = round(sum(l["monto"] for l in crudas[k:]), 2)
+            if abs(uyu - total["UYU"]) < 0.01 and abs(usd - total["USD"]) < 0.01:
+                corte = k
+                break
+        if corte is None:
+            print(f"  [!] Santander: el estado declara USD {total['USD']} pero no encontre el "
+                  "corte pesos/dolares que cuadre con los totales -- las lineas quedan todas "
+                  "en UYU. Revisar a mano.")
+        else:
+            for l in crudas[corte:]:
+                l["moneda"] = "USD"
     # El PDF no rotula la fecha de cierre de forma parseable: el periodo sale del
     # ultimo consumo (cierra pocos dias despues). Si no hay consumos (estado
     # vacio), se usa la primera fecha que sigue a SALDO TOTAL (la de cierre).
@@ -326,9 +388,6 @@ def extraer_santander_mc(texto):
         periodo = dt.datetime.strptime(f.group(1), "%d/%m/%Y").strftime("%Y-%m") if f else ""
     if not periodo:
         raise ValueError("extraer_santander_mc: no pude determinar el periodo del estado")
-    if total.get("USD", 0) and not any(l["moneda"] == "USD" for l in lineas):
-        print(f"  [!] Santander MC: el estado declara USD {total['USD']} pero no se parseo "
-              "ninguna linea en dolares -- falta calibrar ese formato con un PDF que las tenga.")
     return {"periodo": periodo, "lineas": lineas, "total": total}
 
 
@@ -378,7 +437,15 @@ def _fila_nueva(linea, estado, reglas):
         r["monto_uyu"] = fmt(linea["monto"])
     elif linea.get("monto_uyu") is not None:
         r["monto_uyu"] = fmt(round(float(linea["monto_uyu"]), 2))
-    # si no hay UYU ni monto_uyu declarado: queda vacio (no hay TC conocido).
+    else:
+        # El estado no declara el equivalente en pesos (el Santander no lo trae
+        # en la seccion de dolares): se estima con el TC de config/parametros.json,
+        # igual que hacen los parsers de mail. Antes quedaba VACIO y un gasto sin
+        # monto_uyu no suma en ningun agregado -- lo caza merge_y_validar, que fue
+        # justo lo que paso al procesar el 1er estado de la Platinum (2/8/2026).
+        with open(PARAMETROS, encoding="utf-8") as f:
+            tc = json.load(f)[f"tc_{linea['moneda'].lower()}_uyu"]
+        r["monto_uyu"] = fmt(round(linea["monto"] * tc, 2))
     if not categoria:
         r["estado"] = "pendiente"
     return r
@@ -402,11 +469,23 @@ def conciliar(estado, ledger_rows, reglas, ambito_de_cuenta_fn=ambito_de_cuenta)
       cierre: {moneda: {"calculado": x, "estado": y, "diferencia": d}}
     """
     cuenta, periodo = estado["cuenta"], estado["periodo"]
-    # candidatas: gastos de la cuenta en el periodo. Las transferencias con
-    # cuenta=esta tarjeta (splits/aportes financiados con la tarjeta) no son
-    # lineas de compra propiamente dichas y quedan fuera del matching por ahora.
+    # candidatas: gastos de la cuenta en la VENTANA DEL ESTADO. Ojo: un estado de
+    # tarjeta NO cubre un mes calendario, va de cierre a cierre (el de julio de la
+    # Platinum arranca el 27/06). Filtrando por mes==periodo, las filas del mes
+    # anterior no podian matchear nunca y se insertaban DUPLICADAS -- pasaba con
+    # el Uber del 27/6, que ya estaba cargado a mano (detectado 2/8/2026).
+    # Las transferencias con cuenta=esta tarjeta (splits/aportes financiados con
+    # la tarjeta) no son lineas de compra y quedan fuera del matching por ahora.
+    fechas_est = [l["fecha"] for l in estado["lineas"]]
+    if fechas_est:
+        desde = (dt.date.fromisoformat(min(fechas_est)) - dt.timedelta(days=TOL_DIAS)).isoformat()
+        hasta_match = (dt.date.fromisoformat(max(fechas_est)) + dt.timedelta(days=TOL_DIAS)).isoformat()
+        hasta_cobertura = max(fechas_est)
+    else:
+        desde = hasta_match = hasta_cobertura = periodo + "-99"
     candidatas = [r for r in ledger_rows
-                  if r["cuenta"] == cuenta and r["mes"] == periodo and r["tipo"] == "gasto"]
+                  if r["cuenta"] == cuenta and desde <= r["fecha"] <= hasta_match
+                  and r["tipo"] == "gasto"]
 
     usadas_ids = set()
     matches, sin_match_lineas = [], []
@@ -417,7 +496,8 @@ def conciliar(estado, ledger_rows, reglas, ambito_de_cuenta_fn=ambito_de_cuenta)
             if id(r) in usadas_ids or r["moneda"] != linea["moneda"]:
                 continue
             monto_r = float(r["monto"])
-            tol = max(monto_r * TOL_MONTO_PCT, TOL_MONTO_MIN)
+            pct = TOL_MONTO_PCT if linea["moneda"] == "UYU" else TOL_MONTO_PCT_ME
+            tol = max(abs(monto_r) * pct, TOL_MONTO_MIN)
             if abs(monto_r - linea["monto"]) > tol:
                 continue
             f_r = dt.date.fromisoformat(r["fecha"])
@@ -446,7 +526,13 @@ def conciliar(estado, ledger_rows, reglas, ambito_de_cuenta_fn=ambito_de_cuenta)
                 fila["monto_uyu"] = nuevo
 
     nuevas = [_fila_nueva(linea, estado, reglas) for linea in sin_match_lineas]
-    sin_respaldo = [r for r in candidatas if id(r) not in usadas_ids]
+    # sin_respaldo: solo las filas dentro de la COBERTURA del estado. Las
+    # posteriores al ultimo consumo listado son compras que van a aparecer en el
+    # estado siguiente, no huerfanas -- marcarlas era ruido garantizado todos los
+    # meses (la ventana de matching se estira TOL_DIAS mas para poder matchear,
+    # pero eso no las hace parte del periodo).
+    sin_respaldo = [r for r in candidatas
+                    if id(r) not in usadas_ids and r["fecha"] <= hasta_cobertura]
 
     # cierre al peso: conciliadas (monto original) + insertadas, por moneda,
     # contra el total que declara el estado.
