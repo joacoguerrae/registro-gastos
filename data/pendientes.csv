@@ -37,7 +37,7 @@ cd8675911f7c,sin_respaldo_estado,fila del ledger sin linea en el extracto de Cue
 aa1e12303261,sin_respaldo_estado,fila del ledger sin linea en el extracto de Cuenta Casa 2026-07,2026-07-25,1
 f418365af05a,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*MERCADOLIBRE VIS3' sin regla,2026-07-27,
 0da801f426ab,sin_categoria,establecimiento 'MER' sin regla,2026-07-29,
-391a6feaa80d,transferencia_a_clasificar,"pago Splitwise recibido USD 25.26 (2026-07-29, Rodrigo): confirmar a que cuenta entro",2026-07-30,
+391a6feaa80d,transferencia_a_clasificar,"pago Splitwise recibido USD 25.26 (2026-07-29, Rodrigo): confirmar a que cuenta entro",2026-07-30,1
 0da801f426ab,split_a_cargar,"Splitwise sw:4596929769 'Regalo mama' UYU 2608.00 (2026-07-29): yo pague 2608.00, mi parte 1304.00 -> ajustar cargo 0da801f426ab y crear fila hermana -split",2026-07-30,
 bb0d7f3f7445,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*MELI VIS3' sin regla,2026-08-01,
 c208ef680230,sin_categoria,establecimiento 'REST NAMASTE' sin regla,2026-08-01,
@@ -96,3 +96,7 @@ ba41eb4b63c1,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (20
 13cd01090541,sin_categoria,estado_cuenta Santander Platinum 2026-07: 'EPAY TAX FREE' sin regla,2026-08-02,1
 a5d2a4cb055f,sin_categoria,estado_cuenta Santander Platinum 2026-07: 'ZURICH SANTANDER' sin regla,2026-08-02,1
 9a5eb9e1ad68,sin_categoria,estado_cuenta Santander Platinum 2026-07: 'SEGURO SALDO DEUDOR' sin regla,2026-08-02,1
+a89ed44b0921,ingreso_a_clasificar,Santander USD 2026-07-22 50.00 USD: TRANSF INSTANTANEA RECIBIDA 761974LR:000036256723 GUERRA ESM -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-08-02,1
+8e8dfe18ea36,sin_categoria,"Santander USD PAGO DE SERVICIO POR BANRED SERVICIO DE PAGOS BANRED , TCBBV (del extracto, sin aviso por mail)",2026-08-02,1
+05afcf610032,sin_categoria,"Santander USD PAGO DE SERVICIO POR BANRED SERVICIO DE PAGOS BANRED , TCSAN (del extracto, sin aviso por mail)",2026-08-02,1
+5c712db5b950,ingreso_a_clasificar,Santander USD 2026-07-01 1951.22 USD: CREDITO OPERACION EN BANCA DIGITAL PAHORRO/GUERRA ESMITE JOA -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-08-02,1

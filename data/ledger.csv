@@ -4531,6 +4531,7 @@ f7c5a9b846f5,2026-06-30,2026-06,gasto,2305.32,UYU,2305.32,Cuenta Casa,,Auto,Auto
 468f6afc10f4,2026-07-01,2026-07,gasto,877.69,UYU,877.69,Santander UYU,,Casa & hogar,,MONTEVIDEO/MERPAGO*DONALBERTOUY VIS3,MERPAGO*DONALBERTOUY,casa,mail,confirmado,1,19f1ef221dc9e335
 498a45f69e2c,2026-07-01,2026-07,transferencia,768.00,UYU,768.00,Santander Platinum,Deudas,,,,Youtube,interno,1money,confirmado,0,becb008e-00fd-4b07-9508-b4687fd978bf
 4f45ed514324,2026-07-01,2026-07,transferencia,3636.81,UYU,3636.81,Santander UYU,Santander Platinum,,,INTERNET/Proyecto PAS,Pago tarjeta Santander $ (Proyecto PAS),interno,mail,confirmado,0,19f2003ab0b02f41
+5c712db5b950,2026-07-01,2026-07,transferencia,1951.22,USD,,Santander UYU,Santander USD,,,CREDITO OPERACION EN BANCA DIGITAL PAHORRO/GUERRA ESMITE JOA,Compra de dolares (contrapartida en USD),interno,estado_cuenta,pendiente,0,estado:Santander USD:2026-07-01:1951.22:CREDITO OPERACION EN BANCA DIGITAL PAHOR
 5ebdde9d01a6,2026-07-01,2026-07,gasto,35.00,UYU,35.00,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,19f1fe09f7628dce
 73669fa68d06,2026-07-01,2026-07,transferencia,5840.00,UYU,5840.00,Santander Platinum,Deudas,,,,,interno,1money,confirmado,0,6ce24e3d-4ff1-4a5c-b0e8-a62a0f92d66b
 77c26159e14d,2026-07-01,2026-07,ingreso,3.00,UYU,3.00,Santander UYU,,,Ajuste saldo,,,interno,1money,confirmado,0,39601714-a704-4967-8949-1183a1aa2b31
@@ -4545,6 +4546,7 @@ cd8675911f7c,2026-07-01,2026-07,transferencia,12000.00,UYU,12000.00,Santander UY
 e2a0018c20eb,2026-07-01,2026-07,transferencia,530.47,USD,21393.86,Santander UYU,,,,INTERNET/Proyecto PAS,"Aviso duplicado Proyecto PAS USD 530,47 (mismo pago)",interno,mail,confirmado,0,19f2005c1e492a7d
 e89f07151e87,2026-07-01,2026-07,transferencia,530.47,USD,21393.86,Santander UYU,Santander Platinum,,,INTERNET/Proyecto PAS,Pago tarjeta Santander USD (Proyecto PAS),interno,mail,confirmado,0,19f2003eeee734dc
 ee5a7af89cdd,2026-07-01,2026-07,gasto,40.00,UYU,40.00,Cuenta Casa,,Super,,DLO*PedidosYa Propina,"PedidosYa Propina (compra 30/6, posteada 1/7 en extracto casa; no registrada por pre-backfill, mail 19f1b5e1a7a3a034)",casa,manual,confirmado,1,casa-jun30-propina-40
+05afcf610032,2026-07-02,2026-07,transferencia,530.47,USD,,Santander USD,Santander Platinum USD,,,"PAGO DE SERVICIO POR BANRED SERVICIO DE PAGOS BANRED , TCSAN",Pago tarjeta Santander USD (Banred),interno,estado_cuenta,pendiente,0,estado:Santander USD:2026-07-02:-530.47:PAGO DE SERVICIO POR BANRED SERVICIO DE 
 b3a8a5fd14e4,2026-07-02,2026-07,gasto,949.39,UYU,949.39,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa Bbc BurVIS3,DLO*PedidosYa Bbc Bur,casa,mail,confirmado,1,19f2563d431a6f60
 3ba6595cfd6f,2026-07-03,2026-07,ingreso,30000.00,UYU,30000.00,Cuenta Casa,,Otros ingresos,,TRANSFERENCIA RECIBIDA 844424TT RECIBIDA /DECAUX TAROCO LUCI,TRANSFERENCIA RECIBIDA 844424TT RECIBIDA /DECAUX TAROCO LUCIA /RIVERA,casa,estado_cuenta,pendiente,0,estado:Cuenta Casa:2026-07-03:30000.00:TRANSFERENCIA RECIBIDA 844424TT RECIBIDA
 761e0058038c,2026-07-03,2026-07,gasto,875.41,UYU,875.41,Santander UYU,,Servicios,Celular,INTERNET/Proyecto PAS,Movistar celular (1/2 con Agus - sw:4549344291),personal,mail,confirmado,1,19f27c35c2b77ce0
@@ -4592,6 +4594,7 @@ a56dd575ae8e,2026-07-09,2026-07,gasto,67.87,UYU,67.87,Santander UYU,,Super,,"COM
 d67303385bbf,2026-07-09,2026-07,gasto,3794.00,UYU,3794.00,Santander Platinum,,Auto,,BANCO DE SEGURO,BANCO DE SEGURO,casa,mail,conciliado,1,19f465b363be7949
 36d2419551ff,2026-07-10,2026-07,transferencia,1156.50,UYU,1156.50,Deudas,Deudas,,,,Reorganizacion interna Splitwise (deuda Sanky personal -> grupo),interno,splitwise,confirmado,0,sw:4561539134
 54e12ba772cb,2026-07-10,2026-07,transferencia,150.37,USD,6064.42,Santander UYU,BBVA Crédito,,,INTERNET/Proyecto PAS,Pago tarjeta BBVA (Proyecto PAS),interno,mail,confirmado,0,19f4cc50713be2b9
+8e8dfe18ea36,2026-07-10,2026-07,transferencia,150.37,USD,,Santander USD,BBVA Crédito,,,"PAGO DE SERVICIO POR BANRED SERVICIO DE PAGOS BANRED , TCBBV",Pago tarjeta BBVA USD (Banred),interno,estado_cuenta,pendiente,0,estado:Santander USD:2026-07-10:-150.37:PAGO DE SERVICIO POR BANRED SERVICIO DE 
 ccd3203d6b75,2026-07-10,2026-07,gasto,407.67,UYU,407.67,Deudas,,Regalos,Alimentos,,Regalo papa,split,splitwise,confirmado,1,sw:4562555128
 0a5e441cd7e9,2026-07-12,2026-07,transferencia,16938.28,UYU,16938.28,Mercado Pago,Cuenta Casa,,,,Retorno fondo casa desde Mercado Pago,interno,mail,confirmado,0,19f56d608e88460c
 7e0857a287a0,2026-07-12,2026-07,gasto,203.61,UYU,203.61,Santander UYU,,Super,,MONTEVIDEO/KINKO                VIS3,KINKO,personal,mail,confirmado,1,19f570efc43c61d1
@@ -4616,6 +4619,7 @@ cfb644daa9fa,2026-07-13,2026-07,gasto,35.00,UYU,35.00,Cuenta Casa,,Super,,MONTEV
 c01eae0a556c,2026-07-14,2026-07,gasto,74.72,UYU,74.72,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,casa,mail,confirmado,1,19f6076e572f5e00
 2642887e666e,2026-07-15,2026-07,gasto,284.46,UYU,284.46,Cuenta Casa,,Super,,MONTEVIDEO/FROG VIS3,FROG,casa,mail,confirmado,1,19f668b0ddcc0afe
 5ed5d6db81b9,2026-07-15,2026-07,gasto,2616.81,UYU,2616.81,Cuenta Casa,,Servicios,,INTERNET/Proyecto PAS,UTE (luz) via Proyecto PAS,casa,mail,confirmado,1,19f68a5c4b9714d2
+6144b0446d87,2026-07-15,2026-07,gasto,0.80,USD,32.26,Santander USD,,Servicios,,Comision transferencia,"Comision de la transferencia de Lu (Splitwise salda 328,80 pero al banco entraron 328,00)",personal,manual,confirmado,1,e23310c4e1d4-comision
 73c593228d7b,2026-07-15,2026-07,gasto,231.63,UYU,231.63,Santander Platinum,,Transporte,,DLO UBER RIDES,DLO UBER RIDES,personal,estado_cuenta,conciliado,1,estado:4a69555116578930
 82df163851c5,2026-07-15,2026-07,gasto,225.94,UYU,225.94,Santander Platinum,,Transporte,,DLOUBERRIDES,DLOUBERRIDES,personal,mail,conciliado,1,19f6643d118f3cc3
 8d688b507a5c,2026-07-15,2026-07,gasto,35.00,UYU,35.00,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,19f67a38517f3680
@@ -4650,6 +4654,7 @@ b9f2ed23d417,2026-07-18,2026-07,gasto,719.00,UYU,719.00,Cuenta Casa,,Casa & hoga
 8cad2d6df234,2026-07-19,2026-07,gasto,415.88,UYU,415.88,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa Movie MVIS3,DLO*PedidosYa Movie M,casa,mail,confirmado,1,19f7b8901c7d969e
 b9a8d1f5818a,2026-07-19,2026-07,gasto,46.25,UYU,46.25,Santander UYU,,Super,,PARQUE MIRAMA/DEVOTO EXPRESS VIS3,PARQUE MIRAMA/DEVOTO EXPRESS,personal,mail,confirmado,1,19f7b1d046e5cfde
 c228d8e0387d,2026-07-19,2026-07,transferencia,229.16,UYU,229.16,Santander UYU,Deudas,,,,"Resto del grupo Caqui Tapa por 'Carbon + hielo' (split de b9a8d1f5818a, lo trackea sw:4578748115)",interno,manual,confirmado,0,b9a8d1f5818a-split
+cca5eeac31ee,2026-07-19,2026-07,gasto,1571.00,UYU,1571.00,Santander Mastercard,,,,Merpago Mercadolibre,"Merpago Mercadolibre (Mastercard casa, provisorio de captura; estado oficial 7/8)",casa,manual,pendiente,1,mc-casa-2026-07-19-1571.00
 dfa33eceea23,2026-07-19,2026-07,gasto,1.00,USD,40.33,Santander Platinum,,Otros,,CLOUDFLARE,CLOUDFLARE,personal,mail,pendiente,1,19f7ab2483b0f567
 fca72eec6148,2026-07-19,2026-07,transferencia,3000.00,UYU,3000.00,Santander UYU,Cuenta Casa,,,,"Aporte Joaco (transf caja de ahorro -> Cuenta Casa, informado el 19/7; sin mail: las transf entre cuentas propias no generan aviso, entra por extracto en el cierre)",interno,manual,confirmado,0,mp-aporte-3000-20260719
 011c717cecce,2026-07-20,2026-07,gasto,1320.00,UYU,1320.00,Santander UYU,,Salidas & ocio,,Panes,Panes Cumple,personal,mail,confirmado,1,19f80357a6fecaba
@@ -4669,13 +4674,16 @@ ba48b8a9ce04,2026-07-21,2026-07,gasto,1166.67,UYU,1166.67,Deudas,,Salidas & ocio
 8b6bcc54cd1e,2026-07-22,2026-07,gasto,30.00,UYU,30.00,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA P,DLOPEDIDOSYA P,personal,mail,conciliado,1,19f89d199ea86a46
 8dc819f5c61e,2026-07-22,2026-07,gasto,351.76,UYU,351.76,Santander Platinum,,Comer afuera / Delivery,,LA ROTISERIA V,LA ROTISERIA V,personal,mail,conciliado,1,19f8a9a0255f8242
 948d7f29076c,2026-07-22,2026-07,gasto,729.87,UYU,729.87,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA,DLOPEDIDOSYA,personal,mail,conciliado,1,19f89b0c0aede848
+a89ed44b0921,2026-07-22,2026-07,ingreso,50.00,USD,2016.50,Santander USD,,Otros ingresos,,TRANSF INSTANTANEA RECIBIDA 761974LR:000036256723 GUERRA ESM,TRANSF INSTANTANEA RECIBIDA 761974LR:000036256723 GUERRA ESMITE RODRIGO,personal,estado_cuenta,pendiente,1,estado:Santander USD:2026-07-22:50.00:TRANSF INSTANTANEA RECIBIDA 761974LR:000
 d709fa0022d4,2026-07-22,2026-07,gasto,40.00,UYU,40.00,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA P,DLOPEDIDOSYA P,personal,mail,conciliado,1,19f8bbea016fcbbf
 1e545e9cd770,2026-07-23,2026-07,ingreso,16.50,UYU,16.50,Santander UYU,,Devoluciones & cashback,,PROMOCIONES TARJETAS DE DEBITO DESC CANTINA ORT CENTRO,PROMOCIONES TARJETAS DE DEBITO DESC CANTINA ORT CENTRO,personal,estado_cuenta,pendiente,1,estado:Santander UYU:2026-07-23:16.50:PROMOCIONES TARJETAS DE DEBITO DESC CANT
 803d9b0fa81d,2026-07-23,2026-07,gasto,1613.56,UYU,1613.56,Santander Platinum,,Salidas & ocio,,EL PALACIO DE L,EL PALACIO DE L,personal,mail,conciliado,1,19f90fc31e094d38
+a579d7615230,2026-07-23,2026-07,gasto,838.60,UYU,838.60,Santander Mastercard,,Super,,Devoto Express,"Devoto Express (Mastercard casa, provisorio de captura; estado oficial 7/8)",casa,manual,confirmado,1,mc-casa-2026-07-23-838.60
 6904fbcce15a,2026-07-24,2026-07,gasto,1506.00,UYU,1506.00,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA,DLOPEDIDOSYA,casa,mail,conciliado,1,19f947145dbf66f3
 91f432a653b1,2026-07-24,2026-07,gasto,45.00,UYU,45.00,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA P,DLOPEDIDOSYA P,casa,mail,conciliado,1,19f94989d8855988
 9a5eb9e1ad68,2026-07-24,2026-07,gasto,0.35,USD,14.12,Santander Platinum,,Servicios,,SEGURO SALDO DEUDOR,SEGURO SALDO DEUDOR,personal,estado_cuenta,pendiente,1,estado:a6bda4d1f73267dd
 a5d2a4cb055f,2026-07-24,2026-07,gasto,8.00,USD,322.64,Santander Platinum,,Servicios,,ZURICH SANTANDER,ZURICH SANTANDER,personal,estado_cuenta,pendiente,1,estado:aaf8f7dfc63d8c19
+e139d6b4cb28,2026-07-24,2026-07,gasto,4884.32,UYU,4884.32,Santander Mastercard,,Super,,Disco N 1,"Disco N 1 (Mastercard casa, provisorio de captura; estado oficial 7/8) - SOLO MI CUMPLE, no de casa",personal,manual,confirmado,1,mc-casa-2026-07-24-4884.32
 fc42225b6729,2026-07-24,2026-07,gasto,211.87,UYU,211.87,Santander UYU,,Super,,MONTEVIDEO/FROG VIS3,FROG,personal,mail,confirmado,1,19f951ebe33ef9a3
 114706aaa98c,2026-07-25,2026-07,gasto,364.00,UYU,364.00,Lu tarjeta,,Transporte,,Uber,"Uber (pagado por Lu con su tarjeta, aporte suyo)",casa,manual,confirmado,1,lu-casa-uber-202607
 486ccd1c69c2,2026-07-25,2026-07,gasto,4100.00,UYU,4100.00,Lu tarjeta,,Auto,,Arreglo parabrisas del auto para poder venderlo,Arreglo parabrisas del auto para poder venderlo (pagado por Lu),casa,manual,confirmado,1,lu-casa-parabrisas-202607
@@ -4691,9 +4699,10 @@ ba41eb4b63c1,2026-07-28,2026-07,gasto,398.28,UYU,398.28,Santander Platinum,,Come
 215d647e1321,2026-07-29,2026-07,gasto,280.43,UYU,280.43,Cuenta Casa,,Super,,MONTEVIDEO/FROG VIS3,FROG,casa,mail,confirmado,1,19faea0aea392cff
 236acad0b784,2026-07-29,2026-07,gasto,212.00,UYU,212.00,Santander Platinum,,Transporte,,DLOUBERRIDES,DLOUBERRIDES,personal,mail,confirmado,1,19faea1d7220ff27
 251378f09667,2026-07-29,2026-07,gasto,154.00,UYU,154.00,Santander Platinum,,Transporte,,UBER,UBER,personal,mail,confirmado,1,19fae6198f0342bc
-391a6feaa80d,2026-07-29,2026-07,transferencia,25.26,USD,,Deudas,Santander UYU,,,,Pago Splitwise de Rodrigo: Payment,interno,splitwise,pendiente,0,sw:4597102644
+391a6feaa80d,2026-07-29,2026-07,transferencia,25.26,USD,,Deudas,Santander USD,,,,Pago Splitwise de Rodrigo: Payment,interno,splitwise,confirmado,0,sw:4597102644
 7eb42ad461b4,2026-07-29,2026-07,gasto,380.00,UYU,380.00,Santander UYU,,Comer afuera / Delivery,,Fefo Bentancur,pizzas oso,personal,mail,confirmado,1,19faf161a4e886a6
 80931256f10b,2026-07-29,2026-07,gasto,-147.94,UYU,-147.94,Santander Platinum,,Transporte,,UBER,Reintegro UBER (sin cargo original identificado),personal,mail,confirmado,1,19fae6d0c869e44b
+47b0f706e34c,2026-07-30,2026-07,gasto,37.40,UYU,37.40,Santander Mastercard,,Super,,Disco N 22,"Disco N 22 (Mastercard casa, provisorio de captura; estado oficial 7/8)",casa,manual,confirmado,1,mc-casa-2026-07-30-37.40
 8b373dc86e3a,2026-07-30,2026-07,gasto,375.60,UYU,375.60,Santander UYU,,Comer afuera / Delivery,,MONTEVIDEO/LA ROTISERIA V VIS3,LA ROTISERIA V,personal,mail,confirmado,1,19fb3bd833a224fc
 763e0170f2d9,2026-07-31,2026-07,gasto,99.44,UYU,99.44,Cuenta Casa,,Servicios,,COMISION EDC CTA.CTE.,COMISION EDC CTA.CTE.,casa,estado_cuenta,pendiente,1,estado:Cuenta Casa:2026-07-31:-99.44:COMISION EDC CTA.CTE.
 870fcd196692,2026-07-31,2026-07,gasto,550.00,UYU,550.00,Santander Platinum,,Transporte,,DLOUBERRIDES,DLOUBERRIDES,personal,mail,confirmado,1,19fb834278b71b06

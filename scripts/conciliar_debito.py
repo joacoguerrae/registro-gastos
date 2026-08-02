@@ -35,6 +35,7 @@ Ejecutar:
 import argparse
 import csv
 import datetime as dt
+import json
 import hashlib
 import io
 import os
@@ -70,6 +71,13 @@ def escribir_csv(path, cols, rows):
         w.writeheader()
         w.writerows(rows)
 
+
+
+def _tc(moneda):
+    """Tipo de cambio estimado de config/parametros.json (mismo que usan los
+    parsers de mail). Solo para monedas != UYU."""
+    with io.open(P("config", "parametros.json"), encoding="utf-8") as f:
+        return json.load(f)[f"tc_{moneda.lower()}_uyu"]
 
 def fmt(x):
     return f"{x:.2f}"
@@ -203,7 +211,12 @@ def fila_nueva(mv, cuenta, moneda, reglas):
     r.update(id=rid, fecha=mv["fecha"], mes=mv["fecha"][:7],
              tipo="ingreso" if entra else "gasto",
              monto=fmt(abs(mv["monto"])), moneda=moneda,
-             monto_uyu=fmt(abs(mv["monto"])) if moneda == "UYU" else "",
+             # Extracto en moneda extranjera (caja de ahorro USD): se estima el
+             # equivalente en pesos con el tc de config/parametros.json. Antes
+             # quedaba VACIO, y una fila de gasto/ingreso sin monto_uyu no suma en
+             # ningun agregado -- lo caza merge_y_validar (paso al conciliar el
+             # extracto USD de julio, 2/8/2026).
+             monto_uyu=fmt(abs(mv["monto"]) * (1 if moneda == "UYU" else _tc(moneda))),
              cuenta=cuenta, categoria=cat, comercio=mv["concepto"][:60],
              descripcion=mv["concepto"][:90],
              ambito=amb_ov or ambito_de_cuenta(cuenta),

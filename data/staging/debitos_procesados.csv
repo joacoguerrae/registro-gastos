@@ -1,3 +1,4 @@
 archivo,cuenta,moneda,periodo,saldo_cierre,procesado_en,detalle
 Movimientos_0726_cajaAhorro.csv,Santander UYU,UYU,2026-07,1797.15,2026-08-02T18:55:52,"30 conciliados, 4 debitos y 4 creditos nuevos"
 cuenta_casa_2026-07.csv,Cuenta Casa,UYU,2026-07,49.70,2026-08-02T18:55:52,"62 conciliados, 1 debitos y 0 creditos nuevos"
+Movimientos_0726_cajaAhorroUSD.csv,Santander USD,USD,2026-07,6312.95,2026-08-02T19:26:15,"4 conciliados, 2 debitos y 2 creditos nuevos"

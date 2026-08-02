@@ -3,3 +3,4 @@ numero,moneda,cuenta_ledger,nota
 800944254160,UYU,Santander Mastercard,"numero del estado de cuenta PDF (credito de la casa). El PDF de Santander no dice la marca: la tarjeta se identifica por este numero. Cuando llegue el primer estado de la Visa Platinum, agregar su numero aca."
 770054522300,UYU,Santander Platinum,"numero del estado de cuenta PDF de la VISA Platinum (6427, personal). Confirmado 2/8/2026 con el primer estado que mando el banco: las lineas de movimiento llevan el codigo 427 y coinciden con consumos conocidos (ORT 28.170 el 8/7, BSE 3.794 el 9/7)"
 001203500692,UYU,Santander UYU,"caja de ahorro personal, suc. 61 Ciudad Vieja (tarjeta 9071). Confirmado 2/8/2026 con el export de movimientos de julio"
+005203662400,USD,Santander USD,"caja de ahorro en dolares, suc. 61 Ciudad Vieja. Mapeado 2/8/2026 con el export de julio"

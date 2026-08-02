@@ -250,3 +250,26 @@ a5d2a4cb055f,motivo_resuelto,sin_categoria,Servicios,2026-08-02
 78c84a7dd33f,motivo_resuelto,sin_categoria,Comer afuera / Delivery,2026-08-02
 78c84a7dd33f,en_analisis,0,"DUPLICADO: el estado trae la linea entera (1.785,20 del 1/7, el banco la postea un dia despues) y el ledger ya la tiene partida en el split del 30/6: b9e1bef414e0 (892,60 mitad de Joaco) + 661d85e8d810 (892,60 prestados al amigo, via Splitwise). Suma exacta. Confirmado por Joaco 2/8",2026-08-02
 b9e1bef414e0,ambito,casa,"la mitad que no fue al amigo la consumieron Joaco y Lu: es gasto de casa, no personal (Joaco 2/8)",2026-08-02
+391a6feaa80d,cuenta_destino,Santander USD,"el pago de Rodrigo entro a la caja de ahorro USD, no a la de pesos (confirmado con el extracto USD del 29/7) (Joaco 2/8)",2026-08-02
+391a6feaa80d,motivo_resuelto,transferencia_a_clasificar,pago de Splitwise recibido en la cuenta USD,2026-08-02
+5c712db5b950,tipo,transferencia,"es la CONTRAPARTIDA de la compra de dolares: los 80.000 que salieron de la caja de ahorro en pesos el 1/7 entraron aca como USD 1.951,22 (tc implicito 41,00). No es un ingreso (Joaco 2/8)",2026-08-02
+5c712db5b950,cuenta,Santander UYU,origen: la caja de ahorro en pesos,2026-08-02
+5c712db5b950,cuenta_destino,Santander USD,destino: la caja de ahorro en dolares,2026-08-02
+5c712db5b950,ambito,interno,movimiento entre cuentas propias,2026-08-02
+5c712db5b950,en_analisis,0,no es ingreso ni gasto: cambio de moneda entre cuentas propias,2026-08-02
+5c712db5b950,descripcion,Compra de dolares (contrapartida en USD),,2026-08-02
+5c712db5b950,motivo_resuelto,ingreso_a_clasificar,"transferencia interna, contrapartida de la compra de dolares",2026-08-02
+05afcf610032,tipo,transferencia,"pago de la tarjeta Santander en dolares: baja la deuda de la tarjeta, no es consumo (Joaco 2/8)",2026-08-02
+05afcf610032,cuenta_destino,Santander Platinum USD,,2026-08-02
+05afcf610032,ambito,interno,,2026-08-02
+05afcf610032,en_analisis,0,pago de tarjeta: movimiento entre cuentas propias,2026-08-02
+05afcf610032,descripcion,Pago tarjeta Santander USD (Banred),,2026-08-02
+05afcf610032,motivo_resuelto,sin_categoria,transferencia interna (pago de tarjeta),2026-08-02
+8e8dfe18ea36,tipo,transferencia,pago de la tarjeta BBVA en dolares (Joaco 2/8),2026-08-02
+8e8dfe18ea36,cuenta_destino,BBVA Crédito,,2026-08-02
+8e8dfe18ea36,ambito,interno,,2026-08-02
+8e8dfe18ea36,en_analisis,0,pago de tarjeta: movimiento entre cuentas propias,2026-08-02
+8e8dfe18ea36,descripcion,Pago tarjeta BBVA USD (Banred),,2026-08-02
+8e8dfe18ea36,motivo_resuelto,sin_categoria,transferencia interna (pago de tarjeta),2026-08-02
+a89ed44b0921,categoria,Otros ingresos,transferencia recibida de Rodrigo Guerra Esmite (Joaco 2/8),2026-08-02
+a89ed44b0921,motivo_resuelto,ingreso_a_clasificar,Otros ingresos,2026-08-02
