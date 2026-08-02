@@ -140,3 +140,7 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 19fb79af0fe37e0f,2026-07-31T09:56:39Z,ignorado,estado_cuenta_pendiente_f3,,envio@tuestadodecuenta.santander.com.uy | Estado de Cuenta Santander VISA,,2026-07-31T14:39:57+00:00
 19fb962b901a5251,2026-07-31T18:14:39Z,aviso_tarjeta,insertado,bb0d7f3f7445,9071 UYU 199.00 MONTEVIDEO/MERPAGO*MELI VIS3 -> Santander UYU/personal/(sin categoria),9071||199.00||MONTEVIDEO/MERPAGO*MELI VIS3||2026-07-31T15:14:38,2026-08-01T03:54:15+00:00
 19fbb39f2e745956,2026-08-01T02:49:21Z,aviso_tarjeta,insertado,c208ef680230,6427 UYU 6947.57 REST NAMASTE -> Santander Platinum/personal/(sin categoria),6427||6947.57||REST NAMASTE||2026-07-31T23:49:16,2026-08-01T03:54:15+00:00
+19fbdaa99ab9c390,2026-08-01T14:11:38Z,aviso_tarjeta,insertado,8b09908f739a,6427 USD 1.99 GOOGLE -> Santander Platinum/personal/Suscripciones,6427||1.99||GOOGLE||2026-08-01T11:11:33,2026-08-02T03:56:58+00:00
+19fbe0f255c8d43f,2026-08-01T16:01:27Z,aviso_tarjeta,ignorado,,tarjeta desconocida ,,2026-08-02T03:56:58+00:00
+19fbe1bdf00e3c7e,2026-08-01T16:15:22Z,aviso_tarjeta,ignorado,,tarjeta desconocida ,,2026-08-02T03:56:58+00:00
+19fbe37a01ce0fdf,2026-08-01T16:45:42Z,aviso_tarjeta,ignorado,,tarjeta desconocida ,,2026-08-02T03:56:58+00:00

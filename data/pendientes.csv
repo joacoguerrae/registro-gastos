@@ -41,3 +41,6 @@ f418365af05a,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*MERCADOLIBRE VIS3
 0da801f426ab,split_a_cargar,"Splitwise sw:4596929769 'Regalo mama' UYU 2608.00 (2026-07-29): yo pague 2608.00, mi parte 1304.00 -> ajustar cargo 0da801f426ab y crear fila hermana -split",2026-07-30,
 bb0d7f3f7445,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*MELI VIS3' sin regla,2026-08-01,
 c208ef680230,sin_categoria,establecimiento 'REST NAMASTE' sin regla,2026-08-01,
+92c5ab1c9e11,transferencia_a_clasificar,"pago Splitwise recibido UYU 836.00 (2026-08-01, Rodrigo): confirmar a que cuenta entro",2026-08-02,
+c208ef680230,split_a_cargar,"Splitwise sw:4602493953 'Cena mama' UYU 6948.00 (2026-08-01): yo pague 6948.00, mi parte 3474.00 -> ajustar cargo c208ef680230 y crear fila hermana -split",2026-08-02,
+8b09908f739a,tc_estimado,USD 1.99 x tc 40.33 = 80.26 UYU (corrige Fase 3),2026-08-02,
