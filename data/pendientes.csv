@@ -35,15 +35,15 @@ a3caac2ad558,split_a_cargar,"Splitwise sw:4584684715 'Youtube' USD 19.19 (2026-0
 cd8675911f7c,sin_respaldo_estado,fila del ledger sin linea en el extracto de Cuenta Casa 2026-07,2026-07-25,1
 683b64f4ff3f,sin_respaldo_estado,fila del ledger sin linea en el extracto de Cuenta Casa 2026-07,2026-07-25,1
 aa1e12303261,sin_respaldo_estado,fila del ledger sin linea en el extracto de Cuenta Casa 2026-07,2026-07-25,1
-f418365af05a,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*MERCADOLIBRE VIS3' sin regla,2026-07-27,
-0da801f426ab,sin_categoria,establecimiento 'MER' sin regla,2026-07-29,
+f418365af05a,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*MERCADOLIBRE VIS3' sin regla,2026-07-27,1
+0da801f426ab,sin_categoria,establecimiento 'MER' sin regla,2026-07-29,1
 391a6feaa80d,transferencia_a_clasificar,"pago Splitwise recibido USD 25.26 (2026-07-29, Rodrigo): confirmar a que cuenta entro",2026-07-30,1
-0da801f426ab,split_a_cargar,"Splitwise sw:4596929769 'Regalo mama' UYU 2608.00 (2026-07-29): yo pague 2608.00, mi parte 1304.00 -> ajustar cargo 0da801f426ab y crear fila hermana -split",2026-07-30,
-bb0d7f3f7445,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*MELI VIS3' sin regla,2026-08-01,
-c208ef680230,sin_categoria,establecimiento 'REST NAMASTE' sin regla,2026-08-01,
-92c5ab1c9e11,transferencia_a_clasificar,"pago Splitwise recibido UYU 836.00 (2026-08-01, Rodrigo): confirmar a que cuenta entro",2026-08-02,
-c208ef680230,split_a_cargar,"Splitwise sw:4602493953 'Cena mama' UYU 6948.00 (2026-08-01): yo pague 6948.00, mi parte 3474.00 -> ajustar cargo c208ef680230 y crear fila hermana -split",2026-08-02,
-8b09908f739a,tc_estimado,USD 1.99 x tc 40.33 = 80.26 UYU (corrige Fase 3),2026-08-02,
+0da801f426ab,split_a_cargar,"Splitwise sw:4596929769 'Regalo mama' UYU 2608.00 (2026-07-29): yo pague 2608.00, mi parte 1304.00 -> ajustar cargo 0da801f426ab y crear fila hermana -split",2026-07-30,1
+bb0d7f3f7445,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*MELI VIS3' sin regla,2026-08-01,1
+c208ef680230,sin_categoria,establecimiento 'REST NAMASTE' sin regla,2026-08-01,1
+92c5ab1c9e11,transferencia_a_clasificar,"pago Splitwise recibido UYU 836.00 (2026-08-01, Rodrigo): confirmar a que cuenta entro",2026-08-02,1
+c208ef680230,split_a_cargar,"Splitwise sw:4602493953 'Cena mama' UYU 6948.00 (2026-08-01): yo pague 6948.00, mi parte 3474.00 -> ajustar cargo c208ef680230 y crear fila hermana -split",2026-08-02,1
+8b09908f739a,tc_estimado,USD 1.99 x tc 40.33 = 80.26 UYU (corrige Fase 3),2026-08-02,1
 1e545e9cd770,ingreso_a_clasificar,Santander UYU 2026-07-23 16.50 UYU: PROMOCIONES TARJETAS DE DEBITO DESC CANTINA ORT CENTRO -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-08-02,1
 180f83705c82,ingreso_a_clasificar,Santander UYU 2026-07-13 16.50 UYU: PROMOCIONES TARJETAS DE DEBITO DESC CANTINA ORT CENTRO -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-08-02,1
 3e6a3a0d9c9f,ingreso_a_clasificar,Santander UYU 2026-07-13 200.00 UYU: CREDITO OPERACION EN BANCA DIGITAL T--/ESMITE RODRIGUEZ ALEJ -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-08-02,1
@@ -57,20 +57,20 @@ e473aa08da5a,sin_respaldo_estado,fila del ledger sin linea en el extracto de San
 b9a8d1f5818a,sin_respaldo_estado,fila del ledger sin linea en el extracto de Santander UYU 2026-07,2026-08-02,1
 c228d8e0387d,sin_respaldo_estado,fila del ledger sin linea en el extracto de Santander UYU 2026-07,2026-08-02,1
 763e0170f2d9,sin_categoria,"Cuenta Casa COMISION EDC CTA.CTE. (del extracto, sin aviso por mail)",2026-08-02,1
-007eb366e0ff,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 516.00 Uber) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,
-12e838e36cfb,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 562.97 Roig) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,
-1f8859c83324,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 101.00 ) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,
-225629595d5a,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 796.00 Almuerzo mama) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,
-5797d64204a7,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 1889.98 ) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,
-b9e1bef414e0,sin_respaldo_estado,"Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 892.60 Burger 30/6, mi mitad (sw:4544350903; cargo 1.785,20 no registrado en junio)) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado)",2026-08-02,
-bb8c836f09d8,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 16004.50 Silla) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,
-9f2680fde1bf,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-15 UYU 245.00 DLOUBERRIDES) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,
-c1b5b2cc3f7d,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-15 UYU 225.98 DLOUBERRIDES) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,
-f2b560128a89,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-15 UYU -225.94 Reintegro DLOUBERRIDES (revierte 82df163851c5)) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,
-1b281aeb4913,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-19 USD -1.00 Reintegro CLOUDFLARE (revierte dfa33eceea23)) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,
-dfa33eceea23,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-19 USD 1.00 CLOUDFLARE) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,
-0da801f426ab,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-28 UYU 2607.79 MER) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,
-ba41eb4b63c1,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-28 UYU 398.28 MEDIALUNAS CALE) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,
+007eb366e0ff,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 516.00 Uber) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
+12e838e36cfb,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 562.97 Roig) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
+1f8859c83324,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 101.00 ) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
+225629595d5a,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 796.00 Almuerzo mama) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
+5797d64204a7,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 1889.98 ) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
+b9e1bef414e0,sin_respaldo_estado,"Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 892.60 Burger 30/6, mi mitad (sw:4544350903; cargo 1.785,20 no registrado en junio)) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado)",2026-08-02,1
+bb8c836f09d8,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 16004.50 Silla) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
+9f2680fde1bf,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-15 UYU 245.00 DLOUBERRIDES) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
+c1b5b2cc3f7d,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-15 UYU 225.98 DLOUBERRIDES) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
+f2b560128a89,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-15 UYU -225.94 Reintegro DLOUBERRIDES (revierte 82df163851c5)) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
+1b281aeb4913,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-19 USD -1.00 Reintegro CLOUDFLARE (revierte dfa33eceea23)) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
+dfa33eceea23,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-19 USD 1.00 CLOUDFLARE) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
+0da801f426ab,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-28 UYU 2607.79 MER) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
+ba41eb4b63c1,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-28 UYU 398.28 MEDIALUNAS CALE) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
 78c84a7dd33f,sin_categoria,estado_cuenta Santander Platinum 2026-07: 'DESBORDE      HANDY 0J' sin regla,2026-08-02,1
 0974897813b8,sin_categoria,estado_cuenta Santander Platinum 2026-07: 'SEGURO SALDO DEUDOR' sin regla,2026-08-02,1
 2ee0a35c0607,sin_categoria,estado_cuenta Santander Platinum 2026-07: 'ZURICH SANTANDER' sin regla,2026-08-02,1
@@ -78,20 +78,20 @@ ba41eb4b63c1,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (20
 a5d2a4cb055f,sin_categoria,estado_cuenta Santander Platinum 2026-07: 'ZURICH SANTANDER' sin regla,2026-08-02,1
 9a5eb9e1ad68,sin_categoria,estado_cuenta Santander Platinum 2026-07: 'SEGURO SALDO DEUDOR' sin regla,2026-08-02,1
 9884c01dc9d2,sin_categoria,estado_cuenta BBVA Crédito 2026-07: 'MAPFRE' sin regla,2026-08-02,1
-007eb366e0ff,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 516.00 Uber) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,
-12e838e36cfb,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 562.97 Roig) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,
-1f8859c83324,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 101.00 ) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,
-225629595d5a,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 796.00 Almuerzo mama) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,
-5797d64204a7,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 1889.98 ) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,
-b9e1bef414e0,sin_respaldo_estado,"Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 892.60 Burger 30/6, mi mitad (sw:4544350903; cargo 1.785,20 no registrado en junio)) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado)",2026-08-02,
-bb8c836f09d8,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 16004.50 Silla) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,
-9f2680fde1bf,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-15 UYU 245.00 DLOUBERRIDES) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,
-c1b5b2cc3f7d,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-15 UYU 225.98 DLOUBERRIDES) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,
-f2b560128a89,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-15 UYU -225.94 Reintegro DLOUBERRIDES (revierte 82df163851c5)) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,
-1b281aeb4913,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-19 USD -1.00 Reintegro CLOUDFLARE (revierte dfa33eceea23)) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,
-dfa33eceea23,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-19 USD 1.00 CLOUDFLARE) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,
-0da801f426ab,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-28 UYU 2607.79 MER) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,
-ba41eb4b63c1,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-28 UYU 398.28 MEDIALUNAS CALE) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,
+007eb366e0ff,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 516.00 Uber) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
+12e838e36cfb,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 562.97 Roig) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
+1f8859c83324,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 101.00 ) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
+225629595d5a,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 796.00 Almuerzo mama) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
+5797d64204a7,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 1889.98 ) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
+b9e1bef414e0,sin_respaldo_estado,"Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 892.60 Burger 30/6, mi mitad (sw:4544350903; cargo 1.785,20 no registrado en junio)) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado)",2026-08-02,1
+bb8c836f09d8,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 16004.50 Silla) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
+9f2680fde1bf,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-15 UYU 245.00 DLOUBERRIDES) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
+c1b5b2cc3f7d,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-15 UYU 225.98 DLOUBERRIDES) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
+f2b560128a89,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-15 UYU -225.94 Reintegro DLOUBERRIDES (revierte 82df163851c5)) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
+1b281aeb4913,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-19 USD -1.00 Reintegro CLOUDFLARE (revierte dfa33eceea23)) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
+dfa33eceea23,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-19 USD 1.00 CLOUDFLARE) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
+0da801f426ab,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-28 UYU 2607.79 MER) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
+ba41eb4b63c1,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-28 UYU 398.28 MEDIALUNAS CALE) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
 2ee0a35c0607,sin_categoria,estado_cuenta Santander Platinum 2026-07: 'ZURICH SANTANDER' sin regla,2026-08-02,1
 13cd01090541,sin_categoria,estado_cuenta Santander Platinum 2026-07: 'EPAY TAX FREE' sin regla,2026-08-02,1
 a5d2a4cb055f,sin_categoria,estado_cuenta Santander Platinum 2026-07: 'ZURICH SANTANDER' sin regla,2026-08-02,1
@@ -100,3 +100,5 @@ a89ed44b0921,ingreso_a_clasificar,Santander USD 2026-07-22 50.00 USD: TRANSF INS
 8e8dfe18ea36,sin_categoria,"Santander USD PAGO DE SERVICIO POR BANRED SERVICIO DE PAGOS BANRED , TCBBV (del extracto, sin aviso por mail)",2026-08-02,1
 05afcf610032,sin_categoria,"Santander USD PAGO DE SERVICIO POR BANRED SERVICIO DE PAGOS BANRED , TCSAN (del extracto, sin aviso por mail)",2026-08-02,1
 5c712db5b950,ingreso_a_clasificar,Santander USD 2026-07-01 1951.22 USD: CREDITO OPERACION EN BANCA DIGITAL PAHORRO/GUERRA ESMITE JOA -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-08-02,1
+e09124452e63,split_a_cargar,"Splitwise sw:4602493953 'Cena mama' UYU 6948.00 (2026-08-01): yo pague 6948.00, mi parte 3474.00 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-08-02,1
+ca3ab05b8bdd,split_a_cargar,"Splitwise sw:4596929769 'Regalo mama' UYU 2608.00 (2026-07-29): yo pague 2608.00, mi parte 1304.00 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-08-02,1
