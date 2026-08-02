@@ -1,0 +1,10 @@
+Cliente,Número de tarjeta de crédito,Alias,Fecha,Límite de crédito ($): ,
+Joaquin Guerra Esmit,XXXXX-6427,Visa Soy Santander,02/08/2026,"0,00",
+
+
+Movimientos,
+Fecha,Número de tarjeta,Descripción,Importe original,Pesos,Dólares,
+29/07/2026,XXXXX-6427,Dlo Uber Rides,"0,00","200,00","0,00",
+29/07/2026,XXXXX-6427,Uber  Trip Help Uber,"0,00","147,94","0,00",
+28/07/2026,XXXXX-6427,Merpago Mercadolibre,"0,00","2.607,79","0,00",
+28/07/2026,XXXXX-6427,Medialunas Calentita,"0,00","398,28","0,00",

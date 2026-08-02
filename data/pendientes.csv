@@ -44,3 +44,16 @@ c208ef680230,sin_categoria,establecimiento 'REST NAMASTE' sin regla,2026-08-01,
 92c5ab1c9e11,transferencia_a_clasificar,"pago Splitwise recibido UYU 836.00 (2026-08-01, Rodrigo): confirmar a que cuenta entro",2026-08-02,
 c208ef680230,split_a_cargar,"Splitwise sw:4602493953 'Cena mama' UYU 6948.00 (2026-08-01): yo pague 6948.00, mi parte 3474.00 -> ajustar cargo c208ef680230 y crear fila hermana -split",2026-08-02,
 8b09908f739a,tc_estimado,USD 1.99 x tc 40.33 = 80.26 UYU (corrige Fase 3),2026-08-02,
+1e545e9cd770,ingreso_a_clasificar,Santander UYU 2026-07-23 16.50 UYU: PROMOCIONES TARJETAS DE DEBITO DESC CANTINA ORT CENTRO -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-08-02,1
+180f83705c82,ingreso_a_clasificar,Santander UYU 2026-07-13 16.50 UYU: PROMOCIONES TARJETAS DE DEBITO DESC CANTINA ORT CENTRO -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-08-02,1
+3e6a3a0d9c9f,ingreso_a_clasificar,Santander UYU 2026-07-13 200.00 UYU: CREDITO OPERACION EN BANCA DIGITAL T--/ESMITE RODRIGUEZ ALEJ -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-08-02,1
+bf5232a79b96,sin_categoria,"Santander UYU PAGO DE SERVICIO POR BANRED SERVICIO DE PAGOS BANRED , MVST  (del extracto, sin aviso por mail)",2026-08-02,1
+9714accf4cb9,sin_categoria,"Santander UYU DEBITO OPERACION EN BANCA DIGITAL PAHORRO (del extracto, sin aviso por mail)",2026-08-02,1
+c0513df7529f,ingreso_a_clasificar,Santander UYU 2026-07-01 142581.00 UYU: SUELDOS 941081TT RECIBIDA /DELIVERY HERO URUGUAY MARKET -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-08-02,1
+77c26159e14d,sin_respaldo_estado,fila del ledger sin linea en el extracto de Santander UYU 2026-07,2026-08-02,1
+a7ad2ee2689b,sin_respaldo_estado,fila del ledger sin linea en el extracto de Santander UYU 2026-07,2026-08-02,1
+761e0058038c,sin_respaldo_estado,fila del ledger sin linea en el extracto de Santander UYU 2026-07,2026-08-02,1
+e473aa08da5a,sin_respaldo_estado,fila del ledger sin linea en el extracto de Santander UYU 2026-07,2026-08-02,1
+b9a8d1f5818a,sin_respaldo_estado,fila del ledger sin linea en el extracto de Santander UYU 2026-07,2026-08-02,1
+c228d8e0387d,sin_respaldo_estado,fila del ledger sin linea en el extracto de Santander UYU 2026-07,2026-08-02,1
+763e0170f2d9,sin_categoria,"Cuenta Casa COMISION EDC CTA.CTE. (del extracto, sin aviso por mail)",2026-08-02,1

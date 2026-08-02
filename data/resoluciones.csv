@@ -204,3 +204,33 @@ aa1e12303261,motivo_resuelto,sin_respaldo_estado,"duplicado ya marcado en_analis
 512d22da1038,cuenta,Santander USD,"el debito fue de la caja de ahorro USD, no la de pesos (Joaco 25/7)",2026-07-25
 512d22da1038,moneda,USD,"transferencia CRUZADA: salieron USD 163.61 de la caja de ahorro USD y Maria Rariz (escribana) recibio UYU 6430. El parser tomo el monto del DESTINO (6430 UYU) y asumio Santander UYU. Lo real que se mueve es el USD. monto_uyu 6430 es EXACTO (lo dice el mail), no estimado. Confirmado por Joaco 25/7",2026-07-25
 512d22da1038,monto,163.61,lo que efectivamente se debito: USD 163.61 (Joaco 25/7),2026-07-25
+c0513df7529f,categoria,Sueldo,"sueldo de julio de Delivery Hero, 142.581 -- coincide exacto con lo declarado en config/ingresos.csv (Joaco 2/8)",2026-08-02
+c0513df7529f,motivo_resuelto,ingreso_a_clasificar,Sueldo,2026-08-02
+1aa22a526023,en_analisis,0,DUPLICADO: esta linea del banco ya esta en el ledger como el split 'Carbon + hielo' (b9a8d1f5818a 46.25 propio + c228d8e0387d 229.16 a Deudas = 275.41). El matcher no la reconocio porque el split partio el importe (Joaco 2/8),2026-08-02
+1aa22a526023,motivo_resuelto,sin_categoria,"duplicado del split, en_analisis=0",2026-08-02
+180f83705c82,categoria,Devoluciones & cashback,descuento cantina ORT devuelto por la promo de debito (Joaco 2/8),2026-08-02
+180f83705c82,motivo_resuelto,ingreso_a_clasificar,Devoluciones & cashback,2026-08-02
+1e545e9cd770,categoria,Devoluciones & cashback,descuento cantina ORT devuelto por la promo de debito (Joaco 2/8),2026-08-02
+1e545e9cd770,motivo_resuelto,ingreso_a_clasificar,Devoluciones & cashback,2026-08-02
+763e0170f2d9,categoria,Servicios,comision de mantenimiento de la cuenta corriente de casa (Joaco 2/8),2026-08-02
+763e0170f2d9,ambito,casa,es un costo de la cuenta de la casa: se divide (Joaco 2/8),2026-08-02
+763e0170f2d9,motivo_resuelto,sin_categoria,Servicios casa,2026-08-02
+a56dd575ae8e,motivo_resuelto,sin_categoria,Super (regla de comercio lo categorizo solo),2026-08-02
+9714accf4cb9,tipo,transferencia,"compra de dolares: los 80.000 pasaron a la caja de ahorro USD, no es un gasto (Joaco 2/8)",2026-08-02
+9714accf4cb9,cuenta_destino,Santander USD,destino de la compra de dolares,2026-08-02
+9714accf4cb9,ambito,interno,movimiento entre cuentas propias,2026-08-02
+9714accf4cb9,en_analisis,0,"transferencia interna: no es gasto, no debe contar en ningun agregado",2026-08-02
+9714accf4cb9,descripcion,Compra de dolares (caja de ahorro $ -> USD),,2026-08-02
+9714accf4cb9,motivo_resuelto,sin_categoria,"transferencia interna, sin categoria",2026-08-02
+bf5232a79b96,en_analisis,0,"DUPLICADO: es la factura Movistar de julio (1.750,82) que el ledger ya tiene partida en el split con Agus: 761e0058038c (875,41 propio) + e473aa08da5a (875,41 a Deudas) = 1.750,82 exacto. El matcher no la reconocio porque el split partio el importe (Joaco 2/8)",2026-08-02
+bf5232a79b96,categoria,Servicios,Movistar celular,2026-08-02
+bf5232a79b96,motivo_resuelto,sin_categoria,"duplicado del split Movistar, en_analisis=0",2026-08-02
+3e6a3a0d9c9f,categoria,Otros ingresos,devolucion de un familiar (Joaco 2/8),2026-08-02
+3e6a3a0d9c9f,motivo_resuelto,ingreso_a_clasificar,Otros ingresos,2026-08-02
+761e0058038c,motivo_resuelto,sin_respaldo_estado,"PATRON CONOCIDO (no es un error): esta fila es parte de un SPLIT. El banco tiene UNA linea por el total y el ledger lo tiene partido, asi que los importes nunca coinciden y el matcher la reporta sin respaldo. El total si esta respaldado: 875,41 + 875,41 = 1.750,82 del pago Banred del 3/7. Revisado 2/8",2026-08-02
+e473aa08da5a,motivo_resuelto,sin_respaldo_estado,"PATRON CONOCIDO (no es un error): esta fila es parte de un SPLIT. El banco tiene UNA linea por el total y el ledger lo tiene partido, asi que los importes nunca coinciden y el matcher la reporta sin respaldo. El total si esta respaldado: 875,41 + 875,41 = 1.750,82 del pago Banred del 3/7. Revisado 2/8",2026-08-02
+b9f2ed23d417,motivo_resuelto,sin_respaldo_estado,"PATRON CONOCIDO (no es un error): esta fila es parte de un SPLIT. El banco tiene UNA linea por el total y el ledger lo tiene partido, asi que los importes nunca coinciden y el matcher la reporta sin respaldo. El total si esta respaldado: ver split Carbon + hielo. Revisado 2/8",2026-08-02
+b9a8d1f5818a,motivo_resuelto,sin_respaldo_estado,"PATRON CONOCIDO (no es un error): esta fila es parte de un SPLIT. El banco tiene UNA linea por el total y el ledger lo tiene partido, asi que los importes nunca coinciden y el matcher la reporta sin respaldo. El total si esta respaldado: 46,25 + 229,16 = 275,41 de Devoto Express del 20/7. Revisado 2/8",2026-08-02
+c228d8e0387d,motivo_resuelto,sin_respaldo_estado,"PATRON CONOCIDO (no es un error): esta fila es parte de un SPLIT. El banco tiene UNA linea por el total y el ledger lo tiene partido, asi que los importes nunca coinciden y el matcher la reporta sin respaldo. El total si esta respaldado: 46,25 + 229,16 = 275,41 de Devoto Express del 20/7. Revisado 2/8",2026-08-02
+77c26159e14d,motivo_resuelto,sin_respaldo_estado,"fila legado de la migracion 1money (ingreso de 3,00 sin descripcion, fechada 1/7). Anterior a la semilla del 12/7: no afecta ningun saldo. Revisado 2/8",2026-08-02
+a7ad2ee2689b,motivo_resuelto,sin_respaldo_estado,"suscripcion Meli+ de 199 del 1/7 (aviso por mail). No encontre su linea en el extracto de julio -- probablemente el banco la posteo en junio. Anterior a la semilla del 12/7: no afecta saldos. Revisado 2/8, queda documentado sin explicacion cerrada",2026-08-02
