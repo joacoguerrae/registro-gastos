@@ -393,7 +393,16 @@ def main():
         if r["tipo"] != "gasto" or r["en_analisis"] != "1":
             continue
         monto = float(r["monto_uyu"])
-        if r["ambito"] == "casa":
+        # OJO: las filas origen=planilla_casa YA son la parte de Joaco -- el
+        # migrador guardo "Gasto Joaco" (o Egresos/2 en la ventana vieja), no el
+        # egreso total. Aplicarles el coeficiente las divide DOS VECES y
+        # subestima todo su gasto historico hasta jun-2026 (ej. Vivienda de junio:
+        # total 36.582, su parte 23.958, y el resumen mostraba 15.691).
+        # Lo detecto Joaco el 2/8/2026 al notar que los gastos comunes "saltaban"
+        # de 15.617 a 23.768 en julio: no era un salto, era comparar su parte
+        # contra el total. Las filas de mail/estado/manual SI traen el total de la
+        # casa y hay que dividirlas.
+        if r["ambito"] == "casa" and r["origen"] != "planilla_casa":
             frac = participaciones.get(r["id"], coef_joaco(r["mes"]))
             monto *= frac
         resumen[(r["mes"], r["categoria"] or "(sin categoria)")] += monto
