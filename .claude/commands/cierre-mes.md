@@ -36,3 +36,19 @@ Cierre mensual del sistema de gastos. Contratos: docs/fase3.md (secciones 3 y 4)
    - Pendientes abiertos (conteo por motivo) — recordá que quedan para `/revisar-pendientes`.
 
 11. Commit: `git add` de los CSV/config tocados (`config/ingresos.csv`, `data/aportes_lu.csv`, `data/staging/saldos_reales.csv`, `data/cierre_casa.csv`, `data/saldos.csv`, `data/estados/*`, `data/staging/debitos_procesados.csv`, `data/resoluciones.csv`, dashboard data) con mensaje `cierre de mes <mes>: posicion casa Lu <X> / Joaco <Y>`. Hacé `git push`.
+
+## Chuleta — aprendida en el cierre de julio 2026
+
+**Archivos y cuentas.** Joaco deja los exports del web de Santander en `data/estados/`. Cada cuenta se identifica por **número** (`config/cuentas_bancarias.csv`): `000001322680` Cuenta Casa · `001203500692` caja de ahorro $ · `005203662400` caja de ahorro USD · `800944254160` Mastercard (PDF) · `770054522300` Visa Platinum (PDF). Si aparece un número nuevo, el guard corta: mapearlo ahí antes de seguir. Ojo con los formatos de monto: hay exports con punto decimal y otros con coma.
+
+**Calendario de estados de crédito.** BBVA: PDF por mail, día 1-7. Santander Mastercard (casa): día ~5-8. Visa Platinum: cierra ~28 y llega a fin de mes. El PDF de Santander **no dice la marca** — solo el número.
+
+**SPLITS = falsos positivos garantizados en la conciliación.** El banco trae UNA línea por el total; el ledger lo tiene partido (fila propia + hermana a Deudas), así que el matcher nunca los aparea: la línea del banco aparece como "débito nuevo" y las filas del split como "sin respaldo". Pasó 3 veces en julio (Movistar 1.750,82 = 875,41×2 · Devoto 275,41 = 46,25+229,16 · Desborde 1.785,20 = 892,60×2). **Antes de insertar un débito "nuevo", verificar si es la suma de un split existente.** Si el duplicado ya se insertó, `en_analisis=0` NO alcanza — la conciliación de saldos cuenta movimientos reales: hay que borrar la fila insertada.
+
+**Semillas y fines de semana.** El banco postea sábado/domingo con fecha del lunes. Toda semilla/foto de saldo debe ser la posición **al CIERRE del día** del corte, no una lectura de mediodía (mordió dos veces: "Pizza" 466,66 y KINKO 203,61).
+
+**Patrones USD.** Pagos de tarjeta vía Banred: `TCSANTOL` / `TCBBVAVI` → transferencia interna a la tarjeta, no gasto. `PAHORRO` en ambas cuentas = compra de dólares (dos patas: −UYU y +USD, ambas internas, `en_analisis=0`). El banco factura **~3% de recargo** sobre consumos en moneda extranjera: el importe del estado manda sobre el del aviso (el matcher tolera 6% en no-UYU). Splitwise a veces salda con centavos de diferencia (328,80 vs 328,00) → registrar la comisión para que ambos lados cierren.
+
+**Recurrentes de casa** (valores a ago-2026; actualizar acá si cambian): gastos comunes ~23.768 TOTAL mensual · contribución inmobiliaria en cuotas de 10.484 — en 2026 quedan agosto (neto 6.690: se adelantaron 3.794 en julio) y setiembre · IMM **bimestral** ~2.252 (jun, ago, …) · ORT 28.170 mensual · psicóloga 10.800 mensual (personal, desde ago-2026).
+
+**Parte vs TOTAL — la trampa que más mordió.** Las filas `origen=planilla_casa` del ledger **ya son la parte de Joaco**; el egreso TOTAL de la casa vive en `data/casa.csv`. Para proyectar el gasto de la casa usar TOTALES (casa.csv hasta jun-2026 + ledger `ambito=casa` desde jul-2026). Nunca comparar una serie contra la otra: fabrica "saltos" ficticios (pasó con la patente y con los gastos comunes).

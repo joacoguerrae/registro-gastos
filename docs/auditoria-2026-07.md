@@ -313,3 +313,17 @@ Para que el alcance quede honesto:
   automático (corren en `/cierre-mes`). Su motor de matching sí está cubierto por
   `test_conciliacion.py`, que pasa.
 - **Los Google Sheets y Looker** aguas abajo del push.
+
+## Post-auditoría
+
+- **2026-08-02 — doble división de la planilla (detectado por Joaco, no por un gate):**
+  `merge_y_validar.py` aplicaba el coeficiente a las filas `origen=planilla_casa`, que **ya
+  son la parte de Joaco** → todo su gasto personal histórico hasta jun-2026 quedaba
+  subestimado 12-23k/mes, y julio parecía una anomalía contra presupuesto cuando no lo era.
+  Lo destapó Joaco al insistir en que los gastos comunes "nunca saltaron" — el salto era
+  comparar su parte (serie del ledger) contra el total (serie de los mails).
+  **Límite del gate de agregados de esta auditoría:** el recálculo independiente reproducía
+  la MISMA regla equivocada, así que daba diferencia 0,00. Los errores de semántica de los
+  datos no los caza un recálculo — los caza comparar contra la fuente cruda o contra el
+  dueño de los datos. Corregido en `merge_y_validar.py` (solo se divide lo que no es
+  `planilla_casa`); invariante documentado en CLAUDE.md y docs/esquema.md.

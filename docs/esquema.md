@@ -58,6 +58,7 @@ El modelado actual es negativo y no `ingreso` porque `out/resumen_mensual.csv` s
 
 La planilla "Gastos Vazquez Ledesma" queda **congelada como histórico** (migrada a data/casa.csv). Desde jul-2026 la división vive en el ledger:
 
+- **Parte vs TOTAL — no confundir:** las filas `origen=planilla_casa` del ledger ya traen **la parte de Joaco** (columna "Gasto Joaco", o Egresos×0.5 en la ventana vieja); el **egreso total** de cada gasto histórico vive en `data/casa.csv`. Aplicarles el coeficiente otra vez las divide dos veces (bug corregido el 2/8/2026 en `merge_y_validar.py`: subestimaba todo el gasto personal hasta jun-2026 en 12-23k/mes), y comparar una serie contra la otra fabrica "saltos" ficticios. Las filas de mail/estado/manual sí traen el total de la casa y se dividen una sola vez.
 - Las filas `ambito=casa` se dividen con los coeficientes del mes: `config/ingresos.csv` (mes, ingreso_lu, ingreso_joaco; coef = ingreso/(suma)). Si un mes no está cargado, se usan los valores del último mes disponible y el cierre lo marca como "a confirmar".
 - Excepciones de participación: `data/participaciones.csv` (`id_ledger,frac_lu,frac_joaco,nota`) fija fracciones por fila cuando la revisión lo decide (ej. Paladar 2/3 Lu por ser con amigas de ella); el resto usa el coeficiente del mes. La leen cierre_casa.py y generar_dashboard_data.py.
 - Retiros personales del fondo: gastos ámbito personal/split o préstamos a Deudas pagados desde cuentas de la casa **restan** del aporte de Joaco en el cierre.

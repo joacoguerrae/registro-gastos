@@ -19,13 +19,14 @@ Ledger único de gastos (personal + casa con Lu + Splitwise). Diseño: [docs/esq
 - **Correcciones persistentes → `data/resoluciones.csv`** (campo/valor por `id_ledger`), nunca editar `ledger.csv` a mano: se regenera. Sobreviven a `--reprocesar`.
 - **`en_analisis`** = anti-doble-conteo. Filas `en_analisis=0` no cuentan en ningún agregado.
 - **Paridad del fetch:** `fetch_mails.py` debe producir el mismo `body_text` que consumen los parsers de `procesar_mails.py`. Cambios ahí se validan re-bajando por API y comparando filas `mail` (test en [docs/validacion-migracion.md](docs/validacion-migracion.md)).
-- **Split (gasto compartido):** fila original ajustada a la fracción propia + fila hermana `transferencia` a Deudas por el resto; la suma = cargo real de la tarjeta.
+- **Split (gasto compartido):** fila original ajustada a la fracción propia + fila hermana `transferencia` a Deudas por el resto; la suma = cargo real de la tarjeta. Al conciliar contra el banco generan falsos positivos garantizados (el banco trae UNA línea por el total): ver la chuleta de [.claude/commands/cierre-mes.md](.claude/commands/cierre-mes.md).
+- **Parte vs TOTAL (casa):** las filas `origen=planilla_casa` del ledger YA son la parte de Joaco (columna "Gasto Joaco"); el egreso TOTAL de la casa vive en `data/casa.csv`. No aplicarles coeficiente de nuevo ni comparar una serie contra la otra — causó el bug de doble división corregido el 2/8 y dos análisis errados (patente, gastos comunes).
 - **Secretos:** nunca commitear `config/secrets.local.json`, `config/gcp_service_account.json`, `config/gmail_token.json`, `config/oauth_client.json` (todos gitignored). En Actions van como repository secrets.
 - **El repo NUNCA vuelve a ser público** (ni GitHub Pages): tiene historia financiera completa, datos de terceros (ingreso de Lu, deudas de amigos) y PDF cifrados con una clave débil. Inventario de lo que quedaría expuesto: [docs/auditoria-2026-07.md](docs/auditoria-2026-07.md#condicional--solo-si-el-repo-volviera-a-ser-público).
 
-## Auditoría abierta (2026-07-16)
+## Auditoría 2026-07: CERRADA (5/5)
 
-[docs/auditoria-2026-07.md](docs/auditoria-2026-07.md) — relevamiento e2e y plan por fases; la tabla "Estado de las correcciones" al inicio dice qué sigue abierto (hechas: 2 y 3; abiertas: 1 —escalado de warnings—, 4 —higiene de datos— y 5 —hardening GitHub—). Antes de tocar el pipeline, mirá si lo que vas a hacer ya está relevado ahí.
+[docs/auditoria-2026-07.md](docs/auditoria-2026-07.md) — relevamiento e2e; las 5 fases de corrección quedaron hechas (última: hardening GitHub, 19/7). El documento sigue siendo la bitácora de hallazgos, gates y el addendum post-auditoría. Antes de tocar el pipeline, mirá si lo que vas a hacer ya está relevado ahí.
 
 - `merge_y_validar.py` sin flags corre solo invariantes y **sale ≠0 si algo está roto** (el workflow confía en ese exit code); `--migracion` revalida contra las fuentes congeladas, solo al tocar un migrador.
 - Los pendientes `formato_nuevo` son mails que el parser no supo leer (el pipeline ya no se frena por eso): se resuelven en `/revisar-pendientes`.
