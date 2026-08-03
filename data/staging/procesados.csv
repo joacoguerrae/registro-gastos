@@ -144,3 +144,7 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 19fbe0f255c8d43f,2026-08-01T16:01:27Z,aviso_tarjeta,ignorado,,tarjeta desconocida ,,2026-08-02T03:56:58+00:00
 19fbe1bdf00e3c7e,2026-08-01T16:15:22Z,aviso_tarjeta,ignorado,,tarjeta desconocida ,,2026-08-02T03:56:58+00:00
 19fbe37a01ce0fdf,2026-08-01T16:45:42Z,aviso_tarjeta,ignorado,,tarjeta desconocida ,,2026-08-02T03:56:58+00:00
+19fc321fc9397c7f,2026-08-02T15:40:10Z,aviso_tarjeta,ignorado,,tarjeta desconocida ,,2026-08-03T03:58:46+00:00
+19fc32a796a9905d,2026-08-02T15:49:26Z,aviso_tarjeta,ignorado,,tarjeta desconocida ,,2026-08-03T03:58:46+00:00
+19fc440dfbf5ae49,2026-08-02T20:53:31Z,aviso_tarjeta,ignorado,,tarjeta desconocida ,,2026-08-03T03:58:46+00:00
+19fc2d0d58d9bcda,2026-08-02T14:11:33Z,recibo,recibo_matcheado,8b09908f739a,Google Play – 100 GB (Google One) USD 1.99 -> enriquece comercio de 8b09908f739a,,2026-08-03T03:58:46+00:00
