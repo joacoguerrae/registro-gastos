@@ -148,3 +148,4 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 19fc32a796a9905d,2026-08-02T15:49:26Z,aviso_tarjeta,ignorado,,tarjeta desconocida ,,2026-08-03T03:58:46+00:00
 19fc440dfbf5ae49,2026-08-02T20:53:31Z,aviso_tarjeta,ignorado,,tarjeta desconocida ,,2026-08-03T03:58:46+00:00
 19fc2d0d58d9bcda,2026-08-02T14:11:33Z,recibo,recibo_matcheado,8b09908f739a,Google Play – 100 GB (Google One) USD 1.99 -> enriquece comercio de 8b09908f739a,,2026-08-03T03:58:46+00:00
+19fc6d3eb6705f63,2026-08-03T08:52:52Z,ignorado,estado_cuenta_pendiente_f3,,bbvanetnotificacionesp@grupobbva.com.uy | Estado de Cuenta de su Tarjeta de Crédito Visa BBVA,,2026-08-03T15:20:38+00:00
