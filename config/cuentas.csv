@@ -10,3 +10,4 @@ Santander Mastercard,,8103,UYU,tarjeta_credito,si,"crédito de la casa; sin avis
 Itaú Crédito,Itau Credito,,UYU,tarjeta_credito,no,cerrada — solo histórico
 Efectivo,Efectivo,,UYU,efectivo,si,
 BBVA USD,BBVA USD,,USD,banco,si,
+A cobrar,,,UYU,virtual,si,plata que le deben a Joaco y NO pasa por Splitwise (ej. el que le choco el auto). Separada de 'Deudas' a proposito: esa se concilia contra la API de Splitwise y meter aca cobranzas ajenas romperia ese chequeo. Creada 3/8/2026

@@ -4713,3 +4713,5 @@ c208ef680230,2026-07-31,2026-07,gasto,3473.57,UYU,3473.57,Santander Platinum,,Co
 f9b2cc70c9d0,2026-07-31,2026-07,gasto,631.57,UYU,631.57,Deudas,,Comer afuera / Delivery,General,,Asado Richarlyson,split,splitwise,confirmado,1,sw:4600142240
 8b09908f739a,2026-08-01,2026-08,gasto,1.99,USD,80.26,Santander Platinum,,Suscripciones,,Google Play – 100 GB (Google One),GOOGLE,personal,mail,confirmado,1,19fbdaa99ab9c390
 92c5ab1c9e11,2026-08-01,2026-08,transferencia,836.00,UYU,836.00,Deudas,Santander UYU,,,,Pago Splitwise de Rodrigo: Payment,interno,splitwise,confirmado,0,sw:4602746971
+7ce2b8a564d2,2026-08-03,2026-08,transferencia,12600.00,UYU,12600.00,Santander UYU,A cobrar,,,,"A cobrar del que choco el auto (resto del arreglo, split de dc158bb98219)",interno,manual,confirmado,0,dc158bb98219-split
+dc158bb98219,2026-08-03,2026-08,gasto,5400.00,UYU,5400.00,Santander UYU,,Auto,,Alfredo Daniel Toledo Pizzorno,Arreglo del auto tras el choque (mi parte; 12.600 los reintegra el tercero),personal,mail,confirmado,1,19fc8f259008daf3

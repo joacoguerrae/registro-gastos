@@ -307,3 +307,9 @@ cca5eeac31ee,categoria,Casa & hogar,"compra para la casa en Mercado Libre, pagad
 cca5eeac31ee,motivo_resuelto,sin_categoria,Casa & hogar,2026-08-02
 e09124452e63,motivo_resuelto,split_a_cargar,"es la 'Cena mama' ya dividida en el ledger: c208ef680230 (3.473,57 propio) + 122de5b852af (3.474,00 a Deudas) (Joaco 2/8)",2026-08-02
 ca3ab05b8bdd,motivo_resuelto,split_a_cargar,"es el 'Regalo mama' ya dividido en el ledger: 0da801f426ab (1.303,79 propio) + 416583b45686 (1.304,00 a Deudas) (Joaco 2/8)",2026-08-02
+dc158bb98219,monto,5400.00,split: pago 18.000 el arreglo del auto (Versa) pero 12.600 se los reintegra el que lo choco; 5.400 es su gasto real (Joaco 3/8),2026-08-03
+dc158bb98219,monto_uyu,5400.00,idem,2026-08-03
+dc158bb98219,categoria,Auto,arreglo del auto tras el choque,2026-08-03
+dc158bb98219,ambito,personal,"Joaco confirmo que es solo suyo, no se divide con Lu",2026-08-03
+dc158bb98219,descripcion,Arreglo del auto tras el choque (mi parte; 12.600 los reintegra el tercero),,2026-08-03
+dc158bb98219,motivo_resuelto,transferencia_a_clasificar,dividida: 5.400 gasto propio + 12.600 a cobrar del tercero,2026-08-03
