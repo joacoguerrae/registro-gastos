@@ -111,3 +111,6 @@ dc158bb98219,transferencia_a_clasificar,"a 'Alfredo Daniel Toledo Pizzorno', con
 cc722553808f,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-08-04,
 da434ef6edf7,transferencia_a_clasificar,"a 'Silvana Psico', concepto 'Julio Joaquin', UYU 10800.00: sin categoria",2026-08-04,
 15673569a524,split_a_cargar,"Splitwise sw:4608310610 'Movistar' UYU 1847.00 (2026-08-03): yo pague 1847.00, mi parte 923.50 -> ajustar cargo 15673569a524 y crear fila hermana -split",2026-08-04,
+986ecbd85abd,sin_categoria,gasto Splitwise 'ManoJa' (Hermanos de Marian) sin regla,2026-08-06,
+157bc9ff29a1,sin_categoria,establecimiento 'MONTEVIDEO/DLO*ASOCIACION URUGUAVIS3' sin regla,2026-08-06,
+728e29b1992d,tc_estimado,USD 100.00 x tc 40.33 = 4033.00 UYU (corrige Fase 3),2026-08-06,
