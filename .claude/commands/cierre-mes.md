@@ -51,6 +51,10 @@ Cierre mensual del sistema de gastos. Contratos: docs/fase3.md (secciones 3 y 4)
 
 **Dos cuentas virtuales de cobranzas, no confundirlas.** `Deudas` = SOLO Splitwise (se concilia contra su API en cada corrida; meter ahí una cobranza ajena rompe ese chequeo). `A cobrar` = plata que le deben a Joaco por fuera de Splitwise (creada 3/8/2026 con el choque del auto: pagó 18.000 de arreglo, 12.600 se los reintegra el tercero). Cuando llegue un reintegro de `A cobrar`, registrarlo como transferencia `A cobrar` → la cuenta donde entró, `en_analisis=0`.
 
-**Recurrentes de casa** (valores a ago-2026; actualizar acá si cambian): gastos comunes ~23.768 TOTAL mensual · contribución inmobiliaria en cuotas de 10.484 — en 2026 quedan agosto (neto 6.690: se adelantaron 3.794 en julio) y setiembre · IMM **bimestral** ~2.252 (jun, ago, …) · ORT 28.170 mensual · psicóloga 10.800 mensual (personal, desde ago-2026).
+**Gastos fijos → `config/gastos_fijos.csv`** (mapeado con Joaco el 9/8/2026). Es la fuente única de qué se repite, con qué frecuencia, en qué cuenta y cuántas cuotas quedan. **Al cerrar el mes, recorrelo y verificá que cada fijo con su frecuencia esté en el ledger** — así se cazan los que faltan (en julio 2026 faltó ANTEL, ~2.103, y nadie lo notó). Actualizalo cuando cambie un importe o se termine una serie de cuotas.
+
+Series de cuotas vivas a ago-2026: **ORT** cuota 18/24 en agosto → quedan 6 (hasta feb-2027) · **contribución inmobiliaria** queda solo la de setiembre · **BSE seguro del auto** 10 cuotas, van 2, la cuota baja a ~2.000 con el auto nuevo.
+
+**"INTERNET/Proyecto PAS" no dice qué se pagó.** Es la app de pagos del Santander: UTE, ANTEL, IMM y Movistar llegan todos con ese mismo nombre. Al resolverlos, poné en `descripcion` de qué factura se trata (vía `resoluciones.csv`) — si no, los fijos se vuelven invisibles en cualquier análisis por comercio.
 
 **Parte vs TOTAL — la trampa que más mordió.** Las filas `origen=planilla_casa` del ledger **ya son la parte de Joaco**; el egreso TOTAL de la casa vive en `data/casa.csv`. Para proyectar el gasto de la casa usar TOTALES (casa.csv hasta jun-2026 + ledger `ambito=casa` desde jul-2026). Nunca comparar una serie contra la otra: fabrica "saltos" ficticios (pasó con la patente y con los gastos comunes).

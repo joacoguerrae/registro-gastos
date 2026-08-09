@@ -4721,11 +4721,11 @@ c4730af393f4,2026-08-01,2026-08,gasto,35.00,UYU,35.00,Santander Mastercard,,Supe
 9f13ead97fa4,2026-08-02,2026-08,gasto,9.98,UYU,9.98,Santander Mastercard,,Super,,DLO PEDIDOSYA EXTRA,DLO PEDIDOSYA EXTRA,casa,estado_cuenta,pendiente,1,estado:af71a54c97307531
 b9db19d6a704,2026-08-02,2026-08,gasto,25.13,UYU,25.13,Santander Mastercard,,Servicios,,SEGURO SALDO DEUDOR,SEGURO SALDO DEUDOR,casa,estado_cuenta,confirmado,1,estado:e40590a57ddd73c7
 096e7102c034,2026-08-03,2026-08,transferencia,923.50,UYU,923.50,Santander UYU,Deudas,,,,"Mitad de Agus por Movistar (split de 15673569a524, sw:4608310610)",interno,manual,confirmado,0,15673569a524-split
-15673569a524,2026-08-03,2026-08,gasto,923.71,UYU,923.71,Santander UYU,,Servicios,,INTERNET/Proyecto PAS,Proyecto PAS,personal,mail,confirmado,1,19fc9ad4fdd34bd2
+15673569a524,2026-08-03,2026-08,gasto,923.71,UYU,923.71,Santander UYU,,Servicios,,INTERNET/Proyecto PAS,Movistar (mitad de Joaco) via Proyecto PAS,personal,mail,confirmado,1,19fc9ad4fdd34bd2
 2383e9382b8e,2026-08-03,2026-08,transferencia,46085.93,UYU,46085.93,Santander UYU,Santander Platinum,,,INTERNET/Proyecto PAS,Pago estado Platinum julio (Proyecto PAS),interno,mail,confirmado,0,19fc9ac81f1b2c91
 7cb386eb832a,2026-08-03,2026-08,transferencia,118.34,USD,4772.65,Santander USD,Santander Platinum USD,,,INTERNET/Proyecto PAS,Pago estado Platinum USD julio (Proyecto PAS),interno,mail,confirmado,0,19fc9acce915b459
 7ce2b8a564d2,2026-08-03,2026-08,transferencia,12600.00,UYU,12600.00,Santander UYU,A cobrar,,,,"A cobrar del que choco el auto (resto del arreglo, split de dc158bb98219)",interno,manual,confirmado,0,dc158bb98219-split
-cc722553808f,2026-08-03,2026-08,gasto,2252.00,UYU,2252.00,Cuenta Casa,,Vivienda,,INTERNET/Proyecto PAS,Proyecto PAS,casa,mail,confirmado,1,19fca3561ee7b738
+cc722553808f,2026-08-03,2026-08,gasto,2252.00,UYU,2252.00,Cuenta Casa,,Vivienda,,INTERNET/Proyecto PAS,IMM (bimestral) via Proyecto PAS,casa,mail,confirmado,1,19fca3561ee7b738
 da434ef6edf7,2026-08-03,2026-08,gasto,10800.00,UYU,10800.00,Santander UYU,,Salud,,Silvana Psico,Julio Joaquin,personal,mail,confirmado,1,19fc9b793db77026
 dc158bb98219,2026-08-03,2026-08,gasto,5400.00,UYU,5400.00,Santander UYU,,Auto,,Alfredo Daniel Toledo Pizzorno,Arreglo del auto tras el choque (mi parte; 12.600 los reintegra el tercero),personal,mail,confirmado,1,19fc8f259008daf3
 c68b6f97369e,2026-08-04,2026-08,gasto,40.00,UYU,40.00,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA P,DLOPEDIDOSYA P,personal,mail,confirmado,1,19fcf97a1619a435
@@ -4751,6 +4751,6 @@ f3c943ebbc43,2026-08-07,2026-08,gasto,5560.00,UYU,5560.00,Santander UYU,,Club,,C
 a1b6c64ae2a3,2026-08-08,2026-08,gasto,6690.00,UYU,6690.00,Cuenta Casa,,Vivienda,,Bea Itau,Contribucion 5de6,casa,mail,confirmado,1,19fe407ab9634cb3
 acb13dad9a1e,2026-08-08,2026-08,gasto,3600.00,UYU,3600.00,Cuenta Casa,,Auto,,Martin Rodriguez Garage,Garage Vazquez Ledesma,casa,mail,confirmado,1,19fe2a0595f38b55
 bcb8d9ab6ade,2026-08-08,2026-08,gasto,579.74,UYU,579.74,Santander UYU,,Compras personales,,MONTEVIDEO/MERPAGO*COVERCOMPANY VIS3,MERPAGO*COVERCOMPANY,personal,mail,confirmado,1,19fe1e606e556a60
-dae31a5ac857,2026-08-08,2026-08,gasto,2102.95,UYU,2102.95,Cuenta Casa,,Servicios,,INTERNET/Proyecto PAS,Proyecto PAS,casa,mail,confirmado,1,19fe29e705e9171f
+dae31a5ac857,2026-08-08,2026-08,gasto,2102.95,UYU,2102.95,Cuenta Casa,,Servicios,,INTERNET/Proyecto PAS,ANTEL via Proyecto PAS,casa,mail,confirmado,1,19fe29e705e9171f
 2196a1fc6dd3,2026-08-09,2026-08,transferencia,59000.00,UYU,59000.00,Santander UYU,Cuenta Casa,,,,Aporte Joaco a la casa (informado el 9/8; las transf entre cuentas propias no generan aviso). Cuenta origen asumida: caja de ahorro en pesos,interno,manual,confirmado,0,aporte-joaco-59000-202608
 9b87fb4c067d,2026-08-09,2026-08,transferencia,12600.00,UYU,12600.00,A cobrar,Santander UYU,,,,Reintegro del que choco el auto (cancela 7ce2b8a564d2). Informado por Joaco el 9/8; cuenta destino asumida = la misma de la que salio el pago,interno,manual,confirmado,0,dc158bb98219-reintegro
