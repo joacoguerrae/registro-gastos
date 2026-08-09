@@ -16,34 +16,18 @@ d134e51ff3af,split_a_cargar,"Splitwise sw:4544405047 'Picada y bebida' UYU 528.0
 7cdde12cefd9,split_a_cargar,"Splitwise sw:4570616819 'Guasones' UYU 1560.00 (2026-07-14): yo pague 1560.00, mi parte 0.00 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-07-14,1
 e23310c4e1d4,transferencia_a_clasificar,"pago Splitwise recibido USD 328.80 (2026-07-15, Lucia): confirmar a que cuenta entro",2026-07-15,1
 ce36af28daa3,split_a_cargar,"Splitwise sw:4578748115 'Carbon + hielo' UYU 275.00 (2026-07-19): yo pague 275.00, mi parte 45.84 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-07-20,1
-e31a0314c816,transferencia_a_clasificar,"a 'maria ines ribas', concepto 'Torta Cumple Joaco', UYU 3100.00: sin categoria",2026-07-21,1
-011c717cecce,transferencia_a_clasificar,"a 'Panes', concepto 'Panes Cumple', UYU 1320.00: sin categoria",2026-07-21,1
-08f2c58f4e85,transferencia_a_clasificar,"a 'Pak Automoviles', concepto 'Sena Geely EX2 Decaux', USD 2000.00: sin categoria",2026-07-21,1
-08f2c58f4e85,tc_estimado,transferencia USD 2000.00 x tc 40.33 = 80660.00 UYU (corrige Fase 3),2026-07-21,1
 584b95697a62,sin_categoria,gasto Splitwise 'Cocas final' (Caqui Tapa) sin regla,2026-07-22,1
 44a5278e1a4f,sin_categoria,gasto Splitwise 'Limones pan y paltas de la final' (Caqui Tapa) sin regla,2026-07-22,1
 ba48b8a9ce04,sin_categoria,gasto Splitwise 'Final' (Caqui Tapa) sin regla,2026-07-22,1
-66311dae6ecd,tc_estimado,USD 23.99 x tc 40.33 = 967.52 UYU (corrige Fase 3),2026-07-22,1
 a3caac2ad558,split_a_cargar,"Splitwise sw:4584684715 'Youtube' USD 19.19 (2026-07-23): yo pague 19.19, mi parte 7.68 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-07-23,1
-7dbe2fb81f67,sin_categoria,establecimiento 'REST CHEZ PINEY' sin regla,2026-07-23,1
-512d22da1038,transferencia_a_clasificar,"a 'Maria Rariz', concepto 'Lucia Decaux tramites aut', UYU 6430.00: sin categoria",2026-07-23,1
-803d9b0fa81d,sin_categoria,establecimiento 'EL PALACIO DE L' sin regla,2026-07-24,1
-6904fbcce15a,split_a_cargar,Comer afuera / Delivery por 1506.00 UYU (>= umbral 1500): cargar a Splitwise?,2026-07-24,1
 32aa7165a49c,sin_categoria,"Cuenta Casa DEBITO OPERACION EN BANCA DIGITAL STM       REC RECARGAS S (del extracto, sin aviso por mail)",2026-07-25,1
 3ba6595cfd6f,ingreso_a_clasificar,Cuenta Casa 2026-07-03 30000.00 UYU: TRANSFERENCIA RECIBIDA 844424TT RECIBIDA /DECAUX TAROCO LUCI -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-07-25,1
 0bd2d13729c2,sin_respaldo_estado,fila del ledger sin linea en el extracto de Cuenta Casa 2026-07,2026-07-25,1
 cd8675911f7c,sin_respaldo_estado,fila del ledger sin linea en el extracto de Cuenta Casa 2026-07,2026-07-25,1
 683b64f4ff3f,sin_respaldo_estado,fila del ledger sin linea en el extracto de Cuenta Casa 2026-07,2026-07-25,1
 aa1e12303261,sin_respaldo_estado,fila del ledger sin linea en el extracto de Cuenta Casa 2026-07,2026-07-25,1
-f418365af05a,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*MERCADOLIBRE VIS3' sin regla,2026-07-27,1
-0da801f426ab,sin_categoria,establecimiento 'MER' sin regla,2026-07-29,1
 391a6feaa80d,transferencia_a_clasificar,"pago Splitwise recibido USD 25.26 (2026-07-29, Rodrigo): confirmar a que cuenta entro",2026-07-30,1
-0da801f426ab,split_a_cargar,"Splitwise sw:4596929769 'Regalo mama' UYU 2608.00 (2026-07-29): yo pague 2608.00, mi parte 1304.00 -> ajustar cargo 0da801f426ab y crear fila hermana -split",2026-07-30,1
-bb0d7f3f7445,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*MELI VIS3' sin regla,2026-08-01,1
-c208ef680230,sin_categoria,establecimiento 'REST NAMASTE' sin regla,2026-08-01,1
 92c5ab1c9e11,transferencia_a_clasificar,"pago Splitwise recibido UYU 836.00 (2026-08-01, Rodrigo): confirmar a que cuenta entro",2026-08-02,1
-c208ef680230,split_a_cargar,"Splitwise sw:4602493953 'Cena mama' UYU 6948.00 (2026-08-01): yo pague 6948.00, mi parte 3474.00 -> ajustar cargo c208ef680230 y crear fila hermana -split",2026-08-02,1
-8b09908f739a,tc_estimado,USD 1.99 x tc 40.33 = 80.26 UYU (corrige Fase 3),2026-08-02,1
 1e545e9cd770,ingreso_a_clasificar,Santander UYU 2026-07-23 16.50 UYU: PROMOCIONES TARJETAS DE DEBITO DESC CANTINA ORT CENTRO -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-08-02,1
 180f83705c82,ingreso_a_clasificar,Santander UYU 2026-07-13 16.50 UYU: PROMOCIONES TARJETAS DE DEBITO DESC CANTINA ORT CENTRO -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-08-02,1
 3e6a3a0d9c9f,ingreso_a_clasificar,Santander UYU 2026-07-13 200.00 UYU: CREDITO OPERACION EN BANCA DIGITAL T--/ESMITE RODRIGUEZ ALEJ -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-08-02,1
@@ -51,10 +35,7 @@ bf5232a79b96,sin_categoria,"Santander UYU PAGO DE SERVICIO POR BANRED SERVICIO D
 9714accf4cb9,sin_categoria,"Santander UYU DEBITO OPERACION EN BANCA DIGITAL PAHORRO (del extracto, sin aviso por mail)",2026-08-02,1
 c0513df7529f,ingreso_a_clasificar,Santander UYU 2026-07-01 142581.00 UYU: SUELDOS 941081TT RECIBIDA /DELIVERY HERO URUGUAY MARKET -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-08-02,1
 77c26159e14d,sin_respaldo_estado,fila del ledger sin linea en el extracto de Santander UYU 2026-07,2026-08-02,1
-a7ad2ee2689b,sin_respaldo_estado,fila del ledger sin linea en el extracto de Santander UYU 2026-07,2026-08-02,1
-761e0058038c,sin_respaldo_estado,fila del ledger sin linea en el extracto de Santander UYU 2026-07,2026-08-02,1
 e473aa08da5a,sin_respaldo_estado,fila del ledger sin linea en el extracto de Santander UYU 2026-07,2026-08-02,1
-b9a8d1f5818a,sin_respaldo_estado,fila del ledger sin linea en el extracto de Santander UYU 2026-07,2026-08-02,1
 c228d8e0387d,sin_respaldo_estado,fila del ledger sin linea en el extracto de Santander UYU 2026-07,2026-08-02,1
 763e0170f2d9,sin_categoria,"Cuenta Casa COMISION EDC CTA.CTE. (del extracto, sin aviso por mail)",2026-08-02,1
 007eb366e0ff,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 516.00 Uber) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
@@ -64,13 +45,6 @@ c228d8e0387d,sin_respaldo_estado,fila del ledger sin linea en el extracto de San
 5797d64204a7,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 1889.98 ) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
 b9e1bef414e0,sin_respaldo_estado,"Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 892.60 Burger 30/6, mi mitad (sw:4544350903; cargo 1.785,20 no registrado en junio)) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado)",2026-08-02,1
 bb8c836f09d8,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 16004.50 Silla) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
-9f2680fde1bf,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-15 UYU 245.00 DLOUBERRIDES) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
-c1b5b2cc3f7d,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-15 UYU 225.98 DLOUBERRIDES) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
-f2b560128a89,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-15 UYU -225.94 Reintegro DLOUBERRIDES (revierte 82df163851c5)) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
-1b281aeb4913,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-19 USD -1.00 Reintegro CLOUDFLARE (revierte dfa33eceea23)) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
-dfa33eceea23,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-19 USD 1.00 CLOUDFLARE) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
-0da801f426ab,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-28 UYU 2607.79 MER) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
-ba41eb4b63c1,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-28 UYU 398.28 MEDIALUNAS CALE) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
 78c84a7dd33f,sin_categoria,estado_cuenta Santander Platinum 2026-07: 'DESBORDE      HANDY 0J' sin regla,2026-08-02,1
 0974897813b8,sin_categoria,estado_cuenta Santander Platinum 2026-07: 'SEGURO SALDO DEUDOR' sin regla,2026-08-02,1
 2ee0a35c0607,sin_categoria,estado_cuenta Santander Platinum 2026-07: 'ZURICH SANTANDER' sin regla,2026-08-02,1
@@ -85,13 +59,6 @@ a5d2a4cb055f,sin_categoria,estado_cuenta Santander Platinum 2026-07: 'ZURICH SAN
 5797d64204a7,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 1889.98 ) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
 b9e1bef414e0,sin_respaldo_estado,"Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 892.60 Burger 30/6, mi mitad (sw:4544350903; cargo 1.785,20 no registrado en junio)) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado)",2026-08-02,1
 bb8c836f09d8,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-06-30 UYU 16004.50 Silla) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
-9f2680fde1bf,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-15 UYU 245.00 DLOUBERRIDES) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
-c1b5b2cc3f7d,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-15 UYU 225.98 DLOUBERRIDES) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
-f2b560128a89,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-15 UYU -225.94 Reintegro DLOUBERRIDES (revierte 82df163851c5)) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
-1b281aeb4913,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-19 USD -1.00 Reintegro CLOUDFLARE (revierte dfa33eceea23)) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
-dfa33eceea23,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-19 USD 1.00 CLOUDFLARE) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
-0da801f426ab,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-28 UYU 2607.79 MER) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
-ba41eb4b63c1,sin_respaldo_estado,Santander Platinum 2026-07: fila del ledger (2026-07-28 UYU 398.28 MEDIALUNAS CALE) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-08-02,1
 2ee0a35c0607,sin_categoria,estado_cuenta Santander Platinum 2026-07: 'ZURICH SANTANDER' sin regla,2026-08-02,1
 13cd01090541,sin_categoria,estado_cuenta Santander Platinum 2026-07: 'EPAY TAX FREE' sin regla,2026-08-02,1
 a5d2a4cb055f,sin_categoria,estado_cuenta Santander Platinum 2026-07: 'ZURICH SANTANDER' sin regla,2026-08-02,1
@@ -102,30 +69,28 @@ a89ed44b0921,ingreso_a_clasificar,Santander USD 2026-07-22 50.00 USD: TRANSF INS
 5c712db5b950,ingreso_a_clasificar,Santander USD 2026-07-01 1951.22 USD: CREDITO OPERACION EN BANCA DIGITAL PAHORRO/GUERRA ESMITE JOA -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-08-02,1
 e09124452e63,split_a_cargar,"Splitwise sw:4602493953 'Cena mama' UYU 6948.00 (2026-08-01): yo pague 6948.00, mi parte 3474.00 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-08-02,1
 ca3ab05b8bdd,split_a_cargar,"Splitwise sw:4596929769 'Regalo mama' UYU 2608.00 (2026-07-29): yo pague 2608.00, mi parte 1304.00 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-08-02,1
-dc158bb98219,transferencia_a_clasificar,"a 'Alfredo Daniel Toledo Pizzorno', concepto 'Versa Lucia', UYU 18000.00: sin categoria",2026-08-03,1
-4a05257dbd71,split_a_cargar,"Splitwise sw:4608310610 'Movistar' UYU 1847.00 (2026-08-03): yo pague 1847.00, mi parte 923.50 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-08-04,
-2383e9382b8e,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-08-04,
-7cb386eb832a,tc_estimado,USD 118.34 x tc 40.33 = 4772.65 UYU (corrige Fase 3),2026-08-04,
-7cb386eb832a,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-08-04,
-15673569a524,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-08-04,
-cc722553808f,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-08-04,
-da434ef6edf7,transferencia_a_clasificar,"a 'Silvana Psico', concepto 'Julio Joaquin', UYU 10800.00: sin categoria",2026-08-04,
-15673569a524,split_a_cargar,"Splitwise sw:4608310610 'Movistar' UYU 1847.00 (2026-08-03): yo pague 1847.00, mi parte 923.50 -> ajustar cargo 15673569a524 y crear fila hermana -split",2026-08-04,
-986ecbd85abd,sin_categoria,gasto Splitwise 'ManoJa' (Hermanos de Marian) sin regla,2026-08-06,
-157bc9ff29a1,sin_categoria,establecimiento 'MONTEVIDEO/DLO*ASOCIACION URUGUAVIS3' sin regla,2026-08-06,
-728e29b1992d,tc_estimado,USD 100.00 x tc 40.33 = 4033.00 UYU (corrige Fase 3),2026-08-06,
-761b0425d847,transferencia_a_clasificar,"a 'Eliana Vaselli Tartas', concepto 'pack Lucia Decaux', UYU 2320.00: sin categoria",2026-08-06,
-07eb31591254,sin_categoria,establecimiento 'MONTEVIDEO/BAR AROCENA PUNTA CARVIS3' sin regla,2026-08-08,
-1e9ede7ad69d,transferencia_a_clasificar,"a 'Maria Rariz Tate Escribana', concepto 'poder auto poder auto lucia', UYU 7686.00: sin categoria",2026-08-08,
-bcb8d9ab6ade,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*COVERCOMPANY VIS3' sin regla,2026-08-09,
-dae31a5ac857,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-08-09,
-1c138993069c,tc_estimado,USD 278.00 x tc 40.33 = 11211.74 UYU (corrige Fase 3),2026-08-09,
-1c138993069c,sin_categoria,establecimiento 'POSADA LA FLOR' sin regla,2026-08-09,
-4c3b149e8f24,tc_estimado,reintegro USD 278.00 x tc 40.33 (corrige Fase 3),2026-08-09,
-4c3b149e8f24,sin_categoria,reintegro 'POSADA LA FLOR' sin regla ni cargo original,2026-08-09,
+4a05257dbd71,split_a_cargar,"Splitwise sw:4608310610 'Movistar' UYU 1847.00 (2026-08-03): yo pague 1847.00, mi parte 923.50 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-08-04,1
+986ecbd85abd,sin_categoria,gasto Splitwise 'ManoJa' (Hermanos de Marian) sin regla,2026-08-06,1
 8a1b65fed7c1,sin_categoria,estado_cuenta Santander Mastercard 2026-08: 'MERPAGO MERCADOLIBREUR' sin regla,2026-08-09,1
 5e81c7673be2,sin_categoria,estado_cuenta Santander Mastercard 2026-08: 'DLO PEDIDOSYA MARKET' sin regla,2026-08-09,1
 0d6ef70aea57,sin_categoria,estado_cuenta Santander Mastercard 2026-08: 'DLO PEDIDOSYA EXTRA' sin regla,2026-08-09,1
 c4730af393f4,sin_categoria,estado_cuenta Santander Mastercard 2026-08: 'DLO PEDIDOSYA PROPINA' sin regla,2026-08-09,1
 342cc11368f5,sin_categoria,estado_cuenta Santander Mastercard 2026-08: 'DLO PEDIDOSYA MARKET' sin regla,2026-08-09,1
 9f13ead97fa4,sin_categoria,estado_cuenta Santander Mastercard 2026-08: 'DLO PEDIDOSYA EXTRA' sin regla,2026-08-09,1
+2383e9382b8e,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-08-09,1
+7cb386eb832a,tc_estimado,USD 118.34 x tc 40.33 = 4772.65 UYU (corrige Fase 3),2026-08-09,1
+7cb386eb832a,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-08-09,1
+15673569a524,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-08-09,1
+cc722553808f,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-08-09,1
+157bc9ff29a1,sin_categoria,establecimiento 'MONTEVIDEO/DLO*ASOCIACION URUGUAVIS3' sin regla,2026-08-09,1
+728e29b1992d,tc_estimado,USD 100.00 x tc 40.33 = 4033.00 UYU (corrige Fase 3),2026-08-09,1
+07eb31591254,sin_categoria,establecimiento 'MONTEVIDEO/BAR AROCENA PUNTA CARVIS3' sin regla,2026-08-09,1
+bcb8d9ab6ade,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*COVERCOMPANY VIS3' sin regla,2026-08-09,1
+dae31a5ac857,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-08-09,1
+1c138993069c,tc_estimado,USD 278.00 x tc 40.33 = 11211.74 UYU (corrige Fase 3),2026-08-09,1
+1c138993069c,sin_categoria,establecimiento 'POSADA LA FLOR' sin regla,2026-08-09,1
+4c3b149e8f24,tc_estimado,reintegro USD 278.00 x tc 40.33 (corrige Fase 3),2026-08-09,1
+4c3b149e8f24,sin_categoria,reintegro 'POSADA LA FLOR' sin regla ni cargo original,2026-08-09,1
+da434ef6edf7,transferencia_a_clasificar,"a 'Silvana Psico', concepto 'Julio Joaquin', UYU 10800.00: sin categoria",2026-08-09,1
+761b0425d847,transferencia_a_clasificar,"a 'Eliana Vaselli Tartas', concepto 'pack Lucia Decaux', UYU 2320.00: sin categoria",2026-08-09,1
+1e9ede7ad69d,transferencia_a_clasificar,"a 'Maria Rariz Tate Escribana', concepto 'poder auto poder auto lucia', UYU 7686.00: sin categoria",2026-08-09,1

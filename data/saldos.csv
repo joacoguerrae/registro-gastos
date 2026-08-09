@@ -24,7 +24,7 @@ fecha_corte,cuenta,moneda,saldo_calculado,saldo_real,diferencia,comentario
 2026-07-31,BBVA Crédito,UYU,204.51,,,SIN saldo real reportado
 2026-07-31,BBVA USD,USD,692.93,692.93,0.00,incluye 200 USD de amigos (deuda con ellos) (hist: SIN saldo real reportado)
 2026-07-31,Cuenta Casa,UYU,49.70,49.70,0.00,"= corriente Santander 383,96 + 16.938,28 que llegan de MP el 12/7; hipótesis corriente=casa (8261) a confirmar"
-2026-07-31,Deudas,UYU,-2643.77,,,SIN saldo real reportado
+2026-07-31,Deudas,UYU,2134.23,,,SIN saldo real reportado
 2026-07-31,Deudas USD,USD,1193.70,,,SIN saldo real reportado
 2026-07-31,Efectivo,UYU,0.00,0.00,0.00,SIN saldo real reportado
 2026-07-31,Efectivo USD,USD,30.00,30.00,0.00,SIN saldo real reportado

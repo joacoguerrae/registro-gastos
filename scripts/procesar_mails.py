@@ -99,6 +99,32 @@ def cargar_tarjetas():
     return out
 
 
+def cargar_cuentas_validas():
+    with open(CUENTAS_CSV, encoding="utf-8-sig") as f:
+        return {r["cuenta"].strip() for r in csv.DictReader(f)}
+
+
+def cuenta_en_moneda(cuenta, moneda, validas):
+    """La misma cuenta pero en otra moneda, si existe.
+
+    Una tarjeta de débito sirve a las cuentas del titular en TODAS las monedas:
+    la 9071 debita de la caja de ahorro en pesos o de la de dólares según en qué
+    moneda sea el consumo. El mapeo tarjeta->cuenta es uno solo, así que un
+    consumo en USD quedaba imputado a la cuenta en pesos (lo destapó el pago del
+    estado de la Platinum, USD 118,34 del 3/8/2026, que salió de la caja USD).
+
+    Convención de nombres ya usada en config/cuentas.csv: el par es
+    "Santander UYU"/"Santander USD" (sufijo de moneda que se reemplaza) o
+    "Santander Platinum"/"Santander Platinum USD" (sufijo que se agrega).
+    Si la contraparte no existe se deja la original: mejor la cuenta conocida que
+    una inventada.
+    """
+    if moneda == "UYU":
+        return cuenta
+    cand = cuenta[:-4] + " " + moneda if cuenta.endswith(" UYU") else f"{cuenta} {moneda}"
+    return cand if cand in validas else cuenta
+
+
 def cargar_reglas():
     reglas = []
     with open(REGLAS_CSV, encoding="utf-8-sig") as f:
@@ -274,6 +300,7 @@ def main():
     args = ap.parse_args()
 
     tarjetas = cargar_tarjetas()
+    cuentas_validas = cargar_cuentas_validas()
     reglas = cargar_reglas()
     with open(PARAMETROS, encoding="utf-8") as f:
         params = json.load(f)
@@ -437,6 +464,7 @@ def main():
             continue
 
         cuenta, ambito = tarjetas.get(tarjeta, ("", "personal"))
+        cuenta = cuenta_en_moneda(cuenta, moneda, cuentas_validas)
         if not cuenta:
             log_proc(mail, "aviso_tarjeta", "ignorado",
                      detalle=f"tarjeta desconocida {tarjeta}")
@@ -519,6 +547,7 @@ def main():
             continue
 
         cuenta, ambito = tarjetas.get(tarjeta, ("", "personal"))
+        cuenta = cuenta_en_moneda(cuenta, moneda, cuentas_validas)
         if not cuenta:
             log_proc(mail, "devolucion", "ignorado", detalle=f"tarjeta desconocida {tarjeta}")
             continue

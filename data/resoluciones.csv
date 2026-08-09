@@ -326,3 +326,49 @@ c4730af393f4,motivo_resuelto,sin_categoria,Super,2026-08-09
 342cc11368f5,motivo_resuelto,sin_categoria,Super,2026-08-09
 9f13ead97fa4,categoria,Super,PedidosYa Market/EXTRA de la tarjeta de casa: compra de supermercado (Joaco 9/8),2026-08-09
 9f13ead97fa4,motivo_resuelto,sin_categoria,Super,2026-08-09
+2383e9382b8e,tipo,transferencia,"pago del estado de la Platinum de julio (46.085,93 = su saldo contado exacto): baja la deuda de la tarjeta, no es gasto (Joaco 9/8)",2026-08-09
+2383e9382b8e,cuenta_destino,Santander Platinum,,2026-08-09
+2383e9382b8e,ambito,interno,,2026-08-09
+2383e9382b8e,en_analisis,0,pago de tarjeta,2026-08-09
+2383e9382b8e,descripcion,Pago estado Platinum julio (Proyecto PAS),,2026-08-09
+2383e9382b8e,motivo_resuelto,sin_categoria,transferencia interna (pago de tarjeta),2026-08-09
+7cb386eb832a,tipo,transferencia,"pago de la parte en USD del estado de la Platinum (118,34 = su saldo USD exacto) (Joaco 9/8)",2026-08-09
+7cb386eb832a,cuenta_destino,Santander Platinum USD,,2026-08-09
+7cb386eb832a,ambito,interno,,2026-08-09
+7cb386eb832a,en_analisis,0,pago de tarjeta,2026-08-09
+7cb386eb832a,descripcion,Pago estado Platinum USD julio (Proyecto PAS),,2026-08-09
+7cb386eb832a,motivo_resuelto,sin_categoria,transferencia interna (pago de tarjeta),2026-08-09
+7cb386eb832a,motivo_resuelto,tc_estimado,en_analisis=0: no afecta agregados,2026-08-09
+cc722553808f,categoria,Vivienda,"IMM (bimestral, el anterior fue en junio) (Joaco 9/8)",2026-08-09
+cc722553808f,motivo_resuelto,sin_categoria,Vivienda casa,2026-08-09
+dae31a5ac857,categoria,Servicios,ANTEL (Joaco 9/8),2026-08-09
+dae31a5ac857,motivo_resuelto,sin_categoria,Servicios casa,2026-08-09
+15673569a524,categoria,Servicios,"Movistar celular, mitad de Agus en Splitwise (Joaco 9/8)",2026-08-09
+15673569a524,monto,923.71,"split: la tarjeta cobro 1.847,21 y la mitad de Agus en Splitwise es 923,50 exactos; el resto (923,71, con los 0,21 de redondeo) es de Joaco",2026-08-09
+15673569a524,monto_uyu,923.71,idem,2026-08-09
+15673569a524,motivo_resuelto,sin_categoria,Servicios,2026-08-09
+15673569a524,motivo_resuelto,split_a_cargar,"dividido: 923,71 propio + 923,50 a Deudas (sw:4608310610)",2026-08-09
+4a05257dbd71,motivo_resuelto,split_a_cargar,es el Movistar ya dividido en el ledger (15673569a524 + su hermana),2026-08-09
+da434ef6edf7,categoria,Salud,"psicologa (Silvana), 10.800 mensuales desde agosto (Joaco 9/8)",2026-08-09
+da434ef6edf7,motivo_resuelto,transferencia_a_clasificar,Salud personal,2026-08-09
+157bc9ff29a1,categoria,Wanderers,cuota de Wanderers (Joaco 9/8),2026-08-09
+157bc9ff29a1,motivo_resuelto,sin_categoria,Wanderers,2026-08-09
+bcb8d9ab6ade,categoria,Compras personales,CoverCompany (Joaco 9/8),2026-08-09
+bcb8d9ab6ade,motivo_resuelto,sin_categoria,Compras personales,2026-08-09
+728e29b1992d,motivo_resuelto,tc_estimado,"suscripcion USD, se acepta el tc; se corrige contra el estado (Joaco 9/8)",2026-08-09
+986ecbd85abd,categoria,Otros,gasto chico de Splitwise (Joaco 9/8),2026-08-09
+986ecbd85abd,motivo_resuelto,sin_categoria,Otros,2026-08-09
+761b0425d847,categoria,Super,pack de tartas (Eliana Vaselli) (Joaco 9/8),2026-08-09
+761b0425d847,ambito,casa,"gasto de casa, se divide por coeficiente (Joaco 9/8)",2026-08-09
+761b0425d847,motivo_resuelto,transferencia_a_clasificar,Super casa,2026-08-09
+07eb31591254,categoria,Comer afuera / Delivery,Bar Arocena (Joaco 9/8),2026-08-09
+07eb31591254,motivo_resuelto,sin_categoria,Comer afuera / Delivery,2026-08-09
+1e9ede7ad69d,categoria,Auto,poder del auto ante la escribana Maria Rariz (Joaco 9/8),2026-08-09
+1e9ede7ad69d,ambito,casa,"50/50 con Lu, como el tramite anterior de la misma escribana (Joaco 9/8)",2026-08-09
+1e9ede7ad69d,motivo_resuelto,transferencia_a_clasificar,Auto casa 50/50,2026-08-09
+1c138993069c,categoria,Viajes,Posada La Flor; se reintegro el mismo dia (revertido por 4c3b149e8f24) (Joaco 9/8),2026-08-09
+1c138993069c,motivo_resuelto,sin_categoria,Viajes,2026-08-09
+1c138993069c,motivo_resuelto,tc_estimado,el par cargo+reintegro netea a 0 con cualquier tc,2026-08-09
+4c3b149e8f24,categoria,Viajes,"reintegro de Posada La Flor, revierte 1c138993069c (Joaco 9/8)",2026-08-09
+4c3b149e8f24,motivo_resuelto,sin_categoria,Viajes,2026-08-09
+4c3b149e8f24,motivo_resuelto,tc_estimado,netea a 0,2026-08-09
