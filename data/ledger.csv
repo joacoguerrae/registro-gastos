@@ -4599,7 +4599,7 @@ ccd3203d6b75,2026-07-10,2026-07,gasto,407.67,UYU,407.67,Deudas,,Regalos,Alimento
 0a5e441cd7e9,2026-07-12,2026-07,transferencia,16938.28,UYU,16938.28,Mercado Pago,Cuenta Casa,,,,Retorno fondo casa desde Mercado Pago,interno,mail,confirmado,0,19f56d608e88460c
 7e0857a287a0,2026-07-12,2026-07,gasto,203.61,UYU,203.61,Santander UYU,,Super,,MONTEVIDEO/KINKO                VIS3,KINKO,personal,mail,confirmado,1,19f570efc43c61d1
 c0864e169a0e,2026-07-12,2026-07,gasto,466.66,UYU,466.66,Deudas,,Comer afuera / Delivery,Restaurantes,,Pizza,split,splitwise,confirmado,1,sw:4566353446
-c2c5f3c8bf21,2026-07-12,2026-07,gasto,3061.72,UYU,3061.72,Mercado Pago,,Otros,,,"Gasto no identificado durante el parqueo en Mercado Pago (20.000 enviados el 8/7, solo 16.938,28 volvieron el 12/7; MP no manda mail por pago con saldo, cierra exacto contra el extracto real)",casa,manual,confirmado,1,mp-gasto-invisible-mp-202607
+c2c5f3c8bf21,2026-07-12,2026-07,gasto,3061.72,UYU,3061.72,Mercado Pago,,Otros,,,"Parqueo en Mercado Pago: incluye ANTEL de julio 2.102,95 (resto sin identificar 958,77)",casa,manual,confirmado,1,mp-gasto-invisible-mp-202607
 1388d186e49f,2026-07-13,2026-07,gasto,708.29,UYU,708.29,Deudas,,Regalos,General,,Carpintero,split,splitwise,confirmado,1,sw:4568645643
 180f83705c82,2026-07-13,2026-07,ingreso,16.50,UYU,16.50,Santander UYU,,Devoluciones & cashback,,PROMOCIONES TARJETAS DE DEBITO DESC CANTINA ORT CENTRO,PROMOCIONES TARJETAS DE DEBITO DESC CANTINA ORT CENTRO,personal,estado_cuenta,pendiente,1,estado:Santander UYU:2026-07-13:16.50:PROMOCIONES TARJETAS DE DEBITO DESC CANT
 187fe46fc1ee,2026-07-13,2026-07,gasto,1560.00,UYU,1560.00,Cuenta Casa,,Salidas & ocio,,MONTEVIDEO/DLO*RedTickets SAS - VIS3,DLO*RedTickets SAS -,casa,mail,confirmado,1,19f5e268d19fad09

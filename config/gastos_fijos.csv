@@ -4,7 +4,7 @@ Contribucion inmobiliaria,casa,10484,UYU,cuota mensual,8,Cuenta Casa (Bea Itau),
 Garaje Martin Rodriguez,casa,3600,UYU,mensual,4,Cuenta Casa,Auto,,,alta,
 Yova (limpieza),casa,3400,UYU,mensual,,Cuenta Casa,Casa & hogar,,,media,dos visitas de ~1.700 por mes
 UTE,casa,2617,UYU,mensual,15,Cuenta Casa (Proyecto PAS),Servicios,,,alta,"monto variable (2.600-2.900); el aviso dice 'Proyecto PAS', no UTE"
-ANTEL,casa,2102.95,UYU,mensual,8,Cuenta Casa (Proyecto PAS),Servicios,,,alta,"confirmado por Joaco 9/8; el aviso dice 'Proyecto PAS', no ANTEL"
+ANTEL,casa,2102.95,UYU,mensual,8,Cuenta Casa (Proyecto PAS),Servicios,,,alta,"confirmado por Joaco 9/8; el aviso dice 'Proyecto PAS', no ANTEL. NO siempre sale de la Cuenta Casa: el de julio 2026 lo pago con saldo de Mercado Pago (quedo dentro del lump del parqueo)"
 IMM,casa,2252,UYU,bimestral,3,Cuenta Casa (Proyecto PAS),Vivienda,,,alta,meses pares (jun, ago, oct, dic)
 BSE seguro del auto,casa,2000,UYU,cuota mensual,9,Santander Platinum,Auto,8,2027-04,media,"10 cuotas; van 2 (jul 3.794 + ago). Con el auto nuevo la cuota baja a ~2.000: confirmar el importe real cuando llegue"
 ORT (master),personal,28170,UYU,cuota mensual,8,Santander Platinum,Educacion,6,2027-02,alta,"agosto 2026 es la cuota 18/24; despues de agosto quedan 6"
@@ -12,10 +12,11 @@ Psicologa (Silvana),personal,10800,UYU,mensual,3,Santander UYU,Salud,,,media,arr
 Club (via Lu),personal,5560,UYU,mensual,,Santander UYU,Club,,,alta,"la cuota es mensual; Joaco le transfiere a Lu cuando puede, por eso en el ledger aparece salteado"
 Anthropic,personal,100,USD,mensual,5,Santander Platinum,Suscripciones,,,alta,
 Movistar,personal,1847,UYU,mensual,3,Santander UYU,Servicios,,,alta,"split 1/2 con Agus: la parte propia es 923,50 y la otra mitad va a Deudas"
-YouTube Premium familiar,personal,23.99,USD,mensual,22,Santander Platinum,Suscripciones,,,alta,"llega como APPLE.COM/BILL. Split en SEIS partes (Rodrigo 2, hermana 1, madre 1, Lu 1, Joaco 1): ver config/splits_recurrentes.csv. OJO: hoy entra sin splittear"
+YouTube Premium familiar,personal,23.99,USD,mensual,22,Santander Platinum,Suscripciones,,,alta,"llega como APPLE.COM/BILL. Split en SEIS partes (Rodrigo 2, hermana 1, madre 1, Lu 1, Joaco 1): ver config/splits_recurrentes.csv. Desde el 9/8/2026 el patron lo caza y cae en la bandeja como split_a_cargar; los cargos anteriores quedaron sin splittear por decision de Joaco (no se corrige hacia atras)"
 PedidosYa Plus,personal,343,UYU,mensual,13,Santander UYU,Suscripciones,,,alta,confirmado activo por Joaco 9/8
 Meli+,personal,199,UYU,mensual,1,Santander UYU,Suscripciones,,,media,
 Google One (100 GB),personal,1.99,USD,mensual,1,Santander Platinum,Suscripciones,,,alta,
 Zurich Santander,personal,8,USD,mensual,24,Santander Platinum,Servicios,,,media,"seguro de la tarjeta; Joaco no tiene claro si el importe es fijo o variable (9/8)"
 Mapfre,personal,204.51,UYU,mensual,7,BBVA Credito,Servicios,,,media,"seguro de la tarjeta; solo se ve cuando llega el estado del BBVA. Importe fijo o variable sin confirmar (9/8)"
 Seguro saldo deudor,personal,,UYU,mensual,,ambas tarjetas,Servicios,,,alta,monto variable segun el saldo de cada tarjeta
+Wanderers,personal,1050,UYU,trimestral,,Santander UYU,Wanderers,,,media,"no tiene fecha fija: Joaco paga la cuota pendiente cuando se acuerda, tipicamente antes de un partido (confirmado 9/8)"
