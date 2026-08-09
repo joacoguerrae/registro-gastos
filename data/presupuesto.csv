@@ -489,9 +489,9 @@ mes,concepto_original,categoria,tipo,presupuesto,gasto_real_registrado,comentari
 2026-07,Gastos Comunes,Vivienda,Fijo,22400.00,0.00,
 2026-07,IMM,Vivienda,Fijo,0.00,0.00,
 2026-07,Wanderers,Wanderers,Variable,1500.00,0.00,
-2026-08,Auto,Auto,Variable,12360,0,"mi parte (coef agosto) de 11.768, sin los 12.205 de una vez de la venta del auto viejo | ajustado 2/8 con el ingreso de Lu de agosto (98.551) + 5.400 del arreglo del auto tras el choque (gasto propio de Joaco, no se divide; agregado 3/8)"
+2026-08,Auto,Auto,Variable,11298,0,"mi parte (coef agosto) de 11.768, sin los 12.205 de una vez de la venta del auto viejo | ajustado 2/8 con el ingreso de Lu de agosto (98.551) + 5.400 del arreglo del auto tras el choque (gasto propio de Joaco, no se divide; agregado 3/8) | 9/8: baja 1.062 (mi parte de los 1.794 que cede el seguro BSE al pasar de 3.794 a ~2.000 con el auto nuevo). El auto nuevo es ELECTRICO: la nafta (~2.900/mes) deberia caer fuerte y parte del costo se muda a UTE. Todavia sin dimensionar - NO se ajusto nafta ni UTE hasta tener 1-2 meses de dato real"
 2026-08,Casa & hogar,Casa & hogar,Variable,6000,0,julio real 5.265 | recalculado 2/8 con los TOTALES reales de casa (antes se usaba la parte de Joaco por error)
-2026-08,Club,Club,Variable,4715,0,cuota fija | armado 2/8 con Joaco a partir del real de julio
+2026-08,Club,Club,Variable,5560,0,"cuota fija | armado 2/8 con Joaco a partir del real de julio | 9/8: la cuota real es 5.560 mensual (antes 4.715); Joaco le transfiere a Lu cuando puede, por eso en el ledger aparece salteada"
 2026-08,Comer afuera / Delivery,Comer afuera / Delivery,Variable,6000,0,igual que julio (decision de Joaco) | armado 2/8 con Joaco a partir del real de julio
 2026-08,Compras personales,Compras personales,Variable,2560,0, | armado 2/8 con Joaco a partir del real de julio
 2026-08,Educación,Educación,Variable,28170,0,"ORT, cuota fija | armado 2/8 con Joaco a partir del real de julio"
