@@ -4754,3 +4754,5 @@ bcb8d9ab6ade,2026-08-08,2026-08,gasto,579.74,UYU,579.74,Santander UYU,,Compras p
 dae31a5ac857,2026-08-08,2026-08,gasto,2102.95,UYU,2102.95,Cuenta Casa,,Servicios,,INTERNET/Proyecto PAS,ANTEL via Proyecto PAS,casa,mail,confirmado,1,19fe29e705e9171f
 2196a1fc6dd3,2026-08-09,2026-08,transferencia,59000.00,UYU,59000.00,Santander UYU,Cuenta Casa,,,,Aporte Joaco a la casa (informado el 9/8; las transf entre cuentas propias no generan aviso). Cuenta origen asumida: caja de ahorro en pesos,interno,manual,confirmado,0,aporte-joaco-59000-202608
 9b87fb4c067d,2026-08-09,2026-08,transferencia,12600.00,UYU,12600.00,A cobrar,Santander UYU,,,,Reintegro del que choco el auto (cancela 7ce2b8a564d2). Informado por Joaco el 9/8; cuenta destino asumida = la misma de la que salio el pago,interno,manual,confirmado,0,dc158bb98219-reintegro
+5fa4be72fbac,2026-08-10,2026-08,gasto,3500.00,UYU,3500.00,Santander UYU,,Regalos,,Yo Oca Pesos,regalo sanky,personal,mail,confirmado,1,19fee55f2b09734f
+93a59e2b209d,2026-08-10,2026-08,gasto,28874.00,UYU,28874.00,Santander Platinum,,Educación,,UNIVERSIDAD ORT,UNIVERSIDAD ORT,personal,mail,confirmado,1,19feda0cbd1ffc9b

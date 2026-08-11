@@ -179,3 +179,5 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 19fb79af0fe37e0f,2026-07-31T09:56:39Z,ignorado,estado_cuenta_pendiente_f3,,envio@tuestadodecuenta.santander.com.uy | Estado de Cuenta Santander VISA,,2026-08-09T23:11:39+00:00
 19fc6d3eb6705f63,2026-08-03T08:52:52Z,ignorado,estado_cuenta_pendiente_f3,,bbvanetnotificacionesp@grupobbva.com.uy | Estado de Cuenta de su Tarjeta de Crédito Visa BBVA,,2026-08-09T23:11:39+00:00
 19fd8bd5ba9514ec,2026-08-06T20:21:45Z,ignorado,estado_cuenta_pendiente_f3,,envio@tuestadodecuenta.santander.com.uy | Estado de Cuenta Santander MASTERCARD,,2026-08-09T23:11:39+00:00
+19feda0cbd1ffc9b,2026-08-10T21:42:43Z,aviso_tarjeta,insertado,93a59e2b209d,6427 UYU 28874.00 UNIVERSIDAD ORT -> Santander Platinum/personal/Educación,6427||28874.00||UNIVERSIDAD ORT||2026-08-10T18:42:39,2026-08-11T02:30:30+00:00
+19fee55f2b09734f,2026-08-11T01:00:34Z,transferencia,insertado,5fa4be72fbac,Aviso de Transferencia Instantánea en Uruguay   | Yo Oca Pesos 'regalo sanky' UYU 3500.00 2026-08-10 -> gasto/personal/Regalos,,2026-08-11T02:30:30+00:00
