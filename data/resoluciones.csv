@@ -376,3 +376,12 @@ bcb8d9ab6ade,motivo_resuelto,sin_categoria,Compras personales,2026-08-09
 cc722553808f,descripcion,IMM (bimestral) via Proyecto PAS,"Proyecto PAS no dice que se pago: nombrarlo para que los fijos sean legibles (Joaco 9/8)",2026-08-09
 dae31a5ac857,descripcion,ANTEL via Proyecto PAS,"confirmado por Joaco 9/8: ANTEL de agosto 2.102,95",2026-08-09
 c2c5f3c8bf21,descripcion,"Parqueo en Mercado Pago: incluye ANTEL de julio 2.102,95 (resto sin identificar 958,77)","Joaco 9/8: el ANTEL de julio lo pago con el saldo que tenia en Mercado Pago, por eso no figura en Santander. No se reparte la fila: el total y la cuenta son correctos",2026-08-09
+946c0e481e14,tipo,gasto,"Joaco 16/8: es un gasto de la casa por la matricula del auto nuevo, no un movimiento interno",2026-08-16
+946c0e481e14,cuenta_destino,,"deja de ser transferencia: 'Lu pesos' no es una cuenta trackeada, Lu solo fue el medio para pagar la matricula",2026-08-16
+946c0e481e14,categoria,Auto,"matricula del auto nuevo",2026-08-16
+946c0e481e14,ambito,casa,"el auto es de la casa y salio de la Cuenta Casa",2026-08-16
+946c0e481e14,en_analisis,1,"es gasto real: si quedaba interna, los 3.500 no entraban a ningun agregado",2026-08-16
+946c0e481e14,motivo_resuelto,transferencia_a_clasificar,"gasto de casa en Auto (matricula del auto nuevo)",2026-08-16
+a7dc1b8b6543,categoria,Wanderers,"Joaco 16/8: consumo en la cancha (el HANDY genérico no dice el comercio)",2026-08-16
+a7dc1b8b6543,motivo_resuelto,sin_categoria,Wanderers,2026-08-16
+6e49499cdf2e,categoria,Suscripciones,"PedidosYa Plus es la suscripcion mensual, no comida: la regla general de PedidosYa la agarraba primero (detectado 16/8)",2026-08-16
