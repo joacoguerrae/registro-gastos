@@ -1,29 +1,28 @@
 {
   "actualizar_sheets": {
-    "detalle": "exit 1",
-    "fallos_seguidos": 1,
+    "fallos_seguidos": 0,
     "issue_abierto": false,
     "ultimo_fallo": "2026-08-17T01:57:29+00:00",
-    "ultimo_ok": "2026-08-16T13:03:45+00:00"
+    "ultimo_ok": "2026-08-17T13:09:30+00:00"
   },
   "cierre_casa": {
     "fallos_seguidos": 0,
     "issue_abierto": false,
-    "ultimo_ok": "2026-08-17T01:57:24+00:00"
+    "ultimo_ok": "2026-08-17T13:09:23+00:00"
   },
   "deploy_dashboard": {
     "fallos_seguidos": 0,
     "issue_abierto": false,
-    "ultimo_ok": "2026-08-17T01:57:55+00:00"
+    "ultimo_ok": "2026-08-17T13:09:55+00:00"
   },
   "generar_dashboard_html": {
     "fallos_seguidos": 0,
     "issue_abierto": false,
-    "ultimo_ok": "2026-08-17T01:57:24+00:00"
+    "ultimo_ok": "2026-08-17T13:09:23+00:00"
   },
   "sync_splitwise": {
     "fallos_seguidos": 0,
     "issue_abierto": false,
-    "ultimo_ok": "2026-08-17T01:57:23+00:00"
+    "ultimo_ok": "2026-08-17T13:09:22+00:00"
   }
 }
