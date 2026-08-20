@@ -36,3 +36,5 @@ id,fecha,descripcion,grupo,moneda,costo_total,mi_paid_share,mi_owed_share,creado
 4639832334,2026-08-19,Payment,Baby Shower Juanfra,UYU,1752.23,0.00,0.00,Juan,1
 4639832574,2026-08-19,Deuda con manu,Caqui Tapa,UYU,1752.00,0.00,0.00,Juan,0
 4639861796,2026-08-20,Seña itinerante,Caqui Tapa,UYU,750.00,0.00,0.00,Diego,0
+4639956208,2026-08-20,"Cena, jagers,  nachito",Caqui Tapa,UYU,3800.00,0.00,0.00,Juan,0
+4640488204,2026-08-20,Asado velsen,Caqui Tapa,UYU,2854.00,0.00,570.80,Diego,0
