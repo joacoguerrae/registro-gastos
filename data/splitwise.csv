@@ -38,3 +38,6 @@ id,fecha,descripcion,grupo,moneda,costo_total,mi_paid_share,mi_owed_share,creado
 4639861796,2026-08-20,Seña itinerante,Caqui Tapa,UYU,750.00,0.00,0.00,Diego,0
 4639956208,2026-08-20,"Cena, jagers,  nachito",Caqui Tapa,UYU,3800.00,0.00,0.00,Juan,0
 4640488204,2026-08-20,Asado velsen,Caqui Tapa,UYU,2854.00,0.00,570.80,Diego,0
+4643398938,2026-08-22,Pantagruel y seguimos..,Caqui Tapa,UYU,4300.00,4300.00,1433.33,Joaquin,0
+4643466707,2026-08-22,"Fernet, y seguimos",Caqui Tapa,UYU,870.00,870.00,290.00,Joaquin,0
+4643495416,2026-08-22,Fernet y seguimos II,Caqui Tapa,UYU,870.00,0.00,290.00,Rodrigo,0
