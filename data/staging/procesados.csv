@@ -224,3 +224,6 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 1a0278b7384f902f,2026-08-22T03:37:22Z,aviso_tarjeta,insertado,348b2e5d8083,6427 USD 23.99 APPLE.COM/BILL -> Santander Platinum/personal/Suscripciones,6427||23.99||APPLE.COM/BILL||2026-08-22T00:37:18,2026-08-22T13:03:49+00:00
 1a027456e635b5df,2026-08-22T02:20:53Z,transferencia,insertado,3f5724944a85,Aviso de Transferencia Instantánea en Uruguay   | minsi sas '43' UYU 4300.00 2026-08-21 -> gasto/personal/(sin categoria),,2026-08-22T13:03:49+00:00
 1a028436f50d77f3,2026-08-22T06:58:23Z,recibo,ignorado,,recibo no parseable,,2026-08-22T13:03:49+00:00
+1a02a2723b69e97d,2026-08-22T15:46:41Z,aviso_tarjeta,ignorado,,tarjeta desconocida ,,2026-08-23T02:02:03+00:00
+1a02a28a4a967f80,2026-08-22T15:48:20Z,aviso_tarjeta,ignorado,,tarjeta desconocida ,,2026-08-23T02:02:03+00:00
+1a02a2bc7e38eb15,2026-08-22T15:51:45Z,aviso_tarjeta,ignorado,,tarjeta desconocida ,,2026-08-23T02:02:03+00:00

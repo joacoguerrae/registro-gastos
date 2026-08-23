@@ -112,3 +112,5 @@ deb3f0b6347d,split_a_cargar,"Splitwise sw:4643398938 'Pantagruel y seguimos..' U
 348b2e5d8083,tc_estimado,USD 23.99 x tc 40.33 = 967.52 UYU (corrige Fase 3),2026-08-22,
 348b2e5d8083,split_a_cargar,split recurrente propuesto: Deudas 4/6 (Rodrigo 2/6; hermana 1/6; madre 1/6) + casa 2/6: 'APPLE.COM/BILL' — aplicar con OK en revision,2026-08-22,
 3f5724944a85,transferencia_a_clasificar,"a 'minsi sas', concepto '43', UYU 4300.00: sin categoria",2026-08-22,
+1868ac77db2e,split_a_cargar,"Splitwise sw:4643466707 'Fernet, y seguimos' UYU 870.00 (2026-08-22): yo pague 870.00, mi parte 290.00 -> ajustar cargo 1868ac77db2e y crear fila hermana -split",2026-08-23,
+3f5724944a85,split_a_cargar,"Splitwise sw:4643398938 'Pantagruel y seguimos..' UYU 4300.00 (2026-08-22): yo pague 4300.00, mi parte 1433.33 -> ajustar cargo 3f5724944a85 y crear fila hermana -split",2026-08-23,
