@@ -386,3 +386,46 @@ a7dc1b8b6543,categoria,Wanderers,"Joaco 16/8: consumo en la cancha (el HANDY gen
 a7dc1b8b6543,motivo_resuelto,sin_categoria,Wanderers,2026-08-16
 6e49499cdf2e,categoria,Suscripciones,"PedidosYa Plus es la suscripcion mensual, no comida: la regla general de PedidosYa la agarraba primero (detectado 16/8)",2026-08-16
 c77114e2d481,categoria,Suscripciones,"PedidosYa Plus es la suscripcion mensual, no comida (Joaco 16/8: corregir tambien la de julio)",2026-08-16
+8801c8903a3a,tipo,transferencia,"Joaco 25/8: es una inversion en la corredora, no un gasto (espejo del Gletir de oct-2024)",2026-08-25
+8801c8903a3a,cuenta_destino,Gletir,"la plata sigue siendo suya, solo cambia de lugar",2026-08-25
+8801c8903a3a,ambito,interno,inversion,2026-08-25
+8801c8903a3a,en_analisis,0,no es gasto: no debe contar en ningun agregado,2026-08-25
+8801c8903a3a,motivo_resuelto,transferencia_a_clasificar,inversion en Gletir (interno),2026-08-25
+8801c8903a3a,motivo_resuelto,tc_estimado,en_analisis=0: el tc no afecta ningun agregado,2026-08-25
+f9f6c0270937,tipo,gasto,"Joaco 25/8: es gasto personal suyo, Lu fue solo el medio de pago",2026-08-25
+f9f6c0270937,cuenta_destino,,deja de ser transferencia,2026-08-25
+f9f6c0270937,categoria,Auto,cuota del auto,2026-08-25
+f9f6c0270937,ambito,personal,"Joaco 25/8: gasto personal mio, no de la casa",2026-08-25
+f9f6c0270937,en_analisis,1,es gasto real,2026-08-25
+f9f6c0270937,motivo_resuelto,transferencia_a_clasificar,gasto personal en Auto (cuota del auto),2026-08-25
+9585d42c4782,tipo,gasto,Joaco 25/8: remedios suyos que compro Lu; el gasto es 100% de el,2026-08-25
+9585d42c4782,cuenta_destino,,deja de ser transferencia,2026-08-25
+9585d42c4782,categoria,Salud,remedios,2026-08-25
+9585d42c4782,ambito,personal,Joaco 25/8: gasto personal mio (Salud),2026-08-25
+9585d42c4782,en_analisis,1,es gasto real,2026-08-25
+9585d42c4782,motivo_resuelto,transferencia_a_clasificar,gasto personal en Salud (remedios),2026-08-25
+e1295412b45d,categoria,Salidas & ocio,"Joaco 25/8: entradas y multa de Rodelu, igual que los de 2025",2026-08-25
+e1295412b45d,motivo_resuelto,transferencia_a_clasificar,Salidas & ocio,2026-08-25
+72972ac24e15,categoria,Compras personales,MercadoLibre: la regla existia pero el catch-all de MERPAGO* la ganaba por orden,2026-08-25
+72972ac24e15,motivo_resuelto,sin_categoria,Compras personales,2026-08-25
+3f5724944a85,monto,1433.33,"split confirmado por Splitwise sw:4643398938: pago 4.300, su parte 1.433,33",2026-08-25
+3f5724944a85,monto_uyu,1433.33,idem,2026-08-25
+3f5724944a85,categoria,Comer afuera / Delivery,Pantagruel (minsi sas es la razon social),2026-08-25
+3f5724944a85,comercio,Pantagruel (minsi sas),"el comercio llegaba con la razon social, ilegible",2026-08-25
+3f5724944a85,motivo_resuelto,split_a_cargar,"dividido 1/3 propio + 2.866,67 a Deudas",2026-08-25
+3f5724944a85,motivo_resuelto,transferencia_a_clasificar,"es un consumo con split, no una transferencia",2026-08-25
+1868ac77db2e,monto,290.00,"split confirmado por Splitwise sw:4643466707: pago 870, su parte 290",2026-08-25
+1868ac77db2e,monto_uyu,290.00,idem,2026-08-25
+1868ac77db2e,categoria,Comer afuera / Delivery,"'Fernet, y seguimos'",2026-08-25
+1868ac77db2e,comercio,Fernet y seguimos (via Mercado Pago),el aviso solo decia MERCADO PAGO,2026-08-25
+1868ac77db2e,motivo_resuelto,split_a_cargar,dividido 1/3 propio + 580 a Deudas,2026-08-25
+1868ac77db2e,motivo_resuelto,sin_categoria,Comer afuera / Delivery,2026-08-25
+348b2e5d8083,monto,8.00,"YouTube Premium familiar: 2/6 propio (Joaco + Lu) de USD 23,99",2026-08-25
+348b2e5d8083,monto_uyu,322.51,"2/6 de 967,52",2026-08-25
+348b2e5d8083,ambito,casa,por la regla confirmada el 12/7: el 2/6 propio es gasto de casa y se divide con Lu por coeficiente,2026-08-25
+348b2e5d8083,comercio,YouTube Premium familiar (APPLE.COM/BILL),el cargo llega por Apple y no dice que es YouTube,2026-08-25
+348b2e5d8083,motivo_resuelto,split_a_cargar,"2/6 propio (casa) + 4/6 (15,99 USD) a Deudas",2026-08-25
+348b2e5d8083,motivo_resuelto,tc_estimado,el importe real llega con el estado de la Platinum,2026-08-25
+9dadbebd5aa0,motivo_resuelto,split_a_cargar,"apareado a mano con 1868ac77db2e (el aviso decia solo MERCADO PAGO, por eso el matcher no lo encontro)",2026-08-25
+deb3f0b6347d,motivo_resuelto,split_a_cargar,apareado a mano con 3f5724944a85 (el aviso traia la razon social 'minsi sas'),2026-08-25
+f9f6c0270937,monto_uyu,4033.00,"al pasar de transferencia interna a gasto quedo sin monto_uyu (las internas lo permiten, los gastos no): 100 USD x tc 40,33",2026-08-25

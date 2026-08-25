@@ -7,6 +7,7 @@ TATA|DISCO|DEVOTO|MACRO MERCADO|MICRO MACRO|TIENDA INGLESA|EL DORADO|FROG|KINKO|
 CARNICERIA|VERDULERIA|PANADERIA|FERIA,Super,,
 LA ROTISERIA|ROTISERIA|RESTAURANTE|RESTORAN|CAFETERIA|CAFE |PIZZERIA|BURGER|MC ?DONALD|CHIVITERIA|SUSHI|EL TIMON|LOS HERMANOS|EMPORIO,Comer afuera / Delivery,,
 Montevideo Wa\*HANDY\*,Wanderers,,"consumo en la cancha de Wanderers (cantina/entrada); va ANTES del catch-all de HANDY, que gana por orden - confirmado 16/8"
+MERPAGO\*MERCADOLIBRE,Compras personales,,"MercadoLibre via Mercado Pago: va ANTES del catch-all de MERPAGO\*, que gana por orden y lo dejaba sin categoria - detectado 25/8"
 HANDY|MERPAGO\*,,,queda sin categoria a proposito: revisar (comercio generico)
 UTE ?,Servicios,casa,
 ANTEL,Servicios,casa,

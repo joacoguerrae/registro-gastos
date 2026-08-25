@@ -97,23 +97,23 @@ da434ef6edf7,transferencia_a_clasificar,"a 'Silvana Psico', concepto 'Julio Joaq
 946c0e481e14,transferencia_a_clasificar,"a 'Lu pesos', concepto 'Matricula Auto', UYU 3500.00",2026-08-13,1
 a7dc1b8b6543,sin_categoria,establecimiento 'Montevideo/Montevideo Wa*HANDY*0VIS3' sin regla,2026-08-16,1
 ecb85e071e9d,sin_categoria,gasto Splitwise 'Uruguay Bahamas' (Caqui Tapa) sin regla,2026-08-17,
-f9f6c0270937,transferencia_a_clasificar,"a 'Lu', concepto 'cuota auto', USD 100.00",2026-08-17,
-9585d42c4782,transferencia_a_clasificar,"a 'Lu', concepto 'remedios', UYU 2060.00",2026-08-17,
-72972ac24e15,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*MERCADOLIBRE VIS3' sin regla,2026-08-18,
+f9f6c0270937,transferencia_a_clasificar,"a 'Lu', concepto 'cuota auto', USD 100.00",2026-08-17,1
+9585d42c4782,transferencia_a_clasificar,"a 'Lu', concepto 'remedios', UYU 2060.00",2026-08-17,1
+72972ac24e15,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*MERCADOLIBRE VIS3' sin regla,2026-08-18,1
 696989b89989,sin_categoria,gasto Splitwise 'Leña carbon bebidas' (Caqui Tapa) sin regla,2026-08-20,
 5385296c5cef,sin_categoria,gasto Splitwise 'Mundial' (Caqui Tapa) sin regla,2026-08-20,
-e1295412b45d,transferencia_a_clasificar,"a 'Alejandro Ferrari', concepto 'rodelu y expulsion', UYU 1320.00: sin categoria",2026-08-21,
-8801c8903a3a,transferencia_a_clasificar,"a 'Gletir Corredor De Bolsa SA', concepto 'Joaquin Guerra 48140026', USD 2000.00: sin categoria",2026-08-22,
-8801c8903a3a,tc_estimado,transferencia USD 2000.00 x tc 40.33 = 80660.00 UYU (corrige Fase 3),2026-08-22,
+e1295412b45d,transferencia_a_clasificar,"a 'Alejandro Ferrari', concepto 'rodelu y expulsion', UYU 1320.00: sin categoria",2026-08-21,1
+8801c8903a3a,transferencia_a_clasificar,"a 'Gletir Corredor De Bolsa SA', concepto 'Joaquin Guerra 48140026', USD 2000.00: sin categoria",2026-08-22,1
+8801c8903a3a,tc_estimado,transferencia USD 2000.00 x tc 40.33 = 80660.00 UYU (corrige Fase 3),2026-08-22,1
 bf070f3a4551,sin_categoria,gasto Splitwise 'Fernet y seguimos II' (Caqui Tapa) sin regla,2026-08-22,
-9dadbebd5aa0,split_a_cargar,"Splitwise sw:4643466707 'Fernet, y seguimos' UYU 870.00 (2026-08-22): yo pague 870.00, mi parte 290.00 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-08-22,
-deb3f0b6347d,split_a_cargar,"Splitwise sw:4643398938 'Pantagruel y seguimos..' UYU 4300.00 (2026-08-22): yo pague 4300.00, mi parte 1433.33 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-08-22,
-1868ac77db2e,sin_categoria,establecimiento 'MERCADO PAGO' sin regla,2026-08-22,
-348b2e5d8083,tc_estimado,USD 23.99 x tc 40.33 = 967.52 UYU (corrige Fase 3),2026-08-22,
-348b2e5d8083,split_a_cargar,split recurrente propuesto: Deudas 4/6 (Rodrigo 2/6; hermana 1/6; madre 1/6) + casa 2/6: 'APPLE.COM/BILL' — aplicar con OK en revision,2026-08-22,
-3f5724944a85,transferencia_a_clasificar,"a 'minsi sas', concepto '43', UYU 4300.00: sin categoria",2026-08-22,
-1868ac77db2e,split_a_cargar,"Splitwise sw:4643466707 'Fernet, y seguimos' UYU 870.00 (2026-08-22): yo pague 870.00, mi parte 290.00 -> ajustar cargo 1868ac77db2e y crear fila hermana -split",2026-08-23,
-3f5724944a85,split_a_cargar,"Splitwise sw:4643398938 'Pantagruel y seguimos..' UYU 4300.00 (2026-08-22): yo pague 4300.00, mi parte 1433.33 -> ajustar cargo 3f5724944a85 y crear fila hermana -split",2026-08-23,
+9dadbebd5aa0,split_a_cargar,"Splitwise sw:4643466707 'Fernet, y seguimos' UYU 870.00 (2026-08-22): yo pague 870.00, mi parte 290.00 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-08-22,1
+deb3f0b6347d,split_a_cargar,"Splitwise sw:4643398938 'Pantagruel y seguimos..' UYU 4300.00 (2026-08-22): yo pague 4300.00, mi parte 1433.33 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-08-22,1
+1868ac77db2e,sin_categoria,establecimiento 'MERCADO PAGO' sin regla,2026-08-22,1
+348b2e5d8083,tc_estimado,USD 23.99 x tc 40.33 = 967.52 UYU (corrige Fase 3),2026-08-22,1
+348b2e5d8083,split_a_cargar,split recurrente propuesto: Deudas 4/6 (Rodrigo 2/6; hermana 1/6; madre 1/6) + casa 2/6: 'APPLE.COM/BILL' — aplicar con OK en revision,2026-08-22,1
+3f5724944a85,transferencia_a_clasificar,"a 'minsi sas', concepto '43', UYU 4300.00: sin categoria",2026-08-22,1
+1868ac77db2e,split_a_cargar,"Splitwise sw:4643466707 'Fernet, y seguimos' UYU 870.00 (2026-08-22): yo pague 870.00, mi parte 290.00 -> ajustar cargo 1868ac77db2e y crear fila hermana -split",2026-08-23,1
+3f5724944a85,split_a_cargar,"Splitwise sw:4643398938 'Pantagruel y seguimos..' UYU 4300.00 (2026-08-22): yo pague 4300.00, mi parte 1433.33 -> ajustar cargo 3f5724944a85 y crear fila hermana -split",2026-08-23,1
 c2fc7e39baae,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*MERCADOLIBRE VIS3' sin regla,2026-08-24,
 e1b587d18a00,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-08-24,
 a6e831786272,sin_categoria,establecimiento 'MONTEVIDEO/21 DE SETIEMBRE 3021' sin regla,2026-08-24,
