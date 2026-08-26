@@ -119,3 +119,8 @@ e1b587d18a00,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,202
 a6e831786272,sin_categoria,establecimiento 'MONTEVIDEO/21 DE SETIEMBRE 3021' sin regla,2026-08-24,
 238a1ca93081,tc_estimado,USD 8.80 x tc 40.33 = 354.90 UYU (corrige Fase 3),2026-08-25,
 238a1ca93081,sin_categoria,establecimiento 'SHARETHEMEAL WF' sin regla,2026-08-25,
+e5f730c37b97,sin_categoria,gasto Splitwise 'Brava' (Caqui Tapa) sin regla,2026-08-26,
+002f046886c4,sin_categoria,gasto Splitwise 'Pikda' (Hermanos de Marian) sin regla,2026-08-26,
+3d8fb9506017,split_a_cargar,"Splitwise sw:4650212111 'Asado' UYU 6951.00 (2026-08-25): yo pague 6951.00, mi parte 1737.75 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-08-26,
+cafd98baabf0,sin_categoria,gasto Splitwise 'Piza' (Hermanos de Marian) sin regla,2026-08-26,
+e361ff153ded,split_a_cargar,"Splitwise sw:4643466707 'Fernet, y seguimos' UYU 870.00 (2026-08-22): yo pague 870.00, mi parte 290.00 -> ajustar cargo e361ff153ded y crear fila hermana -split",2026-08-26,
