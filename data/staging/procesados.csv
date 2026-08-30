@@ -240,3 +240,5 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 1a043de61a8adf3e,2026-08-27T15:37:18Z,aviso_tarjeta,insertado,b5b5e42d9dd9,9071 UYU 259.34 MONTEVIDEO/LA ROTISERIA V VIS3 -> Santander UYU/personal/Comer afuera / Delivery,9071||259.34||MONTEVIDEO/LA ROTISERIA V VIS3||2026-08-27T12:37:17,2026-08-27T22:24:42+00:00
 1a04a48c2f608f36,2026-08-28T21:31:14Z,aviso_tarjeta,insertado,ee8d42fd74a3,9071 UYU 453.25 MONTEVIDEO/MACROMERCADO VIS3 -> Santander UYU/personal/(sin categoria),9071||453.25||MONTEVIDEO/MACROMERCADO VIS3||2026-08-28T18:31:12,2026-08-28T22:26:20+00:00
 1a04e3c81b4a6617,2026-08-29T15:56:22Z,aviso_tarjeta,ignorado,,tarjeta desconocida ,,2026-08-29T16:46:22+00:00
+1a04fa359659cb04,2026-08-29T22:28:18Z,aviso_tarjeta,ignorado,,tarjeta desconocida ,,2026-08-30T05:29:54+00:00
+1a04fddc05d28afd,2026-08-29T23:32:06Z,aviso_tarjeta,ignorado,,tarjeta desconocida ,,2026-08-30T05:29:54+00:00
