@@ -242,3 +242,5 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 1a04e3c81b4a6617,2026-08-29T15:56:22Z,aviso_tarjeta,ignorado,,tarjeta desconocida ,,2026-08-29T16:46:22+00:00
 1a04fa359659cb04,2026-08-29T22:28:18Z,aviso_tarjeta,ignorado,,tarjeta desconocida ,,2026-08-30T05:29:54+00:00
 1a04fddc05d28afd,2026-08-29T23:32:06Z,aviso_tarjeta,ignorado,,tarjeta desconocida ,,2026-08-30T05:29:54+00:00
+1a053e16b3cd0816,2026-08-30T18:14:35Z,aviso_tarjeta,insertado,f38cee63018f,9071 UYU 199.00 MONTEVIDEO/MERPAGO*MELI VIS3 -> Santander UYU/personal/(sin categoria),9071||199.00||MONTEVIDEO/MERPAGO*MELI VIS3||2026-08-30T15:14:35,2026-08-31T05:43:36+00:00
+1a053f286bd0d38a,2026-08-30T18:33:17Z,aviso_tarjeta,insertado,7a98ef391cb4,6427 UYU 4145.97 DILEMA -> Santander Platinum/personal/(sin categoria),6427||4145.97||DILEMA||2026-08-30T15:33:13,2026-08-31T05:43:36+00:00
