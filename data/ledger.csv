@@ -4782,10 +4782,10 @@ f9f6c0270937,2026-08-16,2026-08,gasto,100.00,USD,4033.00,Santander USD,,Auto,,,c
 40b0de588857,2026-08-17,2026-08,gasto,25.00,UYU,25.00,Santander UYU,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,personal,mail,confirmado,1,1a01056d49d42749
 527c0673f165,2026-08-17,2026-08,gasto,23.16,UYU,23.16,Santander UYU,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa Kona PoVIS3,DLO*PedidosYa Kona Po,personal,mail,confirmado,1,1a01039cec2e92d6
 72972ac24e15,2026-08-17,2026-08,gasto,725.00,UYU,725.00,Santander UYU,,Compras personales,,MONTEVIDEO/MERPAGO*MERCADOLIBRE VIS3,MERPAGO*MERCADOLIBRE,personal,mail,confirmado,1,1a011e975d4878dd
-ecb85e071e9d,2026-08-17,2026-08,gasto,1600.00,UYU,1600.00,Deudas,,,General,,Uruguay Bahamas,split,splitwise,pendiente,1,sw:4633962990
+ecb85e071e9d,2026-08-17,2026-08,gasto,1600.00,UYU,1600.00,Deudas,,Salidas & ocio,General,,Uruguay Bahamas,split,splitwise,confirmado,1,sw:4633962990
 3cdc28507d87,2026-08-19,2026-08,gasto,252.30,UYU,252.30,Santander UYU,,Super,,MONTEVIDEO/FROG VIS3,FROG,personal,mail,confirmado,1,1a01ac93ac82e674
-5385296c5cef,2026-08-19,2026-08,gasto,848.15,UYU,848.15,Deudas,,,General,,Mundial,split,splitwise,pendiente,1,sw:4639039719
-696989b89989,2026-08-19,2026-08,gasto,220.00,UYU,220.00,Deudas,,,Licor,,Leña carbon bebidas,split,splitwise,pendiente,1,sw:4639832223
+5385296c5cef,2026-08-19,2026-08,gasto,848.15,UYU,848.15,Deudas,,Salidas & ocio,General,,Mundial,split,splitwise,confirmado,1,sw:4639039719
+696989b89989,2026-08-19,2026-08,gasto,220.00,UYU,220.00,Deudas,,Super,Licor,,Leña carbon bebidas,split,splitwise,confirmado,1,sw:4639832223
 ba8d2ef34f51,2026-08-19,2026-08,gasto,450.00,UYU,450.00,Santander UYU,,Regalos,,Fri,Joaco regalo Jime,personal,mail,confirmado,1,1a01cf08f548daa0
 13c817f10de4,2026-08-20,2026-08,gasto,25.00,UYU,25.00,Santander UYU,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,personal,mail,confirmado,1,1a0203e4613e866e
 82ebc6800f0b,2026-08-20,2026-08,gasto,296.00,UYU,296.00,Santander UYU,,Comer afuera / Delivery,,Dan de Amilivia,joaco rotiseria,personal,mail,confirmado,1,1a0215de7607f5fd
@@ -4800,24 +4800,25 @@ e1295412b45d,2026-08-20,2026-08,gasto,1320.00,UYU,1320.00,Santander UYU,,Salidas
 1868ac77db2e,2026-08-22,2026-08,gasto,290.00,UYU,290.00,Santander Platinum,,Comer afuera / Delivery,,Fernet y seguimos (via Mercado Pago),MERCADO PAGO,personal,mail,confirmado,1,1a0276b71992889c
 348b2e5d8083,2026-08-22,2026-08,gasto,8.00,USD,322.51,Santander Platinum,,Suscripciones,,YouTube Premium familiar (APPLE.COM/BILL),APPLE.COM/BILL,casa,mail,confirmado,1,1a0278b7384f902f
 71f59e88f2de,2026-08-22,2026-08,transferencia,580.00,UYU,580.00,Santander Platinum,Deudas,,,,"Fernet y seguimos 22/8, 2/3 prestado a amigos (sw:4643466707)",interno,manual,confirmado,0,1868ac77db2e-split
-bf070f3a4551,2026-08-22,2026-08,gasto,290.00,UYU,290.00,Deudas,,,General,,Fernet y seguimos II,split,splitwise,pendiente,1,sw:4643495416
-a6e831786272,2026-08-23,2026-08,gasto,1000.00,UYU,1000.00,Cuenta Casa,,,,MONTEVIDEO/21 DE SETIEMBRE 3021,21 DE SETIEMBRE 3021,casa,mail,pendiente,1,1a03048f85189803
-c2fc7e39baae,2026-08-23,2026-08,gasto,456.39,UYU,456.39,Cuenta Casa,,,,MONTEVIDEO/MERPAGO*MERCADOLIBRE VIS3,MERPAGO*MERCADOLIBRE,casa,mail,pendiente,1,1a02ec7b6c59a1b5
-e1b587d18a00,2026-08-23,2026-08,gasto,3397.79,UYU,3397.79,Cuenta Casa,,,,INTERNET/Proyecto PAS,Proyecto PAS,casa,mail,pendiente,1,1a02eca16008363e
+bf070f3a4551,2026-08-22,2026-08,gasto,290.00,UYU,290.00,Deudas,,Comer afuera / Delivery,General,,Fernet y seguimos II,split,splitwise,confirmado,1,sw:4643495416
+a6e831786272,2026-08-23,2026-08,gasto,1000.00,UYU,1000.00,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/21 DE SETIEMBRE 3021,Retiro 1.000 en efectivo: 700 cookies + 300 propina auto,casa,mail,confirmado,1,1a03048f85189803
+c2fc7e39baae,2026-08-23,2026-08,gasto,456.39,UYU,456.39,Cuenta Casa,,Casa & hogar,,MONTEVIDEO/MERPAGO*MERCADOLIBRE VIS3,MERPAGO*MERCADOLIBRE,casa,mail,confirmado,1,1a02ec7b6c59a1b5
+e1b587d18a00,2026-08-23,2026-08,gasto,3397.79,UYU,3397.79,Cuenta Casa,,Servicios,,INTERNET/Proyecto PAS,UTE (luz) via Proyecto PAS,casa,mail,confirmado,1,1a02eca16008363e
 1a470ae19f1a,2026-08-24,2026-08,gasto,1080.00,UYU,1080.00,Santander UYU,,Compras personales,,Lucho Royal Barber,joaco barberia,personal,mail,confirmado,1,1a034a031dd3f15e
-238a1ca93081,2026-08-24,2026-08,gasto,8.80,USD,354.90,Santander Platinum,,,,SHARETHEMEAL WF,SHARETHEMEAL WF,personal,mail,pendiente,1,1a0345e5dbd6af37
+238a1ca93081,2026-08-24,2026-08,gasto,8.80,USD,354.90,Santander Platinum,,Otros,,SHARETHEMEAL WF,SHARETHEMEAL WF,personal,mail,confirmado,1,1a0345e5dbd6af37
 c45d2322a8f3,2026-08-24,2026-08,gasto,30.00,UYU,30.00,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,1a0342dcc8bbb8b1
-e361ff153ded,2026-08-24,2026-08,gasto,878.18,UYU,878.18,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,casa,mail,pendiente,1,1a033fd3021bc944
-002f046886c4,2026-08-25,2026-08,gasto,496.00,UYU,496.00,Deudas,,,General,,Pikda,split,splitwise,pendiente,1,sw:4650210938
-cafd98baabf0,2026-08-25,2026-08,gasto,585.00,UYU,585.00,Deudas,,,General,,Piza,split,splitwise,pendiente,1,sw:4650207814
-e5f730c37b97,2026-08-25,2026-08,gasto,130.00,UYU,130.00,Deudas,,,General,,Brava,split,splitwise,pendiente,1,sw:4650233163
+e361ff153ded,2026-08-24,2026-08,gasto,878.18,UYU,878.18,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,casa,mail,confirmado,1,1a033fd3021bc944
+002f046886c4,2026-08-25,2026-08,gasto,496.00,UYU,496.00,Deudas,,Comer afuera / Delivery,General,,Pikda,split,splitwise,confirmado,1,sw:4650210938
+cafd98baabf0,2026-08-25,2026-08,gasto,585.00,UYU,585.00,Deudas,,Comer afuera / Delivery,General,,Piza,split,splitwise,confirmado,1,sw:4650207814
+e5f730c37b97,2026-08-25,2026-08,gasto,130.00,UYU,130.00,Deudas,,Comer afuera / Delivery,General,,Brava,split,splitwise,confirmado,1,sw:4650233163
 83a2b362ece6,2026-08-26,2026-08,gasto,227.00,UYU,227.00,Santander Platinum,,Transporte,,DLOUBERRIDES,DLOUBERRIDES,personal,mail,confirmado,1,1a03e8d53f449633
-a453c4b8aaab,2026-08-26,2026-08,gasto,252.00,UYU,252.00,Deudas,,,General,,Piksa2,split,splitwise,pendiente,1,sw:4651702720
+a453c4b8aaab,2026-08-26,2026-08,gasto,252.00,UYU,252.00,Deudas,,Comer afuera / Delivery,General,,Piksa2,split,splitwise,confirmado,1,sw:4651702720
 aafa78bfaf48,2026-08-26,2026-08,gasto,115.08,UYU,115.08,Cuenta Casa,,Super,,MONTEVIDEO/FROG VIS3,FROG,casa,mail,confirmado,1,1a03ed3d0028b02f
 b5b5e42d9dd9,2026-08-27,2026-08,gasto,259.34,UYU,259.34,Santander UYU,,Comer afuera / Delivery,,MONTEVIDEO/LA ROTISERIA V VIS3,LA ROTISERIA V,personal,mail,confirmado,1,1a043de61a8adf3e
-ee8d42fd74a3,2026-08-28,2026-08,gasto,453.25,UYU,453.25,Santander UYU,,,,MONTEVIDEO/MACROMERCADO VIS3,MACROMERCADO,personal,mail,pendiente,1,1a04a48c2f608f36
-e52359d64f34,2026-08-29,2026-08,gasto,1866.67,UYU,1866.67,Deudas,,,General,,Uruguay PuertoRico,split,splitwise,pendiente,1,sw:4657011132
-7a98ef391cb4,2026-08-30,2026-08,gasto,4145.97,UYU,4145.97,Santander Platinum,,,,DILEMA,DILEMA,personal,mail,pendiente,1,1a053f286bd0d38a
-f38cee63018f,2026-08-30,2026-08,gasto,199.00,UYU,199.00,Santander UYU,,,,MONTEVIDEO/MERPAGO*MELI VIS3,MERPAGO*MELI,personal,mail,pendiente,1,1a053e16b3cd0816
-b69cc79e95d6,2026-08-31,2026-08,gasto,200.00,UYU,200.00,Santander UYU,,,,Fefo Bentancur,oso rodelu,personal,mail,pendiente,1,1a05a4bf5ac5f54e
-c018d12fed27,2026-08-31,2026-08,gasto,1440.43,UYU,1440.43,Santander Platinum,,,,REST CHEZ PINEY,REST CHEZ PINEY,personal,mail,pendiente,1,1a05ad8de4142724
+ee8d42fd74a3,2026-08-28,2026-08,gasto,453.25,UYU,453.25,Santander UYU,,Super,,MONTEVIDEO/MACROMERCADO VIS3,MACROMERCADO,personal,mail,confirmado,1,1a04a48c2f608f36
+e52359d64f34,2026-08-29,2026-08,gasto,1866.67,UYU,1866.67,Deudas,,Salidas & ocio,General,,Uruguay PuertoRico,split,splitwise,confirmado,1,sw:4657011132
+7a98ef391cb4,2026-08-30,2026-08,transferencia,4145.97,UYU,4145.97,Santander Platinum,A cobrar,,,DILEMA,"Dilema 30/8: invito la madre de Lu, lo devuelve. Falta un 25% de descuento que llega a la tarjeta",interno,mail,confirmado,0,1a053f286bd0d38a
+f38cee63018f,2026-08-30,2026-08,gasto,199.00,UYU,199.00,Santander UYU,,Suscripciones,,MONTEVIDEO/MERPAGO*MELI VIS3,MERPAGO*MELI,personal,mail,confirmado,1,1a053e16b3cd0816
+b69cc79e95d6,2026-08-31,2026-08,gasto,200.00,UYU,200.00,Santander UYU,,Comer afuera / Delivery,,Fefo Bentancur,oso rodelu,personal,mail,confirmado,1,1a05a4bf5ac5f54e
+c018d12fed27,2026-08-31,2026-08,gasto,720.22,UYU,720.22,Santander Platinum,,Comer afuera / Delivery,,REST CHEZ PINEY,REST CHEZ PINEY,personal,mail,confirmado,1,1a05ad8de4142724
+c07ab16579fe,2026-08-31,2026-08,transferencia,720.21,UYU,720.21,Santander Platinum,Deudas,,,,"Chez basket 31/8, mitad prestada a amigos (sw:4661990426)",interno,manual,confirmado,0,c018d12fed27-split

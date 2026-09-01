@@ -253,7 +253,12 @@ def main():
                     continue
                 if abs((dt.date.fromisoformat(c["fecha"]) - f0).days) > 3:
                     continue
-                h = hermanas.get(c["fuente_id"] + "-split")
+                # la hermana se guarda con fuente_id "<id del ledger>-split"
+                # (convencion de /revisar-pendientes y de las 10 hermanas que ya
+                # existen), NO con el fuente_id del cargo: buscarla por fuente_id
+                # no la encontraba nunca y cada split ya resuelto volvia a
+                # proponerse en cada corrida (falso positivo del 1/9/2026).
+                h = hermanas.get(c["id"] + "-split")
                 total = float(c["monto"]) + (float(h["monto"]) if h else 0.0)
                 if abs(total - costo) <= costo * 0.01:
                     match, con_hermana = c, h is not None

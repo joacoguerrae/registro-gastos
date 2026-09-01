@@ -429,3 +429,50 @@ e1295412b45d,motivo_resuelto,transferencia_a_clasificar,Salidas & ocio,2026-08-2
 9dadbebd5aa0,motivo_resuelto,split_a_cargar,"apareado a mano con 1868ac77db2e (el aviso decia solo MERCADO PAGO, por eso el matcher no lo encontro)",2026-08-25
 deb3f0b6347d,motivo_resuelto,split_a_cargar,apareado a mano con 3f5724944a85 (el aviso traia la razon social 'minsi sas'),2026-08-25
 f9f6c0270937,monto_uyu,4033.00,"al pasar de transferencia interna a gasto quedo sin monto_uyu (las internas lo permiten, los gastos no): 100 USD x tc 40,33",2026-08-25
+e1b587d18a00,categoria,Servicios,Joaco 1/9: es UTE de agosto (el aviso solo dice 'Proyecto PAS'),2026-09-01
+e1b587d18a00,descripcion,UTE (luz) via Proyecto PAS,nombrarlo para que el fijo sea visible en los analisis por comercio,2026-09-01
+e1b587d18a00,motivo_resuelto,sin_categoria,Servicios (UTE de agosto),2026-09-01
+a6e831786272,categoria,Comer afuera / Delivery,"Joaco 1/9: fue un retiro de 1.000 en efectivo, 700 en cookies y 300 de propina para el auto; se categoriza por el gasto dominante",2026-09-01
+a6e831786272,descripcion,Retiro 1.000 en efectivo: 700 cookies + 300 propina auto,el comercio era solo una direccion; queda el detalle porque la fila no se puede partir,2026-09-01
+a6e831786272,motivo_resuelto,sin_categoria,"Comer afuera (retiro de efectivo, 700 cookies + 300 propina)",2026-09-01
+c2fc7e39baae,categoria,Casa & hogar,Joaco 1/9,2026-09-01
+c2fc7e39baae,motivo_resuelto,sin_categoria,Casa & hogar,2026-09-01
+7a98ef391cb4,tipo,transferencia,Joaco 1/9: nos invito a comer la madre de Lu y se lo devuelve; no es gasto suyo,2026-09-01
+7a98ef391cb4,cuenta_destino,A cobrar,"plata que le deben por fuera de Splitwise, igual que el choque del auto",2026-09-01
+7a98ef391cb4,ambito,interno,no es gasto,2026-09-01
+7a98ef391cb4,en_analisis,0,no debe contar en agosto: se liquida en el cierre de setiembre con el estado,2026-09-01
+7a98ef391cb4,descripcion,"Dilema 30/8: invito la madre de Lu, lo devuelve. Falta un 25% de descuento que llega a la tarjeta",el importe definitivo sale del estado de cuenta,2026-09-01
+7a98ef391cb4,motivo_resuelto,sin_categoria,"va a A cobrar, no es gasto",2026-09-01
+ee8d42fd74a3,categoria,Super,Macromercado: la regla decia 'MACRO MERCADO' con espacio y el comercio viene pegado,2026-09-01
+ee8d42fd74a3,motivo_resuelto,sin_categoria,Super,2026-09-01
+f38cee63018f,categoria,Suscripciones,Meli+ mensual; el catch-all de MERPAGO* lo dejaba sin categoria,2026-09-01
+f38cee63018f,motivo_resuelto,sin_categoria,Suscripciones (Meli+),2026-09-01
+238a1ca93081,categoria,Otros,donacion a ShareTheMeal (World Food Programme); el catalogo no tiene categoria Donaciones,2026-09-01
+238a1ca93081,motivo_resuelto,sin_categoria,Otros (donacion),2026-09-01
+238a1ca93081,motivo_resuelto,tc_estimado,monto chico: el importe real llega con el estado,2026-09-01
+b69cc79e95d6,categoria,Comer afuera / Delivery,igual que el Fefo Bentancur del 29/7,2026-09-01
+b69cc79e95d6,motivo_resuelto,transferencia_a_clasificar,Comer afuera / Delivery,2026-09-01
+c018d12fed27,monto,720.22,"split confirmado por Splitwise sw:4661990426: pago 1.440,43, su parte 720,22",2026-09-01
+c018d12fed27,monto_uyu,720.22,idem,2026-09-01
+c018d12fed27,categoria,Comer afuera / Delivery,Chez Pineyro,2026-09-01
+c018d12fed27,motivo_resuelto,sin_categoria,Comer afuera / Delivery,2026-09-01
+510dab72757a,motivo_resuelto,split_a_cargar,"apareado a mano con c018d12fed27: el sync de Splitwise corre ANTES que procesar_mails, asi que el cargo del 31/8 todavia no existia",2026-09-01
+e361ff153ded,motivo_resuelto,split_a_cargar,"FALSO POSITIVO: es un PedidosYa Market de casa de 878,18 que el matcher propuso para el Fernet de 870 ya resuelto el 25/8 con 1868ac77db2e",2026-09-01
+ecb85e071e9d,categoria,Salidas & ocio,partido de basquet Uruguay-Bahamas,2026-09-01
+ecb85e071e9d,motivo_resuelto,sin_categoria,Salidas & ocio,2026-09-01
+e52359d64f34,categoria,Salidas & ocio,partido de basquet Uruguay-Puerto Rico,2026-09-01
+e52359d64f34,motivo_resuelto,sin_categoria,Salidas & ocio,2026-09-01
+5385296c5cef,categoria,Salidas & ocio,Mundial,2026-09-01
+5385296c5cef,motivo_resuelto,sin_categoria,Salidas & ocio,2026-09-01
+696989b89989,categoria,Super,"lena, carbon y bebidas para un asado: insumos, no consumo en local",2026-09-01
+696989b89989,motivo_resuelto,sin_categoria,Super,2026-09-01
+bf070f3a4551,categoria,Comer afuera / Delivery,segunda ronda del fernet,2026-09-01
+bf070f3a4551,motivo_resuelto,sin_categoria,Comer afuera / Delivery,2026-09-01
+e5f730c37b97,categoria,Comer afuera / Delivery,Brava,2026-09-01
+e5f730c37b97,motivo_resuelto,sin_categoria,Comer afuera / Delivery,2026-09-01
+002f046886c4,categoria,Comer afuera / Delivery,picada,2026-09-01
+002f046886c4,motivo_resuelto,sin_categoria,Comer afuera / Delivery,2026-09-01
+cafd98baabf0,categoria,Comer afuera / Delivery,pizza,2026-09-01
+cafd98baabf0,motivo_resuelto,sin_categoria,Comer afuera / Delivery,2026-09-01
+a453c4b8aaab,categoria,Comer afuera / Delivery,picada 2,2026-09-01
+a453c4b8aaab,motivo_resuelto,sin_categoria,Comer afuera / Delivery,2026-09-01
