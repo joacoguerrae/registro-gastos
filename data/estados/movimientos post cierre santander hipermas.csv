@@ -1,0 +1,16 @@
+Cliente,Número de tarjeta de crédito,Alias,Fecha,Límite de crédito ($): ,
+Joaquin Guerra Esmit,XXXXX-8103,Mastercard Hipermás,02/09/2026,"0,00",
+
+
+Movimientos,
+Fecha,Número de tarjeta,Descripción,Importe original,Pesos,Dólares,
+31/08/2026,XXXXX-8103,Merpago Delfiam,"0,00","489,00","0,00",
+29/08/2026,XXXXX-8103,El Timon      Handy,"0,00","560,00","0,00",
+29/08/2026,XXXXX-8103,Bilas Pastas,"0,00","498,40","0,00",
+29/08/2026,XXXXX-8103,Devoto Express,"0,00","477,00","0,00",
+22/08/2026,XXXXX-8103,Disco N   9,"0,00","6.433,41","0,00",
+22/08/2026,XXXXX-8103,Disco N   9,"0,00","1.017,00","0,00",
+22/08/2026,XXXXX-8103,Disco N   9,"0,00","518,00","0,00",
+19/08/2026,XXXXX-8103,Merpago Mercadolibre,"0,00","418,00","0,00",
+17/08/2026,XXXXX-8103,Devoto Express,"0,00","852,60","0,00",
+14/08/2026,XXXXX-8103,Pago Supernet,"0,00","-8.401,19","0,00",

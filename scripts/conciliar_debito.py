@@ -227,7 +227,19 @@ def fila_nueva(mv, cuenta, moneda, reglas):
 
 # ---------------------------------------------------------------------- main
 def procesar(path, ledger, reglas, insertar, hoy):
-    ext = parsear_santander(path)
+    # La carpeta data/estados/ tambien junta CSV que NO son extractos de debito
+    # (exports de tarjeta de credito, movimientos post-cierre). Sin este guard,
+    # uno solo de esos abortaba la corrida entera y con ella el paso 4 del
+    # cierre: paso el 2/9/2026 con un export de la Mastercard Hipermas, cuyos
+    # importes vienen con coma decimal. Se saltea RUIDOSAMENTE, nunca en
+    # silencio: si el archivo era un extracto de verdad hay que enterarse.
+    try:
+        ext = parsear_santander(path)
+    except Exception as e:
+        print(f"  [!] {os.path.basename(path)}: no parece un extracto de debito "
+              f"del Santander, lo salteo ({type(e).__name__}: {e}). "
+              f"Si SI lo es, el parser necesita ajuste -- no lo ignores.")
+        return None
     if not ext["movimientos"]:
         print(f"  {os.path.basename(path)}: sin movimientos parseables -- lo salteo")
         return None
