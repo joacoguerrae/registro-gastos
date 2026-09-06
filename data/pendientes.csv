@@ -146,3 +146,5 @@ fe4410dc33ff,tc_estimado,USD 100.00 x tc 40.33 = 4033.00 UYU (corrige Fase 3),20
 e7e8471131f5,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*EONE VIS3' sin regla,2026-09-06,
 e7e8471131f5,posible_duplicado,"mismo (tarjeta,monto,establecimiento) que mail 1a0746a1f9ddfbd7 a las 2026-09-05 22:51:43",2026-09-06,
 898a70a914af,sin_categoria,establecimiento 'SOLYMAR/MINI SHOP CAR ONE VIS3' sin regla,2026-09-06,
+ae803250deb7,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-09-06,
+f05d0face4bc,transferencia_a_clasificar,"a 'Lu', concepto 'Cuota 2 Auto', USD 100.00",2026-09-06,
