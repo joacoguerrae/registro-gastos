@@ -283,3 +283,4 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 1a076d0dbdbcd3fe,2026-09-06T13:00:31Z,ignorado,estado_cuenta_pendiente_f3,,bbvanetnotificacionesp@grupobbva.com.uy | Notificación por débito en su cuenta BBVA Uruguay,,2026-09-06T15:32:04+00:00
 1a0786db9dc7f217,2026-09-06T20:34:09Z,aviso_tarjeta,insertado,04b0b4442e7f,8261 UYU 338.87 MONTEVIDEO/MACROMERCADO VIS3 -> Cuenta Casa/casa/Super,8261||338.87||MONTEVIDEO/MACROMERCADO VIS3||2026-09-06T17:34:07,2026-09-07T04:49:51+00:00
 1a078417fbb0a407,2026-09-06T19:45:50Z,transferencia,insertado,c27944cbcafa,Aviso de transferencia en plaza | Gastos Comunes VL '801' UYU 23768.00 2026-09-06 -> gasto/casa/Vivienda,,2026-09-07T04:49:51+00:00
+1a07a55d4025113a,2026-09-07T05:27:18Z,aviso_tarjeta,insertado,63ebc2c594a2,6427 UYU 3794.00 BANCO DE SEGURO -> Santander Platinum/casa/Auto,6427||3794.00||BANCO DE SEGURO||2026-09-07T02:27:14,2026-09-07T17:45:58+00:00
