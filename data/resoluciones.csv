@@ -476,3 +476,182 @@ cafd98baabf0,categoria,Comer afuera / Delivery,pizza,2026-09-01
 cafd98baabf0,motivo_resuelto,sin_categoria,Comer afuera / Delivery,2026-09-01
 a453c4b8aaab,categoria,Comer afuera / Delivery,picada 2,2026-09-01
 a453c4b8aaab,motivo_resuelto,sin_categoria,Comer afuera / Delivery,2026-09-01
+2196a1fc6dd3,fecha,2026-08-03,"el extracto muestra el aporte de 59.000 el 3/8 (PAPORTE CASA); la fila se creo el 9/8 con la fecha del aviso de Joaco. Sin esto el matcher del cierre no lo aparea (6 dias > tolerancia) y propone insertarlo dos veces",2026-09-15
+2196a1fc6dd3,mes,2026-08,idem,2026-09-15
+92c5ab1c9e11,fecha,2026-08-03,"pago Splitwise de Rodrigo: Splitwise lo fecha el sabado 1/8, el banco lo posteo el lunes 3/8 (regla de fin de semana). Con 1/8 queda fuera del rango del extracto y el cierre lo propone como ingreso nuevo",2026-09-15
+ec03404c04fc,motivo_resuelto,sin_categoria,"fila borrada: era el total bancario de un split ya cargado en dos filas (falso positivo garantizado, ver chuleta de cierre-mes)",2026-09-15
+1be2d489cc34,motivo_resuelto,sin_categoria,"fila borrada: era el total bancario de un split ya cargado en dos filas (falso positivo garantizado, ver chuleta de cierre-mes)",2026-09-15
+cbd0f82767c0,motivo_resuelto,sin_categoria,"fila borrada: era el total bancario de un split ya cargado en dos filas (falso positivo garantizado, ver chuleta de cierre-mes)",2026-09-15
+6661b9ae05c2,categoria,Sueldo,sueldo de agosto,2026-09-15
+6661b9ae05c2,motivo_resuelto,ingreso_a_clasificar,Sueldo,2026-09-15
+f33d0ba4e822,categoria,Sueldo,"bono/aguinaldo (no va al coeficiente, decision Joaco 2/9)",2026-09-15
+f33d0ba4e822,motivo_resuelto,ingreso_a_clasificar,Sueldo,2026-09-15
+2c48d5398806,categoria,Sueldo,"bono/aguinaldo (no va al coeficiente, decision Joaco 2/9)",2026-09-15
+2c48d5398806,motivo_resuelto,ingreso_a_clasificar,Sueldo,2026-09-15
+60a74aeb0fe1,categoria,Auto,"Geely: segundo pago (~USD 5.000), extraordinario como la sena de julio",2026-09-15
+60a74aeb0fe1,en_analisis,0,"capital, no consumo: fuera del presupuesto (memoria compra-auto-geely-2026)",2026-09-15
+60a74aeb0fe1,descripcion,"Geely EX2: pago USD 4.990 (extraordinario, en_analisis=0)",,2026-09-15
+60a74aeb0fe1,motivo_resuelto,sin_categoria,"Auto extraordinario, en_analisis=0",2026-09-15
+9d5e3f9df745,categoria,Otros ingresos,"aporte de Lu a la casa (DECAUX); ya esta en aportes_lu.csv, que es lo que lee cierre_casa",2026-09-15
+9d5e3f9df745,en_analisis,0,"no es ingreso de nadie: es el aporte de Lu, contado por aportes_lu.csv",2026-09-15
+9d5e3f9df745,descripcion,Aporte de Lu 18.000 (4/8) - en aportes_lu.csv,,2026-09-15
+9d5e3f9df745,motivo_resuelto,ingreso_a_clasificar,"aporte de Lu, en_analisis=0",2026-09-15
+9f3355b91b28,tipo,transferencia,"pago electronico de la tarjeta: mueve plata de la Cuenta Casa a la Mastercard, no es gasto",2026-09-15
+9f3355b91b28,cuenta_destino,Santander Mastercard,,2026-09-15
+9f3355b91b28,ambito,interno,,2026-09-15
+9f3355b91b28,en_analisis,0,,2026-09-15
+9f3355b91b28,descripcion,"Pago de la Mastercard 8.401,19 desde la Cuenta Casa (14/8)",,2026-09-15
+9f3355b91b28,motivo_resuelto,sin_categoria,transferencia interna Cuenta Casa -> Mastercard,2026-09-15
+c23bd13fbb6c,ambito,interno,"compra de dolares 20/8: pata UYU (-60.000); la pata USD es 6238e50ab7a3 (+1.471,31, tc 40,78)",2026-09-15
+c23bd13fbb6c,en_analisis,0,mover plata entre cuentas propias no es gasto ni ingreso,2026-09-15
+c23bd13fbb6c,motivo_resuelto,sin_categoria,"compra de dolares, interno",2026-09-15
+6238e50ab7a3,ambito,interno,"compra de dolares 20/8: pata USD (+1.471,31); la pata UYU es c23bd13fbb6c (-60.000)",2026-09-15
+6238e50ab7a3,en_analisis,0,mover plata entre cuentas propias no es gasto ni ingreso,2026-09-15
+6238e50ab7a3,motivo_resuelto,ingreso_a_clasificar,"compra de dolares, interno",2026-09-15
+1a051794b9ac,categoria,Devoluciones & cashback,devolucion de la compra 72972ac24e15 del 17/8,2026-09-15
+1a051794b9ac,en_analisis,0,se netea con la compra: ninguna de las dos cuenta (Joaco 2/9: 'me la devolvieron'),2026-09-15
+72972ac24e15,en_analisis,0,"compra devuelta el 20/8 (extorno 1a051794b9ac): se netea, no infla Compras personales",2026-09-15
+1a051794b9ac,motivo_resuelto,ingreso_a_clasificar,"devolucion, neteada",2026-09-15
+a8de10e67c89,categoria,Otros,comision de la transferencia a Alfredo (arreglo del auto),2026-09-15
+a8de10e67c89,motivo_resuelto,sin_categoria,Otros,2026-09-15
+c66b85ec3c24,categoria,Otros,comision de la transferencia a Lucho (barbero),2026-09-15
+c66b85ec3c24,motivo_resuelto,sin_categoria,Otros,2026-09-15
+a618de59af1d,categoria,Otros,comision de la transferencia a Gletir (inversion),2026-09-15
+a618de59af1d,motivo_resuelto,sin_categoria,Otros,2026-09-15
+b6d399165503,categoria,Otros,comision EDC de la cuenta corriente,2026-09-15
+b6d399165503,motivo_resuelto,sin_categoria,Otros,2026-09-15
+e5eb20ecd096,categoria,Transporte,recarga STM desde la Cuenta Casa,2026-09-15
+e5eb20ecd096,motivo_resuelto,sin_categoria,Transporte,2026-09-15
+a5199216fc72,categoria,Devoluciones & cashback,extorno chico de PedidosYa Market,2026-09-15
+a5199216fc72,motivo_resuelto,ingreso_a_clasificar,Devoluciones & cashback,2026-09-15
+a4fa24390de9,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+fcd4cb033ae4,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+e58a52b1452c,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+cbecaf31f0f9,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+ca98c79aada4,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+bcbb981f9365,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+12224ccd545c,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+c777cba7cee4,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+a7067f63a90c,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+f5bb76b65c33,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+4c91e40afa26,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+24fb1a781ba0,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+2711e7d56f4c,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+4168b0edbc01,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+0539d1e70f9d,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+19a009c93a67,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+813686178afc,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+813686178afc,motivo_resuelto,sin_respaldo_estado,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+3ef3019ff6e0,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+3a6a548aa5f1,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+be3c73d9114a,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+708f6bd95d12,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+ba14b4357d90,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+3ec1ed9fd620,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+926b7289a87a,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+5783f3f5408a,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+cbe9d3da1b34,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+eb0cd4bb89ec,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+578f479837e9,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+7f447445acc6,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+7f447445acc6,motivo_resuelto,sin_respaldo_estado,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+8dc256c67c04,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+a0f0732aea91,motivo_resuelto,sin_categoria,fila borrada: estado reprocesado sobre un mes ya cerrado (doble conteo) o cargo ya presente por mail con importe de aviso,2026-09-15
+236acad0b784,monto,200.00,Uber 29/7: tarifa final del estado (aviso 212),2026-09-15
+236acad0b784,monto_uyu,200.00,idem,2026-09-15
+251378f09667,monto,147.94,Uber 29/7 (TRIP HELP): importe del estado (aviso 154),2026-09-15
+251378f09667,monto_uyu,147.94,idem,2026-09-15
+870fcd196692,monto,509.74,Uber 31/7: tarifa final del estado (aviso 550),2026-09-15
+870fcd196692,monto_uyu,509.74,idem,2026-09-15
+ec24d1a7f645,monto,190.64,Uber 5/8: tarifa final del estado (aviso 201),2026-09-15
+ec24d1a7f645,monto_uyu,190.64,idem,2026-09-15
+02777aa0455e,monto,207.13,Uber 5/8: tarifa final del estado (aviso 219),2026-09-15
+02777aa0455e,monto_uyu,207.13,idem,2026-09-15
+83a2b362ece6,monto,211.33,Uber 26/8: tarifa final del estado (aviso 227),2026-09-15
+83a2b362ece6,monto_uyu,211.33,idem,2026-09-15
+122de5b852af,monto,3474.00,"hermana Namaste 31/7: el cargo real es 6.947,57 y el split sumaba 6.947,14",2026-09-15
+122de5b852af,monto_uyu,3474.00,idem,2026-09-15
+348b2e5d8083,monto,8.24,"YouTube/Apple 22/8: el estado cobra USD 24,72 (recargo 3% sobre 23,99); 2/6 propio",2026-09-15
+348b2e5d8083,monto_uyu,332.32,idem,2026-09-15
+14aebc454e08,monto,16.48,"hermana YouTube 22/8: 4/6 de USD 24,72",2026-09-15
+14aebc454e08,monto_uyu,664.64,idem,2026-09-15
+238a1ca93081,monto,9.07,"ShareTheMeal: el estado cobra USD 9,07 (recargo sobre 8,80)",2026-09-15
+238a1ca93081,monto_uyu,365.79,idem,2026-09-15
+8b09908f739a,monto,2.05,"Google One 1/8: el estado cobra USD 2,05 (recargo sobre 1,99)",2026-09-15
+8b09908f739a,monto_uyu,82.68,idem,2026-09-15
+728e29b1992d,monto,103.05,"Anthropic 5/8: el estado cobra USD 103,05 (recargo 3% sobre 100)",2026-09-15
+728e29b1992d,monto_uyu,4156.01,idem,2026-09-15
+9afba01d7aba,categoria,Devoluciones & cashback,"descuento de Medialunas Calentitas, credito del estado 28/7-28/8",2026-09-15
+59e6a6c4c457,categoria,Servicios,seguro cobrado en la Platinum,2026-09-15
+fb00c7b203c6,categoria,Servicios,seguro cobrado en la Platinum,2026-09-15
+a4ae827ce11e,categoria,Servicios,seguro cobrado en la Platinum,2026-09-15
+081cac39d6a9,monto,1608.25,"asado 22/8 (sw:4650212111): 25% queda en la familia, 4.825,16 van a Deudas; participaciones 50/50",2026-09-15
+081cac39d6a9,monto_uyu,1608.25,,2026-09-15
+081cac39d6a9,categoria,Super,compra en Disco para el asado,2026-09-15
+6ba517a6635e,monto,129.50,"asado 22/8, segunda linea: 25% familia, 388,50 a Deudas",2026-09-15
+6ba517a6635e,monto_uyu,129.50,,2026-09-15
+6ba517a6635e,categoria,Super,,2026-09-15
+3d8fb9506017,motivo_resuelto,split_a_cargar,apareado a mano con 081cac39d6a9 + 6ba517a6635e (la Mastercard no manda aviso: entro con el estado del 4/9),2026-09-15
+0b5655d1d4be,categoria,Super,"Disco 22/8 de 1.017: gasto de casa normal, NO es parte del asado (Joaco 2/9)",2026-09-15
+2ae007fa7400,categoria,Super,Devoto,2026-09-15
+b7425d92839b,categoria,Super,Devoto,2026-09-15
+07297dcea723,categoria,Casa & hogar,MercadoLibre con la tarjeta de la casa,2026-09-15
+39e88c48382e,categoria,Comer afuera / Delivery,El Timon,2026-09-15
+ad352c6597ef,categoria,Super,Bilas Pastas: pastas frescas,2026-09-15
+ad352c6597ef,motivo_resuelto,sin_categoria,Super,2026-09-15
+6e5542b890b8,categoria,Super,Delfiam via Mercado Pago,2026-09-15
+6e5542b890b8,motivo_resuelto,sin_categoria,Super,2026-09-15
+48750777cd65,categoria,Servicios,"cuota anual de la Mastercard (1 de 3), setiembre",2026-09-15
+48750777cd65,motivo_resuelto,sin_categoria,Servicios,2026-09-15
+99cc060dc01b,categoria,Servicios,seguro saldo deudor,2026-09-15
+c3196e5491b0,categoria,Devoluciones & cashback,Joaco 15/9: su madre le paga su parte de YouTube; deuda fuera de Splitwise (no va a Deudas),2026-09-15
+c3196e5491b0,motivo_resuelto,ingreso_a_clasificar,Devoluciones & cashback,2026-09-15
+1cfedc0b12d3,ambito,interno,Joaco 15/9: vuelve de su propia cuenta OCA,2026-09-15
+1cfedc0b12d3,en_analisis,0,interno,2026-09-15
+1cfedc0b12d3,descripcion,Transferencia desde mi cuenta OCA (interno),,2026-09-15
+1cfedc0b12d3,motivo_resuelto,ingreso_a_clasificar,interno OCA,2026-09-15
+b1a42e617d76,tipo,transferencia,Joaco 15/9: pago de Splitwise en USD,2026-09-15
+b1a42e617d76,cuenta,Deudas,,2026-09-15
+b1a42e617d76,cuenta_destino,Santander USD,,2026-09-15
+b1a42e617d76,ambito,interno,,2026-09-15
+b1a42e617d76,en_analisis,0,,2026-09-15
+b1a42e617d76,descripcion,"Pago Splitwise USD 71,76 recibido (Deudas -> Santander USD)",,2026-09-15
+b1a42e617d76,motivo_resuelto,ingreso_a_clasificar,"pago Splitwise, Deudas -> USD",2026-09-15
+da02829bf972,categoria,Auto,"Joaco 15/9: costo de la letra de cambio del Geely; gasto de casa, se reparte",2026-09-15
+da02829bf972,motivo_resuelto,sin_categoria,Auto (casa),2026-09-15
+096e7102c034,motivo_resuelto,sin_respaldo_estado,"hermana de un split: el banco trae UNA linea por el total, el ledger dos (falso positivo garantizado, chuleta de cierre-mes)",2026-09-15
+15673569a524,motivo_resuelto,sin_respaldo_estado,cargo apareado a mano con el estado: importe del aviso ajustado al del estado (Uber tarifa final / recargo 3% USD) o mitad de un split,2026-09-15
+7ce2b8a564d2,motivo_resuelto,sin_respaldo_estado,"hermana de un split: el banco trae UNA linea por el total, el ledger dos (falso positivo garantizado, chuleta de cierre-mes)",2026-09-15
+dc158bb98219,motivo_resuelto,sin_respaldo_estado,cargo apareado a mano con el estado: importe del aviso ajustado al del estado (Uber tarifa final / recargo 3% USD) o mitad de un split,2026-09-15
+3f5724944a85,motivo_resuelto,sin_respaldo_estado,cargo apareado a mano con el estado: importe del aviso ajustado al del estado (Uber tarifa final / recargo 3% USD) o mitad de un split,2026-09-15
+60d81d39a44c,motivo_resuelto,sin_respaldo_estado,"hermana de un split: el banco trae UNA linea por el total, el ledger dos (falso positivo garantizado, chuleta de cierre-mes)",2026-09-15
+3b4c5c3f2e31,motivo_resuelto,sin_respaldo_estado,"estado viejo (may-jul) reprocesado por error el 15/9 sobre un mes ya cerrado y conciliado: la fila es legitima (1money/planilla/mail), el pendiente es el artefacto",2026-09-15
+534b666c008d,motivo_resuelto,sin_respaldo_estado,"estado viejo (may-jul) reprocesado por error el 15/9 sobre un mes ya cerrado y conciliado: la fila es legitima (1money/planilla/mail), el pendiente es el artefacto",2026-09-15
+b08720ce7158,motivo_resuelto,sin_respaldo_estado,"estado viejo (may-jul) reprocesado por error el 15/9 sobre un mes ya cerrado y conciliado: la fila es legitima (1money/planilla/mail), el pendiente es el artefacto",2026-09-15
+f82c646028ee,motivo_resuelto,sin_respaldo_estado,"estado viejo (may-jul) reprocesado por error el 15/9 sobre un mes ya cerrado y conciliado: la fila es legitima (1money/planilla/mail), el pendiente es el artefacto",2026-09-15
+13bbd1461f8b,motivo_resuelto,sin_respaldo_estado,"estado viejo (may-jul) reprocesado por error el 15/9 sobre un mes ya cerrado y conciliado: la fila es legitima (1money/planilla/mail), el pendiente es el artefacto",2026-09-15
+e0cf56f6e65b,motivo_resuelto,sin_respaldo_estado,"estado viejo (may-jul) reprocesado por error el 15/9 sobre un mes ya cerrado y conciliado: la fila es legitima (1money/planilla/mail), el pendiente es el artefacto",2026-09-15
+94a7f7a60197,motivo_resuelto,sin_respaldo_estado,"estado viejo (may-jul) reprocesado por error el 15/9 sobre un mes ya cerrado y conciliado: la fila es legitima (1money/planilla/mail), el pendiente es el artefacto",2026-09-15
+f14ff2ee6538,motivo_resuelto,sin_respaldo_estado,"estado viejo (may-jul) reprocesado por error el 15/9 sobre un mes ya cerrado y conciliado: la fila es legitima (1money/planilla/mail), el pendiente es el artefacto",2026-09-15
+54d4e05723a0,motivo_resuelto,sin_respaldo_estado,"estado viejo (may-jul) reprocesado por error el 15/9 sobre un mes ya cerrado y conciliado: la fila es legitima (1money/planilla/mail), el pendiente es el artefacto",2026-09-15
+799752d26110,motivo_resuelto,sin_respaldo_estado,"estado viejo (may-jul) reprocesado por error el 15/9 sobre un mes ya cerrado y conciliado: la fila es legitima (1money/planilla/mail), el pendiente es el artefacto",2026-09-15
+9bebd8c2d261,motivo_resuelto,sin_respaldo_estado,"estado viejo (may-jul) reprocesado por error el 15/9 sobre un mes ya cerrado y conciliado: la fila es legitima (1money/planilla/mail), el pendiente es el artefacto",2026-09-15
+9e4a89cb6ab8,motivo_resuelto,sin_respaldo_estado,"estado viejo (may-jul) reprocesado por error el 15/9 sobre un mes ya cerrado y conciliado: la fila es legitima (1money/planilla/mail), el pendiente es el artefacto",2026-09-15
+9771a1acfe61,motivo_resuelto,sin_respaldo_estado,"estado viejo (may-jul) reprocesado por error el 15/9 sobre un mes ya cerrado y conciliado: la fila es legitima (1money/planilla/mail), el pendiente es el artefacto",2026-09-15
+9771a1acfe61,motivo_resuelto,sin_respaldo_estado,"estado viejo (may-jul) reprocesado por error el 15/9 sobre un mes ya cerrado y conciliado: la fila es legitima (1money/planilla/mail), el pendiente es el artefacto",2026-09-15
+9641cd4e9063,motivo_resuelto,sin_respaldo_estado,"estado viejo (may-jul) reprocesado por error el 15/9 sobre un mes ya cerrado y conciliado: la fila es legitima (1money/planilla/mail), el pendiente es el artefacto",2026-09-15
+47dc3f7f271b,motivo_resuelto,sin_respaldo_estado,"estado viejo (may-jul) reprocesado por error el 15/9 sobre un mes ya cerrado y conciliado: la fila es legitima (1money/planilla/mail), el pendiente es el artefacto",2026-09-15
+63ace8afdc26,motivo_resuelto,sin_respaldo_estado,"estado viejo (may-jul) reprocesado por error el 15/9 sobre un mes ya cerrado y conciliado: la fila es legitima (1money/planilla/mail), el pendiente es el artefacto",2026-09-15
+0974897813b8,motivo_resuelto,sin_respaldo_estado,"estado viejo (may-jul) reprocesado por error el 15/9 sobre un mes ya cerrado y conciliado: la fila es legitima (1money/planilla/mail), el pendiente es el artefacto",2026-09-15
+236acad0b784,motivo_resuelto,sin_respaldo_estado,"estado viejo (may-jul) reprocesado por error el 15/9 sobre un mes ya cerrado y conciliado: la fila es legitima (1money/planilla/mail), el pendiente es el artefacto",2026-09-15
+251378f09667,motivo_resuelto,sin_respaldo_estado,"estado viejo (may-jul) reprocesado por error el 15/9 sobre un mes ya cerrado y conciliado: la fila es legitima (1money/planilla/mail), el pendiente es el artefacto",2026-09-15
+80931256f10b,motivo_resuelto,sin_respaldo_estado,"estado viejo (may-jul) reprocesado por error el 15/9 sobre un mes ya cerrado y conciliado: la fila es legitima (1money/planilla/mail), el pendiente es el artefacto",2026-09-15
+870fcd196692,motivo_resuelto,sin_respaldo_estado,"estado viejo (may-jul) reprocesado por error el 15/9 sobre un mes ya cerrado y conciliado: la fila es legitima (1money/planilla/mail), el pendiente es el artefacto",2026-09-15
+c208ef680230,motivo_resuelto,sin_respaldo_estado,"estado viejo (may-jul) reprocesado por error el 15/9 sobre un mes ya cerrado y conciliado: la fila es legitima (1money/planilla/mail), el pendiente es el artefacto",2026-09-15
+02777aa0455e,motivo_resuelto,sin_respaldo_estado,cargo apareado a mano con el estado: importe del aviso ajustado al del estado (Uber tarifa final / recargo 3% USD) o mitad de un split,2026-09-15
+ec24d1a7f645,motivo_resuelto,sin_respaldo_estado,cargo apareado a mano con el estado: importe del aviso ajustado al del estado (Uber tarifa final / recargo 3% USD) o mitad de un split,2026-09-15
+1c138993069c,motivo_resuelto,sin_respaldo_estado,cargo apareado a mano con el estado: importe del aviso ajustado al del estado (Uber tarifa final / recargo 3% USD) o mitad de un split,2026-09-15
+4c3b149e8f24,motivo_resuelto,sin_respaldo_estado,cargo apareado a mano con el estado: importe del aviso ajustado al del estado (Uber tarifa final / recargo 3% USD) o mitad de un split,2026-09-15
+1868ac77db2e,motivo_resuelto,sin_respaldo_estado,cargo apareado a mano con el estado: importe del aviso ajustado al del estado (Uber tarifa final / recargo 3% USD) o mitad de un split,2026-09-15
+348b2e5d8083,motivo_resuelto,sin_respaldo_estado,cargo apareado a mano con el estado: importe del aviso ajustado al del estado (Uber tarifa final / recargo 3% USD) o mitad de un split,2026-09-15
+83a2b362ece6,motivo_resuelto,sin_respaldo_estado,cargo apareado a mano con el estado: importe del aviso ajustado al del estado (Uber tarifa final / recargo 3% USD) o mitad de un split,2026-09-15

@@ -1,8 +1,12 @@
 cuenta,moneda,saldo,fecha_corte
-Cuenta Casa,UYU,49.70,2026-07-31
-Santander UYU,UYU,1797.15,2026-07-31
-Santander USD,USD,6312.95,2026-07-31
-Santander Mastercard,UYU,7331.32,2026-07-31
-BBVA USD,USD,692.93,2026-07-31
-Efectivo,UYU,0.00,2026-07-31
-Efectivo USD,USD,30.00,2026-07-31
+Cuenta Casa,UYU,0.00,2026-08-31
+Santander UYU,UYU,8156.01,2026-08-31
+Santander USD,USD,645.78,2026-08-31
+Santander Platinum,UYU,51103.16,2026-08-31
+Santander Platinum USD,USD,147.33,2026-08-31
+Santander Mastercard,UYU,11263.41,2026-08-31
+BBVA Crédito,UYU,-1021.96,2026-08-31
+BBVA USD,USD,692.93,2026-08-31
+Mercado Pago,UYU,0.00,2026-08-31
+Efectivo,UYU,0.00,2026-08-31
+Efectivo USD,USD,30.00,2026-08-31

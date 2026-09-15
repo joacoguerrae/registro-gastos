@@ -121,7 +121,7 @@ a6e831786272,sin_categoria,establecimiento 'MONTEVIDEO/21 DE SETIEMBRE 3021' sin
 238a1ca93081,sin_categoria,establecimiento 'SHARETHEMEAL WF' sin regla,2026-08-25,1
 e5f730c37b97,sin_categoria,gasto Splitwise 'Brava' (Caqui Tapa) sin regla,2026-08-26,1
 002f046886c4,sin_categoria,gasto Splitwise 'Pikda' (Hermanos de Marian) sin regla,2026-08-26,1
-3d8fb9506017,split_a_cargar,"Splitwise sw:4650212111 'Asado' UYU 6951.00 (2026-08-25): yo pague 6951.00, mi parte 1737.75 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-08-26,
+3d8fb9506017,split_a_cargar,"Splitwise sw:4650212111 'Asado' UYU 6951.00 (2026-08-25): yo pague 6951.00, mi parte 1737.75 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-08-26,1
 cafd98baabf0,sin_categoria,gasto Splitwise 'Piza' (Hermanos de Marian) sin regla,2026-08-26,1
 e361ff153ded,split_a_cargar,"Splitwise sw:4643466707 'Fernet, y seguimos' UYU 870.00 (2026-08-22): yo pague 870.00, mi parte 290.00 -> ajustar cargo e361ff153ded y crear fila hermana -split",2026-08-26,1
 a453c4b8aaab,sin_categoria,gasto Splitwise 'Piksa2' (Hermanos de Marian) sin regla,2026-08-26,1
@@ -156,3 +156,99 @@ d2a692d8c831,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,202
 ffe3b44cb58a,tc_estimado,USD 207.00 x tc 40.33 = 8348.31 UYU (corrige Fase 3),2026-09-14,
 ffe3b44cb58a,sin_categoria,establecimiento 'BODEGA EL LEGAD' sin regla,2026-09-14,
 010310701246,sin_categoria,establecimiento 'VALDENSE/LOS CRIOLLITOS VIS3' sin regla,2026-09-15,
+c66b85ec3c24,sin_categoria,"Santander UYU COMISION TRANSF INSTANTANEA 654404LE NRR:206480980 LUCHO ROY (del extracto, sin aviso por mail)",2026-09-15,1
+ec03404c04fc,sin_categoria,"Santander UYU TRANSF INSTANTANEA ENVIADA 415298LE NRR:206368854 MINSI SAS (del extracto, sin aviso por mail)",2026-09-15,1
+c23bd13fbb6c,sin_categoria,"Santander UYU DEBITO OPERACION EN BANCA DIGITAL PAHORRO (del extracto, sin aviso por mail)",2026-09-15,1
+1a051794b9ac,ingreso_a_clasificar,"Santander UYU 2026-08-20 725.00 UYU: EXTORNO COMPRA CON VISA DEBITO DEV,MERPAGO.MERCADOLIBRE, FEC -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?",2026-09-15,1
+2c48d5398806,ingreso_a_clasificar,Santander UYU 2026-08-20 64859.00 UYU: SUELDOS 729153TT RECIBIDA /DELIVERY HERO URUGUAY MARKET -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-09-15,1
+1cfedc0b12d3,ingreso_a_clasificar,Santander UYU 2026-08-17 3500.00 UYU: TRANSF INSTANTANEA RECIBIDA 755784LR:000005268346 GUERRA ESM -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-09-15,1
+f33d0ba4e822,ingreso_a_clasificar,Santander UYU 2026-08-07 2110.00 UYU: SUELDOS 395176TT RECIBIDA /DELIVERY HERO URUGUAY MARKET -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-09-15,1
+c3196e5491b0,ingreso_a_clasificar,Santander UYU 2026-08-07 200.00 UYU: CREDITO OPERACION EN BANCA DIGITAL T--/ESMITE RODRIGUEZ ALEJ -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-09-15,1
+1be2d489cc34,sin_categoria,"Santander UYU PAGO DE SERVICIO POR BANRED SERVICIO DE PAGOS BANRED , MVST  (del extracto, sin aviso por mail)",2026-09-15,1
+a8de10e67c89,sin_categoria,"Santander UYU COMISION TRANSF INSTANTANEA 705896LE NRR:204487944 ALFREDO D (del extracto, sin aviso por mail)",2026-09-15,1
+cbd0f82767c0,sin_categoria,"Santander UYU TRANSF INSTANTANEA ENVIADA 705892LE NRR:204487944 ALFREDO DA (del extracto, sin aviso por mail)",2026-09-15,1
+6661b9ae05c2,ingreso_a_clasificar,Santander UYU 2026-08-03 144286.00 UYU: SUELDOS 582118TT RECIBIDA /DELIVERY HERO URUGUAY MARKET -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-09-15,1
+096e7102c034,sin_respaldo_estado,fila del ledger sin linea en el extracto de Santander UYU 2026-08,2026-09-15,1
+15673569a524,sin_respaldo_estado,fila del ledger sin linea en el extracto de Santander UYU 2026-08,2026-09-15,1
+7ce2b8a564d2,sin_respaldo_estado,fila del ledger sin linea en el extracto de Santander UYU 2026-08,2026-09-15,1
+dc158bb98219,sin_respaldo_estado,fila del ledger sin linea en el extracto de Santander UYU 2026-08,2026-09-15,1
+3f5724944a85,sin_respaldo_estado,fila del ledger sin linea en el extracto de Santander UYU 2026-08,2026-09-15,1
+60d81d39a44c,sin_respaldo_estado,fila del ledger sin linea en el extracto de Santander UYU 2026-08,2026-09-15,1
+b6d399165503,sin_categoria,"Cuenta Casa COMISION EDC CTA.CTE. (del extracto, sin aviso por mail)",2026-09-15,1
+a5199216fc72,ingreso_a_clasificar,"Cuenta Casa 2026-08-14 8.90 UYU: EXTORNO COMPRA CON VISA DEBITO DEV,DLO.PEDIDOSYA MARKET, FEC -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?",2026-09-15,1
+9f3355b91b28,sin_categoria,"Cuenta Casa PAGO ELECTRONICO TARJETA CREDITO (del extracto, sin aviso por mail)",2026-09-15,1
+e5eb20ecd096,sin_categoria,"Cuenta Casa DEBITO OPERACION EN BANCA DIGITAL STM       REC RECARGAS S (del extracto, sin aviso por mail)",2026-09-15,1
+da02829bf972,sin_categoria,"Cuenta Casa DEBITO OPERACION EN BANCA DIGITAL PCOSTO LETRA DE CAMBIO (del extracto, sin aviso por mail)",2026-09-15,1
+9d5e3f9df745,ingreso_a_clasificar,Cuenta Casa 2026-08-04 18000.00 UYU: TRANSF INSTANTANEA RECIBIDA 975206LR:000036935248 DECAUX TAR -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-09-15,1
+a618de59af1d,sin_categoria,"Santander USD TRANSFERENCIA ENVIADA 967489TT55888997 TRF. PLAZA- GLETIR CO (del extracto, sin aviso por mail)",2026-09-15,1
+6238e50ab7a3,ingreso_a_clasificar,Santander USD 2026-08-20 1471.31 USD: CREDITO OPERACION EN BANCA DIGITAL PAHORRO/GUERRA ESMITE JOA -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-09-15,1
+b1a42e617d76,ingreso_a_clasificar,Santander USD 2026-08-05 71.76 USD: TRANSF INSTANTANEA RECIBIDA 488988LR:000036986841 GUERRA ESM -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-09-15,1
+60a74aeb0fe1,sin_categoria,"Santander USD DEBITO OPERACION EN BANCA DIGITAL PCUOTA AUTO (del extracto, sin aviso por mail)",2026-09-15,1
+3b4c5c3f2e31,sin_respaldo_estado,BBVA Crédito 2026-04: fila del ledger (2026-04-07 UYU 208.00 Mapfre) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+a0f0732aea91,sin_categoria,estado_cuenta Santander Mastercard 2026-05: 'DLO PEDIDOSYA DESMADRE' sin regla,2026-09-15,1
+a4fa24390de9,sin_categoria,estado_cuenta Santander Mastercard 2026-05: 'DLO PEDIDOSYA PROPINA' sin regla,2026-09-15,1
+e58a52b1452c,sin_categoria,estado_cuenta Santander Mastercard 2026-05: 'DLO PEDIDOSYA PROPINA' sin regla,2026-09-15,1
+19a009c93a67,sin_categoria,estado_cuenta Santander Mastercard 2026-05: 'DLO PEDIDOSYA PROPINA' sin regla,2026-09-15,1
+cbecaf31f0f9,sin_categoria,estado_cuenta Santander Mastercard 2026-05: 'DLO PEDIDOSYA PROPINA' sin regla,2026-09-15,1
+be3c73d9114a,sin_categoria,estado_cuenta Santander Mastercard 2026-05: 'RIOGAS POCITOS' sin regla,2026-09-15,1
+f5bb76b65c33,sin_categoria,estado_cuenta Santander Mastercard 2026-05: 'DLO PEDIDOSYA PROPINA' sin regla,2026-09-15,1
+534b666c008d,sin_respaldo_estado,BBVA Crédito 2026-05: fila del ledger (2026-05-04 UYU 85.33 Velov) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+b08720ce7158,sin_respaldo_estado,BBVA Crédito 2026-05: fila del ledger (2026-05-04 UYU 1375.78 Tren) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+f82c646028ee,sin_respaldo_estado,BBVA Crédito 2026-05: fila del ledger (2026-05-04 UYU 684.27 Decathlon) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+13bbd1461f8b,sin_respaldo_estado,BBVA Crédito 2026-05: fila del ledger (2026-05-05 UYU 8.23 Cafe) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+e0cf56f6e65b,sin_respaldo_estado,BBVA Crédito 2026-05: fila del ledger (2026-05-05 UYU 364.27 Tren) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+94a7f7a60197,sin_respaldo_estado,BBVA Crédito 2026-05: fila del ledger (2026-05-07 UYU 214.00 Bbva) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+f14ff2ee6538,sin_respaldo_estado,BBVA Crédito 2026-05: fila del ledger (2026-05-07 UYU 6.23 Cafe) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+54d4e05723a0,sin_respaldo_estado,BBVA Crédito 2026-05: fila del ledger (2026-05-09 UYU 7.78 ) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+799752d26110,sin_respaldo_estado,BBVA Crédito 2026-05: fila del ledger (2026-05-09 UYU 1691.76 Comida) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+9bebd8c2d261,sin_respaldo_estado,BBVA Crédito 2026-05: fila del ledger (2026-05-09 UYU 799.79 Regalos) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+9e4a89cb6ab8,sin_respaldo_estado,BBVA Crédito 2026-05: fila del ledger (2026-05-23 UYU 971.66 Velov) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+9771a1acfe61,sin_respaldo_estado,BBVA Crédito 2026-05: fila del ledger (2026-05-27 UYU 98.62 Tren) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+7f447445acc6,sin_categoria,"estado_cuenta BBVA Crédito 2026-05: 'SEGURO VIDA 2,5X1000' sin regla",2026-09-15,1
+5783f3f5408a,sin_categoria,"estado_cuenta BBVA Crédito 2026-05: 'DECATHLON 0023 (FR ,EUR, 14,48)' sin regla",2026-09-15,1
+2711e7d56f4c,sin_categoria,"estado_cuenta BBVA Crédito 2026-05: 'SNCF-VOYAGEURS (FR ,EUR, 29,00)' sin regla",2026-09-15,1
+4168b0edbc01,sin_categoria,"estado_cuenta BBVA Crédito 2026-05: 'VELOV INTERNET (FR ,EUR, 1,80)' sin regla",2026-09-15,1
+fcd4cb033ae4,sin_categoria,"estado_cuenta BBVA Crédito 2026-05: ""VAL D' EUROPE SE(FR ,EUR, 7,70)"" sin regla",2026-09-15,1
+708f6bd95d12,sin_categoria,"estado_cuenta BBVA Crédito 2026-05: 'VELOV INTERNET (FR ,EUR, 1,00)' sin regla",2026-09-15,1
+0539d1e70f9d,sin_categoria,"estado_cuenta BBVA Crédito 2026-05: 'MAISON MARTEAU (FR ,EUR, 35,65)' sin regla",2026-09-15,1
+cbe9d3da1b34,sin_categoria,"estado_cuenta BBVA Crédito 2026-05: 'AVIA LA CHAPONN (FR ,EUR, 6,60)' sin regla",2026-09-15,1
+eb0cd4bb89ec,sin_categoria,"estado_cuenta BBVA Crédito 2026-05: 'VELOV INTERNET (FR ,EUR, 4,00)' sin regla",2026-09-15,1
+12224ccd545c,sin_categoria,"estado_cuenta BBVA Crédito 2026-05: 'VELOV INTERNET (FR ,EUR, 1,80)' sin regla",2026-09-15,1
+ca98c79aada4,sin_categoria,"estado_cuenta BBVA Crédito 2026-05: 'VELOV INTERNET (FR ,EUR, 4,00)' sin regla",2026-09-15,1
+578f479837e9,sin_categoria,"estado_cuenta BBVA Crédito 2026-05: 'VELOV INTERNET (FR ,EUR, 4,00)' sin regla",2026-09-15,1
+3a6a548aa5f1,sin_categoria,"estado_cuenta BBVA Crédito 2026-05: 'VELOV INTERNET (FR ,EUR, 1,80)' sin regla",2026-09-15,1
+ba14b4357d90,sin_categoria,"estado_cuenta BBVA Crédito 2026-05: 'VELOV INTERNET (FR ,EUR, 4,00)' sin regla",2026-09-15,1
+813686178afc,sin_categoria,"estado_cuenta BBVA Crédito 2026-05: 'TCL 69 LYO (FR ,EUR, 2,10)' sin regla",2026-09-15,1
+9771a1acfe61,sin_respaldo_estado,BBVA Crédito 2026-07: fila del ledger (2026-05-27 UYU 98.62 Tren) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+9641cd4e9063,sin_respaldo_estado,BBVA Crédito 2026-07: fila del ledger (2026-06-27 UYU 1861.42 ) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+47dc3f7f271b,sin_respaldo_estado,BBVA Crédito 2026-07: fila del ledger (2026-06-30 UYU 1073.01 Regalo Marian y leo) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+63ace8afdc26,sin_respaldo_estado,BBVA Crédito 2026-07: fila del ledger (2026-06-30 UYU 700.69 Viaje) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+7f447445acc6,sin_respaldo_estado,"BBVA Crédito 2026-07: fila del ledger (2026-05-28 UYU 13.11 SEGURO VIDA 2,5X1000) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado)",2026-09-15,1
+813686178afc,sin_respaldo_estado,"BBVA Crédito 2026-07: fila del ledger (2026-05-27 USD 2.45 TCL 69 LYO (FR ,EUR, 2,10)) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado)",2026-09-15,1
+24fb1a781ba0,sin_categoria,"estado_cuenta BBVA Crédito 2026-07: 'SEGURO VIDA 2,5X1000' sin regla",2026-09-15,1
+bcbb981f9365,sin_categoria,"estado_cuenta BBVA Crédito 2026-07: 'VELOV INTERNET (FR ,EUR, 4,00)' sin regla",2026-09-15,1
+3ef3019ff6e0,sin_categoria,"estado_cuenta BBVA Crédito 2026-07: 'VELOV INTERNET (FR ,EUR, 1,80)' sin regla",2026-09-15,1
+a7067f63a90c,sin_categoria,"estado_cuenta BBVA Crédito 2026-07: 'VELOV INTERNET (FR ,EUR, 0,30)' sin regla",2026-09-15,1
+c777cba7cee4,sin_categoria,"estado_cuenta BBVA Crédito 2026-07: 'BIKE24 GMBH (DE ,EUR, 113,40)' sin regla",2026-09-15,1
+4c91e40afa26,sin_categoria,"estado_cuenta BBVA Crédito 2026-07: 'VELOV INTERNET (FR ,EUR, 1,20)' sin regla",2026-09-15,1
+8dc256c67c04,sin_categoria,"estado_cuenta BBVA Crédito 2026-07: 'JCDECAUX ESPANA (ES ,EUR, 3,99)' sin regla",2026-09-15,1
+8dc256c67c04,sin_categoria,"estado_cuenta BBVA Crédito 2026-07: 'JCDECAUX ESPANA (ES ,EUR, 3,99)' sin regla",2026-09-15,1
+0974897813b8,sin_respaldo_estado,Santander Platinum 2026-08: fila del ledger (2026-07-28 UYU 137.84 SEGURO SALDO DEUDOR) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+0da801f426ab,sin_respaldo_estado,Santander Platinum 2026-08: fila del ledger (2026-07-28 UYU 1303.79 MER) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+236acad0b784,sin_respaldo_estado,Santander Platinum 2026-08: fila del ledger (2026-07-29 UYU 212.00 DLOUBERRIDES) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+251378f09667,sin_respaldo_estado,Santander Platinum 2026-08: fila del ledger (2026-07-29 UYU 154.00 UBER) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+80931256f10b,sin_respaldo_estado,Santander Platinum 2026-08: fila del ledger (2026-07-29 UYU -147.94 Reintegro UBER (sin cargo original identificado)) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+870fcd196692,sin_respaldo_estado,Santander Platinum 2026-08: fila del ledger (2026-07-31 UYU 550.00 DLOUBERRIDES) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+c208ef680230,sin_respaldo_estado,Santander Platinum 2026-08: fila del ledger (2026-07-31 UYU 3473.57 REST NAMASTE) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+02777aa0455e,sin_respaldo_estado,Santander Platinum 2026-08: fila del ledger (2026-08-05 UYU 219.00 DLOUBERRIDES) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+ec24d1a7f645,sin_respaldo_estado,Santander Platinum 2026-08: fila del ledger (2026-08-05 UYU 201.00 DLOUBERRIDES) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+1c138993069c,sin_respaldo_estado,Santander Platinum 2026-08: fila del ledger (2026-08-08 USD 278.00 POSADA LA FLOR) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+4c3b149e8f24,sin_respaldo_estado,Santander Platinum 2026-08: fila del ledger (2026-08-08 USD -278.00 Reintegro POSADA LA FLOR (revierte 1c138993069c)) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+1868ac77db2e,sin_respaldo_estado,Santander Platinum 2026-08: fila del ledger (2026-08-22 UYU 290.00 MERCADO PAGO) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+348b2e5d8083,sin_respaldo_estado,Santander Platinum 2026-08: fila del ledger (2026-08-22 USD 8.00 APPLE.COM/BILL) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+83a2b362ece6,sin_respaldo_estado,Santander Platinum 2026-08: fila del ledger (2026-08-26 UYU 227.00 DLOUBERRIDES) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-09-15,1
+3ec1ed9fd620,sin_categoria,estado_cuenta Santander Platinum 2026-08: 'REST NAMASTE' sin regla,2026-09-15,1
+926b7289a87a,sin_categoria,estado_cuenta Santander Platinum 2026-08: 'MERPAGO INDICABEER' sin regla,2026-09-15,1
+ad352c6597ef,sin_categoria,estado_cuenta Santander Mastercard 2026-09: 'BILAS PASTAS' sin regla,2026-09-15,1
+6e5542b890b8,sin_categoria,estado_cuenta Santander Mastercard 2026-09: 'MERPAGO DELFIAM' sin regla,2026-09-15,1
+48750777cd65,sin_categoria,estado_cuenta Santander Mastercard 2026-09: 'CUOTA ANUAL           01 03' sin regla,2026-09-15,1

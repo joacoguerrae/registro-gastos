@@ -1,13 +1,13 @@
-cuenta,fecha_corte,saldo,moneda,fuente,nota
-Cuenta Casa,2026-07-12,17322.24,UYU,saldos reales reportados por Joaco,"= corriente Santander 383,96 + 16.938,28 que llegan de MP el 12/7; hipótesis corriente=casa (8261) a confirmar"
-Santander UYU,2026-07-12,15812.52,UYU,saldos reales reportados por Joaco,"caja de ahorro personal (tarjeta 9071). Corregido 2/8/2026: la lectura original (16016.13) era del mediodia del 12/7 (domingo) y no incluia KINKO 203,61, que se compro ese dia y el banco posteo el lunes 13. La semilla debe ser el saldo al CIERRE del dia del corte. Verificado: con esto el extracto de julio concilia exacto"
-Santander USD,2026-07-12,8073.30,USD,saldos reales reportados por Joaco,
-BBVA USD,2026-07-12,692.93,USD,saldos reales reportados por Joaco,incluye 200 USD de amigos (deuda con ellos)
-BBVA Crédito,2026-07-12,204.51,UYU,saldos reales reportados por Joaco,deuda del período (Mapfre); nada impago
-Santander Platinum,2026-07-12,28987.50,UYU,saldos reales reportados por Joaco,deuda UYU del período según Joaco; ver discrepancias BSE/Uber en data/saldos.csv
-Santander Platinum USD,2026-07-12,99.46,USD,saldos reales reportados por Joaco,deuda USD del período (Google One + Anthropic)
-Santander Mastercard,2026-07-12,0.00,UYU,saldos reales reportados por Joaco,
-Deudas,2026-07-12,-1807.00,UYU,Splitwise segun Joaco + Pizza,"negativo = debo. Corregido 19/7: la lectura original (-1340.34) fue de la mañana del 12/7, y Rodrigo cargó 'Pizza' (sw:4566353446, parte de Joaco 466.66) ese mismo día 13:37 UY — fechada 12/7 quedaba fuera del cálculo (fecha<=corte) y fuera de la foto: el chequeo de sync_splitwise daba diff -466.66 permanente. La semilla debe ser la posición al CIERRE del día del corte. Verificado: -1807.00 -708.29 (Carpintero) +1560 (Guasones) = -955.29 = API get_friends exacto"
-Deudas USD,2026-07-12,1547.76,USD,Splitwise segun Joaco,positivo = me deben
-Efectivo,2026-07-12,0.00,UYU,saldos reales reportados por Joaco,
-Efectivo USD,2026-07-12,30.00,USD,saldos reales reportados por Joaco,
+﻿cuenta,fecha_corte,saldo,moneda,fuente,nota
+Cuenta Casa,2026-08-31,0.00,UYU,cierre de agosto 2026 (15/9),extracto cuenta_casa_agosto.csv: concilio exacto contra la semilla del 12/7
+Santander UYU,2026-08-31,8156.01,UYU,cierre de agosto 2026 (15/9),extracto caja_ahorro_$_agosto.csv: concilio exacto
+Santander USD,2026-08-31,645.78,USD,cierre de agosto 2026 (15/9),extracto caja_ahorro_usd_agosto.csv: concilio exacto
+BBVA USD,2026-08-31,692.93,USD,cierre de agosto 2026 (15/9),sin movimientos desde el 12/7; incluye 200 USD de amigos
+BBVA Crédito,2026-08-31,-1021.96,UYU,estado BBVA 31/8 + Joaco 15/9,"SALDO A FAVOR de 1.021,96 (Joaco 15/9). El ledger acumulaba 409,02 (dos Mapfre) porque no ve como se paga la tarjeta: el estado 31/8 dice a pagar 204,51 y saldo -1.021,96"
+Santander Platinum,2026-08-31,51103.16,UYU,estado Platinum cierre 28/8 + ledger 29-31/8,"= 45.516,76 del estado (autovalidado: 22 lineas suman exacto) + Dilema 4.145,97 (30/8) + Chez 1.440,43 (31/8). Contra la semilla del 12/7 el ledger daba 5.482,14 menos, TODO en el tramo 12/7-27/7 (la ventana 28/7-31/8 cuadra al peso): la semilla del 12/7 era lectura manual marcada DISCREPANCIA. Re-sembrado con OK de Joaco 15/9"
+Santander Platinum USD,2026-08-31,147.33,USD,estado Platinum cierre 28/8,"= total USD del estado; agosto suma exacto 147,33. Contra la semilla del 12/7 sobraban 131,80, tambien del tramo pre-27/7. Re-sembrado con OK de Joaco 15/9"
+Santander Mastercard,2026-08-31,11263.41,UYU,estado Mastercard cierre 4/9,"= suma de las 9 lineas de agosto (saldo anterior 8.401,19 pagado el 14/8). Concilio exacto. Las lineas de set (cuota anual 1.602 + IVA 352,44 + seguro 39,65) quedan en setiembre"
+Deudas,2026-08-31,4703.65,UYU,calculado por conciliar_saldos (sin real),SIN saldo real: la API de Splitwise devuelve 403 desde el 1/9 (Pro-gating). Es el calculado desde la semilla del 12/7 + movimientos; verificar contra Splitwise cuando haya un export CSV
+Deudas USD,2026-08-31,1138.42,USD,calculado por conciliar_saldos (sin real),idem Deudas: sin real por Splitwise caido
+Efectivo,2026-08-31,0.00,UYU,Joaco 2/9,
+Efectivo USD,2026-08-31,30.00,USD,Joaco 2/9,
