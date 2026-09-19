@@ -1,50 +1,85 @@
 id,fecha,descripcion,grupo,moneda,costo_total,mi_paid_share,mi_owed_share,creado_por,es_pago
 4544350903,2026-07-01,Burger,,UYU,1785.00,1785.00,892.50,Joaquin,0
 4544405047,2026-07-01,Picada y bebida,,UYU,528.00,528.00,264.00,Joaquin,0
-4546727164,2026-07-01,Youtube,Hermanos de Marian,USD,14.40,14.40,0.00,Joaquin,0
+4546727164,2026-07-01,Youtube,Hermanos de Marian,USD,14.40,14.40,0.00,Joaquin Guerra,0
 4546727817,2026-07-01,Youtube,Casita 🫶🏼,USD,4.80,4.80,0.00,Joaquin,0
-4549344291,2026-07-03,Movistar,Hermanos de Marian,USD,1780.00,1780.00,890.00,Joaquin,0
+4549344291,2026-07-03,Movistar,Hermanos de Marian,USD,1780.00,1780.00,890.00,Joaquin Guerra,0
 4556085652,2026-07-06,Asado,Caqui Tapa,UYU,2933.60,0.00,733.40,Juan,0
-4558021546,2026-07-07,Helado,Caqui Tapa,UYU,551.00,551.00,137.75,Joaquin,0
-4561539005,2026-07-10,Deuda person sanky deudor,Caqui Tapa,UYU,1156.00,1156.00,0.00,Joaquin,0
+4558021546,2026-07-07,Helado,Caqui Tapa,UYU,551.00,551.00,137.75,Joaquin Guerra,0
+4561539005,2026-07-09,Deuda person sanky deudor,Caqui Tapa,UYU,1156.00,1156.00,0.00,Joaquin Guerra,0
 4561539134,2026-07-10,Payment,,UYU,1156.50,0.00,1156.50,Joaquin,1
-4562555128,2026-07-10,Regalo papa,Hermanos de Marian,UYU,1223.00,0.00,407.67,Rodrigo,0
-4566353446,2026-07-12,Pizza,Hermanos de Marian,UYU,1400.00,0.00,466.66,Rodrigo,0
+4562555128,2026-07-10,Regalo papa,Hermanos de Marian,UYU,1223.00,0.00,407.67,Rodrigo Guerra,0
+4566353446,2026-07-12,Pizza,Hermanos de Marian,UYU,1400.00,0.00,466.66,Rodrigo Guerra,0
 4568645643,2026-07-13,Carpintero,Caqui Tapa,UYU,4958.00,0.00,708.29,Juan,0
-4570616819,2026-07-14,Guasones,Caqui Tapa,UYU,1560.00,1560.00,0.00,Joaquin,0
+4570616819,2026-07-14,Guasones,Caqui Tapa,UYU,1560.00,1560.00,0.00,Joaquin Guerra,0
 4571314074,2026-07-15,Payment,Casita 🫶🏼,USD,328.80,0.00,328.80,Lucia,1
-4578748115,2026-07-19,Carbon + hielo,Caqui Tapa,UYU,275.00,275.00,45.84,Joaquin,0
-4579107972,2026-07-19,Apuesta,Caqui Tapa,UYU,1000.00,0.00,0.00,German,0
+4578748115,2026-07-19,Carbon + hielo,Caqui Tapa,UYU,275.00,275.00,45.84,Joaquin Guerra,0
+4579107972,2026-07-19,Apuesta,Caqui Tapa,UYU,1000.00,0.00,0.00,Diego Verdier,0
 4582618553,2026-07-21,Final,Caqui Tapa,UYU,7000.00,0.00,1166.67,Picco,0
 4582623165,2026-07-21,Limones pan y paltas de la final,Caqui Tapa,UYU,347.00,0.00,69.40,Juan,0
 4582667031,2026-07-21,Cocas final,Caqui Tapa,UYU,300.00,0.00,50.00,Rodrigo,0
-4584684715,2026-07-23,Youtube,Hermanos de Marian,USD,19.19,19.19,7.68,Joaquin,0
-4586337893,2026-07-24,estaremos,Caqui Tapa,UYU,2756.00,0.00,0.00,Juan,0
-4593886121,2026-07-28,Vincent company,Caqui Tapa,UYU,5554.00,0.00,0.00,Diego,0
-4596929769,2026-07-29,Regalo mama,Hermanos de Marian,UYU,2608.00,2608.00,1304.00,Joaquin,0
-4597102644,2026-07-29,Payment,Hermanos de Marian,USD,25.26,0.00,25.26,Rodrigo,1
+4584684715,2026-07-22,Youtube,Hermanos de Marian,USD,19.19,19.19,7.68,Joaquin Guerra,0
+4586337893,2026-07-23,estaremos,Caqui Tapa,UYU,2756.00,0.00,0.00,Juan,0
+4593886121,2026-07-27,Vincent company,Caqui Tapa,UYU,5554.00,0.00,0.00,Diego Verdier,0
+4596929769,2026-07-29,Regalo mama,Hermanos de Marian,UYU,2608.00,2608.00,1304.00,Joaquin Guerra,0
+4597102644,2026-07-29,Rodrigo G. pagó Joaquin G.,Hermanos de Marian,USD,25.26,0.00,25.26,Rodrigo Guerra,1
 4600142240,2026-07-31,Asado Richarlyson,Caqui Tapa,UYU,4421.00,0.00,631.57,Juan,0
 4600777741,2026-07-31,Diegote,Caqui Tapa,UYU,4000.00,0.00,0.00,Toma,0
-4602493953,2026-08-01,Cena mama,Hermanos de Marian,UYU,6948.00,6948.00,3474.00,Joaquin,0
-4602746971,2026-08-01,Payment,Hermanos de Marian,UYU,836.00,0.00,836.00,Rodrigo,1
-4608310610,2026-08-03,Movistar,Hermanos de Marian,UYU,1847.00,1847.00,923.50,Joaquin,0
-4612479685,2026-08-06,ManoJa,Hermanos de Marian,UYU,80.00,0.00,40.00,Rodrigo,0
-4619285152,2026-08-09,Empanadas,Caqui Tapa,UYU,853.00,0.00,0.00,Juan,0
-4633962990,2026-08-17,Uruguay Bahamas,Caqui Tapa,UYU,3600.00,0.00,1800.00,Rodrigo,0
-4639039719,2026-08-19,Mundial,Caqui Tapa,UYU,5937.00,0.00,848.15,Diego,0
+4602493953,2026-08-01,Cena mama,Hermanos de Marian,UYU,6948.00,6948.00,3474.00,Joaquin Guerra,0
+4602746971,2026-08-01,Rodrigo G. pagó Joaquin G.,Hermanos de Marian,UYU,836.00,0.00,836.00,Rodrigo Guerra,1
+4608310610,2026-08-03,Movistar,Hermanos de Marian,UYU,1847.00,1847.00,923.50,Joaquin Guerra,0
+4612479685,2026-08-05,ManoJa,Hermanos de Marian,UYU,80.00,0.00,40.00,Rodrigo Guerra,0
+4619285152,2026-08-09,Empanadas,Caqui Tapa,UYU,853.00,0.00,0.00,Picco,0
+4633962990,2026-08-16,Uruguay Bahamas,Caqui Tapa,UYU,3600.00,0.00,1800.00,Rodrigo,0
+4639039719,2026-08-19,Mundial,Caqui Tapa,UYU,5937.00,0.00,848.15,Diego Verdier,0
 4639832223,2026-08-19,Leña carbon bebidas,Caqui Tapa,UYU,1100.00,0.00,220.00,Juan,0
 4639832334,2026-08-19,Payment,Baby Shower Juanfra,UYU,1752.23,0.00,0.00,Juan,1
-4639832574,2026-08-19,Deuda con manu,Caqui Tapa,UYU,1752.00,0.00,0.00,Juan,0
-4639861796,2026-08-20,Seña itinerante,Caqui Tapa,UYU,750.00,0.00,0.00,Diego,0
+4639832574,2026-08-19,Deuda con manu,Caqui Tapa,UYU,1752.00,0.00,0.00,Diego Verdier,0
+4639861796,2026-08-19,Seña itinerante,Caqui Tapa,UYU,750.00,0.00,0.00,Diego Verdier,0
 4639956208,2026-08-20,"Cena, jagers,  nachito",Caqui Tapa,UYU,3800.00,0.00,0.00,Juan,0
-4640488204,2026-08-20,Asado velsen,Caqui Tapa,UYU,2854.00,0.00,570.80,Diego,0
-4643398938,2026-08-22,Pantagruel y seguimos..,Caqui Tapa,UYU,4300.00,4300.00,1433.33,Joaquin,0
-4643466707,2026-08-22,"Fernet, y seguimos",Caqui Tapa,UYU,870.00,870.00,290.00,Joaquin,0
+4640488204,2026-08-20,Asado velsen,Caqui Tapa,UYU,2854.00,0.00,570.80,Diego Verdier,0
+4643398938,2026-08-21,Pantagruel y seguimos..,Caqui Tapa,UYU,4300.00,4300.00,1433.33,Joaquin Guerra,0
+4643466707,2026-08-22,"Fernet, y seguimos",Caqui Tapa,UYU,870.00,870.00,290.00,Joaquin Guerra,0
 4643495416,2026-08-22,Fernet y seguimos II,Caqui Tapa,UYU,870.00,0.00,290.00,Rodrigo,0
-4650207814,2026-08-25,Piza,Hermanos de Marian,UYU,585.00,0.00,585.00,Rodrigo,0
-4650210938,2026-08-25,Pikda,Hermanos de Marian,UYU,496.00,0.00,496.00,Rodrigo,0
-4650212111,2026-08-25,Asado,Caqui Tapa,UYU,6951.00,6951.00,1737.75,Joaquin,0
+4650207814,2026-08-25,Piza,Hermanos de Marian,UYU,585.00,0.00,585.00,Rodrigo Guerra,0
+4650210938,2026-08-25,Pikda,Hermanos de Marian,UYU,496.00,0.00,496.00,Rodrigo Guerra,0
+4650212111,2026-08-25,Asado,Caqui Tapa,UYU,6951.00,6951.00,1737.75,Joaquin Guerra,0
 4650233163,2026-08-25,Brava,Caqui Tapa,UYU,650.00,0.00,130.00,Rodrigo,0
-4651702720,2026-08-26,Piksa2,Hermanos de Marian,UYU,252.00,0.00,252.00,Rodrigo,0
+4651702720,2026-08-26,Piksa2,Hermanos de Marian,UYU,252.00,0.00,252.00,Rodrigo Guerra,0
 4657011132,2026-08-29,Uruguay PuertoRico,Caqui Tapa,UYU,2800.00,0.00,1866.67,Rodrigo,0
-4661990426,2026-09-01,Chez basket,Caqui Tapa,UYU,1440.43,1440.43,720.22,Joaquin,0
+4661990426,2026-08-31,Chez basket,Caqui Tapa,UYU,1440.43,1440.43,720.22,Joaquin Guerra,0
+x3cde9fbfc0,2026-09-02,Tigo,Hermanos de Marian,UYU,1878.00,1878.00,939.00,Joaquin Guerra,0
+x5d5a6ff473,2026-09-04,El mejor bar de mi vida,Caqui Tapa,UYU,8950.00,0.00,1917.85,Juan,0
+x04c695358b,2026-09-05,Picco pagó Diego V.,Caqui Tapa,UYU,7766.59,0.00,0.00,Picco,1
+x8730ba78ea,2026-09-05,Picco pagó Juan,Caqui Tapa,UYU,5091.71,0.00,0.00,Picco,1
+x9acb856c44,2026-09-05,Iber,Caqui Tapa,UYU,3218.00,0.00,0.00,Diego Verdier,0
+x6d04ad95ee,2026-09-12,Alojamiento,Guasones En Familia,USD,278.00,0.00,30.89,Lucia Decaux,0
+xbe658f7ecf,2026-09-12,Super sabado,Guasones En Familia,UYU,3125.00,0.00,347.22,Juan,0
+x338c370b7b,2026-09-13,Posada,Guasones En Familia,USD,35.00,0.00,3.89,Manuela,0
+x3a795f68ef,2026-09-13,Fernet botellas,Guasones En Familia,UYU,1000.00,0.00,200.00,Diego Verdier,0
+xd4c0c25389,2026-09-13,Candela viernes,Guasones En Familia,UYU,1450.00,0.00,0.00,Diego Verdier,0
+xd630546ab6,2026-09-13,Super,Guasones En Familia,UYU,3245.00,0.00,360.55,Manuela,0
+xfbd5ad9473,2026-09-13,El dorado,Guasones En Familia,UYU,450.00,0.00,50.00,Diego Verdier,0
+xfeaf809835,2026-09-13,Fernets guasones,Guasones En Familia,UYU,3800.00,0.00,633.33,Diego Verdier,0
+x10e201200b,2026-09-14,Bidon awa,Guasones En Familia,UYU,129.00,0.00,14.33,Lucia Decaux,0
+x7ff158da06,2026-09-14,Merienda Lude/Iachi/Gonchi,Guasones En Familia,UYU,400.00,0.00,0.00,Lucia Decaux,0
+x9dd4fe7b71,2026-09-14,Candela sabado,Guasones En Familia,UYU,4048.00,4048.00,449.78,Joaquin Guerra,0
+xa9b1ebd779,2026-09-14,American Bar,Guasones En Familia,UYU,5200.00,0.00,0.00,Rodrigo,0
+x557cf1b704,2026-09-16,Xime B. pagó Lucia D.,Guasones En Familia,USD,34.78,0.00,0.00,Xime Bonifacino Personal,1
+xe94272ea0f,2026-09-16,Xime B. pagó Diego V.,Guasones En Familia,UYU,2598.08,0.00,0.00,Xime Bonifacino Personal,1
+x28166c1009,2026-09-17,Lucia D. pagó Diego V.,Guasones En Familia,UYU,1062.15,0.00,0.00,Lucia Decaux,1
+xc73c130bf2,2026-09-17,Lucia D. pagó Rodrigo,Guasones En Familia,UYU,5.74,0.00,0.00,Lucia Decaux,1
+x054c36ddf4,2026-09-18,Joaquin G. pagó Juan,Guasones En Familia,UYU,346.92,346.92,0.00,Joaquin Guerra,1
+x15b9b1b85a,2026-09-18,Colonia,Caqui Tapa,UYU,346.92,0.00,346.92,Juan,0
+x2ad81f383c,2026-09-18,Iara C. pagó Joaquin G.,Guasones En Familia,UYU,2339.71,0.00,2339.71,Iara Cabano,1
+x2d0a215ca9,2026-09-18,Joaquin G. pagó Lucia D.,Guasones En Familia,USD,34.78,34.78,0.00,Joaquin Guerra,1
+x375d3d05ea,2026-09-18,Colonia,Caqui Tapa,UYU,2539.77,0.00,0.00,Rodrigo,0
+x452a1c476d,2026-09-18,Colonia,Caqui Tapa,UYU,143.57,0.00,0.00,Juan,0
+x5df33cb655,2026-09-18,Rodrigo pagó Lucia D.,Guasones En Familia,USD,34.78,0.00,0.00,Rodrigo,1
+x71960b70c8,2026-09-18,Iara C. pagó Lucia D.,Guasones En Familia,USD,34.78,0.00,0.00,Iara Cabano,1
+x9e371aa019,2026-09-18,Gonzalo R. pagó Rodrigo,Guasones En Familia,UYU,2539.77,0.00,0.00,Gonzalo Russo,1
+xb83252d5d5,2026-09-18,Rodrigo pagó Juan,Guasones En Familia,UYU,143.57,0.00,0.00,Rodrigo,1
+xc866c38e86,2026-09-18,Gonzalo R. pagó Lucia D.,Guasones En Familia,USD,34.78,0.00,0.00,Gonzalo Russo,1
+xc8e6925178,2026-09-18,Colonia,Caqui Tapa,UYU,2339.71,2339.71,0.00,Joaquin Guerra,0
+xe5a0d6aa4a,2026-09-18,Gonzalo R. pagó Juan,Caqui Tapa,UYU,6458.22,0.00,0.00,Gonzalo Russo,1
+xf1719bc125,2026-09-18,Diego V. pagó Lucia D.,Guasones En Familia,USD,34.77,0.00,0.00,Diego Verdier,1

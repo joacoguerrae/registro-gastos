@@ -4877,10 +4877,12 @@ aa11f1274550,2026-09-01,2026-09,gasto,1.99,USD,80.26,Santander Platinum,,Suscrip
 80653cc2e27c,2026-09-02,2026-09,gasto,1700.00,UYU,1700.00,Cuenta Casa,,Casa & hogar,,Yova,lu y joaco,casa,mail,confirmado,1,1a0624a5e046c676
 85ef45c90b38,2026-09-02,2026-09,gasto,326.85,UYU,326.85,Cuenta Casa,,Super,,MONTEVIDEO/FROG VIS3,FROG,casa,mail,confirmado,1,1a062dd487a19399
 887b00e89e39,2026-09-02,2026-09,gasto,30.00,UYU,30.00,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,1a064d625e3d7f0a
+95044e2a5144,2026-09-02,2026-09,transferencia,48000.00,UYU,48000.00,Santander UYU,Cuenta Casa,,,,Aporte Joaco a la casa (informado el 2/9; las transf entre cuentas propias no generan aviso). Fecha a confirmar con el extracto de setiembre,interno,manual,confirmado,0,aporte-joaco-48000-20260902
 b385babe0e4c,2026-09-02,2026-09,gasto,147.33,USD,5941.82,Santander USD,,,,INTERNET/Proyecto PAS,Proyecto PAS,personal,mail,pendiente,1,1a064364f98bbf18
 cb2b9b99c6b5,2026-09-02,2026-09,gasto,10800.00,UYU,10800.00,Santander UYU,,,,Silvana Psico,joaquin agosto,personal,mail,pendiente,1,1a0643bcda9140f6
 f5e4617f14bc,2026-09-02,2026-09,gasto,5560.00,UYU,5560.00,Santander UYU,,Club,,Club (via Lu),bigua,personal,mail,confirmado,1,1a06439bfdae7b55
 a42e52b81d26,2026-09-03,2026-09,gasto,268.61,UYU,268.61,Santander UYU,,Comer afuera / Delivery,,MONTEVIDEO/LA ROTISERIA V VIS3,LA ROTISERIA V,personal,mail,confirmado,1,1a067e49bdfbf3cb
+177b686da6b1,2026-09-04,2026-09,gasto,1917.85,UYU,1917.85,Deudas,,,Licor,,El mejor bar de mi vida,split,splitwise,pendiente,1,sw:x5d5a6ff473
 48750777cd65,2026-09-04,2026-09,gasto,1602.00,UYU,1602.00,Santander Mastercard,,Servicios,,CUOTA ANUAL           01 03,CUOTA ANUAL           01 03,casa,estado_cuenta,pendiente,1,estado:0cd6a0691be08a6a
 99cc060dc01b,2026-09-04,2026-09,gasto,39.65,UYU,39.65,Santander Mastercard,,Servicios,,SEGURO SALDO DEUDOR,SEGURO SALDO DEUDOR,casa,estado_cuenta,confirmado,1,estado:c2a0122995d45e08
 c59dd92d42b6,2026-09-04,2026-09,gasto,352.44,UYU,352.44,Santander Mastercard,,Servicios,,I.V.A. 22% cuota anual Mastercard,"IVA 22% sobre la cuota anual de 1.602 (estado del 4/9). Linea que conciliar_estado saltea: cargada a mano, arreglar el extractor",casa,manual,confirmado,1,mc-iva-cuota-anual-20260904
@@ -4913,14 +4915,22 @@ d3f0defb9858,2026-09-10,2026-09,gasto,9.13,UYU,9.13,Cuenta Casa,,Comer afuera / 
 1ef002dd54bc,2026-09-11,2026-09,gasto,2556.47,UYU,2556.47,Santander UYU,,Salud,,MONTEVIDEO/FARMASHOP VISA VIS3,FARMASHOP VISA,personal,mail,confirmado,1,1a0907c107a69b20
 8af9190813e8,2026-09-11,2026-09,gasto,470.00,UYU,470.00,Santander UYU,,Regalos,,Fri,regalo Dan Joaco,personal,mail,confirmado,1,1a091d9c89212289
 d2a692d8c831,2026-09-11,2026-09,gasto,2900.59,UYU,2900.59,Cuenta Casa,,,,INTERNET/Proyecto PAS,Proyecto PAS,casa,mail,pendiente,1,1a0903857c23fb62
+279785782547,2026-09-12,2026-09,gasto,347.22,UYU,347.22,Deudas,,,General,,Super sabado,split,splitwise,pendiente,1,sw:xbe658f7ecf
 8aec6dbefedc,2026-09-12,2026-09,gasto,4500.00,UYU,4500.00,Santander UYU,,,,MONTEVIDEO/,,personal,mail,pendiente,1,1a096c0c111ddb0f
 c16aed2082c4,2026-09-12,2026-09,gasto,166.23,UYU,166.23,Santander UYU,,Super,,MONTEVIDEO/DEVOTO EXPRESS VIS3,DEVOTO EXPRESS,personal,mail,confirmado,1,1a09632ccda9b8d8
+f0880073d994,2026-09-12,2026-09,gasto,30.89,USD,1245.79,Deudas,,,Hotel,,Alojamiento,split,splitwise,pendiente,1,sw:x6d04ad95ee
+0148595a514b,2026-09-13,2026-09,gasto,50.00,UYU,50.00,Deudas,,Super,General,,El dorado,split,splitwise,confirmado,1,sw:xfbd5ad9473
 0dd5d420bdef,2026-09-13,2026-09,gasto,2278.23,UYU,2278.23,Cuenta Casa,,,,CARMELO/NIDO VIS3,CARMELO/NIDO,casa,mail,pendiente,1,1a09d6612a125cf1
+320832a88219,2026-09-13,2026-09,gasto,200.00,UYU,200.00,Deudas,,,General,,Fernet botellas,split,splitwise,pendiente,1,sw:x3a795f68ef
 3558a5d83451,2026-09-13,2026-09,gasto,79.67,UYU,79.67,Santander UYU,,Auto,,CONCHILLAS/MINIMERCADO ESSOCONCHVIS3,CONCHILLAS/MINIMERCADO ESSOCONCH,personal,mail,confirmado,1,1a09bf25cd1adee4
+35ee5e1e8033,2026-09-13,2026-09,gasto,3.89,USD,156.88,Deudas,,,General,,Posada,split,splitwise,pendiente,1,sw:x338c370b7b
 3f995c3403ed,2026-09-13,2026-09,gasto,343.28,UYU,343.28,Santander UYU,,Suscripciones,,MONTEVIDEO/DLO*PedidosYa Plus VIS3,DLO*PedidosYa Plus,personal,mail,confirmado,1,1a09ad2b45f0de8d
+4c37a87ed374,2026-09-13,2026-09,gasto,360.55,UYU,360.55,Deudas,,,General,,Super,split,splitwise,pendiente,1,sw:xd630546ab6
+5e0926839449,2026-09-13,2026-09,gasto,633.33,UYU,633.33,Deudas,,,General,,Fernets guasones,split,splitwise,pendiente,1,sw:xfeaf809835
 9b59e90c9fc8,2026-09-13,2026-09,gasto,598.13,UYU,598.13,Santander UYU,,Super,,CARMELO/TATA 153 VISA DEB VIS3,CARMELO/TATA 153 VISA DEB,personal,mail,confirmado,1,1a09cf62d8f51eca
 010310701246,2026-09-14,2026-09,gasto,1027.87,UYU,1027.87,Cuenta Casa,,,,VALDENSE/LOS CRIOLLITOS VIS3,VALDENSE/LOS CRIOLLITOS,casa,mail,pendiente,1,1a0a12126f86b6e1
 101cfefc9e49,2026-09-14,2026-09,gasto,40.00,UYU,40.00,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,1a0a1f83e453ffd5
+34bfe7aa4b90,2026-09-14,2026-09,gasto,14.33,UYU,14.33,Deudas,,,General,,Bidon awa,split,splitwise,pendiente,1,sw:x10e201200b
 5b94c3604606,2026-09-14,2026-09,gasto,1032.85,UYU,1032.85,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/BURGER KING VIS3,BURGER KING,casa,mail,confirmado,1,1a0a0cc160aa22a2
 968c3a1c4bef,2026-09-14,2026-09,gasto,122.95,UYU,122.95,Cuenta Casa,,Super,,COLONIA/TATA 131 VISA DEB VIS3,COLONIA/TATA 131 VISA DEB,casa,mail,confirmado,1,1a0a0eb76d2b05d3
 fc4bfb0b922a,2026-09-14,2026-09,gasto,286.14,UYU,286.14,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,casa,mail,confirmado,1,1a0a1d9a2852975b
@@ -4936,6 +4946,7 @@ eb24767b491d,2026-09-15,2026-09,gasto,30.00,UYU,30.00,Cuenta Casa,,Comer afuera 
 1d7b4c774c69,2026-09-18,2026-09,gasto,143.57,UYU,143.57,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa Bbc BurVIS3,DLO*PedidosYa Bbc Bur,casa,mail,confirmado,1,1a0b6fbb69b1f02d
 2cb83c6fee1b,2026-09-18,2026-09,gasto,498.38,UYU,498.38,Cuenta Casa,,Super,,MONTEVIDEO/DEVOTO EXPRESS VIS3,DEVOTO EXPRESS,casa,mail,confirmado,1,1a0b54fd6fd74ed6
 47de1d2f1233,2026-09-18,2026-09,transferencia,34.78,USD,,Santander USD,Lu,,,,colonia,interno,mail,pendiente,0,1a0b666246173ce2
+7d9b4158fca9,2026-09-18,2026-09,transferencia,34.78,USD,,Santander USD,Deudas,,,,Pago Splitwise (Guasones En Familia): Joaquin G. pagó Lucia D.,interno,splitwise,pendiente,0,sw:x2d0a215ca9
 9feb02cf55bd,2026-09-18,2026-09,gasto,301.97,UYU,301.97,Cuenta Casa,,Super,,MONTEVIDEO/DEVOTO EXPRESS VIS3,DEVOTO EXPRESS,casa,mail,confirmado,1,1a0b6e523efb706c
 a1f9948dad1e,2026-09-18,2026-09,gasto,40.00,UYU,40.00,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,1a0b789fddcdc80c
 a2309106d99d,2026-09-18,2026-09,gasto,55.82,UYU,55.82,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa Extra VIS3,DLO*PedidosYa Extra,casa,mail,confirmado,1,1a0b6638c2733630
