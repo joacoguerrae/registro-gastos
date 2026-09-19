@@ -1,32 +1,31 @@
 {
   "actualizar_sheets": {
-    "detalle": "exit 1",
-    "fallos_seguidos": 1,
+    "fallos_seguidos": 0,
     "issue_abierto": false,
     "ultimo_fallo": "2026-09-19T04:43:10+00:00",
-    "ultimo_ok": "2026-09-18T16:30:40+00:00"
+    "ultimo_ok": "2026-09-19T15:56:46+00:00"
   },
   "cierre_casa": {
     "fallos_seguidos": 0,
     "issue_abierto": false,
-    "ultimo_ok": "2026-09-19T04:43:03+00:00"
+    "ultimo_ok": "2026-09-19T15:56:40+00:00"
   },
   "deploy_dashboard": {
     "fallos_seguidos": 0,
     "issue_abierto": false,
-    "ultimo_ok": "2026-09-19T04:43:35+00:00"
+    "ultimo_ok": "2026-09-19T15:57:07+00:00"
   },
   "generar_dashboard_html": {
     "fallos_seguidos": 0,
     "issue_abierto": false,
-    "ultimo_ok": "2026-09-19T04:43:03+00:00"
+    "ultimo_ok": "2026-09-19T15:56:40+00:00"
   },
   "sync_splitwise": {
     "detalle": "exit 1",
-    "fallos_seguidos": 36,
+    "fallos_seguidos": 37,
     "issue_abierto": true,
     "issue_num": 32,
-    "ultimo_fallo": "2026-09-19T04:43:02+00:00",
+    "ultimo_fallo": "2026-09-19T15:56:39+00:00",
     "ultimo_ok": "2026-09-01T05:16:46+00:00"
   }
 }
