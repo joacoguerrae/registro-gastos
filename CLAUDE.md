@@ -25,6 +25,10 @@ Ledger único de gastos (personal + casa con Lu + Splitwise). Diseño: [docs/esq
 - **Secretos:** nunca commitear `config/secrets.local.json`, `config/gcp_service_account.json`, `config/gmail_token.json`, `config/oauth_client.json` (todos gitignored). En Actions van como repository secrets.
 - **El repo NUNCA vuelve a ser público** (ni GitHub Pages): tiene historia financiera completa, datos de terceros (ingreso de Lu, deudas de amigos) y PDF cifrados con una clave débil. Inventario de lo que quedaría expuesto: [docs/auditoria-2026-07.md](docs/auditoria-2026-07.md#condicional--solo-si-el-repo-volviera-a-ser-público).
 
+## Auditoría 2026-09: ABIERTA — plan por fases (0/7)
+
+[docs/auditoria-2026-09.md](docs/auditoria-2026-09.md) — la de julio cerró el pipeline automático; esta ataca las **ceremonias manuales**: no hay herramienta para escribir en el ledger, los conciliadores no entienden splits ni importes finales, y los avisos van a Issues que Joaco no mira. Tiene las 8 decisiones de Joaco (D1-D8), los hallazgos con ID (`SA`/`SM`/`SB`), el plan en 7 fases con gate y las **reglas para el agente que ejecute**. Si vas a tocar `scripts/`, leela primero y actualizá su tabla de estado al cerrar cada fase.
+
 ## Auditoría 2026-07: CERRADA (5/5)
 
 [docs/auditoria-2026-07.md](docs/auditoria-2026-07.md) — relevamiento e2e; las 5 fases de corrección quedaron hechas (última: hardening GitHub, 19/7). El documento sigue siendo la bitácora de hallazgos, gates y el addendum post-auditoría. Antes de tocar el pipeline, mirá si lo que vas a hacer ya está relevado ahí.
