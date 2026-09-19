@@ -1,6 +1,6 @@
 concepto,ambito,monto,moneda,frecuencia,dia_aprox,cuenta,categoria,cuotas_restantes,vigente_hasta,confianza,nota
 Gastos Comunes VL,casa,23768,UYU,mensual,4,Cuenta Casa,Vivienda,,,alta,TOTAL de la casa; se paga por transferencia
-Contribucion inmobiliaria,casa,10484,UYU,cuota mensual,8,Cuenta Casa (Bea Itau),Vivienda,1,2026-09,alta,"la de agosto salio neta 6.690 (se adelantaron 3.794 en julio); queda solo la de setiembre"
+Contribucion inmobiliaria,casa,6690,UYU,cuota mensual,6,Cuenta Casa (Bea Itau),Vivienda,0,2026-09,alta,"TERMINADA: la ultima cuota se pago el 6/9/2026 y fue 6.690 (no 10.484): 3.580 girados a Bea + 3.110 compensados con el Dilema. Se paga a Bea, la madre de Lu. Vuelve en 2027: revisar el calendario de cuotas cuando arranque"
 Garaje Martin Rodriguez,casa,3600,UYU,mensual,4,Cuenta Casa,Auto,,,alta,
 Yova (limpieza),casa,3400,UYU,mensual,,Cuenta Casa,Casa & hogar,,,media,dos visitas de ~1.700 por mes
 UTE,casa,3398,UYU,mensual,23,Cuenta Casa (Proyecto PAS),Servicios,,,alta,"el aviso dice 'Proyecto PAS', no UTE. La de agosto (23/8) salio 3.397,79 contra 2.617 en julio: +780, primer mes con el auto electrico cargando en casa. Confirmar la tendencia con la de setiembre antes de dar el salto por definitivo"
