@@ -656,3 +656,102 @@ ec24d1a7f645,motivo_resuelto,sin_respaldo_estado,cargo apareado a mano con el es
 348b2e5d8083,motivo_resuelto,sin_respaldo_estado,cargo apareado a mano con el estado: importe del aviso ajustado al del estado (Uber tarifa final / recargo 3% USD) o mitad de un split,2026-09-15
 83a2b362ece6,motivo_resuelto,sin_respaldo_estado,cargo apareado a mano con el estado: importe del aviso ajustado al del estado (Uber tarifa final / recargo 3% USD) o mitad de un split,2026-09-15
 47a179471219,descripcion,"Contribucion inmobiliaria, ultima cuota: 3.580 girados a Bea; los otros 3.110 de los 6.690 se compensaron con el Dilema (fila manual del mismo dia)","Joaco 19/9: le giramos 3.110 de menos a Bea y me los gire a mi, que fui quien pago el Dilema",2026-09-19
+0dc58bb82f51,tipo,transferencia,pago del estado de la Platinum de agosto (= total del estado exacto),2026-09-19
+0dc58bb82f51,cuenta_destino,Santander Platinum,cuenta BASE + moneda: conciliar_saldos filtra por moneda (el de julio uso 'Santander Platinum USD' y no bajaba la deuda),2026-09-19
+0dc58bb82f51,ambito,interno,,2026-09-19
+0dc58bb82f51,en_analisis,0,pago de tarjeta,2026-09-19
+0dc58bb82f51,descripcion,Pago estado Platinum agosto (Proyecto PAS),,2026-09-19
+0dc58bb82f51,motivo_resuelto,sin_categoria,transferencia interna (pago de tarjeta),2026-09-19
+b385babe0e4c,tipo,transferencia,pago del estado de la Platinum de agosto (= total del estado exacto),2026-09-19
+b385babe0e4c,cuenta_destino,Santander Platinum,cuenta BASE + moneda: conciliar_saldos filtra por moneda (el de julio uso 'Santander Platinum USD' y no bajaba la deuda),2026-09-19
+b385babe0e4c,ambito,interno,,2026-09-19
+b385babe0e4c,en_analisis,0,pago de tarjeta,2026-09-19
+b385babe0e4c,descripcion,Pago estado Platinum USD agosto (Proyecto PAS),,2026-09-19
+b385babe0e4c,motivo_resuelto,sin_categoria,transferencia interna (pago de tarjeta),2026-09-19
+b385babe0e4c,motivo_resuelto,tc_estimado,transferencia interna (pago de tarjeta),2026-09-19
+04c9ab08af31,monto,908.21,"Tigo (ex Movistar) 2/9: 1.847,21 del banco - 939 de Agus segun Splitwise (Joaco 19/9)",2026-09-19
+04c9ab08af31,monto_uyu,908.21,,2026-09-19
+04c9ab08af31,categoria,Servicios,,2026-09-19
+04c9ab08af31,descripcion,Tigo celular (ex Movistar): mi parte; la de Agus va a Deudas,,2026-09-19
+04c9ab08af31,motivo_resuelto,sin_categoria,"Servicios (Tigo, split con Agus)",2026-09-19
+ad5f26c53a3c,motivo_resuelto,split_a_cargar,"Tigo apareado a mano con 04c9ab08af31: Splitwise dice 1.878 y el banco 1.847,21 (fuera del 1%); Deudas usa los 939 de Splitwise",2026-09-19
+8aec6dbefedc,monto,449.78,"retiro de 4.500 (12/9): 4.048 pagaron Candela sabado en Colonia (mi parte 449,78, el resto a Deudas) + 452 propina del auto (fila aparte, casa). Joaco 19/9",2026-09-19
+8aec6dbefedc,monto_uyu,449.78,,2026-09-19
+8aec6dbefedc,categoria,Viajes,,2026-09-19
+8aec6dbefedc,descripcion,Retiro 4.500: mi parte de Candela sabado (viaje a Colonia),,2026-09-19
+8aec6dbefedc,motivo_resuelto,sin_categoria,"Viajes (Candela, split)",2026-09-19
+ae74cd7dc7c3,motivo_resuelto,split_a_cargar,"Candela apareada a mano con 8aec6dbefedc (retiro de 4.500 en efectivo, 12/9)",2026-09-19
+5e809cf2ce1a,categoria,Auto,"EONE = carga del auto electrico. Cobra una RETENCION al enchufar y devuelve la diferencia: neto del mes 805,52 (Joaco 19/9). Las devoluciones entran con el extracto de setiembre",2026-09-19
+5e809cf2ce1a,descripcion,"Carga del auto (EONE): retencion, se devuelve la diferencia",,2026-09-19
+5e809cf2ce1a,motivo_resuelto,sin_categoria,retenciones reales de EONE (no duplicados): se netean con las devoluciones del extracto,2026-09-19
+6c41e9737437,categoria,Auto,"EONE = carga del auto electrico. Cobra una RETENCION al enchufar y devuelve la diferencia: neto del mes 805,52 (Joaco 19/9). Las devoluciones entran con el extracto de setiembre",2026-09-19
+6c41e9737437,descripcion,"Carga del auto (EONE): retencion, se devuelve la diferencia",,2026-09-19
+6c41e9737437,motivo_resuelto,posible_duplicado,retenciones reales de EONE (no duplicados): se netean con las devoluciones del extracto,2026-09-19
+6c41e9737437,motivo_resuelto,sin_categoria,retenciones reales de EONE (no duplicados): se netean con las devoluciones del extracto,2026-09-19
+e7e8471131f5,categoria,Auto,"EONE = carga del auto electrico. Cobra una RETENCION al enchufar y devuelve la diferencia: neto del mes 805,52 (Joaco 19/9). Las devoluciones entran con el extracto de setiembre",2026-09-19
+e7e8471131f5,descripcion,"Carga del auto (EONE): retencion, se devuelve la diferencia",,2026-09-19
+e7e8471131f5,motivo_resuelto,posible_duplicado,retenciones reales de EONE (no duplicados): se netean con las devoluciones del extracto,2026-09-19
+e7e8471131f5,motivo_resuelto,sin_categoria,retenciones reales de EONE (no duplicados): se netean con las devoluciones del extracto,2026-09-19
+a3dba46bdb4b,categoria,Auto,"EONE = carga del auto electrico. Cobra una RETENCION al enchufar y devuelve la diferencia: neto del mes 805,52 (Joaco 19/9). Las devoluciones entran con el extracto de setiembre",2026-09-19
+a3dba46bdb4b,descripcion,"Carga del auto (EONE): retencion, se devuelve la diferencia",,2026-09-19
+a3dba46bdb4b,motivo_resuelto,sin_categoria,retenciones reales de EONE (no duplicados): se netean con las devoluciones del extracto,2026-09-19
+ae803250deb7,categoria,Auto,UTE carga del auto: contrato aparte del de la casa (Joaco 19/9),2026-09-19
+ae803250deb7,descripcion,UTE carga del auto (via Proyecto PAS),,2026-09-19
+ae803250deb7,motivo_resuelto,sin_categoria,Auto (UTE carga del auto),2026-09-19
+d2a692d8c831,categoria,Servicios,"UTE de la casa, setiembre (Joaco 19/9)",2026-09-19
+d2a692d8c831,descripcion,UTE casa (via Proyecto PAS),,2026-09-19
+d2a692d8c831,motivo_resuelto,sin_categoria,Servicios (UTE casa),2026-09-19
+b998a31598f7,categoria,Servicios,"ANTEL: monto exacto de siempre (2.102,95)",2026-09-19
+b998a31598f7,descripcion,ANTEL (via Proyecto PAS),,2026-09-19
+b998a31598f7,motivo_resuelto,sin_categoria,Servicios (ANTEL),2026-09-19
+f0880073d994,categoria,Viajes,viaje a Colonia 12-14/9: todo a Viajes (Joaco 19/9),2026-09-19
+f0880073d994,motivo_resuelto,sin_categoria,Viajes (Colonia),2026-09-19
+f0880073d994,motivo_resuelto,tc_estimado,Viajes (Colonia),2026-09-19
+279785782547,categoria,Viajes,viaje a Colonia 12-14/9: todo a Viajes (Joaco 19/9),2026-09-19
+279785782547,motivo_resuelto,sin_categoria,Viajes (Colonia),2026-09-19
+4c37a87ed374,categoria,Viajes,viaje a Colonia 12-14/9: todo a Viajes (Joaco 19/9),2026-09-19
+4c37a87ed374,motivo_resuelto,sin_categoria,Viajes (Colonia),2026-09-19
+35ee5e1e8033,categoria,Viajes,viaje a Colonia 12-14/9: todo a Viajes (Joaco 19/9),2026-09-19
+35ee5e1e8033,motivo_resuelto,sin_categoria,Viajes (Colonia),2026-09-19
+35ee5e1e8033,motivo_resuelto,tc_estimado,Viajes (Colonia),2026-09-19
+5e0926839449,categoria,Viajes,viaje a Colonia 12-14/9: todo a Viajes (Joaco 19/9),2026-09-19
+5e0926839449,motivo_resuelto,sin_categoria,Viajes (Colonia),2026-09-19
+320832a88219,categoria,Viajes,viaje a Colonia 12-14/9: todo a Viajes (Joaco 19/9),2026-09-19
+320832a88219,motivo_resuelto,sin_categoria,Viajes (Colonia),2026-09-19
+34bfe7aa4b90,categoria,Viajes,viaje a Colonia 12-14/9: todo a Viajes (Joaco 19/9),2026-09-19
+34bfe7aa4b90,motivo_resuelto,sin_categoria,Viajes (Colonia),2026-09-19
+0148595a514b,categoria,Viajes,viaje a Colonia 12-14/9: todo a Viajes (Joaco 19/9),2026-09-19
+0dd5d420bdef,categoria,Viajes,"viaje a Colonia: Nido, Carmelo, pagado con la Cuenta Casa (Joaco 19/9)",2026-09-19
+0dd5d420bdef,motivo_resuelto,sin_categoria,Viajes (Colonia),2026-09-19
+010310701246,categoria,Viajes,"viaje a Colonia: Los Criollitos, Valdense, pagado con la Cuenta Casa (Joaco 19/9)",2026-09-19
+010310701246,motivo_resuelto,sin_categoria,Viajes (Colonia),2026-09-19
+ffe3b44cb58a,categoria,Viajes,"Bodega El Legado, viaje a Colonia: vinos/degustacion para los dos (Joaco 19/9)",2026-09-19
+ffe3b44cb58a,ambito,casa,gasto de casa con la Platinum -> aporte implicito de Joaco,2026-09-19
+ffe3b44cb58a,motivo_resuelto,sin_categoria,"Viajes, casa",2026-09-19
+ffe3b44cb58a,motivo_resuelto,tc_estimado,"Viajes, casa",2026-09-19
+600f713fe1b2,categoria,Super,Pernas Jordan: carniceria/almacen (Joaco 19/9),2026-09-19
+600f713fe1b2,motivo_resuelto,sin_categoria,Super,2026-09-19
+898a70a914af,categoria,Super,"mini shop de estacion (Car One, Solymar)",2026-09-19
+898a70a914af,motivo_resuelto,sin_categoria,Super,2026-09-19
+177b686da6b1,categoria,Comer afuera / Delivery,bar (Caqui Tapa),2026-09-19
+177b686da6b1,motivo_resuelto,sin_categoria,Comer afuera,2026-09-19
+cb2b9b99c6b5,categoria,Salud,"psicologa, cuota de agosto (fijo mapeado)",2026-09-19
+cb2b9b99c6b5,motivo_resuelto,transferencia_a_clasificar,Salud,2026-09-19
+7f324635df58,categoria,Comer afuera / Delivery,'ensalada joaco',2026-09-19
+7f324635df58,motivo_resuelto,transferencia_a_clasificar,Comer afuera,2026-09-19
+975d4848c2d6,ambito,casa,"rifas de Lu: de los dos, gasto de casa (Joaco 19/9)",2026-09-19
+975d4848c2d6,categoria,Otros,rifas,2026-09-19
+975d4848c2d6,motivo_resuelto,transferencia_a_clasificar,"Otros, casa",2026-09-19
+f05d0face4bc,tipo,gasto,cuota 2/10 del auto: gasto corriente personal (decision de Joaco 2/9),2026-09-19
+f05d0face4bc,cuenta_destino,,,2026-09-19
+f05d0face4bc,categoria,Auto,,2026-09-19
+f05d0face4bc,ambito,personal,,2026-09-19
+f05d0face4bc,en_analisis,1,,2026-09-19
+f05d0face4bc,monto_uyu,4033.00,"100 USD x tc 40,33 (al pasar a gasto necesita monto_uyu)",2026-09-19
+f05d0face4bc,motivo_resuelto,transferencia_a_clasificar,gasto personal Auto (cuota del Geely),2026-09-19
+47de1d2f1233,cuenta_destino,Deudas,"es el pago Splitwise 'Joaquin G. pago Lucia D.' USD 34,78 (Guasones): baja la deuda de Splitwise",2026-09-19
+47de1d2f1233,descripcion,"Pago Splitwise a Lu (Guasones/Colonia) USD 34,78",,2026-09-19
+47de1d2f1233,motivo_resuelto,transferencia_a_clasificar,pago Splitwise a Lu,2026-09-19
+7d9b4158fca9,motivo_resuelto,transferencia_a_clasificar,fila borrada: duplicaba el pago real 47de1d2f1233 (mail del banco). El sync ya no la reinserta: su dedupe encuentra la transferencia de mail a Deudas,2026-09-19
+aa11f1274550,motivo_resuelto,tc_estimado,el importe real llega con el estado de la Platinum,2026-09-19
+fe4410dc33ff,motivo_resuelto,tc_estimado,el importe real llega con el estado de la Platinum,2026-09-19

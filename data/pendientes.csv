@@ -132,30 +132,30 @@ f38cee63018f,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*MELI VIS3' sin re
 510dab72757a,split_a_cargar,"Splitwise sw:4661990426 'Chez basket' UYU 1440.43 (2026-09-01): yo pague 1440.43, mi parte 720.22 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-09-01,1
 c018d12fed27,sin_categoria,establecimiento 'REST CHEZ PINEY' sin regla,2026-09-01,1
 b69cc79e95d6,transferencia_a_clasificar,"a 'Fefo Bentancur', concepto 'oso rodelu', UYU 200.00: sin categoria",2026-09-01,1
-aa11f1274550,tc_estimado,USD 1.99 x tc 40.33 = 80.26 UYU (corrige Fase 3),2026-09-01,
-600f713fe1b2,sin_categoria,establecimiento 'MONTEVIDEO/PERNAS JORDAN VIS3' sin regla,2026-09-01,
-0dc58bb82f51,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-09-03,
-b385babe0e4c,tc_estimado,USD 147.33 x tc 40.33 = 5941.82 UYU (corrige Fase 3),2026-09-03,
-b385babe0e4c,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-09-03,
-04c9ab08af31,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-09-03,
-cb2b9b99c6b5,transferencia_a_clasificar,"a 'Silvana Psico', concepto 'joaquin agosto', UYU 10800.00: sin categoria",2026-09-03,
-fe4410dc33ff,tc_estimado,USD 100.00 x tc 40.33 = 4033.00 UYU (corrige Fase 3),2026-09-06,
-5e809cf2ce1a,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*EONE VIS3' sin regla,2026-09-06,
-6c41e9737437,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*EONE VIS3' sin regla,2026-09-06,
-6c41e9737437,posible_duplicado,"mismo (tarjeta,monto,establecimiento) que mail 1a0746a1f9ddfbd7 a las 2026-09-05 22:51:43",2026-09-06,
-e7e8471131f5,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*EONE VIS3' sin regla,2026-09-06,
-e7e8471131f5,posible_duplicado,"mismo (tarjeta,monto,establecimiento) que mail 1a0746a1f9ddfbd7 a las 2026-09-05 22:51:43",2026-09-06,
-898a70a914af,sin_categoria,establecimiento 'SOLYMAR/MINI SHOP CAR ONE VIS3' sin regla,2026-09-06,
-ae803250deb7,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-09-06,
-f05d0face4bc,transferencia_a_clasificar,"a 'Lu', concepto 'Cuota 2 Auto', USD 100.00",2026-09-06,
-b998a31598f7,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-09-10,
-a3dba46bdb4b,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*EONE VIS3' sin regla,2026-09-11,
-d2a692d8c831,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-09-11,
-8aec6dbefedc,sin_categoria,establecimiento 'MONTEVIDEO/' sin regla,2026-09-13,
-0dd5d420bdef,sin_categoria,establecimiento 'CARMELO/NIDO VIS3' sin regla,2026-09-14,
-ffe3b44cb58a,tc_estimado,USD 207.00 x tc 40.33 = 8348.31 UYU (corrige Fase 3),2026-09-14,
-ffe3b44cb58a,sin_categoria,establecimiento 'BODEGA EL LEGAD' sin regla,2026-09-14,
-010310701246,sin_categoria,establecimiento 'VALDENSE/LOS CRIOLLITOS VIS3' sin regla,2026-09-15,
+aa11f1274550,tc_estimado,USD 1.99 x tc 40.33 = 80.26 UYU (corrige Fase 3),2026-09-01,1
+600f713fe1b2,sin_categoria,establecimiento 'MONTEVIDEO/PERNAS JORDAN VIS3' sin regla,2026-09-01,1
+0dc58bb82f51,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-09-03,1
+b385babe0e4c,tc_estimado,USD 147.33 x tc 40.33 = 5941.82 UYU (corrige Fase 3),2026-09-03,1
+b385babe0e4c,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-09-03,1
+04c9ab08af31,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-09-03,1
+cb2b9b99c6b5,transferencia_a_clasificar,"a 'Silvana Psico', concepto 'joaquin agosto', UYU 10800.00: sin categoria",2026-09-03,1
+fe4410dc33ff,tc_estimado,USD 100.00 x tc 40.33 = 4033.00 UYU (corrige Fase 3),2026-09-06,1
+5e809cf2ce1a,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*EONE VIS3' sin regla,2026-09-06,1
+6c41e9737437,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*EONE VIS3' sin regla,2026-09-06,1
+6c41e9737437,posible_duplicado,"mismo (tarjeta,monto,establecimiento) que mail 1a0746a1f9ddfbd7 a las 2026-09-05 22:51:43",2026-09-06,1
+e7e8471131f5,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*EONE VIS3' sin regla,2026-09-06,1
+e7e8471131f5,posible_duplicado,"mismo (tarjeta,monto,establecimiento) que mail 1a0746a1f9ddfbd7 a las 2026-09-05 22:51:43",2026-09-06,1
+898a70a914af,sin_categoria,establecimiento 'SOLYMAR/MINI SHOP CAR ONE VIS3' sin regla,2026-09-06,1
+ae803250deb7,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-09-06,1
+f05d0face4bc,transferencia_a_clasificar,"a 'Lu', concepto 'Cuota 2 Auto', USD 100.00",2026-09-06,1
+b998a31598f7,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-09-10,1
+a3dba46bdb4b,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*EONE VIS3' sin regla,2026-09-11,1
+d2a692d8c831,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-09-11,1
+8aec6dbefedc,sin_categoria,establecimiento 'MONTEVIDEO/' sin regla,2026-09-13,1
+0dd5d420bdef,sin_categoria,establecimiento 'CARMELO/NIDO VIS3' sin regla,2026-09-14,1
+ffe3b44cb58a,tc_estimado,USD 207.00 x tc 40.33 = 8348.31 UYU (corrige Fase 3),2026-09-14,1
+ffe3b44cb58a,sin_categoria,establecimiento 'BODEGA EL LEGAD' sin regla,2026-09-14,1
+010310701246,sin_categoria,establecimiento 'VALDENSE/LOS CRIOLLITOS VIS3' sin regla,2026-09-15,1
 c66b85ec3c24,sin_categoria,"Santander UYU COMISION TRANSF INSTANTANEA 654404LE NRR:206480980 LUCHO ROY (del extracto, sin aviso por mail)",2026-09-15,1
 ec03404c04fc,sin_categoria,"Santander UYU TRANSF INSTANTANEA ENVIADA 415298LE NRR:206368854 MINSI SAS (del extracto, sin aviso por mail)",2026-09-15,1
 c23bd13fbb6c,sin_categoria,"Santander UYU DEBITO OPERACION EN BANCA DIGITAL PAHORRO (del extracto, sin aviso por mail)",2026-09-15,1
@@ -252,19 +252,19 @@ ec24d1a7f645,sin_respaldo_estado,Santander Platinum 2026-08: fila del ledger (20
 ad352c6597ef,sin_categoria,estado_cuenta Santander Mastercard 2026-09: 'BILAS PASTAS' sin regla,2026-09-15,1
 6e5542b890b8,sin_categoria,estado_cuenta Santander Mastercard 2026-09: 'MERPAGO DELFIAM' sin regla,2026-09-15,1
 48750777cd65,sin_categoria,estado_cuenta Santander Mastercard 2026-09: 'CUOTA ANUAL           01 03' sin regla,2026-09-15,1
-975d4848c2d6,transferencia_a_clasificar,"a 'daniel olivera', concepto 'rifas lucia decaux', UYU 500.00: sin categoria",2026-09-17,
-7f324635df58,transferencia_a_clasificar,"a 'Dan de Amilivia', concepto 'ensalada joaco', UYU 290.00: sin categoria",2026-09-17,
-47de1d2f1233,transferencia_a_clasificar,"a 'Lu', concepto 'colonia', USD 34.78",2026-09-19,
-177b686da6b1,sin_categoria,gasto Splitwise 'El mejor bar de mi vida' (Caqui Tapa) sin regla,2026-09-19,
-f0880073d994,tc_estimado,USD 30.89 x tc 40.33 = 1245.79 UYU,2026-09-19,
-f0880073d994,sin_categoria,gasto Splitwise 'Alojamiento' (Guasones En Familia) sin regla,2026-09-19,
-279785782547,sin_categoria,gasto Splitwise 'Super sabado' (Guasones En Familia) sin regla,2026-09-19,
-4c37a87ed374,sin_categoria,gasto Splitwise 'Super' (Guasones En Familia) sin regla,2026-09-19,
-35ee5e1e8033,tc_estimado,USD 3.89 x tc 40.33 = 156.88 UYU,2026-09-19,
-35ee5e1e8033,sin_categoria,gasto Splitwise 'Posada' (Guasones En Familia) sin regla,2026-09-19,
-5e0926839449,sin_categoria,gasto Splitwise 'Fernets guasones' (Guasones En Familia) sin regla,2026-09-19,
-320832a88219,sin_categoria,gasto Splitwise 'Fernet botellas' (Guasones En Familia) sin regla,2026-09-19,
-ae74cd7dc7c3,split_a_cargar,"Splitwise sw:x9dd4fe7b71 'Candela sabado' UYU 4048.00 (2026-09-14): yo pague 4048.00, mi parte 449.78 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-09-19,
-34bfe7aa4b90,sin_categoria,gasto Splitwise 'Bidon awa' (Guasones En Familia) sin regla,2026-09-19,
-7d9b4158fca9,transferencia_a_clasificar,"pago Splitwise hecho USD 34.78 (2026-09-18, Joaquin G. pagó Lucia D.): sin transferencia por mail que lo respalde; asumido desde Santander USD, confirmar de que cuenta salio",2026-09-19,
-ad5f26c53a3c,split_a_cargar,"Splitwise sw:x3cde9fbfc0 'Tigo' UYU 1878.00 (2026-09-02): yo pague 1878.00, mi parte 939.00 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-09-19,
+975d4848c2d6,transferencia_a_clasificar,"a 'daniel olivera', concepto 'rifas lucia decaux', UYU 500.00: sin categoria",2026-09-17,1
+7f324635df58,transferencia_a_clasificar,"a 'Dan de Amilivia', concepto 'ensalada joaco', UYU 290.00: sin categoria",2026-09-17,1
+47de1d2f1233,transferencia_a_clasificar,"a 'Lu', concepto 'colonia', USD 34.78",2026-09-19,1
+177b686da6b1,sin_categoria,gasto Splitwise 'El mejor bar de mi vida' (Caqui Tapa) sin regla,2026-09-19,1
+f0880073d994,tc_estimado,USD 30.89 x tc 40.33 = 1245.79 UYU,2026-09-19,1
+f0880073d994,sin_categoria,gasto Splitwise 'Alojamiento' (Guasones En Familia) sin regla,2026-09-19,1
+279785782547,sin_categoria,gasto Splitwise 'Super sabado' (Guasones En Familia) sin regla,2026-09-19,1
+4c37a87ed374,sin_categoria,gasto Splitwise 'Super' (Guasones En Familia) sin regla,2026-09-19,1
+35ee5e1e8033,tc_estimado,USD 3.89 x tc 40.33 = 156.88 UYU,2026-09-19,1
+35ee5e1e8033,sin_categoria,gasto Splitwise 'Posada' (Guasones En Familia) sin regla,2026-09-19,1
+5e0926839449,sin_categoria,gasto Splitwise 'Fernets guasones' (Guasones En Familia) sin regla,2026-09-19,1
+320832a88219,sin_categoria,gasto Splitwise 'Fernet botellas' (Guasones En Familia) sin regla,2026-09-19,1
+ae74cd7dc7c3,split_a_cargar,"Splitwise sw:x9dd4fe7b71 'Candela sabado' UYU 4048.00 (2026-09-14): yo pague 4048.00, mi parte 449.78 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-09-19,1
+34bfe7aa4b90,sin_categoria,gasto Splitwise 'Bidon awa' (Guasones En Familia) sin regla,2026-09-19,1
+7d9b4158fca9,transferencia_a_clasificar,"pago Splitwise hecho USD 34.78 (2026-09-18, Joaquin G. pagó Lucia D.): sin transferencia por mail que lo respalde; asumido desde Santander USD, confirmar de que cuenta salio",2026-09-19,1
+ad5f26c53a3c,split_a_cargar,"Splitwise sw:x3cde9fbfc0 'Tigo' UYU 1878.00 (2026-09-02): yo pague 1878.00, mi parte 939.00 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-09-19,1

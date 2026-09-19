@@ -282,6 +282,7 @@ def fuente_export(cache):
                         (es_pago and c["es_pago"] == "1"):
                     eid = c["id"]
                     break
+            desconocido = eid is None     # ni la API ni un export anterior lo vieron
             if eid:
                 usados.add(eid)
             else:
@@ -296,8 +297,10 @@ def fuente_export(cache):
                 eid=eid, fecha=mv["fecha"], desc=mv["desc"], moneda=mv["moneda"],
                 costo=mv["costo"], es_pago=es_pago, creado=pagador, grupo=grupo,
                 mi_paid=paid, mi_owed=owed, subcat=mv["cat"], borrado=False, neto=mio,
-                no_insertar=bool(corte_cache and mv["fecha"] < corte_cache
-                                 and eid.startswith("x"))))
+                # solo lo DESCONOCIDO y viejo: un gasto con id sintetico que ya
+                # esta en el cache lo trajo un export anterior y sigue el flujo
+                # normal (el dedupe por fuente_id evita duplicarlo)
+                no_insertar=bool(desconocido and corte_cache and mv["fecha"] < corte_cache)))
 
     # Reorganizacion de deudas ENTRE GRUPOS (paso el 18/9/2026 con el viaje de
     # Guasones): el grupo A "salda" con pagos ficticios y el grupo B recrea las
