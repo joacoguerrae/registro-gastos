@@ -260,7 +260,7 @@ b9e1bef414e0,ambito,casa,"la mitad que no fue al amigo la consumieron Joaco y Lu
 5c712db5b950,descripcion,Compra de dolares (contrapartida en USD),,2026-08-02
 5c712db5b950,motivo_resuelto,ingreso_a_clasificar,"transferencia interna, contrapartida de la compra de dolares",2026-08-02
 05afcf610032,tipo,transferencia,"pago de la tarjeta Santander en dolares: baja la deuda de la tarjeta, no es consumo (Joaco 2/8)",2026-08-02
-05afcf610032,cuenta_destino,Santander Platinum USD,,2026-08-02
+05afcf610032,cuenta_destino,Santander Platinum,"corrige el destino: va el nombre BASE de la cuenta y la moneda en la columna moneda. conciliar_saldos.cuenta_ledger traduce el Santander Platinum USD de saldos_iniciales.csv a la cuenta base filtrando por moneda, asi que con el sufijo en el ledger el pago no bajaba la deuda USD de la tarjeta (medido: la cuenta pasaba de 20 movimientos a 2). Mismo criterio que fijo Joaco el 19/9 para 0dc58bb82f51 y b385babe0e4c. Auditoria 2026-09 SM5",2026-09-20
 05afcf610032,ambito,interno,,2026-08-02
 05afcf610032,en_analisis,0,pago de tarjeta: movimiento entre cuentas propias,2026-08-02
 05afcf610032,descripcion,Pago tarjeta Santander USD (Banred),,2026-08-02
@@ -333,7 +333,7 @@ c4730af393f4,motivo_resuelto,sin_categoria,Super,2026-08-09
 2383e9382b8e,descripcion,Pago estado Platinum julio (Proyecto PAS),,2026-08-09
 2383e9382b8e,motivo_resuelto,sin_categoria,transferencia interna (pago de tarjeta),2026-08-09
 7cb386eb832a,tipo,transferencia,"pago de la parte en USD del estado de la Platinum (118,34 = su saldo USD exacto) (Joaco 9/8)",2026-08-09
-7cb386eb832a,cuenta_destino,Santander Platinum USD,,2026-08-09
+7cb386eb832a,cuenta_destino,Santander Platinum,"corrige el destino: va el nombre BASE de la cuenta y la moneda en la columna moneda. conciliar_saldos.cuenta_ledger traduce el Santander Platinum USD de saldos_iniciales.csv a la cuenta base filtrando por moneda, asi que con el sufijo en el ledger el pago no bajaba la deuda USD de la tarjeta (medido: la cuenta pasaba de 20 movimientos a 2). Mismo criterio que fijo Joaco el 19/9 para 0dc58bb82f51 y b385babe0e4c. Auditoria 2026-09 SM5",2026-09-20
 7cb386eb832a,ambito,interno,,2026-08-09
 7cb386eb832a,en_analisis,0,pago de tarjeta,2026-08-09
 7cb386eb832a,descripcion,Pago estado Platinum USD julio (Proyecto PAS),,2026-08-09
