@@ -3,7 +3,7 @@ rem Corrida desatendida del sync de gastos (Programador de tareas de Windows).
 rem 100%% DETERMINISTICA: sin Claude en el camino critico.
 rem   1. git pull   (trae lo que haya commiteado la nube / otra sesion)
 rem   2. fetch_mails.py  (Gmail API; usa config/gmail_token.json)
-rem   3. correr_pipeline.cmd  (splitwise -> procesar -> validar -> cierre casa -> dashboards -> Sheets -> commit)
+rem   3. correr_pipeline.cmd  (procesar -> splitwise -> validar -> cierre casa -> dashboards -> Sheets -> commit)
 rem   4. git push   (el pipeline commitea local; aca se sube, si no GitHub se atrasa)
 rem Reemplaza a sync_gastos_headless.cmd (que usaba Claude headless para el fetch).
 cd /d "C:\Users\joaco\Desktop\proyectos claude\gastos"

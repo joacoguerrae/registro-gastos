@@ -11,3 +11,22 @@ Itaú Crédito,Itau Credito,,UYU,tarjeta_credito,no,cerrada — solo histórico
 Efectivo,Efectivo,,UYU,efectivo,si,
 BBVA USD,BBVA USD,,USD,banco,si,
 A cobrar,,,UYU,virtual,si,plata que le deben a Joaco y NO pasa por Splitwise (ej. el que le choco el auto). Separada de 'Deudas' a proposito: esa se concilia contra la API de Splitwise y meter aca cobranzas ajenas romperia ese chequeo. Creada 3/8/2026
+Lu tarjeta,,,UYU,virtual,si,"tarjeta propia de Lu: NO es plata de Joaco. Marca los gastos de casa que paga ella con su tarjeta; cierre_casa.py los contaria como aporte implicito de Joaco, por eso cada fila va tambien a config/cierre_exclusiones.csv y el total del mes a data/aportes_lu.csv. 6 filas desde el 25/7/2026"
+Gletir,Gletir,,USD,inversion,si,"corredor de bolsa; Joaco le gira dolares desde Santander USD (ultimo: 2.000 el 21/8/2026). Es plata suya que cambia de lugar, no un gasto: las transferencias van en_analisis=0"
+Etoro,Etoro,,USD,inversion,no,"broker anterior a Gletir; 8 filas jul-2024 -> ene-2026, la ultima es un ajuste de saldo del 29/1/2026. Sin movimientos desde entonces; confirmar con Joaco si la cuenta sigue abierta"
+Sant $ Vieja,Sant $ Vieja,,UYU,banco,no,"caja de ahorro en pesos del Santander anterior a la actual (9071); 32 filas nov-2021 -> feb-2022"
+Sant USD Vieja,Sant USD Vieja,,USD,banco,no,"par en dolares de 'Sant $ Vieja'; 3 filas nov-2021 -> feb-2022, todas ajustes de saldo"
+Cuenta GV $,Cuenta GV $,,UYU,banco,no,"cuenta en pesos del 1Money, par de 'GV USD'; por ahi paso el cobro del emprendimiento de agendas (dic-2022) y despues quedo como bolsillo suelto. 22 filas dic-2022 -> oct-2024. Que banco o billetera era exactamente: sin confirmar con Joaco"
+GV USD,GV USD,,USD,banco,no,"par en dolares de 'Cuenta GV $'; bolsillo para viajes y compras puntuales (Bs As, iPad). 18 filas mar-2023 -> may-2025"
+Agendas,Agendas,,UYU,virtual,no,"cuenta del emprendimiento de agendas (dic-2022 -> feb-2023): entraba el cobro de cada agenda y se giraba a la cuenta principal. 18 filas"
+Split Caqui,Split Caqui,,UYU,virtual,no,"cuenta virtual de deuda del grupo de amigos 'Caqui Tapa' antes de Splitwise; esa deuda hoy vive en 'Deudas'. 18 filas oct-2025 -> feb-2026, cerrada con un giro a Deudas el 3/2/2026"
+Split Hermanos,Split Hermanos,,UYU,virtual,no,"idem 'Split Caqui' para el grupo de hermanos. 9 filas dic-2025 -> ene-2026, cerrada con un giro a Deudas el 3/2/2026"
+Tricount Europa,Tricount Europa,,USD,virtual,no,"bolsa compartida del viaje a Europa llevada en Tricount (ene-feb 2026); 7 filas. La planilla de casa marca 'tricount' como excluido por diseno (docs/validacion-migracion.md 2c)"
+Deuda papa,Deuda papa,,USD,virtual,no,"cuenta virtual de prestamos con el padre (oct-dic 2022), predecesora de 'A cobrar'/'Deudas'. 5 filas"
+Deuda mama UYU,Deuda mama UYU,,UYU,virtual,no,"cuenta virtual de prestamos en pesos con la madre (2022-2023): cada prestamo tiene su devolucion espejo, neto 0. 4 filas"
+Deuda Mama USD,Deuda Mama USD,,USD,virtual,no,"par en dolares de 'Deuda mama UYU' (oct-dic 2022); 3 filas. En 1Money las dos estan escritas con distinta mayuscula en 'mama': se respeta el nombre tal cual entra al ledger"
+Prex URU,Prex URU,,UYU,banco,no,"tarjeta prepaga Prex en pesos, se cargaba para los viajes a Bs As (2022-2023). 4 filas"
+Prex USD,Prex USD,,USD,banco,no,"par en dolares de 'Prex URU' (2022-2023). 6 filas"
+Santander Viaje,Santander Viaje,,USD,banco,no,"cuenta en dolares abierta para el viaje de abr-2026; se vacio el 27/6/2026 girando 1.987 USD a BBVA USD. 5 filas"
+Dolares Viaje,Dolares Viaje,,USD,efectivo,no,"sobre de dolares en efectivo del viaje de abr-2026: 200 USD sacados de Santander USD, 123 cambiados a euros. 1 fila"
+Euros viaje,Euros viaje,,EUR,efectivo,no,"sobre de euros en efectivo del viaje de abr/jun-2026 (100 EUR comprados con 123 USD). 2 filas"

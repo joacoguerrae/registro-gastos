@@ -245,7 +245,10 @@ def main():
     rows.sort(key=lambda r: (r["fecha"], r["fuente_id"]))
     OUT.parent.mkdir(parents=True, exist_ok=True)
     with open(OUT, "w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=COLUMNS)
+        # lineterminator="\n": csv.writer escribe CRLF en TODAS las plataformas
+        # y .gitattributes fija *.csv eol=lf -> git avisa en cada add. Ver
+        # auditoria 2026-09 SB1.
+        w = csv.DictWriter(f, lineterminator="\n", fieldnames=COLUMNS)
         w.writeheader()
         w.writerows(rows)
 

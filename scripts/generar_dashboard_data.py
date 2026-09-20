@@ -57,7 +57,10 @@ with open(P("out", "resumen_mensual.csv"), encoding="utf-8", newline="") as f:
 claves = sorted(set(ppto) | set(real))
 out_path = P("out", "presupuesto_vs_real.csv")
 with open(out_path, "w", encoding="utf-8", newline="") as f:
-    w = csv.writer(f)
+    # lineterminator="\n": csv.writer escribe CRLF en TODAS las plataformas y
+    # .gitattributes fija *.csv eol=lf -> git avisa en cada add. Ver auditoria
+    # 2026-09 SB1.
+    w = csv.writer(f, lineterminator="\n")
     # "fecha" (YYYY-MM-01, ISO): Looker Studio la reconoce como tipo Fecha
     # automaticamente; "mes" (YYYY-MM con guion) no calza con su formato
     # "Año Mes" (que exige YYYYMM sin separador) y quedaba ilegible como fecha.
@@ -131,7 +134,7 @@ with open(P("data", "ledger.csv"), encoding="utf-8", newline="") as f:
 
 out_casa = P("out", "casa_mensual.csv")
 with open(out_casa, "w", encoding="utf-8", newline="") as f:
-    w = csv.writer(f)
+    w = csv.writer(f, lineterminator="\n")   # LF, igual que arriba (SB1)
     w.writerow(["mes", "fecha", "categoria", "gasto_total", "gasto_lu", "gasto_joaco"])
     for (mes, cat) in sorted(casa):
         t, lu, jo = casa[(mes, cat)]

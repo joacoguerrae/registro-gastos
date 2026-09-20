@@ -34,7 +34,7 @@ python scripts/conciliar_estado.py           # procesa todos los PDF nuevos de l
 python scripts/conciliar_estado.py archivo.pdf  # o uno puntual
 ```
 
-Concilia cada línea del estado contra el ledger (monto ±0,5%, fecha ±3 días): matchea → `estado=conciliado` y corrige `monto_uyu` con el TC real; sin match → inserta la línea (`origen=estado_cuenta`); fila del ledger sin línea del estado → pendiente `sin_respaldo_estado`. Cierra al peso contra el total del período. Hoy (2026-07-12) los extractores de BBVA y Santander Mastercard son *stubs* — el motor de matching (`conciliar()`, sin dependencia de PDF) ya está testeado con un estado sintético (`scripts/test_conciliacion.py`); falta calibrar el parser de texto con el primer PDF real que Joaco suelte.
+Concilia cada línea del estado contra el ledger (monto ±0,5%, fecha ±3 días): matchea → `estado=conciliado` y corrige `monto_uyu` con el TC real; sin match → inserta la línea (`origen=estado_cuenta`); fila del ledger sin línea del estado → pendiente `sin_respaldo_estado`. Cierra al peso contra el total del período. Hoy (2026-07-12) los extractores de BBVA y Santander Mastercard son *stubs* — el motor de matching (`conciliar()`, sin dependencia de PDF) ya está testeado con un estado sintético (`tests/test_conciliar_estado.py`); falta calibrar el parser de texto con el primer PDF real que Joaco suelte.
 
 ## /cierre-mes — ceremonia mensual
 
@@ -66,7 +66,7 @@ Los 3 Sheets se **refrescan solos en cada corrida** del pipeline (`scripts/actua
 - [x] Fase 2 — pipeline de mails (parsers + backfill julio verificado 1:1 vs Gmail, ver docs/validacion-fase2.md; comandos /sync-gastos y /revisar-pendientes)
 - [x] Fase 2.5 — **refresh automático de los Sheets** vía cuenta de servicio (`scripts/actualizar_sheets.py`, integrado al pipeline).
 - [~] **Migración a fetch determinístico + GitHub Actions** — `fetch_mails.py` (Gmail API, sin Claude) + `.github/workflows/sync.yml` corriendo 2×/día en la nube. Paridad validada 57/57 (ver docs/validacion-migracion.md). En **semana shadow** (Actions valida sin commitear, la PC sigue de dueña); al cutover se flipa a `live` y se deshabilitan las tareas de Windows. Plan: [docs/plan-migracion-fetch.md](docs/plan-migracion-fetch.md).
-- [x] Fase 3 — Splitwise (cuenta Deudas, solo lectura, integrado a `scripts/correr_pipeline.cmd`), cierre continuo de casa (`scripts/cierre_casa.py`, `/cierre-mes`) y conciliación de saldos (`scripts/conciliar_saldos.py`) operativos. Motor de matching de estados de cuenta construido y testeado con estado sintético (`scripts/conciliar_estado.py` + `scripts/test_conciliacion.py`); falta calibrar los extractores de BBVA y Santander Mastercard con el primer PDF real (ver `data/estados/`).
+- [x] Fase 3 — Splitwise (cuenta Deudas, solo lectura, integrado a `scripts/correr_pipeline.cmd`), cierre continuo de casa (`scripts/cierre_casa.py`, `/cierre-mes`) y conciliación de saldos (`scripts/conciliar_saldos.py`) operativos. Motor de matching de estados de cuenta construido y testeado con estado sintético (`scripts/conciliar_estado.py` + `tests/test_conciliar_estado.py`); falta calibrar los extractores de BBVA y Santander Mastercard con el primer PDF real (ver `data/estados/`).
 - [ ] Fase 4 — presupuesto integrado + alertas
 
 ## Decisiones clave

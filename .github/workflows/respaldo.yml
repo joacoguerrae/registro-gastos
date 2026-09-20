@@ -1,0 +1,131 @@
+name: Respaldo semanal
+
+# Zip cifrado (AES-256) de data/ + config/ + el codigo, subido a Google Drive
+# (auditoria 2026-09, fase 0.3 / decision D6). Hoy la unica copia de
+# data/resoluciones.csv son GitHub y la PC: dos copias que se pierden juntas.
+#
+# Sube con el OAuth de USUARIO (los mismos secrets GMAIL_* del fetch, con el grant
+# ampliado a drive.file): una service account no tiene cuota de Drive propia desde
+# jun-2023 y files().create() le devuelve 403 storageQuotaExceeded.
+#
+# Workflow APARTE y no un `if` de dia de la semana dentro de sync.yml, a proposito:
+#   - se ve. Un condicional adentro de sync.yml es invisible: nadie puede responder
+#     "corrio el respaldo?" sin leer logs. Aca la historia esta en la UI.
+#   - sync.yml es el camino critico (timeout 15') y corre 14 veces por semana; no
+#     tiene por que cargar 2 minutos de zip ni el secret BACKUP_ZIP_PASSWORD.
+#   - una corrida programada en ROJO manda mail por la notificacion default de
+#     Actions, que hoy es el unico canal de aviso que le llega a Joaco (SA6/D5).
+
+on:
+  schedule:
+    - cron: '30 13 * * 0'      # domingo ~10:30 Uruguay, despues del sync de las 12:23 UTC
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'solo armar y verificar el zip, sin subir a Drive'
+        type: boolean
+        default: false
+
+# Mismo grupo que "Sync gastos": los dos commitean data/staging/, nunca deben solaparse.
+concurrency:
+  group: sync-gastos
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  respaldo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      # Pinneadas por SHA y no por tag, igual que sync.yml (auditoria 2026-07 B8):
+      # este job tambien corre con los secrets de Google en el entorno.
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5  # v4
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065  # v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      # Envuelto en salud_pasos como los demas pasos no criticos: registra la racha
+      # y deja que el `escalar` del sync (que corre 2x/dia) abra el Issue a las 3
+      # fallas. OJO: con cadencia semanal, 3 fallas = 3 SEMANAS -- por eso ademas
+      # el ultimo paso pone la corrida en rojo, que es lo que dispara el mail.
+      - name: Respaldo cifrado a Drive
+        env:
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+          BACKUP_ZIP_PASSWORD: ${{ secrets.BACKUP_ZIP_PASSWORD }}
+          DRY: ${{ github.event.inputs.dry_run }}
+        run: |
+          if [ -z "$BACKUP_ZIP_PASSWORD" ]; then
+            echo "::error::Falta el repository secret BACKUP_ZIP_PASSWORD (la clave del zip). Settings -> Secrets and variables -> Actions -> New repository secret. Ver docs/respaldo.md."
+          fi
+          ARGS=""
+          if [ "$DRY" = "true" ]; then ARGS="--dry-run"; fi
+          python scripts/salud_pasos.py correr backup_drive -- python scripts/backup_drive.py $ARGS
+
+      # Paths EXPLICITOS (leccion B2 de la auditoria de julio): este workflow solo
+      # puede tocar estos dos archivos de estado. Con `git add -A`, el zip o
+      # cualquier temporal inesperado se commitearia solo y en silencio.
+      - name: Commit del estado del respaldo
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        run: |
+          git config user.name "gastos-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/staging/salud_pasos.json data/staging/backup_drive.json
+          if git diff --cached --quiet; then
+            echo "sin cambios de estado"
+          else
+            git commit -m "respaldo semanal a Drive $(date -u +%Y-%m-%dT%H:%MZ)"
+            git pull --rebase origin ${{ github.ref_name }}
+            git push
+          fi
+
+      # salud_pasos.py correr SIEMPRE sale 0 (ese es su contrato: un paso no critico
+      # no frena el pipeline). Aca se traduce la racha a un exit code para que la
+      # corrida quede ROJA y GitHub mande el mail: con cadencia semanal, esperar al
+      # Issue de las 3 fallas serian 3 semanas sin respaldo y sin enterarse.
+      - name: Poner la corrida en rojo si el respaldo fallo
+        if: always()
+        run: |
+          python - <<'PY'
+          import json, os, sys
+
+          # Que significa cada exit code de backup_drive.py, para que el mail de
+          # GitHub diga que hacer y no solo "exit 6".
+          QUE_PASO = {
+              2: ("falta la clave del zip: carga el repository secret "
+                  "BACKUP_ZIP_PASSWORD"),
+              3: ("POSIBLE FILTRACION DE SECRETOS o el zip no verifica: el zip se "
+                  "borro y NO se subio nada. Mira el log del paso anterior"),
+              4: ("el arbol no paso las guardas de integridad (falta un archivo "
+                  "obligatorio o el ledger esta truncado): NO se respaldo"),
+              5: "la subida a Drive no coincide con el zip local, o no hay espacio",
+              6: ("credenciales de Drive: el refresh token no tiene el scope "
+                  "drive.file. Re-autorizar con scripts/get_gmail_token.py y "
+                  "actualizar el secret GMAIL_REFRESH_TOKEN (ver docs/respaldo.md)"),
+              7: ("falta pyzipper: agrega pyzipper==0.4.0 y pycryptodomex==3.23.0 "
+                  "a requirements.txt"),
+          }
+
+          p = "data/staging/salud_pasos.json"
+          d = json.load(open(p, encoding="utf-8")) if os.path.exists(p) else {}
+          e = d.get("backup_drive")
+          if e is None:
+              print("::error::El paso del respaldo no llego a registrarse: revisa el log.")
+              sys.exit(1)
+          n = e.get("fallos_seguidos", 0)
+          if n:
+              detalle = e.get("detalle", "?")
+              code = int(detalle.split()[-1]) if detalle.startswith("exit ") else 0
+              print(f"::error::El respaldo semanal fallo ({detalle}): "
+                    f"{QUE_PASO.get(code, 'ver el log del paso anterior')}. "
+                    f"Racha: {n}. Ultimo OK: {e.get('ultimo_ok', 'nunca')}.")
+              sys.exit(1)
+          print(f"respaldo OK: {e.get('ultimo_ok', '?')}")
+          PY

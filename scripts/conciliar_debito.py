@@ -66,8 +66,11 @@ def leer_csv(path, cols=None):
 
 
 def escribir_csv(path, cols, rows):
+    # lineterminator="\n": csv.writer escribe CRLF en TODAS las plataformas y
+    # .gitattributes fija *.csv eol=lf -> git avisa en cada add. Ver auditoria
+    # 2026-09 SB1.
     with io.open(path, "w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=cols)
+        w = csv.DictWriter(f, lineterminator="\n", fieldnames=cols)
         w.writeheader()
         w.writerows(rows)
 

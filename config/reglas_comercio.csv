@@ -12,6 +12,7 @@ PERNAS JORDAN,Super,,carniceria/almacen (19/9)
 SILVANA,Salud,,"psicologa (transferencia mensual, 10.800) - 19/9"
 MERPAGO\*MELI,Suscripciones,,"Meli+ mensual (199): va ANTES del catch-all de MERPAGO\*, que lo dejaba sin categoria - detectado 1/9"
 MERPAGO\*MERCADOLIBRE,Compras personales,,"MercadoLibre via Mercado Pago: va ANTES del catch-all de MERPAGO\*, que gana por orden y lo dejaba sin categoria - detectado 25/8"
+DESBORDE,Comer afuera / Delivery,,"bar/restaurante Desborde; la terminal de cobro es HANDY, asi que va ANTES del catch-all HANDY|MERPAGO\*, que gana por orden y la dejaba muerta - auditoria 2026-09 SA7"
 HANDY|MERPAGO\*,,,queda sin categoria a proposito: revisar (comercio generico)
 UTE ?,Servicios,casa,
 ANTEL,Servicios,casa,
@@ -47,7 +48,6 @@ ZURICH,Servicios,,seguro Zurich cobrado en la tarjeta
 SEGURO SALDO DEUDOR,Servicios,,seguro de saldo deudor de las tarjetas
 MAPFRE,Servicios,,seguro Mapfre (BBVA)
 EPAY TAX FREE,Devoluciones & cashback,,devolucion de impuestos de compras en el exterior
-DESBORDE,Comer afuera / Delivery,,bar/restaurante Desborde
 DLO PEDIDOSYA MARKET,Super,,formato del ESTADO de cuenta (los avisos dicen DLO*PedidosYa Market)
 DLO PEDIDOSYA EXTRA,Super,,"recargo de PedidosYa Market, formato del estado"
 DISCO N,Super,,supermercado Disco (formato del estado: 'DISCO N  22')

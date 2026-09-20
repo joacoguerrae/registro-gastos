@@ -120,4 +120,4 @@ Revisión semanal: Claude presenta los no resueltos, Joaco decide, se actualizan
 
 ## config/estado_sync.json
 
-`{"ultimo_sync": ISO, "ultima_fecha_mail": ISO}` — la próxima corrida busca en Gmail desde `ultima_fecha_mail` − 2 días (solapamiento seguro; la idempotencia absorbe repetidos).
+`{"ultimo_sync": ISO, "ultima_fecha_mail": ISO}` — el watermark real es `ultima_fecha_mail`; `ultimo_sync` es informativo y desde la fase 0.4 **solo lo escribe Actions** (en local cambiaba en cada corrida y hacía abortar el `git pull`, auditoría 2026-09 SM7). La próxima corrida busca en Gmail desde `ultima_fecha_mail` − 2 días (solapamiento seguro; la idempotencia absorbe repetidos).

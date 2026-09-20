@@ -8,7 +8,7 @@ Método: tres relevamientos independientes del código (pipeline, ceremonias, in
 
 | Fase | Qué | Estado |
 |---|---|---|
-| 0 | Red de seguridad: tests en CI, invariantes nuevos, respaldo, quick wins | pendiente |
+| 0 | Red de seguridad: tests en CI, invariantes nuevos, respaldo, quick wins | **CERRADA 20/9/2026**; solo queda una acción de Joaco para el respaldo |
 | 1 | Fuente de verdad para lo manual: `gastos.py`, fuentes reproducibles, planilla de carga | pendiente |
 | 2 | Conciliación que entiende splits e importes finales + `cierre.py` de un comando | pendiente |
 | 3 | Reglas con lint, gastos fijos operativos, tipo de cambio real | pendiente |
@@ -49,7 +49,7 @@ IDs estables. `SA` alta · `SM` media · `SB` baja. No se re-reporta lo cerrado 
 
 ### Alta
 
-**SA1 — 150 filas irreproducibles sin red.** `merge()` reescribe `data/ledger.csv` entero en cada corrida (`merge_y_validar.py:137-140`) y conserva las filas `mail`/`estado_cuenta`/`manual`/`splitwise` **releyéndolas de su propia salida**, dentro de `if os.path.exists(OUT_LEDGER)` (`:103-107`). Si el archivo falta o se trunca, el merge produce un ledger con solo las 4.525 filas de migración y **la validación pasa**: no hay invariante de conteo ni de mezcla de orígenes. `mail` (284) se regenera desde `inbox_raw/`; `estado_cuenta` (71), `manual` (47) y `splitwise` (32) no tienen fuente.
+**SA1 — 150 filas irreproducibles sin red.** *(CERRADO 20/9: `data/staging/ledger_stats.json` + el chequeo `1.conteo_origen`. Verificado: borrar `ledger.csv` ahora da exit 1 con el detalle por origen; antes daba `validacion OK`.)* `merge()` reescribe `data/ledger.csv` entero en cada corrida (`merge_y_validar.py:137-140`) y conserva las filas `mail`/`estado_cuenta`/`manual`/`splitwise` **releyéndolas de su propia salida**, dentro de `if os.path.exists(OUT_LEDGER)` (`:103-107`). Si el archivo falta o se trunca, el merge produce un ledger con solo las 4.525 filas de migración y **la validación pasa**: no hay invariante de conteo ni de mezcla de orígenes. `mail` (284) se regenera desde `inbox_raw/`; `estado_cuenta` (71), `manual` (47) y `splitwise` (32) no tienen fuente.
 
 **SA2 — Sin herramienta para altas manuales.** Solo escriben el ledger los scripts del pipeline y los conciliadores. La hermana de split se describe en prosa (`revisar-pendientes.md:33`) y se ejecuta con Python ad-hoc; ídem gastos pagados por Lu (tres artefactos a mano: fila + `cierre_exclusiones.csv` + `aportes_lu.csv`), aportes entre cuentas propias, cobros de `A cobrar`, borrado de duplicados. Errores reales de ese método en esta sesión: gasto sin `monto_uyu` al convertir una transferencia (dos veces), heredoc truncado por largo, borrado por línea física que no coincidía con filas CSV.
 
@@ -70,11 +70,11 @@ IDs estables. `SA` alta · `SM` media · `SB` baja. No se re-reporta lo cerrado 
 
 **SA6 — El canal de avisos no llega a nadie.** Un Issue por corrida con pendientes, sin dedupe y sin cierre automático (24 acumulados al 19/9). Joaco no los recibe ni los mira (D5).
 
-**SA7 — Motor de reglas: un catch-all a mitad de archivo mata 39 reglas.** `HANDY|MERPAGO\*` (L15 de `reglas_comercio.csv`) tiene categoría vacía a propósito y está antes que 39 reglas; "primera que matchea gana" (`procesar_mails.py:138-143`). Seis víctimas en dos meses, cinco arregladas a mano una por una (PedidosYa Plus, MERPAGO\*MERCADOLIBRE, MERPAGO\*MELI, MACROMERCADO, HANDY Wanderers). **Sexta, viva hoy:** `DESBORDE` (L50) nunca gana — verificado contra los 1.978 textos del ledger. Además `CINE|MOVIE` (L35) pierde contra PedidosYa (L4) en "PedidosYa Movie"; `GARAGE/casa` pierde contra `ANCAP`; `DISCO N` es regla muerta.
+**SA7 — Motor de reglas: un catch-all a mitad de archivo mata 39 reglas.** *(PARCHE 20/9: `DESBORDE` movido antes del catch-all; el arreglo estructural sigue siendo de la Fase 3.1. Relevamiento sobre los 2.018 textos reales: las únicas sombreadas son `DESBORDE` (resuelta) y `DISCO N` (redundante, misma categoría, inocua). Quedan dos conflictos de especificidad que necesitan la columna `prioridad`: `CINE|CINEMA|MOVIE|TEATRO` pierde contra `PedidosYa` en «DLO*PedidosYa Movie M» (2 filas), y `GARAGE`/casa pierde contra `ANCAP` en «ANCAP GARAGE AMERICAN» (1 fila, conflicto de ámbito).)* `HANDY|MERPAGO\*` (L15 de `reglas_comercio.csv`) tiene categoría vacía a propósito y está antes que 39 reglas; "primera que matchea gana" (`procesar_mails.py:138-143`). Seis víctimas en dos meses, cinco arregladas a mano una por una (PedidosYa Plus, MERPAGO\*MERCADOLIBRE, MERPAGO\*MELI, MACROMERCADO, HANDY Wanderers). **Sexta, viva hoy:** `DESBORDE` (L50) nunca gana — verificado contra los 1.978 textos del ledger. Además `CINE|MOVIE` (L35) pierde contra PedidosYa (L4) en "PedidosYa Movie"; `GARAGE/casa` pierde contra `ANCAP`; `DISCO N` es regla muerta.
 
-**SA8 — Sin tests en CI.** No hay `tests/` ni paso de test. `scripts/test_conciliacion.py` existe y no lo invoca nadie. La paridad de migración es manual desde el 17/7. Todos los bugs de estos dos meses se encontraron en datos de producción.
+**SA8 — Sin tests en CI.** *(CERRADO 20/9: `tests/` con 18 tests sobre datos reales, `tests.yml` en cada push y `-m smoke` dentro de `sync.yml`.)* No hay `tests/` ni paso de test. `scripts/test_conciliacion.py` existe y no lo invoca nadie. La paridad de migración es manual desde el 17/7. Todos los bugs de estos dos meses se encontraron en datos de producción.
 
-**SA9 — Sin respaldo fuera de GitHub + la PC.** `resoluciones.csv` son 756 decisiones humanas irrecuperables.
+**SA9 — Sin respaldo fuera de GitHub + la PC.** *(IMPLEMENTADO 20/9, pendiente de una acción de Joaco: zip AES-256 con `pyzipper` — la stdlib no escribe cifrado —, 461 archivos / 12,77 MB → 5,50 MB, subida con el OAuth de usuario (scope `drive.file`), retención 26, workflow propio `respaldo.yml`. Gate de restauración verde: restaurado en un directorio limpio, 461/461 sha256 OK y `merge_y_validar` exit 0. Falta re-autorizar Google y crear el secret `BACKUP_ZIP_PASSWORD`: ver [respaldo.md](respaldo.md).)* `resoluciones.csv` son 756 decisiones humanas irrecuperables.
 
 ### Media
 
@@ -84,13 +84,13 @@ IDs estables. `SA` alta · `SM` media · `SB` baja. No se re-reporta lo cerrado 
 
 **SM3 — Tipo de cambio estático desde el 11/7** (`parametros.json:2-3`). Y `tc_estimado` es ruido puro: nada lo resuelve en automático (el único camino, `conciliar_estado.py:576-582`, depende del código muerto de SA3); transferencias y Splitwise en USD no lo resuelven nunca. Se cierran a mano (~12 en setiembre).
 
-**SM4 — `resoluciones.csv` sin lint.** Un `campo` desconocido se ignora en silencio (`procesar_mails.py:877`, `merge_y_validar.py:128`); 59 entradas apuntan a ids inexistentes; 35 claves `(id,campo)` repetidas, gana la última sin aviso (hoy benigno: `348b2e5d8083` 8,00→8,24 es una corrección legítima). Mismo riesgo de id huérfano en `cierre_exclusiones.csv` y `participaciones.csv`.
+**SM4 — `resoluciones.csv` sin lint.** *(CERRADO 20/9. Corrección de lo que decía esta auditoría, medido al implementar: hoy hay **cero** resoluciones con `campo` desconocido, y las claves repetidas con valores distintos son **2**, no 35 — las otras 33 son filas `motivo_resuelto`, que son un set de (id, motivo) y no un override. Los 59 ids huérfanos quedan como INFO: no pueden frenar el pipeline.)* Un `campo` desconocido se ignora en silencio (`procesar_mails.py:877`, `merge_y_validar.py:128`); 59 entradas apuntan a ids inexistentes; 35 claves `(id,campo)` repetidas, gana la última sin aviso (hoy benigno: `348b2e5d8083` 8,00→8,24 es una corrección legítima). Mismo riesgo de id huérfano en `cierre_exclusiones.csv` y `participaciones.csv`.
 
-**SM5 — Cuentas sin validar.** 19 cuentas fuera de `config/cuentas.csv` en 167 filas (mayoría legado). Un typo entra callado: en esta sesión aparecieron `Lu pesos`, `Lu`, `Gletir`.
+**SM5 — Cuentas sin validar.** *(CERRADO 20/9: el catálogo pasa de 12 a 31 cuentas y las violaciones de 211 apariciones a 0. Además un guard `1.cuentas_catalogo` que rechaza con FALLO cualquier nombre `<cuenta base> <moneda>`: catalogar `Santander Platinum USD` dejaba la tarjeta con 2 movimientos de 20, medido.)* 19 cuentas fuera de `config/cuentas.csv` en 167 filas (mayoría legado). Un typo entra callado: en esta sesión aparecieron `Lu pesos`, `Lu`, `Gletir`.
 
-**SM6 — `sync_splitwise`.** Corre **antes** que `procesar_mails` → un gasto del mismo día genera dos pendientes (primero sobre `rid`, después sobre `match["id"]`; `:517-522`). `cargos` excluye `origen=estado_cuenta` (`:416`) → un split pagado con la Mastercard (caso asado) nunca se cierra solo. `transferencia_a_clasificar` incondicional en pagos (`:540,:565`). Referencia de saldo parcial. `DATED_AFTER` y `YO_EXPORT` fijos.
+**SM6 — `sync_splitwise`.** *(PARCIALMENTE CERRADO 20/9.)* **Corrección: el caso testigo del asado que usaba esta auditoría es falso.** `sw:4650212111` (6.951 del 25/8) se pagó en DOS familias de cargo de la Mastercard (1.608,25 + hermana 4.825,16, y 129,50 + hermana 388,50), y el matcher compara UN cargo + su hermana contra el total con ±1%: incluir `estado_cuenta` NO lo resuelve — hace falta matching por familia agregada (Fase 2.1). Y la versión de este plan, sin guard, estaba **medida como dañina**: reabría el split `Burger` (`sw:4544350903`), resuelto el 12/7, sobre una fila con `en_analisis=0`. Se mergeó con el guard `en_analisis == \"1\"`, verificado no-op sobre los datos de hoy. Lo que sí quedó cerrado es el orden: corría **antes** que `procesar_mails` → un gasto del mismo día genera dos pendientes (primero sobre `rid`, después sobre `match["id"]`; `:517-522`). `cargos` excluye `origen=estado_cuenta` (`:416`) → un split pagado con la Mastercard (caso asado) nunca se cierra solo. `transferencia_a_clasificar` incondicional en pagos (`:540,:565`). Referencia de saldo parcial. `DATED_AFTER` y `YO_EXPORT` fijos.
 
-**SM7 — `estado_sync.json` ensucia el árbol local.** `ultimo_sync` se reescribe en toda corrida de `procesar_mails` (`:914-917`), también en las locales → `git pull` aborta (pasó 3 veces). El único campo necesario es `ultima_fecha_mail`.
+**SM7 — `estado_sync.json` ensucia el árbol local.** *(CERRADO 20/9: `ultimo_sync` solo lo escribe Actions y el archivo se escribe con `newline="\n"`; verificado byte a byte que una corrida local lo deja idéntico al commiteado.)* `ultimo_sync` se reescribe en toda corrida de `procesar_mails` (`:914-917`), también en las locales → `git pull` aborta (pasó 3 veces). El único campo necesario es `ultima_fecha_mail`.
 
 **SM8 — Fallback silencioso de coeficientes.** Si el mes no tiene fila en `ingresos.csv` se usa el del mes anterior sin avisar (`merge_y_validar.py:381-382`, ídem `cierre_casa`). El presupuesto de setiembre se armó con el coeficiente equivocado por esto.
 
@@ -104,7 +104,7 @@ IDs estables. `SA` alta · `SM` media · `SB` baja. No se re-reporta lo cerrado 
 
 ### Baja
 
-**SB1** CRLF: `csv.writer` sin `lineterminator="\n"` en `escribir_csv` de 3 scripts → warning en cada commit. **SB2** Scripts muertos: `bajar_inbox_raw_jul2026.py`, `guardar_inbox_raw.py`, `inbox_raw_desde_threads.py`, `verificar_presupuesto.py`, `verificar_backfill_jul2026.py`, `sync_gastos_headless.cmd`, migradores; `registro_app.mmbackup` (2,3 MB). **SB3** Constantes que se pudren: `DEFAULT_AFTER`, `BACKFILL_DESDE`, ventana `DEDUPE_1M_*`, flag `ambito_8261_confirmado` (código muerto), rutas de anaconda en los `.cmd`. **SB4** `salud_pasos`: el Issue dice "exit 1" sin stderr (`:96`); `escalar` mudo si falla `gh` (`:109-113`). **SB5** Permisos del workflow a nivel repo; scopes de los secretos sin documentar; `.gitignore` por ruta exacta. **SB6** `inbox_raw/` sin retención (~2 MB/año — aceptar). **SB7** 2 transferencias sin `cuenta_destino`; 56 pendientes huérfanos.
+**SB1** CRLF *(CERRADO 20/9; y eran más de los que decía esta auditoría: **14 puntos de escritura CSV en 9 scripts**, no 3, más 5 `open()` de texto commiteado)*. **SB2** Scripts muertos: `bajar_inbox_raw_jul2026.py`, `guardar_inbox_raw.py`, `inbox_raw_desde_threads.py`, `verificar_presupuesto.py`, `verificar_backfill_jul2026.py`, `sync_gastos_headless.cmd`, migradores; `registro_app.mmbackup` (2,3 MB). **SB3** Constantes que se pudren: `DEFAULT_AFTER`, `BACKFILL_DESDE`, ventana `DEDUPE_1M_*`, flag `ambito_8261_confirmado` (código muerto), rutas de anaconda en los `.cmd`. **SB4** `salud_pasos`: el Issue dice "exit 1" sin stderr (`:96`); `escalar` mudo si falla `gh` (`:109-113`). **SB5** Permisos del workflow a nivel repo; scopes de los secretos sin documentar; `.gitignore` por ruta exacta. **SB6** `inbox_raw/` sin retención (~2 MB/año — aceptar). **SB7** 2 transferencias sin `cuenta_destino`; 56 pendientes huérfanos.
 
 ## Plan por fases
 
@@ -206,3 +206,16 @@ Reescribir `fase3.md`, `README.md`, `pipeline-mails.md`; cerrar `plan-migracion-
 0 → 1 → 2 son secuenciales (cada una apoya a la siguiente). 3 y 4 pueden ir en paralelo después de la 1. 5 necesita 1 (pestaña `Saldos`), 3 (fijos) y 4 (resumen). 6 al final. Estimación en sesiones de trabajo de un agente: F0 1 · F1 2 · F2 3 · F3 1-2 · F4 1-2 · F5 2-3 · F6 1.
 
 **Si hubiera que cortar:** las fases 0-2 solas ya eliminan el riesgo de pérdida de datos y devuelven la mayor parte del tiempo del cierre. La 4 es la que hace que el resto sirva de algo: un sistema que avisa a un canal que nadie mira no avisa.
+
+## Cierre de la Fase 0 — 20/9/2026
+
+Qué quedó, medido:
+
+- **El gate.** Antes: borrar `data/ledger.csv` entero daba `validacion OK` y exit 0, y el pipeline lo habría commiteado — se perdían 434 filas, 150 de ellas sin ninguna fuente para regenerarlas. Ahora da exit 1 con el detalle por origen (`mail: 286 -> 0`, etc.) y no se commitea. Una baja deliberada se acepta explícitamente con `--aceptar-bajas`.
+- **18 tests** sobre datos reales, ninguno escribe en el repo. `tests.yml` corre todo en cada push; `sync.yml` corre `-m smoke` (~4 s) antes de tocar datos.
+- **14 chequeos** en `merge_y_validar` contra los 6 de antes: conteo por origen, catálogo de cuentas + guard anti-sufijo, transferencias sin destino con allowlist auto-caducante, y lint de resoluciones/exclusiones/participaciones.
+- **Respaldo** implementado y probado end-to-end salvo la subida (bloqueada por la acción de Joaco), con tres capas anti-filtración de secretos verificadas por separado.
+
+Lo que la ejecución **corrigió de esta misma auditoría**: el caso testigo de SM6 era falso, SB1 subestimaba el alcance (14 puntos, no 3), SM4 sobreestimaba el problema (2 claves repetidas reales, no 35), y QW3 tal como estaba escrito era dañino. Queda anotado en cada hallazgo.
+
+**Deuda que la Fase 0 deja anotada:** `merge_y_validar.py --migracion` sale exit 1 desde antes de esta fase, por `2e.presupuesto` (21 meses contra los 19 "congelados"). No afecta al pipeline, que nunca corre `--migracion`, pero es el mundo congelado pudriéndose: va a la Fase 6.

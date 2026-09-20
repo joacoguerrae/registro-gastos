@@ -114,8 +114,11 @@ def cuenta_en_moneda(cuenta, moneda, validas):
     estado de la Platinum, USD 118,34 del 3/8/2026, que salió de la caja USD).
 
     Convención de nombres ya usada en config/cuentas.csv: el par es
-    "Santander UYU"/"Santander USD" (sufijo de moneda que se reemplaza) o
-    "Santander Platinum"/"Santander Platinum USD" (sufijo que se agrega).
+    "Santander UYU"/"Santander USD" (sufijo de moneda que se reemplaza). Para las
+    TARJETAS no hay contraparte en el catálogo a propósito: catalogar un
+    "Santander Platinum USD" rompe el cálculo de saldos (los pagos en USD de la
+    Platinum van al nombre BASE de la cuenta). Al no existir el candidato, la
+    función devuelve la cuenta original, que es lo correcto para conciliar_saldos.
     Si la contraparte no existe se deja la original: mejor la cuenta conocida que
     una inventada.
     """
@@ -285,9 +288,12 @@ def leer_csv(path, cols):
 
 
 def escribir_csv(path, cols, rows):
+    # lineterminator="\n": csv.writer escribe CRLF en TODAS las plataformas y
+    # .gitattributes fija *.csv eol=lf -> git avisa en cada add. Ver auditoria
+    # 2026-09 SB1.
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=cols)
+        w = csv.DictWriter(f, lineterminator="\n", fieldnames=cols)
         w.writeheader()
         w.writerows(rows)
 
@@ -912,8 +918,21 @@ def main():
 
     if mails:
         ultima = max(m["fecha_mail"] for m in mails)
-        estado = {"ultimo_sync": ahora, "ultima_fecha_mail": ultima}
-        with open(ESTADO_SYNC, "w", encoding="utf-8") as f:
+        # `ultimo_sync` es informativo (nadie lo lee: el watermark que usa
+        # fetch_mails.py es `ultima_fecha_mail`) y cambia en CADA corrida. En
+        # local ensuciaba el arbol y hacia abortar `git pull` -- paso 3 veces
+        # (auditoria 2026-09 SM7). Se preserva el valor que dejo Actions en vez
+        # de borrar la clave, para que el archivo commiteado no oscile.
+        estado = {}
+        if os.path.exists(ESTADO_SYNC):
+            with open(ESTADO_SYNC, encoding="utf-8") as f:
+                estado = json.load(f)
+        if os.environ.get("GITHUB_ACTIONS"):
+            estado["ultimo_sync"] = ahora
+        estado["ultima_fecha_mail"] = ultima
+        # newline="\n": sin esto una corrida local escribe CRLF aunque
+        # .gitattributes declare eol=lf (comprobado).
+        with open(ESTADO_SYNC, "w", encoding="utf-8", newline="\n") as f:
             json.dump(estado, f, indent=2)
 
     # -------------------------------------------------- 6. reporte

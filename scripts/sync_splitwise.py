@@ -80,9 +80,12 @@ def leer_csv(path, cols):
 
 
 def escribir_csv(path, cols, rows):
+    # lineterminator="\n": csv.writer escribe CRLF en TODAS las plataformas y
+    # .gitattributes fija *.csv eol=lf -> git avisa en cada add. Ver auditoria
+    # 2026-09 SB1.
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=cols)
+        w = csv.DictWriter(f, lineterminator="\n", fieldnames=cols)
         w.writeheader()
         w.writerows(rows)
 
@@ -411,8 +414,15 @@ def main():
     # cargos (gastos) del ledger y sus filas hermanas -split, para la regla 2
     hermanas = {r["fuente_id"]: r for r in ledger
                 if r["fuente_id"].endswith("-split")}
+    # estado_cuenta: la Mastercard y la BBVA no mandan aviso por transaccion, el
+    # cargo solo entra por el PDF -- sin esto un split pagado con ellas nunca
+    # apunta a su cargo (auditoria 2026-09 SM6).
+    # en_analisis=1: las filas anuladas por doble conteo NO son candidatas. Sin
+    # este guard, el split 'Burger' (sw:4544350903), resuelto el 12/7, reabria
+    # como pendiente nuevo sobre 78c84a7dd33f (en_analisis=0) -- medido.
     cargos = [r for r in ledger
-              if r["tipo"] == "gasto" and r["origen"] in ("mail", "1money", "manual")
+              if r["tipo"] == "gasto" and r["en_analisis"] == "1"
+              and r["origen"] in ("mail", "1money", "manual", "estado_cuenta")
               and r["fecha"] >= "2026-06-15"]
     # transferencias existentes con destino Deudas (dedupe de pagos, regla 3)
     transf_deudas = [r for r in ledger

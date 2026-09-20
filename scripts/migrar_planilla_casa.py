@@ -194,7 +194,10 @@ def main():
                  "origen_planilla", "coef_lu", "coef_joaco", "gasto_lu",
                  "gasto_joaco", "saldo_tarjeta", "era"]
     with open(OUT_CASA, "w", encoding="utf-8", newline="") as f:
-        w = csv.writer(f)
+        # lineterminator="\n": csv.writer escribe CRLF en TODAS las plataformas
+        # y .gitattributes fija *.csv eol=lf -> git avisa en cada add. Ver
+        # auditoria 2026-09 SB1.
+        w = csv.writer(f, lineterminator="\n")
         w.writerow(cols_casa)
         for row in rows:
             fo = row["fecha_out"]
@@ -267,7 +270,7 @@ def main():
             "fuente_id": fuente_id,
         })
     with open(OUT_LEDGER, "w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=cols_ledger)
+        w = csv.DictWriter(f, lineterminator="\n", fieldnames=cols_ledger)   # LF, igual que arriba (SB1)
         w.writeheader()
         w.writerows(ledger)
 

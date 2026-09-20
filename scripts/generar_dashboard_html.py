@@ -117,7 +117,9 @@ def main():
 
     html = TEMPLATE.replace("__DATA__", json.dumps(data, ensure_ascii=False))
     out = P("out", "dashboard.html")
-    with open(out, "w", encoding="utf-8") as f:
+    # newline="\n": out/dashboard.html se commitea con eol=lf; sin esto una
+    # corrida local lo reescribe entero en CRLF (auditoria 2026-09 SB1).
+    with open(out, "w", encoding="utf-8", newline="\n") as f:
         f.write(html)
     print(f"{out}: {len(meses)} meses, {len(cats)} categorias, saldos {len(saldos)} cuentas")
 

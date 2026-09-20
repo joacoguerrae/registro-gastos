@@ -340,7 +340,10 @@ def main():
             "subject": subject,
             "body_text": body_text,
         }
-        with open(os.path.join(INBOX, f"{mid}.json"), "w", encoding="utf-8") as f:
+        # newline="\n": inbox_raw/ esta commiteado y es la fuente de los tests de
+        # caracterizacion; sin esto una corrida local reescribe todo en CRLF
+        # (auditoria 2026-09 SB1).
+        with open(os.path.join(INBOX, f"{mid}.json"), "w", encoding="utf-8", newline="\n") as f:
             json.dump(rec, f, ensure_ascii=False, indent=2)
         guardados += 1
 

@@ -18,3 +18,15 @@ google-api-python-client==2.198.0
 google-auth-httplib2==0.4.0
 # Estados de cuenta en PDF (scripts/conciliar_estado.py):
 pypdf==6.14.2
+
+# Tests (tests/, .github/workflows/tests.yml). Pinneado a lo que YA esta
+# instalado en la PC de Joaco (pytest 7.4.4, python 3.12.3 = el de Actions):
+# corre local sin instalar nada y da paridad exacta con la nube.
+pytest==7.4.4
+
+# Respaldo semanal cifrado (scripts/backup_drive.py, fase 0.3):
+# zipfile de la stdlib NO escribe zips cifrados (setpassword es solo de lectura),
+# asi que pyzipper -> AES-256 formato WinZip, que 7-Zip abre con doble clic.
+# pycryptodomex es dependencia de pyzipper: se pinnea explicito igual que el resto.
+pyzipper==0.4.0
+pycryptodomex==3.23.0

@@ -50,6 +50,7 @@ QUE_IMPLICA = {
     "generar_dashboard_html": "out/dashboard.html queda con los datos de la corrida anterior",
     "actualizar_sheets": "los Google Sheets y Looker quedan con los datos de la corrida anterior",
     "deploy_dashboard": "la URL del dashboard (Cloudflare Pages) queda con la version anterior",
+    "backup_drive": "no hay respaldo nuevo en Drive: la unica copia de resoluciones.csv vuelve a ser GitHub + la PC",
 }
 
 
@@ -66,7 +67,10 @@ def leer():
 
 def escribir(d):
     os.makedirs(os.path.dirname(SALUD), exist_ok=True)
-    with open(SALUD, "w", encoding="utf-8") as f:
+    # newline="\n": sin esto Windows traduce cada \n a CRLF y el archivo, que se
+    # commitea con eol=lf, cambia de bytes en cada corrida local (auditoria
+    # 2026-09 SB1).
+    with open(SALUD, "w", encoding="utf-8", newline="\n") as f:
         json.dump(d, f, indent=2, ensure_ascii=False, sort_keys=True)
         f.write("\n")
 

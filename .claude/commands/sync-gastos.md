@@ -10,7 +10,7 @@ Sincronizá el ledger de gastos con Gmail. Contratos: docs/pipeline-mails.md y d
 
 1. `git pull` (regla de CLAUDE.md: los commits nacen en la nube).
 2. **Fetch:** corré con la tool Bash `python scripts/fetch_mails.py` y leé su salida (usa `config/gmail_token.json`; enumera por MENSAJE con watermark − 2 días; también baja los PDF de estados de cuenta). No armes búsquedas de Gmail a mano: el script ES el contrato del fetch.
-3. **Pipeline:** corré `scripts\correr_pipeline.cmd` **con la tool PowerShell**: `& "scripts\correr_pipeline.cmd"` — ⚠️ NUNCA `cmd /c` desde la tool Bash: abre una shell interactiva y cuelga hasta el timeout (gotcha documentado en CLAUDE.md). Leé la salida completa: corre Splitwise → procesar_mails → merge_y_validar → cierre_casa → dashboards → Sheets → commit.
+3. **Pipeline:** corré `scripts\correr_pipeline.cmd` **con la tool PowerShell**: `& "scripts\correr_pipeline.cmd"` — ⚠️ NUNCA `cmd /c` desde la tool Bash: abre una shell interactiva y cuelga hasta el timeout (gotcha documentado en CLAUDE.md). Leé la salida completa: corre procesar_mails → Splitwise → merge_y_validar → cierre_casa → dashboards → Sheets → commit.
 4. Si `merge_y_validar` falla (sale ≠0), el pipeline se detiene y NO commitea: reportá el invariante roto tal cual lo imprime — no lo "arregles" tocando datos; las correcciones van por `data/resoluciones.csv` (ver `/revisar-pendientes`).
 5. `git push` (el pipeline commitea local pero no pushea; sin push, GitHub y las corridas de Actions quedan atrás).
 6. Reportá: mails nuevos por tipo, filas insertadas por cuenta/categoría, pendientes nuevos por motivo (los `formato_nuevo` son mails que el parser no supo leer — mencionalos explícitamente), y gasto acumulado del mes en curso vs presupuesto.

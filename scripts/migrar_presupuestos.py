@@ -226,7 +226,10 @@ def main():
 
     OUT_CSV.parent.mkdir(parents=True, exist_ok=True)
     with open(OUT_CSV, "w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=[
+        # lineterminator="\n": csv.writer escribe CRLF en TODAS las plataformas
+        # y .gitattributes fija *.csv eol=lf -> git avisa en cada add. Ver
+        # auditoria 2026-09 SB1.
+        w = csv.DictWriter(f, lineterminator="\n", fieldnames=[
             "mes", "concepto_original", "categoria", "tipo",
             "presupuesto", "gasto_real_registrado", "comentario"])
         w.writeheader()

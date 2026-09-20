@@ -2,7 +2,7 @@ name: Sync gastos
 
 # Corre el pipeline de gastos en la nube (reemplaza las tareas de Windows).
 # Fase 1 (fetch): fetch_mails.py (Gmail API determinística).
-# Fase 2 (pipeline): splitwise -> procesar_mails -> validación -> dashboard -> Sheets -> commit.
+# Fase 2 (pipeline): procesar_mails -> splitwise -> validación -> dashboard -> Sheets -> commit.
 #
 # MODO (desde el cutover del 2026-07-16, Actions es el ÚNICO dueño del pipeline;
 # las tareas de Windows "Gastos Sync AM/PM" quedaron deshabilitadas):
@@ -56,6 +56,21 @@ jobs:
       - name: Instalar dependencias
         run: pip install -r requirements.txt
 
+      # Red de seguridad de la fase 0.1 (auditoria 2026-09 SA8). Solo el
+      # subconjunto `smoke`: invariantes del ledger + motor de matching, ~4 s,
+      # ninguno depende de config/reglas. Los tests de caracterizacion quedan
+      # AFUERA a proposito: comparan el ledger contra lo que el parser produce
+      # con las reglas de HOY, y un cambio legitimo de reglas_comercio.csv o
+      # splits_recurrentes.csv los rompe (paso el 9/8 con APPLE.COM/BILL). Aca
+      # eso frenaria el commit de datos 2x/dia. Corren completos en tests.yml.
+      - name: Tests (subconjunto smoke)
+        run: |
+          set -o pipefail
+          if ! python -m pytest -q -m smoke -rxX; then
+            echo "::error::El suite smoke falla: el pipeline se detiene y NO commitea. Ver el detalle arriba."
+            exit 1
+          fi
+
       # Guard barato: un BASE hardcodeado a la ruta de Windows de Joaco rompe el
       # script solo en la nube (paso silenciosamente por 2 veces: conciliar_estado
       # y cierre_casa). Se chequea la ASIGNACION, no los ejemplos de uso en docstrings.
@@ -74,19 +89,26 @@ jobs:
           GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
         run: python scripts/fetch_mails.py
 
-      # Los pasos NO CRITICOS van envueltos en salud_pasos.py: no frenan la
-      # corrida si fallan, pero la racha queda registrada y a las 3 seguidas se
-      # abre un Issue (auditoria 2026-07 M5). Con `|| echo ::warning::` a secas,
-      # un paso podia fallar todos los dias sin que nadie se enterara.
-      - name: Sync Splitwise
-        env:
-          SPLITWISE_API_KEY: ${{ secrets.SPLITWISE_API_KEY }}
-        run: python scripts/salud_pasos.py correr sync_splitwise -- python scripts/sync_splitwise.py
-
       - name: Procesar mails
         run: |
           set -o pipefail
           python scripts/procesar_mails.py | tee /tmp/proc.txt
+
+      # Los pasos NO CRITICOS van envueltos en salud_pasos.py: no frenan la
+      # corrida si fallan, pero la racha queda registrada y a las 3 seguidas se
+      # abre un Issue (auditoria 2026-07 M5). Con `|| echo ::warning::` a secas,
+      # un paso podia fallar todos los dias sin que nadie se enterara.
+      #
+      # Va DESPUES de procesar_mails (auditoria 2026-09 SM6): sync_splitwise
+      # arma `cargos` desde el ledger, y si corre antes, un gasto de Splitwise
+      # cuyo aviso de tarjeta llega el MISMO dia no matchea, genera un pendiente
+      # flotante ("SIN cargo que matchee") y la corrida siguiente crea un segundo
+      # pendiente sobre el id del cargo. Sigue ANTES de la validacion para que
+      # merge_y_validar revise tambien lo que inserto.
+      - name: Sync Splitwise
+        env:
+          SPLITWISE_API_KEY: ${{ secrets.SPLITWISE_API_KEY }}
+        run: python scripts/salud_pasos.py correr sync_splitwise -- python scripts/sync_splitwise.py
 
       # El script decide: sale != 0 si algun invariante del ledger esta roto.
       # Antes esto se decidia por grep sobre el stdout, y el grep NO miraba

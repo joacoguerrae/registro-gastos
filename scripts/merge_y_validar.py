@@ -33,6 +33,7 @@ import argparse
 import csv
 import datetime as dt
 import hashlib
+import json
 import os
 import random
 import re
@@ -57,6 +58,14 @@ DB = P("data", "raw", "MyFinance.db")
 XLSX = P("data", "raw", "casa.xlsx")
 PRESUPUESTO_CSV = P("data", "presupuesto.csv")
 CATEG_CSV = P("config", "categorias.csv")
+CUENTAS_CSV = P("config", "cuentas.csv")
+RESOLUCIONES_CSV = P("data", "resoluciones.csv")
+EXCLUSIONES_CSV = P("config", "cierre_exclusiones.csv")
+PARTICIPACIONES_CSV = P("data", "participaciones.csv")
+# Conteo por origen de la ultima corrida sana (ver chequear_conteo_por_origen).
+# Va en data/staging/ porque es un artefacto del pipeline que igual se
+# commitea, como data/staging/salud_pasos.json.
+LEDGER_STATS = P("data", "staging", "ledger_stats.json")
 
 COLUMNS = ["id", "fecha", "mes", "tipo", "monto", "moneda", "monto_uyu",
            "cuenta", "cuenta_destino", "categoria", "subcategoria", "comercio",
@@ -78,6 +87,23 @@ MESES_SIN_PLANILLA = {"2024-09"}
 # manuales y agregados a 1Money: nunca calzaron mes a mes, por eso los volcados
 # quedan en en_analisis=0. Ver docs/validacion-migracion.md seccion 2c.
 DESVIOS_ESPERADOS = {"2c.doble_conteo"}
+
+# Origenes que NO se pueden regenerar desde ninguna fuente si el ledger se
+# pierde: 'mail' se podria rebajar de data/inbox_raw/, pero estado_cuenta
+# (PDFs ya conciliados), manual (altas a mano) y splitwise (los exports viejos
+# no quedan) no tienen vuelta. Ver chequear_conteo_por_origen().
+ORIGENES_NO_REGENERABLES = ("mail", "estado_cuenta", "manual", "splitwise")
+
+# Transferencias sin cuenta_destino que YA existen y no se pueden arreglar desde
+# una rama de codigo (las ramas no tocan data/). Son los dos avisos duplicados
+# del pago Proyecto PAS USD 530,47 del 1/7/2026: el pago real es e89f07151e87.
+# En_analisis=0 NO alcanza -- conciliar_saldos.py:183 no filtra en_analisis, asi
+# que sin destino la plata sale de Santander USD y no entra a ningun lado.
+# VACIAR esta lista cuando la Fase 1 borre las filas (docs/auditoria-2026-09.md 1.2).
+TRANSFERENCIAS_SIN_DESTINO_CONOCIDAS = {
+    "cc9d9b3463de": "aviso duplicado del pago Proyecto PAS 1/7/2026; el real es e89f07151e87",
+    "e2a0018c20eb": "idem cc9d9b3463de (segundo aviso del mismo pago)",
+}
 
 results = []   # (seccion, estado, texto) para el .md
 
@@ -135,7 +161,10 @@ def merge():
     dupes = {k: v for k, v in ids.items() if v > 1}
 
     with open(OUT_LEDGER, "w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=COLUMNS)
+        # lineterminator="\n": csv.writer escribe CRLF en TODAS las plataformas y
+        # .gitattributes fija *.csv eol=lf -> git avisa en cada add. Ver auditoria
+        # 2026-09 SB1.
+        w = csv.DictWriter(f, lineterminator="\n", fieldnames=COLUMNS)
         w.writeheader()
         w.writerows(rows)
     return rows, dupes
@@ -304,11 +333,288 @@ def recalc_xlsx():
 
 
 # ============================================================
+# 4. Invariantes nuevos (auditoria 2026-09, fase 0.2)
+# ============================================================
+def guardar_stats(datos):
+    """Escribe LEDGER_STATS solo si el contenido cambio.
+
+    El archivo esta commiteado y el pipeline hace `git add data` en cada
+    corrida: reescribirlo identico generaria un commit de ruido 2x/dia.
+    newline="\\n" porque .gitattributes fija LF y en Windows json.dump sobre un
+    open() sin newline escribe CRLF (mismo caso que SB1).
+    """
+    nuevo = json.dumps(datos, indent=2, sort_keys=True, ensure_ascii=False) + "\n"
+    if os.path.exists(LEDGER_STATS):
+        with open(LEDGER_STATS, encoding="utf-8") as f:
+            if f.read() == nuevo:
+                return False
+    os.makedirs(os.path.dirname(LEDGER_STATS), exist_ok=True)
+    with open(LEDGER_STATS, "w", encoding="utf-8", newline="\n") as f:
+        f.write(nuevo)
+    return True
+
+
+def chequear_conteo_por_origen(ledger, aceptar_bajas):
+    """Gate anti-perdida silenciosa del ledger (auditoria 2026-09 SA1).
+
+    merge() reconstruye las filas de migracion desde data/staging/, pero las de
+    mail/estado_cuenta/manual/splitwise las RELEE de su propia salida
+    (:103-107). Si data/ledger.csv falta o se trunca, el merge devuelve un
+    ledger sin ellas y todo lo demas valida en verde: medido el 20/9, borrar
+    data/ledger.csv dejaba 4.525 filas y "validacion OK" con exit 0.
+    Desaparecian 436 filas en silencio y 150 de ellas no se regeneran desde
+    ninguna fuente.
+
+    La defensa es acordarse de cuantas habia: si un origen no regenerable baja,
+    esto sale DESVIO -> exit != 0 -> el workflow corta ANTES del commit
+    (sync.yml:96-102) y el ledger mutilado nunca llega a master.
+    """
+    actual = dict(sorted(Counter(r["origen"] for r in ledger).items()))
+    datos = {"por_origen": actual, "total": len(ledger)}
+    resumen = ", ".join(f"{o}={actual.get(o, 0)}" for o in ORIGENES_NO_REGENERABLES)
+
+    previo = None
+    if os.path.exists(LEDGER_STATS):
+        with open(LEDGER_STATS, encoding="utf-8") as f:
+            previo = json.load(f).get("por_origen", {})
+
+    if not previo:
+        # Bootstrap: el invariante tiene que poder nacer sin commitear datos
+        # desde una rama de codigo (las ramas no tocan data/). La primera
+        # corrida siembra el archivo; de la segunda en adelante el gate esta
+        # armado. Es INFO a proposito: sembrar no es un problema.
+        # `not previo` y no `previo is None` para que un archivo vacio o sin
+        # `por_origen` (editado a mano) se siembre DICIENDOLO, en vez de
+        # comparar contra {} y dar OK con el gate desarmado.
+        #
+        # ...pero NO se siembra desde un ledger que ya esta roto. Sin esto, el
+        # gate se desarma borrando el archivo: la corrida siguiente lo siembra
+        # con lo que haya (medido el 20/9: con ledger.csv borrado sembraba
+        # mail=0/manual=0 y pasaba en verde) y la perdida queda bendecida como
+        # la nueva referencia. Un ledger real SIEMPRE tiene filas de mail.
+        if not any(actual.get(o, 0) for o in ORIGENES_NO_REGENERABLES):
+            log("1.conteo_origen", "DESVIO",
+                f"me pediste sembrar data/staging/ledger_stats.json desde un ledger de "
+                f"{len(ledger)} filas SIN NINGUNA fila de {list(ORIGENES_NO_REGENERABLES)} "
+                f"({resumen}). Eso no es un ledger sano: son las filas que no se "
+                "regeneran desde ninguna fuente. QUE HACER: recupera el ledger "
+                "(`git checkout -- data/ledger.csv`) y volve a correr. Si de verdad "
+                "queres sembrar asi, corre con --aceptar-bajas")
+            if not aceptar_bajas:
+                return
+        guardar_stats(datos)
+        log("1.conteo_origen", "INFO",
+            f"data/staging/ledger_stats.json sembrado: {len(ledger)} filas, "
+            f"origenes no regenerables {resumen}. Desde la proxima corrida, que "
+            "alguno de esos baje es DESVIO")
+        return
+
+    bajas = [(o, previo.get(o, 0), actual.get(o, 0))
+             for o in ORIGENES_NO_REGENERABLES
+             if actual.get(o, 0) < previo.get(o, 0)]
+    detalle = "; ".join(f"{o}: {p} -> {a} (faltan {p - a} filas)" for o, p, a in bajas)
+
+    if bajas and not aceptar_bajas:
+        log("1.conteo_origen", "DESVIO",
+            f"bajo el conteo de origenes que no se pueden regenerar: {detalle}"
+            ". QUE HACER: (a) si la baja fue deliberada (borraste filas en una "
+            "revision), volve a correr con --aceptar-bajas: el conteo nuevo queda "
+            "como referencia. (b) si no la esperabas, data/ledger.csv se trunco o "
+            "se corrompio -- merge() conserva esas filas releyendo el ledger "
+            "anterior (no hay otra fuente), asi que lo que falta ahi se pierde "
+            "para siempre. Recuperalo con `git checkout -- data/ledger.csv`, "
+            "volve a correr, y NO commitees hasta que esto vuelva a dar OK")
+        return
+
+    cambio = guardar_stats(datos)
+    if bajas:
+        log("1.conteo_origen", "INFO",
+            f"--aceptar-bajas: se aceptan las bajas ({detalle}) y "
+            f"data/staging/ledger_stats.json queda con {resumen}")
+    else:
+        log("1.conteo_origen", "OK",
+            f"origenes no regenerables: {resumen} "
+            f"(referencia {'actualizada' if cambio else 'sin cambios'})")
+
+
+def chequear_cuentas(ledger):
+    """cuenta/cuenta_destino tienen que estar en config/cuentas.csv (SM5).
+
+    Un typo entra callado y deforma saldos: la cuenta desconocida simplemente no
+    matchea y la plata "se pierde" (caso real: 'Santander Platinum USD', 118,34 +
+    530,47 USD que nunca bajaron la deuda de la tarjeta). Se exime
+    estado=pendiente: son filas de la bandeja (data/pendientes.csv) que todavia
+    no paso nadie -- procesar_mails.py:676 escribe el titular CRUDO del mail en
+    cuenta_destino ('Lu pesos') y eso pasa ~2 veces por mes. Mismo criterio que
+    1.vacios y 2d.categorias.
+    """
+    with open(CUENTAS_CSV, encoding="utf-8-sig") as f:
+        cuentas_validas = {r["cuenta"].strip() for r in csv.DictReader(f)
+                           if (r["cuenta"] or "").strip()}
+
+    # Guard anti-"arreglo" equivocado: config/cuentas.csv lleva la cuenta BASE y
+    # la moneda va en la columna `moneda` del ledger. conciliar_saldos.py resuelve
+    # los nombres multi-moneda de config/saldos_iniciales.csv ('Santander Platinum
+    # USD', 'Deudas USD', 'Efectivo USD') sacandoles el sufijo CONTRA este catalogo
+    # (cuenta_ledger, :108-119): si el sufijo existe aca, deja de traducir y la
+    # cuenta base pierde todos sus movimientos. Verificado 20/9 sobre una copia:
+    # catalogar 'Santander Platinum USD' deja la tarjeta con 2 movimientos de 20.
+    # ' EUR' no lo traduce nadie todavia, pero seria igual de ambiguo.
+    sufijos_prohibidos = sorted(
+        c for c in cuentas_validas
+        if c.rsplit(" ", 1)[-1] in ("USD", "EUR") and c.rsplit(" ", 1)[0] in cuentas_validas)
+    log("1.cuentas_catalogo", "OK" if not sufijos_prohibidos else "FALLO",
+        f"config/cuentas.csv: {len(cuentas_validas)} cuentas; nombres '<cuenta base> "
+        f"<moneda>' prohibidos: {sufijos_prohibidos or 'ninguno'}"
+        + ("" if not sufijos_prohibidos else
+           ". QUE HACER: borra esas filas de config/cuentas.csv. El catalogo lleva "
+           "solo cuentas BASE; la moneda vive en la columna `moneda` del ledger y "
+           "config/saldos_iniciales.csv usa el sufijo como clave de saldo "
+           "multi-moneda -- esa asimetria es deliberada (conciliar_saldos.py:16-19)."))
+
+    fuera = Counter()
+    ejemplo = {}
+    for r in ledger:
+        if r["estado"] == "pendiente":
+            continue
+        for campo in ("cuenta", "cuenta_destino"):
+            v = (r[campo] or "").strip()
+            if v and v not in cuentas_validas:
+                fuera[(campo, v)] += 1
+                ejemplo.setdefault((campo, v), r["id"])
+    detalle = "; ".join(
+        f"{campo}={valor!r} en {n} fila(s) (ej. id {ejemplo[(campo, valor)]})"
+        for (campo, valor), n in sorted(fuera.items(), key=lambda kv: -kv[1]))
+    log("1.cuentas", "OK" if not fuera else "DESVIO",
+        f"cuenta/cuenta_destino fuera de config/cuentas.csv: {detalle or 'ninguna'}"
+        + ("" if not fuera else
+           ". QUE HACER: (a) si es una cuenta real nueva, agregale una fila a "
+           "config/cuentas.csv con el formato "
+           "cuenta,alias_1money,tarjetas,moneda,tipo,activa,notas -- `cuenta` tiene "
+           "que ser el string EXACTO del ledger, `tipo` uno de "
+           "banco/conjunta/virtual/tarjeta_credito/efectivo/inversion, y `notas` una "
+           "linea que explique que es. (b) si es un typo o el nombre de una persona "
+           "(el parser de transferencias escribe el titular crudo del mail), "
+           "corregilo en data/resoluciones.csv: id_ledger,campo,valor,nota,fecha. "
+           "NUNCA agregues un nombre con sufijo de moneda ('Santander Platinum USD'): "
+           "va la cuenta BASE, conciliar_saldos.py resuelve el sufijo solo."))
+
+
+def chequear_transferencias(ledger):
+    """Toda transferencia necesita cuenta_destino, con allowlist de legado (SB7)."""
+    sin_destino = [r for r in ledger
+                   if r["tipo"] == "transferencia"
+                   and not (r["cuenta_destino"] or "").strip()
+                   and r["estado"] != "pendiente"
+                   and r["id"] not in TRANSFERENCIAS_SIN_DESTINO_CONOCIDAS]
+    log("1.transfer_destino", "OK" if not sin_destino else "DESVIO",
+        f"transferencias sin cuenta_destino: {len(sin_destino)}"
+        + ("" if not sin_destino else
+           " -> " + ", ".join(f"{r['id']} ({r['fecha']} {r['monto']} {r['moneda']} "
+                              f"{r['cuenta']} {r['descripcion'][:40]!r})"
+                              for r in sin_destino[:10])
+           + ". QUE HACER: una transferencia sin destino resta de su cuenta origen "
+             "y no suma en ningun lado -- conciliar_saldos.py NO filtra en_analisis, "
+             "asi que deforma el saldo aunque este en 0. Pone el destino en "
+             "data/resoluciones.csv (id_ledger,cuenta_destino,<cuenta>,nota,fecha); "
+             "si en realidad es un gasto, cambiale el `tipo` en la misma resolucion."))
+
+    # la allowlist no se puede pudrir: si una fila dejo de existir o ya tiene
+    # destino, hay que sacarla de TRANSFERENCIAS_SIN_DESTINO_CONOCIDAS
+    por_id = {r["id"]: r for r in ledger}
+    obsoletos = [i for i in TRANSFERENCIAS_SIN_DESTINO_CONOCIDAS
+                 if i not in por_id
+                 or por_id[i]["tipo"] != "transferencia"
+                 or (por_id[i]["cuenta_destino"] or "").strip()]
+    log("1.transfer_destino_legado", "OK" if not obsoletos else "DESVIO",
+        f"{len(TRANSFERENCIAS_SIN_DESTINO_CONOCIDAS)} transferencias sin destino "
+        f"toleradas (se borran en la Fase 1): "
+        + ", ".join(f"{i}: {m}" for i, m in sorted(TRANSFERENCIAS_SIN_DESTINO_CONOCIDAS.items()))
+        + ("" if not obsoletos else
+           f". YA NO APLICAN: {obsoletos} -- sacalos de "
+           "TRANSFERENCIAS_SIN_DESTINO_CONOCIDAS en scripts/merge_y_validar.py"))
+
+
+def lint_resoluciones(ledger):
+    """Lint de data/resoluciones.csv y de los dos archivos que indexan por id
+    de ledger (auditoria 2026-09 SM4).
+
+    Son 756 decisiones humanas irrecuperables que nadie valida: hoy una
+    resolucion con un `campo` mal escrito se descarta en SILENCIO
+    (merge_y_validar.py:128 y procesar_mails.py:877 filtran por COLUMNS sin
+    avisar), y quien la escribio cree que corrigio la fila.
+    """
+    ids_ledger = {r["id"] for r in ledger}
+    with open(RESOLUCIONES_CSV, encoding="utf-8-sig", newline="") as f:
+        resoluciones = list(csv.DictReader(f))
+
+    # (a) campo desconocido: es un ERROR real, la correccion no se aplica nunca
+    desconocidos = Counter(r["campo"] for r in resoluciones
+                           if r["campo"] not in COLUMNS and r["campo"] != "motivo_resuelto")
+    log("1.resoluciones_campo", "OK" if not desconocidos else "DESVIO",
+        f"{len(resoluciones)} resoluciones; `campo` fuera del esquema: "
+        f"{dict(desconocidos) or 'ninguno'}"
+        + ("" if not desconocidos else
+           ". QUE HACER: esas filas NO se aplican -- el merge las descarta sin "
+           "avisar. Corregi el `campo` a una columna del ledger ("
+           + ", ".join(COLUMNS) + ") o a 'motivo_resuelto' (que cierra un "
+           "pendiente por (id_ledger, motivo)). Si era un experimento, borra la fila."))
+
+    # (b) claves repetidas: gana la ULTIMA por orden de archivo (merge_y_validar
+    # :126-132 y procesar_mails.py:874-880 arman un dict). Hoy es deliberado
+    # (correcciones sucesivas de la misma fila), por eso es informativo y no
+    # corta. motivo_resuelto queda afuera a proposito: no es un override sino un
+    # SET de (id, motivo), y repetirlo con motivos distintos es lo normal.
+    valores = defaultdict(list)
+    for r in resoluciones:
+        if r["campo"] == "motivo_resuelto":
+            continue
+        valores[(r["id_ledger"], r["campo"])].append(r["valor"])
+    repetidas = {k: v for k, v in valores.items() if len(set(v)) > 1}
+    ejemplos = "; ".join(f"{i}.{c}: {' -> '.join(v)}"
+                         for (i, c), v in sorted(repetidas.items())[:3])
+    log("1.resoluciones_repetidas", "OK" if not repetidas else "INFO",
+        f"claves (id_ledger, campo) con valores distintos: {len(repetidas)}"
+        + (f" (gana la ultima del archivo) -> {ejemplos}" if repetidas else ""))
+
+    # (c) ids que no existen en el ledger. Informativo: hay legado de ids
+    # recalculados (un cambio de fuente_id cambia el hash) y hacer fallar la
+    # corrida por eso dejaria el pipeline rojo 2x/dia sin que nadie pueda
+    # arreglarlo desde una rama de codigo. La consecuencia real es solo que la
+    # fila no hace nada.
+    huerfanos = []
+    for path, etiqueta in ((RESOLUCIONES_CSV, "data/resoluciones.csv"),
+                           (EXCLUSIONES_CSV, "config/cierre_exclusiones.csv"),
+                           (PARTICIPACIONES_CSV, "data/participaciones.csv")):
+        if not os.path.exists(path):
+            continue
+        with open(path, encoding="utf-8-sig", newline="") as f:
+            filas = [r for r in csv.DictReader(f) if r["id_ledger"] not in ids_ledger]
+        huerfanos.append((etiqueta, len(filas), len({r["id_ledger"] for r in filas})))
+    total_huerfanos = sum(n for _, n, _ in huerfanos)
+    log("1.ids_huerfanos", "OK" if not total_huerfanos else "INFO",
+        "; ".join(f"{et}: {n} fila(s) sobre {k} id(s) inexistente(s)"
+                  for et, n, k in huerfanos)
+        + ("" if not total_huerfanos else
+           ". QUE HACER: no hacen nada (se aplican por id y ese id ya no esta). "
+           "Si el id cambio porque cambio su fuente_id, re-apuntala al id nuevo; "
+           "si la fila se borro, borra tambien su resolucion. Ojo en "
+           "participaciones.csv: un id huerfano ahi significa que un gasto de casa "
+           "se esta repartiendo por coeficiente en vez de por la fraccion pactada."))
+
+
+# ============================================================
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--migracion", action="store_true",
                     help="ademas revalida la migracion contra las fuentes crudas "
                          "(MyFinance.db, casa.xlsx) y escribe docs/validacion-migracion.md")
+    ap.add_argument("--aceptar-bajas", action="store_true",
+                    help="acepta que bajen las filas de un origen no regenerable "
+                         "(mail/estado_cuenta/manual/splitwise) y re-siembra "
+                         "data/staging/ledger_stats.json. Solo despues de un "
+                         "borrado DELIBERADO: si la baja no la hiciste vos, el "
+                         "ledger se corrompio y esto la da por buena")
     args = ap.parse_args()
 
     random.seed(20260711)
@@ -324,6 +630,12 @@ def main():
     log("1.merge", "OK" if not dupes else "FALLO",
         f"{n_total} filas ({dict(por_origen)}), tipos {dict(por_tipo)}, "
         f"rango {rango[0]} -> {rango[1]}, ids duplicados: {dupes or 'ninguno'}")
+
+    # Va JUSTO despues del merge y antes de todo lo demas: merge() ya reescribio
+    # data/ledger.csv, asi que el archivo de conteos tiene que quedar describiendo
+    # exactamente ese ledger. Si hay baja no escribe nada -- la referencia es la
+    # memoria de lo que TENIA que estar y debe sobrevivir a la corrida mala.
+    chequear_conteo_por_origen(ledger, args.aceptar_bajas)
 
     # NaN / vacios donde no corresponde
     permit_vacio_siempre = {"cuenta_destino", "comercio", "descripcion", "subcategoria"}
@@ -349,6 +661,12 @@ def main():
 
     suma_uyu_total = sum(float(r["monto_uyu"]) for r in ledger if r["monto_uyu"])
     log("1.suma", "OK", f"suma |monto_uyu| todas las filas: {suma_uyu_total:.2f}")
+
+    # ---------- 1.cuentas / 1.transfer_destino / resoluciones (INVARIANTES) ----------
+    # Corren sobre `ledger`, que ya tiene las resoluciones aplicadas por merge().
+    chequear_cuentas(ledger)
+    chequear_transferencias(ledger)
+    lint_resoluciones(ledger)
 
     # ---------- 2d. categorias (INVARIANTE: corre siempre) ----------
     with open(CATEG_CSV, encoding="utf-8-sig") as f:
@@ -407,7 +725,8 @@ def main():
             monto *= frac
         resumen[(r["mes"], r["categoria"] or "(sin categoria)")] += monto
     with open(OUT_RESUMEN, "w", encoding="utf-8", newline="") as f:
-        w = csv.writer(f)
+        # lineterminator="\n": ver el comentario del writer del ledger (SB1).
+        w = csv.writer(f, lineterminator="\n")
         # "fecha" (YYYY-MM-01, ISO) ademas de "mes" (YYYY-MM): Looker Studio
         # reconoce fechas ISO con guion como tipo Fecha automaticamente, pero
         # "YYYY-MM" con guion NO calza con su formato "Año Mes" (que exige
@@ -727,7 +1046,9 @@ def validar_migracion(ledger, ctx):
                   "1Money (ver 2c): esperado por volcados manuales; no requiere acción "
                   "salvo que quiera auditarlos.")
 
-    with open(OUT_MD, "w", encoding="utf-8") as f:
+    # newline="\n": el .md esta commiteado y .gitattributes lo fija en LF; sin
+    # esto una corrida en Windows lo reescribe entero en CRLF (SB1).
+    with open(OUT_MD, "w", encoding="utf-8", newline="\n") as f:
         f.write("\n".join(md) + "\n")
     print(f"\nMD -> {OUT_MD}")
 

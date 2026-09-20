@@ -8,3 +8,4 @@ out/sync_log.txt
 __pycache__/
 *.pyc
 out/tmp/
+.pytest_cache/
