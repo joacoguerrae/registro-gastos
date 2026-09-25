@@ -45,13 +45,21 @@ def test_no_se_siembra_el_gate_desde_un_ledger_roto(base, correr):
 
     Si se sembrara desde el ledger mutilado, la perdida quedaria bendecida como
     la referencia nueva y el invariante no volveria a saltar nunca.
+
+    Se borra el archivo a proposito para forzar el camino de SIEMBRA: el test
+    tiene que valer igual exista o no en el repo. La primera version asumia que
+    no existia (era cierto el 20/9, antes de que Actions lo sembrara) y se
+    rompio sola el dia que aparecio, probando contra el camino equivocado.
     """
+    stats = base / "data" / "staging" / "ledger_stats.json"
+    stats.unlink(missing_ok=True)
     rows = filas(base / "data" / "ledger.csv")
     escribir_ledger(base / "data" / "ledger.csv",
                     [r for r in rows if r["origen"] in ("1money", "planilla_casa")])
     p = correr("merge_y_validar.py", espera_exito=False)
     assert p.returncode != 0
-    assert not (base / "data" / "staging" / "ledger_stats.json").exists(), \
+    assert "1.conteo_origen" in p.stdout and "DESVIO" in p.stdout, p.stdout[-2000:]
+    assert not stats.exists(), \
         "sembro la referencia desde un ledger sin filas no regenerables"
 
 
