@@ -15,9 +15,16 @@ este script.
 
 Pasos previos (en GCP Console, mismo proyecto que la cuenta de servicio de Sheets):
   1. APIs & Services -> Library -> habilitar "Gmail API" Y "Google Drive API".
-  2. APIs & Services -> OAuth consent screen -> User type "External" -> Publishing status
-     "In production" (NO "Testing": en Testing el refresh token vence a los 7 días).
-     Agregar los tres scopes de abajo. Único usuario: joacoguerrae@gmail.com.
+  2. La vieja "OAuth consent screen" hoy es "Google Auth Platform" (Google la
+     renombró en 2025) y está partida en sub-páginas:
+       - Audience    -> User type "External" y Publishing status "In production"
+                        (NO "Testing": ahí el refresh token vence a los 7 días).
+       - Data access -> "Add or remove scopes" -> agregar los tres scopes de
+                        abajo. Si el buscador no los encuentra, pegarlos en
+                        "Manually add scopes" y despues Save.
+     Único usuario: joacoguerrae@gmail.com. El paso 1 va ANTES: el selector solo
+     lista scopes de APIs habilitadas, asi que con la Drive API apagada
+     drive.file no aparece y parece que el scope no existe.
      (gmail.readonly ya era "restricted"; drive.file y gmail.send no cambian el
      régimen: sigue apareciendo la pantalla de "app no verificada".)
   3. APIs & Services -> Credentials -> Create credentials -> OAuth client ID ->

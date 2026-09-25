@@ -35,11 +35,35 @@ original de casa.
    New repository secret → nombre exacto **`BACKUP_ZIP_PASSWORD`**.
 3. *(Opcional, solo si querés correr el respaldo desde la PC)* agregá
    `"backup_zip_password": "<la misma clave>"` a `config/secrets.local.json` (gitignoreado).
-4. **GCP Console** → el proyecto de siempre → APIs & Services → Library → habilitar
-   **Google Drive API**.
-5. **GCP Console** → OAuth consent screen / Data access → verificá que *Publishing status* siga
-   en **"In production"** (si está en "Testing" el refresh token vence a los 7 días) → agregá los
-   scopes `.../auth/drive.file` y `.../auth/gmail.send` a los que ya están.
+4. **Habilitá la Drive API.** [console.cloud.google.com](https://console.cloud.google.com) → arriba,
+   elegí **el mismo proyecto** donde está la service account de Sheets → menú ☰ → *APIs & Services*
+   → *Library* → buscá **"Google Drive API"** → **Enable**.
+   ⚠️ **Esto va ANTES del paso 5**: el selector de scopes solo lista scopes de APIs habilitadas, así
+   que si la Drive API está apagada, `drive.file` **no aparece en la lista** y parece que el scope no
+   existe.
+5. **Agregá los dos scopes.** Ojo: Google renombró esta pantalla en 2025. Ya no se llama
+   "OAuth consent screen" a secas — entrando por ahí te redirige a **Google Auth Platform**, que está
+   partida en sub-páginas (*Overview · Branding · Audience · Clients · Data access · Verification
+   center*). Lo que el doc viejo llamaba "la pantalla de consentimiento" hoy son dos lugares:
+   - **Publishing status** → sub-página **Audience**. Tiene que decir **"In production"**; si dice
+     "Testing", el refresh token vence a los 7 días.
+   - **Scopes** → sub-página **Data access** → botón **"Add or remove scopes"** → se abre un panel a
+     la derecha con un buscador.
+
+   Si el buscador no los encuentra (pasa seguido: filtra por nombre de API, no por el string del
+   scope), usá la caja **"Manually add scopes"** al final del panel y pegá estos dos, uno por línea:
+
+   ```
+   https://www.googleapis.com/auth/drive.file
+   https://www.googleapis.com/auth/gmail.send
+   ```
+
+   Después **"Add to table"** → **"Update"** (cierra el panel) → y **"Save"** abajo de todo en
+   *Data access*. Si no tocás Save, no queda guardado.
+
+   `gmail.send` va a aparecer como **restricted** y `drive.file` como **recommended**: es lo
+   esperado y no bloquea nada. La app es propia, sin verificar, y el único usuario sos vos — igual
+   que ya pasa hoy con `gmail.readonly`.
 6. **Re-autorizá en la PC:** `C:/Users/joaco/anaconda3/python.exe scripts/get_gmail_token.py`.
    Se abre el navegador; entrá con joacoguerrae@gmail.com; va a aparecer otra vez la pantalla de
    "Google no verificó esta app" → Avanzado → Continuar.
