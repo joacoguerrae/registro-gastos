@@ -351,3 +351,4 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 1a0c7eeee3965a45,2026-09-22T07:05:18Z,recibo,ignorado,,recibo no parseable,,2026-09-25T10:52:12+00:00
 1a0ca6971ee679fb,2026-09-22T18:38:22Z,recibo,ignorado,,recibo no parseable,,2026-09-25T10:52:12+00:00
 1a0d9741d46a071d,2026-09-25T16:44:17Z,aviso_tarjeta,insertado,3e63f8b720e3,9071 UYU 134.75 MONTEVIDEO/DEVOTO EXPRESS VIS3 -> Santander UYU/personal/Super,9071||134.75||MONTEVIDEO/DEVOTO EXPRESS VIS3||2026-09-25T13:44:16,2026-09-25T17:17:46+00:00
+1a0daff4e5635bbb,2026-09-25T23:55:58Z,aviso_tarjeta,insertado,19e4ad3e7ebc,9071 UYU 210.00 MONTEVIDEO/MERPAGO*BANCADEQUINIEVIS3 -> Santander UYU/personal/(sin categoria),9071||210.00||MONTEVIDEO/MERPAGO*BANCADEQUINIEVIS3||2026-09-25T20:55:57,2026-09-26T05:06:31+00:00
