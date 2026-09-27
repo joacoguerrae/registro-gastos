@@ -219,3 +219,11 @@ Qué quedó, medido:
 Lo que la ejecución **corrigió de esta misma auditoría**: el caso testigo de SM6 era falso, SB1 subestimaba el alcance (14 puntos, no 3), SM4 sobreestimaba el problema (2 claves repetidas reales, no 35), y QW3 tal como estaba escrito era dañino. Queda anotado en cada hallazgo.
 
 **Deuda que la Fase 0 deja anotada:** `merge_y_validar.py --migracion` sale exit 1 desde antes de esta fase, por `2e.presupuesto` (21 meses contra los 19 "congelados"). No afecta al pipeline, que nunca corre `--migracion`, pero es el mundo congelado pudriéndose: va a la Fase 6.
+
+### Incidente post-cierre: el sync estuvo caído 4 días (21/9 → 25/9)
+
+Un test smoke de la propia Fase 0 (`test_no_se_siembra_el_gate_desde_un_ledger_roto`) asumía que `ledger_stats.json` no existía. Era cierto al escribirlo; dejó de serlo esa misma noche, cuando Actions sembró el archivo y lo commiteó (`da91709`). Desde la corrida siguiente, `sync.yml` frenaba en el paso de tests y no commiteaba: **9 corridas en rojo seguidas**, del 21/9 05:03 al 25/9 05:03 UTC. Se detectó recién al pushear otro cambio el 25/9, y se arregló en `87def19` (el test borra el archivo a propósito y exige que el fallo venga de `1.conteo_origen`).
+
+- **Datos:** no se perdió nada. `fetch_mails` arranca en `ultima_fecha_mail − OVERLAP_DAYS`, y la corrida de recuperación bajó desde el 18/9 (15 mails nuevos).
+- **Lo que prueba:** es SA5/D5 en vivo. El pipeline se cortó bien —no commiteó datos con un test rojo— pero **nadie se enteró en 4 días**: `sync.yml` no tiene ningún paso `if: failure()`, así que un paso rojo corta el job antes de cualquier aviso propio (ni Issue). El único aviso fue el mail genérico "Run failed" de GitHub, que es justo el canal que D5 dice que no se mira. Refuerza el mail inmediato por falla técnica ≥3 corridas de la 4.2: acá habrían sido 3 avisos el primer día.
+- **Lección para el agente:** un test que corre dentro del pipeline de datos no puede depender de archivos que ese mismo pipeline escribe. Y nunca `pytest ... | tail && git commit`: el pipe se come el exit code de pytest.
