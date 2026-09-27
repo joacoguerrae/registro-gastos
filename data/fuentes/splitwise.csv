@@ -1,0 +1,33 @@
+id,fecha,mes,tipo,monto,moneda,monto_uyu,cuenta,cuenta_destino,categoria,subcategoria,comercio,descripcion,ambito,origen,estado,en_analisis,fuente_id
+15f8b8044162,2026-07-06,2026-07,gasto,733.40,UYU,733.40,Deudas,,Comer afuera / Delivery,General,,Asado,split,splitwise,confirmado,1,sw:4556085652
+36d2419551ff,2026-07-10,2026-07,transferencia,1156.50,UYU,1156.50,Deudas,Deudas,,,,Reorganizacion interna Splitwise (deuda Sanky personal -> grupo),interno,splitwise,confirmado,0,sw:4561539134
+ccd3203d6b75,2026-07-10,2026-07,gasto,407.67,UYU,407.67,Deudas,,Regalos,Alimentos,,Regalo papa,split,splitwise,confirmado,1,sw:4562555128
+c0864e169a0e,2026-07-12,2026-07,gasto,466.66,UYU,466.66,Deudas,,Comer afuera / Delivery,Restaurantes,,Pizza,split,splitwise,confirmado,1,sw:4566353446
+1388d186e49f,2026-07-13,2026-07,gasto,708.29,UYU,708.29,Deudas,,Regalos,General,,Carpintero,split,splitwise,confirmado,1,sw:4568645643
+e23310c4e1d4,2026-07-15,2026-07,transferencia,328.80,USD,,Deudas,Santander USD,,,,Pago Splitwise recibido de Lucia (repago de deuda) -> entrada a Santander USD,interno,splitwise,confirmado,0,sw:4571314074
+44a5278e1a4f,2026-07-21,2026-07,gasto,69.40,UYU,69.40,Deudas,,Salidas & ocio,General,,Limones pan y paltas de la final,split,splitwise,confirmado,1,sw:4582623165
+584b95697a62,2026-07-21,2026-07,gasto,50.00,UYU,50.00,Deudas,,Salidas & ocio,General,,Cocas final,split,splitwise,confirmado,1,sw:4582667031
+ba48b8a9ce04,2026-07-21,2026-07,gasto,1166.67,UYU,1166.67,Deudas,,Salidas & ocio,General,,Final,split,splitwise,confirmado,1,sw:4582618553
+391a6feaa80d,2026-07-29,2026-07,transferencia,25.26,USD,,Deudas,Santander USD,,,,Pago Splitwise de Rodrigo: Payment,interno,splitwise,confirmado,0,sw:4597102644
+f9b2cc70c9d0,2026-07-31,2026-07,gasto,631.57,UYU,631.57,Deudas,,Comer afuera / Delivery,General,,Asado Richarlyson,split,splitwise,confirmado,1,sw:4600142240
+92c5ab1c9e11,2026-08-03,2026-08,transferencia,836.00,UYU,836.00,Deudas,Santander UYU,,,,Pago Splitwise de Rodrigo: Payment,interno,splitwise,confirmado,0,sw:4602746971
+986ecbd85abd,2026-08-06,2026-08,gasto,40.00,UYU,40.00,Deudas,,Otros,General,,ManoJa,split,splitwise,confirmado,1,sw:4612479685
+ecb85e071e9d,2026-08-17,2026-08,gasto,1600.00,UYU,1600.00,Deudas,,Salidas & ocio,General,,Uruguay Bahamas,split,splitwise,confirmado,1,sw:4633962990
+5385296c5cef,2026-08-19,2026-08,gasto,848.15,UYU,848.15,Deudas,,Salidas & ocio,General,,Mundial,split,splitwise,confirmado,1,sw:4639039719
+696989b89989,2026-08-19,2026-08,gasto,220.00,UYU,220.00,Deudas,,Super,Licor,,Leña carbon bebidas,split,splitwise,confirmado,1,sw:4639832223
+b01dab2add12,2026-08-20,2026-08,gasto,570.80,UYU,570.80,Deudas,,Comer afuera / Delivery,General,,Asado velsen,split,splitwise,confirmado,1,sw:4640488204
+bf070f3a4551,2026-08-22,2026-08,gasto,290.00,UYU,290.00,Deudas,,Comer afuera / Delivery,General,,Fernet y seguimos II,split,splitwise,confirmado,1,sw:4643495416
+002f046886c4,2026-08-25,2026-08,gasto,496.00,UYU,496.00,Deudas,,Comer afuera / Delivery,General,,Pikda,split,splitwise,confirmado,1,sw:4650210938
+cafd98baabf0,2026-08-25,2026-08,gasto,585.00,UYU,585.00,Deudas,,Comer afuera / Delivery,General,,Piza,split,splitwise,confirmado,1,sw:4650207814
+e5f730c37b97,2026-08-25,2026-08,gasto,130.00,UYU,130.00,Deudas,,Comer afuera / Delivery,General,,Brava,split,splitwise,confirmado,1,sw:4650233163
+a453c4b8aaab,2026-08-26,2026-08,gasto,252.00,UYU,252.00,Deudas,,Comer afuera / Delivery,General,,Piksa2,split,splitwise,confirmado,1,sw:4651702720
+e52359d64f34,2026-08-29,2026-08,gasto,1866.67,UYU,1866.67,Deudas,,Salidas & ocio,General,,Uruguay PuertoRico,split,splitwise,confirmado,1,sw:4657011132
+177b686da6b1,2026-09-04,2026-09,gasto,1917.85,UYU,1917.85,Deudas,,Comer afuera / Delivery,Licor,,El mejor bar de mi vida,split,splitwise,confirmado,1,sw:x5d5a6ff473
+279785782547,2026-09-12,2026-09,gasto,347.22,UYU,347.22,Deudas,,Viajes,General,,Super sabado,split,splitwise,confirmado,1,sw:xbe658f7ecf
+f0880073d994,2026-09-12,2026-09,gasto,30.89,USD,1245.79,Deudas,,Viajes,Hotel,,Alojamiento,split,splitwise,confirmado,1,sw:x6d04ad95ee
+0148595a514b,2026-09-13,2026-09,gasto,50.00,UYU,50.00,Deudas,,Viajes,General,,El dorado,split,splitwise,confirmado,1,sw:xfbd5ad9473
+320832a88219,2026-09-13,2026-09,gasto,200.00,UYU,200.00,Deudas,,Viajes,General,,Fernet botellas,split,splitwise,confirmado,1,sw:x3a795f68ef
+35ee5e1e8033,2026-09-13,2026-09,gasto,3.89,USD,156.88,Deudas,,Viajes,General,,Posada,split,splitwise,confirmado,1,sw:x338c370b7b
+4c37a87ed374,2026-09-13,2026-09,gasto,360.55,UYU,360.55,Deudas,,Viajes,General,,Super,split,splitwise,confirmado,1,sw:xd630546ab6
+5e0926839449,2026-09-13,2026-09,gasto,633.33,UYU,633.33,Deudas,,Viajes,General,,Fernets guasones,split,splitwise,confirmado,1,sw:xfeaf809835
+34bfe7aa4b90,2026-09-14,2026-09,gasto,14.33,UYU,14.33,Deudas,,Viajes,General,,Bidon awa,split,splitwise,confirmado,1,sw:x10e201200b

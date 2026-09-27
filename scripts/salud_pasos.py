@@ -46,6 +46,7 @@ UMBRAL = 3
 # esto, "actualizar_sheets fallo" no le dice a nadie que Looker quedo viejo.
 QUE_IMPLICA = {
     "sync_splitwise": "el pipeline sigue sin Splitwise: los gastos compartidos no se actualizan",
+    "leer_carga_manual": "lo nuevo de la planilla \"Carga manual\" no entra: el sistema sigue con la ultima lectura (data/fuentes/carga_manual.csv)",
     "cierre_casa": "la posicion de casa queda con el valor previo (el dashboard la muestra vieja)",
     "generar_dashboard_html": "out/dashboard.html queda con los datos de la corrida anterior",
     "actualizar_sheets": "los Google Sheets y Looker quedan con los datos de la corrida anterior",

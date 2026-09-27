@@ -64,22 +64,23 @@ def test_no_se_siembra_el_gate_desde_un_ledger_roto(base, correr):
 
 
 def _primera_no_regenerable(rows, **filtros):
-    """merge() reconstruye 1money y planilla_casa desde data/staging/: ensuciar
-    una de esas filas se pisa solo y el test pasaria por la razon equivocada."""
+    """Una fila MAIL: es la unica que merge() conserva del ledger previo tal cual.
+    1money/planilla_casa se reconstruyen desde data/staging/, y desde la Fase
+    1.1 manual/estado_cuenta/splitwise desde data/fuentes/ (manda la fuente):
+    ensuciar una de esas en el ledger se cura solo, y el test pasaria por la
+    razon equivocada -- mejor dicho, fallaria, que es como se detecto."""
     for r in rows:
-        if r["origen"] in ("mail", "manual", "estado_cuenta", "splitwise") \
-                and all(r[k] == v for k, v in filtros.items()):
+        if r["origen"] == "mail" and all(r[k] == v for k, v in filtros.items()):
             return r
-    pytest.fail(f"no hay fila no-regenerable con {filtros}")
+    pytest.fail(f"no hay fila mail con {filtros}")
 
 
 def test_ledger_con_id_duplicado_no_valida(base, correr):
     path = base / "data" / "ledger.csv"
     rows = filas(path)
-    a = _primera_no_regenerable(rows, origen="manual")
+    a = _primera_no_regenerable(rows)
     dup = dict(a)
-    dup["id"] = _primera_no_regenerable([r for r in rows if r["id"] != a["id"]],
-                                        origen="manual")["id"]
+    dup["id"] = _primera_no_regenerable([r for r in rows if r["id"] != a["id"]])["id"]
     escribir_ledger(path, rows + [dup])
     p = correr("merge_y_validar.py", espera_exito=False)
     assert p.returncode != 0

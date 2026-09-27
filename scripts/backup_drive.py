@@ -98,6 +98,9 @@ EXT_SNIFF = {".json", ".csv", ".txt", ".md"}
 OBLIGATORIOS = [
     "data/ledger.csv", "data/resoluciones.csv", "data/pendientes.csv",
     "data/participaciones.csv", "data/aportes_lu.csv",
+    # Fase 1.1: la fuente de las filas que no se regeneran desde ningun lado.
+    "data/fuentes/manual.csv", "data/fuentes/estado_cuenta.csv",
+    "data/fuentes/splitwise.csv", "data/fuentes/carga_manual.csv",
     "config/cuentas.csv", "config/categorias.csv",
 ]
 MIN_LEDGER_BYTES = 400 * 1024      # hoy 792 KB
@@ -120,8 +123,10 @@ El Explorador de Windows NO abre zips AES: usa 7-Zip (7-zip.org, gratis).
    Si imprime OK en todas las lineas y sale con codigo 0, los datos estan sanos.
 
 Lo irrecuperable que hay adentro: data/resoluciones.csv (las decisiones tomadas a
-mano, una por una), las filas del ledger sin otra fuente (estado_cuenta / manual /
-splitwise) y data/raw/ (el export unico de 1Money y la planilla de casa).
+mano, una por una), data/fuentes/ (las filas del ledger que no se regeneran desde
+ningun lado: manual / estado_cuenta / splitwise, y la copia de la planilla "Carga
+manual") y data/raw/ (el export unico de 1Money y la planilla de casa). Si el
+ledger no valida: python scripts\\reconstruir_ledger.py --forzar lo arma de nuevo.
 
 OJO: el cifrado AES de WinZip NO cifra los NOMBRES de archivo. Quien tenga el zip
 ve que existe data/resoluciones.csv, pero no puede leer su contenido sin la clave.

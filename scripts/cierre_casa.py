@@ -8,7 +8,10 @@ Calcula para un mes:
   - Aportes de Joaco: transferencias del ledger con cuenta_destino=Cuenta Casa
     + gastos ambito=casa pagados desde cuentas que no son de la casa
     (aporte implicito, ej. seguro BSE en la Platinum).
-  - Aportes de Lu: data/aportes_lu.csv (input manual del cierre).
+  - Aportes de Lu: data/aportes_lu.csv (transferencias que informa Joaco o
+    carga `gastos.py aporte`) + los de la planilla "Carga manual"
+    (data/staging/aportes_lu_carga.csv) + los gastos de casa pagados desde
+    'Lu tarjeta' / 'Lu efectivo' (derivados, Fase 1.3).
   - Posicion nueva = posicion anterior + aportes - parte. La posicion anterior
     sale de la ultima fila de data/cierre_casa.csv, o de la semilla
     config/posicion_casa.json si el archivo esta vacio.
@@ -50,7 +53,13 @@ APORTES_COLS = ["mes", "fecha", "monto", "nota"]
 # ellas a Cuenta Casa) no es aporte nuevo de Joaco. Mercado Pago fue la cuenta
 # casa temporal (jun-jul 2026): el retorno del fondo a Santander es un
 # movimiento interno, no un aporte (ver handler transferencia_mp).
+# La Santander Mastercard se dio de baja el 27/9/2026 y queda aca a proposito:
+# sacarla cambiaria el calculo de los meses ya cerrados en que se uso.
 CUENTAS_CASA = {"Cuenta Casa", "Santander Mastercard", "Mercado Pago"}
+# Plata de Lu: un gasto de casa pagado desde aca es aporte de ella, no de Joaco.
+CUENTAS_LU = {"Lu tarjeta", "Lu efectivo"}
+# Aportes de Lu que vienen de la planilla "Carga manual" (leer_carga_manual.py).
+APORTES_LU_CARGA = P("data", "staging", "aportes_lu_carga.csv")
 MESES_PROMEDIO = 3
 
 
@@ -193,8 +202,14 @@ def cerrar(mes):
               and r["cuenta_destino"] == "Cuenta Casa"
               and r["cuenta"] not in CUENTAS_CASA   # mover el fondo de lugar no es aporte
               and r["id"] not in excluidos]
+    # Gastos de casa que pago Lu (su tarjeta o efectivo): son aporte de ELLA
+    # (Fase 1.3). Antes cada uno llevaba tres artefactos a mano -- la fila, una
+    # exclusion en cierre_exclusiones.csv para que no contara como aporte
+    # implicito de Joaco, y el total del mes en aportes_lu.csv.
+    pagos_lu = [r for r in gastos if r["cuenta"] in CUENTAS_LU and r["id"] not in excluidos]
     implicitos = [r for r in gastos
-                  if r["cuenta"] not in CUENTAS_CASA and r["id"] not in excluidos]
+                  if r["cuenta"] not in CUENTAS_CASA and r["cuenta"] not in CUENTAS_LU
+                  and r["id"] not in excluidos]
     # Retiros personales del fondo: gastos NO-casa o prestamos a Deudas pagados
     # desde cuentas de la casa -> restan del aporte de Joaco.
     retiros = [r for r in ledger
@@ -207,7 +222,9 @@ def cerrar(mes):
                           + sum(monto_uyu(r) for r in implicitos)
                           - sum(monto_uyu(r) for r in retiros), 2)
     lu_mes = [r for r in aportes_lu_rows if r["mes"] == mes]
-    aportes_lu = round(sum(float(r["monto"]) for r in lu_mes), 2)
+    lu_carga = [r for r in leer_csv(APORTES_LU_CARGA, APORTES_COLS) if r["mes"] == mes]
+    aportes_lu = round(sum(float(r["monto"]) for r in lu_mes + lu_carga)
+                       + sum(monto_uyu(r) for r in pagos_lu), 2)
 
     # ---------------------------------------------------------- posicion nueva
     pos_lu = round(pos_lu_prev + aportes_lu - parte_lu, 2)
@@ -252,9 +269,17 @@ def cerrar(mes):
     for r in implicitos:
         print(f"  implicito     {r['fecha']} {fmt(monto_uyu(r)):>12s}  "
               f"{r['cuenta']}  {r['descripcion']}")
-    print(f"aportes Lu: {fmt(aportes_lu)}" +
-          (f" ({len(lu_mes)} filas de aportes_lu.csv)" if lu_mes
-           else "  (sin filas en data/aportes_lu.csv para el mes)"))
+    print(f"aportes Lu: {fmt(aportes_lu)}"
+          + ("" if lu_mes or lu_carga or pagos_lu else
+             "  (sin aportes cargados para el mes: ni aportes_lu.csv, ni la planilla, "
+             "ni gastos pagados por ella)"))
+    for r in lu_mes:
+        print(f"  aportes_lu.csv {r['fecha'] or '(sin fecha)':10s} {fmt(float(r['monto'])):>12s}  {r['nota'][:60]}")
+    for r in lu_carga:
+        print(f"  planilla       {r['fecha'] or '(sin fecha)':10s} {fmt(float(r['monto'])):>12s}  {r['nota'][:60]}")
+    for r in pagos_lu:
+        print(f"  pagado por Lu  {r['fecha']:10s} {fmt(monto_uyu(r)):>12s}  "
+              f"{r['cuenta']}  {(r['descripcion'] or r['comercio'])[:50]}")
     print(f"POSICION {mes}: Lu {fmt(pos_lu)} / Joaco {fmt(pos_joaco)}  (positivo = a favor)")
     if notas:
         print("notas: " + "; ".join(notas))

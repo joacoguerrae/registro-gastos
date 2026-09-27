@@ -30,6 +30,8 @@ import os
 import re
 from collections import Counter, defaultdict
 
+import fuentes
+
 BASE = os.environ.get("GASTOS_BASE") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 P = lambda *a: os.path.join(BASE, *a)
 
@@ -883,6 +885,14 @@ def main():
         elif res["campo"] in COLUMNS:
             overrides[res["id_ledger"]][res["campo"]] = res["valor"]
 
+    # Bajas registradas (data/fuentes/borrados.csv, via `gastos.py borrar`): un
+    # mail borrado se vuelve a parsear en cada --reprocesar. Se descarta aca para
+    # que no vuelvan ni su fila ni sus pendientes (merge() tambien lo filtra).
+    borrados = fuentes.leer_borrados()
+    nuevos = [r for r in nuevos if r["id"] not in borrados]
+    pend_nuevos = [p for p in pend_nuevos if p["id_ledger"] not in borrados]
+    ledger = [r for r in ledger if r["id"] not in borrados]
+
     ledger_final = ledger + nuevos
     n_overrides = 0
     for r in ledger_final:
@@ -902,7 +912,8 @@ def main():
     ids_con_pendiente = {p["id_ledger"] for p in pendientes if not p["resuelto"]}
     ids_con_pendiente |= {p["id_ledger"] for p in pend_nuevos}
     for r in ledger_final:
-        if r["origen"] in ("mail", "manual", "splitwise") and r["estado"] != "conciliado":
+        if r["origen"] in ("mail", "manual", "splitwise", "carga_manual") \
+                and r["estado"] != "conciliado":
             deseado = "pendiente" if r["id"] in ids_con_pendiente else "confirmado"
             if r["estado"] != deseado:
                 r["estado"] = deseado

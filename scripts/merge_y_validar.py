@@ -44,6 +44,8 @@ from collections import Counter, defaultdict
 
 import openpyxl
 
+import fuentes
+
 warnings.filterwarnings("ignore")
 
 BASE = os.environ.get("GASTOS_BASE") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -51,6 +53,10 @@ P = lambda *a: os.path.join(BASE, *a)
 
 STAGING_1MONEY = P("data", "staging", "ledger_1money.csv")
 STAGING_CASA = P("data", "staging", "ledger_casa.csv")
+STAGING_CARGA = P("data", "staging", "ledger_carga_manual.csv")
+# Origenes que se REGENERAN enteros desde staging en cada corrida: sus filas del
+# ledger previo se descartan.
+ORIGENES_STAGING = ("1money", "planilla_casa", "carga_manual")
 OUT_LEDGER = P("data", "ledger.csv")
 OUT_RESUMEN = P("out", "resumen_mensual.csv")
 OUT_MD = P("docs", "validacion-migracion.md")
@@ -94,16 +100,13 @@ DESVIOS_ESPERADOS = {"2c.doble_conteo"}
 # no quedan) no tienen vuelta. Ver chequear_conteo_por_origen().
 ORIGENES_NO_REGENERABLES = ("mail", "estado_cuenta", "manual", "splitwise")
 
-# Transferencias sin cuenta_destino que YA existen y no se pueden arreglar desde
-# una rama de codigo (las ramas no tocan data/). Son los dos avisos duplicados
-# del pago Proyecto PAS USD 530,47 del 1/7/2026: el pago real es e89f07151e87.
-# En_analisis=0 NO alcanza -- conciliar_saldos.py:183 no filtra en_analisis, asi
-# que sin destino la plata sale de Santander USD y no entra a ningun lado.
-# VACIAR esta lista cuando la Fase 1 borre las filas (docs/auditoria-2026-09.md 1.2).
-TRANSFERENCIAS_SIN_DESTINO_CONOCIDAS = {
-    "cc9d9b3463de": "aviso duplicado del pago Proyecto PAS 1/7/2026; el real es e89f07151e87",
-    "e2a0018c20eb": "idem cc9d9b3463de (segundo aviso del mismo pago)",
-}
+# Transferencias sin cuenta_destino toleradas (legado que no se puede arreglar
+# en el momento). En_analisis=0 NO alcanza -- conciliar_saldos.py no filtra
+# en_analisis, asi que sin destino la plata sale de su cuenta y no entra a
+# ningun lado. Vaciada el 27/9/2026: las dos que habia (avisos duplicados del
+# pago Proyecto PAS USD 530,47 del 1/7, cc9d9b3463de y e2a0018c20eb) se dieron
+# de baja con `gastos.py borrar` -- ver data/fuentes/borrados.csv.
+TRANSFERENCIAS_SIN_DESTINO_CONOCIDAS = {}
 
 results = []   # (seccion, estado, texto) para el .md
 
@@ -123,14 +126,42 @@ def merge():
             rd = csv.DictReader(f)
             assert rd.fieldnames == COLUMNS, f"columnas de {path} != esquema: {rd.fieldnames}"
             rows.extend(list(rd))
-    # PRESERVAR las filas que no vienen de los staging de migracion (origen=mail,
-    # splitwise, mp, manual) ya presentes en el ledger: el merge las re-incorpora
-    # tal cual en cada refusion (si no, se borraria el backfill de Fase 2).
+    # Planilla "Carga manual" (Fase 1.3): la arma leer_carga_manual.py desde el
+    # snapshot commiteado data/fuentes/carga_manual.csv. Es staging como los
+    # otros dos: se regenera entero en cada corrida.
+    if os.path.exists(STAGING_CARGA):
+        with open(STAGING_CARGA, encoding="utf-8", newline="") as f:
+            rd = csv.DictReader(f)
+            assert rd.fieldnames == COLUMNS, f"columnas de {STAGING_CARGA} != esquema: {rd.fieldnames}"
+            rows.extend(list(rd))
+
+    previas = []
     if os.path.exists(OUT_LEDGER):
         with open(OUT_LEDGER, encoding="utf-8", newline="") as f:
             rd = csv.DictReader(f)
             assert rd.fieldnames == COLUMNS, f"columnas de {OUT_LEDGER} != esquema: {rd.fieldnames}"
-            rows.extend(r for r in rd if r["origen"] not in ("1money", "planilla_casa"))
+            previas = [r for r in rd if r["origen"] not in ORIGENES_STAGING]
+    borrados = fuentes.leer_borrados()
+
+    # Filas mail (y cualquier origen sin fuente ni staging): se conservan del
+    # ledger previo. Las mail se regeneran desde data/inbox_raw/ con
+    # `procesar_mails.py --reprocesar` (ver scripts/reconstruir_ledger.py).
+    rows.extend(r for r in previas
+                if r["origen"] not in fuentes.ORIGENES_CON_FUENTE and r["id"] not in borrados)
+    # manual / estado_cuenta / splitwise: desde data/fuentes/ (Fase 1.1). Antes
+    # se releian de este mismo archivo, y un ledger truncado las perdia para
+    # siempre (SA1). Ver las reglas en scripts/fuentes.py.
+    desde_fuentes, informe = fuentes.sincronizar_fuentes(
+        [r for r in previas if r["origen"] in fuentes.ORIGENES_CON_FUENTE], borrados)
+    rows.extend(desde_fuentes)
+    # `estado` de las filas de la planilla: lo recalcula la bandeja
+    # (procesar_mails) al resolver un pendiente; el staging lo trae de la ultima
+    # lectura. Manda el del ledger, igual que en las fuentes.
+    estado_prev = {r["id"]: r["estado"] for r in previas}
+    for r in rows:
+        if r["origen"] == "carga_manual" and r["id"] in estado_prev:
+            r["estado"] = estado_prev[r["id"]]
+    informe["conciliados_restaurados"] = fuentes.aplicar_conciliados(rows)
     rows.sort(key=lambda r: (r["fecha"], r["id"]))
 
     # Override documentado: meses sin cobertura de planilla usan el volcado 1Money.
@@ -167,7 +198,7 @@ def merge():
         w = csv.DictWriter(f, lineterminator="\n", fieldnames=COLUMNS)
         w.writeheader()
         w.writerows(rows)
-    return rows, dupes
+    return rows, dupes, informe, borrados
 
 
 # ============================================================
@@ -354,29 +385,64 @@ def guardar_stats(datos):
     return True
 
 
-def chequear_conteo_por_origen(ledger, aceptar_bajas):
+def reportar_fuentes(informe, borrados):
+    """Lo que hizo merge() con data/fuentes/ (Fase 1.1). Nunca frena: adoptar y
+    restaurar son justamente los casos que la fuente existe para resolver."""
+    partes, avisos = [], []
+    n_conc = informe.pop("conciliados_restaurados", 0)
+    if n_conc:
+        avisos.append(f"marca `conciliado` restaurada en {n_conc} fila(s) mail "
+                      "desde data/fuentes/conciliados.csv")
+    for o, inf in informe.items():
+        partes.append(f"{o}={inf['total']}")
+        if inf["adoptadas"]:
+            avisos.append(f"{o}: {len(inf['adoptadas'])} fila(s) nueva(s) del ledger "
+                          f"adoptada(s) en data/fuentes/{o}.csv")
+        if inf["restauradas"]:
+            avisos.append(f"{o}: {len(inf['restauradas'])} fila(s) que faltaban en el "
+                          f"ledger RESTAURADA(S) desde la fuente ({', '.join(inf['restauradas'][:5])}"
+                          f"{'...' if len(inf['restauradas']) > 5 else ''}). Si las borraste "
+                          "a proposito, eso se hace con `scripts/gastos.py borrar`")
+        if inf["estado"]:
+            avisos.append(f"{o}: `estado` actualizado en {inf['estado']} fila(s) de la fuente")
+    txt = "data/fuentes/: " + ", ".join(partes) + f"; borrados registrados: {len(borrados)}"
+    log("1.fuentes", "OK", txt + ("" if not avisos else " -- " + " | ".join(avisos)))
+
+
+def chequear_conteo_por_origen(ledger, aceptar_bajas, borrados=None):
     """Gate anti-perdida silenciosa del ledger (auditoria 2026-09 SA1).
 
-    merge() reconstruye las filas de migracion desde data/staging/, pero las de
-    mail/estado_cuenta/manual/splitwise las RELEE de su propia salida
-    (:103-107). Si data/ledger.csv falta o se trunca, el merge devuelve un
-    ledger sin ellas y todo lo demas valida en verde: medido el 20/9, borrar
-    data/ledger.csv dejaba 4.525 filas y "validacion OK" con exit 0.
-    Desaparecian 436 filas en silencio y 150 de ellas no se regeneran desde
-    ninguna fuente.
+    Historia: hasta la Fase 1, merge() RELEIA las filas mail/estado_cuenta/
+    manual/splitwise de su propia salida. Si data/ledger.csv faltaba o se
+    truncaba, el merge devolvia un ledger sin ellas y todo validaba en verde
+    (medido el 20/9: borrar el ledger dejaba 4.525 filas y exit 0). Desde la
+    Fase 1.1, manual/estado_cuenta/splitwise se restauran solas desde
+    data/fuentes/; las mail no (se regeneran con `procesar_mails --reprocesar`,
+    ver scripts/reconstruir_ledger.py). Este gate sigue siendo la red de las dos
+    cosas: una fuente que se pierde y un ledger sin mails.
 
     La defensa es acordarse de cuantas habia: si un origen no regenerable baja,
-    esto sale DESVIO -> exit != 0 -> el workflow corta ANTES del commit
-    (sync.yml:96-102) y el ledger mutilado nunca llega a master.
-    """
-    actual = dict(sorted(Counter(r["origen"] for r in ledger).items()))
-    datos = {"por_origen": actual, "total": len(ledger)}
-    resumen = ", ".join(f"{o}={actual.get(o, 0)}" for o in ORIGENES_NO_REGENERABLES)
+    esto sale DESVIO -> exit != 0 -> el workflow corta ANTES del commit.
 
-    previo = None
+    Los borrados registrados (data/fuentes/borrados.csv, via `gastos.py
+    borrar`) NO son bajas: se compara filas + borrados, que nunca decrece.
+    """
+    borr = fuentes.borrados_por_origen(borrados or {})
+    actual = dict(sorted(Counter(r["origen"] for r in ledger).items()))
+    datos = {"por_origen": actual, "total": len(ledger),
+             "borrados": dict(sorted((o, n) for o, n in borr.items()
+                                     if o in ORIGENES_NO_REGENERABLES))}
+    resumen = ", ".join(f"{o}={actual.get(o, 0)}" for o in ORIGENES_NO_REGENERABLES)
+    if datos["borrados"]:
+        resumen += " (+ borrados registrados: " + ", ".join(
+            f"{o}={n}" for o, n in datos["borrados"].items()) + ")"
+
+    previo, borr_prev = None, {}
     if os.path.exists(LEDGER_STATS):
         with open(LEDGER_STATS, encoding="utf-8") as f:
-            previo = json.load(f).get("por_origen", {})
+            crudo = json.load(f)
+        previo = crudo.get("por_origen", {})
+        borr_prev = crudo.get("borrados", {})
 
     if not previo:
         # Bootstrap: el invariante tiene que poder nacer sin commitear datos
@@ -391,15 +457,16 @@ def chequear_conteo_por_origen(ledger, aceptar_bajas):
         # gate se desarma borrando el archivo: la corrida siguiente lo siembra
         # con lo que haya (medido el 20/9: con ledger.csv borrado sembraba
         # mail=0/manual=0 y pasaba en verde) y la perdida queda bendecida como
-        # la nueva referencia. Un ledger real SIEMPRE tiene filas de mail.
-        if not any(actual.get(o, 0) for o in ORIGENES_NO_REGENERABLES):
+        # la nueva referencia. Un ledger real SIEMPRE tiene filas de mail, y
+        # desde la Fase 1.1 son las unicas que las fuentes no restauran.
+        if not actual.get("mail", 0):
             log("1.conteo_origen", "DESVIO",
                 f"me pediste sembrar data/staging/ledger_stats.json desde un ledger de "
-                f"{len(ledger)} filas SIN NINGUNA fila de {list(ORIGENES_NO_REGENERABLES)} "
-                f"({resumen}). Eso no es un ledger sano: son las filas que no se "
-                "regeneran desde ninguna fuente. QUE HACER: recupera el ledger "
-                "(`git checkout -- data/ledger.csv`) y volve a correr. Si de verdad "
-                "queres sembrar asi, corre con --aceptar-bajas")
+                f"{len(ledger)} filas SIN NINGUNA fila de mail ({resumen}). Eso no es "
+                "un ledger sano. QUE HACER: reconstruilo con "
+                "`scripts/reconstruir_ledger.py` (o `git checkout -- data/ledger.csv`) "
+                "y volve a correr. Si de verdad queres sembrar asi, corre con "
+                "--aceptar-bajas")
             if not aceptar_bajas:
                 return
         guardar_stats(datos)
@@ -409,21 +476,25 @@ def chequear_conteo_por_origen(ledger, aceptar_bajas):
             "alguno de esos baje es DESVIO")
         return
 
-    bajas = [(o, previo.get(o, 0), actual.get(o, 0))
+    def total(cuenta, b, o):
+        return cuenta.get(o, 0) + b.get(o, 0)
+
+    bajas = [(o, total(previo, borr_prev, o), total(actual, borr, o))
              for o in ORIGENES_NO_REGENERABLES
-             if actual.get(o, 0) < previo.get(o, 0)]
+             if total(actual, borr, o) < total(previo, borr_prev, o)]
     detalle = "; ".join(f"{o}: {p} -> {a} (faltan {p - a} filas)" for o, p, a in bajas)
 
     if bajas and not aceptar_bajas:
         log("1.conteo_origen", "DESVIO",
             f"bajo el conteo de origenes que no se pueden regenerar: {detalle}"
-            ". QUE HACER: (a) si la baja fue deliberada (borraste filas en una "
-            "revision), volve a correr con --aceptar-bajas: el conteo nuevo queda "
-            "como referencia. (b) si no la esperabas, data/ledger.csv se trunco o "
-            "se corrompio -- merge() conserva esas filas releyendo el ledger "
-            "anterior (no hay otra fuente), asi que lo que falta ahi se pierde "
-            "para siempre. Recuperalo con `git checkout -- data/ledger.csv`, "
-            "volve a correr, y NO commitees hasta que esto vuelva a dar OK")
+            " (filas + borrados registrados). QUE HACER: (a) si faltan filas mail, "
+            "el ledger se trunco: corre `scripts/reconstruir_ledger.py`, que las "
+            "regenera desde data/inbox_raw/. (b) si faltan manual/estado_cuenta/"
+            "splitwise, se perdio o se edito una fuente de data/fuentes/: "
+            "recuperala con `git checkout -- data/fuentes/`. (c) para borrar filas "
+            "a proposito, usa `scripts/gastos.py borrar`, que las registra y no "
+            "dispara esto. NO commitees hasta que vuelva a dar OK. Solo si la baja "
+            "fue deliberada y no hay otra via: --aceptar-bajas")
         return
 
     cambio = guardar_stats(datos)
@@ -621,7 +692,7 @@ def main():
     os.makedirs(P("out"), exist_ok=True)
 
     # ---------- 1. merge ----------
-    ledger, dupes = merge()
+    ledger, dupes, informe, borrados = merge()
     n_total = len(ledger)
     fechas = [r["fecha"] for r in ledger if r["fecha"]]
     rango = (min(fechas), max(fechas))
@@ -630,12 +701,13 @@ def main():
     log("1.merge", "OK" if not dupes else "FALLO",
         f"{n_total} filas ({dict(por_origen)}), tipos {dict(por_tipo)}, "
         f"rango {rango[0]} -> {rango[1]}, ids duplicados: {dupes or 'ninguno'}")
+    reportar_fuentes(informe, borrados)
 
     # Va JUSTO despues del merge y antes de todo lo demas: merge() ya reescribio
     # data/ledger.csv, asi que el archivo de conteos tiene que quedar describiendo
     # exactamente ese ledger. Si hay baja no escribe nada -- la referencia es la
     # memoria de lo que TENIA que estar y debe sobrevivir a la corrida mala.
-    chequear_conteo_por_origen(ledger, args.aceptar_bajas)
+    chequear_conteo_por_origen(ledger, args.aceptar_bajas, borrados)
 
     # NaN / vacios donde no corresponde
     permit_vacio_siempre = {"cuenta_destino", "comercio", "descripcion", "subcategoria"}

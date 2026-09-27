@@ -15,6 +15,8 @@ rem de tarjeta llega el mismo dia no matchea y genera un pendiente flotante que
 rem la corrida siguiente duplica sobre el id del cargo. Queda ANTES de
 rem merge_y_validar para que la validacion cubra tambien lo que inserto.
 C:\Users\joaco\anaconda3\python.exe scripts\salud_pasos.py correr sync_splitwise -- C:\Users\joaco\anaconda3\python.exe scripts\sync_splitwise.py
+rem planilla "Carga manual" (auditoria 2026-09 Fase 1.3): no critica, igual que en Actions
+C:\Users\joaco\anaconda3\python.exe scripts\salud_pasos.py correr leer_carga_manual -- C:\Users\joaco\anaconda3\python.exe scripts\leer_carga_manual.py
 C:\Users\joaco\anaconda3\python.exe scripts\merge_y_validar.py || exit /b 1
 rem posicion de casa: deterministica (ledger + ingresos.csv + aportes_lu.csv) -> refresca la
 rem posicion del mes anterior y el actual en cada corrida.

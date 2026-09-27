@@ -9,7 +9,7 @@ Método: tres relevamientos independientes del código (pipeline, ceremonias, in
 | Fase | Qué | Estado |
 |---|---|---|
 | 0 | Red de seguridad: tests en CI, invariantes nuevos, respaldo, quick wins | **CERRADA 20/9/2026**; respaldo activo desde el 27/9 |
-| 1 | Fuente de verdad para lo manual: `gastos.py`, fuentes reproducibles, planilla de carga | pendiente |
+| 1 | Fuente de verdad para lo manual: `gastos.py`, fuentes reproducibles, planilla de carga | **CERRADA 27/9/2026** (ver cierre al final) |
 | 2 | Conciliación que entiende splits e importes finales + `cierre.py` de un comando | pendiente |
 | 3 | Reglas con lint, gastos fijos operativos, tipo de cambio real | pendiente |
 | 4 | Avisos que llegan: resumen semanal por mail, panel de atención, cero fallas mudas | pendiente |
@@ -51,7 +51,7 @@ IDs estables. `SA` alta · `SM` media · `SB` baja. No se re-reporta lo cerrado 
 
 **SA1 — 150 filas irreproducibles sin red.** *(CERRADO 20/9: `data/staging/ledger_stats.json` + el chequeo `1.conteo_origen`. Verificado: borrar `ledger.csv` ahora da exit 1 con el detalle por origen; antes daba `validacion OK`.)* `merge()` reescribe `data/ledger.csv` entero en cada corrida (`merge_y_validar.py:137-140`) y conserva las filas `mail`/`estado_cuenta`/`manual`/`splitwise` **releyéndolas de su propia salida**, dentro de `if os.path.exists(OUT_LEDGER)` (`:103-107`). Si el archivo falta o se trunca, el merge produce un ledger con solo las 4.525 filas de migración y **la validación pasa**: no hay invariante de conteo ni de mezcla de orígenes. `mail` (284) se regenera desde `inbox_raw/`; `estado_cuenta` (71), `manual` (47) y `splitwise` (32) no tienen fuente.
 
-**SA2 — Sin herramienta para altas manuales.** Solo escriben el ledger los scripts del pipeline y los conciliadores. La hermana de split se describe en prosa (`revisar-pendientes.md:33`) y se ejecuta con Python ad-hoc; ídem gastos pagados por Lu (tres artefactos a mano: fila + `cierre_exclusiones.csv` + `aportes_lu.csv`), aportes entre cuentas propias, cobros de `A cobrar`, borrado de duplicados. Errores reales de ese método en esta sesión: gasto sin `monto_uyu` al convertir una transferencia (dos veces), heredoc truncado por largo, borrado por línea física que no coincidía con filas CSV.
+**SA2 — Sin herramienta para altas manuales.** *(CERRADO 27/9: `scripts/gastos.py`, Fase 1.2.)* Solo escriben el ledger los scripts del pipeline y los conciliadores. La hermana de split se describe en prosa (`revisar-pendientes.md:33`) y se ejecuta con Python ad-hoc; ídem gastos pagados por Lu (tres artefactos a mano: fila + `cierre_exclusiones.csv` + `aportes_lu.csv`), aportes entre cuentas propias, cobros de `A cobrar`, borrado de duplicados. Errores reales de ese método en esta sesión: gasto sin `monto_uyu` al convertir una transferencia (dos veces), heredoc truncado por largo, borrado por línea física que no coincidía con filas CSV.
 
 **SA3 — Los conciliadores no entienden splits ni importes finales.**
 - *Split-unaware:* `conciliar_debito.conciliar_cuenta` compara fila a fila (`:154-168`); `conciliar_estado` excluye la hermana de las candidatas (`:477-488`). El total bancario de un split siempre se inserta como "nuevo" y hay que borrarlo (agosto: Alfredo 18.000, Movistar 1.847,21, Pantagruel 4.300; Platinum: MercadoLibre 2.607,79, Namaste 6.947,57, Indicabeer 870, Apple 24,72).
@@ -74,7 +74,7 @@ IDs estables. `SA` alta · `SM` media · `SB` baja. No se re-reporta lo cerrado 
 
 **SA8 — Sin tests en CI.** *(CERRADO 20/9: `tests/` con 18 tests sobre datos reales, `tests.yml` en cada push y `-m smoke` dentro de `sync.yml`.)* No hay `tests/` ni paso de test. `scripts/test_conciliacion.py` existe y no lo invoca nadie. La paridad de migración es manual desde el 17/7. Todos los bugs de estos dos meses se encontraron en datos de producción.
 
-**SA9 — Sin respaldo fuera de GitHub + la PC.** *(IMPLEMENTADO 20/9, ACTIVO 27/9 — primer respaldo subido: zip AES-256 con `pyzipper` — la stdlib no escribe cifrado —, 461 archivos / 12,77 MB → 5,50 MB, subida con el OAuth de usuario (scope `drive.file`), retención 26, workflow propio `respaldo.yml`. Gate de restauración verde: restaurado en un directorio limpio, 461/461 sha256 OK y `merge_y_validar` exit 0. Falta re-autorizar Google y crear el secret `BACKUP_ZIP_PASSWORD`: ver [respaldo.md](respaldo.md).)* `resoluciones.csv` son 756 decisiones humanas irrecuperables.
+**SA9 — Sin respaldo fuera de GitHub + la PC.** *(IMPLEMENTADO 20/9, ACTIVO 27/9 — primer respaldo subido: zip AES-256 con `pyzipper` — la stdlib no escribe cifrado —, 461 archivos / 12,77 MB → 5,50 MB, subida con el OAuth de usuario (scope `drive.file`), retención 26, workflow propio `respaldo.yml`. Gate de restauración verde: restaurado en un directorio limpio, 461/461 sha256 OK y `merge_y_validar` exit 0. Joaco re-autorizó Google el 27/9 y verificó que el zip abre con 7-Zip: ver [respaldo.md](respaldo.md).)* `resoluciones.csv` son 756 decisiones humanas irrecuperables.
 
 ### Media
 
@@ -100,7 +100,7 @@ IDs estables. `SA` alta · `SM` media · `SB` baja. No se re-reporta lo cerrado 
 
 **SM11 — `actualizar_sheets.py:81-93`**: `clear()` + `update` sin retry; un 429 entre ambos deja la hoja vacía.
 
-**SM12 — `aportes_lu.csv` sin clave de dedupe**: re-correr la ceremonia duplica el aporte.
+**SM12 — `aportes_lu.csv` sin clave de dedupe**: re-correr la ceremonia duplica el aporte. *(CERRADO 27/9: `gastos.py aporte` rechaza mismo mes + monto sin `--forzar`, y la planilla marca `carga_manual_duplicado`.)*
 
 ### Baja
 
@@ -196,7 +196,7 @@ Reescribir `fase3.md`, `README.md`, `pipeline-mails.md`; cerrar `plan-migracion-
 ## Lo que necesita Joaco (acciones que ningún agente puede hacer)
 
 1. ~~**Re-autorizar Google una vez** (fase 0.3): `gmail.readonly` + `gmail.send` + `drive.file`, y actualizar el secret.~~ **Hecho el 27/9.**
-2. **Crear la planilla "Carga manual"** y compartirla con la service account (fase 1.3).
+2. ~~**Crear la planilla "Carga manual"** y compartirla con la service account (fase 1.3).~~ **Hecho el 27/9.**
 3. **Agregar el mail de Lu** a Cloudflare Access (fase 5.4).
 4. **Exportar los 3 CSV del Santander** semanal o quincenalmente a la carpeta del mes (D2), y los grupos de Splitwise al cierre.
 5. Confirmar que el primer resumen semanal le llega (gate de la fase 4).
@@ -227,3 +227,24 @@ Un test smoke de la propia Fase 0 (`test_no_se_siembra_el_gate_desde_un_ledger_r
 - **Datos:** no se perdió nada. `fetch_mails` arranca en `ultima_fecha_mail − OVERLAP_DAYS`, y la corrida de recuperación bajó desde el 18/9 (15 mails nuevos).
 - **Lo que prueba:** es SA5/D5 en vivo. El pipeline se cortó bien —no commiteó datos con un test rojo— pero **nadie se enteró en 4 días**: `sync.yml` no tiene ningún paso `if: failure()`, así que un paso rojo corta el job antes de cualquier aviso propio (ni Issue). El único aviso fue el mail genérico "Run failed" de GitHub, que es justo el canal que D5 dice que no se mira. Refuerza el mail inmediato por falla técnica ≥3 corridas de la 4.2: acá habrían sido 3 avisos el primer día.
 - **Lección para el agente:** un test que corre dentro del pipeline de datos no puede depender de archivos que ese mismo pipeline escribe. Y nunca `pytest ... | tail && git commit`: el pipe se come el exit code de pytest.
+
+## Cierre de la Fase 1 — 27/9/2026
+
+Qué quedó, medido:
+
+- **1.1 — El ledger es un artefacto de build.** `data/fuentes/{manual,estado_cuenta,splitwise}.csv` (50 + 71 + 32 filas, migradas por la primera corrida de `merge()` sin mover una sola fila del ledger). **Gate: borrar `data/ledger.csv` y correr `scripts/reconstruir_ledger.py` devuelve las 4.986 filas idénticas, `estado` incluido, y la misma bandeja** (`tests/test_fuentes.py::test_ledger_se_reconstruye_desde_cero`). En el contenido manda la fuente: una fila borrada o editada en el ledger vuelve sola. Las bajas van por `gastos.py borrar` a `data/fuentes/borrados.csv` (con la fila entera, recuperable), y el gate `1.conteo_origen` compara filas + bajas registradas.
+- **1.2 — `scripts/gastos.py`**, ocho subcomandos (`split`, `gasto`, `pago-lu`, `aporte`, `transferencia`, `cobro`, `resolver`, `borrar`), en seco por defecto. **Gate: los tres casos reales se recrean con la herramienta y dan las mismas filas y posiciones** — el split de Pantagruel sale incluso con el MISMO id de hermana (mismo esquema `sha1('manual'+'<id>-split')`); los tres pagos de Lu de agosto dejan la posición de agosto en −3.446,37 / −7.825,94; la compensación del Dilema deja setiembre igual (`tests/test_gastos.py`). Cierra SA2 y SM12.
+- **1.3 — Planilla "Carga manual"** (D3). Joaco la creó con sus pestañas; `leer_carga_manual.py --preparar-planilla` le puso 24 reglas (listas desplegables, fecha con calendario, montos) e instrucciones. El paso diario la baja con scope de solo lectura a un snapshot commiteado, deduplica contra lo ya cargado (±3 días) y regenera sus pendientes `[planilla]` en cada corrida: una fila corregida se lleva su pendiente sola. Guarda anti-vaciado: si la planilla pierde más de 3 filas de golpe, no pisa el snapshot y el paso falla. **Gate: una fila inválida genera un pendiente, no una fila rota** (`tests/test_carga_manual.py`).
+- **Aportes de Lu derivados.** `cierre_casa` cuenta solo los gastos de casa desde `Lu tarjeta` / `Lu efectivo` como aporte de ella. Se sacaron las 2 filas-suma de `aportes_lu.csv` (6.139 jul, 2.220 ago) y las 6 exclusiones de `cierre_exclusiones.csv`: julio, agosto y setiembre dan **idénticos al centavo**.
+- **Tests: 19 → 43.**
+
+Lo que la ejecución encontró o cambió respecto del plan:
+
+1. **Los conciliadores no se tocaron.** El plan decía "los conciliadores escriben en la fuente". En su lugar `merge()` adopta en la fuente toda fila nueva de esos orígenes que aparezca en el ledger. Mismo resultado sin modificar cuatro escritores, y un escritor futuro que se olvide de la fuente no pierde datos (test `test_fila_nueva_de_un_escritor_se_adopta`).
+2. **Splitwise también tiene fuente.** El plan pedía verificar que sus filas se regeneraban desde `data/splitwise.csv`. No se intentó: esa regeneración depende de exports de menos de 35 días y de un caché que se reescribe en cada corrida. Una fuente es más simple y no depende de la red.
+3. **La marca `conciliado` no estaba en el plan.** La primera reconstrucción dio 9 diferencias: las filas mail conciliadas volvían como `confirmado`. Se agregó `data/fuentes/conciliados.csv`, y eso cerró la brecha que la Fase 0 había dejado documentada (se borró el test `BRECHA`; la caracterización de `--reprocesar` ahora compara la fila entera). Un bug propio en el camino: la primera versión podaba las marcas cuando las filas mail todavía no estaban, y en la reconstrucción las borraba todas. Lo cazó el mismo test.
+4. **Un pendiente latente.** Al reprocesar desde cero, la regla de YouTube de hoy re-proponía el split del cargo de julio (que se registró entero, antes de que la regla existiera). Se cerró con una resolución sobre `66311dae6ecd`.
+5. **SB7 cerrado.** Los dos avisos duplicados del pago Proyecto PAS del 1/7 se dieron de baja con `gastos.py borrar`, y `TRANSFERENCIAS_SIN_DESTINO_CONOCIDAS` quedó vacía.
+6. **Dos tests viejos cambiaron de sentido.** Los de `test_invariantes` que ensuciaban una fila `manual` en el ledger empezaron a fallar: la fuente la curaba y la validación pasaba. Ahora ensucian filas mail, las únicas que siguen viviendo solo en el ledger.
+
+Queda anotado para otras fases: los pendientes `[planilla]` no disparan el Issue (el paso de avisos cuenta solo los de `procesar_mails`; va con la 4.2). `resolver fecha=` no mueve `mes`: avisa, no corrige.
