@@ -23,7 +23,8 @@ original de casa.
 
 ## Acciones de Joaco (una sola vez, en este orden)
 
-> **Hechos el 27/9/2026** (primer respaldo `gastos_2026-09-27_d0c6bc3.zip` en Drive). Quedan
+> **Hechos el 27/9/2026** (primer respaldo `gastos_2026-09-27_d0c6bc3.zip` en Drive; Joaco lo
+> abrió con 7-Zip y la clave del gestor: paso 9 verificado). Quedan
 > documentados por si hay que rehacerlos (otra PC, token revocado).
 >
 > **Hasta que no estén hechos los pasos 1-2 y 4-7, el workflow falla todos los domingos** y la
