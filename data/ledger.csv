@@ -4959,13 +4959,16 @@ f252e241cd50,2026-09-18,2026-09,gasto,124.82,UYU,124.82,Cuenta Casa,,Super,,MONT
 6a7ee16c3c47,2026-09-19,2026-09,gasto,203.61,UYU,203.61,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,casa,mail,confirmado,1,1a0ba6ed19524d11
 b672e4e718ee,2026-09-19,2026-09,gasto,35.00,UYU,35.00,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,1a0b7d20a6ecaf6e
 c11e145e4fc7,2026-09-19,2026-09,gasto,559.67,UYU,559.67,Cuenta Casa,,Super,,MONTEVIDEO/CARNICERIA MODELO VIS3,CARNICERIA MODELO,casa,mail,confirmado,1,1a0bbd5d11b3e021
-86f2aecfaf76,2026-09-20,2026-09,gasto,110.00,UYU,110.00,Cuenta Casa,,,,MONTEVIDEO/MERPAGO*BANCADEQUINIEVIS3,MERPAGO*BANCADEQUINIE,casa,mail,pendiente,1,1a0c0c5f0b3871ee
-e27ce7dc5dd0,2026-09-20,2026-09,gasto,1090.00,UYU,1090.00,Santander UYU,,,,MONTEVIDEO/MOSCA HNOS VIS3,MOSCA HNOS,personal,mail,pendiente,1,1a0bef29aedbe9d4
-0738be177deb,2026-09-21,2026-09,gasto,640.00,UYU,640.00,Cuenta Casa,,,,Mica Tia,sorrentinos Joaco,personal,mail,pendiente,1,1a0c5bd7337d5fdc
-40d0c7cde8a0,2026-09-21,2026-09,gasto,1346.56,UYU,1346.56,Santander UYU,,,,MONTEVIDEO/MERPAGO*BASMERCADOPAGVIS3,MERPAGO*BASMERCADOPAG,personal,mail,pendiente,1,1a0c66cc7b5bf60c
-4fe0b33136a4,2026-09-22,2026-09,gasto,25.99,USD,1048.18,Santander Platinum,,Suscripciones,,APPLE.COM/BILL,APPLE.COM/BILL,personal,mail,pendiente,1,1a0c7308131bfbef
+86f2aecfaf76,2026-09-20,2026-09,gasto,110.00,UYU,110.00,Cuenta Casa,,Otros,,MONTEVIDEO/MERPAGO*BANCADEQUINIEVIS3,MERPAGO*BANCADEQUINIE,casa,mail,confirmado,1,1a0c0c5f0b3871ee
+967b8e6aac54,2026-09-20,2026-09,transferencia,545.00,UYU,545.00,Santander UYU,Deudas,,,,"Regalo (Mosca Hnos 20/9): mitad del hermano, por Splitwise",interno,manual,confirmado,0,e27ce7dc5dd0-split
+e27ce7dc5dd0,2026-09-20,2026-09,gasto,545.00,UYU,545.00,Santander UYU,,Regalos,,MONTEVIDEO/MOSCA HNOS VIS3,MOSCA HNOS,personal,mail,confirmado,1,1a0bef29aedbe9d4
+0738be177deb,2026-09-21,2026-09,gasto,640.00,UYU,640.00,Cuenta Casa,,Super,,Mica Tia,sorrentinos Joaco,casa,mail,confirmado,1,1a0c5bd7337d5fdc
+40d0c7cde8a0,2026-09-21,2026-09,gasto,1346.56,UYU,1346.56,Santander UYU,,Compras personales,,MONTEVIDEO/MERPAGO*BASMERCADOPAGVIS3,Ropa para Lu (BAS),casa,mail,confirmado,1,1a0c66cc7b5bf60c
+02c348600809,2026-09-22,2026-09,transferencia,13.00,USD,524.09,Santander Platinum,Deudas,,,,YouTube Premium familiar: 3/6 de Rodrigo (2/6) y hermana (1/6),interno,manual,confirmado,0,4fe0b33136a4-split-a
+4fe0b33136a4,2026-09-22,2026-09,gasto,8.66,USD,349.39,Santander Platinum,,Suscripciones,,YouTube Premium familiar (APPLE.COM/BILL),APPLE.COM/BILL,casa,mail,confirmado,1,1a0c7308131bfbef
+d5615cfc2b06,2026-09-22,2026-09,transferencia,4.33,USD,174.70,Santander Platinum,A cobrar,,,,YouTube Premium familiar: 1/6 de la madre (paga por fuera de Splitwise),interno,manual,confirmado,0,4fe0b33136a4-split-b
 21f24a3dcb74,2026-09-23,2026-09,gasto,699.30,UYU,699.30,Santander UYU,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa La FactVIS3,DLO*PedidosYa La Fact,personal,mail,confirmado,1,1a0ce258be8a8681
-5f9b0392d375,2026-09-23,2026-09,gasto,31100.00,UYU,31100.00,Cuenta Casa,,,,Jorge Electricista,vazquez ledesma,casa,mail,pendiente,1,1a0d0212b01f5b9e
+5f9b0392d375,2026-09-23,2026-09,gasto,31100.00,UYU,31100.00,Cuenta Casa,,Casa & hogar,,Jorge Electricista,vazquez ledesma,casa,mail,confirmado,1,1a0d0212b01f5b9e
 737edb6cbf64,2026-09-23,2026-09,gasto,45.00,UYU,45.00,Santander UYU,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,personal,mail,confirmado,1,1a0ce4478939c00b
 8d143d416121,2026-09-23,2026-09,gasto,243.98,UYU,243.98,Santander Platinum,,Transporte,,DLOUBERRIDES,DLOUBERRIDES,personal,mail,confirmado,1,1a0d113f53f1bf56
 b4d2702b8e65,2026-09-23,2026-09,gasto,342.70,UYU,342.70,Santander UYU,,Comer afuera / Delivery,,MONTEVIDEO/LA ROTISERIA V VIS3,LA ROTISERIA V,personal,mail,confirmado,1,1a0cf0112c410d92
@@ -4973,7 +4976,7 @@ b4d2702b8e65,2026-09-23,2026-09,gasto,342.70,UYU,342.70,Santander UYU,,Comer afu
 4c8dab92d67a,2026-09-24,2026-09,gasto,13.49,UYU,13.49,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa Extra VIS3,DLO*PedidosYa Extra,casa,mail,confirmado,1,1a0d5e15ae0e8a27
 6566f93927f5,2026-09-24,2026-09,gasto,481.64,UYU,481.64,Santander UYU,,Comer afuera / Delivery,,MONTEVIDEO/LA ROTISERIA V VIS3,LA ROTISERIA V,personal,mail,confirmado,1,1a0d43719bd38bf4
 d321966bdc3f,2026-09-24,2026-09,gasto,1700.00,UYU,1700.00,Cuenta Casa,,Casa & hogar,,Yova,lu y joaco,casa,mail,confirmado,1,1a0d5d54f0f4b500
-19e4ad3e7ebc,2026-09-25,2026-09,gasto,210.00,UYU,210.00,Santander UYU,,,,MONTEVIDEO/MERPAGO*BANCADEQUINIEVIS3,MERPAGO*BANCADEQUINIE,personal,mail,pendiente,1,1a0daff4e5635bbb
+19e4ad3e7ebc,2026-09-25,2026-09,gasto,210.00,UYU,210.00,Santander UYU,,Otros,,MONTEVIDEO/MERPAGO*BANCADEQUINIEVIS3,MERPAGO*BANCADEQUINIE,casa,mail,confirmado,1,1a0daff4e5635bbb
 3e63f8b720e3,2026-09-25,2026-09,gasto,134.75,UYU,134.75,Santander UYU,,Super,,MONTEVIDEO/DEVOTO EXPRESS VIS3,DEVOTO EXPRESS,personal,mail,confirmado,1,1a0d9741d46a071d
 f0dbadc2b015,2026-09-25,2026-09,gasto,45.00,UYU,45.00,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,1a0d6ab14f2821b1
 2392bf32d4ea,2026-09-26,2026-09,gasto,35.00,UYU,35.00,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,1a0e0bea75aa393f

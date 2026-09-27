@@ -13,6 +13,7 @@ SILVANA,Salud,,"psicologa (transferencia mensual, 10.800) - 19/9"
 MERPAGO\*MELI,Suscripciones,,"Meli+ mensual (199): va ANTES del catch-all de MERPAGO\*, que lo dejaba sin categoria - detectado 1/9"
 MERPAGO\*MERCADOLIBRE,Compras personales,,"MercadoLibre via Mercado Pago: va ANTES del catch-all de MERPAGO\*, que gana por orden y lo dejaba sin categoria - detectado 25/8"
 DESBORDE,Comer afuera / Delivery,,"bar/restaurante Desborde; la terminal de cobro es HANDY, asi que va ANTES del catch-all HANDY|MERPAGO\*, que gana por orden y la dejaba muerta - auditoria 2026-09 SA7"
+MERPAGO\*BANCADEQUINIE|BANCA DE QUINIELAS,Otros,casa,"quiniela via Mercado Pago: de los dos, gasto de casa aunque se pague con la cuenta de Joaco (confirmado 27/9). Va ANTES del catch-all de MERPAGO\*, que gana por orden"
 HANDY|MERPAGO\*,,,queda sin categoria a proposito: revisar (comercio generico)
 UTE ?,Servicios,casa,
 ANTEL,Servicios,casa,

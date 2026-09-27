@@ -755,3 +755,27 @@ f05d0face4bc,motivo_resuelto,transferencia_a_clasificar,gasto personal Auto (cuo
 7d9b4158fca9,motivo_resuelto,transferencia_a_clasificar,fila borrada: duplicaba el pago real 47de1d2f1233 (mail del banco). El sync ya no la reinserta: su dedupe encuentra la transferencia de mail a Deudas,2026-09-19
 aa11f1274550,motivo_resuelto,tc_estimado,el importe real llega con el estado de la Platinum,2026-09-19
 fe4410dc33ff,motivo_resuelto,tc_estimado,el importe real llega con el estado de la Platinum,2026-09-19
+5f9b0392d375,categoria,Casa & hogar,"Jorge Electricista (vazquez ledesma): trabajo electrico de la casa, 50/50 explicito en participaciones (Joaco 27/9)",2026-09-27
+5f9b0392d375,motivo_resuelto,transferencia_a_clasificar,"Casa & hogar, casa 50/50 (Joaco 27/9)",2026-09-27
+4fe0b33136a4,monto,8.66,"YouTube Premium familiar: 2/6 propio (Joaco + Lu) de USD 25,99 (subio de 23,99 en sep-2026)",2026-09-27
+4fe0b33136a4,monto_uyu,349.39,"2/6 de 1048,18 (tc estimado; se ajusta al estado en el cierre)",2026-09-27
+4fe0b33136a4,ambito,casa,el 2/6 propio es gasto de casa y se divide con Lu por coeficiente (regla del 12/7),2026-09-27
+4fe0b33136a4,comercio,YouTube Premium familiar (APPLE.COM/BILL),el cargo llega por Apple y no dice que es YouTube,2026-09-27
+4fe0b33136a4,motivo_resuelto,split_a_cargar,"2/6 casa + 3/6 a Deudas (Rodrigo 2/6, hermana 1/6: USD 13,00) + 1/6 a A cobrar (madre, paga por fuera de Splitwise: USD 4,33) (Joaco 27/9)",2026-09-27
+4fe0b33136a4,motivo_resuelto,tc_estimado,el importe real (con recargo 3%) llega con el estado de la Platinum: se ajusta en el cierre,2026-09-27
+86f2aecfaf76,categoria,Otros,"quiniela (Banca de Quinielas via Mercado Pago): de los dos, gasto de casa (Joaco 27/9)",2026-09-27
+86f2aecfaf76,motivo_resuelto,sin_categoria,"quiniela, casa (Joaco 27/9)",2026-09-27
+19e4ad3e7ebc,categoria,Otros,"quiniela (Banca de Quinielas via Mercado Pago): de los dos, gasto de casa (Joaco 27/9)",2026-09-27
+19e4ad3e7ebc,ambito,casa,quiniela de los dos pagada con la cuenta de Joaco: cuenta como aporte suyo (Joaco 27/9),2026-09-27
+19e4ad3e7ebc,motivo_resuelto,sin_categoria,"quiniela, casa (Joaco 27/9)",2026-09-27
+0738be177deb,categoria,Super,"sorrentinos de Mica (tia): comida para la casa, como las ferias (Joaco 27/9)",2026-09-27
+0738be177deb,ambito,casa,comida para los dos (Joaco 27/9),2026-09-27
+0738be177deb,motivo_resuelto,transferencia_a_clasificar,"Super, casa (Joaco 27/9)",2026-09-27
+e27ce7dc5dd0,categoria,Regalos,"regalo: mitad Joaco, mitad del hermano por Splitwise (Joaco 27/9)",2026-09-27
+e27ce7dc5dd0,monto,545.00,1/2 propio de 1.090 (la otra mitad a Deudas),2026-09-27
+e27ce7dc5dd0,monto_uyu,545.00,idem,2026-09-27
+e27ce7dc5dd0,motivo_resuelto,sin_categoria,"Regalos, split 1/2 con el hermano (Joaco 27/9)",2026-09-27
+40d0c7cde8a0,categoria,Compras personales,"ropa para Lu (BAS): gasto 100% de Lu, pagado por Joaco = aporte suyo a la casa (Joaco 27/9)",2026-09-27
+40d0c7cde8a0,ambito,casa,se modela como gasto de casa 100% Lu (participaciones) para que cuente como aporte de Joaco,2026-09-27
+40d0c7cde8a0,descripcion,Ropa para Lu (BAS),,2026-09-27
+40d0c7cde8a0,motivo_resuelto,sin_categoria,"ropa para Lu: casa 100% Lu, aporte de Joaco (Joaco 27/9)",2026-09-27
