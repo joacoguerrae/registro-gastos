@@ -8,7 +8,7 @@ Método: tres relevamientos independientes del código (pipeline, ceremonias, in
 
 | Fase | Qué | Estado |
 |---|---|---|
-| 0 | Red de seguridad: tests en CI, invariantes nuevos, respaldo, quick wins | **CERRADA 20/9/2026**; solo queda una acción de Joaco para el respaldo |
+| 0 | Red de seguridad: tests en CI, invariantes nuevos, respaldo, quick wins | **CERRADA 20/9/2026**; respaldo activo desde el 27/9 |
 | 1 | Fuente de verdad para lo manual: `gastos.py`, fuentes reproducibles, planilla de carga | pendiente |
 | 2 | Conciliación que entiende splits e importes finales + `cierre.py` de un comando | pendiente |
 | 3 | Reglas con lint, gastos fijos operativos, tipo de cambio real | pendiente |
@@ -74,7 +74,7 @@ IDs estables. `SA` alta · `SM` media · `SB` baja. No se re-reporta lo cerrado 
 
 **SA8 — Sin tests en CI.** *(CERRADO 20/9: `tests/` con 18 tests sobre datos reales, `tests.yml` en cada push y `-m smoke` dentro de `sync.yml`.)* No hay `tests/` ni paso de test. `scripts/test_conciliacion.py` existe y no lo invoca nadie. La paridad de migración es manual desde el 17/7. Todos los bugs de estos dos meses se encontraron en datos de producción.
 
-**SA9 — Sin respaldo fuera de GitHub + la PC.** *(IMPLEMENTADO 20/9, pendiente de una acción de Joaco: zip AES-256 con `pyzipper` — la stdlib no escribe cifrado —, 461 archivos / 12,77 MB → 5,50 MB, subida con el OAuth de usuario (scope `drive.file`), retención 26, workflow propio `respaldo.yml`. Gate de restauración verde: restaurado en un directorio limpio, 461/461 sha256 OK y `merge_y_validar` exit 0. Falta re-autorizar Google y crear el secret `BACKUP_ZIP_PASSWORD`: ver [respaldo.md](respaldo.md).)* `resoluciones.csv` son 756 decisiones humanas irrecuperables.
+**SA9 — Sin respaldo fuera de GitHub + la PC.** *(IMPLEMENTADO 20/9, ACTIVO 27/9 — primer respaldo subido: zip AES-256 con `pyzipper` — la stdlib no escribe cifrado —, 461 archivos / 12,77 MB → 5,50 MB, subida con el OAuth de usuario (scope `drive.file`), retención 26, workflow propio `respaldo.yml`. Gate de restauración verde: restaurado en un directorio limpio, 461/461 sha256 OK y `merge_y_validar` exit 0. Falta re-autorizar Google y crear el secret `BACKUP_ZIP_PASSWORD`: ver [respaldo.md](respaldo.md).)* `resoluciones.csv` son 756 decisiones humanas irrecuperables.
 
 ### Media
 
@@ -195,7 +195,7 @@ Reescribir `fase3.md`, `README.md`, `pipeline-mails.md`; cerrar `plan-migracion-
 
 ## Lo que necesita Joaco (acciones que ningún agente puede hacer)
 
-1. **Re-autorizar Google una vez** (fase 0.3): `gmail.readonly` + `gmail.send` + `drive.file`, y actualizar el secret.
+1. ~~**Re-autorizar Google una vez** (fase 0.3): `gmail.readonly` + `gmail.send` + `drive.file`, y actualizar el secret.~~ **Hecho el 27/9.**
 2. **Crear la planilla "Carga manual"** y compartirla con la service account (fase 1.3).
 3. **Agregar el mail de Lu** a Cloudflare Access (fase 5.4).
 4. **Exportar los 3 CSV del Santander** semanal o quincenalmente a la carpeta del mes (D2), y los grupos de Splitwise al cierre.
@@ -214,7 +214,7 @@ Qué quedó, medido:
 - **El gate.** Antes: borrar `data/ledger.csv` entero daba `validacion OK` y exit 0, y el pipeline lo habría commiteado — se perdían 434 filas, 150 de ellas sin ninguna fuente para regenerarlas. Ahora da exit 1 con el detalle por origen (`mail: 286 -> 0`, etc.) y no se commitea. Una baja deliberada se acepta explícitamente con `--aceptar-bajas`.
 - **18 tests** sobre datos reales, ninguno escribe en el repo. `tests.yml` corre todo en cada push; `sync.yml` corre `-m smoke` (~4 s) antes de tocar datos.
 - **14 chequeos** en `merge_y_validar` contra los 6 de antes: conteo por origen, catálogo de cuentas + guard anti-sufijo, transferencias sin destino con allowlist auto-caducante, y lint de resoluciones/exclusiones/participaciones.
-- **Respaldo** implementado y probado end-to-end salvo la subida (bloqueada por la acción de Joaco), con tres capas anti-filtración de secretos verificadas por separado.
+- **Respaldo** implementado y probado end-to-end salvo la subida (bloqueada por la acción de Joaco; **destrabada el 27/9**: primer respaldo en Drive, 485 archivos, 5,5 MB), con tres capas anti-filtración de secretos verificadas por separado.
 
 Lo que la ejecución **corrigió de esta misma auditoría**: el caso testigo de SM6 era falso, SB1 subestimaba el alcance (14 puntos, no 3), SM4 sobreestimaba el problema (2 claves repetidas reales, no 35), y QW3 tal como estaba escrito era dañino. Queda anotado en cada hallazgo.
 
