@@ -362,3 +362,6 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 1a0eb1f865b0e4de,2026-09-29T03:05:04Z,factura,factura,,"DirecTV 1705.00 venc 2026-10-12 (informativo, no toca ledger)",,2026-09-29T05:49:36+00:00
 1a0ee6154ae53281,2026-09-29T18:15:47Z,aviso_tarjeta,insertado,4f06d4b8fd45,9071 UYU 199.00 MONTEVIDEO/MERPAGO*MELI VIS3 -> Santander UYU/personal/Suscripciones,9071||199.00||MONTEVIDEO/MERPAGO*MELI VIS3||2026-09-29T15:15:47,2026-09-30T05:39:39+00:00
 1a0ef9ab36c12366,2026-09-29T23:58:06Z,aviso_tarjeta,insertado,33c1ed01aa03,6427 UYU 891.20 REST CHEZ PINEY -> Santander Platinum/personal/(sin categoria),6427||891.20||REST CHEZ PINEY||2026-09-29T20:58:00,2026-09-30T05:39:39+00:00
+1a0f2d1e414b64f5,2026-09-30T14:57:14Z,aviso_tarjeta,insertado,899993403f51,6427 UYU 225.97 DLOUBERRIDES -> Santander Platinum/personal/Transporte,6427||225.97||DLOUBERRIDES||2026-09-30T11:57:10,2026-09-30T18:01:21+00:00
+1a0f314ae00760ad,2026-09-30T16:10:10Z,aviso_tarjeta,insertado,a139a1e740a2,9071 UYU 311.31 MONTEVIDEO/FROG VIS3 -> Santander UYU/personal/Super,9071||311.31||MONTEVIDEO/FROG VIS3||2026-09-30T13:10:09,2026-09-30T18:01:21+00:00
+1a0f3156ccb689e8,2026-09-30T16:10:58Z,aviso_tarjeta,insertado,4918561b1ea5,6427 UYU 240.99 DLOUBERRIDES -> Santander Platinum/personal/Transporte,6427||240.99||DLOUBERRIDES||2026-09-30T13:10:53,2026-09-30T18:01:21+00:00
