@@ -320,3 +320,10 @@ c018d12fed27,sin_respaldo_estado,Santander Platinum 2026-09: fila del ledger (20
 eb318ff6feed,sin_categoria,estado_cuenta Santander Platinum 2026-09: 'REST CHEZ PI EYRO' sin regla,2026-10-02,1
 b50168718ade,sin_categoria,estado_cuenta Santander Platinum 2026-09: 'DESC DILEMA' sin regla,2026-10-02,1
 c0f00969ac5a,split_a_cargar,"Splitwise sw:xaa96125797 'Youtube' USD 13.00 (2026-09-27): yo pague 13.00, mi parte 0.00 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-10-02,1
+8a3f25ac6784,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-10-02,
+407b221f2157,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-10-02,
+d0741ccc2104,tc_estimado,USD 339.90 x tc 40.33 = 13708.17 UYU (corrige Fase 3),2026-10-02,
+d0741ccc2104,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-10-02,
+5767c11d16ab,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-10-02,
+f4c08b8106ad,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-10-02,
+b7101ea3950f,transferencia_a_clasificar,"a 'Lucho Royal Barber', concepto 'joaco', UYU 590.00: sin categoria",2026-10-02,

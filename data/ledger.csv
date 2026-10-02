@@ -5027,4 +5027,12 @@ a439df09d18e,2026-09-30,2026-09,gasto,99.77,UYU,99.77,Cuenta Casa,,Servicios,,CO
 b1ff6aa75974,2026-09-30,2026-09,gasto,3139.00,UYU,3139.00,Lu tarjeta,,Casa & hogar,,Temu,Temu -- Lu pago para ambos (planilla fila 3),casa,carga_manual,confirmado,1,carga:b1ff6aa75974500b
 b76b1bdcfbcc,2026-09-30,2026-09,gasto,543.00,UYU,543.00,Lu tarjeta,,Comer afuera / Delivery,,Panaderia,Panaderia -- Lu pago para ambos (planilla fila 2),casa,carga_manual,confirmado,1,carga:b76b1bdcfbccee41
 dd7035b036f2,2026-09-30,2026-09,gasto,4600.00,UYU,4600.00,Lu tarjeta,,Salidas & ocio,,Cruzando el charco,Cruzando el charco -- Lu pago para ambos (planilla fila 5),casa,carga_manual,confirmado,1,carga:dd7035b036f2c3bf
-9b05ccf5105f,2026-10-01,2026-10,gasto,1.99,USD,80.26,Santander Platinum,,Suscripciones,,GOOGLE,GOOGLE,personal,mail,pendiente,1,1a0f7ce9ae951d0e
+9b05ccf5105f,2026-10-01,2026-10,gasto,1.99,USD,80.26,Santander Platinum,,Suscripciones,,Google Play – 100 GB (Google One),GOOGLE,personal,mail,pendiente,1,1a0f7ce9ae951d0e
+407b221f2157,2026-10-02,2026-10,gasto,9084.01,UYU,9084.01,Santander UYU,,,,INTERNET/Proyecto PAS,Proyecto PAS,personal,mail,pendiente,1,1a0fcc56a3bc070b
+5767c11d16ab,2026-10-02,2026-10,gasto,1847.21,UYU,1847.21,Santander UYU,,,,INTERNET/Proyecto PAS,Proyecto PAS,personal,mail,pendiente,1,1a0fcc617aed1214
+7b03d35f075e,2026-10-02,2026-10,gasto,8100.00,UYU,8100.00,Santander UYU,,Salud,,Silvana Psico,Setiembre Joaco,personal,mail,confirmado,1,1a0fd18829492be0
+8a3f25ac6784,2026-10-02,2026-10,gasto,28874.00,UYU,28874.00,Santander UYU,,,,INTERNET/Proyecto PAS,Proyecto PAS,personal,mail,pendiente,1,1a0fcc4f951f433b
+b7101ea3950f,2026-10-02,2026-10,gasto,590.00,UYU,590.00,Santander UYU,,,,Lucho Royal Barber,joaco,personal,mail,pendiente,1,1a0fd746202805be
+d0741ccc2104,2026-10-02,2026-10,gasto,339.90,USD,13708.17,Santander USD,,,,INTERNET/Proyecto PAS,Proyecto PAS,personal,mail,pendiente,1,1a0fcc5c5f18275f
+d157a254e156,2026-10-02,2026-10,gasto,276.76,UYU,276.76,Santander UYU,,Super,,MONTEVIDEO/DEVOTO EXPRESS VIS3,DEVOTO EXPRESS,personal,mail,confirmado,1,1a0fd7cbee63eb66
+f4c08b8106ad,2026-10-02,2026-10,gasto,2284.00,UYU,2284.00,Cuenta Casa,,,,INTERNET/Proyecto PAS,Proyecto PAS,casa,mail,pendiente,1,1a0fd201ea859d73
