@@ -68,6 +68,10 @@ FACT_COLS = ["mes", "emisor", "monto", "vencimiento", "message_id"]
 # vuelve a generar para ese id).
 RESOLUCIONES = P("data", "resoluciones.csv")
 RES_COLS = ["id_ledger", "campo", "valor", "nota", "fecha"]
+# Pendientes que crean OTROS scripts (aunque apunten a filas mail): --reprocesar
+# no los puede regenerar, asi que no los toca.
+MOTIVOS_AJENOS = {"sin_respaldo_estado", "ingreso_a_clasificar", "splitwise_revisar",
+                  "carga_manual_invalida", "carga_manual_duplicado"}
 
 BACKFILL_DESDE = "2026-07-01"          # junio ya está en el ledger vía 1Money
 DEDUPE_1M_INI, DEDUPE_1M_FIN = "2026-07-01", "2026-07-08"  # ventana dedupe cruzado
@@ -348,9 +352,18 @@ def main():
     facturas = leer_csv(FACTURAS, FACT_COLS)
 
     if args.reprocesar:
+        # Antes de tirar las filas mail, guardar sus marcas `conciliado` en
+        # data/fuentes/conciliados.csv: las que un conciliador puso DESPUES del
+        # ultimo merge solo existen aca y se perdian (medido el 2/10/2026).
+        fuentes.aplicar_conciliados(ledger)
         ids_mail = {r["id"] for r in ledger if r["origen"] == "mail"}
         ledger = [r for r in ledger if r["origen"] != "mail"]
-        pendientes = [p for p in pendientes if p["id_ledger"] not in ids_mail]
+        # Solo se tiran los pendientes que ESTE script regenera. Los que crean
+        # otros (conciliadores, Splitwise, la planilla) sobre filas mail no
+        # vuelven a nacer aca: tirarlos era perderlos en silencio (medido el
+        # 2/10/2026 con 5 sin_respaldo_estado abiertos de la Platinum).
+        pendientes = [p for p in pendientes
+                      if p["id_ledger"] not in ids_mail or p["motivo"] in MOTIVOS_AJENOS]
         mids = {r["message_id"] for r in procesados}
         facturas = [fa for fa in facturas if fa["message_id"] not in mids]
         procesados = []
@@ -920,6 +933,10 @@ def main():
                 ledger_modificado = True
 
     # -------------------------------------------------- 6. persistir
+    if args.reprocesar:
+        # las filas regeneradas vuelven sin la marca: se re-aplica ya, sin
+        # esperar al merge
+        fuentes.aplicar_conciliados(ledger_final)
     ledger_final.sort(key=lambda r: (r["fecha"], r["id"]))
     if nuevos or ledger_modificado or args.reprocesar:
         escribir_csv(LEDGER, COLUMNS, ledger_final)

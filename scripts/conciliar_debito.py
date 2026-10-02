@@ -205,8 +205,14 @@ def conciliar_cuenta(ext, cuenta, ledger):
     return matches, solo_ext, solo_ledger
 
 
-def fila_nueva(mv, cuenta, moneda, reglas):
+def fila_nueva(mv, cuenta, moneda, reglas, n=1):
+    """n = numero de aparicion de un movimiento IDENTICO (fecha, monto y concepto)
+    dentro del mismo extracto. Sin esto, dos iguales salian con el mismo id
+    (paso el 2/10/2026: dos extornos de EONE de 491,80 del 8/9). La 1ra
+    aparicion conserva el seed de siempre, asi los ids viejos no cambian."""
     seed = f"estado:{cuenta}:{mv['fecha']}:{fmt(mv['monto'])}:{mv['concepto'][:40]}"
+    if n > 1:
+        seed += f":{n}"
     rid = hashlib.sha1(seed.encode()).hexdigest()[:12]
     entra = mv["monto"] > 0
     r = {c: "" for c in COLUMNS}
@@ -270,7 +276,12 @@ def procesar(path, ledger, reglas, insertar, hoy):
     for r in sorted(solo_led, key=lambda x: x["fecha"]):
         print(f"    {r['fecha']} | {r['tipo']:13} | {r['monto']:>10} | {(r['descripcion'] or r['comercio'])[:50]} | {r['id']}")
 
-    nuevas = [fila_nueva(m, cuenta, ext["moneda"], reglas) for m in solo_ext]
+    vistos = defaultdict(int)
+    nuevas = []
+    for m in solo_ext:
+        clave = (m["fecha"], fmt(m["monto"]), m["concepto"][:40])
+        vistos[clave] += 1
+        nuevas.append(fila_nueva(m, cuenta, ext["moneda"], reglas, vistos[clave]))
     return {"ext": ext, "cuenta": cuenta, "periodo": periodo, "saldo_cierre": saldo_cierre,
             "nuevas": nuevas, "solo_led": solo_led, "archivo": nombre,
             "detalle": f"{len(matches)} conciliados, {len(deb)} debitos y {len(cred)} creditos nuevos"}

@@ -249,3 +249,14 @@ Lo que la ejecución encontró o cambió respecto del plan:
 6. **Dos tests viejos cambiaron de sentido.** Los de `test_invariantes` que ensuciaban una fila `manual` en el ledger empezaron a fallar: la fuente la curaba y la validación pasaba. Ahora ensucian filas mail, las únicas que siguen viviendo solo en el ledger.
 
 Queda anotado para otras fases: los pendientes `[planilla]` no disparan el Issue (el paso de avisos cuenta solo los de `procesar_mails`; va con la 4.2). `resolver fecha=` no mueve `mes`: avisa, no corrige.
+
+### El primer cierre real con la Fase 1 (setiembre, 2/10/2026)
+
+El cierre de setiembre corrió entero con `gastos.py` (≈70 operaciones, cero Python descartable) y cuadró: 8 de 8 cuentas con saldo real al centavo al 30/9. En el camino encontró **cuatro defectos**, todos arreglados el mismo día y con test:
+
+1. **`merge()` colapsaba ids repetidos de un origen con fuente** → una fila perdida en silencio. Lo destapó `conciliar_debito` insertando dos extornos idénticos de EONE con el mismo id. Ahora un id repetido llega al ledger y sale `[FALLO]`; y `conciliar_debito` desambigua movimientos idénticos.
+2. **`--reprocesar` tiraba los pendientes de OTROS scripts** sobre filas mail (los `sin_respaldo_estado` de los conciliadores) y no los regeneraba. Lo cazó `test_reprocesar_no_pierde_pendientes_abiertos` al correr con pendientes reales abiertos. Ahora solo tira los que él regenera (`MOTIVOS_AJENOS`).
+3. **Las marcas `conciliado` puestas después del último merge** se perdían si se reprocesaba antes del merge siguiente. `procesar_mails --reprocesar` ahora las guarda antes y las reaplica después.
+4. **`gastos.py` no podía imputar un mes ni cerrar un pendiente sin fila** (los de Splitwise "SIN cargo"). Ahora `resolver mes=AAAA-MM` imputa, `fecha=` arrastra el mes, y `--cerrar` funciona sobre pendientes sin fila.
+
+Y dos aprendizajes que van a la Fase 2: **SA3 se confirmó en vivo** — en la Platinum, 5 de las 8 líneas "nuevas" eran falsos duplicados (dos splits, un aviso con tarifa final distinta, un seguro con 4 días de diferencia, una suscripción con recargo); en débito, 3 totales de splits y 3 aportes que solo aparearon después de cargarlos a mano. Y el **test de reconstrucción desde cero detectó dos veces** que una regla nueva (YouTube, Chez Piney) re-propone pendientes de meses cerrados: cada regla nueva hay que probarla reconstruyendo.

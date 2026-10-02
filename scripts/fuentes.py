@@ -147,8 +147,17 @@ def sincronizar_fuentes(filas_ledger, borrados):
                           "estado": n, "total": n}}
     """
     por_origen_ledger = {o: {} for o in ORIGENES_CON_FUENTE}
+    # Un id repetido NO se colapsa: se deja pasar entero al ledger para que el
+    # chequeo de ids duplicados de merge_y_validar salga FALLO. Colapsarlo era
+    # perder una fila en silencio -- paso el 2/10/2026 con dos extornos de EONE
+    # identicos (mismo dia, monto y concepto) que conciliar_debito inserto con
+    # el mismo id.
+    repetidas = []
     for r in filas_ledger:
         if r["id"] in borrados:
+            continue
+        if r["id"] in por_origen_ledger[r["origen"]]:
+            repetidas.append(dict(r))
             continue
         por_origen_ledger[r["origen"]][r["id"]] = r
 
@@ -182,4 +191,5 @@ def sincronizar_fuentes(filas_ledger, borrados):
         salida.extend(dict(r) for r in nueva_fuente)
         informe[o] = dict(adoptadas=adoptadas, restauradas=restauradas,
                           estado=n_estado, total=len(nueva_fuente))
+    salida.extend(repetidas)
     return salida, informe

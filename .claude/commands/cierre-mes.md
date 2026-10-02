@@ -59,7 +59,7 @@ Series de cuotas vivas a ago-2026: **ORT** cuota 18/24 en agosto → quedan 6 (h
 
 **"INTERNET/Proyecto PAS" no dice qué se pagó.** Es la app de pagos del Santander: UTE, ANTEL, IMM y Movistar llegan todos con ese mismo nombre. Al resolverlos, poné en `descripcion` de qué factura se trata (vía `resoluciones.csv`) — si no, los fijos se vuelven invisibles en cualquier análisis por comercio.
 
-**Carpeta por mes: `data/estados/<MM-AA>/`** (desde setiembre 2026, ej. `09-26/`). Joaco deja ahí los extractos, los PDF bajados a mano y los exports de Splitwise del mes que se cierra. Los PDF que baja el pipeline desde el mail siguen cayendo en `data/estados/` raíz: al cerrar, moverlos a la carpeta del mes con `git mv`. Los scripts toman rutas explícitas: `conciliar_debito.py 09-26/caja_ahorro.csv` (relativa a `data/estados/`) y `conciliar_estado.py data/estados/09-26/x.pdf` (relativa al repo).
+**Carpeta por mes: `data/estados/<MM-AA>/`** (desde setiembre 2026, ej. `09-26/`). Joaco deja ahí los extractos, los PDF bajados a mano y los exports de Splitwise del mes que se cierra. Los PDF que baja el pipeline desde el mail caen en `data/estados/` raíz y **se quedan ahí: NO moverlos** — `fetch_mails.py` busca con 90 días de ventana y solo mira la raíz (`os.path.exists` sobre `data/estados/<nombre>`), así que un PDF movido se vuelve a bajar (corregido el 2/10/2026: esta chuleta decía "moverlos con `git mv`"). Los scripts toman rutas explícitas: `conciliar_debito.py 09-26/caja_ahorro.csv` (relativa a `data/estados/`) y `conciliar_estado.py data/estados/09-26/x.pdf` (relativa al repo).
 
 **Splitwise en el cierre (la API está cerrada desde el 1/9/2026).** Pedirle a Joaco que exporte desde la **web** (no la app) cada grupo con movimientos en el mes: grupo → ajustes → *Export as spreadsheet*, a `data/estados/<MM-AA>/splitwise/` sin renombrar (el nombre trae el grupo y la fecha). Después correr `sync_splitwise.py --fuente export` y leer la salida:
 - **Paridad verificada el 19/9** contra los 43 gastos que había traído la API: montos, lo que pagó y lo que le toca, 43/43 idénticos. La fecha del export es la local; la de la API era UTC (un día después en gastos de la noche). El export es el correcto.
@@ -82,3 +82,19 @@ Series de cuotas vivas a ago-2026: **ORT** cuota 18/24 en agosto → quedan 6 (h
 **Semilla = `config/saldos_iniciales.csv`, UNA fecha para todas las cuentas.** Movida del 12/7 al **2026-08-31** en el cierre de agosto (el Platinum arrastraba 5.482,14 UYU / 131,80 USD del tramo 12/7-27/7, de una lectura manual marcada DISCREPANCIA; agosto cuadró al peso contra el estado). Al re-sembrar, NO volver a correr `conciliar_saldos` para la misma fecha: pisaría en `data/saldos.csv` el registro de las diferencias que la justificaron. `Deudas` quedó sembrada con el calculado (sin real: la API de Splitwise da 403 desde el 1/9). BBVA en pesos: el ledger no ve cómo se paga la tarjeta; el real lo da el estado (saldo a favor 1.021,96 al 31/8).
 
 **Parte vs TOTAL — la trampa que más mordió.** Las filas `origen=planilla_casa` del ledger **ya son la parte de Joaco**; el egreso TOTAL de la casa vive en `data/casa.csv`. Para proyectar el gasto de la casa usar TOTALES (casa.csv hasta jun-2026 + ledger `ambito=casa` desde jul-2026). Nunca comparar una serie contra la otra: fabrica "saltos" ficticios (pasó con la patente y con los gastos comunes).
+
+## Aprendido en el cierre de setiembre 2026 (2/10, el primero con la Fase 1)
+
+**Los aportes de Joaco son `PCASA` en el extracto, una línea en CADA cuenta** (débito en Santander UYU, crédito en Cuenta Casa). Cargarlos con `gastos.py aporte --quien joaco --monto M --fecha F` **antes** de `conciliar_debito --insertar`: así aparean en los dos extractos. Si no, entran como un gasto en una y un ingreso en la otra. En setiembre el "48.000 del 2/9" eran dos giros (30.000 el 1/9 + 18.000 el 2/9), y había un tercero de 15.000 el 21/9 que nadie había informado: **el extracto manda sobre lo que se recuerda.**
+
+**Ventana del matcher = primer y último movimiento del extracto, no `desde/hasta`** (SA3, Fase 2). El extracto USD de setiembre arrancaba el 3/9 y el pago de la Platinum estaba fechado el 2/9 → se proponía como nuevo. Corregir la `fecha` con `gastos.py resolver <id> fecha=...` antes de insertar.
+
+**Movimientos idénticos del mismo día** (dos extornos de EONE de 491,80 el 8/9) salían con el mismo id. Arreglado en `conciliar_debito.py` (sufijo por aparición) y en `merge()` (un id repetido ahora es FALLO, antes se colapsaba en silencio y se perdía una fila).
+
+**Splitwise cargado días después del cargo** (YouTube: cargo 22/9, Splitwise 27/9) → pendiente `split_a_cargar` "SIN cargo que matchee" (tolerancia ±3 días) sobre un id que no está en el ledger. Si el split ya está hecho: `gastos.py resolver <id> --cerrar split_a_cargar --nota "..."` (desde el 2/10 cierra pendientes sin fila).
+
+**Repartir un split según lo que efectivamente se cobró**, no la fracción teórica: si Splitwise dice 13,00 y la madre pagó 4,87, las hermanas van con esos montos y la parte propia absorbe el redondeo y el recargo (`original + hermanas = cargo del estado`, y `Deudas`/`A cobrar` cuadran contra la realidad).
+
+**Imputar un gasto a otro mes:** `gastos.py resolver <id> mes=AAAA-MM`. La `fecha` queda real (la usa la conciliación bancaria) y el `mes` dice a qué mes pertenece. Caso: la cuota 19/24 de ORT de setiembre, pagada en octubre.
+
+**Gasto informado sin estado** (BBVA, que llega en octubre): `gastos.py gasto --cuenta "BBVA Crédito" --desc "<nombre corto como lo trae el banco>"` — el matcher compara la descripción (fuzzy ≥ 0,20) y la fecha (±3 días). Si la fecha era aproximada y el estado la trae lejos, la línea del estado entra como nueva: darla de baja con `borrar`.

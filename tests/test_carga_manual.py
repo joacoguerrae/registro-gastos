@@ -29,6 +29,23 @@ PLANILLA = [
 ]
 
 
+def planilla_para(base):
+    """PLANILLA con los dos duplicados tomados de los datos REALES del momento:
+    un aporte de Lu que ya esta en aportes_lu.csv y un giro de Joaco a la Cuenta
+    Casa que ya esta en el ledger. La 1ra version los tenia fijos (31.000 y
+    48.000) y se rompio el 2/10, cuando el cierre de setiembre corrigio el
+    48.000 a dos giros de 30.000 + 18.000: un fixture no puede depender de que
+    los datos no se corrijan nunca."""
+    lu = next(r for r in filas(base / "data" / "aportes_lu.csv") if r["mes"] == "2026-09")
+    jo = next(r for r in filas(base / "data" / "ledger.csv")
+              if r["tipo"] == "transferencia" and r["cuenta_destino"] == "Cuenta Casa"
+              and r["mes"] == "2026-09" and r["origen"] == "manual")
+    filas_p = [list(f) for f in PLANILLA]
+    filas_p[6][2:4] = [lu["fecha"] or "2026-09-10", f"{float(lu['monto']):.0f}"]
+    filas_p[8][2:4] = [jo["fecha"], f"{float(jo['monto']):.0f}"]
+    return [tuple(f) for f in filas_p], f"{float(jo['monto']):.2f}"
+
+
 def escribir_snapshot(base, filas_planilla):
     p = base / "data" / "fuentes" / "carga_manual.csv"
     p.parent.mkdir(parents=True, exist_ok=True)
@@ -43,7 +60,9 @@ def pendientes_planilla(base):
             if p["detalle"].startswith("[planilla]") and not p["resuelto"]]
 
 
-def cargar(base, correr, filas_planilla=PLANILLA):
+def cargar(base, correr, filas_planilla=None):
+    if filas_planilla is None:
+        filas_planilla = planilla_para(base)[0]
     escribir_snapshot(base, filas_planilla)
     correr("leer_carga_manual.py", "--offline")
     correr("procesar_mails.py")
@@ -51,6 +70,9 @@ def cargar(base, correr, filas_planilla=PLANILLA):
 
 
 def test_filas_validas_entran_e_invalidas_quedan_en_la_bandeja(base, correr):
+    # el "antes" es SIN planilla: la copia trae la planilla real (desde el 2/10,
+    # con 5 gastos de Lu) y el test la reemplaza entera
+    cargar(base, correr, [])
     correr("cierre_casa.py", "2026-09")
     antes = next(r for r in filas(base / "data" / "cierre_casa.csv") if r["mes"] == "2026-09")
     cargar(base, correr)
@@ -86,7 +108,7 @@ def test_filas_validas_entran_e_invalidas_quedan_en_la_bandeja(base, correr):
 
 def test_corregir_la_fila_en_la_planilla_se_lleva_el_pendiente(base, correr):
     cargar(base, correr)
-    corregida = [list(f) for f in PLANILLA]
+    corregida = [list(f) for f in planilla_para(base)[0]]
     corregida[2][2] = "2026-09-22"                            # Gastos fila 4: ahora con fecha
     cargar(base, correr, [tuple(f) for f in corregida])
     assert not any("Gastos fila 4" in p["detalle"] for p in pendientes_planilla(base))
@@ -96,21 +118,21 @@ def test_corregir_la_fila_en_la_planilla_se_lleva_el_pendiente(base, correr):
 
 def test_duplicado_confirmado_en_la_revision_entra(base, correr):
     cargar(base, correr)
-    dup = next(p for p in pendientes_planilla(base) if "Aportes fila 5" in p["detalle"]
-               or "Aportes fila 4" in p["detalle"])
+    monto_jo = planilla_para(base)[1]
+    dup = next(p for p in pendientes_planilla(base) if "Aportes fila 4" in p["detalle"])
     with open(base / "data" / "resoluciones.csv", "a", encoding="utf-8", newline="") as f:
         csv.writer(f, lineterminator="\n").writerow(
             [dup["id_ledger"], "motivo_resuelto", "carga_manual_duplicado", "es otro giro", "2026-09-27"])
     cargar(base, correr)
     montos = [r["monto"] for r in filas(base / "data" / "ledger.csv") if r["origen"] == "carga_manual"]
-    assert montos.count("48000.00") == 1
+    assert montos.count(monto_jo) == 1
     assert not any(p["id_ledger"] == dup["id_ledger"] for p in pendientes_planilla(base))
 
 
 def test_reordenar_la_planilla_no_cambia_los_ids(base, correr):
     cargar(base, correr)
     ids = {r["id"] for r in filas(base / "data" / "ledger.csv") if r["origen"] == "carga_manual"}
-    invertida = [(p, 100 - n, *resto) for (p, n, *resto) in reversed(PLANILLA)]
+    invertida = [(p, 100 - n, *resto) for (p, n, *resto) in reversed(planilla_para(base)[0])]
     cargar(base, correr, invertida)
     assert {r["id"] for r in filas(base / "data" / "ledger.csv") if r["origen"] == "carga_manual"} == ids
 

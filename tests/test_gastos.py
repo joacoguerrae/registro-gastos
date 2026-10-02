@@ -182,6 +182,26 @@ def test_resolver_valida_contra_los_catalogos(base, correr):
         assert p.returncode == 2 and error in p.stderr, (args, p.stderr)
 
 
+def test_resolver_fecha_mueve_el_mes_y_mes_imputa(base, correr):
+    """El caso ORT (2/10): una cuota de setiembre pagada en octubre. La fecha
+    queda REAL (la conciliacion bancaria la necesita) y `mes` la imputa. Y un
+    cambio de fecha a secas arrastra el mes (antes lo dejaba viejo)."""
+    preparar(base, correr)
+    L = filas(base / "data" / "ledger.csv")
+    a, b = [r for r in L if r["origen"] == "mail" and r["tipo"] == "gasto"
+            and r["fecha"].endswith(("-10", "-11", "-12"))][:2]
+    otro_mes = lambda m: f"{m[:4]}-{int(m[5:7]) % 12 + 1:02d}"
+    correr("gastos.py", "resolver", a["id"], f"mes={otro_mes(a['mes'])}", "--nota", "imputacion",
+           "--aplicar", "--sin-pipeline")
+    nueva_fecha = f"{otro_mes(b['mes'])}-01"
+    correr("gastos.py", "resolver", b["id"], f"fecha={nueva_fecha}", "--nota", "fecha real",
+           "--aplicar", "--sin-pipeline")
+    correr("merge_y_validar.py")
+    L = por_id(base / "data" / "ledger.csv")
+    assert (L[a["id"]]["fecha"], L[a["id"]]["mes"]) == (a["fecha"], otro_mes(a["mes"]))
+    assert (L[b["id"]]["fecha"], L[b["id"]]["mes"]) == (nueva_fecha, nueva_fecha[:7])
+
+
 def test_resolver_transferencia_a_gasto_completa_monto_uyu(base, correr):
     """Paso dos veces (SA2): una transferencia pasada a gasto sin monto_uyu no
     suma en ningun agregado."""

@@ -81,8 +81,11 @@ CUENTAS_CASA = {"Cuenta Casa", "Santander Mastercard", "Mercado Pago"}
 MONEDAS = ("UYU", "USD", "EUR")
 AMBITOS = ("casa", "personal", "split", "interno")
 TIPOS = ("gasto", "ingreso", "transferencia")
-# Columnas que resolver NO toca: identidad de la fila, o derivadas.
-NO_RESOLVIBLES = {"id", "origen", "fuente_id", "mes"}
+# Columnas que resolver NO toca: la identidad de la fila. `mes` SI: por defecto
+# sigue a la fecha, pero se puede imputar a otro mes a proposito (una cuota de
+# setiembre pagada el 2/10: la fecha queda real -- la usa la conciliacion
+# bancaria -- y el mes dice a que mes pertenece el gasto).
+NO_RESOLVIBLES = {"id", "origen", "fuente_id"}
 SIN_BORRADO = {"1money": "usa `resolver <id> en_analisis=0`: sus filas se "
                          "regeneran desde data/staging/ en cada corrida",
                "planilla_casa": "usa `resolver <id> en_analisis=0`: sus filas se "
@@ -566,11 +569,24 @@ def sufijo(a):
 
 # ------------------------------------------------------------------ resolver / borrar
 def cmd_resolver(est, a):
-    r = est.fila(a.id)
     if not (a.cambios or a.cerrar or a.participacion_lu is not None):
         raise Error("nada que resolver: pasa campo=valor, --cerrar MOTIVO o --participacion-lu")
     if not a.nota:
         raise Error("--nota es obligatoria: es la memoria del porque")
+    if a.id not in est.por_id:
+        # Pendientes SIN fila: sync_splitwise y procesar_mails los crean sobre el
+        # id que la fila HABRIA tenido (split "SIN cargo que matchee",
+        # formato_nuevo). Solo se pueden cerrar, no corregir.
+        abiertos = {p["motivo"] for p in est.pendientes_abiertos(a.id)}
+        if a.cerrar and not a.cambios and a.participacion_lu is None and abiertos:
+            for motivo in a.cerrar:
+                if motivo not in abiertos:
+                    raise Error(f"{a.id} no tiene fila en el ledger ni pendiente {motivo!r} abierto "
+                                f"(abiertos: {sorted(abiertos)})")
+                est.resolver(a.id, "motivo_resuelto", motivo, a.nota)
+            return
+        est.fila(a.id)                    # levanta el error con el detalle
+    r = est.fila(a.id)
     nuevos = {}
     for c in a.cambios:
         campo, sep, valor = c.partition("=")
@@ -580,7 +596,7 @@ def cmd_resolver(est, a):
         if campo not in COLUMNS:
             raise Error(f"campo {campo!r} no existe. Columnas: {', '.join(COLUMNS)}")
         if campo in NO_RESOLVIBLES:
-            raise Error(f"{campo!r} no se corrige por resolucion ({'se deriva de fecha' if campo == 'mes' else 'es la identidad de la fila'})")
+            raise Error(f"{campo!r} no se corrige por resolucion (es la identidad de la fila)")
         nuevos[campo] = valor
     tipo = nuevos.get("tipo", r["tipo"])
     if "tipo" in nuevos and tipo not in TIPOS:
@@ -601,8 +617,17 @@ def cmd_resolver(est, a):
             nuevos[c] = fmt(num(nuevos[c], c))
     if "fecha" in nuevos:
         nuevos["fecha"] = fecha_iso(nuevos["fecha"])
-        est.avisos.append("cambiar la fecha NO cambia el `mes` de la fila (es derivado); "
-                          "si cruza de mes, avisa al revisar el cierre")
+        # el mes sigue a la fecha, salvo que se impute otro explicitamente
+        if "mes" not in nuevos and nuevos["fecha"][:7] != r["mes"]:
+            nuevos["mes"] = nuevos["fecha"][:7]
+            print(f"  mes = {nuevos['mes']} (sigue a la fecha nueva)")
+    if "mes" in nuevos:
+        if not re.fullmatch(r"\d{4}-\d{2}", nuevos["mes"]):
+            raise Error(f"mes {nuevos['mes']!r}: AAAA-MM")
+        if nuevos["mes"] != nuevos.get("fecha", r["fecha"])[:7]:
+            est.avisos.append(f"IMPUTACION: la fila cuenta en {nuevos['mes']} aunque su fecha sea "
+                              f"{nuevos.get('fecha', r['fecha'])} (la fecha real se conserva para la "
+                              "conciliacion con el banco)")
     # transferencia -> gasto/ingreso: un gasto sin monto_uyu no suma en ningun
     # agregado (paso dos veces, SA2). Se exige o se completa.
     if tipo in ("gasto", "ingreso") and not (nuevos.get("monto_uyu") or r["monto_uyu"]):
@@ -631,6 +656,8 @@ def cmd_resolver(est, a):
     est._casa(fila_final)
     if r["ambito"] == "casa":
         est._casa(r)
+    if est.toca_casa:                     # una imputacion mueve el gasto de mes
+        est.meses |= {fila_final["mes"], r["mes"]}
 
 
 def cmd_borrar(est, a):
