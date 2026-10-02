@@ -276,5 +276,47 @@ e27ce7dc5dd0,sin_categoria,establecimiento 'MONTEVIDEO/MOSCA HNOS VIS3' sin regl
 0738be177deb,transferencia_a_clasificar,"a 'Mica Tia', concepto 'sorrentinos Joaco', UYU 640.00: sin categoria",2026-09-25,1
 5f9b0392d375,transferencia_a_clasificar,"a 'Jorge Electricista', concepto 'vazquez ledesma', UYU 31100.00: sin categoria",2026-09-25,1
 19e4ad3e7ebc,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*BANCADEQUINIEVIS3' sin regla,2026-09-26,1
-33c1ed01aa03,sin_categoria,establecimiento 'REST CHEZ PINEY' sin regla,2026-09-30,
+33c1ed01aa03,sin_categoria,establecimiento 'REST CHEZ PINEY' sin regla,2026-09-30,1
 9b05ccf5105f,tc_estimado,USD 1.99 x tc 40.33 = 80.26 UYU (corrige Fase 3),2026-10-01,
+338c2ef40595,ingreso_a_clasificar,Santander UYU 2026-09-29 78.00 UYU: PROMOCIONES TARJETAS DE DEBITO DESC LA ROTISERIA -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-10-02,1
+be2c927cd194,ingreso_a_clasificar,Santander UYU 2026-09-28 55.50 UYU: PROMOCIONES TARJETAS DE DEBITO DESC LA ROTISERIA -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-10-02,1
+cad314e04add,sin_categoria,"Santander UYU COMPRA CON TARJETA DEBITO MOSCA HNOS, MONTEVIDEO TARJ: ##### (del extracto, sin aviso por mail)",2026-10-02,1
+a7a7abf08a68,ingreso_a_clasificar,Santander UYU 2026-09-18 21865.00 UYU: TRANSFERENCIA RECIBIDA 675490DEVOLUCION FONASA -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-10-02,1
+8a224a86ca25,sin_categoria,"Santander UYU RETIRO CORRESPONSALES , MONTEVIDEO TARJ: ############9071 (del extracto, sin aviso por mail)",2026-10-02,1
+ad0b6da77513,ingreso_a_clasificar,Santander UYU 2026-09-14 59.64 UYU: PROMOCIONES TARJETAS DE DEBITO DESC LA ROTISERIA -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-10-02,1
+1573cb90c054,ingreso_a_clasificar,Santander UYU 2026-09-07 43.50 UYU: PROMOCIONES TARJETAS DE DEBITO DESC LA ROTISERIA -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-10-02,1
+d316b0bb7b8f,sin_categoria,"Santander UYU PAGO DE SERVICIO POR BANRED SERVICIO DE PAGOS BANRED , MVST  (del extracto, sin aviso por mail)",2026-10-02,1
+f457db772293,ingreso_a_clasificar,Santander UYU 2026-09-01 42.00 UYU: PROMOCIONES TARJETAS DE DEBITO DESC LA ROTISERIA -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-10-02,1
+90097c7aeaab,ingreso_a_clasificar,Santander UYU 2026-09-01 131410.00 UYU: SUELDOS 472246TT RECIBIDA /DELIVERY HERO URUGUAY MARKET -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-10-02,1
+04c9ab08af31,sin_respaldo_estado,fila del ledger sin linea en el extracto de Santander UYU 2026-09,2026-10-02,1
+884d85c330b6,sin_respaldo_estado,fila del ledger sin linea en el extracto de Santander UYU 2026-09,2026-10-02,1
+547e215784dc,sin_respaldo_estado,fila del ledger sin linea en el extracto de Santander UYU 2026-09,2026-10-02,1
+8aec6dbefedc,sin_respaldo_estado,fila del ledger sin linea en el extracto de Santander UYU 2026-09,2026-10-02,1
+d28d689b9eb6,sin_respaldo_estado,fila del ledger sin linea en el extracto de Santander UYU 2026-09,2026-10-02,1
+967b8e6aac54,sin_respaldo_estado,fila del ledger sin linea en el extracto de Santander UYU 2026-09,2026-10-02,1
+e27ce7dc5dd0,sin_respaldo_estado,fila del ledger sin linea en el extracto de Santander UYU 2026-09,2026-10-02,1
+a439df09d18e,sin_categoria,"Cuenta Casa COMISION EDC CTA.CTE. (del extracto, sin aviso por mail)",2026-10-02,1
+8e07b7279743,sin_categoria,"Cuenta Casa TRANSFERENCIA ENVIADA 745817TT55287312 TRF. PLAZA- JORGE ELE (del extracto, sin aviso por mail)",2026-10-02,1
+05c804ed4379,ingreso_a_clasificar,Cuenta Casa 2026-09-18 15000.00 UYU: TRANSF INSTANTANEA RECIBIDA 665349LR:000039671189 DECAUX TAR -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-10-02,1
+3c9a4df3c893,ingreso_a_clasificar,"Cuenta Casa 2026-09-17 9.44 UYU: EXTORNO COMPRA CON VISA DEBITO DEV,DLO.PEDIDOSYA MARKET, FEC -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?",2026-10-02,1
+ad8597732c71,ingreso_a_clasificar,"Cuenta Casa 2026-09-14 73.99 UYU: EXTORNO COMPRA CON VISA DEBITO DEV,MERPAGO.EONE, FECHA : 202 -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?",2026-10-02,1
+d04efb87ef02,ingreso_a_clasificar,"Cuenta Casa 2026-09-10 31.55 UYU: EXTORNO COMPRA CON VISA DEBITO DEV,DLO.PEDIDOSYA MARKET, FEC -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?",2026-10-02,1
+18f03659f68a,ingreso_a_clasificar,"Cuenta Casa 2026-09-08 491.80 UYU: EXTORNO COMPRA CON VISA DEBITO DEV,MERPAGO.EONE, FECHA : 202 -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?",2026-10-02,1
+10ac399077ad,ingreso_a_clasificar,"Cuenta Casa 2026-09-08 104.09 UYU: EXTORNO COMPRA CON VISA DEBITO DEV,MERPAGO.EONE, FECHA : 202 -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?",2026-10-02,1
+8927bab8a642,ingreso_a_clasificar,"Cuenta Casa 2026-09-08 491.80 UYU: EXTORNO COMPRA CON VISA DEBITO DEV,MERPAGO.EONE, FECHA : 202 -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?",2026-10-02,1
+8f860c4b875a,ingreso_a_clasificar,"Cuenta Casa 2026-09-07 5.50 UYU: EXTORNO COMPRA CON VISA DEBITO DEV,DLO.PEDIDOSYA MARKET, FEC -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?",2026-10-02,1
+b93cd028fdb2,sin_categoria,"Cuenta Casa PAGO ELECTRONICO TARJETA CREDITO (del extracto, sin aviso por mail)",2026-10-02,1
+e63f8ed77469,ingreso_a_clasificar,Cuenta Casa 2026-09-03 31000.00 UYU: TRANSFERENCIA RECIBIDA 977004TT RECIBIDA /DECAUX TAROCO LUCI -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-10-02,1
+e0c083047246,sin_categoria,"Cuenta Casa COMISION EDC CTA.CTE. (del extracto, sin aviso por mail)",2026-10-02,1
+06d7f0487e43,ingreso_a_clasificar,"Santander USD 2026-09-07 490.00 USD: TRANSF INSTANTANEA RECIBIDA 870546LR:73570355 GUERRA ESMITE, -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?",2026-10-02,1
+7a7dc782ce20,ingreso_a_clasificar,Santander USD 2026-09-07 4.87 USD: CREDITO OPERACION EN BANCA DIGITAL T--/ESMITE RODRIGUEZ ALEJ -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-10-02,1
+a4ae827ce11e,sin_respaldo_estado,Santander Platinum 2026-09: fila del ledger (2026-08-28 UYU 136.14 SEGURO SALDO DEUDOR) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-10-02,1
+c018d12fed27,sin_respaldo_estado,Santander Platinum 2026-09: fila del ledger (2026-08-31 UYU 720.22 REST CHEZ PINEY) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-10-02,1
+17c1f7c3adc2,sin_respaldo_estado,Santander Platinum 2026-09: fila del ledger (2026-09-02 UYU -205.39 Reintegro UBER (sin cargo original identificado)) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-10-02,1
+7be60a65f151,sin_respaldo_estado,Santander Platinum 2026-09: fila del ledger (2026-09-02 UYU 224.00 UBER) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-10-02,1
+63ebc2c594a2,sin_respaldo_estado,Santander Platinum 2026-09: fila del ledger (2026-09-07 UYU 3794.00 BANCO DE SEGURO) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-10-02,1
+4fe0b33136a4,sin_respaldo_estado,Santander Platinum 2026-09: fila del ledger (2026-09-22 USD 8.66 APPLE.COM/BILL) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-10-02,1
+4cef7d037335,sin_categoria,estado_cuenta Santander Platinum 2026-09: 'DILEMA' sin regla,2026-10-02,1
+eb318ff6feed,sin_categoria,estado_cuenta Santander Platinum 2026-09: 'REST CHEZ PI EYRO' sin regla,2026-10-02,1
+b50168718ade,sin_categoria,estado_cuenta Santander Platinum 2026-09: 'DESC DILEMA' sin regla,2026-10-02,1
+c0f00969ac5a,split_a_cargar,"Splitwise sw:xaa96125797 'Youtube' USD 13.00 (2026-09-27): yo pague 13.00, mi parte 0.00 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-10-02,1

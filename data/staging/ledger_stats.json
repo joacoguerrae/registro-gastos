@@ -1,14 +1,17 @@
 {
   "borrados": {
-    "mail": 2
+    "estado_cuenta": 8,
+    "mail": 4,
+    "manual": 1
   },
   "por_origen": {
     "1money": 3060,
-    "estado_cuenta": 71,
-    "mail": 313,
-    "manual": 50,
+    "carga_manual": 5,
+    "estado_cuenta": 100,
+    "mail": 311,
+    "manual": 55,
     "planilla_casa": 1465,
-    "splitwise": 32
+    "splitwise": 33
   },
-  "total": 4991
+  "total": 5029
 }

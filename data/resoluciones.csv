@@ -780,3 +780,130 @@ e27ce7dc5dd0,motivo_resuelto,sin_categoria,"Regalos, split 1/2 con el hermano (J
 40d0c7cde8a0,descripcion,Ropa para Lu (BAS),,2026-09-27
 40d0c7cde8a0,motivo_resuelto,sin_categoria,"ropa para Lu: casa 100% Lu, aporte de Joaco (Joaco 27/9)",2026-09-27
 66311dae6ecd,motivo_resuelto,split_a_cargar,"julio: el cargo se registro entero (la regla de YouTube es del 9/8, la madre se sumo en agosto); la regla de hoy solo lo re-propone al reprocesar desde cero",2026-09-27
+b385babe0e4c,fecha,2026-09-03,el banco debita el pago USD de la Platinum el 3/9 (TCSANTOL); el aviso es del 2/9 y quedaba fuera de la ventana del extracto,2026-10-02
+90097c7aeaab,categoria,Sueldo,sueldo de setiembre (Delivery Hero),2026-10-02
+90097c7aeaab,motivo_resuelto,ingreso_a_clasificar,sueldo de setiembre (Delivery Hero),2026-10-02
+a7a7abf08a68,categoria,Otros ingresos,devolucion FONASA 18/9 (Joaco 2/10: Otros ingresos),2026-10-02
+a7a7abf08a68,motivo_resuelto,ingreso_a_clasificar,devolucion FONASA 18/9 (Joaco 2/10: Otros ingresos),2026-10-02
+f457db772293,categoria,Devoluciones & cashback,"promocion de debito (descuento La Rotiseria), como julio",2026-10-02
+f457db772293,motivo_resuelto,ingreso_a_clasificar,"promocion de debito (descuento La Rotiseria), como julio",2026-10-02
+1573cb90c054,categoria,Devoluciones & cashback,"promocion de debito (descuento La Rotiseria), como julio",2026-10-02
+1573cb90c054,motivo_resuelto,ingreso_a_clasificar,"promocion de debito (descuento La Rotiseria), como julio",2026-10-02
+ad0b6da77513,categoria,Devoluciones & cashback,"promocion de debito (descuento La Rotiseria), como julio",2026-10-02
+ad0b6da77513,motivo_resuelto,ingreso_a_clasificar,"promocion de debito (descuento La Rotiseria), como julio",2026-10-02
+be2c927cd194,categoria,Devoluciones & cashback,"promocion de debito (descuento La Rotiseria), como julio",2026-10-02
+be2c927cd194,motivo_resuelto,ingreso_a_clasificar,"promocion de debito (descuento La Rotiseria), como julio",2026-10-02
+338c2ef40595,categoria,Devoluciones & cashback,"promocion de debito (descuento La Rotiseria), como julio",2026-10-02
+338c2ef40595,motivo_resuelto,ingreso_a_clasificar,"promocion de debito (descuento La Rotiseria), como julio",2026-10-02
+d316b0bb7b8f,motivo_resuelto,sin_categoria,"fila dada de baja: total bancario del split de Tigo 2/9 (908,21 propio + 939,00 de Agus)",2026-10-02
+8a224a86ca25,motivo_resuelto,sin_categoria,"fila dada de baja: total del retiro de 4.500 del 14/9, ya registrado partido el 12/9: 452 propina + 449,78 + 3.598,22 Candela",2026-10-02
+cad314e04add,motivo_resuelto,sin_categoria,fila dada de baja: total bancario del split de Mosca Hnos 20/9 (545 propio + 545 al hermano),2026-10-02
+04c9ab08af31,motivo_resuelto,sin_respaldo_estado,"mitad de un split: el banco trae el total de Tigo (1.847,21) en una linea",2026-10-02
+884d85c330b6,motivo_resuelto,sin_respaldo_estado,"hermana de un split: el banco trae el total de Tigo (1.847,21) en una linea",2026-10-02
+547e215784dc,motivo_resuelto,sin_respaldo_estado,parte del retiro de 4.500 del 14/9 (el banco lo trae en una linea),2026-10-02
+8aec6dbefedc,motivo_resuelto,sin_respaldo_estado,parte del retiro de 4.500 del 14/9 (el banco lo trae en una linea),2026-10-02
+d28d689b9eb6,motivo_resuelto,sin_respaldo_estado,parte del retiro de 4.500 del 14/9 (el banco lo trae en una linea),2026-10-02
+e27ce7dc5dd0,motivo_resuelto,sin_respaldo_estado,mitad de un split: el banco trae el total de Mosca (1.090) en una linea,2026-10-02
+967b8e6aac54,motivo_resuelto,sin_respaldo_estado,hermana de un split: el banco trae el total de Mosca (1.090) en una linea,2026-10-02
+e0c083047246,categoria,Servicios,"comision de la cuenta corriente de la casa, como julio",2026-10-02
+e0c083047246,motivo_resuelto,sin_categoria,"comision de la cuenta corriente de la casa, como julio",2026-10-02
+a439df09d18e,categoria,Servicios,"comision de la cuenta corriente de la casa, como julio",2026-10-02
+a439df09d18e,motivo_resuelto,sin_categoria,"comision de la cuenta corriente de la casa, como julio",2026-10-02
+8e07b7279743,categoria,Casa & hogar,comision de la transferencia al electricista: casa 50/50 como el trabajo,2026-10-02
+8e07b7279743,motivo_resuelto,sin_categoria,comision de la transferencia al electricista: casa 50/50 como el trabajo,2026-10-02
+b93cd028fdb2,tipo,transferencia,"pago del estado de la Mastercard del 4/9, como el del 14/8",2026-10-02
+b93cd028fdb2,cuenta_destino,Santander Mastercard,"pago del estado de la Mastercard del 4/9, como el del 14/8",2026-10-02
+b93cd028fdb2,ambito,interno,"pago del estado de la Mastercard del 4/9, como el del 14/8",2026-10-02
+b93cd028fdb2,en_analisis,0,"pago del estado de la Mastercard del 4/9, como el del 14/8",2026-10-02
+b93cd028fdb2,descripcion,"Pago de la Mastercard 13.257,50 (estado del 4/9) desde la Cuenta Casa","pago del estado de la Mastercard del 4/9, como el del 14/8",2026-10-02
+b93cd028fdb2,motivo_resuelto,sin_categoria,"pago del estado de la Mastercard del 4/9, como el del 14/8",2026-10-02
+e63f8ed77469,categoria,Otros ingresos,aporte de Lu: el aporte cuenta por aportes_lu.csv; esta fila es solo para el saldo de la Cuenta Casa (como agosto),2026-10-02
+e63f8ed77469,en_analisis,0,aporte de Lu: el aporte cuenta por aportes_lu.csv; esta fila es solo para el saldo de la Cuenta Casa (como agosto),2026-10-02
+e63f8ed77469,descripcion,Aporte de Lu 31.000 (3/9) - cuenta por data/aportes_lu.csv,aporte de Lu: el aporte cuenta por aportes_lu.csv; esta fila es solo para el saldo de la Cuenta Casa (como agosto),2026-10-02
+e63f8ed77469,motivo_resuelto,ingreso_a_clasificar,aporte de Lu: el aporte cuenta por aportes_lu.csv; esta fila es solo para el saldo de la Cuenta Casa (como agosto),2026-10-02
+05c804ed4379,categoria,Otros ingresos,aporte de Lu: el aporte cuenta por aportes_lu.csv; esta fila es solo para el saldo de la Cuenta Casa (como agosto),2026-10-02
+05c804ed4379,en_analisis,0,aporte de Lu: el aporte cuenta por aportes_lu.csv; esta fila es solo para el saldo de la Cuenta Casa (como agosto),2026-10-02
+05c804ed4379,descripcion,Aporte de Lu 15.000 (18/9) - cuenta por data/aportes_lu.csv,aporte de Lu: el aporte cuenta por aportes_lu.csv; esta fila es solo para el saldo de la Cuenta Casa (como agosto),2026-10-02
+05c804ed4379,motivo_resuelto,ingreso_a_clasificar,aporte de Lu: el aporte cuenta por aportes_lu.csv; esta fila es solo para el saldo de la Cuenta Casa (como agosto),2026-10-02
+10ac399077ad,tipo,gasto,devolucion de retencion EONE: gasto NEGATIVO de Auto/casa para que el neto de la carga quede en lo real (decision 19/9),2026-10-02
+10ac399077ad,monto,-104.09,devolucion de retencion EONE: gasto NEGATIVO de Auto/casa para que el neto de la carga quede en lo real (decision 19/9),2026-10-02
+10ac399077ad,monto_uyu,-104.09,devolucion de retencion EONE: gasto NEGATIVO de Auto/casa para que el neto de la carga quede en lo real (decision 19/9),2026-10-02
+10ac399077ad,categoria,Auto,devolucion de retencion EONE: gasto NEGATIVO de Auto/casa para que el neto de la carga quede en lo real (decision 19/9),2026-10-02
+10ac399077ad,motivo_resuelto,ingreso_a_clasificar,devolucion de retencion EONE: gasto NEGATIVO de Auto/casa para que el neto de la carga quede en lo real (decision 19/9),2026-10-02
+18f03659f68a,tipo,gasto,devolucion de retencion EONE: gasto NEGATIVO de Auto/casa (decision 19/9),2026-10-02
+18f03659f68a,monto,-491.80,devolucion de retencion EONE: gasto NEGATIVO de Auto/casa (decision 19/9),2026-10-02
+18f03659f68a,monto_uyu,-491.80,devolucion de retencion EONE: gasto NEGATIVO de Auto/casa (decision 19/9),2026-10-02
+18f03659f68a,categoria,Auto,devolucion de retencion EONE: gasto NEGATIVO de Auto/casa (decision 19/9),2026-10-02
+18f03659f68a,motivo_resuelto,ingreso_a_clasificar,devolucion de retencion EONE: gasto NEGATIVO de Auto/casa (decision 19/9),2026-10-02
+8927bab8a642,tipo,gasto,devolucion de retencion EONE: gasto NEGATIVO de Auto/casa (decision 19/9),2026-10-02
+8927bab8a642,monto,-491.80,devolucion de retencion EONE: gasto NEGATIVO de Auto/casa (decision 19/9),2026-10-02
+8927bab8a642,monto_uyu,-491.80,devolucion de retencion EONE: gasto NEGATIVO de Auto/casa (decision 19/9),2026-10-02
+8927bab8a642,categoria,Auto,devolucion de retencion EONE: gasto NEGATIVO de Auto/casa (decision 19/9),2026-10-02
+8927bab8a642,motivo_resuelto,ingreso_a_clasificar,devolucion de retencion EONE: gasto NEGATIVO de Auto/casa (decision 19/9),2026-10-02
+ad8597732c71,tipo,gasto,devolucion de retencion EONE: gasto NEGATIVO de Auto/casa (decision 19/9),2026-10-02
+ad8597732c71,monto,-73.99,devolucion de retencion EONE: gasto NEGATIVO de Auto/casa (decision 19/9),2026-10-02
+ad8597732c71,monto_uyu,-73.99,devolucion de retencion EONE: gasto NEGATIVO de Auto/casa (decision 19/9),2026-10-02
+ad8597732c71,categoria,Auto,devolucion de retencion EONE: gasto NEGATIVO de Auto/casa (decision 19/9),2026-10-02
+ad8597732c71,motivo_resuelto,ingreso_a_clasificar,devolucion de retencion EONE: gasto NEGATIVO de Auto/casa (decision 19/9),2026-10-02
+8f860c4b875a,categoria,Devoluciones & cashback,"extorno de PedidosYa Market, como agosto",2026-10-02
+8f860c4b875a,motivo_resuelto,ingreso_a_clasificar,"extorno de PedidosYa Market, como agosto",2026-10-02
+d04efb87ef02,categoria,Devoluciones & cashback,"extorno de PedidosYa Market, como agosto",2026-10-02
+d04efb87ef02,motivo_resuelto,ingreso_a_clasificar,"extorno de PedidosYa Market, como agosto",2026-10-02
+3c9a4df3c893,categoria,Devoluciones & cashback,"extorno de PedidosYa Market, como agosto",2026-10-02
+3c9a4df3c893,motivo_resuelto,ingreso_a_clasificar,"extorno de PedidosYa Market, como agosto",2026-10-02
+06d7f0487e43,tipo,transferencia,Joaco 2/10: los paso desde su BBVA USD,2026-10-02
+06d7f0487e43,cuenta,BBVA USD,Joaco 2/10: los paso desde su BBVA USD,2026-10-02
+06d7f0487e43,cuenta_destino,Santander USD,Joaco 2/10: los paso desde su BBVA USD,2026-10-02
+06d7f0487e43,ambito,interno,Joaco 2/10: los paso desde su BBVA USD,2026-10-02
+06d7f0487e43,en_analisis,0,Joaco 2/10: los paso desde su BBVA USD,2026-10-02
+06d7f0487e43,descripcion,Pase de USD 490 desde la BBVA USD,Joaco 2/10: los paso desde su BBVA USD,2026-10-02
+06d7f0487e43,motivo_resuelto,ingreso_a_clasificar,Joaco 2/10: los paso desde su BBVA USD,2026-10-02
+7a7dc782ce20,tipo,transferencia,Joaco 2/10: es la parte de YouTube de su madre (sale de A cobrar),2026-10-02
+7a7dc782ce20,cuenta,A cobrar,Joaco 2/10: es la parte de YouTube de su madre (sale de A cobrar),2026-10-02
+7a7dc782ce20,cuenta_destino,Santander USD,Joaco 2/10: es la parte de YouTube de su madre (sale de A cobrar),2026-10-02
+7a7dc782ce20,ambito,interno,Joaco 2/10: es la parte de YouTube de su madre (sale de A cobrar),2026-10-02
+7a7dc782ce20,en_analisis,0,Joaco 2/10: es la parte de YouTube de su madre (sale de A cobrar),2026-10-02
+7a7dc782ce20,descripcion,Pago de la madre: su parte de YouTube Premium,Joaco 2/10: es la parte de YouTube de su madre (sale de A cobrar),2026-10-02
+7a7dc782ce20,motivo_resuelto,ingreso_a_clasificar,Joaco 2/10: es la parte de YouTube de su madre (sale de A cobrar),2026-10-02
+4cef7d037335,motivo_resuelto,sin_categoria,fila dada de baja: duplicado: el cargo del Dilema 30/8 ya esta como transferencia a A cobrar (7a98ef391cb4),2026-10-02
+eb318ff6feed,motivo_resuelto,sin_categoria,"fila dada de baja: total del split de Chez Piney 31/8 (720,22 propio + 720,21 a Deudas)",2026-10-02
+b50168718ade,tipo,transferencia,"Joaco 2/10: dejar A cobrar en 0 y redondear; el resto del descuento (75,03) va como devolucion. Fecha = cierre del estado: el descuento entra en el estado de setiembre",2026-10-02
+b50168718ade,cuenta,A cobrar,"Joaco 2/10: dejar A cobrar en 0 y redondear; el resto del descuento (75,03) va como devolucion. Fecha = cierre del estado: el descuento entra en el estado de setiembre",2026-10-02
+b50168718ade,cuenta_destino,Santander Platinum,"Joaco 2/10: dejar A cobrar en 0 y redondear; el resto del descuento (75,03) va como devolucion. Fecha = cierre del estado: el descuento entra en el estado de setiembre",2026-10-02
+b50168718ade,monto,1035.97,"Joaco 2/10: dejar A cobrar en 0 y redondear; el resto del descuento (75,03) va como devolucion. Fecha = cierre del estado: el descuento entra en el estado de setiembre",2026-10-02
+b50168718ade,monto_uyu,1035.97,"Joaco 2/10: dejar A cobrar en 0 y redondear; el resto del descuento (75,03) va como devolucion. Fecha = cierre del estado: el descuento entra en el estado de setiembre",2026-10-02
+b50168718ade,fecha,2026-09-28,"Joaco 2/10: dejar A cobrar en 0 y redondear; el resto del descuento (75,03) va como devolucion. Fecha = cierre del estado: el descuento entra en el estado de setiembre",2026-10-02
+b50168718ade,ambito,interno,"Joaco 2/10: dejar A cobrar en 0 y redondear; el resto del descuento (75,03) va como devolucion. Fecha = cierre del estado: el descuento entra en el estado de setiembre",2026-10-02
+b50168718ade,en_analisis,0,"Joaco 2/10: dejar A cobrar en 0 y redondear; el resto del descuento (75,03) va como devolucion. Fecha = cierre del estado: el descuento entra en el estado de setiembre",2026-10-02
+b50168718ade,descripcion,"Descuento del Dilema: cancela lo que quedaba en A cobrar (1.035,97 de los 1.111)","Joaco 2/10: dejar A cobrar en 0 y redondear; el resto del descuento (75,03) va como devolucion. Fecha = cierre del estado: el descuento entra en el estado de setiembre",2026-10-02
+b50168718ade,mes,2026-09,"Joaco 2/10: dejar A cobrar en 0 y redondear; el resto del descuento (75,03) va como devolucion. Fecha = cierre del estado: el descuento entra en el estado de setiembre",2026-10-02
+b50168718ade,motivo_resuelto,sin_categoria,"Joaco 2/10: dejar A cobrar en 0 y redondear; el resto del descuento (75,03) va como devolucion. Fecha = cierre del estado: el descuento entra en el estado de setiembre",2026-10-02
+7be60a65f151,monto,205.39,"tarifa final del estado: 205,39 (el aviso decia 224)",2026-10-02
+7be60a65f151,monto_uyu,205.39,"tarifa final del estado: 205,39 (el aviso decia 224)",2026-10-02
+7be60a65f151,motivo_resuelto,sin_respaldo_estado,"tarifa final del estado: 205,39 (el aviso decia 224)",2026-10-02
+17c1f7c3adc2,motivo_resuelto,sin_respaldo_estado,"fila dada de baja: reintegro de Uber que el banco nunca aplico: el estado trae un solo cargo de 205,39 el 2/9",2026-10-02
+63ebc2c594a2,fecha,2026-09-03,el banco cobra el BSE el 3/9; el aviso es del 7/9,2026-10-02
+63ebc2c594a2,motivo_resuelto,sin_respaldo_estado,el banco cobra el BSE el 3/9; el aviso es del 7/9,2026-10-02
+c018d12fed27,motivo_resuelto,sin_respaldo_estado,"mitad de un split: el estado trae el total 1.440,43",2026-10-02
+a4ae827ce11e,motivo_resuelto,sin_respaldo_estado,es del estado de agosto (cierre 28/8): cae en la ventana de este por la tolerancia de fechas,2026-10-02
+4fe0b33136a4,monto,8.93,"YouTube 22/9 con el recargo del estado: USD 26,78 en total; 2/6 = 8,93",2026-10-02
+4fe0b33136a4,monto_uyu,360.15,"YouTube 22/9 con el recargo del estado: USD 26,78 en total; 2/6 = 8,93",2026-10-02
+4fe0b33136a4,motivo_resuelto,sin_respaldo_estado,"YouTube 22/9 con el recargo del estado: USD 26,78 en total; 2/6 = 8,93",2026-10-02
+02c348600809,monto,13.39,"3/6 de USD 26,78 (YouTube con el recargo del estado)",2026-10-02
+02c348600809,monto_uyu,540.02,"3/6 de USD 26,78 (YouTube con el recargo del estado)",2026-10-02
+d5615cfc2b06,monto,4.46,"1/6 de USD 26,78 (YouTube de la madre, con el recargo del estado)",2026-10-02
+d5615cfc2b06,monto_uyu,179.87,"1/6 de USD 26,78 (YouTube de la madre, con el recargo del estado)",2026-10-02
+aa11f1274550,monto,2.05,importe del estado (recargo 3% en USD),2026-10-02
+aa11f1274550,monto_uyu,82.68,importe del estado (recargo 3% en USD),2026-10-02
+fe4410dc33ff,monto,103.05,importe del estado (recargo 3% en USD),2026-10-02
+fe4410dc33ff,monto_uyu,4156.01,importe del estado (recargo 3% en USD),2026-10-02
+33c1ed01aa03,categoria,Comer afuera / Delivery,"Chez Piney 29/9: Comer afuera, como el 31/8",2026-10-02
+33c1ed01aa03,motivo_resuelto,sin_categoria,"Chez Piney 29/9: Comer afuera, como el 31/8",2026-10-02
+02c348600809,monto,13.00,"YouTube: Rodrigo + hermana pagan lo que dice Splitwise (USD 13,00, sin el recargo)",2026-10-02
+02c348600809,monto_uyu,524.29,"YouTube: Rodrigo + hermana pagan lo que dice Splitwise (USD 13,00, sin el recargo)",2026-10-02
+d5615cfc2b06,monto,4.87,"YouTube: la madre pago USD 4,87 el 7/9 (Joaco 2/10); A cobrar queda en 0",2026-10-02
+d5615cfc2b06,monto_uyu,196.41,"YouTube: la madre pago USD 4,87 el 7/9 (Joaco 2/10); A cobrar queda en 0",2026-10-02
+4fe0b33136a4,monto,8.91,"YouTube 22/9: USD 26,78 del estado - 13,00 Splitwise - 4,87 madre = 8,91 de la casa",2026-10-02
+4fe0b33136a4,monto_uyu,359.34,"YouTube 22/9: USD 26,78 del estado - 13,00 Splitwise - 4,87 madre = 8,91 de la casa",2026-10-02
+c0f00969ac5a,motivo_resuelto,split_a_cargar,"es la carga en Splitwise del YouTube del 22/9 (5 dias despues, fuera de la tolerancia): el split ya esta en el ledger (4fe0b33136a4 + 02c348600809)",2026-10-02
+7dbe2fb81f67,motivo_resuelto,split_a_cargar,julio: Chez Piney 22/7 sin split (la regla de Chez Piney del 2/10 lo pasa a Comer afuera y el umbral lo re-propone solo al reprocesar desde cero),2026-10-02

@@ -1,1 +1,9 @@
 pestana,fila,fecha,monto,moneda,que,quien,ambito,categoria,cuenta,nota
+Gastos,2,2026-09-30,543,UYU,Panaderia,Lu tarjeta,casa,Comer afuera / Delivery,,Lu pago para ambos
+Gastos,3,2026-09-30,3139,UYU,Temu,Lu tarjeta,casa,Casa & hogar,,Lu pago para ambos
+Gastos,4,2026-09-30,1128,UYU,Farmacia,Lu tarjeta,casa,Salud,,Lu pago para ambos
+Gastos,5,2026-09-30,4600,UYU,Cruzando el charco,Lu tarjeta,casa,Salidas & ocio,,Lu pago para ambos
+Gastos,6,2026-09-30,640,UYU,Cookies,Lu tarjeta,casa,Comer afuera / Delivery,,Lu pago para ambos
+Saldos,2,2026-09-30,9324,,,,,,Gletir,
+Saldos,3,2026-09-30,0,,,,,,Efectivo UYU,
+Saldos,4,2026-09-30,30,,,,,,Efectivo USD,

@@ -1,1 +1,6 @@
 id,fecha,mes,tipo,monto,moneda,monto_uyu,cuenta,cuenta_destino,categoria,subcategoria,comercio,descripcion,ambito,origen,estado,en_analisis,fuente_id
+452a7ca6acb6,2026-09-30,2026-09,gasto,640.00,UYU,640.00,Lu tarjeta,,Comer afuera / Delivery,,Cookies,Cookies -- Lu pago para ambos (planilla fila 6),casa,carga_manual,confirmado,1,carga:452a7ca6acb68688
+a0c1a1ace2c5,2026-09-30,2026-09,gasto,1128.00,UYU,1128.00,Lu tarjeta,,Salud,,Farmacia,Farmacia -- Lu pago para ambos (planilla fila 4),casa,carga_manual,confirmado,1,carga:a0c1a1ace2c58c7a
+b1ff6aa75974,2026-09-30,2026-09,gasto,3139.00,UYU,3139.00,Lu tarjeta,,Casa & hogar,,Temu,Temu -- Lu pago para ambos (planilla fila 3),casa,carga_manual,confirmado,1,carga:b1ff6aa75974500b
+b76b1bdcfbcc,2026-09-30,2026-09,gasto,543.00,UYU,543.00,Lu tarjeta,,Comer afuera / Delivery,,Panaderia,Panaderia -- Lu pago para ambos (planilla fila 2),casa,carga_manual,confirmado,1,carga:b76b1bdcfbccee41
+dd7035b036f2,2026-09-30,2026-09,gasto,4600.00,UYU,4600.00,Lu tarjeta,,Salidas & ocio,,Cruzando el charco,Cruzando el charco -- Lu pago para ambos (planilla fila 5),casa,carga_manual,confirmado,1,carga:dd7035b036f2c3bf
