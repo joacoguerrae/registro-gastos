@@ -1,9 +1,9 @@
 {
-  "archivos_en_drive": 1,
-  "bytes": 5535331,
+  "archivos_en_drive": 2,
+  "bytes": 5806959,
   "carpeta_id": "1gzHh15bMh2PL5pHO8POxbdbx4QFSJiF3",
-  "md5": "15c183c7c39ed2c22407ff2694368d18",
-  "ultimo_archivo": "gastos_2026-09-27_d0c6bc3.zip",
-  "ultimo_commit": "d0c6bc3a135410ade152a2a6248826b7d3a70aa5",
-  "ultimo_ok": "2026-09-27T21:06:55+00:00"
+  "md5": "1f5b36e4196c3b1fe3b8cb81d839b23c",
+  "ultimo_archivo": "gastos_2026-10-04_dd0e31f.zip",
+  "ultimo_commit": "dd0e31f2ec76baa87dc6a096991349009b6598da",
+  "ultimo_ok": "2026-10-04T17:44:54+00:00"
 }
