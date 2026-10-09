@@ -402,3 +402,4 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 1a11a1debf5c00e3,2026-10-08T06:05:24Z,aviso_tarjeta,insertado,672a671b527d,6427 UYU 3794.00 BANCO DE SEGURO -> Santander Platinum/casa/Auto,6427||3794.00||BANCO DE SEGURO||2026-10-08T03:05:19,2026-10-08T06:13:25+00:00
 1a11b41d6a871458,2026-10-08T11:24:18Z,aviso_tarjeta,insertado,45dba1ed3070,8261 UYU 421.43 MONTEVIDEO/DLO*PedidosYa Paste CVIS3 -> Cuenta Casa/casa/Comer afuera / Delivery,8261||421.43||MONTEVIDEO/DLO*PedidosYa Paste CVIS3||2026-10-08T08:24:04,2026-10-08T18:53:48+00:00
 1a11b69b6cb43d69,2026-10-08T12:07:51Z,aviso_tarjeta,insertado,fe21a14b199c,8261 UYU 40.00 MONTEVIDEO/DLO*PedidosYa PropinaVIS3 -> Cuenta Casa/casa/Comer afuera / Delivery,8261||40.00||MONTEVIDEO/DLO*PedidosYa PropinaVIS3||2026-10-08T09:07:37,2026-10-08T18:53:48+00:00
+1a11f1d0ee133990,2026-10-09T05:22:40Z,recibo,ignorado,,recibo no parseable,,2026-10-09T06:16:46+00:00
