@@ -403,3 +403,4 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 1a11b41d6a871458,2026-10-08T11:24:18Z,aviso_tarjeta,insertado,45dba1ed3070,8261 UYU 421.43 MONTEVIDEO/DLO*PedidosYa Paste CVIS3 -> Cuenta Casa/casa/Comer afuera / Delivery,8261||421.43||MONTEVIDEO/DLO*PedidosYa Paste CVIS3||2026-10-08T08:24:04,2026-10-08T18:53:48+00:00
 1a11b69b6cb43d69,2026-10-08T12:07:51Z,aviso_tarjeta,insertado,fe21a14b199c,8261 UYU 40.00 MONTEVIDEO/DLO*PedidosYa PropinaVIS3 -> Cuenta Casa/casa/Comer afuera / Delivery,8261||40.00||MONTEVIDEO/DLO*PedidosYa PropinaVIS3||2026-10-08T09:07:37,2026-10-08T18:53:48+00:00
 1a11f1d0ee133990,2026-10-09T05:22:40Z,recibo,ignorado,,recibo no parseable,,2026-10-09T06:16:46+00:00
+1a122ce9c4d102cb,2026-10-09T22:35:25Z,aviso_tarjeta,insertado,6fbfcab79344,9071 UYU 60.98 MONTEVIDEO/DEVOTO EXPRESS VIS3 -> Santander UYU/personal/Super,9071||60.98||MONTEVIDEO/DEVOTO EXPRESS VIS3||2026-10-09T19:34:50,2026-10-10T05:59:47+00:00
