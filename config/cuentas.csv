@@ -10,6 +10,7 @@ Santander Mastercard,,8103,UYU,tarjeta_credito,no,"DADA DE BAJA por Joaco (infor
 Itaú Crédito,Itau Credito,,UYU,tarjeta_credito,no,cerrada — solo histórico
 Efectivo,Efectivo,,UYU,efectivo,si,
 BBVA USD,BBVA USD,,USD,banco,si,
+Itaú USD,,,USD,banco,si,"caja de ahorro en dolares de Joaco en Itau, nueva (confirmado 12/10/2026). Primer movimiento: USD 100 desde Santander USD el 11/10 ('transf a itau'). Sin avisos ni extracto todavia: el saldo real hay que pedirlo en el cierre"
 A cobrar,,,UYU,virtual,si,plata que le deben a Joaco y NO pasa por Splitwise (ej. el que le choco el auto). Separada de 'Deudas' a proposito: esa se concilia contra la API de Splitwise y meter aca cobranzas ajenas romperia ese chequeo. Creada 3/8/2026
 Lu tarjeta,,,UYU,virtual,si,"tarjeta propia de Lu: NO es plata de Joaco. Marca los gastos de casa que paga ella con su tarjeta. Desde la Fase 1.3 (27/9/2026) cierre_casa los cuenta SOLOS como aporte de Lu (CUENTAS_LU): ya no llevan exclusion en cierre_exclusiones.csv ni fila en aportes_lu.csv. Se cargan con `gastos.py pago-lu` o desde la planilla ""Carga manual"""
 Lu efectivo,,,UYU,virtual,si,"gastos de casa que paga Lu en efectivo (Fase 1.3, 27/9/2026). Igual que 'Lu tarjeta': cierre_casa los cuenta como aporte de ella. `gastos.py pago-lu --efectivo` o la planilla ""Carga manual"""

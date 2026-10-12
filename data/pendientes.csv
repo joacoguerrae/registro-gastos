@@ -277,7 +277,7 @@ e27ce7dc5dd0,sin_categoria,establecimiento 'MONTEVIDEO/MOSCA HNOS VIS3' sin regl
 5f9b0392d375,transferencia_a_clasificar,"a 'Jorge Electricista', concepto 'vazquez ledesma', UYU 31100.00: sin categoria",2026-09-25,1
 19e4ad3e7ebc,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*BANCADEQUINIEVIS3' sin regla,2026-09-26,1
 33c1ed01aa03,sin_categoria,establecimiento 'REST CHEZ PINEY' sin regla,2026-09-30,1
-9b05ccf5105f,tc_estimado,USD 1.99 x tc 40.33 = 80.26 UYU (corrige Fase 3),2026-10-01,
+9b05ccf5105f,tc_estimado,USD 1.99 x tc 40.33 = 80.26 UYU (corrige Fase 3),2026-10-01,1
 338c2ef40595,ingreso_a_clasificar,Santander UYU 2026-09-29 78.00 UYU: PROMOCIONES TARJETAS DE DEBITO DESC LA ROTISERIA -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-10-02,1
 be2c927cd194,ingreso_a_clasificar,Santander UYU 2026-09-28 55.50 UYU: PROMOCIONES TARJETAS DE DEBITO DESC LA ROTISERIA -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-10-02,1
 cad314e04add,sin_categoria,"Santander UYU COMPRA CON TARJETA DEBITO MOSCA HNOS, MONTEVIDEO TARJ: ##### (del extracto, sin aviso por mail)",2026-10-02,1
@@ -320,21 +320,21 @@ c018d12fed27,sin_respaldo_estado,Santander Platinum 2026-09: fila del ledger (20
 eb318ff6feed,sin_categoria,estado_cuenta Santander Platinum 2026-09: 'REST CHEZ PI EYRO' sin regla,2026-10-02,1
 b50168718ade,sin_categoria,estado_cuenta Santander Platinum 2026-09: 'DESC DILEMA' sin regla,2026-10-02,1
 c0f00969ac5a,split_a_cargar,"Splitwise sw:xaa96125797 'Youtube' USD 13.00 (2026-09-27): yo pague 13.00, mi parte 0.00 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-10-02,1
-8a3f25ac6784,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-10-02,
-407b221f2157,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-10-02,
-d0741ccc2104,tc_estimado,USD 339.90 x tc 40.33 = 13708.17 UYU (corrige Fase 3),2026-10-02,
-d0741ccc2104,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-10-02,
-5767c11d16ab,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-10-02,
-f4c08b8106ad,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-10-02,
-b7101ea3950f,transferencia_a_clasificar,"a 'Lucho Royal Barber', concepto 'joaco', UYU 590.00: sin categoria",2026-10-02,
-aca1ad4a0f81,transferencia_a_clasificar,"a 'Lu', concepto 'cuota 3 auto', USD 100.00",2026-10-03,
-380c9916014c,transferencia_a_clasificar,"a 'Nico Sosa', concepto 'entradas Joaco', UYU 1200.00: sin categoria",2026-10-03,
-7a3aa01ac9d1,transferencia_a_clasificar,"a 'Cantina', concepto '', UYU 300.00: sin categoria",2026-10-04,
-5408df126831,transferencia_a_clasificar,"a 'Brota Viandas', concepto 'Viandas Joaquin Guerra', UYU 3100.00: sin categoria",2026-10-04,
-74a67910bf82,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-10-05,
-d3f664d8ec67,sin_categoria,establecimiento 'MONTEVIDEO/LEMON 21 DE SETIEMBREVIS3' sin regla,2026-10-06,
-887958c76273,tc_estimado,USD 100.00 x tc 40.33 = 4033.00 UYU (corrige Fase 3),2026-10-06,
-887958c76273,sin_categoria,establecimiento 'Q0RRUWQV26H30SO' sin regla,2026-10-06,
-66204a78680b,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-10-11,
-e8216076763e,transferencia_a_clasificar,"a 'Joaco Itau USD', concepto 'transf a itau', USD 100.00: sin categoria",2026-10-11,
-e8216076763e,tc_estimado,transferencia USD 100.00 x tc 40.33 = 4033.00 UYU (corrige Fase 3),2026-10-11,
+8a3f25ac6784,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-10-02,1
+407b221f2157,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-10-02,1
+d0741ccc2104,tc_estimado,USD 339.90 x tc 40.33 = 13708.17 UYU (corrige Fase 3),2026-10-02,1
+d0741ccc2104,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-10-02,1
+5767c11d16ab,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-10-02,1
+f4c08b8106ad,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-10-02,1
+b7101ea3950f,transferencia_a_clasificar,"a 'Lucho Royal Barber', concepto 'joaco', UYU 590.00: sin categoria",2026-10-02,1
+aca1ad4a0f81,transferencia_a_clasificar,"a 'Lu', concepto 'cuota 3 auto', USD 100.00",2026-10-03,1
+380c9916014c,transferencia_a_clasificar,"a 'Nico Sosa', concepto 'entradas Joaco', UYU 1200.00: sin categoria",2026-10-03,1
+7a3aa01ac9d1,transferencia_a_clasificar,"a 'Cantina', concepto '', UYU 300.00: sin categoria",2026-10-04,1
+5408df126831,transferencia_a_clasificar,"a 'Brota Viandas', concepto 'Viandas Joaquin Guerra', UYU 3100.00: sin categoria",2026-10-04,1
+74a67910bf82,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-10-05,1
+d3f664d8ec67,sin_categoria,establecimiento 'MONTEVIDEO/LEMON 21 DE SETIEMBREVIS3' sin regla,2026-10-06,1
+887958c76273,tc_estimado,USD 100.00 x tc 40.33 = 4033.00 UYU (corrige Fase 3),2026-10-06,1
+887958c76273,sin_categoria,establecimiento 'Q0RRUWQV26H30SO' sin regla,2026-10-06,1
+66204a78680b,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-10-11,1
+e8216076763e,transferencia_a_clasificar,"a 'Joaco Itau USD', concepto 'transf a itau', USD 100.00: sin categoria",2026-10-11,1
+e8216076763e,tc_estimado,transferencia USD 100.00 x tc 40.33 = 4033.00 UYU (corrige Fase 3),2026-10-11,1

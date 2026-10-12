@@ -907,3 +907,73 @@ d5615cfc2b06,monto_uyu,196.41,"YouTube: la madre pago USD 4,87 el 7/9 (Joaco 2/1
 4fe0b33136a4,monto_uyu,359.34,"YouTube 22/9: USD 26,78 del estado - 13,00 Splitwise - 4,87 madre = 8,91 de la casa",2026-10-02
 c0f00969ac5a,motivo_resuelto,split_a_cargar,"es la carga en Splitwise del YouTube del 22/9 (5 dias despues, fuera de la tolerancia): el split ya esta en el ledger (4fe0b33136a4 + 02c348600809)",2026-10-02
 7dbe2fb81f67,motivo_resuelto,split_a_cargar,julio: Chez Piney 22/7 sin split (la regla de Chez Piney del 2/10 lo pasa a Comer afuera y el umbral lo re-propone solo al reprocesar desde cero),2026-10-02
+8a3f25ac6784,categoria,Educación,Joaco 12/10: ORT cuota 19/24 pagada en octubre; cuenta en setiembre (decidido en el cierre del 2/10),2026-10-12
+8a3f25ac6784,mes,2026-09,Joaco 12/10: ORT cuota 19/24 pagada en octubre; cuenta en setiembre (decidido en el cierre del 2/10),2026-10-12
+8a3f25ac6784,descripcion,ORT cuota 19/24 (via Proyecto PAS),Joaco 12/10: ORT cuota 19/24 pagada en octubre; cuenta en setiembre (decidido en el cierre del 2/10),2026-10-12
+8a3f25ac6784,motivo_resuelto,sin_categoria,Joaco 12/10: ORT cuota 19/24 pagada en octubre; cuenta en setiembre (decidido en el cierre del 2/10),2026-10-12
+f4c08b8106ad,categoria,Vivienda,Joaco 12/10: IMM bimestral,2026-10-12
+f4c08b8106ad,descripcion,IMM (bimestral) via Proyecto PAS,Joaco 12/10: IMM bimestral,2026-10-12
+f4c08b8106ad,motivo_resuelto,sin_categoria,Joaco 12/10: IMM bimestral,2026-10-12
+66204a78680b,categoria,Servicios,"Joaco 12/10: ANTEL de octubre (2.102,95, mismo monto que ago/set)",2026-10-12
+66204a78680b,descripcion,ANTEL (via Proyecto PAS),"Joaco 12/10: ANTEL de octubre (2.102,95, mismo monto que ago/set)",2026-10-12
+66204a78680b,motivo_resuelto,sin_categoria,"Joaco 12/10: ANTEL de octubre (2.102,95, mismo monto que ago/set)",2026-10-12
+407b221f2157,tipo,transferencia,Joaco 12/10: pago del estado de la Platinum de setiembre (UYU),2026-10-12
+407b221f2157,cuenta_destino,Santander Platinum,Joaco 12/10: pago del estado de la Platinum de setiembre (UYU),2026-10-12
+407b221f2157,ambito,interno,Joaco 12/10: pago del estado de la Platinum de setiembre (UYU),2026-10-12
+407b221f2157,en_analisis,0,Joaco 12/10: pago del estado de la Platinum de setiembre (UYU),2026-10-12
+407b221f2157,descripcion,Pago estado Platinum setiembre (Proyecto PAS),Joaco 12/10: pago del estado de la Platinum de setiembre (UYU),2026-10-12
+407b221f2157,motivo_resuelto,sin_categoria,Joaco 12/10: pago del estado de la Platinum de setiembre (UYU),2026-10-12
+d0741ccc2104,tipo,transferencia,Joaco 12/10: pago del estado de la Platinum de setiembre (USD),2026-10-12
+d0741ccc2104,cuenta_destino,Santander Platinum,Joaco 12/10: pago del estado de la Platinum de setiembre (USD),2026-10-12
+d0741ccc2104,ambito,interno,Joaco 12/10: pago del estado de la Platinum de setiembre (USD),2026-10-12
+d0741ccc2104,en_analisis,0,Joaco 12/10: pago del estado de la Platinum de setiembre (USD),2026-10-12
+d0741ccc2104,descripcion,Pago estado Platinum USD setiembre (Proyecto PAS),Joaco 12/10: pago del estado de la Platinum de setiembre (USD),2026-10-12
+d0741ccc2104,motivo_resuelto,sin_categoria,Joaco 12/10: pago del estado de la Platinum de setiembre (USD),2026-10-12
+d0741ccc2104,motivo_resuelto,tc_estimado,transferencia interna (pago de tarjeta),2026-10-12
+74a67910bf82,tipo,transferencia,Joaco 12/10: pago tarjeta BBVA,2026-10-12
+74a67910bf82,cuenta_destino,BBVA Crédito,Joaco 12/10: pago tarjeta BBVA,2026-10-12
+74a67910bf82,ambito,interno,Joaco 12/10: pago tarjeta BBVA,2026-10-12
+74a67910bf82,en_analisis,0,Joaco 12/10: pago tarjeta BBVA,2026-10-12
+74a67910bf82,descripcion,Pago tarjeta BBVA (Proyecto PAS),Joaco 12/10: pago tarjeta BBVA,2026-10-12
+74a67910bf82,motivo_resuelto,sin_categoria,Joaco 12/10: pago tarjeta BBVA,2026-10-12
+5767c11d16ab,categoria,Servicios,"Joaco 12/10: Tigo, mitad exacta a Agus",2026-10-12
+5767c11d16ab,descripcion,Tigo celular (via Proyecto PAS): mi parte; la de Agus va a Deudas,"Joaco 12/10: Tigo, mitad exacta a Agus",2026-10-12
+5767c11d16ab,motivo_resuelto,sin_categoria,"Joaco 12/10: Tigo, mitad exacta a Agus",2026-10-12
+b7101ea3950f,categoria,Compras personales,Joaco: barbero (igual que jul/ago),2026-10-12
+b7101ea3950f,descripcion,barberia joaco,Joaco: barbero (igual que jul/ago),2026-10-12
+b7101ea3950f,motivo_resuelto,transferencia_a_clasificar,Joaco: barbero (igual que jul/ago),2026-10-12
+aca1ad4a0f81,tipo,gasto,"Joaco 12/10: cuota 3 del auto, gasto corriente como la cuota 2 (se la gira a Lu); tc 40,33 estimado",2026-10-12
+aca1ad4a0f81,cuenta_destino,,"Joaco 12/10: cuota 3 del auto, gasto corriente como la cuota 2 (se la gira a Lu); tc 40,33 estimado",2026-10-12
+aca1ad4a0f81,comercio,Lu,"Joaco 12/10: cuota 3 del auto, gasto corriente como la cuota 2 (se la gira a Lu); tc 40,33 estimado",2026-10-12
+aca1ad4a0f81,categoria,Auto,"Joaco 12/10: cuota 3 del auto, gasto corriente como la cuota 2 (se la gira a Lu); tc 40,33 estimado",2026-10-12
+aca1ad4a0f81,ambito,personal,"Joaco 12/10: cuota 3 del auto, gasto corriente como la cuota 2 (se la gira a Lu); tc 40,33 estimado",2026-10-12
+aca1ad4a0f81,en_analisis,1,"Joaco 12/10: cuota 3 del auto, gasto corriente como la cuota 2 (se la gira a Lu); tc 40,33 estimado",2026-10-12
+aca1ad4a0f81,monto_uyu,4033.00,"Joaco 12/10: cuota 3 del auto, gasto corriente como la cuota 2 (se la gira a Lu); tc 40,33 estimado",2026-10-12
+aca1ad4a0f81,motivo_resuelto,transferencia_a_clasificar,"Joaco 12/10: cuota 3 del auto, gasto corriente como la cuota 2 (se la gira a Lu); tc 40,33 estimado",2026-10-12
+380c9916014c,categoria,Salidas & ocio,"Joaco 12/10: entradas, de casa",2026-10-12
+380c9916014c,ambito,casa,"Joaco 12/10: entradas, de casa",2026-10-12
+380c9916014c,motivo_resuelto,transferencia_a_clasificar,"Joaco 12/10: entradas, de casa",2026-10-12
+7a3aa01ac9d1,categoria,Comer afuera / Delivery,"Joaco 12/10: cantina, de casa",2026-10-12
+7a3aa01ac9d1,ambito,casa,"Joaco 12/10: cantina, de casa",2026-10-12
+7a3aa01ac9d1,motivo_resuelto,transferencia_a_clasificar,"Joaco 12/10: cantina, de casa",2026-10-12
+5408df126831,categoria,Comer afuera / Delivery,"Joaco 12/10: viandas, de casa",2026-10-12
+5408df126831,ambito,casa,"Joaco 12/10: viandas, de casa",2026-10-12
+5408df126831,motivo_resuelto,transferencia_a_clasificar,"Joaco 12/10: viandas, de casa",2026-10-12
+d3f664d8ec67,categoria,Regalos,Joaco 12/10: regalo de cumple para la madre de Lu,2026-10-12
+d3f664d8ec67,descripcion,Regalo cumple madre de Lu (Lemon 21 de Setiembre),Joaco 12/10: regalo de cumple para la madre de Lu,2026-10-12
+d3f664d8ec67,motivo_resuelto,sin_categoria,Joaco 12/10: regalo de cumple para la madre de Lu,2026-10-12
+887958c76273,categoria,Suscripciones,Joaco 12/10: suscripcion de Anthropic,2026-10-12
+887958c76273,descripcion,Anthropic (suscripcion),Joaco 12/10: suscripcion de Anthropic,2026-10-12
+887958c76273,motivo_resuelto,sin_categoria,Joaco 12/10: suscripcion de Anthropic,2026-10-12
+887958c76273,motivo_resuelto,tc_estimado,el importe real llega con el estado de la Platinum,2026-10-12
+9b05ccf5105f,motivo_resuelto,tc_estimado,monto chico: el importe real llega con el estado de la Platinum,2026-10-12
+5767c11d16ab,monto,923.61,"split: tu parte 923.61 + Deudas 923.60 = 1847.21 UYU -- Joaco 12/10: Tigo, mitad exacta a Agus",2026-10-12
+5767c11d16ab,monto_uyu,923.61,split: 923.61 de 1847.21 UYU,2026-10-12
+5767c11d16ab,motivo_resuelto,split_a_cargar,"split: tu parte 923.61 + Deudas 923.60 = 1847.21 UYU -- Joaco 12/10: Tigo, mitad exacta a Agus",2026-10-12
+e8216076763e,tipo,transferencia,Joaco 12/10: cuenta propia nueva en Itau (USD),2026-10-12
+e8216076763e,cuenta_destino,Itaú USD,Joaco 12/10: cuenta propia nueva en Itau (USD),2026-10-12
+e8216076763e,ambito,interno,Joaco 12/10: cuenta propia nueva en Itau (USD),2026-10-12
+e8216076763e,en_analisis,0,Joaco 12/10: cuenta propia nueva en Itau (USD),2026-10-12
+e8216076763e,descripcion,Transferencia a mi Itau USD,Joaco 12/10: cuenta propia nueva en Itau (USD),2026-10-12
+e8216076763e,motivo_resuelto,transferencia_a_clasificar,Joaco 12/10: cuenta propia nueva en Itau (USD),2026-10-12
+e8216076763e,motivo_resuelto,tc_estimado,transferencia interna: el tc no afecta agregados,2026-10-12
