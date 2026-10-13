@@ -5050,7 +5050,9 @@ f4c08b8106ad,2026-10-02,2026-10,gasto,2284.00,UYU,2284.00,Cuenta Casa,,Vivienda,
 74a67910bf82,2026-10-04,2026-10,transferencia,494.01,UYU,494.01,Santander UYU,BBVA Crédito,,,INTERNET/Proyecto PAS,Pago tarjeta BBVA (Proyecto PAS),interno,mail,confirmado,0,1a107d8b64e44500
 b9e85cab66dd,2026-10-04,2026-10,gasto,140.00,UYU,140.00,Cuenta Casa,,Otros,,MONTEVIDEO/MERPAGO*BANCADEQUINIEVIS3,MERPAGO*BANCADEQUINIE,casa,mail,confirmado,1,1a1090e48cb46856
 c905edb14cd8,2026-10-04,2026-10,gasto,3754.00,UYU,3754.00,Cuenta Casa,,Auto,,Martin Rodriguez Garage,Garage Vazquez Ledesma,casa,mail,confirmado,1,1a10722584cf5a5f
+3887e022103e,2026-10-05,2026-10,gasto,1114.00,UYU,1114.00,Lu tarjeta,,Super,,Farmacia,Farmacia -- Lu pago para ambos (planilla fila 7),casa,carga_manual,confirmado,1,carga:3887e022103ee65c
 887958c76273,2026-10-05,2026-10,gasto,100.00,USD,4033.00,Santander Platinum,,Suscripciones,,Q0RRUWQV26H30SO,Anthropic (suscripcion),personal,mail,confirmado,1,1a10db7e1ee6456f
+c326307e62ff,2026-10-05,2026-10,gasto,1152.00,UYU,1152.00,Lu tarjeta,,Super,,Regalo Tuti,Regalo Tuti -- Lu pago para ambos (planilla fila 8),casa,carga_manual,confirmado,1,carga:c326307e62ff65c1
 c6d0d83f9f2b,2026-10-05,2026-10,gasto,30.00,UYU,30.00,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,1a10b02fdf67e2c3
 d3f664d8ec67,2026-10-05,2026-10,gasto,3848.85,UYU,3848.85,Cuenta Casa,,Regalos,,MONTEVIDEO/LEMON 21 DE SETIEMBREVIS3,Regalo cumple madre de Lu (Lemon 21 de Setiembre),casa,mail,confirmado,1,1a10d4709c92a397
 fbfa5152d35e,2026-10-05,2026-10,gasto,343.22,UYU,343.22,Santander UYU,,Comer afuera / Delivery,,MONTEVIDEO/LA ROTISERIA V VIS3,LA ROTISERIA V,personal,mail,confirmado,1,1a10cb546a61b49a
@@ -5067,3 +5069,4 @@ e8216076763e,2026-10-11,2026-10,transferencia,100.00,USD,4033.00,Santander USD,I
 16cf9366e2b4,2026-10-12,2026-10,gasto,860.00,UYU,860.00,Santander UYU,,,,Fefo Bentancur,hamburguesas oso,personal,mail,pendiente,1,1a1309d2c46b3400
 6bff0d3a6945,2026-10-12,2026-10,gasto,40.00,UYU,40.00,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,1a13177a7edcac49
 fdb4a491e9d2,2026-10-12,2026-10,gasto,285.55,UYU,285.55,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,casa,mail,confirmado,1,1a130bfa5834a339
+41f0b470576c,2026-10-13,2026-10,gasto,343.28,UYU,343.28,Santander UYU,,Suscripciones,,MONTEVIDEO/DLO*PedidosYa Plus VIS3,DLO*PedidosYa Plus,personal,mail,confirmado,1,1a135413a46c828c
