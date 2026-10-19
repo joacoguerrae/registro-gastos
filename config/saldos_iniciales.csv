@@ -11,3 +11,7 @@ Deudas,2026-08-31,4703.65,UYU,calculado por conciliar_saldos (sin real),SIN sald
 Deudas USD,2026-08-31,1138.42,USD,calculado por conciliar_saldos (sin real),idem Deudas: sin real por Splitwise caido
 Efectivo,2026-08-31,0.00,UYU,Joaco 2/9,
 Efectivo USD,2026-08-31,30.00,USD,Joaco 2/9,
+Itaú UYU,2026-08-31,0.00,UYU,alta oct-2026 (18/10),"cuenta abierta en oct-2026: al 31/8 no existia. Semilla 0 para que conciliar_saldos la siga desde el primer movimiento (fondeo 17/10 desde Santander UYU)"
+Itaú USD,2026-08-31,0.00,USD,alta oct-2026 (18/10),"idem Itaú UYU: no existia al 31/8; primer movimiento USD 100 el 11/10 desde Santander USD"
+Itaú Infinite,2026-08-31,0.00,UYU,alta oct-2026 (18/10),"tarjeta de credito nueva (5023), primer consumo 16/10"
+Itaú Infinite USD,2026-08-31,0.00,USD,alta oct-2026 (18/10),"lado USD de la Infinite (mismo criterio que Santander Platinum USD)"

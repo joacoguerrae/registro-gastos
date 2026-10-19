@@ -56,6 +56,22 @@ BORRADOS_COLS = ["id", "origen", "fecha_fila", "monto", "moneda", "descripcion",
                  "motivo", "fecha_borrado", "fila"]
 
 
+def cuenta_personal_uyu(fecha):
+    """Cuenta en pesos por defecto de Joaco para un movimiento de `fecha` (ISO).
+
+    La usan los que imputan sin saber de que cuenta salio la plata (pagos de
+    Splitwise, aportes de Joaco desde la planilla, cobros, recibos sueltos).
+    Va por FECHA y no es una constante porque varios de esos escritores
+    regeneran sus filas en cada corrida: con una constante, el cambio de banco
+    (Santander -> Itau, oct-2026) mudaba de cuenta todo el historico y rompia
+    los saldos ya conciliados. Config: parametros.json > cuenta_personal_uyu."""
+    with open(P("config", "parametros.json"), encoding="utf-8") as f:
+        c = json.load(f).get("cuenta_personal_uyu")
+    if not c:
+        return "Santander UYU"
+    return c["cuenta"] if (fecha or "") >= c["desde"] else c["antes"]
+
+
 # Marca estado=conciliado de las filas SIN fuente propia (las mail): la escriben
 # los conciliadores en el ledger y `procesar_mails --reprocesar` no la puede
 # reproducir. Guardarla aca es lo que hace que una reconstruccion desde cero

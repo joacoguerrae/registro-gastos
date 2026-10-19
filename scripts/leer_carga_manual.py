@@ -20,7 +20,7 @@ Pestañas (se matchean por NOMBRE de columna, sin importar mayusculas/acentos):
            quien pago: Joaco efectivo -> cuenta Efectivo; Lu tarjeta / Lu efectivo
            -> cierre_casa lo cuenta como aporte de Lu.
   Aportes: fecha | quien | monto | nota
-           Lu -> aporte de Lu. Joaco -> transferencia Santander UYU -> Cuenta Casa.
+           Lu -> aporte de Lu. Joaco -> transferencia de su cuenta en pesos -> Cuenta Casa.
   Saldos:  fecha | cuenta | monto | nota     (Efectivo UYU / Efectivo USD / Gletir)
 
 Una fila invalida NO entra al ledger: genera un pendiente y se queda en la
@@ -54,6 +54,7 @@ import sys
 import unicodedata
 from collections import Counter
 
+import fuentes
 from procesar_mails import cargar_reglas, categorizar
 
 BASE = os.environ.get("GASTOS_BASE") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -104,7 +105,9 @@ CUENTAS_SALDO = {"efectivouyu": ("Efectivo", "UYU"), "efectivo": ("Efectivo", "U
                  "efectivousd": ("Efectivo", "USD"), "gletir": ("Gletir", "USD")}
 MONEDAS = {"": "UYU", "uyu": "UYU", "$": "UYU", "pesos": "UYU", "usd": "USD", "us$": "USD",
            "u$s": "USD", "dolares": "USD", "eur": "EUR"}
-DESDE_JOACO = "Santander UYU"      # de donde sale un aporte de Joaco si no se aclara
+# de donde sale un aporte de Joaco si no se aclara: la cuenta personal en pesos
+# vigente a la fecha del aporte (Santander UYU -> Itau UYU en oct-2026)
+DESDE_JOACO = fuentes.cuenta_personal_uyu
 
 
 # ------------------------------------------------------------------ util
@@ -342,7 +345,7 @@ def procesar(snap, hoy):
                     continue
                 f = {c: "" for c in COLUMNS}
                 f.update(id=i, fecha=fecha, mes=fecha[:7], tipo="transferencia", monto=fmt(monto),
-                         moneda="UYU", monto_uyu=fmt(monto), cuenta=DESDE_JOACO,
+                         moneda="UYU", monto_uyu=fmt(monto), cuenta=DESDE_JOACO(fecha),
                          cuenta_destino="Cuenta Casa", descripcion=f"Aporte de Joaco a la casa {nota}",
                          ambito="interno", origen="carga_manual", estado="confirmado",
                          en_analisis="0", fuente_id=fuente_id)

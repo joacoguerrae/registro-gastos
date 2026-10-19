@@ -5080,12 +5080,15 @@ ea8d19da6054,2026-10-14,2026-10,gasto,1435.31,UYU,1435.31,Santander Platinum,,Su
 424e548efb75,2026-10-15,2026-10,gasto,2912.42,UYU,2912.42,Cuenta Casa,,,,INTERNET/Proyecto PAS,Proyecto PAS,casa,mail,pendiente,1,1a1418da82c8c0f0
 5f5e69f0bb74,2026-10-15,2026-10,gasto,304.83,UYU,304.83,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,casa,mail,confirmado,1,1a13f431ae924d90
 9f09292a2913,2026-10-15,2026-10,gasto,35.00,UYU,35.00,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,1a13f58a6b4192ce
+1d68a1716449,2026-10-16,2026-10,gasto,3451.00,UYU,3451.00,Itaú Infinite,,,,EBN*SHEIN MONTE,EBN*SHEIN MONTE,personal,mail,pendiente,1,1a14648700f35aaf
 bd024f17de2c,2026-10-16,2026-10,gasto,925.30,UYU,925.30,Cuenta Casa,,,,MONTEVIDEO/UMO MOSTAZA HAMBURGUEVIS3,UMO MOSTAZA HAMBURGUE,casa,mail,pendiente,1,1a14778136a42647
 7a9dd74a332c,2026-10-17,2026-10,gasto,1367.21,UYU,1367.21,Cuenta Casa,,,,MONTEVIDEO/MERPAGO*ENIGMAGAMES VIS3,MERPAGO*ENIGMAGAMES,casa,mail,pendiente,1,1a14bbc02beb81e0
 a93151166629,2026-10-17,2026-10,gasto,191.16,UYU,191.16,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,casa,mail,confirmado,1,1a14bf6765fc6aa8
 c19d643e7ea8,2026-10-17,2026-10,gasto,35.00,UYU,35.00,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,1a14c16aa63baee8
-d46e5a3ac4a8,2026-10-17,2026-10,gasto,1540.24,USD,62117.88,Santander USD,,,,Joaco Itau USD,transf itau,personal,mail,pendiente,1,1a14b5c9cbc568fb
-ee8949723724,2026-10-17,2026-10,gasto,22000.00,UYU,22000.00,Santander UYU,,,,Joaco Itau Pesos,,personal,mail,pendiente,1,1a14b5b211510662
-5cb478d64490,2026-10-18,2026-10,gasto,1788.00,UYU,1788.00,Santander UYU,,,,Joaco Itau Pesos,cambio a itau,personal,mail,pendiente,1,1a14effd0de7f6d2
+d46e5a3ac4a8,2026-10-17,2026-10,transferencia,1540.24,USD,62117.88,Santander USD,Itaú USD,,,Joaco Itau USD,transf itau,interno,mail,confirmado,0,1a14b5c9cbc568fb
+ddfe670b1c9a,2026-10-17,2026-10,gasto,96.00,UYU,96.00,Itaú Infinite,,Auto,,ANCAP LARRAnAGA SRL MDEO,ANCAP LARRAnAGA SRL MDEO,personal,mail,confirmado,1,1a14977d910376a2
+ee8949723724,2026-10-17,2026-10,transferencia,22000.00,UYU,22000.00,Santander UYU,Itaú UYU,,,Joaco Itau Pesos,Transferencia a mi Itau pesos,interno,mail,confirmado,0,1a14b5b211510662
+5af9c8b048bc,2026-10-18,2026-10,gasto,2962.00,UYU,2962.00,Itaú UYU,,,,DELIVIANDA*HANDY*0PJHVIS3,DELIVIANDA*HANDY*0PJH,personal,mail,pendiente,1,1a150e1a888607d0
+5cb478d64490,2026-10-18,2026-10,transferencia,1788.00,UYU,1788.00,Santander UYU,Itaú UYU,,,Joaco Itau Pesos,cambio a itau,interno,mail,confirmado,0,1a14effd0de7f6d2
 d92956173f2a,2026-10-18,2026-10,gasto,174.10,UYU,174.10,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,casa,mail,confirmado,1,1a1514c7fd939861
 f0f02f323942,2026-10-18,2026-10,gasto,35.00,UYU,35.00,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,1a15173b96c0cb87

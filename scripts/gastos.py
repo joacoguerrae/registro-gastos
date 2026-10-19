@@ -526,7 +526,7 @@ def cmd_aporte(est, a):
         return
     if not fecha:
         raise Error("el aporte de Joaco es una transferencia del ledger: necesita --fecha")
-    desde = validar_cuenta(a.desde)
+    desde = validar_cuenta(a.desde or fuentes.cuenta_personal_uyu(fecha))
     f0 = dt.date.fromisoformat(fecha)
     parecidos = [r for r in est.ledger if r["tipo"] == "transferencia"
                  and r["cuenta_destino"] == "Cuenta Casa" and dec(r["monto"]) == dec(m)
@@ -558,8 +558,8 @@ def cmd_cobro(est, a):
     fecha = fecha_iso(a.fecha)
     est.nueva_fila(fecha=fecha, tipo="transferencia", monto=fmt(m), moneda=moneda,
                    monto_uyu=fmt(uyu), cuenta=validar_cuenta(a.de, "--de"),
-                   cuenta_destino=validar_cuenta(a.a, "--a"), descripcion=a.desc,
-                   ambito="interno", en_analisis="0",
+                   cuenta_destino=validar_cuenta(a.a or fuentes.cuenta_personal_uyu(fecha), "--a"),
+                   descripcion=a.desc, ambito="interno", en_analisis="0",
                    fuente_id=f"cobro-{fecha}-{fmt(m)}-{slug(a.desc)}{sufijo(a)}")
 
 
@@ -725,7 +725,7 @@ def main(argv=None):
     p.add_argument("--monto", required=True)
     p.add_argument("--fecha")
     p.add_argument("--mes", help="AAAA-MM, si no sabes el dia (solo Lu)")
-    p.add_argument("--desde", default="Santander UYU", help="cuenta de origen (Joaco)")
+    p.add_argument("--desde", help="cuenta de origen (Joaco); default: la cuenta personal en pesos vigente a esa fecha (parametros.json > cuenta_personal_uyu)")
     p.add_argument("--nota", default="")
     p.add_argument("--forzar", action="store_true")
     p.add_argument("--sufijo")
@@ -738,7 +738,7 @@ def main(argv=None):
 
     p = alta(sub.add_parser("cobro", help="te pagan algo de 'A cobrar'"))
     p.add_argument("--de", default="A cobrar")
-    p.add_argument("--a", default="Santander UYU")
+    p.add_argument("--a", help="default: la cuenta personal en pesos vigente a esa fecha")
     p.add_argument("--desc", required=True)
 
     p = comun(sub.add_parser("resolver", help="corrige una fila via resoluciones.csv"))

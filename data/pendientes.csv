@@ -343,7 +343,9 @@ e8216076763e,tc_estimado,transferencia USD 100.00 x tc 40.33 = 4033.00 UYU (corr
 424e548efb75,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-10-16,
 bd024f17de2c,sin_categoria,establecimiento 'MONTEVIDEO/UMO MOSTAZA HAMBURGUEVIS3' sin regla,2026-10-17,
 7a9dd74a332c,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*ENIGMAGAMES VIS3' sin regla,2026-10-18,
-ee8949723724,transferencia_a_clasificar,"a 'Joaco Itau Pesos', concepto '', UYU 22000.00: sin categoria",2026-10-18,
-d46e5a3ac4a8,transferencia_a_clasificar,"a 'Joaco Itau USD', concepto 'transf itau', USD 1540.24: sin categoria",2026-10-18,
-d46e5a3ac4a8,tc_estimado,transferencia USD 1540.24 x tc 40.33 = 62117.88 UYU (corrige Fase 3),2026-10-18,
-5cb478d64490,transferencia_a_clasificar,"a 'Joaco Itau Pesos', concepto 'cambio a itau', UYU 1788.00: sin categoria",2026-10-18,
+ee8949723724,transferencia_a_clasificar,"a 'Joaco Itau Pesos', concepto '', UYU 22000.00: sin categoria",2026-10-18,1
+d46e5a3ac4a8,transferencia_a_clasificar,"a 'Joaco Itau USD', concepto 'transf itau', USD 1540.24: sin categoria",2026-10-18,1
+d46e5a3ac4a8,tc_estimado,transferencia USD 1540.24 x tc 40.33 = 62117.88 UYU (corrige Fase 3),2026-10-18,1
+5cb478d64490,transferencia_a_clasificar,"a 'Joaco Itau Pesos', concepto 'cambio a itau', UYU 1788.00: sin categoria",2026-10-18,1
+1d68a1716449,sin_categoria,establecimiento 'EBN*SHEIN MONTE' sin regla,2026-10-19,
+5af9c8b048bc,sin_categoria,establecimiento 'DELIVIANDA*HANDY*0PJHVIS3' sin regla,2026-10-19,

@@ -20,9 +20,10 @@ Reglas (contrato fase3.md):
   2. pague YO (paid>0, payment=false) -> NO se inserta (el cargo ya entro por el
      aviso de tarjeta); pendiente split_a_cargar si no hay fila hermana
      <fuente_id>-split para un cargo que matchee (total +-1%, fecha +-3 dias).
-  3. payment=true: me pagaron -> transferencia Deudas -> Santander UYU
+  3. payment=true: me pagaron -> transferencia Deudas -> mi cuenta en pesos
+     (Santander UYU, Itau UYU desde el 17/10/2026: fuentes.cuenta_personal_uyu)
      (pendiente transferencia_a_clasificar); pague yo -> transferencia
-     Santander UYU -> Deudas (dedupe vs transferencias mail/1money existentes
+     mi cuenta -> Deudas (dedupe vs transferencias mail/1money existentes
      con destino Deudas, +-1 en monto, +-2 dias).
 
 Al final compara el saldo neto de get_friends contra el saldo calculado de la
@@ -44,6 +45,8 @@ import unicodedata
 from collections import Counter, defaultdict
 
 import requests
+
+import fuentes
 
 BASE = os.environ.get("GASTOS_BASE") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 P = lambda *a: os.path.join(BASE, *a)
@@ -468,7 +471,7 @@ def main():
         if e.get("no_insertar"):
             stats["export_sin_match_no_insertado"] += 1
             continue
-        cuenta_moneda = {"USD": "Santander USD"}.get(moneda, "Santander UYU")
+        cuenta_moneda = {"USD": "Santander USD"}.get(moneda) or fuentes.cuenta_personal_uyu(fecha)
 
         def fila_base():
             r = {c: "" for c in COLUMNS}

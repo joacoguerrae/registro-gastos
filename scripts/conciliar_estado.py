@@ -212,6 +212,10 @@ def _cuenta_santander(texto):
         with open(path, encoding="utf-8-sig", newline="") as f:
             for r in csv.DictReader(f):
                 num = (r.get("numero") or "").strip()
+                # las cuentas Itau no son de este PDF, y el match es por
+                # substring: sus numeros (7 digitos) podrian aparecer sueltos
+                if r["cuenta_ledger"].strip().startswith("Itaú"):
+                    continue
                 if num and num in texto:
                     return r["cuenta_ledger"].strip()
     nums = sorted(set(re.findall(r"\b\d{10,14}\b", texto)))

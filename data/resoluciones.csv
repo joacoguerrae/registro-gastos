@@ -977,3 +977,20 @@ e8216076763e,en_analisis,0,Joaco 12/10: cuenta propia nueva en Itau (USD),2026-1
 e8216076763e,descripcion,Transferencia a mi Itau USD,Joaco 12/10: cuenta propia nueva en Itau (USD),2026-10-12
 e8216076763e,motivo_resuelto,transferencia_a_clasificar,Joaco 12/10: cuenta propia nueva en Itau (USD),2026-10-12
 e8216076763e,motivo_resuelto,tc_estimado,transferencia interna: el tc no afecta agregados,2026-10-12
+ee8949723724,tipo,transferencia,Joaco 18/10: cuenta propia nueva en Itau (UYU),2026-10-18
+ee8949723724,cuenta_destino,Itaú UYU,Joaco 18/10: cuenta propia nueva en Itau (UYU),2026-10-18
+ee8949723724,ambito,interno,Joaco 18/10: cuenta propia nueva en Itau (UYU),2026-10-18
+ee8949723724,en_analisis,0,Joaco 18/10: cuenta propia nueva en Itau (UYU),2026-10-18
+ee8949723724,descripcion,Transferencia a mi Itau pesos,Joaco 18/10: cuenta propia nueva en Itau (UYU),2026-10-18
+ee8949723724,motivo_resuelto,transferencia_a_clasificar,Joaco 18/10: cuenta propia nueva en Itau (UYU),2026-10-18
+5cb478d64490,tipo,transferencia,Joaco 18/10: cuenta propia nueva en Itau (UYU),2026-10-18
+5cb478d64490,cuenta_destino,Itaú UYU,Joaco 18/10: cuenta propia nueva en Itau (UYU),2026-10-18
+5cb478d64490,ambito,interno,Joaco 18/10: cuenta propia nueva en Itau (UYU),2026-10-18
+5cb478d64490,en_analisis,0,Joaco 18/10: cuenta propia nueva en Itau (UYU),2026-10-18
+5cb478d64490,motivo_resuelto,transferencia_a_clasificar,Joaco 18/10: cuenta propia nueva en Itau (UYU),2026-10-18
+d46e5a3ac4a8,tipo,transferencia,"Joaco 18/10: cuenta propia nueva en Itau (USD); interna, el tc no afecta agregados",2026-10-18
+d46e5a3ac4a8,cuenta_destino,Itaú USD,"Joaco 18/10: cuenta propia nueva en Itau (USD); interna, el tc no afecta agregados",2026-10-18
+d46e5a3ac4a8,ambito,interno,"Joaco 18/10: cuenta propia nueva en Itau (USD); interna, el tc no afecta agregados",2026-10-18
+d46e5a3ac4a8,en_analisis,0,"Joaco 18/10: cuenta propia nueva en Itau (USD); interna, el tc no afecta agregados",2026-10-18
+d46e5a3ac4a8,motivo_resuelto,transferencia_a_clasificar,"Joaco 18/10: cuenta propia nueva en Itau (USD); interna, el tc no afecta agregados",2026-10-18
+d46e5a3ac4a8,motivo_resuelto,tc_estimado,"Joaco 18/10: cuenta propia nueva en Itau (USD); interna, el tc no afecta agregados",2026-10-18

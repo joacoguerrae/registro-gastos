@@ -4,3 +4,5 @@ numero,moneda,cuenta_ledger,nota
 770054522300,UYU,Santander Platinum,"numero del estado de cuenta PDF de la VISA Platinum (6427, personal). Confirmado 2/8/2026 con el primer estado que mando el banco: las lineas de movimiento llevan el codigo 427 y coinciden con consumos conocidos (ORT 28.170 el 8/7, BSE 3.794 el 9/7)"
 001203500692,UYU,Santander UYU,"caja de ahorro personal, suc. 61 Ciudad Vieja (tarjeta 9071). Confirmado 2/8/2026 con el export de movimientos de julio"
 005203662400,USD,Santander USD,"caja de ahorro en dolares, suc. 61 Ciudad Vieja. Mapeado 2/8/2026 con el export de julio"
+4174405,UYU,Itaú UYU,"caja de ahorro en pesos Itau (cuenta principal desde oct-2026, debito 6136). Numero tal como aparece en los avisos de transferencia de Santander ('Joaco Itau Pesos', 17/10/2026): procesar_mails usa esta tabla para reconocer transferencias a cuentas propias"
+4174411,USD,Itaú USD,"caja de ahorro en dolares Itau. Numero de los avisos de transferencia de Santander ('Joaco Itau USD', 11/10/2026)"

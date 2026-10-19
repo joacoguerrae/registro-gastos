@@ -18,8 +18,10 @@ def P(*a): return os.path.join(BASE, *a)
 
 SEED_FECHA = "2026-07-12"
 BANCOS = [
+    ("Itaú UYU",      "UYU", "Itaú $ (caja ahorro, sueldo)", "personal"),
     ("Santander UYU", "UYU", "Santander $ (caja ahorro)", "personal"),
     ("Cuenta Casa",   "UYU", "Cuenta Casa (corriente)",   "casa"),
+    ("Itaú USD",      "USD", "Itaú USD (ahorro)",         "personal"),
     ("Santander USD", "USD", "Santander USD (ahorro)",    "personal"),
     ("BBVA USD",      "USD", "BBVA USD",                  "personal"),
 ]

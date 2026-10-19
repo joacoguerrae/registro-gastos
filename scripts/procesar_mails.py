@@ -42,6 +42,7 @@ PENDIENTES = P("data", "pendientes.csv")
 FACTURAS = P("data", "facturas.csv")
 ESTADO_SYNC = P("config", "estado_sync.json")
 CUENTAS_CSV = P("config", "cuentas.csv")
+CUENTAS_BANCARIAS = P("config", "cuentas_bancarias.csv")
 REGLAS_CSV = P("config", "reglas_comercio.csv")
 PARAMETROS = P("config", "parametros.json")
 SPLITS_CSV = P("config", "splits_recurrentes.csv")
@@ -102,6 +103,24 @@ def cargar_tarjetas():
                 if t:
                     ambito = "casa" if r["cuenta"] == "Cuenta Casa" else "personal"
                     out[t] = (r["cuenta"], ambito)
+    return out
+
+
+def cargar_cuentas_propias():
+    """numero de cuenta (sin ceros a la izquierda) -> (cuenta, moneda), de
+    config/cuentas_bancarias.csv. Sirve para reconocer en un aviso de
+    transferencia que el destino es una cuenta de Joaco (ej. Santander -> Itau,
+    oct-2026): eso es un movimiento interno, no un gasto. Cuenta Casa queda
+    afuera a proposito: las transferencias a la casa ya tienen su regla (aporte)."""
+    out = {}
+    if not os.path.exists(CUENTAS_BANCARIAS):
+        return out
+    with open(CUENTAS_BANCARIAS, encoding="utf-8-sig") as f:
+        for r in csv.DictReader(f):
+            num = (r["numero"] or "").strip().lstrip("0")
+            cuenta = (r["cuenta_ledger"] or "").strip()
+            if num and cuenta and cuenta != "Cuenta Casa":
+                out[num] = (cuenta, (r["moneda"] or "").strip())
     return out
 
 
@@ -257,6 +276,60 @@ def debito_origen_transferencia(body):
     return m2.group(1), float(m2.group(2).replace(".", "").replace(",", "."))
 
 
+def numero_cuenta_destino(body):
+    """'Número de cuenta' del bloque 'Cuenta Destino' de un aviso de
+    transferencia de Santander, sin ceros a la izquierda ('' si no esta)."""
+    m = re.search(r"Cuenta Destino.*?N.mero de cuenta:\s*(\d+)", body, re.S)
+    return m.group(1).lstrip("0") if m else ""
+
+
+# Avisos de Itau (comunicaciones@itau.com.uy, desde oct-2026). Dos layouts, sin
+# fecha ni hora en el cuerpo (se usa la del mail, en hora de Uruguay):
+#   credito: "VISA nro. *** 5023 / Importe: 3451.0 UYU / Comercio: EBN*SHEIN MONTE"
+#   debito:  "...tarjeta Visa terminada en 6136 . Realizado en DELIVIANDA*HANDY*0PJHVIS3
+#             Monto: 2,962.00 Pesos."
+# Importes en formato US (coma = miles, punto = decimal), al reves que Santander.
+RE_ITAU_CREDITO = re.compile(
+    r"VISA nro\.\s*\**\s*(\d{4})\s*Importe:\s*([\d.,]+)\s*(UYU|USD|EUR)\s*"
+    r"Comercio:\s*(.+?)\s*(?:\n|Adem.s|$)", re.S)
+RE_ITAU_DEBITO = re.compile(
+    r"terminada en\s*(\d{4})\s*\.?\s*Realizado en\s*(.+?)\s+Monto:\s*([\d.,]+)\s*"
+    r"(Pesos|D.lares|Euros)", re.S)
+MONEDA_ITAU = {"pesos": "UYU", "euros": "EUR"}
+
+
+def num_itau(s):
+    """'2,962.00' / '3451.0' -> float. Tolera '1.234,56' por si cambian el formato."""
+    s = s.strip().rstrip(".,")
+    if "," in s and "." in s:
+        if s.rfind(",") > s.rfind("."):
+            s = s.replace(".", "").replace(",", ".")
+        else:
+            s = s.replace(",", "")
+    elif "," in s:
+        s = s.replace(",", "") if re.fullmatch(r"\d{1,3}(,\d{3})+", s) else s.replace(",", ".")
+    return float(s)
+
+
+def parse_aviso_itau(mail):
+    """Aviso de consumo aprobado de Itau (credito o debito).
+    -> (tarjeta, moneda, monto, establecimiento_crudo, fecha_hora), como parse_aviso.
+    Lanza si no reconoce el layout (el que llama lo deja como formato_nuevo)."""
+    body = mail["body_text"]
+    m = RE_ITAU_CREDITO.search(body)
+    if m:
+        tarjeta, monto, moneda, est = m.group(1), num_itau(m.group(2)), m.group(3), m.group(4)
+    else:
+        m = RE_ITAU_DEBITO.search(body)
+        if not m:
+            raise ValueError("aviso Itau: layout desconocido (ni credito ni debito)")
+        tarjeta, est, monto = m.group(1), m.group(2), num_itau(m.group(3))
+        moneda = MONEDA_ITAU.get(m.group(4).lower(), "USD")
+    fh = (dt.datetime.fromisoformat(mail["fecha_mail"].replace("Z", "+00:00"))
+          - dt.timedelta(hours=3)).replace(tzinfo=None, microsecond=0)
+    return tarjeta, moneda, monto, est.strip(), fh
+
+
 def parse_transferencia(body):
     """Aviso de transferencia.
     -> (titular, concepto, moneda, monto, fecha_iso, tipo_cuenta_origen)"""
@@ -313,6 +386,7 @@ def main():
 
     tarjetas = cargar_tarjetas()
     cuentas_validas = cargar_cuentas_validas()
+    cuentas_propias = cargar_cuentas_propias()
     reglas = cargar_reglas()
     with open(PARAMETROS, encoding="utf-8") as f:
         params = json.load(f)
@@ -457,6 +531,19 @@ def main():
             if "devoluci" in subj.lower() or "reintegro" in subj.lower():
                 return "devolucion"
             return "ignorado"
+        if "itau.com.uy" in frm:
+            s = subj.lower()
+            if "rechaz" in s:
+                return "ignorado"
+            if s.startswith("aviso de consumo aprobado"):
+                return "aviso_itau"
+            # algo que parece un movimiento pero no conocemos (devolucion,
+            # transferencia...): pendiente formato_nuevo, nunca perdido en silencio
+            if re.search(r"consumo|compra|devoluci|reintegro|anulaci|transferencia|"
+                         r"d.bito|cr.dito|pago", s) \
+                    and not re.search(r"solicitud|aprobada|entrega|en camino|inicio de sesi|millas", s):
+                return "itau_desconocido"
+            return "ignorado"
         if "mercadopago.com" in frm and "transferencia fue enviada" in subj.lower():
             return "transferencia_mp"
         if any(s in frm for s in RECIBO_SENDERS):
@@ -470,14 +557,24 @@ def main():
     # -------------------------------------------------- 1. avisos de tarjeta
     claves_corrida = list(claves_previas)
     for mail in mails:
-        if mail["message_id"] in ya_procesados or router(mail) != "aviso_tarjeta":
+        h = router(mail)
+        if mail["message_id"] in ya_procesados or h not in ("aviso_tarjeta", "aviso_itau"):
             continue
         try:
-            tarjeta, moneda, monto, est_crudo, fh = parse_aviso(mail["body_text"])
+            if h == "aviso_itau":
+                tarjeta, moneda, monto, est_crudo, fh = parse_aviso_itau(mail)
+            else:
+                tarjeta, moneda, monto, est_crudo, fh = parse_aviso(mail["body_text"])
         except Exception as e:
             formato_nuevo(mail, "aviso_tarjeta", e)
             continue
         fecha = fh.date().isoformat()
+        if h == "aviso_itau" and monto == 0:
+            # Itau avisa con importe 0 los usos sin cargo (ej. Dragonpass, sala
+            # VIP de la Infinite): no es un movimiento
+            log_proc(mail, "aviso_tarjeta", "ignorado",
+                     detalle=f"{tarjeta} {moneda} 0 {est_crudo} (importe 0, sin cargo)")
+            continue
 
         if fecha < BACKFILL_DESDE:
             log_proc(mail, "aviso_tarjeta", "ignorado_pre_backfill",
@@ -679,8 +776,22 @@ def main():
             r["monto_uyu"] = fmt(monto_dst)   # exacto: lo declara el aviso
         texto = f"{titular} {concepto}"
         motivos = []
+        propia, moneda_propia = cuentas_propias.get(numero_cuenta_destino(mail["body_text"]), ("", ""))
 
-        if re.search(r"mercado pago", titular, re.I) or re.search(r"\bcasa\b", concepto, re.I):
+        if propia and propia != cuenta_origen:
+            # regla 0: a otra cuenta de Joaco (config/cuentas_bancarias.csv), ej.
+            # Santander -> Itau desde oct-2026: movimiento interno, no gasto
+            r.update(tipo="transferencia", cuenta_destino=propia, comercio=titular,
+                     ambito="interno", en_analisis="0",
+                     descripcion=concepto or f"Transferencia a {propia}")
+            if not r["monto_uyu"]:
+                # informativo (en_analisis=0, no suma en ningun agregado)
+                r["monto_uyu"] = fmt(round(monto * tc[moneda], 2))
+            if moneda_propia and moneda_propia != moneda:
+                motivos.append(("transferencia_a_clasificar",
+                                f"a {propia!r} ({moneda_propia}) pero se debitaron {moneda} "
+                                f"{fmt(monto)}: transferencia cruzada, revisar los montos de cada lado"))
+        elif re.search(r"mercado pago", titular, re.I) or re.search(r"\bcasa\b", concepto, re.I):
             # regla 1: aporte a la cuenta casa
             r.update(tipo="transferencia", cuenta_destino="Cuenta Casa",
                      ambito="interno", en_analisis="0",
@@ -835,10 +946,10 @@ def main():
                      f"{rec['producto']} {rec['moneda']} {fmt(rec['monto'])} "
                      f"-> enriquece comercio de {match['id']}")
         else:
-            cuenta = "Cuenta Casa" if rec["es_mp"] else "Santander UYU"
+            fecha = rec["fecha"].isoformat()
+            cuenta = "Cuenta Casa" if rec["es_mp"] else fuentes.cuenta_personal_uyu(fecha)
             categoria, _, _ = categorizar(rec["producto"], reglas)
             r = fila_base(mail["message_id"])
-            fecha = rec["fecha"].isoformat()
             r.update(fecha=fecha, mes=fecha[:7], tipo="gasto",
                      monto=fmt(rec["monto"]), moneda=rec["moneda"],
                      cuenta=cuenta, categoria=categoria,
@@ -882,6 +993,9 @@ def main():
         elif h == "estado_cuenta":
             log_proc(mail, "ignorado", "estado_cuenta_pendiente_f3",
                      detalle=f"{mail['from']} | {mail['subject']}")
+        elif h == "itau_desconocido":
+            formato_nuevo(mail, "itau", ValueError(
+                "mail de Itau que parece un movimiento pero no tiene parser"))
         elif h == "ignorado":
             log_proc(mail, "ignorado", "ignorado",
                      detalle=f"{mail['from']} | {mail['subject']}")

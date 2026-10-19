@@ -26,12 +26,14 @@ Desde **2026-07-01** (junio ya está en el ledger vía 1Money; los 1money transf
 |---|---|---|
 | notificaciones@santander.com.uy | `Aviso: uso de tarjeta de débito/crédito` | aviso_tarjeta |
 | notificaciones@santander.com.uy | `Aviso: devolución en tarjeta…` / `…reintegro…` | devolucion |
-| notificaciones@santander.com.uy | `Aviso de Transferencia Instantánea…` / `…en plaza` / `…interna…` | transferencia |
+| notificaciones@santander.com.uy | `Aviso de Transferencia Instantánea…` / `…en plaza` / `…interna…` | transferencia (a un número de `config/cuentas_bancarias.csv` → interna, regla 0) |
+| comunicaciones@itau.com.uy (desde oct-2026) | `Aviso de consumo aprobado con tarjeta de crédito/débito` | aviso_tarjeta (`parse_aviso_itau`; importe 0 → ignorado) |
+| comunicaciones@itau.com.uy | otro asunto que parece movimiento (devolución, transferencia, pago…) | formato_nuevo (pendiente) |
 | no_reply@email.apple.com, googleplay-noreply@google.com, info@mercadolibre.com.uy, info@mercadopago.com | recibos | recibo (matching) |
 | factura@antel.com.uy, info_uy@email.directvla.com | facturas | factura (informativo) |
 | resto (marketing, seguridad, estados de cuenta*) | — | ignorado (log) |
 
-*Estados de cuenta PDF (BBVA, Santander MC, Itaú→cerrada) son Fase 3: se loguean como `estado_cuenta_pendiente_f3`.
+*Estados de cuenta PDF (BBVA, Santander MC) son Fase 3. Itaú no adjunta el estado (solo avisa desde info-mail@itau.com.uy que está en Itaú Link): no se baja. Los avisos de Itaú no traen fecha en el cuerpo: se usa `fecha_mail` en hora UY (UTC−3); importes en formato US (`2,962.00`): se loguean como `estado_cuenta_pendiente_f3`.
 
 ## Handler aviso_tarjeta
 
