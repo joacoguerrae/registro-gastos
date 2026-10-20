@@ -349,3 +349,5 @@ d46e5a3ac4a8,tc_estimado,transferencia USD 1540.24 x tc 40.33 = 62117.88 UYU (co
 5cb478d64490,transferencia_a_clasificar,"a 'Joaco Itau Pesos', concepto 'cambio a itau', UYU 1788.00: sin categoria",2026-10-18,1
 1d68a1716449,sin_categoria,establecimiento 'EBN*SHEIN MONTE' sin regla,2026-10-19,
 5af9c8b048bc,sin_categoria,establecimiento 'DELIVIANDA*HANDY*0PJHVIS3' sin regla,2026-10-19,
+e8ec79f5ce98,sin_categoria,establecimiento 'MERCADO PAGO' sin regla,2026-10-20,
+599d7d0425de,formato_nuevo,comunicaciones@itau.com.uy | 'Pago realizado' -> ValueError: mail de Itau que parece un movimiento pero no tiene parser,2026-10-20,
