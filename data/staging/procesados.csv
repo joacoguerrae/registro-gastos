@@ -448,3 +448,7 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 1a15ba2521da759a,2026-10-20T23:25:25Z,aviso_tarjeta,insertado,fe2e93d638fc,6427 UYU 342.47 DLOPEDIDOSYA -> Santander Platinum/personal/Comer afuera / Delivery,6427||342.47||DLOPEDIDOSYA||2026-10-20T20:25:20,2026-10-21T04:57:19+00:00
 1a15bcb45272b2c5,2026-10-21T00:10:08Z,aviso_tarjeta,insertado,fa16d4ac9a4d,6427 UYU 45.00 DLOPEDIDOSYA P -> Santander Platinum/personal/Comer afuera / Delivery,6427||45.00||DLOPEDIDOSYA P||2026-10-20T21:10:04,2026-10-21T04:57:19+00:00
 1a15c6bb00363174,2026-10-21T03:05:17Z,factura,factura,,"DirecTV 1705.00 venc 2026-11-10 (informativo, no toca ledger)",,2026-10-21T04:57:19+00:00
+1a15ef64eac18b6b,2026-10-21T14:55:59Z,aviso_tarjeta,insertado,5580e9cf8713,6427 UYU 226.97 DLOUBERRIDES -> Santander Platinum/personal/Transporte,6427||226.97||DLOUBERRIDES||2026-10-21T11:55:54,2026-10-21T17:19:03+00:00
+1a15f308262696ed,2026-10-21T15:59:33Z,aviso_tarjeta,insertado,a68362655046,6427 UYU 250.97 DLOUBERRIDES -> Santander Platinum/personal/Transporte,6427||250.97||DLOUBERRIDES||2026-10-21T12:59:28,2026-10-21T17:19:03+00:00
+1a15e1edef6d8b3e,2026-10-21T11:00:22Z,factura,factura,,"Antel  venc  (informativo, no toca ledger)",,2026-10-21T17:19:03+00:00
+1a15e9f37b764843,2026-10-21T13:20:54Z,ignorado,ignorado,,comunicaciones@itau.com.uy | Este 22 y 23 de octubre vuelve Previa Moweek con 25% menos con Itaú,,2026-10-21T17:19:03+00:00
