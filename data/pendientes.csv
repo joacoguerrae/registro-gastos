@@ -369,3 +369,7 @@ a4c9fb559c11,sin_categoria,establecimiento 'PEDIDOSYA*MONTI BAR DVIEI' sin regla
 18779864b453,sin_categoria,establecimiento 'PEDIDOSYA*PROPINA VIEI' sin regla,2026-10-22,
 6e77a541f119,tc_estimado,USD 25.99 x tc 40.33 = 1048.18 UYU (corrige Fase 3),2026-10-22,
 6e77a541f119,split_a_cargar,split recurrente propuesto: Deudas 3/6 (Rodrigo 2/6; hermana 1/6 (+ madre 1/6 a 'A cobrar')) + casa 2/6: 'APPLE.COM/BILL' — aplicar con OK en revision,2026-10-22,
+c038fad7f13e,tc_estimado,USD 11.44 x tc 40.33 = 461.38 UYU (corrige Fase 3),2026-10-22,
+c038fad7f13e,sin_categoria,establecimiento 'PEDIDOSYA*BOTANICA COVIEI' sin regla,2026-10-22,
+3be19ec487fd,tc_estimado,USD 0.54 x tc 40.33 = 21.78 UYU (corrige Fase 3),2026-10-22,
+3be19ec487fd,sin_categoria,establecimiento 'PEDIDOSYA*PROPINA VIEI' sin regla,2026-10-22,
