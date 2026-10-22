@@ -452,3 +452,11 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 1a15f308262696ed,2026-10-21T15:59:33Z,aviso_tarjeta,insertado,a68362655046,6427 UYU 250.97 DLOUBERRIDES -> Santander Platinum/personal/Transporte,6427||250.97||DLOUBERRIDES||2026-10-21T12:59:28,2026-10-21T17:19:03+00:00
 1a15e1edef6d8b3e,2026-10-21T11:00:22Z,factura,factura,,"Antel  venc  (informativo, no toca ledger)",,2026-10-21T17:19:03+00:00
 1a15e9f37b764843,2026-10-21T13:20:54Z,ignorado,ignorado,,comunicaciones@itau.com.uy | Este 22 y 23 de octubre vuelve Previa Moweek con 25% menos con Itaú,,2026-10-21T17:19:03+00:00
+1a1606207b95abf3,2026-10-21T21:33:19Z,aviso_tarjeta,insertado,d5ff0ab98e67,6136 UYU 250.00 BARRA PRE EMBARQUE BQVIS3 -> Itaú UYU/personal/(sin categoria),6136||250.00||BARRA PRE EMBARQUE BQVIS3||2026-10-21T18:33:19,2026-10-22T04:57:57+00:00
+1a160e4865075a82,2026-10-21T23:55:51Z,aviso_tarjeta,insertado,b02038d0603f,6136 USD 6.00 FREESHOP WALINCO VIS3 -> Itaú USD/personal/(sin categoria),6136||6.00||FREESHOP WALINCO VIS3||2026-10-21T20:55:51,2026-10-22T04:57:57+00:00
+1a1610f97e9e77a6,2026-10-22T00:42:53Z,aviso_tarjeta,insertado,f213c5852eec,6136 USD 5.92 BUQUEBUS VIS3 -> Itaú USD/personal/(sin categoria),6136||5.92||BUQUEBUS VIS3||2026-10-21T21:42:53,2026-10-22T04:57:57+00:00
+1a16122da9061bac,2026-10-22T01:03:55Z,aviso_tarjeta,ignorado,,"5023 UYU 0 Uber Amste (importe 0, sin cargo)",,2026-10-22T04:57:57+00:00
+1a16129e16016ae2,2026-10-22T01:11:36Z,aviso_tarjeta,insertado,bcd3386c9cd7,5023 USD 8.55 PAYU*AR*UBER CAP.F -> Itaú Infinite/personal/Transporte,5023||8.55||PAYU*AR*UBER CAP.F||2026-10-21T22:11:36,2026-10-22T04:57:57+00:00
+1a161544069feb8d,2026-10-22T01:57:53Z,aviso_tarjeta,insertado,a4c9fb559c11,6136 USD 18.20 PEDIDOSYA*MONTI BAR DVIEI -> Itaú USD/personal/(sin categoria),6136||18.20||PEDIDOSYA*MONTI BAR DVIEI||2026-10-21T22:57:53,2026-10-22T04:57:57+00:00
+1a16168da645fc32,2026-10-22T02:20:23Z,aviso_tarjeta,insertado,18779864b453,6136 USD 0.64 PEDIDOSYA*PROPINA VIEI -> Itaú USD/personal/(sin categoria),6136||0.64||PEDIDOSYA*PROPINA VIEI||2026-10-21T23:20:23,2026-10-22T04:57:57+00:00
+1a161af48b661061,2026-10-22T03:37:18Z,aviso_tarjeta,insertado,6e77a541f119,6427 USD 25.99 APPLE.COM/BILL -> Santander Platinum/personal/Suscripciones,6427||25.99||APPLE.COM/BILL||2026-10-22T00:37:13,2026-10-22T04:57:57+00:00
