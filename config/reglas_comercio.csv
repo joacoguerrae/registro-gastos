@@ -16,6 +16,8 @@ LUCHO ROYAL BARBER,Compras personales,,"barbero de Joaco (transferencia ~590 por
 DESBORDE,Comer afuera / Delivery,,"bar/restaurante Desborde; la terminal de cobro es HANDY, asi que va ANTES del catch-all HANDY|MERPAGO\*, que gana por orden y la dejaba muerta - auditoria 2026-09 SA7"
 MERPAGO\*BANCADEQUINIE|BANCA DE QUINIELAS,Otros,casa,"quiniela via Mercado Pago: de los dos, gasto de casa aunque se pague con la cuenta de Joaco (confirmado 27/9). Va ANTES del catch-all de MERPAGO\*, que gana por orden"
 CHEZ PI(NEY|EYRO)|CHEZPI,Comer afuera / Delivery,,"Chez Pineyro (el estado lo trae como 'CHEZ PI EYRO', el aviso como 'CHEZ PINEY'): Comer afuera, como el 31/8 y el 29/9 (Joaco 2/10)"
+DELIVIANDA|BROTA VIANDAS,Comer afuera / Delivery,casa,"viandas de la semana = casa (Brota 3/10 desde la Cuenta Casa; Deliviandas 18/10 desde Itau via Handy). Va ANTES del catch-all HANDY - Joaco 25/10"
+FEFO BENTANCUR,Comer afuera / Delivery,,"transferencias a Fefo por comida (pizzas/hamburguesas 'oso'): jul, ago y oct, siempre personal - Joaco 25/10"
 HANDY|MERPAGO\*,,,queda sin categoria a proposito: revisar (comercio generico)
 UTE ?,Servicios,casa,
 ANTEL,Servicios,casa,
