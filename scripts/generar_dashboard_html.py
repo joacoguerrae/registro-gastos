@@ -3,10 +3,14 @@ externas) del sistema de gastos. Lee los agregados que ya produce el pipeline y 
 ledger, y emite HTML+CSS+JS inline. Se regenera en cada corrida -> siempre al dia.
 
 Pestanas: Categorias (vista personal), Presupuesto vs real, Casa (con Lu y aportes).
-Filtros: multi-seleccion de meses (default mes corriente) + multi-seleccion de
-categorias (para ver evolucion de categorias puntuales). Saldos estimados de cuentas
-+ posicion de casa. Estilo cozy/calido, claro y oscuro.
+Filtros: multi-seleccion de meses (default mes corriente), de categorias (para ver
+evolucion de categorias puntuales) y de tipo Fijo/Variable (config/categorias.csv).
+Saldos estimados de cuentas (ultimo saldo real por cuenta + movimientos), inversiones
+(planilla Carga manual + giros), posicion de casa. Logos embebidos desde
+assets/logos/. Estilo cozy/calido, claro y oscuro.
 """
+import base64
+import calendar
 import csv
 import json
 import os
@@ -16,20 +20,34 @@ from collections import defaultdict
 BASE = os.environ.get("GASTOS_BASE") or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def P(*a): return os.path.join(BASE, *a)
 
-SEED_FECHA = "2026-07-12"
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+LOGOS_DIR = os.path.join(REPO, "assets", "logos")   # codigo, no datos: no sigue a GASTOS_BASE
+LOGO_MAX_BYTES = 60_000
+
+# (cuenta del ledger, moneda, etiqueta, grupo, nivel, logo)
 BANCOS = [
-    ("Itaú UYU",      "UYU", "Itaú $ (caja ahorro, sueldo)", "personal"),
-    ("Santander UYU", "UYU", "Santander $ (caja ahorro)", "personal"),
-    ("Cuenta Casa",   "UYU", "Cuenta Casa (corriente)",   "casa"),
-    ("Itaú USD",      "USD", "Itaú USD (ahorro)",         "personal"),
-    ("Santander USD", "USD", "Santander USD (ahorro)",    "personal"),
-    ("BBVA USD",      "USD", "BBVA USD",                  "personal"),
+    ("Itaú UYU",      "UYU", "Itaú $",        "personal", "principal",  "itau"),
+    ("Itaú USD",      "USD", "Itaú USD",      "personal", "principal",  "itau"),
+    ("Cuenta Casa",   "UYU", "Cuenta Casa",   "casa",     "principal",  "casa"),
+    ("BBVA USD",      "USD", "BBVA USD",      "personal", "secundaria", "bbva"),
+    ("Santander UYU", "UYU", "Santander $",   "personal", "secundaria", "santander"),
+    ("Santander USD", "USD", "Santander USD", "personal", "secundaria", "santander"),
+]
+# (cuenta, moneda, etiqueta, logo). El saldo sale de la pestana Saldos de la
+# planilla Carga manual (data/staging/saldos_carga.csv) + giros posteriores.
+INVERSIONES = [
+    ("Gletir",              "USD", "Gletir",              "gletir"),
+    ("Interactive Brokers", "USD", "Interactive Brokers", "ibkr"),
 ]
 
 
 def leer(path, **kw):
     with open(path, encoding="utf-8-sig", newline="") as f:
         return list(csv.DictReader(f, **kw))
+
+
+def leer_opt(path):
+    return leer(path) if os.path.exists(path) else []
 
 
 def num(x):
@@ -39,7 +57,102 @@ def num(x):
         return 0.0
 
 
-def main():
+def logo_uri(clave):
+    """data URI del logo (assets/logos/<clave>.svg|.png), o None si no hay archivo.
+    El dashboard es un unico HTML sin recursos externos: el logo va embebido."""
+    for ext, mime in ((".svg", "image/svg+xml"), (".png", "image/png")):
+        path = os.path.join(LOGOS_DIR, clave + ext)
+        if os.path.exists(path):
+            with open(path, "rb") as f:
+                raw = f.read()
+            if len(raw) > LOGO_MAX_BYTES:
+                raise SystemExit(f"{path}: {len(raw)} bytes, el maximo es {LOGO_MAX_BYTES}. "
+                                 "Achicalo (SVG o PNG chico) para no inflar el dashboard.")
+            return f"data:{mime};base64," + base64.b64encode(raw).decode("ascii")
+    return None
+
+
+def tipos_categoria():
+    """categoria -> Fijo|Variable segun config/categorias.csv (las de Ingreso no van)."""
+    return {r["categoria"]: r["tipo"] for r in leer_opt(P("config", "categorias.csv"))
+            if r["tipo"] in ("Fijo", "Variable")}
+
+
+def bases_saldo():
+    """(cuenta, moneda) -> (fecha_corte, saldo) del ultimo saldo REAL conocido.
+
+    Manda la fila mas nueva entre data/saldos.csv (conciliaciones, solo las que
+    tienen saldo_real) y config/saldos_iniciales.csv (semillas). Antes se usaba
+    una fecha fija (12/7) para todas las cuentas con semillas al 31/8: los
+    movimientos del medio se contaban dos veces."""
+    base = {}
+
+    def tomar(cuenta, moneda, fecha, saldo):
+        k = (cuenta, moneda)
+        if fecha and (k not in base or fecha >= base[k][0]):
+            base[k] = (fecha, saldo)
+
+    for r in leer_opt(P("config", "saldos_iniciales.csv")):
+        tomar(r["cuenta"], r["moneda"], r["fecha_corte"], num(r["saldo"]))
+    for r in leer_opt(P("data", "saldos.csv")):
+        if (r.get("saldo_real") or "").strip():
+            tomar(r["cuenta"], r["moneda"], r["fecha_corte"], num(r["saldo_real"]))
+    return base
+
+
+def calcular_saldos(ledger):
+    base = bases_saldo()
+    out = []
+    for (c, mon, et, g, nivel, logo) in BANCOS:
+        fecha, saldo = base.get((c, mon), ("", 0.0))
+        for r in ledger:
+            if r["fecha"] <= fecha or r["moneda"] != mon:
+                continue
+            mto = num(r["monto"])
+            if r["tipo"] == "gasto" and r["cuenta"] == c:
+                saldo -= mto
+            elif r["tipo"] == "ingreso" and r["cuenta"] == c:
+                saldo += mto
+            elif r["tipo"] == "transferencia":
+                if r["cuenta"] == c:
+                    saldo -= mto
+                if r["cuenta_destino"] == c:
+                    saldo += mto
+        out.append({"cuenta": et, "moneda": mon, "saldo": round(saldo, 2), "grupo": g,
+                    "nivel": nivel, "base_fecha": fecha, "logo": logo_uri(logo)})
+    return out
+
+
+def calcular_inversiones(ledger):
+    """Ultimo saldo cargado en la planilla + giros posteriores (entradas - retiros).
+    No mira en_analisis: esas transferencias van en 0 a proposito (plata propia)."""
+    ultimo = {}
+    for r in leer_opt(P("data", "staging", "saldos_carga.csv")):
+        k = (r["cuenta"], r["moneda"])
+        if k not in ultimo or r["fecha"] >= ultimo[k][0]:
+            ultimo[k] = (r["fecha"], num(r["saldo"]))
+    out = []
+    for (c, mon, et, logo) in INVERSIONES:
+        if (c, mon) not in ultimo:
+            out.append({"cuenta": et, "moneda": mon, "saldo": None, "base_fecha": "",
+                        "aportes_desde": 0.0, "logo": logo_uri(logo)})
+            continue
+        fecha, saldo = ultimo[(c, mon)]
+        aportes = 0.0
+        for r in ledger:
+            if r["fecha"] <= fecha or r["moneda"] != mon or r["tipo"] != "transferencia":
+                continue
+            if r["cuenta_destino"] == c:
+                aportes += num(r["monto"])
+            if r["cuenta"] == c:
+                aportes -= num(r["monto"])
+        out.append({"cuenta": et, "moneda": mon, "saldo": round(saldo + aportes, 2),
+                    "base_fecha": fecha, "aportes_desde": round(aportes, 2), "logo": logo_uri(logo)})
+    return out
+
+
+def armar_data():
+    """Todo lo que el dashboard necesita, como dict serializable. Puro: no escribe."""
     personal = defaultdict(list)
     for r in leer(P("out", "resumen_mensual.csv")):
         personal[r["mes"]].append({"cat": r["categoria"], "gasto": round(num(r["gasto_uyu"]), 2)})
@@ -63,40 +176,14 @@ def main():
 
     # cierre de casa por mes: aportes + posicion
     casa_cierre = {}
-    if os.path.exists(P("data", "cierre_casa.csv")):
-        for r in leer(P("data", "cierre_casa.csv")):
-            casa_cierre[r["mes"]] = {
-                "aportes_lu": round(num(r["aportes_lu"]), 2), "aportes_joaco": round(num(r["aportes_joaco"]), 2),
-                "posicion_lu": round(num(r["posicion_lu"]), 2), "posicion_joaco": round(num(r["posicion_joaco"]), 2)}
+    for r in leer_opt(P("data", "cierre_casa.csv")):
+        casa_cierre[r["mes"]] = {
+            "aportes_lu": round(num(r["aportes_lu"]), 2), "aportes_joaco": round(num(r["aportes_joaco"]), 2),
+            "posicion_lu": round(num(r["posicion_lu"]), 2), "posicion_joaco": round(num(r["posicion_joaco"]), 2)}
 
-    # saldos bancarios estimados
-    seed = {}
-    for r in leer(P("config", "saldos_iniciales.csv")):
-        seed[(r["cuenta"], r["moneda"])] = num(r["saldo"])
-    saldo = {(c, mon): seed.get((c, mon), 0.0) for c, mon, _, _ in BANCOS}
-    max_fecha = ""
-    for r in leer(P("data", "ledger.csv")):
-        if r["fecha"] > max_fecha:
-            max_fecha = r["fecha"]
-        if r["fecha"] <= SEED_FECHA:
-            continue
-        mon, mto = r["moneda"], num(r["monto"])
-        for (c, cmon, _, _) in BANCOS:
-            if cmon != mon:
-                continue
-            if r["tipo"] == "gasto" and r["cuenta"] == c:
-                saldo[(c, mon)] -= mto
-            elif r["tipo"] == "ingreso" and r["cuenta"] == c:
-                saldo[(c, mon)] += mto
-            elif r["tipo"] == "transferencia":
-                if r["cuenta"] == c:
-                    saldo[(c, mon)] -= mto
-                if r["cuenta_destino"] == c:
-                    saldo[(c, mon)] += mto
-    saldos = [{"cuenta": et, "moneda": mon, "saldo": round(saldo[(c, mon)], 2), "grupo": g}
-              for (c, mon, et, g) in BANCOS]
+    ledger = leer(P("data", "ledger.csv"))
+    max_fecha = max((r["fecha"] for r in ledger), default="")
 
-    import calendar
     mes_curso = max_fecha[:7] if max_fecha else ""
     dia_corte = int(max_fecha[8:10]) if len(max_fecha) >= 10 else 0
     dias_mes = calendar.monthrange(int(mes_curso[:4]), int(mes_curso[5:7]))[1] if mes_curso else 30
@@ -104,26 +191,31 @@ def main():
     meses = sorted(set(personal) | set(presup) | set(casa))
     cats = sorted({x["cat"] for m in personal.values() for x in m}
                   | {x["cat"] for m in casa.values() for x in m["cats"]})
+    tipos = tipos_categoria()
 
-    data = {
+    return {
         "mes_en_curso": mes_curso, "dia_corte": dia_corte, "dias_mes": dias_mes,
         "meses": meses, "mes_default": meses[-1] if meses else "", "categorias": cats,
+        "cat_tipo": {c: tipos.get(c, "Variable") for c in cats},
         "personal": personal, "presupuesto": presup,
         "casa": {k: v for k, v in casa.items()}, "casa_cierre": casa_cierre,
-        "saldos": saldos, "seed_fecha": SEED_FECHA, "generado": "",
+        "saldos": calcular_saldos(ledger), "inversiones": calcular_inversiones(ledger),
+        "generado": dt.datetime.now().strftime("%d/%m/%Y %H:%M"),
     }
-    try:
-        data["generado"] = dt.datetime.now().strftime("%d/%m/%Y %H:%M")
-    except Exception:
-        pass
 
-    html = TEMPLATE.replace("__DATA__", json.dumps(data, ensure_ascii=False))
+
+def main():
+    data = armar_data()
+    # "</" escapado: un texto con "</script>" no puede cerrar el bloque JSON
+    payload = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
+    html = TEMPLATE.replace("__DATA__", payload)
     out = P("out", "dashboard.html")
     # newline="\n": out/dashboard.html se commitea con eol=lf; sin esto una
     # corrida local lo reescribe entero en CRLF (auditoria 2026-09 SB1).
     with open(out, "w", encoding="utf-8", newline="\n") as f:
         f.write(html)
-    print(f"{out}: {len(meses)} meses, {len(cats)} categorias, saldos {len(saldos)} cuentas")
+    print(f"{out}: {len(data['meses'])} meses, {len(data['categorias'])} categorias, "
+          f"saldos {len(data['saldos'])} cuentas, {len(data['inversiones'])} inversiones")
 
 
 TEMPLATE = r"""<!doctype html>
@@ -210,11 +302,32 @@ main{padding-top:22px}
 .kpi .val{font-family:var(--serif); font-size:26px; margin-top:6px} .kpi .val small{font-size:14px; color:var(--ink-2); font-family:var(--sans)}
 .pill{display:inline-flex; align-items:center; gap:5px; font-size:12px; font-weight:600; padding:3px 9px; border-radius:20px; margin-top:8px}
 .pill.up{background:var(--bad-soft); color:var(--bad)} .pill.down{background:var(--good-soft); color:var(--good)} .pill.flat{background:var(--surface-2); color:var(--ink-2)}
-.saldos{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:12px}
-.acct{display:flex; flex-direction:column; gap:3px; padding:13px 15px; border-radius:12px; background:var(--surface-2); border:1px solid var(--line)}
+.saldos{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px} @media(max-width:560px){.saldos{grid-template-columns:1fr 1fr; gap:8px} .acct{padding:11px 12px} .acct .s{font-size:17px}}
+.acct{padding:13px 15px; border-radius:12px; background:var(--surface-2); border:1px solid var(--line); min-width:0}
+.acct .logo{width:22px; height:22px; border-radius:6px; display:block; flex:none}
+.acct .body{display:flex; flex-direction:column; gap:3px; min-width:0}
 .acct .n{font-size:12.5px; color:var(--ink-2); display:flex; align-items:center; gap:7px}
 .acct .n .tag{font-size:10px; font-weight:700; letter-spacing:.05em; padding:1px 6px; border-radius:6px; background:var(--surface); color:var(--ink-3)}
-.acct .s{font-family:var(--serif); font-size:22px} .acct .cur{font-size:12px; color:var(--ink-3)}
+.acct .s{font-family:var(--serif); font-size:20px; white-space:nowrap} .acct .cur{font-size:12px; color:var(--ink-3)}
+.acct .warn{font-size:11.5px; color:var(--bad)}
+.money-row{display:grid; grid-template-columns:2fr 1fr; gap:16px; margin-bottom:16px} @media(max-width:820px){.money-row{grid-template-columns:1fr}}
+.money-row .card{margin:0}
+.inv{display:flex; flex-direction:column; gap:10px}
+.inv-tot{display:flex; justify-content:space-between; font-size:13px; color:var(--ink-2); border-top:1px solid var(--line); padding-top:10px; margin-top:2px}
+.inv-tot b{font-family:var(--serif); font-size:17px; color:var(--ink)}
+details.sec{margin-top:12px}
+details.sec summary{cursor:pointer; font-size:12.5px; color:var(--ink-3); list-style:none; display:inline-flex; align-items:center; gap:6px}
+details.sec summary::-webkit-details-marker{display:none}
+details.sec summary::before{content:"▸"; font-size:10px} details.sec[open] summary::before{content:"▾"}
+.sec-list{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:6px 14px; margin-top:8px}
+.sec-row{display:grid; grid-template-columns:18px 1fr auto; align-items:center; gap:8px; font-size:12.5px; color:var(--ink-2); padding:5px 8px; border-radius:8px; background:var(--surface-2)}
+.sec-row .logo{width:18px; height:18px; border-radius:5px; margin:0}
+.sec-row .amt{font-variant-numeric:tabular-nums; color:var(--ink); font-weight:600}
+.sec-row .f{font-size:11px; color:var(--ink-3); grid-column:2 / 4}
+.seg{display:inline-flex; gap:2px; padding:2px; background:var(--surface-2); border:1px solid var(--line); border-radius:9px; margin:0 0 10px}
+.seg button{font-family:var(--sans); font-size:12px; font-weight:600; color:var(--ink-2); background:none; border:none; padding:5px 10px; border-radius:7px; cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--surface); color:var(--ink); box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.seg button:disabled{opacity:.4; cursor:not-allowed}
 .legend{display:flex; flex-wrap:wrap; gap:10px 16px; margin-top:8px}
 .legend .it{display:flex; align-items:center; gap:7px; font-size:12.5px; color:var(--ink-2)}
 .legend .sw{width:11px; height:11px; border-radius:3px; flex:none} .legend .v{color:var(--ink); font-variant-numeric:tabular-nums}
@@ -223,6 +336,19 @@ main{padding-top:22px}
 .bar-row .lbl{color:var(--ink-2); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
 .bar-track{background:var(--surface-2); border-radius:6px; height:15px; overflow:hidden}
 .bar-fill{height:100%; border-radius:6px; background:linear-gradient(90deg,var(--accent),var(--c1))}
+.bar-lane{height:15px}
+.bar-row.vs{grid-template-columns:130px 1fr 86px 122px}
+@media(max-width:560px){
+  .bar-row.vs{grid-template-columns:1fr 74px 100px; grid-template-areas:"lbl amt prev" "bar bar bar"; gap:3px 8px}
+  .bar-row.vs .lbl{grid-area:lbl} .bar-row.vs .amt{grid-area:amt} .bar-row.vs .prev{grid-area:prev}
+  .bar-row.vs .bar-lane{grid-area:bar; height:7px} .bar-head .bar-lane{display:none}
+}
+.bar-head span{white-space:nowrap} .bar-head .amt,.bar-head .prev{color:var(--ink-3); font-size:11px; font-weight:600}
+.bar-row.vs .amt,.bar-row.vs .prev{text-align:right}
+.bar-row .prev{font-variant-numeric:tabular-nums; color:var(--ink-3); white-space:nowrap; font-size:12.5px}
+.bar-row .prev .d{margin-left:0; margin-right:4px}
+.bar-head{font-size:11px; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-3); font-weight:600; margin-bottom:2px}
+.bar-head span:nth-child(3),.bar-head span:nth-child(4){text-align:right}
 .bar-row .amt{font-variant-numeric:tabular-nums; color:var(--ink); font-weight:600; white-space:nowrap}
 .d.up{color:var(--bad)} .d.down{color:var(--good)} .d{font-size:11px; margin-left:6px}
 table{width:100%; border-collapse:collapse; font-size:13.5px} .tscroll{overflow-x:auto}
@@ -256,6 +382,7 @@ svg{display:block; width:100%; overflow:visible}
   <div class="filters">
     <div class="ms" id="ms-mes"></div>
     <div class="ms" id="ms-cat"></div>
+    <div class="ms" id="ms-tipo"></div>
   </div>
   <div class="tabs" role="tablist">
     <button class="tab" role="tab" data-tab="cat" aria-selected="true">Categorías</button>
@@ -286,10 +413,27 @@ const hideTip=()=>tip.style.opacity=0;
 
 let selMeses=[D.mes_default];
 let selCats=null;            // null = todas
+const TIPOS=["Fijo","Variable"];
+let selTipos=new Set(TIPOS); // Fijo / Variable (config/categorias.csv)
+let casaVista="total";       // Evolución de casa: total | ambos | joaco | lu
 let curTab="cat";
 
-/* ------- helpers de agregación (sobre selMeses, filtrado por selCats) ------- */
-const catOk = c => !selCats || selCats.has(c);
+/* ------- helpers de agregación (sobre selMeses, filtrado por selCats y selTipos) ------- */
+const tipoDe = c => D.cat_tipo[c] || "Variable";
+const catOk = c => (!selCats || selCats.has(c)) && selTipos.has(tipoDe(c));
+const tipoFiltrado = () => selTipos.size < TIPOS.length;
+const tipoNote = () => tipoFiltrado() ? (selTipos.has("Fijo") ? " · solo fijos" : " · solo variables") : "";
+const fechaCorta = f => f ? f.slice(8,10)+"/"+f.slice(5,7) : "";
+const logoImg = (s,cls) => s.logo ? `<img class="${cls||'logo'}" src="${s.logo}" alt="">` : "";
+/* color progresivo según % del presupuesto usado: <=70% verde, 100% ámbar, >=130% rojo */
+function devColor(pct){
+  if(pct==null||!isFinite(pct)) return {fg:"var(--ink-2)",bg:"var(--surface-2)"};
+  const mix=(a,b,t)=>`color-mix(in oklab, ${b} ${t}%, ${a})`;
+  if(pct<=100){ const t=Math.min(1,Math.max(0,(pct-70)/30))*100;
+    return {fg:mix("var(--good)","var(--accent)",t), bg:mix("var(--good-soft)","var(--accent-soft)",t)}; }
+  const t=Math.min(1,(pct-100)/30)*100;
+  return {fg:mix("var(--accent)","var(--bad)",t), bg:mix("var(--accent-soft)","var(--bad-soft)",t)};
+}
 const latestSel = () => selMeses.slice().sort().slice(-1)[0];
 const incluyeCurso = () => selMeses.includes(D.mes_en_curso);
 function aggMap(src, val){ const a={}; selMeses.forEach(m=>(src[m]||[]).forEach(x=>{ if(catOk(x.cat)) a[x.cat]=(a[x.cat]||0)+val(x); })); return a; }
@@ -329,13 +473,19 @@ function lineChart(series,label){ // series:[{name,cvar,points:[{m,v}]}]
   });
   return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${label}">${g}${body}${lab}${xl}</svg>`;
 }
-function hbars(items){ const max=Math.max(1,...items.map(i=>i.val));
-  return `<div class="bars">`+items.map(it=>{ let d=""; if(it.delta!=null&&isFinite(it.delta)&&Math.abs(it.delta)>=1){const up=it.delta>0; d=`<span class="d ${up?'up':'down'}">${up?'▲':'▼'} ${fmt0(Math.abs(it.delta))}</span>`;}
-    return `<div class="bar-row"><span class="lbl" title="${it.lbl}">${it.lbl}</span><div class="bar-track"><div class="bar-fill" style="width:${it.val/max*100}%"></div></div><span class="amt">${fmt(it.val)}${d}</span></div>`;}).join("")+`</div>`;
+/* barras por categoría; con prev (mes anterior) agrega una 4ta columna alineada */
+function hbarsVs(items, prevLabel){ const max=Math.max(1,...items.map(i=>i.val)); const vs=prevLabel!=null;
+  const head=vs?`<div class="bar-row vs bar-head"><span class="lbl"></span><span class="bar-lane"></span><span class="amt">Gasto</span><span class="prev">vs. mes anterior</span></div>`:"";
+  return `<div class="bars">`+head+items.map(it=>{
+    let prev="";
+    if(vs){ const p=it.prev||0, dl=it.val-p; const up=dl>0;
+      const d=Math.abs(dl)>=1?`<span class="d ${up?'up':'down'}">${up?'▲':'▼'}</span>`:"";
+      prev=`<span class="prev" title="${prevLabel}: ${fmt(p)} (${dl>=0?'+':''}${fmt0(dl)})">${d}${fmt(p)}</span>`; }
+    return `<div class="bar-row${vs?' vs':''}"><span class="lbl" title="${it.lbl}">${it.lbl}</span><div class="bar-lane"><div class="bar-fill" style="width:${it.val/max*100}%"></div></div><span class="amt">${fmt(it.val)}</span>${prev}</div>`;}).join("")+`</div>`;
 }
 function divBars(items){ const max=Math.max(1,...items.map(i=>Math.abs(i.dif)));
-  return `<div class="bars">`+items.map(it=>{const over=it.dif>0,w=Math.abs(it.dif)/max*50;
-    return `<div class="bar-row"><span class="lbl" title="${it.lbl}">${it.lbl}</span><div style="position:relative;height:15px"><div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--ink-3);opacity:.35"></div><div style="position:absolute;top:0;height:100%;border-radius:5px;${over?`left:50%;width:${w}%;background:var(--bad)`:`right:50%;width:${w}%;background:var(--good)`};opacity:.85"></div></div><span class="amt" style="color:${over?'var(--bad)':'var(--good)'}">${over?'+':''}${fmt(it.dif)}</span></div>`;}).join("")+`</div>`;
+  return `<div class="bars">`+items.map(it=>{const over=it.dif>0,w=Math.abs(it.dif)/max*50,c=devColor(it.pct).fg;
+    return `<div class="bar-row"><span class="lbl" title="${it.lbl}">${it.lbl}</span><div style="position:relative;height:15px"><div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--ink-3);opacity:.35"></div><div style="position:absolute;top:0;height:100%;border-radius:5px;${over?`left:50%`:`right:50%`};width:${w}%;background:${c};opacity:.85"></div></div><span class="amt" style="color:${c}">${over?'+':''}${fmt(it.dif)}</span></div>`;}).join("")+`</div>`;
 }
 function topN(map,n){ let a=Object.entries(map).map(([cat,gasto])=>({cat,gasto})).sort((x,y)=>y.gasto-x.gasto);
   if(a.length<=n) return a; const rest=a.slice(n).reduce((t,x)=>t+x.gasto,0); return [...a.slice(0,n),{cat:"Otros",gasto:rest}];}
@@ -357,31 +507,49 @@ function renderCat(){
   const single=nM===1; const pm=single?D.meses[D.meses.indexOf(selMeses[0])-1]:null;
   const pmap={}; if(pm)(D.personal[pm]||[]).forEach(x=>{if(catOk(x.cat))pmap[x.cat]=x.gasto;});
   const ptot=Object.values(pmap).reduce((a,b)=>a+b,0);
-  const kp=el("div","kpis");
+  const kp=el("div","kpis"); kp.style.gridTemplateColumns="repeat(2,1fr)";
   const delta=total-ptot;
-  let k1 = single&&pm ? `<span class="pill ${delta>0?'up':delta<0?'down':'flat'}">${delta>0?'▲':delta<0?'▼':'—'} ${fmt0(Math.abs(delta))} vs ${mesLabel(pm)}</span>` : `<div class="sub" style="margin:6px 0 0">${nM} ${nM>1?'meses':'mes'}${selCats?' · '+selCats.size+' categorías':''}</div>`;
-  kp.appendChild(el("div","kpi",`<div class="lab">Gastado · ${periodLabel()}</div><div class="val tnum">${fmt(total)}</div>${k1}`));
+  let k1 = single&&pm ? `<span class="pill ${delta>0?'up':delta<0?'down':'flat'}">${delta>0?'▲':delta<0?'▼':'—'} ${fmt0(Math.abs(delta))} vs ${mesLabel(pm)}</span>` : `<div class="sub" style="margin:6px 0 0">${nM} ${nM>1?'meses':'mes'}${selCats?' · '+selCats.size+' categorías':''}${tipoNote()}</div>`;
+  kp.appendChild(el("div","kpi",`<div class="lab">Gastado · ${periodLabel()}${tipoNote()}</div><div class="val tnum">${fmt(total)}</div><div style="display:flex;gap:6px;flex-wrap:wrap">${k1}${cursoNote()}</div>`));
   kp.appendChild(el("div","kpi",`<div class="lab">Promedio mensual</div><div class="val tnum">${fmt(total/nM)}</div>`));
-  kp.appendChild(el("div","kpi",`<div class="lab">Categorías</div><div class="val tnum">${Object.keys(agg).length}</div>`));
-  kp.appendChild(el("div","kpi",`<div class="lab">Período</div><div class="val" style="font-size:19px">${periodLabel()}</div>${cursoNote()}`));
   w.appendChild(kp);
 
-  const sc=el("div","card"); sc.appendChild(el("div",null,`<h3>Saldos estimados</h3><div class="sub">Desde tu último saldo real (${D.seed_fecha.split("-").reverse().join("/")}) + movimientos. Aproximado.</div>`));
+  const mrow=el("div","money-row");
+  const sc=el("div","card"); sc.appendChild(el("div",null,`<h3>Saldos estimados</h3><div class="sub">Último saldo conciliado de cada cuenta + movimientos posteriores. Aproximado.</div>`));
+  const acct=s=>{ const neg=s.saldo<0;
+    return el("div","acct",`<div class="body"><div class="n">${logoImg(s)}${s.cuenta}${s.grupo==='casa'?' <span class="tag">CASA</span>':''}</div><div class="s tnum">${fmtc(s.saldo,s.moneda)}</div><div class="cur">${s.base_fecha?'base al '+fechaCorta(s.base_fecha):s.moneda}</div>${neg?'<div class="warn" title="Faltan entradas sin aviso del banco (sueldo, aportes) hasta el cierre de mes">⚠ faltan entradas sin aviso</div>':''}</div>`); };
   const sg=el("div","saldos");
-  D.saldos.forEach(s=>sg.appendChild(el("div","acct",`<div class="n">${s.cuenta} <span class="tag">${s.grupo==='casa'?'CASA':'PERSONAL'}</span></div><div class="s tnum">${fmtc(s.saldo,s.moneda)}</div><div class="cur">${s.moneda}</div>`)));
+  D.saldos.filter(s=>s.nivel==="principal").forEach(s=>sg.appendChild(acct(s)));
   const pos=posOf(latestSel());
-  if(pos) sg.appendChild(el("div","acct",`<div class="n">Posición de casa <span class="tag">vs LU</span></div><div class="s tnum" style="color:${pos.posicion_joaco>=0?'var(--good)':'var(--bad)'}">${pos.posicion_joaco>=0?'+':''}${fmt(pos.posicion_joaco)}</div><div class="cur">${pos.posicion_joaco>=0?'aportaste de más':'aportaste de menos'}</div>`));
-  sc.appendChild(sg); w.appendChild(sc);
+  if(pos) sg.appendChild(el("div","acct",`<div class="body"><div class="n">Posición de casa <span class="tag">vs LU</span></div><div class="s tnum" style="color:${pos.posicion_joaco>=0?'var(--good)':'var(--bad)'}">${pos.posicion_joaco>=0?'+':''}${fmt(pos.posicion_joaco)}</div><div class="cur">${pos.posicion_joaco>=0?'aportaste de más':'aportaste de menos'}</div></div>`));
+  sc.appendChild(sg);
+  const sec=D.saldos.filter(s=>s.nivel!=="principal");
+  if(sec.length){ const det=el("details","sec"); det.appendChild(el("summary",null,`Otras cuentas (${sec.length})`));
+    det.appendChild(el("div","sec-list",sec.map(s=>`<div class="sec-row" title="${s.saldo<0?'Faltan entradas sin aviso del banco hasta el cierre':''}">${logoImg(s)||'<span></span>'}<span>${s.cuenta}</span><span class="amt"${s.saldo<0?' style="color:var(--bad)"':''}>${fmtc(s.saldo,s.moneda)}</span><span class="f">${s.base_fecha?'base al '+fechaCorta(s.base_fecha):''}</span></div>`).join("")));
+    sc.appendChild(det); }
+  mrow.appendChild(sc);
+
+  const ic=el("div","card"); ic.appendChild(el("div",null,`<h3>Inversiones</h3><div class="sub">Último saldo cargado en la planilla + giros posteriores. Sin rendimiento.</div>`));
+  const il=el("div","inv"); let itot=0, ihay=false;
+  (D.inversiones||[]).forEach(s=>{
+    if(s.saldo==null){ il.appendChild(el("div","acct",`<div class="body"><div class="n">${logoImg(s)}${s.cuenta}</div><div class="cur">sin saldo cargado · cargalo en la planilla, pestaña Saldos</div></div>`)); return; }
+    itot+=s.saldo; ihay=true;
+    const ap=Math.abs(s.aportes_desde)>=0.01?` · ${s.aportes_desde>0?'+':'−'} ${fmtc(Math.abs(s.aportes_desde),s.moneda)} girados después`:"";
+    il.appendChild(el("div","acct",`<div class="body"><div class="n">${logoImg(s)}${s.cuenta}</div><div class="s tnum">${fmtc(s.saldo,s.moneda)}</div><div class="cur">saldo al ${fechaCorta(s.base_fecha)}${ap}</div></div>`)); });
+  if(ihay) il.appendChild(el("div","inv-tot",`<span>Total</span><b class="tnum">${fmtc(itot,"USD")}</b>`));
+  ic.appendChild(il); mrow.appendChild(ic);
+  w.appendChild(mrow);
 
   const row=el("div","cols");
   const dcard=el("div","card"); const items=topN(agg,7).map((x,i)=>({label:x.cat,value:x.gasto,cvar:CAT_COLORS[i%8]}));
-  dcard.appendChild(el("div",null,`<h3>Composición</h3><div class="sub">${periodLabel()}${selCats?' · filtrado':''}</div>`));
+  dcard.appendChild(el("div",null,`<h3>Composición</h3><div class="sub">${periodLabel()}${selCats?' · filtrado':''}${tipoNote()}</div>`));
   dcard.appendChild(el("div",null,donut(items,total)));
   const lg=el("div","legend"); items.forEach(it=>lg.appendChild(el("div","it",`<span class="sw" style="background:${cssvar(it.cvar)}"></span>${it.label} <span class="v">${fmt(it.value)}</span>`))); dcard.appendChild(lg);
   row.appendChild(dcard);
-  const bcard=el("div","card"); bcard.appendChild(el("div",null,`<h3>Por categoría</h3><div class="sub">${single&&pm?'con variación vs '+mesLabel(pm):periodLabel()}</div>`));
-  const bitems=Object.entries(agg).map(([cat,v])=>({lbl:cat,val:v,delta:single&&pm?v-(pmap[cat]||0):null})).sort((a,b)=>b.val-a.val);
-  bcard.appendChild(el("div",null,hbars(bitems))); row.appendChild(bcard); w.appendChild(row);
+  const vs=single&&pm;
+  const bcard=el("div","card"); bcard.appendChild(el("div",null,`<h3>Por categoría</h3><div class="sub">${periodLabel()}${vs?' · vs. '+mesLabel(pm):''}${tipoNote()}</div>`));
+  const bitems=Object.entries(agg).map(([cat,v])=>({lbl:cat,val:v,prev:vs?(pmap[cat]||0):null})).sort((a,b)=>b.val-a.val);
+  bcard.appendChild(el("div",null,hbarsVs(bitems, vs?mesLabel(pm):null))); row.appendChild(bcard); w.appendChild(row);
 
   const tc=el("div","card");
   if(selCats&&selCats.size===0){ tc.appendChild(el("div",null,`<h3>Evolución</h3><div class="sub">Elegí una o más categorías en el filtro para ver su evolución.</div>`)); }
@@ -401,16 +569,18 @@ function renderPre(){
   const list=Object.entries(agg).map(([cat,v])=>({cat,ppto:v.ppto,real:v.real,dif:v.real-v.ppto})).filter(x=>x.ppto>0||x.real>0);
   const tp=list.reduce((t,x)=>t+x.ppto,0), tr=list.reduce((t,x)=>t+x.real,0), td=tr-tp;
   const kp=el("div","kpis"); kp.style.gridTemplateColumns="repeat(3,1fr)";
-  kp.appendChild(el("div","kpi",`<div class="lab">Presupuesto · ${periodLabel()}</div><div class="val tnum">${fmt(tp)}</div>`));
+  const tpct=tp>0?tr/tp*100:null, tcol=devColor(tpct);
+  kp.appendChild(el("div","kpi",`<div class="lab">Presupuesto · ${periodLabel()}${tipoNote()}</div><div class="val tnum">${fmt(tp)}</div>`));
   kp.appendChild(el("div","kpi",`<div class="lab">Gastado</div><div class="val tnum">${fmt(tr)}</div>${cursoNote()}`));
-  kp.appendChild(el("div","kpi",`<div class="lab">Diferencia</div><div class="val tnum" style="color:${td>0?'var(--bad)':'var(--good)'}">${td>0?'+':''}${fmt(td)}</div><span class="pill ${td>0?'up':'down'}">${td>0?'sobre presupuesto':'dentro'}</span>`));
+  kp.appendChild(el("div","kpi",`<div class="lab">Diferencia</div><div class="val tnum" style="color:${tcol.fg}">${td>0?'+':''}${fmt(td)}</div><div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center"><span class="pill" style="background:${tcol.bg};color:${tcol.fg}">uso: ${tpct==null?'—':tpct.toLocaleString("es-UY",{minimumFractionDigits:1,maximumFractionDigits:1})+'%'}</span><span class="pill ${td>0?'up':'down'}">${td>0?'sobre presupuesto':'dentro'}</span></div>`));
   w.appendChild(kp);
-  const dc=el("div","card"); dc.appendChild(el("div",null,`<h3>Variación por categoría</h3><div class="sub">Izquierda = ahorraste · Derecha = te pasaste</div>`));
-  dc.appendChild(el("div",null,divBars(list.filter(x=>Math.abs(x.dif)>=1).sort((a,b)=>b.dif-a.dif).map(x=>({lbl:x.cat,dif:x.dif}))))); w.appendChild(dc);
-  const tcard=el("div","card"); tcard.appendChild(el("div",null,`<h3>Detalle</h3><div class="sub">${periodLabel()}</div>`));
-  const rows=list.sort((a,b)=>b.real-a.real).map(x=>{const pct=x.ppto>0?x.real/x.ppto*100:(x.real>0?999:0),over=x.dif>0;
-    return `<tr><td>${x.cat}</td><td>${fmt(x.ppto)}</td><td>${fmt(x.real)}</td><td><span class="chip ${over?'bad':'good'}">${over?'+':''}${fmt0(x.dif)}</span></td><td>${x.ppto>0?pct.toFixed(0)+'%':'—'}</td></tr>`;}).join("");
-  tcard.appendChild(el("div",null,`<div class="tscroll"><table><thead><tr><th>Categoría</th><th>Presupuesto</th><th>Real</th><th>Diferencia</th><th>% usado</th></tr></thead><tbody>${rows}<tr class="total"><td>Total</td><td>${fmt(tp)}</td><td>${fmt(tr)}</td><td style="color:${td>0?'var(--bad)':'var(--good)'}">${td>0?'+':''}${fmt0(td)}</td><td>${tp>0?(tr/tp*100).toFixed(0)+'%':'—'}</td></tr></tbody></table></div>`)); w.appendChild(tcard);
+  const pctOf=x=>x.ppto>0?x.real/x.ppto*100:null;
+  const dc=el("div","card"); dc.appendChild(el("div",null,`<h3>Variación por categoría</h3><div class="sub">Izquierda = ahorraste · Derecha = te pasaste · color según % del presupuesto usado</div>`));
+  dc.appendChild(el("div",null,divBars(list.filter(x=>Math.abs(x.dif)>=1).sort((a,b)=>b.dif-a.dif).map(x=>({lbl:x.cat,dif:x.dif,pct:x.ppto>0?pctOf(x):(x.real>0?999:null)}))))); w.appendChild(dc);
+  const tcard=el("div","card"); tcard.appendChild(el("div",null,`<h3>Detalle</h3><div class="sub">${periodLabel()}${tipoNote()} · verde = holgado, rojo = pasado</div>`));
+  const rows=list.sort((a,b)=>b.real-a.real).map(x=>{const pct=pctOf(x),over=x.dif>0,c=devColor(pct!=null?pct:(x.real>0?999:null));
+    return `<tr><td>${x.cat}</td><td>${fmt(x.ppto)}</td><td>${fmt(x.real)}</td><td><span class="chip" style="background:${c.bg};color:${c.fg}">${over?'+':''}${fmt0(x.dif)}</span></td><td style="color:${c.fg};font-weight:700">${pct!=null?pct.toFixed(0)+'%':'—'}</td></tr>`;}).join("");
+  tcard.appendChild(el("div",null,`<div class="tscroll"><table><thead><tr><th>Categoría</th><th>Presupuesto</th><th>Real</th><th>Diferencia</th><th>% usado</th></tr></thead><tbody>${rows}<tr class="total"><td>Total</td><td>${fmt(tp)}</td><td>${fmt(tr)}</td><td style="color:${tcol.fg}">${td>0?'+':''}${fmt0(td)}</td><td style="color:${tcol.fg}">${tpct!=null?tpct.toFixed(1)+'%':'—'}</td></tr></tbody></table></div>`)); w.appendChild(tcard);
 }
 function posOf(mes){ // posición del último mes con cierre <= mes seleccionado
   const ms=Object.keys(D.casa_cierre).filter(m=>m<=mes).sort(); return ms.length?D.casa_cierre[ms[ms.length-1]]:null;
@@ -421,7 +591,7 @@ function renderCasa(){
   selMeses.forEach(m=>{const c=D.casa[m]; if(!c)return; c.cats.forEach(x=>{ if(!catOk(x.cat))return; const a=cats[x.cat]||(cats[x.cat]={total:0,lu:0,joaco:0}); a.total+=x.total; a.lu+=x.lu; a.joaco+=x.joaco; total+=x.total; lu+=x.lu; joaco+=x.joaco; });});
   let apLu=0,apJo=0; selMeses.forEach(m=>{const c=D.casa_cierre[m]; if(c){apLu+=c.aportes_lu; apJo+=c.aportes_joaco;}});
   const kp=el("div","kpis"); kp.style.gridTemplateColumns="repeat(3,1fr)";
-  kp.appendChild(el("div","kpi",`<div class="lab">Gasto de casa · ${periodLabel()}</div><div class="val tnum">${fmt(total)}</div>${cursoNote()}`));
+  kp.appendChild(el("div","kpi",`<div class="lab">Gasto de casa · ${periodLabel()}${tipoNote()}</div><div class="val tnum">${fmt(total)}</div>${cursoNote()}`));
   kp.appendChild(el("div","kpi",`<div class="lab">Tu parte</div><div class="val tnum">${fmt(joaco)}</div><div class="sub" style="margin:6px 0 0">${total>0?(joaco/total*100).toFixed(0):0}% del total</div>`));
   kp.appendChild(el("div","kpi",`<div class="lab">Parte de Lu</div><div class="val tnum">${fmt(lu)}</div><div class="sub" style="margin:6px 0 0">${total>0?(lu/total*100).toFixed(0):0}% del total</div>`));
   w.appendChild(kp);
@@ -447,33 +617,50 @@ function renderCasa(){
   const scard=el("div","card"); scard.appendChild(el("div",null,`<h3>Reparto por categoría</h3><div class="sub"><span style="color:${cssvar('--c1')}">■</span> Vos &nbsp; <span style="color:${cssvar('--c2')}">■</span> Lu</div>`));
   const cl=Object.entries(cats).map(([cat,v])=>({cat,...v})).sort((a,b)=>b.total-a.total);
   const maxc=Math.max(1,...cl.map(x=>x.total));
-  scard.appendChild(el("div","bars",cl.map(x=>`<div class="bar-row"><span class="lbl" title="${x.cat}">${x.cat}</span><div class="bar-track" style="display:flex;height:15px;gap:2px;background:none"><div style="width:${x.joaco/maxc*100}%;background:${cssvar('--c1')};border-radius:5px 0 0 5px"></div><div style="width:${x.lu/maxc*100}%;background:${cssvar('--c2')};border-radius:0 5px 5px 0"></div></div><span class="amt">${fmt(x.total)}</span></div>`).join(""))); row.appendChild(scard);
+  scard.appendChild(el("div","bars",cl.map((x,i)=>`<div class="bar-row" data-i="${i}" style="cursor:default"><span class="lbl" title="${x.cat}">${x.cat}</span><div class="bar-track" style="display:flex;height:15px;gap:2px;background:none"><div style="width:${x.joaco/maxc*100}%;background:${cssvar('--c1')};border-radius:5px 0 0 5px"></div><div style="width:${x.lu/maxc*100}%;background:${cssvar('--c2')};border-radius:0 5px 5px 0"></div></div><span class="amt">${fmt(x.total)}</span></div>`).join(""))); row.appendChild(scard);
+  wireReparto(scard,cl);
   const ec=el("div","card");
   if(selCats&&selCats.size===0){ ec.appendChild(el("div",null,`<h3>Evolución</h3><div class="sub">Elegí una o más categorías en el filtro para ver su evolución.</div>`)); }
   else {
     const multi=selCats&&selCats.size>=1&&selCats.size<=6;
-    ec.appendChild(el("div",null,`<h3>Evolución</h3><div class="sub">${multi?'por categoría · ':''}gasto de casa · últimos 6 meses</div>`));
-    const series=trendSeries((m,cat)=>{const c=D.casa[m]; if(!c)return 0; return c.cats.filter(x=>cat?x.cat===cat:catOk(x.cat)).reduce((t,x)=>t+x.total,0);});
+    if(multi&&casaVista==="ambos") casaVista="total";   // por categoría: una sola persona a la vez
+    const QUIEN={total:"gasto total",joaco:"tu parte",lu:"parte de Lu",ambos:"tu parte y la de Lu"};
+    ec.appendChild(el("div",null,`<h3>Evolución</h3><div class="sub">${multi?'por categoría · ':''}${QUIEN[casaVista]} · últimos 6 meses${tipoNote()}</div>`));
+    const seg=el("div","seg");
+    [["total","Total"],["ambos","Vos y Lu"],["joaco","Vos"],["lu","Lu"]].forEach(([k,t])=>{
+      const b=el("button",null,t); b.setAttribute("aria-pressed",casaVista===k);
+      if(multi&&k==="ambos"){ b.disabled=true; b.title="Con categorías elegidas, mirá Vos o Lu por separado"; }
+      b.onclick=()=>{ casaVista=k; hideTip(); renderCasa(); }; seg.appendChild(b); });
+    ec.appendChild(seg);
+    const val=(m,cat,campo)=>{const c=D.casa[m]; if(!c)return 0; return c.cats.filter(x=>cat?x.cat===cat:catOk(x.cat)).reduce((t,x)=>t+x[campo],0);};
+    let series;
+    if(casaVista==="ambos"){ const win=last6(latestSel());
+      series=[{name:"Vos",cvar:"--c1",points:win.map(m=>({m,v:val(m,null,"joaco")}))},
+              {name:"Lu",cvar:"--c2",points:win.map(m=>({m,v:val(m,null,"lu")}))}]; }
+    else { series=trendSeries((m,cat)=>val(m,cat,casaVista));
+      if(!multi&&casaVista!=="total"){ series[0].name=casaVista==="joaco"?"Vos":"Lu"; series[0].cvar=casaVista==="joaco"?"--c1":"--c2"; } }
     ec.appendChild(el("div","tscroll",lineChart(series,"Evolución casa")));
     if(series.length>1){const lg=el("div","legend"); series.forEach(s=>lg.appendChild(el("div","it",`<span class="sw" style="background:${cssvar(s.cvar)}"></span>${s.name}`))); ec.appendChild(lg);}
   }
   row.appendChild(ec); w.appendChild(row); wireLine(ec);
 }
+function wireReparto(card,cl){ card.querySelectorAll(".bar-row[data-i]").forEach(r=>{ r.addEventListener("mousemove",e=>{const x=cl[+r.dataset.i], t=x.total||1;
+  showTip(`${x.cat}<br><span style="color:${cssvar('--c1')}">■</span> Vos <b>${fmt(x.joaco)}</b> (${(x.joaco/t*100).toFixed(0)}%)<br><span style="color:${cssvar('--c2')}">■</span> Lu <b>${fmt(x.lu)}</b> (${(x.lu/t*100).toFixed(0)}%)<br>Total <b>${fmt(x.total)}</b>`,e.clientX,e.clientY);}); r.addEventListener("mouseleave",hideTip);});}
 function wireDonut(card,items,total){ card.querySelectorAll("path[data-i]").forEach(p=>{ p.addEventListener("mousemove",e=>{const it=items[+p.dataset.i]; showTip(`${it.label}<br><b>${fmt(it.value)}</b> · ${(it.value/total*100).toFixed(1)}%`,e.clientX,e.clientY);}); p.addEventListener("mouseleave",hideTip);});}
 function wireLine(card){ card.querySelectorAll("circle[data-m]").forEach(c=>{ c.addEventListener("mousemove",e=>showTip(`${c.dataset.n} · ${mesLabel(c.dataset.m)}<br><b>${fmt(+c.dataset.v)}</b>`,e.clientX,e.clientY)); c.addEventListener("mouseleave",hideTip);});}
 
 /* --------------------------- multi-select UI --------------------------- */
-function multiSelect(host, {label, options, isSel, setSel, colorFor}){
+function multiSelect(host, {label, options, isSel, setSel, colorFor, allText="Todas"}){
   host.innerHTML="";
   const btn=el("button","ms-btn"); host.appendChild(btn);
   const panel=el("div","ms-panel"); host.appendChild(panel);
   function summary(){ const sel=options.filter(o=>isSel(o.value));
     if(!selCats && label==="Categorías") return "Todas";
     if(sel.length===0) return "Ninguna"; if(sel.length===1) return sel[0].text;
-    if(sel.length===options.length) return "Todas"; return sel.length+" seleccionadas"; }
+    if(sel.length===options.length) return allText; return sel.length+" seleccionadas"; }
   function paint(){ btn.innerHTML=`<span class="k">${label}</span><span class="v">${summary()}</span><span class="car">▾</span>`; }
   function repaintPanel(){ panel.querySelectorAll(".opt input").forEach((inp,i)=>{ inp.checked=isSel(options[i].value); }); }
-  const quick=el("div","quick"); const bAll=el("button",null,"Todas"); quick.appendChild(bAll);
+  const quick=el("div","quick"); const bAll=el("button",null,allText); quick.appendChild(bAll);
   bAll.onclick=()=>{ setSel(options.map(o=>o.value)); repaintPanel(); };
   if(label==="Meses"){ const bMes=el("button",null,"Mes actual"); quick.appendChild(bMes); bMes.onclick=()=>{ setSel([D.mes_default]); repaintPanel(); }; }
   if(label==="Categorías"){ const bNone=el("button",null,"Ninguna"); quick.appendChild(bNone); bNone.onclick=()=>{ setSel([]); repaintPanel(); }; }
@@ -497,13 +684,17 @@ function buildFilters(){
     isSel:v=> selCats? selCats.has(v) : true,
     colorFor:v=>cssvar(CAT_COLORS[D.categorias.indexOf(v)%8]),
     setSel:a=>{ selCats = (a.length===D.categorias.length)?null:new Set(a); refresh(); } });
+  multiSelect(document.getElementById("ms-tipo"),{ label:"Tipo", allText:"Todos",
+    options:TIPOS.map(t=>({value:t,text:t==="Fijo"?"Fijos":"Variables"})),
+    isSel:v=>selTipos.has(v),
+    setSel:a=>{ selTipos=new Set(a.length?a:TIPOS); refresh(); } });
 }
 document.addEventListener("click",()=>document.querySelectorAll(".ms-panel").forEach(p=>p.classList.remove("open")));
 
 /* ------------------------------- shell --------------------------------- */
-function renderAll(){ renderCat(); renderPre(); renderCasa(); }
-function refresh(){ ["ms-mes","ms-cat"].forEach(id=>{const h=document.getElementById(id); if(h&&h._paint)h._paint();}); renderAll(); }
-function selectTab(t){ curTab=t; document.querySelectorAll(".tab").forEach(b=>b.setAttribute("aria-selected",b.dataset.tab===t)); ["cat","pre","casa"].forEach(x=>document.getElementById("tab-"+x).classList.toggle("hidden",x!==t)); }
+function renderAll(){ hideTip(); renderCat(); renderPre(); renderCasa(); }
+function refresh(){ ["ms-mes","ms-cat","ms-tipo"].forEach(id=>{const h=document.getElementById(id); if(h&&h._paint)h._paint();}); renderAll(); }
+function selectTab(t){ curTab=t; hideTip(); document.querySelectorAll(".tab").forEach(b=>b.setAttribute("aria-selected",b.dataset.tab===t)); ["cat","pre","casa"].forEach(x=>document.getElementById("tab-"+x).classList.toggle("hidden",x!==t)); }
 document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>selectTab(b.dataset.tab)));
 document.getElementById("theme").addEventListener("click",()=>{ const root=document.documentElement; const cur=root.getAttribute("data-theme")||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"); root.setAttribute("data-theme",cur==="dark"?"light":"dark"); refresh(); });
 document.getElementById("genstamp").textContent=D.generado?("actualizado "+D.generado):"";

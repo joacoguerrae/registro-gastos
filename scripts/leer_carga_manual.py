@@ -21,7 +21,7 @@ Pestañas (se matchean por NOMBRE de columna, sin importar mayusculas/acentos):
            -> cierre_casa lo cuenta como aporte de Lu.
   Aportes: fecha | quien | monto | nota
            Lu -> aporte de Lu. Joaco -> transferencia de su cuenta en pesos -> Cuenta Casa.
-  Saldos:  fecha | cuenta | monto | nota     (Efectivo UYU / Efectivo USD / Gletir)
+  Saldos:  fecha | cuenta | monto | nota     (Efectivo UYU / Efectivo USD / Gletir / Interactive Brokers)
 
 Una fila invalida NO entra al ledger: genera un pendiente y se queda en la
 planilla hasta que alguien la corrija (el pendiente se va solo). Una fila que ya
@@ -102,7 +102,9 @@ OBLIGATORIOS = {"Gastos": {"fecha", "monto", "que", "quien"},
 QUIEN_GASTO = {"joacoefectivo": "Efectivo", "joaco": "Efectivo", "efectivo": "Efectivo",
                "lutarjeta": "Lu tarjeta", "luefectivo": "Lu efectivo"}
 CUENTAS_SALDO = {"efectivouyu": ("Efectivo", "UYU"), "efectivo": ("Efectivo", "UYU"),
-                 "efectivousd": ("Efectivo", "USD"), "gletir": ("Gletir", "USD")}
+                 "efectivousd": ("Efectivo", "USD"), "gletir": ("Gletir", "USD"),
+                 "interactivebrokers": ("Interactive Brokers", "USD"),
+                 "ibkr": ("Interactive Brokers", "USD"), "ib": ("Interactive Brokers", "USD")}
 MONEDAS = {"": "UYU", "uyu": "UYU", "$": "UYU", "pesos": "UYU", "usd": "USD", "us$": "USD",
            "u$s": "USD", "dolares": "USD", "eur": "EUR"}
 # de donde sale un aporte de Joaco si no se aclara: la cuenta personal en pesos
@@ -309,7 +311,7 @@ def procesar(snap, hoy):
             if r["pestana"] == "Saldos":
                 cuenta = CUENTAS_SALDO.get(norm(r["cuenta"]))
                 if not cuenta:
-                    raise Invalida(f"cuenta {r['cuenta']!r}: usar Efectivo UYU, Efectivo USD o Gletir")
+                    raise Invalida(f"cuenta {r['cuenta']!r}: usar Efectivo UYU, Efectivo USD, Gletir o Interactive Brokers")
                 if monto < 0:
                     raise Invalida("un saldo no puede ser negativo")
                 saldos.append(dict(fecha=fecha, cuenta=cuenta[0], moneda=cuenta[1], saldo=fmt(monto),
@@ -429,7 +431,7 @@ INSTRUCCIONES = [
     ["Gastos", "Lo que pagaste en efectivo, y los gastos de CASA que paga Lu con su tarjeta o en efectivo",
      "La propina de 452 del retiro de 4.500; el Uber de 364 y el parabrisas de 4.100 que pagó Lu"],
     ["Aportes", "Las transferencias a la Cuenta Casa, que no mandan aviso", "Los aportes de Lu; tus giros a la Cuenta Casa"],
-    ["Saldos", "Una vez por mes: efectivo, dólares en mano, inversiones", "Efectivo UYU, Efectivo USD, Gletir"],
+    ["Saldos", "Una vez por mes: efectivo, dólares en mano, inversiones", "Efectivo UYU, Efectivo USD, Gletir, Interactive Brokers"],
     [],
     ["Cómo funciona"],
     ["", "El sistema lee esta planilla dos veces por día. Lo que cargues aparece en el dashboard y en la posición de casa en la corrida siguiente."],
@@ -452,7 +454,7 @@ def preparar_planilla():
               ("Gastos", "ambito"): ["casa", "personal"],
               ("Gastos", "categoria"): categorias,
               ("Aportes", "quien"): ["Lu", "Joaco"],
-              ("Saldos", "cuenta"): ["Efectivo UYU", "Efectivo USD", "Gletir"]}
+              ("Saldos", "cuenta"): ["Efectivo UYU", "Efectivo USD", "Gletir", "Interactive Brokers"]}
     reqs = []
     hojas = {ws.title: ws for ws in sh.worksheets()}
     for pestana in ENCABEZADOS:

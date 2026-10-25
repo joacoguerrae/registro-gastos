@@ -66,7 +66,7 @@ SCOPES = ["https://www.googleapis.com/auth/drive.file"]
 # mano del portal y el banco no guarda para siempre); lo regenerable entra igual
 # porque es barato. Con el codigo adentro el respaldo es autosuficiente: se
 # restaura y se valida sin clonar el repo.
-INCLUIR_DIRS = ["data", "config", "scripts", "docs", "tests", ".github"]
+INCLUIR_DIRS = ["data", "config", "scripts", "assets", "docs", "tests", ".github"]
 INCLUIR_ARCHIVOS = ["requirements.txt", "pytest.ini", "README.md", "CLAUDE.md"]
 # out/ queda afuera: es 100% derivado de data/ (lo regenera generar_dashboard_*).
 # registro_app.mmbackup tambien (2,3 MB marcados como muertos en SB2).

@@ -34,3 +34,4 @@ Prex USD,Prex USD,,USD,banco,no,par en dolares de 'Prex URU' (2022-2023). 6 fila
 Santander Viaje,Santander Viaje,,USD,banco,no,cuenta en dolares abierta para el viaje de abr-2026; se vacio el 27/6/2026 girando 1.987 USD a BBVA USD. 5 filas
 Dolares Viaje,Dolares Viaje,,USD,efectivo,no,"sobre de dolares en efectivo del viaje de abr-2026: 200 USD sacados de Santander USD, 123 cambiados a euros. 1 fila"
 Euros viaje,Euros viaje,,EUR,efectivo,no,sobre de euros en efectivo del viaje de abr/jun-2026 (100 EUR comprados con 123 USD). 2 filas
+Interactive Brokers,,,USD,inversion,si,"broker en USD (alta 25/10/2026). Igual que Gletir: los giros son plata propia que cambia de lugar (transferencias en_analisis=0) y el saldo lo carga Joaco a mano en la planilla Carga manual, pestana Saldos. El dashboard muestra ese saldo + los giros posteriores"
