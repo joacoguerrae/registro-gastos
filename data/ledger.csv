@@ -5092,6 +5092,7 @@ ee8949723724,2026-10-17,2026-10,transferencia,22000.00,UYU,22000.00,Santander UY
 5cb478d64490,2026-10-18,2026-10,transferencia,1788.00,UYU,1788.00,Santander UYU,Itaú UYU,,,Joaco Itau Pesos,cambio a itau,interno,mail,confirmado,0,1a14effd0de7f6d2
 d92956173f2a,2026-10-18,2026-10,gasto,174.10,UYU,174.10,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,casa,mail,confirmado,1,1a1514c7fd939861
 f0f02f323942,2026-10-18,2026-10,gasto,35.00,UYU,35.00,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,1a15173b96c0cb87
+599d7d0425de,2026-10-19,2026-10,gasto,300.00,UYU,300.00,Itaú UYU,,,,SISTARBANC,Pago a SISTARBANC,personal,mail,pendiente,1,1a1565513e95e3d6
 91f14d1ca6a3,2026-10-19,2026-10,gasto,148.20,UYU,148.20,Itaú UYU,,Comer afuera / Delivery,,LA ROTISERIA V VIS3,LA ROTISERIA V,personal,mail,confirmado,1,1a154cbc9765c058
 abf3e303e8e8,2026-10-19,2026-10,gasto,241.92,UYU,241.92,Cuenta Casa,,Super,,MONTEVIDEO/DEVOTO EXPRESS VIS3,DEVOTO EXPRESS,casa,mail,confirmado,1,1a156ad0e79a84a0
 e8ec79f5ce98,2026-10-19,2026-10,gasto,949.00,UYU,949.00,Santander Platinum,,,,MERCADO PAGO,MERCADO PAGO,personal,mail,pendiente,1,1a156b4f2ba7daae
@@ -5100,11 +5101,13 @@ e8ec79f5ce98,2026-10-19,2026-10,gasto,949.00,UYU,949.00,Santander Platinum,,,,ME
 9c01728944e8,2026-10-20,2026-10,gasto,1368.20,UYU,1368.20,Cuenta Casa,,Super,,MONTEVIDEO/ROSA DI IACOVO (AFU) VIS3,ROSA DI IACOVO (AFU),casa,mail,confirmado,1,1a159d0ed9e8d930
 9c1d9c0ad365,2026-10-20,2026-10,gasto,45.00,UYU,45.00,Itaú UYU,,Super,,DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,personal,mail,confirmado,1,1a159852a39cd679
 b6eb69623ab4,2026-10-20,2026-10,gasto,627.54,UYU,627.54,Itaú UYU,,Super,,DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,personal,mail,confirmado,1,1a1595fde25fc47f
+f088d0bf5dc3,2026-10-20,2026-10,gasto,-1.00,USD,-40.33,Itaú Infinite,,,,PAYPAL 40293,Reintegro PAYPAL 40293 (revierte 4c8437f3d50d),personal,mail,pendiente,1,1a1597599fd02644
 fa16d4ac9a4d,2026-10-20,2026-10,gasto,45.00,UYU,45.00,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA P,DLOPEDIDOSYA P,personal,mail,confirmado,1,1a15bcb45272b2c5
 fe2e93d638fc,2026-10-20,2026-10,gasto,342.47,UYU,342.47,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA,DLOPEDIDOSYA,personal,mail,confirmado,1,1a15ba2521da759a
-18779864b453,2026-10-21,2026-10,gasto,0.64,USD,25.81,Itaú USD,,,,PEDIDOSYA*PROPINA VIEI,PEDIDOSYA*PROPINA VIEI,personal,mail,pendiente,1,1a16168da645fc32
+ff17f9820ee1,2026-10-20,2026-10,gasto,590.00,UYU,590.00,Itaú UYU,,Compras personales,,Lucho Royal Barber,a cuenta 8155077 OCA Blue,personal,mail,confirmado,1,1a15a236a2d04df4
+18779864b453,2026-10-21,2026-10,gasto,0.64,USD,25.81,Itaú USD,,Comer afuera / Delivery,,PEDIDOSYA*PROPINA VIEI,PEDIDOSYA*PROPINA VIEI,personal,mail,pendiente,1,1a16168da645fc32
 5580e9cf8713,2026-10-21,2026-10,gasto,226.97,UYU,226.97,Santander Platinum,,Transporte,,DLOUBERRIDES,DLOUBERRIDES,personal,mail,confirmado,1,1a15ef64eac18b6b
-a4c9fb559c11,2026-10-21,2026-10,gasto,18.20,USD,734.01,Itaú USD,,,,PEDIDOSYA*MONTI BAR DVIEI,PEDIDOSYA*MONTI BAR DVIEI,personal,mail,pendiente,1,1a161544069feb8d
+a4c9fb559c11,2026-10-21,2026-10,gasto,18.20,USD,734.01,Itaú USD,,Comer afuera / Delivery,,PEDIDOSYA*MONTI BAR DVIEI,PEDIDOSYA*MONTI BAR DVIEI,personal,mail,pendiente,1,1a161544069feb8d
 a68362655046,2026-10-21,2026-10,gasto,250.97,UYU,250.97,Santander Platinum,,Transporte,,DLOUBERRIDES,DLOUBERRIDES,personal,mail,confirmado,1,1a15f308262696ed
 b02038d0603f,2026-10-21,2026-10,gasto,6.00,USD,241.98,Itaú USD,,,,FREESHOP WALINCO VIS3,FREESHOP WALINCO,personal,mail,pendiente,1,1a160e4865075a82
 bcd3386c9cd7,2026-10-21,2026-10,gasto,8.55,USD,344.82,Itaú Infinite,,Transporte,,PAYU*AR*UBER CAP.F,PAYU*AR*UBER CAP.F,personal,mail,pendiente,1,1a16129e16016ae2
@@ -5112,10 +5115,10 @@ d5ff0ab98e67,2026-10-21,2026-10,gasto,250.00,UYU,250.00,Itaú UYU,,,,BARRA PRE E
 f213c5852eec,2026-10-21,2026-10,gasto,5.92,USD,238.75,Itaú USD,,,,BUQUEBUS VIS3,BUQUEBUS,personal,mail,pendiente,1,1a1610f97e9e77a6
 08801f4b034e,2026-10-22,2026-10,gasto,19.16,USD,772.72,Itaú Infinite,,,,CESPEDES LIBROS CAP.F,CESPEDES LIBROS CAP.F,personal,mail,pendiente,1,1a1657d3410e8af8
 0ff34d08396a,2026-10-22,2026-10,gasto,118.87,USD,4794.03,Itaú Infinite,,,,FARMACITY-LIBERTADOR Y COCAP.F,FARMACITY-LIBERTADOR Y COCAP.F,personal,mail,pendiente,1,1a16602d484da422
-3be19ec487fd,2026-10-22,2026-10,gasto,0.54,USD,21.78,Itaú USD,,,,PEDIDOSYA*PROPINA VIEI,PEDIDOSYA*PROPINA VIEI,personal,mail,pendiente,1,1a1645adb0c5ca6d
+3be19ec487fd,2026-10-22,2026-10,gasto,0.54,USD,21.78,Itaú USD,,Comer afuera / Delivery,,PEDIDOSYA*PROPINA VIEI,PEDIDOSYA*PROPINA VIEI,personal,mail,pendiente,1,1a1645adb0c5ca6d
 6e77a541f119,2026-10-22,2026-10,gasto,25.99,USD,1048.18,Santander Platinum,,Suscripciones,,APPLE.COM/BILL,APPLE.COM/BILL,personal,mail,pendiente,1,1a161af48b661061
 b6b6c87e5544,2026-10-22,2026-10,gasto,8.16,USD,329.09,Itaú Infinite,,Comer afuera / Delivery,,FUDO *MEDIALUNAS POINT CAP.F,FUDO *MEDIALUNAS POINT CAP.F,personal,mail,pendiente,1,1a16595e35f66495
-c038fad7f13e,2026-10-22,2026-10,gasto,11.44,USD,461.38,Itaú USD,,,,PEDIDOSYA*BOTANICA COVIEI,PEDIDOSYA*BOTANICA COVIEI,personal,mail,pendiente,1,1a1644b118c5a917
+c038fad7f13e,2026-10-22,2026-10,gasto,11.44,USD,461.38,Itaú USD,,Comer afuera / Delivery,,PEDIDOSYA*BOTANICA COVIEI,PEDIDOSYA*BOTANICA COVIEI,personal,mail,pendiente,1,1a1644b118c5a917
 e12768c42f1a,2026-10-22,2026-10,gasto,4.96,USD,200.04,Itaú USD,,,,COTO SUCURSAL 170 VIEI,COTO SUCURSAL 170 VIEI,personal,mail,pendiente,1,1a1656852d3754d0
 1ec03040516c,2026-10-23,2026-10,gasto,31.00,USD,1250.23,Itaú Infinite,,,,FREESHOP WALINCO COLON,FREESHOP WALINCO COLON,personal,mail,pendiente,1,1a16aeb1f41216c1
 4a15a6e631ee,2026-10-23,2026-10,gasto,80.39,USD,3242.13,Itaú Infinite,,,,MERPAGO*GUITARRITA Bueno,MERPAGO*GUITARRITA Bueno,personal,mail,pendiente,1,1a166cc82e7c17b9

@@ -1,7 +1,7 @@
 patron,categoria,ambito_override,nota
-DLO\*?PedidosYa Plus,Suscripciones,,"la suscripcion mensual (343,28), no comida: va ANTES de la regla general de PedidosYa, que gana por orden - detectado 16/8"
-DLO\*?PedidosYa Market,Super,,peya market = super
-DLO\*?PedidosYa|DLOPEDIDOSYA,Comer afuera / Delivery,,pedidosya general — Propina y Envio heredan del pedido que las origino (logica en procesar_mails.py); esta regla es el fallback si no hay pedido previo
+DLO\*?PedidosYa Plus|PEDIDOSYA\*PLUS,Suscripciones,,"la suscripcion mensual (343,28), no comida: va ANTES de la regla general de PedidosYa, que gana por orden - detectado 16/8"
+DLO\*?PedidosYa Market|PEDIDOSYA\*MARKET,Super,,peya market = super (Itau lo escribe PEDIDOSYA*MARKET)
+DLO\*?PedidosYa|DLOPEDIDOSYA|PEDIDOSYA\*,Comer afuera / Delivery,,"pedidosya general (Itau, oct-2026: PEDIDOSYA*<local>) — Propina y Envio heredan del pedido que las origino (logica en procesar_mails.py); esta regla es el fallback si no hay pedido previo"
 DLOUBERRIDES|UBER,Transporte,,
 TATA|DISCO|DEVOTO|MACRO ?MERCADO|MICRO MACRO|TIENDA INGLESA|EL DORADO|FROG|KINKO|SUPERMERCADO,Super,,
 CARNICERIA|VERDULERIA|PANADERIA|FERIA,Super,,

@@ -34,6 +34,28 @@ def test_debito_en_dolares():
         == ("USD", 12.99)
 
 
+def test_reembolso_usa_el_layout_de_credito():
+    body = ("Aviso de consumo reembolsado con tarjeta de crédito\nSe reversó un consumo realizado "
+            "con su tarjeta de crédito\nDetalles:\nVISA nro. *** 5023\nImporte: 1.0 USD\n"
+            "Comercio: PAYPAL 40293\nAdemás ingresando")
+    assert pm.parse_aviso_itau({"body_text": body, "fecha_mail": "2026-10-20T13:17:20Z"})[:4] \
+        == ("5023", "USD", 1.0, "PAYPAL 40293")
+
+
+def test_transferencia_realizada():
+    body = ("Aviso de transferencia realizada\nTransferencia realizada.\nDetalles:\n"
+            "Transferencia realizada desde la cuenta **** 4405\nImporte: 590.00 UYU\n"
+            "Cuenta destino: 8155077\nBanco/Institución destino: OCA Blue\nAdemás ingresando")
+    assert pm.parse_transferencia_itau(body) == ("4405", "UYU", 590.0, "8155077", "OCA Blue")
+
+
+def test_pago_realizado():
+    body = ("Pago realizado.\nTu pago fue realizado con éxito. Siguen los detalles del mismo:\n"
+            "Cuenta origen terminada en ... 4405 .\nMonto: $ 300.00 .\nPago a SISTARBANC .\n"
+            "Si no fuiste tu comunícate al 1784.")
+    assert pm.parse_pago_itau(body) == ("4405", "UYU", 300.0, "SISTARBANC")
+
+
 def test_layout_desconocido_lanza():
     try:
         pm.parse_aviso_itau({"body_text": "Aviso de consumo aprobado\nalgo nuevo",

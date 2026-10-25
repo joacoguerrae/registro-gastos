@@ -994,3 +994,6 @@ d46e5a3ac4a8,ambito,interno,"Joaco 18/10: cuenta propia nueva en Itau (USD); int
 d46e5a3ac4a8,en_analisis,0,"Joaco 18/10: cuenta propia nueva en Itau (USD); interna, el tc no afecta agregados",2026-10-18
 d46e5a3ac4a8,motivo_resuelto,transferencia_a_clasificar,"Joaco 18/10: cuenta propia nueva en Itau (USD); interna, el tc no afecta agregados",2026-10-18
 d46e5a3ac4a8,motivo_resuelto,tc_estimado,"Joaco 18/10: cuenta propia nueva en Itau (USD); interna, el tc no afecta agregados",2026-10-18
+599d7d0425de,motivo_resuelto,formato_nuevo,parser de Itau agregado el 25/10 (pago / reembolso / transferencia realizada): la fila ya entra sola,2026-10-25
+f088d0bf5dc3,motivo_resuelto,formato_nuevo,parser de Itau agregado el 25/10 (pago / reembolso / transferencia realizada): la fila ya entra sola,2026-10-25
+ff17f9820ee1,motivo_resuelto,formato_nuevo,parser de Itau agregado el 25/10 (pago / reembolso / transferencia realizada): la fila ya entra sola,2026-10-25

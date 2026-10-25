@@ -28,6 +28,8 @@ Desde **2026-07-01** (junio ya está en el ledger vía 1Money; los 1money transf
 | notificaciones@santander.com.uy | `Aviso: devolución en tarjeta…` / `…reintegro…` | devolucion |
 | notificaciones@santander.com.uy | `Aviso de Transferencia Instantánea…` / `…en plaza` / `…interna…` | transferencia (a un número de `config/cuentas_bancarias.csv` → interna, regla 0) |
 | comunicaciones@itau.com.uy (desde oct-2026) | `Aviso de consumo aprobado con tarjeta de crédito/débito` | aviso_tarjeta (`parse_aviso_itau`; importe 0 → ignorado) |
+| comunicaciones@itau.com.uy | `Aviso de consumo reembolsado…` | devolucion (layout de crédito) |
+| comunicaciones@itau.com.uy | `Aviso transferencia realizada` / `Pago realizado` | transferencia_itau / pago_itau (sección 2c: origen por sufijo de cuenta, destino por número → cuenta propia o alias de los avisos Santander) |
 | comunicaciones@itau.com.uy | otro asunto que parece movimiento (devolución, transferencia, pago…) | formato_nuevo (pendiente) |
 | no_reply@email.apple.com, googleplay-noreply@google.com, info@mercadolibre.com.uy, info@mercadopago.com | recibos | recibo (matching) |
 | factura@antel.com.uy, info_uy@email.directvla.com | facturas | factura (informativo) |
