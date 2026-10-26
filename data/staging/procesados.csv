@@ -473,3 +473,6 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 1a15e1edef6d8b3e,2026-10-21T11:00:22Z,factura,factura,,"Antel  venc  (informativo, no toca ledger)",,2026-10-25T16:48:10+00:00
 1a15e9f37b764843,2026-10-21T13:20:54Z,ignorado,ignorado,,comunicaciones@itau.com.uy | Este 22 y 23 de octubre vuelve Previa Moweek con 25% menos con Itaú,,2026-10-25T16:48:10+00:00
 1a173f55c9e5df81,2026-10-25T16:47:01Z,transferencia,insertado,cc9ca1f3ce9c,Aviso de transferencia en plaza | Brota Viandas 'viandas' UYU 5700.00 2026-10-25 -> gasto/casa/Comer afuera / Delivery,,2026-10-26T04:55:45+00:00
+1a177e6f662b9c1e,2026-10-26T11:09:43Z,aviso_tarjeta,insertado,08585a449c72,6427 UYU 360.99 DLOUBERRIDES -> Santander Platinum/personal/Transporte,6427||360.99||DLOUBERRIDES||2026-10-26T08:09:40,2026-10-26T18:42:52+00:00
+1a179248cccf10bc,2026-10-26T16:56:40Z,aviso_tarjeta,insertado,ef030d9cc4b2,6136 UYU 59.28 DLO*PedidosYa ConfiteVIS3 -> Itaú UYU/personal/Comer afuera / Delivery,6136||59.28||DLO*PedidosYa ConfiteVIS3||2026-10-26T13:56:40,2026-10-26T18:42:52+00:00
+1a1793f49dee0fdd,2026-10-26T17:25:52Z,aviso_tarjeta,insertado,9958446a937c,6136 UYU 35.00 DLO*PedidosYa PropinaVIS3 -> Itaú UYU/personal/Comer afuera / Delivery,6136||35.00||DLO*PedidosYa PropinaVIS3||2026-10-26T14:25:52,2026-10-26T18:42:52+00:00
