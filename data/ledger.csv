@@ -5038,6 +5038,7 @@ dd7035b036f2,2026-09-30,2026-09,gasto,4600.00,UYU,4600.00,Lu tarjeta,,Salidas & 
 8a3f25ac6784,2026-10-02,2026-09,gasto,28874.00,UYU,28874.00,Santander UYU,,Educación,,INTERNET/Proyecto PAS,ORT cuota 19/24 (via Proyecto PAS),personal,mail,confirmado,1,1a0fcc4f951f433b
 aca1ad4a0f81,2026-10-02,2026-10,gasto,100.00,USD,4033.00,Santander USD,,Auto,,Lu,cuota 3 auto,personal,mail,confirmado,1,1a0fdfcc57956896
 b7101ea3950f,2026-10-02,2026-10,gasto,590.00,UYU,590.00,Santander UYU,,Compras personales,,Lucho Royal Barber,barberia joaco,personal,mail,confirmado,1,1a0fd746202805be
+bec74e961f5c,2026-10-02,2026-10,transferencia,34000.00,UYU,34000.00,Santander UYU,Cuenta Casa,,,,Aporte de Joaco a la casa (planilla fila 2),interno,carga_manual,confirmado,0,carga:bec74e961f5cb271
 d0741ccc2104,2026-10-02,2026-10,transferencia,339.90,USD,13708.17,Santander USD,Santander Platinum,,,INTERNET/Proyecto PAS,Pago estado Platinum USD setiembre (Proyecto PAS),interno,mail,confirmado,0,1a0fcc5c5f18275f
 d157a254e156,2026-10-02,2026-10,gasto,276.76,UYU,276.76,Santander UYU,,Super,,MONTEVIDEO/DEVOTO EXPRESS VIS3,DEVOTO EXPRESS,personal,mail,confirmado,1,1a0fd7cbee63eb66
 d4494053ea1c,2026-10-02,2026-10,gasto,557.00,UYU,557.00,Santander Platinum,,Super,,PANADERIA BRAVA,PANADERIA BRAVA,personal,mail,confirmado,1,1a0fe707a8ec355b
@@ -5127,3 +5128,4 @@ e5371b4819bb,2026-10-22,2026-10,transferencia,13.00,USD,524.29,Santander Platinu
 2864091c7bac,2026-10-24,2026-10,gasto,232.25,UYU,232.25,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA,DLOPEDIDOSYA,personal,mail,confirmado,1,1a170359218d5298
 4578a71ed7cd,2026-10-24,2026-10,gasto,35.00,UYU,35.00,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA P,DLOPEDIDOSYA P,personal,mail,confirmado,1,1a1705cae505ba53
 686de93f2675,2026-10-25,2026-10,gasto,556.72,UYU,556.72,Cuenta Casa,,Super,,MONTEVIDEO/PANADERIA VIEJO MOLINVIS3,PANADERIA VIEJO MOLIN,casa,mail,confirmado,1,1a172f23fd2d52be
+cc9ca1f3ce9c,2026-10-25,2026-10,gasto,5700.00,UYU,5700.00,Cuenta Casa,,Comer afuera / Delivery,,Brota Viandas,viandas,casa,mail,confirmado,1,1a173f55c9e5df81

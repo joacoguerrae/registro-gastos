@@ -472,3 +472,4 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 1a15c6bb00363174,2026-10-21T03:05:17Z,factura,factura,,"DirecTV 1705.00 venc 2026-11-10 (informativo, no toca ledger)",,2026-10-25T16:48:10+00:00
 1a15e1edef6d8b3e,2026-10-21T11:00:22Z,factura,factura,,"Antel  venc  (informativo, no toca ledger)",,2026-10-25T16:48:10+00:00
 1a15e9f37b764843,2026-10-21T13:20:54Z,ignorado,ignorado,,comunicaciones@itau.com.uy | Este 22 y 23 de octubre vuelve Previa Moweek con 25% menos con Itaú,,2026-10-25T16:48:10+00:00
+1a173f55c9e5df81,2026-10-25T16:47:01Z,transferencia,insertado,cc9ca1f3ce9c,Aviso de transferencia en plaza | Brota Viandas 'viandas' UYU 5700.00 2026-10-25 -> gasto/casa/Comer afuera / Delivery,,2026-10-26T04:55:45+00:00
