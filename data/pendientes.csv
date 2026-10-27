@@ -282,3 +282,5 @@ f088d0bf5dc3,tc_estimado,reintegro USD 1.00 x tc 40.33 (corrige Fase 3),2026-10-
 f088d0bf5dc3,sin_categoria,reintegro 'PAYPAL 40293' sin regla ni cargo original,2026-10-25,1
 16cf9366e2b4,transferencia_a_clasificar,"a 'Fefo Bentancur', concepto 'hamburguesas oso', UYU 860.00: sin categoria",2026-10-25,1
 599d7d0425de,sin_categoria,"pago Itau a 'SISTARBANC' UYU 300.00: que factura es? (si es el pago de una tarjeta, va como transferencia)",2026-10-25,1
+71ad6e6145e5,transferencia_a_clasificar,"a 'cuenta 3701587811 (MI DINERO)', concepto '', USD 500.00: sin categoria",2026-10-27,
+71ad6e6145e5,tc_estimado,USD 500.00 x tc 40.33 = 20165.00 UYU (corrige Fase 3),2026-10-27,
