@@ -1074,3 +1074,12 @@ bd024f17de2c,motivo_resuelto,sin_categoria,"Joaco 25/10: UMO Mostaza, casa",2026
 e8ec79f5ce98,categoria,Compras personales,"Joaco 25/10: botella de agua del gym, personal",2026-10-25
 e8ec79f5ce98,descripcion,Botella de agua gym (Mercado Pago),"Joaco 25/10: botella de agua del gym, personal",2026-10-25
 e8ec79f5ce98,motivo_resuelto,sin_categoria,"Joaco 25/10: botella de agua del gym, personal",2026-10-25
+71ad6e6145e5,tipo,transferencia,"Joaco 28/10: inversiones, fue a IBKR",2026-10-28
+71ad6e6145e5,cuenta_destino,Interactive Brokers,"Joaco 28/10: inversiones, fue a IBKR",2026-10-28
+71ad6e6145e5,ambito,interno,"Joaco 28/10: inversiones, fue a IBKR",2026-10-28
+71ad6e6145e5,en_analisis,0,"Joaco 28/10: inversiones, fue a IBKR",2026-10-28
+71ad6e6145e5,descripcion,Giro a Interactive Brokers (via Mi Dinero 3701587811),"Joaco 28/10: inversiones, fue a IBKR",2026-10-28
+71ad6e6145e5,motivo_resuelto,transferencia_a_clasificar,"Joaco 28/10: inversiones, fue a IBKR",2026-10-28
+71ad6e6145e5,motivo_resuelto,tc_estimado,"Joaco 28/10: giro a IBKR, transferencia interna en_analisis=0: el tc no afecta agregados",2026-10-28
+4e67eab61393,categoria,Super,"Joaco 28/10: Super (puesto de feria), mismo que MARWASH FERIA de setiembre",2026-10-28
+4e67eab61393,motivo_resuelto,sin_categoria,"Joaco 28/10: Super (puesto de feria), mismo que MARWASH FERIA de setiembre",2026-10-28
