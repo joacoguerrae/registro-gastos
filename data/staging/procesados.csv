@@ -493,3 +493,7 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 1a188894fbf78585,2026-10-29T16:41:01Z,aviso_tarjeta,insertado,b6e89b695c65,6136 UYU 87.54 DISCO NÊ 22 VIS3 -> Itaú UYU/personal/Super,6136||87.54||DISCO NÊ 22 VIS3||2026-10-29T13:41:01,2026-10-29T18:31:34+00:00
 1a188edefb2f63c0,2026-10-29T18:30:53Z,aviso_tarjeta,insertado,3e8262620dce,6427 UYU 1840.00 MER -> Santander Platinum/personal/(sin categoria),6427||1840.00||MER||2026-10-29T15:30:48,2026-10-29T18:31:34+00:00
 1a1884add9f958df,2026-10-29T15:32:48Z,ignorado,ignorado,,"comunicaciones@itau.com.uy | Vuelve Degusto con más food trucks, música y fiesta. ¡No te lo pierdas!",,2026-10-29T18:31:34+00:00
+1a189b182ece2279,2026-10-29T22:04:34Z,aviso_tarjeta,insertado,cd9ee36da313,6136 UYU 3147.54 ZARA VIS3 -> Itaú UYU/personal/(sin categoria),6136||3147.54||ZARA VIS3||2026-10-29T19:04:34,2026-10-30T05:56:53+00:00
+1a189d81f8df6cec,2026-10-29T22:46:44Z,aviso_tarjeta,ignorado,,"5023 USD 0 GOOGLE *CHROME TEMP cc@go (importe 0, sin cargo)",,2026-10-30T05:56:53+00:00
+1a189d84ee55d44a,2026-10-29T22:46:56Z,aviso_tarjeta,insertado,f942d9b63697,5023 UYU 1488.00 MERPAGO*PUNTOVET MONTE -> Itaú Infinite/personal/(sin categoria),5023||1488.00||MERPAGO*PUNTOVET MONTE||2026-10-29T19:46:56,2026-10-30T05:56:53+00:00
+1a1898d1bcbddf9c,2026-10-29T21:24:46Z,ignorado,ignorado,,"comunicaciones@itau.com.uy | Actualizamos fechas: Degusto con más food trucks, música y fiesta.",,2026-10-30T05:56:53+00:00
