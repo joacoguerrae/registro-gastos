@@ -497,3 +497,5 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 1a189d81f8df6cec,2026-10-29T22:46:44Z,aviso_tarjeta,ignorado,,"5023 USD 0 GOOGLE *CHROME TEMP cc@go (importe 0, sin cargo)",,2026-10-30T05:56:53+00:00
 1a189d84ee55d44a,2026-10-29T22:46:56Z,aviso_tarjeta,insertado,f942d9b63697,5023 UYU 1488.00 MERPAGO*PUNTOVET MONTE -> Itaú Infinite/personal/(sin categoria),5023||1488.00||MERPAGO*PUNTOVET MONTE||2026-10-29T19:46:56,2026-10-30T05:56:53+00:00
 1a1898d1bcbddf9c,2026-10-29T21:24:46Z,ignorado,ignorado,,"comunicaciones@itau.com.uy | Actualizamos fechas: Degusto con más food trucks, música y fiesta.",,2026-10-30T05:56:53+00:00
+1a18c8541a3bb25b,2026-10-30T11:15:02Z,aviso_tarjeta,insertado,449859a4e410,6427 UYU 1950.00 MER -> Santander Platinum/personal/(sin categoria),6427||1950.00||MER||2026-10-30T08:14:57,2026-10-30T18:03:58+00:00
+1a18d9c3655972f6,2026-10-30T16:19:46Z,transferencia_itau,formato_nuevo,7f5c454971c2,comunicaciones@itau.com.uy | 'Aviso transferencia realizada' -> ValueError: transferencia Itau: layout desconocido,,2026-10-30T18:03:58+00:00
