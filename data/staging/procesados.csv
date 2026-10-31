@@ -499,3 +499,5 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 1a1898d1bcbddf9c,2026-10-29T21:24:46Z,ignorado,ignorado,,"comunicaciones@itau.com.uy | Actualizamos fechas: Degusto con más food trucks, música y fiesta.",,2026-10-30T05:56:53+00:00
 1a18c8541a3bb25b,2026-10-30T11:15:02Z,aviso_tarjeta,insertado,449859a4e410,6427 UYU 1950.00 MER -> Santander Platinum/personal/(sin categoria),6427||1950.00||MER||2026-10-30T08:14:57,2026-10-30T18:03:58+00:00
 1a18d9c3655972f6,2026-10-30T16:19:46Z,transferencia_itau,formato_nuevo,7f5c454971c2,comunicaciones@itau.com.uy | 'Aviso transferencia realizada' -> ValueError: transferencia Itau: layout desconocido,,2026-10-30T18:03:58+00:00
+1a18f8b6471838ad,2026-10-31T01:20:36Z,aviso_tarjeta,insertado,8aa236f89a86,6427 UYU 2897.05 LA PASIVA CARRA -> Santander Platinum/personal/(sin categoria),6427||2897.05||LA PASIVA CARRA||2026-10-30T22:20:31,2026-10-31T05:53:06+00:00
+1a18eddf323c12ec,2026-10-30T22:11:12Z,transferencia_itau,formato_nuevo,5f535100b2bb,comunicaciones@itau.com.uy | 'Aviso transferencia realizada' -> ValueError: transferencia Itau: layout desconocido,,2026-10-31T05:53:06+00:00
