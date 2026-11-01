@@ -295,3 +295,5 @@ f942d9b63697,sin_categoria,establecimiento 'MERPAGO*PUNTOVET MONTE' sin regla,20
 5f535100b2bb,formato_nuevo,comunicaciones@itau.com.uy | 'Aviso transferencia realizada' -> ValueError: transferencia Itau: layout desconocido,2026-10-31,
 f4ed2f4627ee,sin_categoria,establecimiento 'MONTEVIDEO/VIEJO MOLINO VIS3' sin regla,2026-10-31,
 9c9c39111bde,sin_categoria,establecimiento 'TAXI CASTRO TACUA' sin regla,2026-11-01,
+ff8ead2addbf,sin_categoria,establecimiento 'RADIO TAXI PLAZ' sin regla,2026-11-01,
+abb6f4ead0ad,tc_estimado,USD 1.99 x tc 40.33 = 80.26 UYU (corrige Fase 3),2026-11-01,
