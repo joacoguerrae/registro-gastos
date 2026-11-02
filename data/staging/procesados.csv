@@ -514,3 +514,9 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 1a1997a1452fda02,2026-11-01T23:37:55Z,aviso_tarjeta,insertado,962bb76271ca,6427 UYU 151.00 DLOPEDIDOSYA -> Santander Platinum/personal/Comer afuera / Delivery,6427||151.00||DLOPEDIDOSYA||2026-11-01T20:37:50,2026-11-02T00:30:58+00:00
 1a19996312ff4d84,2026-11-02T00:08:37Z,aviso_tarjeta,insertado,7333d12447dc,6427 UYU 25.00 DLOPEDIDOSYA P -> Santander Platinum/personal/Comer afuera / Delivery,6427||25.00||DLOPEDIDOSYA P||2026-11-01T21:08:33,2026-11-02T00:30:58+00:00
 1a199d8f891ae836,2026-11-02T01:21:35Z,pago_itau,insertado,29f3a81275d4,4405 UYU 4280.00 pago a SISTARBANC -> Itaú UYU/gasto/personal/(sin categoria),,2026-11-02T06:18:50+00:00
+1a19c85ebda06729,2026-11-02T13:49:44Z,aviso_tarjeta,insertado,584fc96ef5dc,5023 UYU 466.00 LA MOLIENDA MONTE -> Itaú Infinite/personal/(sin categoria),5023||466.00||LA MOLIENDA MONTE||2026-11-02T10:49:44,2026-11-02T21:45:44+00:00
+1a19cdae6a765325,2026-11-02T15:22:27Z,aviso_tarjeta,insertado,dd099ec8ae24,6427 UYU 536.00 DEVOTO EXPRESS -> Santander Platinum/personal/Super,6427||536.00||DEVOTO EXPRESS||2026-11-02T12:22:23,2026-11-02T21:45:44+00:00
+1a19dd3ed804fe3e,2026-11-02T19:54:33Z,aviso_tarjeta,insertado,222486cbf6ef,6136 UYU 626.25 NUEVO MALVIN VIS3 -> Itaú UYU/personal/(sin categoria),6136||626.25||NUEVO MALVIN VIS3||2026-11-02T16:54:33,2026-11-02T21:45:44+00:00
+1a19c99ea6f57f23,2026-11-02T14:11:35Z,recibo,recibo_matcheado,abb6f4ead0ad,Google Play – 100 GB (Google One) USD 1.99 -> enriquece comercio de abb6f4ead0ad,,2026-11-02T21:45:44+00:00
+1a19e1714ff5a076,2026-11-02T21:07:22Z,ignorado,estado_cuenta_pendiente_f3,,bbvanetnotificacionesp@grupobbva.com.uy | Estado de Cuenta de su Tarjeta de Crédito Visa BBVA,,2026-11-02T21:45:44+00:00
+1a19e1a955202742,2026-11-02T21:11:37Z,ignorado,estado_cuenta_pendiente_f3,,envio@tuestadodecuenta.santander.com.uy | Estado de Cuenta Santander VISA,,2026-11-02T21:45:44+00:00
