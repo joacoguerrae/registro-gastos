@@ -7,3 +7,7 @@ dd7035b036f2,2026-09-30,2026-09,gasto,4600.00,UYU,4600.00,Lu tarjeta,,Salidas & 
 bec74e961f5c,2026-10-02,2026-10,transferencia,34000.00,UYU,34000.00,Santander UYU,Cuenta Casa,,,,Aporte de Joaco a la casa (planilla fila 2),interno,carga_manual,confirmado,0,carga:bec74e961f5cb271
 3887e022103e,2026-10-05,2026-10,gasto,1114.00,UYU,1114.00,Lu tarjeta,,Super,,Farmacia,Farmacia -- Lu pago para ambos (planilla fila 7),casa,carga_manual,confirmado,1,carga:3887e022103ee65c
 c326307e62ff,2026-10-05,2026-10,gasto,1152.00,UYU,1152.00,Lu tarjeta,,Super,,Regalo Tuti,Regalo Tuti -- Lu pago para ambos (planilla fila 8),casa,carga_manual,confirmado,1,carga:c326307e62ff65c1
+09bfc68e9b49,2026-10-31,2026-10,gasto,1573.00,UYU,1573.00,Lu tarjeta,,Croqueta,,Pañales,Pañales -- Lu pago para ambos (planilla fila 9),casa,carga_manual,confirmado,1,carga:09bfc68e9b49c64f
+150b27b870d9,2026-10-31,2026-10,gasto,1215.00,UYU,1215.00,Lu tarjeta,,Croqueta,,Jabon,Jabon -- Lu pago para ambos (planilla fila 10),casa,carga_manual,confirmado,1,carga:150b27b870d998be
+40ed2bd76ea7,2026-10-31,2026-10,gasto,1106.00,UYU,1106.00,Lu tarjeta,,Croqueta,,Peluche y Chapita,Peluche y Chapita -- Lu pago para ambos (planilla fila 12),casa,carga_manual,confirmado,1,carga:40ed2bd76ea7bddf
+7af28d0c632f,2026-10-31,2026-10,gasto,390.00,UYU,390.00,Lu tarjeta,,Croqueta,,Correa,Correa -- Lu pago para ambos (planilla fila 11),casa,carga_manual,confirmado,1,carga:7af28d0c632fc323

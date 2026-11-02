@@ -5194,7 +5194,11 @@ f942d9b63697,2026-10-29,2026-10,gasto,1488.00,UYU,1488.00,Itaú Infinite,,Croque
 8aa236f89a86,2026-10-30,2026-10,gasto,1158.55,UYU,1158.55,Santander Platinum,,Comer afuera / Delivery,,LA PASIVA CARRA,LA PASIVA CARRA,personal,mail,confirmado,1,1a18f8b6471838ad
 d6327077d51a,2026-10-30,2026-10,gasto,100.26,UYU,100.26,Cuenta Casa,,Servicios,,COMISION EDC CTA.CTE.,COMISION EDC CTA.CTE.,casa,estado_cuenta,pendiente,1,estado:Cuenta Casa:2026-10-30:-100.26:COMISION EDC CTA.CTE.
 da1b40dcc2df,2026-10-30,2026-10,transferencia,1738.50,UYU,1738.50,Santander Platinum,Deudas,,,,LA PASIVA CARRA 30/10: parte ajena -> Deudas,interno,manual,confirmado,0,8aa236f89a86-split
+09bfc68e9b49,2026-10-31,2026-10,gasto,1573.00,UYU,1573.00,Lu tarjeta,,Croqueta,,Pañales,Pañales -- Lu pago para ambos (planilla fila 9),casa,carga_manual,confirmado,1,carga:09bfc68e9b49c64f
+150b27b870d9,2026-10-31,2026-10,gasto,1215.00,UYU,1215.00,Lu tarjeta,,Croqueta,,Jabon,Jabon -- Lu pago para ambos (planilla fila 10),casa,carga_manual,confirmado,1,carga:150b27b870d998be
 3abdd6993a66,2026-10-31,2026-10,gasto,464.50,UYU,464.50,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA,DLOPEDIDOSYA,personal,mail,confirmado,1,1a19376f4a844e0f
+40ed2bd76ea7,2026-10-31,2026-10,gasto,1106.00,UYU,1106.00,Lu tarjeta,,Croqueta,,Peluche y Chapita,Peluche y Chapita -- Lu pago para ambos (planilla fila 12),casa,carga_manual,confirmado,1,carga:40ed2bd76ea7bddf
+7af28d0c632f,2026-10-31,2026-10,gasto,390.00,UYU,390.00,Lu tarjeta,,Croqueta,,Correa,Correa -- Lu pago para ambos (planilla fila 11),casa,carga_manual,confirmado,1,carga:7af28d0c632fc323
 9c9c39111bde,2026-10-31,2026-10,gasto,605.00,UYU,605.00,Itaú Infinite,,Transporte,,TAXI CASTRO TACUA,TAXI CASTRO TACUA,casa,mail,confirmado,1,1a194641b66e3100
 a917e8437c4e,2026-10-31,2026-10,gasto,35.00,UYU,35.00,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA P,DLOPEDIDOSYA P,personal,mail,confirmado,1,1a1939325ec32e21
 e2cd034c3a70,2026-10-31,2026-10,gasto,269.75,UYU,269.75,Deudas,,Comer afuera / Delivery,Licor,,Picada bebida,split,splitwise,confirmado,1,sw:x64a1a0f807

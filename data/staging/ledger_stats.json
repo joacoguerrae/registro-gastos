@@ -6,12 +6,12 @@
   },
   "por_origen": {
     "1money": 3060,
-    "carga_manual": 8,
+    "carga_manual": 12,
     "estado_cuenta": 123,
     "mail": 444,
     "manual": 72,
     "planilla_casa": 1465,
     "splitwise": 38
   },
-  "total": 5210
+  "total": 5214
 }
