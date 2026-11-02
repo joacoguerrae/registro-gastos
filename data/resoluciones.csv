@@ -1083,3 +1083,30 @@ e8ec79f5ce98,motivo_resuelto,sin_categoria,"Joaco 25/10: botella de agua del gym
 71ad6e6145e5,motivo_resuelto,tc_estimado,"Joaco 28/10: giro a IBKR, transferencia interna en_analisis=0: el tc no afecta agregados",2026-10-28
 4e67eab61393,categoria,Super,"Joaco 28/10: Super (puesto de feria), mismo que MARWASH FERIA de setiembre",2026-10-28
 4e67eab61393,motivo_resuelto,sin_categoria,"Joaco 28/10: Super (puesto de feria), mismo que MARWASH FERIA de setiembre",2026-10-28
+fe838c8a63ff,categoria,Croqueta,"Joaco 1/11: gastos para nuestra nueva perra Croqueta, corresponden a gastos de la casa realizados con mi tarjeta. Croqueta es un concepto nuevo",2026-11-01
+fe838c8a63ff,ambito,casa,"Joaco 1/11: gastos para nuestra nueva perra Croqueta, corresponden a gastos de la casa realizados con mi tarjeta. Croqueta es un concepto nuevo",2026-11-01
+fe838c8a63ff,motivo_resuelto,sin_categoria,"Joaco 1/11: gastos para nuestra nueva perra Croqueta, corresponden a gastos de la casa realizados con mi tarjeta. Croqueta es un concepto nuevo",2026-11-01
+3e8262620dce,categoria,Croqueta,"Joaco 1/11: gastos para nuestra nueva perra Croqueta, corresponden a gastos de la casa realizados con mi tarjeta. Croqueta es un concepto nuevo",2026-11-01
+3e8262620dce,ambito,casa,"Joaco 1/11: gastos para nuestra nueva perra Croqueta, corresponden a gastos de la casa realizados con mi tarjeta. Croqueta es un concepto nuevo",2026-11-01
+3e8262620dce,motivo_resuelto,sin_categoria,"Joaco 1/11: gastos para nuestra nueva perra Croqueta, corresponden a gastos de la casa realizados con mi tarjeta. Croqueta es un concepto nuevo",2026-11-01
+449859a4e410,categoria,Croqueta,"Joaco 1/11: gastos para nuestra nueva perra Croqueta, corresponden a gastos de la casa realizados con mi tarjeta. Croqueta es un concepto nuevo",2026-11-01
+449859a4e410,ambito,casa,"Joaco 1/11: gastos para nuestra nueva perra Croqueta, corresponden a gastos de la casa realizados con mi tarjeta. Croqueta es un concepto nuevo",2026-11-01
+449859a4e410,motivo_resuelto,sin_categoria,"Joaco 1/11: gastos para nuestra nueva perra Croqueta, corresponden a gastos de la casa realizados con mi tarjeta. Croqueta es un concepto nuevo",2026-11-01
+7f5c454971c2,categoria,Croqueta,Joaco 1/11: tambien gasto de casa por Croqueta (anualidad veterinaria),2026-11-01
+7f5c454971c2,ambito,casa,Joaco 1/11: tambien gasto de casa por Croqueta (anualidad veterinaria),2026-11-01
+7f5c454971c2,descripcion,Anualidad veterinaria Croqueta,Joaco 1/11: tambien gasto de casa por Croqueta (anualidad veterinaria),2026-11-01
+7f5c454971c2,motivo_resuelto,transferencia_a_clasificar,Joaco 1/11: tambien gasto de casa por Croqueta (anualidad veterinaria),2026-11-01
+7f5c454971c2,motivo_resuelto,formato_nuevo,parser arreglado 1/11: Itau escribio los pesos como URGP,2026-11-01
+5f535100b2bb,descripcion,Venta de dolares (Itau USD -> Itau UYU),"Joaco 1/11: venta de dolares interna entre mis cuentas Itau; el aviso trae solo los 274.400 acreditados, el debito en USD no viene en el mail",2026-11-01
+5f535100b2bb,motivo_resuelto,transferencia_a_clasificar,"Joaco 1/11: venta de dolares interna entre mis cuentas Itau; el aviso trae solo los 274.400 acreditados, el debito en USD no viene en el mail",2026-11-01
+5f535100b2bb,motivo_resuelto,formato_nuevo,parser arreglado 1/11: Itau escribio los pesos como URGP,2026-11-01
+9c9c39111bde,categoria,Transporte,"Joaco 1/11: los 2 taxis son gastos de la casa, transporte, pero aporte mio a la casa",2026-11-01
+9c9c39111bde,ambito,casa,"Joaco 1/11: los 2 taxis son gastos de la casa, transporte, pero aporte mio a la casa",2026-11-01
+9c9c39111bde,motivo_resuelto,sin_categoria,"Joaco 1/11: los 2 taxis son gastos de la casa, transporte, pero aporte mio a la casa",2026-11-01
+ff8ead2addbf,categoria,Transporte,"Joaco 1/11: los 2 taxis son gastos de la casa, transporte, pero aporte mio a la casa",2026-11-01
+ff8ead2addbf,ambito,casa,"Joaco 1/11: los 2 taxis son gastos de la casa, transporte, pero aporte mio a la casa",2026-11-01
+ff8ead2addbf,motivo_resuelto,sin_categoria,"Joaco 1/11: los 2 taxis son gastos de la casa, transporte, pero aporte mio a la casa",2026-11-01
+abb6f4ead0ad,motivo_resuelto,tc_estimado,monto chico: el importe real llega con el estado de la Platinum,2026-11-01
+8aa236f89a86,monto,724.26,split: tu parte 724.26 + Deudas 2172.79 = 2897.05 UYU,2026-11-01
+8aa236f89a86,monto_uyu,724.26,split: 724.26 de 2897.05 UYU,2026-11-01
+8aa236f89a86,motivo_resuelto,split_a_cargar,split: tu parte 724.26 + Deudas 2172.79 = 2897.05 UYU,2026-11-01

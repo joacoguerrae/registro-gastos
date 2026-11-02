@@ -241,59 +241,14 @@ c018d12fed27,sin_respaldo_estado,Santander Platinum 2026-09: fila del ledger (20
 eb318ff6feed,sin_categoria,estado_cuenta Santander Platinum 2026-09: 'REST CHEZ PI EYRO' sin regla,2026-10-02,1
 b50168718ade,sin_categoria,estado_cuenta Santander Platinum 2026-09: 'DESC DILEMA' sin regla,2026-10-02,1
 c0f00969ac5a,split_a_cargar,"Splitwise sw:xaa96125797 'Youtube' USD 13.00 (2026-09-27): yo pague 13.00, mi parte 0.00 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-10-02,1
-599d7d0425de,formato_nuevo,comunicaciones@itau.com.uy | 'Pago realizado' -> ValueError: mail de Itau que parece un movimiento pero no tiene parser,2026-10-20,1
-f088d0bf5dc3,formato_nuevo,comunicaciones@itau.com.uy | 'Aviso de consumo reembolsado con tarjeta de crédito' -> ValueError: mail de Itau que parece un movimiento pero no tiene parser,2026-10-20,1
-ff17f9820ee1,formato_nuevo,comunicaciones@itau.com.uy | 'Aviso transferencia realizada' -> ValueError: mail de Itau que parece un movimiento pero no tiene parser,2026-10-20,1
-56410577ae19,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-10-25,1
-424e548efb75,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-10-25,1
-1d68a1716449,sin_categoria,establecimiento 'EBN*SHEIN MONTE' sin regla,2026-10-25,1
-bd024f17de2c,sin_categoria,establecimiento 'MONTEVIDEO/UMO MOSTAZA HAMBURGUEVIS3' sin regla,2026-10-25,1
-7a9dd74a332c,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*ENIGMAGAMES VIS3' sin regla,2026-10-25,1
-5af9c8b048bc,sin_categoria,establecimiento 'DELIVIANDA*HANDY*0PJHVIS3' sin regla,2026-10-25,1
-e8ec79f5ce98,sin_categoria,establecimiento 'MERCADO PAGO' sin regla,2026-10-25,1
-4c8437f3d50d,tc_estimado,USD 1.00 x tc 40.33 = 40.33 UYU (corrige Fase 3),2026-10-25,1
-4c8437f3d50d,sin_categoria,establecimiento 'PAYPAL 40293' sin regla,2026-10-25,1
-22b143f7b316,tc_estimado,USD 86.34 x tc 40.33 = 3482.09 UYU (corrige Fase 3),2026-10-25,1
-22b143f7b316,sin_categoria,establecimiento 'PAYPAL *MARIAVIRGIN MARIA40293' sin regla,2026-10-25,1
-d5ff0ab98e67,sin_categoria,establecimiento 'BARRA PRE EMBARQUE BQVIS3' sin regla,2026-10-25,1
-b02038d0603f,tc_estimado,USD 6.00 x tc 40.33 = 241.98 UYU (corrige Fase 3),2026-10-25,1
-b02038d0603f,sin_categoria,establecimiento 'FREESHOP WALINCO VIS3' sin regla,2026-10-25,1
-f213c5852eec,tc_estimado,USD 5.92 x tc 40.33 = 238.75 UYU (corrige Fase 3),2026-10-25,1
-f213c5852eec,sin_categoria,establecimiento 'BUQUEBUS VIS3' sin regla,2026-10-25,1
-bcd3386c9cd7,tc_estimado,USD 8.55 x tc 40.33 = 344.82 UYU (corrige Fase 3),2026-10-25,1
-a4c9fb559c11,tc_estimado,USD 18.20 x tc 40.33 = 734.01 UYU (corrige Fase 3),2026-10-25,1
-18779864b453,tc_estimado,USD 0.64 x tc 40.33 = 25.81 UYU (corrige Fase 3),2026-10-25,1
-6e77a541f119,tc_estimado,USD 25.99 x tc 40.33 = 1048.18 UYU (corrige Fase 3),2026-10-25,1
-6e77a541f119,split_a_cargar,split recurrente propuesto: Deudas 3/6 (Rodrigo 2/6; hermana 1/6 (+ madre 1/6 a 'A cobrar')) + casa 2/6: 'APPLE.COM/BILL' — aplicar con OK en revision,2026-10-25,1
-c038fad7f13e,tc_estimado,USD 11.44 x tc 40.33 = 461.38 UYU (corrige Fase 3),2026-10-25,1
-3be19ec487fd,tc_estimado,USD 0.54 x tc 40.33 = 21.78 UYU (corrige Fase 3),2026-10-25,1
-e12768c42f1a,tc_estimado,USD 4.96 x tc 40.33 = 200.04 UYU (corrige Fase 3),2026-10-25,1
-e12768c42f1a,sin_categoria,establecimiento 'COTO SUCURSAL 170 VIEI' sin regla,2026-10-25,1
-08801f4b034e,tc_estimado,USD 19.16 x tc 40.33 = 772.72 UYU (corrige Fase 3),2026-10-25,1
-08801f4b034e,sin_categoria,establecimiento 'CESPEDES LIBROS CAP.F' sin regla,2026-10-25,1
-b6b6c87e5544,tc_estimado,USD 8.16 x tc 40.33 = 329.09 UYU (corrige Fase 3),2026-10-25,1
-0ff34d08396a,tc_estimado,USD 118.87 x tc 40.33 = 4794.03 UYU (corrige Fase 3),2026-10-25,1
-0ff34d08396a,sin_categoria,establecimiento 'FARMACITY-LIBERTADOR Y COCAP.F' sin regla,2026-10-25,1
-4a15a6e631ee,tc_estimado,USD 80.39 x tc 40.33 = 3242.13 UYU (corrige Fase 3),2026-10-25,1
-4a15a6e631ee,sin_categoria,establecimiento 'MERPAGO*GUITARRITA Bueno' sin regla,2026-10-25,1
-1ec03040516c,tc_estimado,USD 31.00 x tc 40.33 = 1250.23 UYU (corrige Fase 3),2026-10-25,1
-1ec03040516c,sin_categoria,establecimiento 'FREESHOP WALINCO COLON' sin regla,2026-10-25,1
-f088d0bf5dc3,tc_estimado,reintegro USD 1.00 x tc 40.33 (corrige Fase 3),2026-10-25,1
-f088d0bf5dc3,sin_categoria,reintegro 'PAYPAL 40293' sin regla ni cargo original,2026-10-25,1
-16cf9366e2b4,transferencia_a_clasificar,"a 'Fefo Bentancur', concepto 'hamburguesas oso', UYU 860.00: sin categoria",2026-10-25,1
-599d7d0425de,sin_categoria,"pago Itau a 'SISTARBANC' UYU 300.00: que factura es? (si es el pago de una tarjeta, va como transferencia)",2026-10-25,1
-71ad6e6145e5,transferencia_a_clasificar,"a 'cuenta 3701587811 (MI DINERO)', concepto '', USD 500.00: sin categoria",2026-10-27,1
-71ad6e6145e5,tc_estimado,USD 500.00 x tc 40.33 = 20165.00 UYU (corrige Fase 3),2026-10-27,1
-4e67eab61393,sin_categoria,establecimiento 'MONTEVIDEO/MARWASH VIS3' sin regla,2026-10-27,1
-fe838c8a63ff,sin_categoria,establecimiento 'MERCADO PAGO' sin regla,2026-10-29,
-3e8262620dce,sin_categoria,establecimiento 'MER' sin regla,2026-10-29,
-cd9ee36da313,sin_categoria,establecimiento 'ZARA VIS3' sin regla,2026-10-30,
-f942d9b63697,sin_categoria,establecimiento 'MERPAGO*PUNTOVET MONTE' sin regla,2026-10-30,
-449859a4e410,sin_categoria,establecimiento 'MER' sin regla,2026-10-30,
-7f5c454971c2,formato_nuevo,comunicaciones@itau.com.uy | 'Aviso transferencia realizada' -> ValueError: transferencia Itau: layout desconocido,2026-10-30,
-8aa236f89a86,sin_categoria,establecimiento 'LA PASIVA CARRA' sin regla,2026-10-31,
-5f535100b2bb,formato_nuevo,comunicaciones@itau.com.uy | 'Aviso transferencia realizada' -> ValueError: transferencia Itau: layout desconocido,2026-10-31,
-f4ed2f4627ee,sin_categoria,establecimiento 'MONTEVIDEO/VIEJO MOLINO VIS3' sin regla,2026-10-31,
-9c9c39111bde,sin_categoria,establecimiento 'TAXI CASTRO TACUA' sin regla,2026-11-01,
-ff8ead2addbf,sin_categoria,establecimiento 'RADIO TAXI PLAZ' sin regla,2026-11-01,
-abb6f4ead0ad,tc_estimado,USD 1.99 x tc 40.33 = 80.26 UYU (corrige Fase 3),2026-11-01,
+7f5c454971c2,formato_nuevo,comunicaciones@itau.com.uy | 'Aviso transferencia realizada' -> ValueError: transferencia Itau: layout desconocido,2026-10-30,1
+5f535100b2bb,formato_nuevo,comunicaciones@itau.com.uy | 'Aviso transferencia realizada' -> ValueError: transferencia Itau: layout desconocido,2026-10-31,1
+fe838c8a63ff,sin_categoria,establecimiento 'MERCADO PAGO' sin regla,2026-11-01,1
+3e8262620dce,sin_categoria,establecimiento 'MER' sin regla,2026-11-01,1
+449859a4e410,sin_categoria,establecimiento 'MER' sin regla,2026-11-01,1
+8aa236f89a86,split_a_cargar,Comer afuera / Delivery por 2897.05 UYU (>= umbral 1500): cargar a Splitwise?,2026-11-01,1
+9c9c39111bde,sin_categoria,establecimiento 'TAXI CASTRO TACUA' sin regla,2026-11-01,1
+ff8ead2addbf,sin_categoria,establecimiento 'RADIO TAXI PLAZ' sin regla,2026-11-01,1
+abb6f4ead0ad,tc_estimado,USD 1.99 x tc 40.33 = 80.26 UYU (corrige Fase 3),2026-11-01,1
+7f5c454971c2,transferencia_a_clasificar,"a 'cuenta 1409211 (Itau)', concepto '', UYU 4905.00: sin categoria",2026-11-01,1
+5f535100b2bb,transferencia_a_clasificar,"sale de 'Itaú USD' (USD) pero el aviso trae UYU 274400.00: cambio de moneda, el debito real en USD no viene en el mail",2026-11-01,1

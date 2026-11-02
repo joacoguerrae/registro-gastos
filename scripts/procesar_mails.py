@@ -332,7 +332,7 @@ def parse_aviso_itau(mail):
 
 
 RE_ITAU_TRANSF = re.compile(
-    r"desde la cuenta\s*\**\s*(\d{3,})\s*Importe:\s*([\d.,]+)\s*(UYU|USD|EUR)\s*"
+    r"desde la cuenta\s*\**\s*(\d{3,})\s*Importe:\s*([\d.,]+)\s*(UYU|URGP|USD|EUR)\s*"
     r"Cuenta destino:\s*(\d+)\s*(?:Banco/Instituci.n destino:\s*(.+?)\s*(?:\n|Adem.s|$))?", re.S)
 RE_ITAU_PAGO = re.compile(
     r"Cuenta origen terminada en\s*\.*\s*(\d{3,})\s*\.?\s*Monto:\s*(U\$S|US\$|USD|UYU|\$)\s*"
@@ -342,11 +342,16 @@ RE_ITAU_PAGO = re.compile(
 def parse_transferencia_itau(body):
     """'Aviso transferencia realizada' de Itau. No trae el nombre del destinatario,
     solo su numero de cuenta y el banco.
-    -> (sufijo_cuenta_origen, moneda, monto, numero_destino, banco_destino)"""
+    -> (sufijo_cuenta_origen, moneda, monto, numero_destino, banco_destino)
+
+    Itau escribe los pesos como 'UYU' o como 'URGP' (codigo interno del banco;
+    aparecio el 30/10/2026 en dos avisos que cayeron como formato_nuevo): los dos
+    son UYU."""
     m = RE_ITAU_TRANSF.search(body)
     if not m:
         raise ValueError("transferencia Itau: layout desconocido")
-    return (m.group(1), m.group(3), num_itau(m.group(2)), m.group(4).lstrip("0"),
+    moneda = "UYU" if m.group(3) == "URGP" else m.group(3)
+    return (m.group(1), moneda, num_itau(m.group(2)), m.group(4).lstrip("0"),
             (m.group(5) or "").strip())
 
 
@@ -944,11 +949,21 @@ def main():
             detalle = f"{suf} {moneda} {fmt(monto)} pago a {a_quien}"
         else:
             propia, moneda_propia = cuentas_propias.get(num_dst, ("", ""))
+            moneda_origen = {c: mo for c, mo in cuentas_propias.values()}.get(cuenta_origen, moneda)
+            if moneda_origen and moneda_origen != moneda:
+                # venta/compra de moneda (ej. 4411 USD -> 274.400 URGP el 30/10/2026):
+                # el aviso trae UN solo importe, en la moneda del destino. Lo que se
+                # debito de la cuenta origen no esta en el mail, asi que su saldo
+                # queda sin ese movimiento (el dashboard saltea filas de otra moneda).
+                motivos.append(("transferencia_a_clasificar",
+                                f"sale de {cuenta_origen!r} ({moneda_origen}) pero el aviso trae "
+                                f"{moneda} {fmt(monto)}: cambio de moneda, el debito real en "
+                                f"{moneda_origen} no viene en el mail"))
             if propia and propia != cuenta_origen:
                 r.update(tipo="transferencia", cuenta_destino=propia, ambito="interno",
                          en_analisis="0", comercio=f"cuenta {num_dst}",
                          descripcion="Aporte" if propia == "Cuenta Casa" else f"Transferencia a {propia}")
-                if moneda_propia and moneda_propia != moneda:
+                if moneda_propia and moneda_propia != moneda and not motivos:
                     motivos.append(("transferencia_a_clasificar",
                                     f"a {propia!r} ({moneda_propia}) pero salieron {moneda} "
                                     f"{fmt(monto)}: transferencia cruzada, revisar los montos"))

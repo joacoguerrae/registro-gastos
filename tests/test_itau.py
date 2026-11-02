@@ -49,6 +49,15 @@ def test_transferencia_realizada():
     assert pm.parse_transferencia_itau(body) == ("4405", "UYU", 590.0, "8155077", "OCA Blue")
 
 
+def test_transferencia_realizada_urgp():
+    # 30/10/2026: Itau escribio los pesos como 'URGP' y los dos avisos cayeron
+    # como formato_nuevo. URGP = UYU.
+    body = ("Aviso de transferencia realizada\nTransferencia realizada.\nDetalles:\n"
+            "Transferencia realizada desde la cuenta **** 4405\nImporte: 4905.00 URGP\n"
+            "Cuenta destino: 1409211\nBanco/Institución destino: Itau\nAdemás ingresando")
+    assert pm.parse_transferencia_itau(body) == ("4405", "UYU", 4905.0, "1409211", "Itau")
+
+
 def test_pago_realizado():
     body = ("Pago realizado.\nTu pago fue realizado con éxito. Siguen los detalles del mismo:\n"
             "Cuenta origen terminada en ... 4405 .\nMonto: $ 300.00 .\nPago a SISTARBANC .\n"
