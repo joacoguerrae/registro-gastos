@@ -1110,3 +1110,6 @@ abb6f4ead0ad,motivo_resuelto,tc_estimado,monto chico: el importe real llega con 
 8aa236f89a86,monto,724.26,split: tu parte 724.26 + Deudas 2172.79 = 2897.05 UYU,2026-11-01
 8aa236f89a86,monto_uyu,724.26,split: 724.26 de 2897.05 UYU,2026-11-01
 8aa236f89a86,motivo_resuelto,split_a_cargar,split: tu parte 724.26 + Deudas 2172.79 = 2897.05 UYU,2026-11-01
+1aca967aa45d,categoria,Comer afuera / Delivery,"Joaco 1/11: comer afuera, corresponde a casa, lo pague con mi tarjeta",2026-11-01
+1aca967aa45d,ambito,casa,"Joaco 1/11: comer afuera, corresponde a casa, lo pague con mi tarjeta",2026-11-01
+1aca967aa45d,motivo_resuelto,sin_categoria,"Joaco 1/11: comer afuera, corresponde a casa, lo pague con mi tarjeta",2026-11-01
