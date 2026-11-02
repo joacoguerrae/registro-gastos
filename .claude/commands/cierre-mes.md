@@ -43,7 +43,7 @@ Cierre mensual del sistema de gastos. Contratos: docs/fase3.md (secciones 3 y 4)
 
 **Archivos y cuentas.** Joaco deja los exports del web de Santander en `data/estados/`. Cada cuenta se identifica por **número** (`config/cuentas_bancarias.csv`): `000001322680` Cuenta Casa · `001203500692` caja de ahorro $ · `005203662400` caja de ahorro USD · `800944254160` Mastercard (PDF) · `770054522300` Visa Platinum (PDF). Si aparece un número nuevo, el guard corta: mapearlo ahí antes de seguir. Ojo con los formatos de monto: hay exports con punto decimal y otros con coma.
 
-**Calendario de estados de crédito.** Itaú Infinite (5023, desde oct-2026): sin PDF por mail, solo aviso de que está en Itaú Link — fecha de cierre todavía desconocida, anotarla con el primer estado. BBVA: PDF por mail, día 1-7. Santander Mastercard (casa): día ~5-8 — **dada de baja el 27/9/2026, el de octubre es el último**. Visa Platinum: cierra ~28 y llega a fin de mes. El PDF de Santander **no dice la marca** — solo el número.
+**Calendario de estados de crédito.** Itaú Infinite (5023, desde oct-2026): PDF por mail desde el 29/10/2026 (`info-mail@itau.com.uy`, lo baja `fetch_mails`), **corte ~26, vence ~9**. Sin extractor: cruzarlo a mano contra el ledger (en octubre cuadró exacto salvo el "SEGURO DE VIDA SOBRE SALDO", que no tiene aviso). Itaú no cobra recargo sobre USD. **Nunca correr `conciliar_estado.py` sin argumentos con un PDF de Itaú en `data/estados/`**: no reconoce el emisor y aborta. BBVA: PDF por mail, día 1-7. Santander Mastercard (casa): día ~5-8 — **dada de baja el 27/9/2026, el de octubre es el último**. Visa Platinum: cierra ~28 y llega a fin de mes. El PDF de Santander **no dice la marca** — solo el número.
 
 **SPLITS = falsos positivos garantizados en la conciliación.** El banco trae UNA línea por el total; el ledger lo tiene partido (fila propia + hermana a Deudas), así que el matcher nunca los aparea: la línea del banco aparece como "débito nuevo" y las filas del split como "sin respaldo". Pasó 3 veces en julio (Movistar 1.750,82 = 875,41×2 · Devoto 275,41 = 46,25+229,16 · Desborde 1.785,20 = 892,60×2). **Antes de insertar un débito "nuevo", verificar si es la suma de un split existente.** Si el duplicado ya se insertó, `en_analisis=0` NO alcanza — la conciliación de saldos cuenta movimientos reales: hay que darla de baja con `gastos.py borrar <id> --motivo "total del split <id>"`.
 
@@ -82,6 +82,16 @@ Series de cuotas vivas a ago-2026: **ORT** cuota 18/24 en agosto → quedan 6 (h
 **Semilla = `config/saldos_iniciales.csv`, UNA fecha para todas las cuentas.** Movida del 12/7 al **2026-08-31** en el cierre de agosto (el Platinum arrastraba 5.482,14 UYU / 131,80 USD del tramo 12/7-27/7, de una lectura manual marcada DISCREPANCIA; agosto cuadró al peso contra el estado). Al re-sembrar, NO volver a correr `conciliar_saldos` para la misma fecha: pisaría en `data/saldos.csv` el registro de las diferencias que la justificaron. `Deudas` quedó sembrada con el calculado (sin real: la API de Splitwise da 403 desde el 1/9). BBVA en pesos: el ledger no ve cómo se paga la tarjeta; el real lo da el estado (saldo a favor 1.021,96 al 31/8).
 
 **Parte vs TOTAL — la trampa que más mordió.** Las filas `origen=planilla_casa` del ledger **ya son la parte de Joaco**; el egreso TOTAL de la casa vive en `data/casa.csv`. Para proyectar el gasto de la casa usar TOTALES (casa.csv hasta jun-2026 + ledger `ambito=casa` desde jul-2026). Nunca comparar una serie contra la otra: fabrica "saltos" ficticios (pasó con la patente y con los gastos comunes).
+
+## Aprendido en el cierre de octubre 2026 (2/11, el primero con Itaú)
+
+**Exports de Itaú Link (`.xls`): el nombre del archivo NO dice la moneda de verdad.** En octubre "ITAU $.xls" era la caja USD (4174411) y "ITAU USD.xls" la de pesos (4174405): mirar el `Nro de cuenta` del encabezado. Para leerlos hace falta `xlrd` (instalarlo con `pip install --target <scratchpad>` y `PYTHONPATH`, sin pandas: el pandas de anaconda choca con NumPy 2). Los avisos de débito de Itaú traen el importe NETO de la devolución de IVA (`REDIVA`): la compra + su REDIVA del extracto = la fila del ledger.
+
+**Venta de dólares en Itaú (USD → UYU): dos patas.** El aviso trae solo los pesos acreditados (pata UYU, `procesar_mails` la marca `transferencia_a_clasificar`); la pata USD sale del extracto y se carga con `gastos.py transferencia --de "Itaú USD" --a "Itaú UYU" --moneda USD --monto-uyu <pesos>`. `conciliar_saldos` filtra por moneda, así que cada cuenta ve solo su pata.
+
+**Un reintegro del estado de una tarjeta ya dada de baja** (devolución del costo anual de la Mastercard, fechada en setiembre) se imputa al mes del cierre con `mes=AAAA-MM` para no reabrir un cierre ya hecho.
+
+**Los splits cargados en el mismo cierre también son falsos positivos del extracto**: si dividís un gasto de débito antes de `--insertar`, la línea del banco entra igual (Quesería 411,15 en octubre) y hay que darla de baja.
 
 ## Aprendido en el cierre de setiembre 2026 (2/10, el primero con la Fase 1)
 

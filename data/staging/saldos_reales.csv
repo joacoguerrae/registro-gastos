@@ -1,10 +1,13 @@
 cuenta,moneda,saldo,fecha_corte
-Cuenta Casa,UYU,287.09,2026-09-30
-Santander UYU,UYU,20416.09,2026-09-30
-Santander USD,USD,858.54,2026-09-30
-Santander Platinum,UYU,10442.17,2026-09-30
-Santander Platinum USD,USD,339.90,2026-09-30
-Santander Mastercard,UYU,0.00,2026-09-30
-Mercado Pago,UYU,0.00,2026-09-30
-Efectivo,UYU,0.00,2026-09-30
-Efectivo USD,USD,30.00,2026-09-30
+Cuenta Casa,UYU,298.79,2026-10-31
+Santander UYU,UYU,0.00,2026-10-31
+Santander USD,USD,-0.05,2026-10-31
+Itaú UYU,UYU,285611.36,2026-10-31
+Itaú USD,USD,3489.97,2026-10-31
+Santander Platinum,UYU,20590.09,2026-10-31
+Santander Platinum USD,USD,148.32,2026-10-31
+Itaú Infinite,UYU,5650.64,2026-10-31
+Itaú Infinite USD,USD,353.53,2026-10-31
+Santander Mastercard,UYU,-3204.00,2026-10-31
+Efectivo,UYU,0.00,2026-10-31
+Efectivo USD,USD,30.00,2026-10-31

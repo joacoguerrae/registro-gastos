@@ -253,4 +253,38 @@ abb6f4ead0ad,tc_estimado,USD 1.99 x tc 40.33 = 80.26 UYU (corrige Fase 3),2026-1
 7f5c454971c2,transferencia_a_clasificar,"a 'cuenta 1409211 (Itau)', concepto '', UYU 4905.00: sin categoria",2026-11-01,1
 5f535100b2bb,transferencia_a_clasificar,"sale de 'Itaú USD' (USD) pero el aviso trae UYU 274400.00: cambio de moneda, el debito real en USD no viene en el mail",2026-11-01,1
 1aca967aa45d,sin_categoria,establecimiento 'MERPAGO*ELROBLE VIS3' sin regla,2026-11-01,1
-29f3a81275d4,sin_categoria,"pago Itau a 'SISTARBANC' UYU 4280.00: que factura es? (si es el pago de una tarjeta, va como transferencia)",2026-11-02,
+29f3a81275d4,sin_categoria,"pago Itau a 'SISTARBANC' UYU 4280.00: que factura es? (si es el pago de una tarjeta, va como transferencia)",2026-11-02,1
+c308431daa39,sin_categoria,gasto Splitwise 'Bautista Merlini' (Caqui Tapa) sin regla,2026-11-02,1
+f93f4edb70b2,sin_categoria,gasto Splitwise 'Provaca' (Caqui Tapa) sin regla,2026-11-02,1
+c73da47c0138,sin_categoria,gasto Splitwise 'Coca' (Caqui Tapa) sin regla,2026-11-02,1
+04b78b3d74d1,split_a_cargar,"Splitwise sw:xe1d8d01685 'Pasiva' UYU 2318.00 (2026-10-31): yo pague 2318.00, mi parte 579.50 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-11-02,1
+6d37ffafb5ab,split_a_cargar,"Splitwise sw:xd6c89c35fd 'Tigo Celu' UYU 1878.00 (2026-10-02): yo pague 1878.00, mi parte 939.00 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-11-02,1
+3199e7e89b2b,split_a_cargar,"Splitwise sw:x745f796145 'Youtube' USD 13.00 (2026-10-25): yo pague 13.00, mi parte 0.00 — SIN cargo del ledger que matchee (total +-1%, +-3 dias)",2026-11-02,1
+b9f8380153f0,sin_categoria,gasto Splitwise 'Cenaa' (Hermanos de Marian) sin regla,2026-11-02,1
+3ed0a3563531,split_a_cargar,"Splitwise sw:xd529d9647d 'Bebidas' UYU 411.00 (2026-10-27): yo pague 411.00, mi parte 205.50 -> ajustar cargo 3ed0a3563531 y crear fila hermana -split",2026-11-02,1
+ba011d1652c5,sin_categoria,"Santander UYU CARGO POR TRASPASO CTA.COMBINADA TRASPASO CON LA CUENTA N. 0 (del extracto, sin aviso por mail)",2026-11-02,1
+e7db8512b143,sin_categoria,"Santander UYU COMISION TRANSF INSTANTANEA 546707LE NRR:211427082 JOACO ITA (del extracto, sin aviso por mail)",2026-11-02,1
+2faa193a91ba,ingreso_a_clasificar,Santander UYU 2026-10-13 55.58 UYU: PROMOCIONES TARJETAS DE DEBITO DESC LA ROTISERIA -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-11-02,1
+48580aa59337,ingreso_a_clasificar,Santander UYU 2026-10-08 51.22 UYU: PROMOCIONES TARJETAS DE DEBITO DESC LA ROTISERIA -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-11-02,1
+e9353532f3dd,ingreso_a_clasificar,Santander UYU 2026-10-07 200.00 UYU: CREDITO OPERACION EN BANCA DIGITAL T--/ESMITE RODRIGUEZ ALEJ -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-11-02,1
+611a85c722e4,sin_categoria,"Santander UYU DEBITO OPERACION EN BANCA DIGITAL PAHORRO (del extracto, sin aviso por mail)",2026-11-02,1
+6bc0361f29bd,sin_categoria,"Santander UYU PAGO DE SERVICIO POR BANRED SERVICIO DE PAGOS BANRED , MVST  (del extracto, sin aviso por mail)",2026-11-02,1
+43c956c91bc9,ingreso_a_clasificar,Santander UYU 2026-10-01 146396.00 UYU: SUELDOS 644546TT RECIBIDA /DELIVERY HERO URUGUAY MARKET -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-11-02,1
+012107dfad6c,sin_respaldo_estado,fila del ledger sin linea en el extracto de Santander UYU 2026-10,2026-11-02,1
+5767c11d16ab,sin_respaldo_estado,fila del ledger sin linea en el extracto de Santander UYU 2026-10,2026-11-02,1
+6fbfcab79344,sin_respaldo_estado,fila del ledger sin linea en el extracto de Santander UYU 2026-10,2026-11-02,1
+59df454f0c35,ingreso_a_clasificar,Santander USD 2026-10-19 1.85 USD: ABONO POR TRASPASO CTA.COMBINADA TRASPASO CON LA CUENTA N. 0 -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-11-02,1
+164357a13602,sin_categoria,"Santander USD TRANSFERENCIA ENVIADA 648270TT55527306 TRF. PLAZA- JOACO ITA (del extracto, sin aviso por mail)",2026-11-02,1
+8d940f7eb6dc,ingreso_a_clasificar,Santander USD 2026-10-02 1221.60 USD: CREDITO OPERACION EN BANCA DIGITAL PAHORRO/GUERRA ESMITE JOA -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-11-02,1
+d6327077d51a,sin_categoria,"Cuenta Casa COMISION EDC CTA.CTE. (del extracto, sin aviso por mail)",2026-11-02,1
+416d3942d834,sin_categoria,"Cuenta Casa COMPRA CON TARJETA DEBITO QUESERIA LOS HERMANO, MONTEVIDEO T (del extracto, sin aviso por mail)",2026-11-02,1
+3808d2e1b267,ingreso_a_clasificar,"Cuenta Casa 2026-10-14 4.80 UYU: EXTORNO COMPRA CON VISA DEBITO DEV,DLO.PEDIDOSYA MARKET, FEC -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?",2026-11-02,1
+24b2bb407514,ingreso_a_clasificar,"Cuenta Casa 2026-10-07 38.10 UYU: EXTORNO COMPRA CON VISA DEBITO DEV,DLO.PEDIDOSYA MARKET, FEC -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?",2026-11-02,1
+e0f489b9a758,ingreso_a_clasificar,Cuenta Casa 2026-10-05 4658.00 UYU: TRANSF INSTANTANEA RECIBIDA 743394LR:000040580339 DECAUX TAR -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-11-02,1
+31f445a12a64,ingreso_a_clasificar,Cuenta Casa 2026-10-02 30000.00 UYU: TRANSFERENCIA RECIBIDA 934047TT RECIBIDA /DECAUX TAROCO LUCI -- Sueldo / Otros ingresos / Devoluciones & cashback / transferencia interna?,2026-11-02,1
+3ed0a3563531,sin_respaldo_estado,fila del ledger sin linea en el extracto de Cuenta Casa 2026-10,2026-11-02,1
+561577416b51,sin_respaldo_estado,fila del ledger sin linea en el extracto de Cuenta Casa 2026-10,2026-11-02,1
+4bd2a056725b,sin_respaldo_estado,BBVA Crédito 2026-10: fila del ledger (2026-09-30 UYU 1475.48 PIZZERIA) sin linea correspondiente en el estado de cuenta (posible reversa/duplicado),2026-11-02,1
+f22b0a9309ac,sin_categoria,"estado_cuenta BBVA Crédito 2026-10: 'SEGURO VIDA 2,5X1000' sin regla",2026-11-02,1
+452ae715b031,sin_categoria,estado_cuenta Santander Mastercard 2026-10: 'DEVOLUCION COSTO ANUAL' sin regla,2026-11-02,1
+38647d7111f4,sin_categoria,estado_cuenta Santander Mastercard 2026-10: 'CUOTA ANUAL           02 03' sin regla,2026-11-02,1

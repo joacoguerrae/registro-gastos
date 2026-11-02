@@ -1113,3 +1113,96 @@ abb6f4ead0ad,motivo_resuelto,tc_estimado,monto chico: el importe real llega con 
 1aca967aa45d,categoria,Comer afuera / Delivery,"Joaco 1/11: comer afuera, corresponde a casa, lo pague con mi tarjeta",2026-11-01
 1aca967aa45d,ambito,casa,"Joaco 1/11: comer afuera, corresponde a casa, lo pague con mi tarjeta",2026-11-01
 1aca967aa45d,motivo_resuelto,sin_categoria,"Joaco 1/11: comer afuera, corresponde a casa, lo pague con mi tarjeta",2026-11-01
+c308431daa39,categoria,Comer afuera / Delivery,Joaco 2/11: todos Comer afuera,2026-11-02
+c308431daa39,motivo_resuelto,sin_categoria,Joaco 2/11: todos Comer afuera,2026-11-02
+f93f4edb70b2,categoria,Comer afuera / Delivery,Joaco 2/11: todos Comer afuera,2026-11-02
+f93f4edb70b2,motivo_resuelto,sin_categoria,Joaco 2/11: todos Comer afuera,2026-11-02
+c73da47c0138,categoria,Comer afuera / Delivery,Joaco 2/11: todos Comer afuera,2026-11-02
+c73da47c0138,motivo_resuelto,sin_categoria,Joaco 2/11: todos Comer afuera,2026-11-02
+b9f8380153f0,categoria,Comer afuera / Delivery,Joaco 2/11: todos Comer afuera,2026-11-02
+b9f8380153f0,motivo_resuelto,sin_categoria,Joaco 2/11: todos Comer afuera,2026-11-02
+da1b40dcc2df,monto,1738.50,"Joaco 2/11: La Pasiva en Splitwise va sobre el neto (2.318) porque espera un reintegro del 20%: los amigos deben 3 x 579,50",2026-11-02
+da1b40dcc2df,monto_uyu,1738.50,"Joaco 2/11: La Pasiva en Splitwise va sobre el neto (2.318) porque espera un reintegro del 20%: los amigos deben 3 x 579,50",2026-11-02
+8aa236f89a86,monto,1158.55,"Joaco 2/11: La Pasiva en Splitwise va sobre el neto (2.318) porque espera un reintegro del 20%: los amigos deben 3 x 579,50; mi parte 2.897,05 - 1.738,50 hasta que entre el reintegro",2026-11-02
+8aa236f89a86,monto_uyu,1158.55,"Joaco 2/11: La Pasiva en Splitwise va sobre el neto (2.318) porque espera un reintegro del 20%: los amigos deben 3 x 579,50; mi parte 2.897,05 - 1.738,50 hasta que entre el reintegro",2026-11-02
+04b78b3d74d1,motivo_resuelto,split_a_cargar,split ya cargado en 8aa236f89a86 + da1b40dcc2df (ajustado a Splitwise el 2/11),2026-11-02
+012107dfad6c,monto,939.00,"Joaco 2/11: Tigo segun Splitwise, Agus debe 939 (igual que setiembre)",2026-11-02
+012107dfad6c,monto_uyu,939.00,"Joaco 2/11: Tigo segun Splitwise, Agus debe 939 (igual que setiembre)",2026-11-02
+5767c11d16ab,monto,908.21,"Joaco 2/11: Tigo segun Splitwise, Agus debe 939 (igual que setiembre); mi parte 1.847,21 - 939",2026-11-02
+5767c11d16ab,monto_uyu,908.21,"Joaco 2/11: Tigo segun Splitwise, Agus debe 939 (igual que setiembre); mi parte 1.847,21 - 939",2026-11-02
+6d37ffafb5ab,motivo_resuelto,split_a_cargar,split ya cargado en 5767c11d16ab + 012107dfad6c (ajustado a Splitwise el 2/11),2026-11-02
+3199e7e89b2b,motivo_resuelto,split_a_cargar,"YouTube 22/10 ya partido: 6e77a541f119 + hermanas d8d5ae56e7e0 (A cobrar) y e5371b4819bb (Deudas 13,00)",2026-11-02
+3ed0a3563531,monto,205.65,"split: tu parte 205.65 + Deudas 205.50 = 411.15 UYU -- Bebidas (Queseria Los Hermanos) segun Splitwise: Rodrigo debe 205,50",2026-11-02
+3ed0a3563531,monto_uyu,205.65,split: 205.65 de 411.15 UYU,2026-11-02
+3ed0a3563531,motivo_resuelto,split_a_cargar,"split: tu parte 205.65 + Deudas 205.50 = 411.15 UYU -- Bebidas (Queseria Los Hermanos) segun Splitwise: Rodrigo debe 205,50",2026-11-02
+29f3a81275d4,categoria,Regalos,"Joaco 2/11: regalo para mi padre de cumple, la mitad la voy a poner en splitwise con mis hermanos",2026-11-02
+29f3a81275d4,descripcion,Regalo cumpleanos de mi padre (pago web Itau via SISTARBANC),"Joaco 2/11: regalo para mi padre de cumple, la mitad la voy a poner en splitwise con mis hermanos",2026-11-02
+29f3a81275d4,motivo_resuelto,sin_categoria,"Joaco 2/11: regalo para mi padre de cumple, la mitad la voy a poner en splitwise con mis hermanos",2026-11-02
+29f3a81275d4,monto,2140.00,split: tu parte 2140.00 + Deudas 2140.00 = 4280.00 UYU -- regalo de cumple del padre: la otra mitad con los hermanos por Splitwise,2026-11-02
+29f3a81275d4,monto_uyu,2140.00,split: 2140.00 de 4280.00 UYU,2026-11-02
+29f3a81275d4,motivo_resuelto,split_a_cargar,split: tu parte 2140.00 + Deudas 2140.00 = 4280.00 UYU -- regalo de cumple del padre: la otra mitad con los hermanos por Splitwise,2026-11-02
+6bc0361f29bd,motivo_resuelto,sin_categoria,fila dada de baja: total bancario del split de Tigo 5767c11d16ab + 012107dfad6c (falso positivo de conciliacion),2026-11-02
+416d3942d834,motivo_resuelto,sin_categoria,fila dada de baja: total bancario del split de Queseria 3ed0a3563531 + 561577416b51 (falso positivo de conciliacion),2026-11-02
+012107dfad6c,motivo_resuelto,sin_respaldo_estado,"split de Tigo: el banco trae una sola linea por el total (1.847,21)",2026-11-02
+5767c11d16ab,motivo_resuelto,sin_respaldo_estado,"split de Tigo: el banco trae una sola linea por el total (1.847,21)",2026-11-02
+3ed0a3563531,motivo_resuelto,sin_respaldo_estado,"split de la Queseria: el banco trae una sola linea por el total (411,15)",2026-11-02
+561577416b51,motivo_resuelto,sin_respaldo_estado,"split de la Queseria: el banco trae una sola linea por el total (411,15)",2026-11-02
+6fbfcab79344,motivo_resuelto,sin_respaldo_estado,el banco lo posteo el 13/10 (4 dias despues del aviso): la linea del extracto se dio de baja como duplicado,2026-11-02
+43c956c91bc9,categoria,Sueldo,"sueldo de octubre (146.396, igual que config/ingresos.csv)",2026-11-02
+43c956c91bc9,motivo_resuelto,ingreso_a_clasificar,"sueldo de octubre (146.396, igual que config/ingresos.csv)",2026-11-02
+31f445a12a64,categoria,Otros ingresos,"aporte de Lu: ya lo cuenta cierre_casa desde la planilla (aportes_lu_carga), igual que setiembre",2026-11-02
+31f445a12a64,en_analisis,0,"aporte de Lu: ya lo cuenta cierre_casa desde la planilla (aportes_lu_carga), igual que setiembre",2026-11-02
+31f445a12a64,descripcion,Aporte de Lu 30.000 (2/10) - cuenta por la planilla Carga manual,"aporte de Lu: ya lo cuenta cierre_casa desde la planilla (aportes_lu_carga), igual que setiembre",2026-11-02
+31f445a12a64,motivo_resuelto,ingreso_a_clasificar,"aporte de Lu: ya lo cuenta cierre_casa desde la planilla (aportes_lu_carga), igual que setiembre",2026-11-02
+e0f489b9a758,categoria,Otros ingresos,"aporte de Lu: ya lo cuenta cierre_casa desde la planilla (aportes_lu_carga), igual que setiembre",2026-11-02
+e0f489b9a758,en_analisis,0,"aporte de Lu: ya lo cuenta cierre_casa desde la planilla (aportes_lu_carga), igual que setiembre",2026-11-02
+e0f489b9a758,descripcion,"Aporte de Lu 4.658 (5/10, regalo de su madre) - cuenta por la planilla Carga manual","aporte de Lu: ya lo cuenta cierre_casa desde la planilla (aportes_lu_carga), igual que setiembre",2026-11-02
+e0f489b9a758,motivo_resuelto,ingreso_a_clasificar,"aporte de Lu: ya lo cuenta cierre_casa desde la planilla (aportes_lu_carga), igual que setiembre",2026-11-02
+611a85c722e4,ambito,interno,"PAHORRO = compra de dolares, dos patas internas (chuleta del cierre)",2026-11-02
+611a85c722e4,en_analisis,0,"PAHORRO = compra de dolares, dos patas internas (chuleta del cierre)",2026-11-02
+611a85c722e4,descripcion,"Compra de dolares (pata UYU): 50.000 -> USD 1.221,60","PAHORRO = compra de dolares, dos patas internas (chuleta del cierre)",2026-11-02
+611a85c722e4,motivo_resuelto,sin_categoria,"PAHORRO = compra de dolares, dos patas internas (chuleta del cierre)",2026-11-02
+8d940f7eb6dc,ambito,interno,"PAHORRO = compra de dolares, dos patas internas (chuleta del cierre)",2026-11-02
+8d940f7eb6dc,en_analisis,0,"PAHORRO = compra de dolares, dos patas internas (chuleta del cierre)",2026-11-02
+8d940f7eb6dc,descripcion,"Compra de dolares (pata USD): USD 1.221,60 por 50.000","PAHORRO = compra de dolares, dos patas internas (chuleta del cierre)",2026-11-02
+8d940f7eb6dc,motivo_resuelto,ingreso_a_clasificar,"PAHORRO = compra de dolares, dos patas internas (chuleta del cierre)",2026-11-02
+ba011d1652c5,ambito,interno,traspaso automatico entre la caja en pesos y la de dolares: interno,2026-11-02
+ba011d1652c5,en_analisis,0,traspaso automatico entre la caja en pesos y la de dolares: interno,2026-11-02
+ba011d1652c5,descripcion,"Traspaso cuenta combinada: cubre el sobregiro de Santander USD (USD 1,85)",traspaso automatico entre la caja en pesos y la de dolares: interno,2026-11-02
+ba011d1652c5,motivo_resuelto,sin_categoria,traspaso automatico entre la caja en pesos y la de dolares: interno,2026-11-02
+59df454f0c35,ambito,interno,traspaso automatico entre la caja en pesos y la de dolares: interno,2026-11-02
+59df454f0c35,en_analisis,0,traspaso automatico entre la caja en pesos y la de dolares: interno,2026-11-02
+59df454f0c35,descripcion,"Traspaso cuenta combinada desde Santander UYU (77,68)",traspaso automatico entre la caja en pesos y la de dolares: interno,2026-11-02
+59df454f0c35,motivo_resuelto,ingreso_a_clasificar,traspaso automatico entre la caja en pesos y la de dolares: interno,2026-11-02
+e7db8512b143,categoria,Otros,comision de transferencia instantanea a Itau (precedente agosto: Otros personal),2026-11-02
+e7db8512b143,motivo_resuelto,sin_categoria,comision de transferencia instantanea a Itau (precedente agosto: Otros personal),2026-11-02
+164357a13602,categoria,Otros,"comision de la transferencia a Itau USD (USD 1,90 x tc 40,33)",2026-11-02
+164357a13602,motivo_resuelto,sin_categoria,"comision de la transferencia a Itau USD (USD 1,90 x tc 40,33)",2026-11-02
+d6327077d51a,categoria,Servicios,comision EDC de la cuenta corriente de la casa (precedente setiembre: Servicios casa),2026-11-02
+d6327077d51a,motivo_resuelto,sin_categoria,comision EDC de la cuenta corriente de la casa (precedente setiembre: Servicios casa),2026-11-02
+24b2bb407514,categoria,Devoluciones & cashback,extorno de PedidosYa en la Cuenta Casa (precedente setiembre),2026-11-02
+24b2bb407514,motivo_resuelto,ingreso_a_clasificar,extorno de PedidosYa en la Cuenta Casa (precedente setiembre),2026-11-02
+3808d2e1b267,categoria,Devoluciones & cashback,extorno de PedidosYa en la Cuenta Casa (precedente setiembre),2026-11-02
+3808d2e1b267,motivo_resuelto,ingreso_a_clasificar,extorno de PedidosYa en la Cuenta Casa (precedente setiembre),2026-11-02
+48580aa59337,categoria,Devoluciones & cashback,promocion de debito en La Rotiseria (precedente setiembre),2026-11-02
+48580aa59337,motivo_resuelto,ingreso_a_clasificar,promocion de debito en La Rotiseria (precedente setiembre),2026-11-02
+2faa193a91ba,categoria,Devoluciones & cashback,promocion de debito en La Rotiseria (precedente setiembre),2026-11-02
+2faa193a91ba,motivo_resuelto,ingreso_a_clasificar,promocion de debito en La Rotiseria (precedente setiembre),2026-11-02
+e9353532f3dd,categoria,Devoluciones & cashback,"200 de la madre, igual que agosto (Devoluciones & cashback)",2026-11-02
+e9353532f3dd,motivo_resuelto,ingreso_a_clasificar,"200 de la madre, igual que agosto (Devoluciones & cashback)",2026-11-02
+4bd2a056725b,motivo_resuelto,sin_respaldo_estado,fila dada de baja: Pizzeria estimada a mano el 30/9; el estado BBVA la trae con fecha real 5/9 (09b749adfe72),2026-11-02
+f22b0a9309ac,categoria,Servicios,seguro de vida de la BBVA (como Mapfre: seguro de la tarjeta),2026-11-02
+f22b0a9309ac,motivo_resuelto,sin_categoria,seguro de vida de la BBVA (como Mapfre: seguro de la tarjeta),2026-11-02
+452ae715b031,categoria,Servicios,"reintegro de la cuota anual al dar de baja la Mastercard: va a Servicios negativo (regla del cierre). Imputado a octubre para no reabrir setiembre, ya cerrado",2026-11-02
+452ae715b031,mes,2026-10,"reintegro de la cuota anual al dar de baja la Mastercard: va a Servicios negativo (regla del cierre). Imputado a octubre para no reabrir setiembre, ya cerrado",2026-11-02
+452ae715b031,descripcion,"Devolucion del costo anual de la Mastercard (3 x 1.602, tarjeta dada de baja)","reintegro de la cuota anual al dar de baja la Mastercard: va a Servicios negativo (regla del cierre). Imputado a octubre para no reabrir setiembre, ya cerrado",2026-11-02
+452ae715b031,motivo_resuelto,sin_categoria,"reintegro de la cuota anual al dar de baja la Mastercard: va a Servicios negativo (regla del cierre). Imputado a octubre para no reabrir setiembre, ya cerrado",2026-11-02
+38647d7111f4,categoria,Servicios,cuota anual 2/3 de la Mastercard; la devolucion de 4.806 la compensa,2026-11-02
+38647d7111f4,descripcion,Cuota anual Mastercard 2/3 (compensada por la devolucion),cuota anual 2/3 de la Mastercard; la devolucion de 4.806 la compensa,2026-11-02
+38647d7111f4,motivo_resuelto,sin_categoria,cuota anual 2/3 de la Mastercard; la devolucion de 4.806 la compensa,2026-11-02
+9b05ccf5105f,monto,2.05,importe del estado Platinum de octubre (con recargo),2026-11-02
+9b05ccf5105f,monto_uyu,82.68,importe del estado Platinum de octubre (con recargo),2026-11-02
+887958c76273,monto,103.05,importe del estado Platinum de octubre (con recargo 3%),2026-11-02
+887958c76273,monto_uyu,4155.81,importe del estado Platinum de octubre (con recargo 3%),2026-11-02
+6e77a541f119,monto,9.45,"YouTube: el estado cobro 26,78; las hermanas quedan en lo cobrado (13,00 + 4,33) y la parte propia absorbe el recargo (regla del cierre de setiembre)",2026-11-02
+6e77a541f119,monto_uyu,381.12,"YouTube: el estado cobro 26,78; las hermanas quedan en lo cobrado (13,00 + 4,33) y la parte propia absorbe el recargo (regla del cierre de setiembre)",2026-11-02

@@ -1,4 +1,4 @@
-﻿fecha_corte,cuenta,moneda,saldo_calculado,saldo_real,diferencia,comentario
+fecha_corte,cuenta,moneda,saldo_calculado,saldo_real,diferencia,comentario
 2026-07-12,BBVA Crédito,UYU,204.51,204.51,0.00,deuda del período (Mapfre); nada impago
 2026-07-12,BBVA Crédito (deuda),UYU,,204.51,,"nada impago; único movimiento del período: seguro Mapfre 204,51 (BBVA no manda avisos — entra con el estado de cuenta en F3)"
 2026-07-12,BBVA USD,USD,692.93,692.93,0.00,"incluye 200 USD de amigos (deuda con ellos); detalle original: 200 USD son de amigos (sobró de un viaje) → propios 492,93; los 200 son deuda con amigos"
@@ -57,3 +57,19 @@
 2026-09-30,Santander Platinum USD,USD,339.90,339.90,0.00,= total USD del estado cierre 28/9; sin consumos USD 29-30/9: concilio exacto
 2026-09-30,Santander USD,USD,858.54,858.54,0.00,"extracto 09-26/caja de ahorro USD.csv, saldo al 30/9: concilio exacto"
 2026-09-30,Santander UYU,UYU,20416.09,20416.09,0.00,"extracto 09-26/caja de ahorro $.csv, saldo al 30/9: concilio exacto"
+2026-10-31,BBVA Crédito,UYU,165.25,,,SIN saldo real reportado
+2026-10-31,BBVA USD,USD,202.93,,,SIN saldo real reportado
+2026-10-31,Cuenta Casa,UYU,298.79,298.79,0.00,extracto cuenta_casa_agosto.csv: concilio exacto contra la semilla del 12/7
+2026-10-31,Deudas,UYU,6081.34,,,SIN saldo real reportado
+2026-10-31,Deudas USD,USD,1164.42,,,SIN saldo real reportado
+2026-10-31,Efectivo,UYU,0.00,0.00,0.00,
+2026-10-31,Efectivo USD,USD,30.00,30.00,0.00,
+2026-10-31,Itaú Infinite,UYU,5650.64,5650.64,0.00,"tarjeta de credito nueva (5023), primer consumo 16/10"
+2026-10-31,Itaú Infinite USD,USD,353.53,353.53,0.00,lado USD de la Infinite (mismo criterio que Santander Platinum USD)
+2026-10-31,Itaú USD,USD,3489.97,3489.97,0.00,idem Itaú UYU: no existia al 31/8; primer movimiento USD 100 el 11/10 desde Santander USD
+2026-10-31,Itaú UYU,UYU,285611.36,285611.36,0.00,cuenta abierta en oct-2026: al 31/8 no existia. Semilla 0 para que conciliar_saldos la siga desde el primer movimiento (fondeo 17/10 desde Santander UYU)
+2026-10-31,Santander Mastercard,UYU,-3204.00,-3204.00,0.00,"= suma de las 9 lineas de agosto (saldo anterior 8.401,19 pagado el 14/8). Concilio exacto. Las lineas de set (cuota anual 1.602 + IVA 352,44 + seguro 39,65) quedan en setiembre"
+2026-10-31,Santander Platinum,UYU,20590.09,20590.09,0.00,"= 45.516,76 del estado (autovalidado: 22 lineas suman exacto) + Dilema 4.145,97 (30/8) + Chez 1.440,43 (31/8). Contra la semilla del 12/7 el ledger daba 5.482,14 menos, TODO en el tramo 12/7-27/7 (la ventana 28/7-31/8 cuadra al peso): la semilla del 12/7 era lectura manual marcada DISCREPANCIA. Re-sembrado con OK de Joaco 15/9"
+2026-10-31,Santander Platinum USD,USD,148.32,148.32,0.00,"= total USD del estado; agosto suma exacto 147,33. Contra la semilla del 12/7 sobraban 131,80, tambien del tramo pre-27/7. Re-sembrado con OK de Joaco 15/9"
+2026-10-31,Santander USD,USD,-0.05,-0.05,0.00,extracto caja_ahorro_usd_agosto.csv: concilio exacto
+2026-10-31,Santander UYU,UYU,-0.00,0.00,0.00,extracto caja_ahorro_$_agosto.csv: concilio exacto

@@ -15,3 +15,4 @@ denylist_subject,tarjeta rechazada,idem rechazo
 denylist_subject,inicio de sesi,alertas de login de Itau (varias por semana) - no son transacciones
 nota_fase3,bbvanetnotificacionesp@grupobbva.com.uy,estado de cuenta BBVA (PDF adjunto) - Fase 3: agregar como sender + guardar adjunto cuando se armen los extractores de PDF
 nota_fase3,Santander Mastercard,estado de cuenta MC - Fase 3 igual que BBVA
+sender_estado,info-mail@itau.com.uy,"estado de cuenta Visa Itau (credito Infinite 5023) - PDF adjunto 0408565.pdf, asunto Envio de estado de cuenta Visa Itau; primero llego el 29/10/2026. Antes de esa fecha Itau solo avisaba que estaba en Itau Link"

@@ -4889,6 +4889,7 @@ e63f8ed77469,2026-09-03,2026-09,ingreso,31000.00,UYU,31000.00,Cuenta Casa,,Otros
 48750777cd65,2026-09-04,2026-09,gasto,1602.00,UYU,1602.00,Santander Mastercard,,Servicios,,CUOTA ANUAL           01 03,CUOTA ANUAL           01 03,casa,estado_cuenta,pendiente,1,estado:0cd6a0691be08a6a
 99cc060dc01b,2026-09-04,2026-09,gasto,39.65,UYU,39.65,Santander Mastercard,,Servicios,,SEGURO SALDO DEUDOR,SEGURO SALDO DEUDOR,casa,estado_cuenta,confirmado,1,estado:c2a0122995d45e08
 c59dd92d42b6,2026-09-04,2026-09,gasto,352.44,UYU,352.44,Santander Mastercard,,Servicios,,I.V.A. 22% cuota anual Mastercard,"IVA 22% sobre la cuota anual de 1.602 (estado del 4/9). Linea que conciliar_estado saltea: cargada a mano, arreglar el extractor",casa,manual,confirmado,1,mc-iva-cuota-anual-20260904
+09b749adfe72,2026-09-05,2026-09,gasto,1475.48,UYU,1475.48,BBVA Crédito,,Comer afuera / Delivery,,PIZZERIA MAR ABIERTO,PIZZERIA MAR ABIERTO,personal,estado_cuenta,confirmado,1,estado:7dacf9f0301655b6
 5e809cf2ce1a,2026-09-05,2026-09,gasto,491.80,UYU,491.80,Cuenta Casa,,Auto,,MONTEVIDEO/MERPAGO*EONE VIS3,"Carga del auto (EONE): retencion, se devuelve la diferencia",casa,mail,confirmado,1,1a0746a1f9ddfbd7
 6c41e9737437,2026-09-05,2026-09,gasto,491.80,UYU,491.80,Cuenta Casa,,Auto,,MONTEVIDEO/MERPAGO*EONE VIS3,"Carga del auto (EONE): retencion, se devuelve la diferencia",casa,mail,confirmado,1,1a0746b533e1d848
 898a70a914af,2026-09-05,2026-09,gasto,84.00,UYU,84.00,Cuenta Casa,,Super,,SOLYMAR/MINI SHOP CAR ONE VIS3,SOLYMAR/MINI SHOP CAR ONE,casa,mail,confirmado,1,1a0747d5e9c9cced
@@ -4912,7 +4913,7 @@ f05d0face4bc,2026-09-06,2026-09,gasto,100.00,USD,4033.00,Santander USD,,Auto,,,C
 8f860c4b875a,2026-09-07,2026-09,ingreso,5.50,UYU,5.50,Cuenta Casa,,Devoluciones & cashback,,"EXTORNO COMPRA CON VISA DEBITO DEV,DLO.PEDIDOSYA MARKET, FEC","EXTORNO COMPRA CON VISA DEBITO DEV,DLO.PEDIDOSYA MARKET, FECHA : 20260904, TARJETA:4303070",casa,estado_cuenta,pendiente,1,"estado:Cuenta Casa:2026-09-07:5.50:EXTORNO COMPRA CON VISA DEBITO DEV,DLO.P"
 b4a5ddcc0915,2026-09-07,2026-09,gasto,45.00,UYU,45.00,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,1a07dec772a9cb5a
 b93cd028fdb2,2026-09-07,2026-09,transferencia,13257.50,UYU,13257.50,Cuenta Casa,Santander Mastercard,,,PAGO ELECTRONICO TARJETA CREDITO,"Pago de la Mastercard 13.257,50 (estado del 4/9) desde la Cuenta Casa",interno,estado_cuenta,pendiente,0,estado:Cuenta Casa:2026-09-07:-13257.50:PAGO ELECTRONICO TARJETA CREDITO
-d9accf219f70,2026-09-07,2026-09,gasto,204.51,UYU,204.51,BBVA Crédito,,Servicios,,Mapfre seguro (informado por Joaco 2/10; el estado BBVA llega en octubre),MAPFRE,personal,manual,confirmado,1,gasto-2026-09-07-204.51-mapfre
+d9accf219f70,2026-09-07,2026-09,gasto,204.51,UYU,204.51,BBVA Crédito,,Servicios,,Mapfre seguro (informado por Joaco 2/10; el estado BBVA llega en octubre),MAPFRE,personal,manual,conciliado,1,gasto-2026-09-07-204.51-mapfre
 10ac399077ad,2026-09-08,2026-09,gasto,-104.09,UYU,-104.09,Cuenta Casa,,Auto,,"EXTORNO COMPRA CON VISA DEBITO DEV,MERPAGO.EONE, FECHA : 202","EXTORNO COMPRA CON VISA DEBITO DEV,MERPAGO.EONE, FECHA : 20260907, TARJETA:430307033130826",casa,estado_cuenta,pendiente,1,"estado:Cuenta Casa:2026-09-08:104.09:EXTORNO COMPRA CON VISA DEBITO DEV,MERPA"
 18f03659f68a,2026-09-08,2026-09,gasto,-491.80,UYU,-491.80,Cuenta Casa,,Auto,,"EXTORNO COMPRA CON VISA DEBITO DEV,MERPAGO.EONE, FECHA : 202","EXTORNO COMPRA CON VISA DEBITO DEV,MERPAGO.EONE, FECHA : 20260907, TARJETA:430307033130826",casa,estado_cuenta,pendiente,1,"estado:Cuenta Casa:2026-09-08:491.80:EXTORNO COMPRA CON VISA DEBITO DEV,MERPA"
 8927bab8a642,2026-09-08,2026-09,gasto,-491.80,UYU,-491.80,Cuenta Casa,,Auto,,"EXTORNO COMPRA CON VISA DEBITO DEV,MERPAGO.EONE, FECHA : 202","EXTORNO COMPRA CON VISA DEBITO DEV,MERPAGO.EONE, FECHA : 20260907, TARJETA:430307033130826",casa,estado_cuenta,pendiente,1,"estado:Cuenta Casa:2026-09-08:491.80:EXTORNO COMPRA CON VISA DEBITO DEV,MERPA:2"
@@ -4926,6 +4927,7 @@ d04efb87ef02,2026-09-10,2026-09,ingreso,31.55,UYU,31.55,Cuenta Casa,,Devolucione
 d3f0defb9858,2026-09-10,2026-09,gasto,9.13,UYU,9.13,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa Extra VIS3,DLO*PedidosYa Extra,casa,mail,confirmado,1,1a08d965735f59f2
 19c6527d68e1,2026-09-11,2026-09,gasto,1644.70,UYU,1644.70,Cuenta Casa,,Compras personales,,MONTEVIDEO/MERPAGO*MERCADOLIBRE VIS3,MERPAGO*MERCADOLIBRE,casa,mail,confirmado,1,1a09153993bc8b01
 1ef002dd54bc,2026-09-11,2026-09,gasto,2556.47,UYU,2556.47,Santander UYU,,Salud,,MONTEVIDEO/FARMASHOP VISA VIS3,FARMASHOP VISA,personal,mail,confirmado,1,1a0907c107a69b20
+452ae715b031,2026-09-11,2026-10,gasto,-4806.00,UYU,-4806.00,Santander Mastercard,,Servicios,,DEVOLUCION COSTO ANUAL,"Devolucion del costo anual de la Mastercard (3 x 1.602, tarjeta dada de baja)",casa,estado_cuenta,pendiente,1,estado:9145500a266f6edd
 8af9190813e8,2026-09-11,2026-09,gasto,470.00,UYU,470.00,Santander UYU,,Regalos,,Fri,regalo Dan Joaco,personal,mail,confirmado,1,1a091d9c89212289
 b76ba60be4b0,2026-09-11,2026-09,gasto,74.75,UYU,74.75,Santander UYU,,Super,,"COMPRA CON TARJETA DEBITO DISCO N, MONTEVIDEO TARJ: ########","COMPRA CON TARJETA DEBITO DISCO N, MONTEVIDEO TARJ: ############9071",personal,estado_cuenta,pendiente,1,"estado:Santander UYU:2026-09-11:-74.75:COMPRA CON TARJETA DEBITO DISCO N, MONTE"
 d2a692d8c831,2026-09-11,2026-09,gasto,2900.59,UYU,2900.59,Cuenta Casa,,Servicios,,INTERNET/Proyecto PAS,UTE casa (via Proyecto PAS),casa,mail,confirmado,1,1a0903857c23fb62
@@ -5008,6 +5010,7 @@ f0dbadc2b015,2026-09-25,2026-09,gasto,45.00,UYU,45.00,Cuenta Casa,,Comer afuera 
 b5b06ca4a058,2026-09-26,2026-09,gasto,397.38,UYU,397.38,Cuenta Casa,,Super,,MONTEVIDEO/MACROMERCADO VIS3,MACROMERCADO,casa,mail,confirmado,1,1a0de5f442ca5623
 d02be84fbbdb,2026-09-26,2026-09,gasto,222.29,UYU,222.29,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/QUESERIA LOS HERMANOSVIS3,QUESERIA LOS HERMANOS,casa,mail,confirmado,1,1a0de57dc277b714
 dc617541d8c2,2026-09-26,2026-09,gasto,12.81,UYU,12.81,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa Extra VIS3,DLO*PedidosYa Extra,casa,mail,confirmado,1,1a0dfdcfd357db61
+eae2c3ce2218,2026-09-26,2026-09,gasto,8.00,USD,322.64,Santander Platinum,,Servicios,,Zurich Santander,"Zurich Santander (seguro de la tarjeta), del estado de octubre",personal,manual,confirmado,1,gasto-2026-09-26-8.00-zurich-santander-seguro-de-l
 30f202d869f8,2026-09-27,2026-09,gasto,1012.33,UYU,1012.33,Deudas,,Comer afuera / Delivery,General,,Asado,split,splitwise,confirmado,1,sw:x4c12c7a05d
 6d61cce2e43b,2026-09-28,2026-09,gasto,27.17,UYU,27.17,Santander Platinum,,Servicios,,SEGURO SALDO DEUDOR,SEGURO SALDO DEUDOR,personal,estado_cuenta,confirmado,1,estado:b8873d17c2eaf75f
 b50168718ade,2026-09-28,2026-09,transferencia,1035.97,UYU,1035.97,A cobrar,Santander Platinum,,,DESC DILEMA,"Descuento del Dilema: cancela lo que quedaba en A cobrar (1.035,97 de los 1.111)",interno,estado_cuenta,pendiente,0,estado:6b1a21e5630066e6
@@ -5019,7 +5022,6 @@ dcdcdf8d3389,2026-09-28,2026-09,gasto,316.25,UYU,316.25,Santander UYU,,Comer afu
 4f06d4b8fd45,2026-09-29,2026-09,gasto,199.00,UYU,199.00,Santander UYU,,Suscripciones,,MONTEVIDEO/MERPAGO*MELI VIS3,MERPAGO*MELI,personal,mail,confirmado,1,1a0ee6154ae53281
 452a7ca6acb6,2026-09-30,2026-09,gasto,640.00,UYU,640.00,Lu tarjeta,,Comer afuera / Delivery,,Cookies,Cookies -- Lu pago para ambos (planilla fila 6),casa,carga_manual,confirmado,1,carga:452a7ca6acb68688
 4918561b1ea5,2026-09-30,2026-09,gasto,240.99,UYU,240.99,Santander Platinum,,Transporte,,DLOUBERRIDES,DLOUBERRIDES,personal,mail,confirmado,1,1a0f3156ccb689e8
-4bd2a056725b,2026-09-30,2026-09,gasto,1475.48,UYU,1475.48,BBVA Crédito,,Comer afuera / Delivery,,Pizzeria (informado por Joaco 2/10; la fecha se confirma con el estado BBVA),PIZZERIA,personal,manual,confirmado,1,gasto-2026-09-30-1475.48-pizzeria
 899993403f51,2026-09-30,2026-09,gasto,225.97,UYU,225.97,Santander Platinum,,Transporte,,DLOUBERRIDES,DLOUBERRIDES,personal,mail,confirmado,1,1a0f2d1e414b64f5
 a0c1a1ace2c5,2026-09-30,2026-09,gasto,1128.00,UYU,1128.00,Lu tarjeta,,Salud,,Farmacia,Farmacia -- Lu pago para ambos (planilla fila 4),casa,carga_manual,confirmado,1,carga:a0c1a1ace2c58c7a
 a139a1e740a2,2026-09-30,2026-09,gasto,311.31,UYU,311.31,Santander UYU,,Super,,MONTEVIDEO/FROG VIS3,FROG,personal,mail,confirmado,1,1a0f314ae00760ad
@@ -5027,21 +5029,30 @@ a439df09d18e,2026-09-30,2026-09,gasto,99.77,UYU,99.77,Cuenta Casa,,Servicios,,CO
 b1ff6aa75974,2026-09-30,2026-09,gasto,3139.00,UYU,3139.00,Lu tarjeta,,Casa & hogar,,Temu,Temu -- Lu pago para ambos (planilla fila 3),casa,carga_manual,confirmado,1,carga:b1ff6aa75974500b
 b76b1bdcfbcc,2026-09-30,2026-09,gasto,543.00,UYU,543.00,Lu tarjeta,,Comer afuera / Delivery,,Panaderia,Panaderia -- Lu pago para ambos (planilla fila 2),casa,carga_manual,confirmado,1,carga:b76b1bdcfbccee41
 dd7035b036f2,2026-09-30,2026-09,gasto,4600.00,UYU,4600.00,Lu tarjeta,,Salidas & ocio,,Cruzando el charco,Cruzando el charco -- Lu pago para ambos (planilla fila 5),casa,carga_manual,confirmado,1,carga:dd7035b036f2c3bf
-9b05ccf5105f,2026-10-01,2026-10,gasto,1.99,USD,80.26,Santander Platinum,,Suscripciones,,Google Play – 100 GB (Google One),GOOGLE,personal,mail,confirmado,1,1a0f7ce9ae951d0e
-012107dfad6c,2026-10-02,2026-10,transferencia,923.60,UYU,923.60,Santander UYU,Deudas,,,,"INTERNET/Proyecto PAS 02/10: parte ajena -> Deudas (Joaco 12/10: Tigo, mitad exacta a Agus)",interno,manual,confirmado,0,5767c11d16ab-split
+43c956c91bc9,2026-10-01,2026-10,ingreso,146396.00,UYU,146396.00,Santander UYU,,Sueldo,,SUELDOS 644546TT RECIBIDA /DELIVERY HERO URUGUAY MARKET,SUELDOS 644546TT RECIBIDA /DELIVERY HERO URUGUAY MARKET,personal,estado_cuenta,pendiente,1,estado:Santander UYU:2026-10-01:146396.00:SUELDOS 644546TT RECIBIDA /DELIVERY HERO
+86c69c1ee160,2026-10-01,2026-10,gasto,29.51,UYU,29.51,Santander UYU,,Super,,"COMPRA CON TARJETA DEBITO DISCO N, MONTEVIDEO TARJ: ########","COMPRA CON TARJETA DEBITO DISCO N, MONTEVIDEO TARJ: ############9071",personal,estado_cuenta,pendiente,1,"estado:Santander UYU:2026-10-01:-29.51:COMPRA CON TARJETA DEBITO DISCO N, MONTE"
+9b05ccf5105f,2026-10-01,2026-10,gasto,2.05,USD,82.68,Santander Platinum,,Suscripciones,,Google Play – 100 GB (Google One),GOOGLE,personal,mail,confirmado,1,1a0f7ce9ae951d0e
+f22b0a9309ac,2026-10-01,2026-10,gasto,1.23,UYU,1.23,BBVA Crédito,,Servicios,,"SEGURO VIDA 2,5X1000","SEGURO VIDA 2,5X1000",personal,estado_cuenta,pendiente,1,estado:537e2fa0d181588e
+012107dfad6c,2026-10-02,2026-10,transferencia,939.00,UYU,939.00,Santander UYU,Deudas,,,,"INTERNET/Proyecto PAS 02/10: parte ajena -> Deudas (Joaco 12/10: Tigo, mitad exacta a Agus)",interno,manual,confirmado,0,5767c11d16ab-split
 16995b783c2c,2026-10-02,2026-10,gasto,247.87,UYU,247.87,Cuenta Casa,,Super,,MONTEVIDEO/CARNICERIA MODELO VIS3,CARNICERIA MODELO,casa,mail,confirmado,1,1a0fe78c4a38fa16
+31f445a12a64,2026-10-02,2026-10,ingreso,30000.00,UYU,30000.00,Cuenta Casa,,Otros ingresos,,TRANSFERENCIA RECIBIDA 934047TT RECIBIDA /DECAUX TAROCO LUCI,Aporte de Lu 30.000 (2/10) - cuenta por la planilla Carga manual,casa,estado_cuenta,pendiente,0,estado:Cuenta Casa:2026-10-02:30000.00:TRANSFERENCIA RECIBIDA 934047TT RECIBIDA
 380c9916014c,2026-10-02,2026-10,gasto,1200.00,UYU,1200.00,Cuenta Casa,,Salidas & ocio,,Nico Sosa,entradas Joaco,casa,mail,confirmado,1,1a0fe8b01f142290
+38647d7111f4,2026-10-02,2026-10,gasto,1602.00,UYU,1602.00,Santander Mastercard,,Servicios,,CUOTA ANUAL           02 03,Cuota anual Mastercard 2/3 (compensada por la devolucion),casa,estado_cuenta,pendiente,1,estado:3644535cb63e667e
 407b221f2157,2026-10-02,2026-10,transferencia,9084.01,UYU,9084.01,Santander UYU,Santander Platinum,,,INTERNET/Proyecto PAS,Pago estado Platinum setiembre (Proyecto PAS),interno,mail,confirmado,0,1a0fcc56a3bc070b
 497bf21a0c59,2026-10-02,2026-10,gasto,5560.00,UYU,5560.00,Santander UYU,,Club,,Club (via Lu),bigua,personal,mail,confirmado,1,1a0fdc68423895cc
-5767c11d16ab,2026-10-02,2026-10,gasto,923.61,UYU,923.61,Santander UYU,,Servicios,,INTERNET/Proyecto PAS,Tigo celular (via Proyecto PAS): mi parte; la de Agus va a Deudas,personal,mail,confirmado,1,1a0fcc617aed1214
+5767c11d16ab,2026-10-02,2026-10,gasto,908.21,UYU,908.21,Santander UYU,,Servicios,,INTERNET/Proyecto PAS,Tigo celular (via Proyecto PAS): mi parte; la de Agus va a Deudas,personal,mail,confirmado,1,1a0fcc617aed1214
+611a85c722e4,2026-10-02,2026-10,gasto,50000.00,UYU,50000.00,Santander UYU,,,,DEBITO OPERACION EN BANCA DIGITAL PAHORRO,"Compra de dolares (pata UYU): 50.000 -> USD 1.221,60",interno,estado_cuenta,pendiente,0,estado:Santander UYU:2026-10-02:-50000.00:DEBITO OPERACION EN BANCA DIGITAL PAHORR
 7b03d35f075e,2026-10-02,2026-10,gasto,8100.00,UYU,8100.00,Santander UYU,,Salud,,Silvana Psico,Setiembre Joaco,personal,mail,confirmado,1,1a0fd18829492be0
 8a3f25ac6784,2026-10-02,2026-09,gasto,28874.00,UYU,28874.00,Santander UYU,,Educación,,INTERNET/Proyecto PAS,ORT cuota 19/24 (via Proyecto PAS),personal,mail,confirmado,1,1a0fcc4f951f433b
+8d940f7eb6dc,2026-10-02,2026-10,ingreso,1221.60,USD,49267.13,Santander USD,,,,CREDITO OPERACION EN BANCA DIGITAL PAHORRO/GUERRA ESMITE JOA,"Compra de dolares (pata USD): USD 1.221,60 por 50.000",interno,estado_cuenta,pendiente,0,estado:Santander USD:2026-10-02:1221.60:CREDITO OPERACION EN BANCA DIGITAL PAHOR
 aca1ad4a0f81,2026-10-02,2026-10,gasto,100.00,USD,4033.00,Santander USD,,Auto,,Lu,cuota 3 auto,personal,mail,confirmado,1,1a0fdfcc57956896
 b7101ea3950f,2026-10-02,2026-10,gasto,590.00,UYU,590.00,Santander UYU,,Compras personales,,Lucho Royal Barber,barberia joaco,personal,mail,confirmado,1,1a0fd746202805be
 bec74e961f5c,2026-10-02,2026-10,transferencia,34000.00,UYU,34000.00,Santander UYU,Cuenta Casa,,,,Aporte de Joaco a la casa (planilla fila 2),interno,carga_manual,confirmado,0,carga:bec74e961f5cb271
+c308431daa39,2026-10-02,2026-10,gasto,385.00,UYU,385.00,Deudas,,Comer afuera / Delivery,General,,Bautista Merlini,split,splitwise,confirmado,1,sw:x6008455fac
 d0741ccc2104,2026-10-02,2026-10,transferencia,339.90,USD,13708.17,Santander USD,Santander Platinum,,,INTERNET/Proyecto PAS,Pago estado Platinum USD setiembre (Proyecto PAS),interno,mail,confirmado,0,1a0fcc5c5f18275f
 d157a254e156,2026-10-02,2026-10,gasto,276.76,UYU,276.76,Santander UYU,,Super,,MONTEVIDEO/DEVOTO EXPRESS VIS3,DEVOTO EXPRESS,personal,mail,confirmado,1,1a0fd7cbee63eb66
 d4494053ea1c,2026-10-02,2026-10,gasto,557.00,UYU,557.00,Santander Platinum,,Super,,PANADERIA BRAVA,PANADERIA BRAVA,personal,mail,confirmado,1,1a0fe707a8ec355b
+efb689e3e729,2026-10-02,2026-10,gasto,-139.25,UYU,-139.25,Santander Platinum,,Super,,,Descuento Panaderia Brava (del estado de octubre),personal,manual,confirmado,1,gasto-2026-10-02-139.25-descuento-panaderia-brava-de
 f4c08b8106ad,2026-10-02,2026-10,gasto,2284.00,UYU,2284.00,Cuenta Casa,,Vivienda,,INTERNET/Proyecto PAS,IMM (bimestral) via Proyecto PAS,casa,mail,confirmado,1,1a0fd201ea859d73
 5408df126831,2026-10-03,2026-10,gasto,3100.00,UYU,3100.00,Cuenta Casa,,Comer afuera / Delivery,,Brota Viandas,Viandas Joaquin Guerra,casa,mail,confirmado,1,1a103cf24a426af3
 7a3aa01ac9d1,2026-10-03,2026-10,gasto,300.00,UYU,300.00,Cuenta Casa,,Comer afuera / Delivery,,Cantina,,casa,mail,confirmado,1,1a10380d65976aad
@@ -5052,16 +5063,21 @@ f4c08b8106ad,2026-10-02,2026-10,gasto,2284.00,UYU,2284.00,Cuenta Casa,,Vivienda,
 b9e85cab66dd,2026-10-04,2026-10,gasto,140.00,UYU,140.00,Cuenta Casa,,Otros,,MONTEVIDEO/MERPAGO*BANCADEQUINIEVIS3,MERPAGO*BANCADEQUINIE,casa,mail,confirmado,1,1a1090e48cb46856
 c905edb14cd8,2026-10-04,2026-10,gasto,3754.00,UYU,3754.00,Cuenta Casa,,Auto,,Martin Rodriguez Garage,Garage Vazquez Ledesma,casa,mail,confirmado,1,1a10722584cf5a5f
 3887e022103e,2026-10-05,2026-10,gasto,1114.00,UYU,1114.00,Lu tarjeta,,Super,,Farmacia,Farmacia -- Lu pago para ambos (planilla fila 7),casa,carga_manual,confirmado,1,carga:3887e022103ee65c
-887958c76273,2026-10-05,2026-10,gasto,100.00,USD,4033.00,Santander Platinum,,Suscripciones,,Q0RRUWQV26H30SO,Anthropic (suscripcion),personal,mail,confirmado,1,1a10db7e1ee6456f
+887958c76273,2026-10-05,2026-10,gasto,103.05,USD,4155.81,Santander Platinum,,Suscripciones,,Q0RRUWQV26H30SO,Anthropic (suscripcion),personal,mail,confirmado,1,1a10db7e1ee6456f
 c326307e62ff,2026-10-05,2026-10,gasto,1152.00,UYU,1152.00,Lu tarjeta,,Super,,Regalo Tuti,Regalo Tuti -- Lu pago para ambos (planilla fila 8),casa,carga_manual,confirmado,1,carga:c326307e62ff65c1
 c6d0d83f9f2b,2026-10-05,2026-10,gasto,30.00,UYU,30.00,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,1a10b02fdf67e2c3
 d3f664d8ec67,2026-10-05,2026-10,gasto,3848.85,UYU,3848.85,Cuenta Casa,,Regalos,,MONTEVIDEO/LEMON 21 DE SETIEMBREVIS3,Regalo cumple madre de Lu (Lemon 21 de Setiembre),casa,mail,confirmado,1,1a10d4709c92a397
+d71972f49de0,2026-10-05,2026-10,gasto,78.09,UYU,78.09,Cuenta Casa,,Vivienda,,TRANSFERENCIA ENVIADA 574454TT55378726 TRF. PLAZA- GASTOS CO,TRANSFERENCIA ENVIADA 574454TT55378726 TRF. PLAZA- GASTOS COMUNES VL,casa,estado_cuenta,pendiente,1,estado:Cuenta Casa:2026-10-05:-78.09:TRANSFERENCIA ENVIADA 574454TT55378726 T
+e0f489b9a758,2026-10-05,2026-10,ingreso,4658.00,UYU,4658.00,Cuenta Casa,,Otros ingresos,,TRANSF INSTANTANEA RECIBIDA 743394LR:000040580339 DECAUX TAR,"Aporte de Lu 4.658 (5/10, regalo de su madre) - cuenta por la planilla Carga manual",casa,estado_cuenta,pendiente,0,estado:Cuenta Casa:2026-10-05:4658.00:TRANSF INSTANTANEA RECIBIDA 743394LR:000
 fbfa5152d35e,2026-10-05,2026-10,gasto,343.22,UYU,343.22,Santander UYU,,Comer afuera / Delivery,,MONTEVIDEO/LA ROTISERIA V VIS3,LA ROTISERIA V,personal,mail,confirmado,1,1a10cb546a61b49a
 1868270afe0b,2026-10-06,2026-10,gasto,35.00,UYU,35.00,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,1a11430af6e8a911
 b8da5c2156cf,2026-10-06,2026-10,gasto,138.69,UYU,138.69,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,casa,mail,confirmado,1,1a1138362f261442
 0872cdad73b8,2026-10-07,2026-10,gasto,225.97,UYU,225.97,Santander Platinum,,Transporte,,DLOUBERRIDES,DLOUBERRIDES,personal,mail,confirmado,1,1a116dd792298fbe
+24b2bb407514,2026-10-07,2026-10,ingreso,38.10,UYU,38.10,Cuenta Casa,,Devoluciones & cashback,,"EXTORNO COMPRA CON VISA DEBITO DEV,DLO.PEDIDOSYA MARKET, FEC","EXTORNO COMPRA CON VISA DEBITO DEV,DLO.PEDIDOSYA MARKET, FECHA : 20261006, TARJETA:4303070",casa,estado_cuenta,pendiente,1,"estado:Cuenta Casa:2026-10-07:38.10:EXTORNO COMPRA CON VISA DEBITO DEV,DLO.P"
 5cdb134bf8eb,2026-10-07,2026-10,gasto,229.98,UYU,229.98,Santander Platinum,,Transporte,,DLOUBERRIDES,DLOUBERRIDES,personal,mail,confirmado,1,1a1171ad38b51222
+e9353532f3dd,2026-10-07,2026-10,ingreso,200.00,UYU,200.00,Santander UYU,,Devoluciones & cashback,,CREDITO OPERACION EN BANCA DIGITAL T--/ESMITE RODRIGUEZ ALEJ,CREDITO OPERACION EN BANCA DIGITAL T--/ESMITE RODRIGUEZ ALEJANDRA,personal,estado_cuenta,pendiente,1,estado:Santander UYU:2026-10-07:200.00:CREDITO OPERACION EN BANCA DIGITAL T--/E
 45dba1ed3070,2026-10-08,2026-10,gasto,421.43,UYU,421.43,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa Paste CVIS3,DLO*PedidosYa Paste C,casa,mail,confirmado,1,1a11b41d6a871458
+48580aa59337,2026-10-08,2026-10,ingreso,51.22,UYU,51.22,Santander UYU,,Devoluciones & cashback,,PROMOCIONES TARJETAS DE DEBITO DESC LA ROTISERIA,PROMOCIONES TARJETAS DE DEBITO DESC LA ROTISERIA,personal,estado_cuenta,pendiente,1,estado:Santander UYU:2026-10-08:51.22:PROMOCIONES TARJETAS DE DEBITO DESC LA R
 672a671b527d,2026-10-08,2026-10,gasto,3794.00,UYU,3794.00,Santander Platinum,,Auto,,BANCO DE SEGURO,BANCO DE SEGURO,casa,mail,confirmado,1,1a11a1debf5c00e3
 fe21a14b199c,2026-10-08,2026-10,gasto,40.00,UYU,40.00,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,1a11b69b6cb43d69
 6fbfcab79344,2026-10-09,2026-10,gasto,60.98,UYU,60.98,Santander UYU,,Super,,MONTEVIDEO/DEVOTO EXPRESS VIS3,DEVOTO EXPRESS,personal,mail,confirmado,1,1a122ce9c4d102cb
@@ -5070,9 +5086,11 @@ e8216076763e,2026-10-11,2026-10,transferencia,100.00,USD,4033.00,Santander USD,I
 16cf9366e2b4,2026-10-12,2026-10,gasto,860.00,UYU,860.00,Santander UYU,,Comer afuera / Delivery,,Fefo Bentancur,hamburguesas oso,personal,mail,confirmado,1,1a1309d2c46b3400
 6bff0d3a6945,2026-10-12,2026-10,gasto,40.00,UYU,40.00,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,1a13177a7edcac49
 fdb4a491e9d2,2026-10-12,2026-10,gasto,285.55,UYU,285.55,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,casa,mail,confirmado,1,1a130bfa5834a339
+2faa193a91ba,2026-10-13,2026-10,ingreso,55.58,UYU,55.58,Santander UYU,,Devoluciones & cashback,,PROMOCIONES TARJETAS DE DEBITO DESC LA ROTISERIA,PROMOCIONES TARJETAS DE DEBITO DESC LA ROTISERIA,personal,estado_cuenta,pendiente,1,estado:Santander UYU:2026-10-13:55.58:PROMOCIONES TARJETAS DE DEBITO DESC LA R
 41f0b470576c,2026-10-13,2026-10,gasto,343.28,UYU,343.28,Santander UYU,,Suscripciones,,MONTEVIDEO/DLO*PedidosYa Plus VIS3,DLO*PedidosYa Plus,personal,mail,confirmado,1,1a135413a46c828c
 113c746ba929,2026-10-14,2026-10,gasto,25.00,UYU,25.00,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,1a13ba47a8654fac
 35463ceb21fd,2026-10-14,2026-10,gasto,69.84,UYU,69.84,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,casa,mail,confirmado,1,1a13b8a92f907d5e
+3808d2e1b267,2026-10-14,2026-10,ingreso,4.80,UYU,4.80,Cuenta Casa,,Devoluciones & cashback,,"EXTORNO COMPRA CON VISA DEBITO DEV,DLO.PEDIDOSYA MARKET, FEC","EXTORNO COMPRA CON VISA DEBITO DEV,DLO.PEDIDOSYA MARKET, FECHA : 20261013, TARJETA:4303070",casa,estado_cuenta,pendiente,1,"estado:Cuenta Casa:2026-10-14:4.80:EXTORNO COMPRA CON VISA DEBITO DEV,DLO.P"
 56410577ae19,2026-10-14,2026-10,gasto,2316.39,UYU,2316.39,Cuenta Casa,,Auto,,INTERNET/Proyecto PAS,UTE carga del auto (via Proyecto PAS),casa,mail,confirmado,1,1a13c55372cf25c7
 9d4a52996a95,2026-10-14,2026-10,gasto,2136.40,UYU,2136.40,Santander UYU,,Salud,,9829089080/MEDICINA PERSONALIZADVIS3,MEDICINA PERSONALIZAD,personal,mail,confirmado,1,1a13c3d09b49ceef
 ea8d19da6054,2026-10-14,2026-10,gasto,1435.31,UYU,1435.31,Santander Platinum,,Super,,DEVOTO EXPRESS,DEVOTO EXPRESS,personal,mail,confirmado,1,1a13cf7c7d6e7f76
@@ -5081,6 +5099,8 @@ ea8d19da6054,2026-10-14,2026-10,gasto,1435.31,UYU,1435.31,Santander Platinum,,Su
 424e548efb75,2026-10-15,2026-10,gasto,2912.42,UYU,2912.42,Cuenta Casa,,Servicios,,INTERNET/Proyecto PAS,UTE casa (via Proyecto PAS),casa,mail,confirmado,1,1a1418da82c8c0f0
 5f5e69f0bb74,2026-10-15,2026-10,gasto,304.83,UYU,304.83,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,casa,mail,confirmado,1,1a13f431ae924d90
 9f09292a2913,2026-10-15,2026-10,gasto,35.00,UYU,35.00,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,1a13f58a6b4192ce
+c73da47c0138,2026-10-15,2026-10,gasto,90.00,UYU,90.00,Deudas,,Comer afuera / Delivery,General,,Coca,split,splitwise,confirmado,1,sw:x0ea325bbfd
+f93f4edb70b2,2026-10-15,2026-10,gasto,606.67,UYU,606.67,Deudas,,Comer afuera / Delivery,General,,Provaca,split,splitwise,confirmado,1,sw:xdb6af556c5
 1d68a1716449,2026-10-16,2026-10,gasto,3451.00,UYU,3451.00,Itaú Infinite,,Compras personales,,EBN*SHEIN MONTE,Ropa para Lu (SHEIN),casa,mail,confirmado,1,1a14648700f35aaf
 bd024f17de2c,2026-10-16,2026-10,gasto,925.30,UYU,925.30,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/UMO MOSTAZA HAMBURGUEVIS3,UMO MOSTAZA HAMBURGUE,casa,mail,confirmado,1,1a14778136a42647
 7a9dd74a332c,2026-10-17,2026-10,gasto,1367.21,UYU,1367.21,Cuenta Casa,,Casa & hogar,,MONTEVIDEO/MERPAGO*ENIGMAGAMES VIS3,Juego de mesa (Enigma Games),casa,mail,confirmado,1,1a14bbc02beb81e0
@@ -5093,10 +5113,16 @@ ee8949723724,2026-10-17,2026-10,transferencia,22000.00,UYU,22000.00,Santander UY
 5cb478d64490,2026-10-18,2026-10,transferencia,1788.00,UYU,1788.00,Santander UYU,Itaú UYU,,,Joaco Itau Pesos,cambio a itau,interno,mail,confirmado,0,1a14effd0de7f6d2
 d92956173f2a,2026-10-18,2026-10,gasto,174.10,UYU,174.10,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,casa,mail,confirmado,1,1a1514c7fd939861
 f0f02f323942,2026-10-18,2026-10,gasto,35.00,UYU,35.00,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,1a15173b96c0cb87
+164357a13602,2026-10-19,2026-10,gasto,1.90,USD,76.63,Santander USD,,Otros,,TRANSFERENCIA ENVIADA 648270TT55527306 TRF. PLAZA- JOACO ITA,TRANSFERENCIA ENVIADA 648270TT55527306 TRF. PLAZA- JOACO ITAU USD,personal,estado_cuenta,pendiente,1,estado:Santander USD:2026-10-19:-1.90:TRANSFERENCIA ENVIADA 648270TT55527306 T
+4c5228070004,2026-10-19,2026-10,gasto,388.86,UYU,388.86,Cuenta Casa,,Super,,"COMPRA CON TARJETA DEBITO DISCO N, MONTEVIDEO TARJ: ########","COMPRA CON TARJETA DEBITO DISCO N, MONTEVIDEO TARJ: ############8261",casa,estado_cuenta,pendiente,1,"estado:Cuenta Casa:2026-10-19:-388.86:COMPRA CON TARJETA DEBITO DISCO N, MONTE"
 599d7d0425de,2026-10-19,2026-10,gasto,300.00,UYU,300.00,Itaú UYU,,Salidas & ocio,,SISTARBANC,Entrada partido basket Bigua (via SISTARBANC),personal,mail,confirmado,1,1a1565513e95e3d6
+59df454f0c35,2026-10-19,2026-10,ingreso,1.85,USD,74.61,Santander USD,,,,ABONO POR TRASPASO CTA.COMBINADA TRASPASO CON LA CUENTA N. 0,"Traspaso cuenta combinada desde Santander UYU (77,68)",interno,estado_cuenta,pendiente,0,estado:Santander USD:2026-10-19:1.85:ABONO POR TRASPASO CTA.COMBINADA TRASPAS
 91f14d1ca6a3,2026-10-19,2026-10,gasto,148.20,UYU,148.20,Itaú UYU,,Comer afuera / Delivery,,LA ROTISERIA V VIS3,LA ROTISERIA V,personal,mail,confirmado,1,1a154cbc9765c058
 abf3e303e8e8,2026-10-19,2026-10,gasto,241.92,UYU,241.92,Cuenta Casa,,Super,,MONTEVIDEO/DEVOTO EXPRESS VIS3,DEVOTO EXPRESS,casa,mail,confirmado,1,1a156ad0e79a84a0
+ba011d1652c5,2026-10-19,2026-10,gasto,77.68,UYU,77.68,Santander UYU,,,,CARGO POR TRASPASO CTA.COMBINADA TRASPASO CON LA CUENTA N. 0,"Traspaso cuenta combinada: cubre el sobregiro de Santander USD (USD 1,85)",interno,estado_cuenta,pendiente,0,estado:Santander UYU:2026-10-19:-77.68:CARGO POR TRASPASO CTA.COMBINADA TRASPAS
+e7db8512b143,2026-10-19,2026-10,gasto,77.62,UYU,77.62,Santander UYU,,Otros,,COMISION TRANSF INSTANTANEA 546707LE NRR:211427082 JOACO ITA,COMISION TRANSF INSTANTANEA 546707LE NRR:211427082 JOACO ITAU PESOS,personal,estado_cuenta,pendiente,1,estado:Santander UYU:2026-10-19:-77.62:COMISION TRANSF INSTANTANEA 546707LE NRR
 e8ec79f5ce98,2026-10-19,2026-10,gasto,949.00,UYU,949.00,Santander Platinum,,Compras personales,,MERCADO PAGO,Botella de agua gym (Mercado Pago),personal,mail,confirmado,1,1a156b4f2ba7daae
+f68d41dd3ca5,2026-10-19,2026-10,gasto,494.16,UYU,494.16,Cuenta Casa,,Super,,"COMPRA CON TARJETA DEBITO DISCO N, MONTEVIDEO TARJ: ########","COMPRA CON TARJETA DEBITO DISCO N, MONTEVIDEO TARJ: ############8261",casa,estado_cuenta,pendiente,1,"estado:Cuenta Casa:2026-10-19:-494.16:COMPRA CON TARJETA DEBITO DISCO N, MONTE"
 22b143f7b316,2026-10-20,2026-10,gasto,86.34,USD,3482.09,Itaú Infinite,,Viajes,,PAYPAL *MARIAVIRGIN MARIA40293,PAYPAL *MARIAVIRGIN MARIA40293,personal,mail,confirmado,1,1a1597599411d4cf
 4c8437f3d50d,2026-10-20,2026-10,gasto,1.00,USD,40.33,Itaú Infinite,,Viajes,,PAYPAL 40293,PAYPAL 40293,personal,mail,confirmado,1,1a15975974c9c597
 9c01728944e8,2026-10-20,2026-10,gasto,1368.20,UYU,1368.20,Cuenta Casa,,Super,,MONTEVIDEO/ROSA DI IACOVO (AFU) VIS3,ROSA DI IACOVO (AFU),casa,mail,confirmado,1,1a159d0ed9e8d930
@@ -5117,7 +5143,7 @@ f213c5852eec,2026-10-21,2026-10,gasto,5.92,USD,238.75,Itaú USD,,Viajes,,BUQUEBU
 08801f4b034e,2026-10-22,2026-10,gasto,19.16,USD,772.72,Itaú Infinite,,Viajes,,CESPEDES LIBROS CAP.F,CESPEDES LIBROS CAP.F,personal,mail,confirmado,1,1a1657d3410e8af8
 0ff34d08396a,2026-10-22,2026-10,gasto,118.87,USD,4794.03,Itaú Infinite,,Viajes,,FARMACITY-LIBERTADOR Y COCAP.F,FARMACITY-LIBERTADOR Y COCAP.F,personal,mail,confirmado,1,1a16602d484da422
 3be19ec487fd,2026-10-22,2026-10,gasto,0.54,USD,21.78,Itaú USD,,Viajes,,PEDIDOSYA*PROPINA VIEI,PEDIDOSYA*PROPINA VIEI,personal,mail,confirmado,1,1a1645adb0c5ca6d
-6e77a541f119,2026-10-22,2026-10,gasto,8.66,USD,349.26,Santander Platinum,,Suscripciones,,YouTube Premium familiar (APPLE.COM/BILL),APPLE.COM/BILL,casa,mail,confirmado,1,1a161af48b661061
+6e77a541f119,2026-10-22,2026-10,gasto,9.45,USD,381.12,Santander Platinum,,Suscripciones,,YouTube Premium familiar (APPLE.COM/BILL),APPLE.COM/BILL,casa,mail,confirmado,1,1a161af48b661061
 b6b6c87e5544,2026-10-22,2026-10,gasto,8.16,USD,329.09,Itaú Infinite,,Viajes,,FUDO *MEDIALUNAS POINT CAP.F,FUDO *MEDIALUNAS POINT CAP.F,personal,mail,confirmado,1,1a16595e35f66495
 c038fad7f13e,2026-10-22,2026-10,gasto,11.44,USD,461.38,Itaú USD,,Viajes,,PEDIDOSYA*BOTANICA COVIEI,PEDIDOSYA*BOTANICA COVIEI,personal,mail,confirmado,1,1a1644b118c5a917
 d8d5ae56e7e0,2026-10-22,2026-10,transferencia,4.33,USD,174.63,Santander Platinum,A cobrar,,,,"APPLE.COM/BILL 22/10: parte ajena -> A cobrar (YouTube Premium familiar 22/10: 2/6 casa + 3/6 a Deudas (Rodrigo 2/6, hermana 1/6) + 1/6 madre a A cobrar (Joaco 25/10: como siempre))",interno,manual,confirmado,0,6e77a541f119-split-b
@@ -5125,23 +5151,32 @@ e12768c42f1a,2026-10-22,2026-10,gasto,4.96,USD,200.04,Itaú USD,,Viajes,,COTO SU
 e5371b4819bb,2026-10-22,2026-10,transferencia,13.00,USD,524.29,Santander Platinum,Deudas,,,,"APPLE.COM/BILL 22/10: parte ajena -> Deudas (YouTube Premium familiar 22/10: 2/6 casa + 3/6 a Deudas (Rodrigo 2/6, hermana 1/6) + 1/6 madre a A cobrar (Joaco 25/10: como siempre))",interno,manual,confirmado,0,6e77a541f119-split-a
 1ec03040516c,2026-10-23,2026-10,gasto,31.00,USD,1250.23,Itaú Infinite,,Viajes,,FREESHOP WALINCO COLON,FREESHOP WALINCO COLON,personal,mail,confirmado,1,1a16aeb1f41216c1
 4a15a6e631ee,2026-10-23,2026-10,gasto,80.39,USD,3242.13,Itaú Infinite,,Viajes,,MERPAGO*GUITARRITA Bueno,MERPAGO*GUITARRITA Bueno,personal,mail,confirmado,1,1a166cc82e7c17b9
+e7d22bff115a,2026-10-23,2026-10,gasto,8.00,USD,322.64,Santander Platinum,,Servicios,,Zurich Santander,"Zurich Santander (seguro de la tarjeta), del estado de octubre",personal,manual,confirmado,1,gasto-2026-10-23-8.00-zurich-santander-seguro-de-l
 2864091c7bac,2026-10-24,2026-10,gasto,232.25,UYU,232.25,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA,DLOPEDIDOSYA,personal,mail,confirmado,1,1a170359218d5298
 4578a71ed7cd,2026-10-24,2026-10,gasto,35.00,UYU,35.00,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA P,DLOPEDIDOSYA P,personal,mail,confirmado,1,1a1705cae505ba53
 686de93f2675,2026-10-25,2026-10,gasto,556.72,UYU,556.72,Cuenta Casa,,Super,,MONTEVIDEO/PANADERIA VIEJO MOLINVIS3,PANADERIA VIEJO MOLIN,casa,mail,confirmado,1,1a172f23fd2d52be
 cc9ca1f3ce9c,2026-10-25,2026-10,gasto,5700.00,UYU,5700.00,Cuenta Casa,,Comer afuera / Delivery,,Brota Viandas,viandas,casa,mail,confirmado,1,1a173f55c9e5df81
 08585a449c72,2026-10-26,2026-10,gasto,360.99,UYU,360.99,Santander Platinum,,Transporte,,DLOUBERRIDES,DLOUBERRIDES,personal,mail,confirmado,1,1a177e6f662b9c1e
+311ea08188b9,2026-10-26,2026-10,gasto,10.64,UYU,10.64,Itaú Infinite,,Servicios,,,SEGURO DE VIDA SOBRE SALDO (estado Visa Itau),personal,manual,confirmado,1,gasto-2026-10-26-10.64-seguro-de-vida-sobre-saldo-e
 71ad6e6145e5,2026-10-26,2026-10,transferencia,500.00,USD,20165.00,Itaú USD,Interactive Brokers,,,cuenta 3701587811,Giro a Interactive Brokers (via Mi Dinero 3701587811),interno,mail,confirmado,0,1a17a4ef8d02a1d7
+7499a71d68ff,2026-10-26,2026-10,gasto,1.06,USD,42.75,Itaú Infinite,,Servicios,,,SEGURO DE VIDA SOBRE SALDO (estado Visa Itau),personal,manual,confirmado,1,gasto-2026-10-26-1.06-seguro-de-vida-sobre-saldo-e
 9958446a937c,2026-10-26,2026-10,gasto,35.00,UYU,35.00,Itaú UYU,,Comer afuera / Delivery,,DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,personal,mail,confirmado,1,1a1793f49dee0fdd
+a247af3e4232,2026-10-26,2026-10,gasto,-61.16,USD,-2466.58,Itaú USD,,Viajes,,,Reintegro viaje BA (suegra): CPRA BSAS desde la cuenta 8434325,personal,manual,confirmado,1,gasto-2026-10-26-61.16-reintegro-viaje-ba-suegra-cp
 b9f210ca4d87,2026-10-26,2026-10,gasto,340.99,UYU,340.99,Santander Platinum,,Transporte,,UBER,UBER,personal,mail,confirmado,1,1a179eb13ebdd81c
+b9f8380153f0,2026-10-26,2026-10,gasto,700.50,UYU,700.50,Deudas,,Comer afuera / Delivery,General,,Cenaa,split,splitwise,confirmado,1,sw:x2c14a6dc0a
 ef030d9cc4b2,2026-10-26,2026-10,gasto,59.28,UYU,59.28,Itaú UYU,,Comer afuera / Delivery,,DLO*PedidosYa ConfiteVIS3,DLO*PedidosYa Confite,personal,mail,confirmado,1,1a179248cccf10bc
 1264e1b9474a,2026-10-27,2026-10,gasto,212.46,UYU,212.46,Cuenta Casa,,Comer afuera / Delivery,,FKDMONTEVIDEO/EL TIMON *HANDY*0VIS3,EL TIMON *HANDY*0,casa,mail,confirmado,1,1a17dbb5b1cbab66
-3ed0a3563531,2026-10-27,2026-10,gasto,411.15,UYU,411.15,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/QUESERIA LOS HERMANOSVIS3,QUESERIA LOS HERMANOS,casa,mail,confirmado,1,1a17db655c64b154
+3ed0a3563531,2026-10-27,2026-10,gasto,205.65,UYU,205.65,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/QUESERIA LOS HERMANOSVIS3,QUESERIA LOS HERMANOS,casa,mail,confirmado,1,1a17db655c64b154
 481926feeb17,2026-10-27,2026-10,gasto,263.42,UYU,263.42,Cuenta Casa,,Super,,MONTEVIDEO/MACROMERCADO VIS3,MACROMERCADO,casa,mail,confirmado,1,1a17df51a0e85a95
 4e67eab61393,2026-10-27,2026-10,gasto,344.26,UYU,344.26,Cuenta Casa,,Super,,MONTEVIDEO/MARWASH VIS3,MARWASH,casa,mail,confirmado,1,1a17dc3ef18b33da
+561577416b51,2026-10-27,2026-10,transferencia,205.50,UYU,205.50,Cuenta Casa,Deudas,,,,"MONTEVIDEO/QUESERIA LOS HERMANOSVIS3 27/10: parte ajena -> Deudas (Bebidas (Queseria Los Hermanos) segun Splitwise: Rodrigo debe 205,50)",interno,manual,confirmado,0,3ed0a3563531-split
 7985b8e6978c,2026-10-27,2026-10,gasto,848.85,UYU,848.85,Cuenta Casa,,Super,,MONTEVIDEO/ROSA DI IACOVO (AFU) VIS3,ROSA DI IACOVO (AFU),casa,mail,confirmado,1,1a17db058078d8dd
 88cf4bd28a9d,2026-10-27,2026-10,gasto,2010.48,UYU,2010.48,Cuenta Casa,,Super,,MONTEVIDEO/PERNAS JORDAN VIS3,PERNAS JORDAN,casa,mail,confirmado,1,1a17dc149ad6a6b0
 e1fe44f74def,2026-10-27,2026-10,gasto,1700.00,UYU,1700.00,Cuenta Casa,,Casa & hogar,,Yova,lu y joaco,casa,mail,confirmado,1,1a17e59e3a8107fb
 08c0a5a8518b,2026-10-28,2026-10,gasto,430.82,UYU,430.82,Cuenta Casa,,Compras personales,,MONTEVIDEO/MERPAGO*MERCADOLIBRE VIS3,MERPAGO*MERCADOLIBRE,casa,mail,confirmado,1,1a1843c1556a250e
+20bb047f75ab,2026-10-28,2026-10,transferencia,9336.27,USD,376531.77,Gletir,Itaú USD,,,,Retiro de Gletir (Joaco 2/11),interno,manual,confirmado,0,transf-2026-10-28-9336.27-retiro-de-gletir-joaco-2-11
+557f4eec08f4,2026-10-28,2026-10,gasto,0.44,USD,17.75,Santander Platinum,,Servicios,,,SEGURO SALDO DEUDOR,personal,manual,confirmado,1,gasto-2026-10-28-0.44-seguro-saldo-deudor
+c49431b7f0e2,2026-10-28,2026-10,gasto,30.73,UYU,30.73,Santander Platinum,,Servicios,,,SEGURO SALDO DEUDOR,personal,manual,confirmado,1,gasto-2026-10-28-30.73-seguro-saldo-deudor
 e8cd593881cf,2026-10-28,2026-10,gasto,279.34,UYU,279.34,Itaú UYU,,Super,,DEVOTO EXPRESS VIS3,DEVOTO EXPRESS,personal,mail,confirmado,1,1a184746ed5c1022
 fe838c8a63ff,2026-10-28,2026-10,gasto,3128.00,UYU,3128.00,Santander Platinum,,Croqueta,,MERCADO PAGO,MERCADO PAGO,casa,mail,confirmado,1,1a1844216c3e9ea6
 32f27422529b,2026-10-29,2026-10,gasto,148.20,UYU,148.20,Itaú UYU,,Comer afuera / Delivery,,LA ROTISERIA V VIS3,LA ROTISERIA V,personal,mail,confirmado,1,1a1884ebaf06bde4
@@ -5150,21 +5185,27 @@ fe838c8a63ff,2026-10-28,2026-10,gasto,3128.00,UYU,3128.00,Santander Platinum,,Cr
 b6e89b695c65,2026-10-29,2026-10,gasto,87.54,UYU,87.54,Itaú UYU,,Super,,DISCO NÊ 22 VIS3,DISCO NÊ 22,personal,mail,confirmado,1,1a188894fbf78585
 cd9ee36da313,2026-10-29,2026-10,gasto,3147.54,UYU,3147.54,Itaú UYU,,Compras personales,,ZARA VIS3,ZARA,personal,mail,confirmado,1,1a189b182ece2279
 f942d9b63697,2026-10-29,2026-10,gasto,1488.00,UYU,1488.00,Itaú Infinite,,Croqueta,,MERPAGO*PUNTOVET MONTE,MERPAGO*PUNTOVET MONTE,casa,mail,confirmado,1,1a189d84ee55d44a
+17d72ae7b483,2026-10-30,2026-10,gasto,-429.00,UYU,-429.00,Itaú UYU,,Regalos,,,Devolucion (CRE. CAMBIOS): compra en USD en Abracadabra juegos (parte regalo del trabajo),personal,manual,confirmado,1,gasto-2026-10-30-429.00-devolucion-cre-cambios-compr
 449859a4e410,2026-10-30,2026-10,gasto,1950.00,UYU,1950.00,Santander Platinum,,Croqueta,,MER,MER,casa,mail,confirmado,1,1a18c8541a3bb25b
+4ca3e751d7a8,2026-10-30,2026-10,transferencia,7000.00,USD,274400.00,Itaú USD,Itaú UYU,,,,Venta de dolares (pata USD): USD 7.000 -> 274.400 (la pata UYU es 5f535100b2bb),interno,manual,confirmado,0,transf-2026-10-30-7000.00-venta-de-dolares-pata-usd-us
 5f535100b2bb,2026-10-30,2026-10,transferencia,274400.00,UYU,274400.00,Itaú USD,Itaú UYU,,,cuenta 4174405,Venta de dolares (Itau USD -> Itau UYU),interno,mail,confirmado,0,1a18eddf323c12ec
+62f2aad99b78,2026-10-30,2026-10,gasto,-579.00,UYU,-579.00,Itaú UYU,,Regalos,,,Devolucion de Dan: compra en USD en Abracadabra juegos (parte regalo del trabajo),personal,manual,confirmado,1,gasto-2026-10-30-579.00-devolucion-de-dan-compra-en
 7f5c454971c2,2026-10-30,2026-10,gasto,4905.00,UYU,4905.00,Itaú UYU,,Croqueta,,cuenta 1409211 (Itau),Anualidad veterinaria Croqueta,casa,mail,confirmado,1,1a18d9c3655972f6
-8aa236f89a86,2026-10-30,2026-10,gasto,724.26,UYU,724.26,Santander Platinum,,Comer afuera / Delivery,,LA PASIVA CARRA,LA PASIVA CARRA,personal,mail,confirmado,1,1a18f8b6471838ad
-da1b40dcc2df,2026-10-30,2026-10,transferencia,2172.79,UYU,2172.79,Santander Platinum,Deudas,,,,LA PASIVA CARRA 30/10: parte ajena -> Deudas,interno,manual,confirmado,0,8aa236f89a86-split
+8aa236f89a86,2026-10-30,2026-10,gasto,1158.55,UYU,1158.55,Santander Platinum,,Comer afuera / Delivery,,LA PASIVA CARRA,LA PASIVA CARRA,personal,mail,confirmado,1,1a18f8b6471838ad
+d6327077d51a,2026-10-30,2026-10,gasto,100.26,UYU,100.26,Cuenta Casa,,Servicios,,COMISION EDC CTA.CTE.,COMISION EDC CTA.CTE.,casa,estado_cuenta,pendiente,1,estado:Cuenta Casa:2026-10-30:-100.26:COMISION EDC CTA.CTE.
+da1b40dcc2df,2026-10-30,2026-10,transferencia,1738.50,UYU,1738.50,Santander Platinum,Deudas,,,,LA PASIVA CARRA 30/10: parte ajena -> Deudas,interno,manual,confirmado,0,8aa236f89a86-split
 3abdd6993a66,2026-10-31,2026-10,gasto,464.50,UYU,464.50,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA,DLOPEDIDOSYA,personal,mail,confirmado,1,1a19376f4a844e0f
 9c9c39111bde,2026-10-31,2026-10,gasto,605.00,UYU,605.00,Itaú Infinite,,Transporte,,TAXI CASTRO TACUA,TAXI CASTRO TACUA,casa,mail,confirmado,1,1a194641b66e3100
 a917e8437c4e,2026-10-31,2026-10,gasto,35.00,UYU,35.00,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA P,DLOPEDIDOSYA P,personal,mail,confirmado,1,1a1939325ec32e21
+e2cd034c3a70,2026-10-31,2026-10,gasto,269.75,UYU,269.75,Deudas,,Comer afuera / Delivery,Licor,,Picada bebida,split,splitwise,confirmado,1,sw:x64a1a0f807
 f4ed2f4627ee,2026-10-31,2026-10,gasto,513.44,UYU,513.44,Cuenta Casa,,Super,,MONTEVIDEO/VIEJO MOLINO VIS3,VIEJO MOLINO,casa,mail,confirmado,1,1a191ad9b5a6f0b8
 1aca967aa45d,2026-11-01,2026-11,gasto,2810.00,UYU,2810.00,Itaú UYU,,Comer afuera / Delivery,,MERPAGO*ELROBLE VIS3,MERPAGO*ELROBLE,casa,mail,confirmado,1,1a198493cbfac713
-29f3a81275d4,2026-11-01,2026-11,gasto,4280.00,UYU,4280.00,Itaú UYU,,,,SISTARBANC,Pago a SISTARBANC,personal,mail,pendiente,1,1a199d8f891ae836
+29f3a81275d4,2026-11-01,2026-11,gasto,2140.00,UYU,2140.00,Itaú UYU,,Regalos,,SISTARBANC,Regalo cumpleanos de mi padre (pago web Itau via SISTARBANC),personal,mail,confirmado,1,1a199d8f891ae836
 47307b88072f,2026-11-01,2026-11,gasto,112.00,UYU,112.00,Itaú UYU,,Auto,,ANCAP ESTACION AMERICVIS3,ANCAP ESTACION AMERIC,personal,mail,confirmado,1,1a19863eec722e52
 54a2671dbd67,2026-11-01,2026-11,gasto,43.28,UYU,43.28,Cuenta Casa,,Auto,,DURAZNO/AXION DURAZNO ESTACIOVIS3,DURAZNO/AXION DURAZNO ESTACIO,casa,mail,confirmado,1,1a198d5d8f95e863
 7333d12447dc,2026-11-01,2026-11,gasto,25.00,UYU,25.00,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA P,DLOPEDIDOSYA P,personal,mail,confirmado,1,1a19996312ff4d84
 962bb76271ca,2026-11-01,2026-11,gasto,151.00,UYU,151.00,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA,DLOPEDIDOSYA,personal,mail,confirmado,1,1a1997a1452fda02
 abb6f4ead0ad,2026-11-01,2026-11,gasto,1.99,USD,80.26,Santander Platinum,,Suscripciones,,GOOGLE,GOOGLE,personal,mail,confirmado,1,1a1977396ac06029
 f47b92f789b0,2026-11-01,2026-11,gasto,171.15,UYU,171.15,Cuenta Casa,,Auto,,DURAZNO/AXION DURAZNO ESTACIOVIS3,DURAZNO/AXION DURAZNO ESTACIO,casa,mail,confirmado,1,1a198d4e2369e19b
+f5cdfd82c7de,2026-11-01,2026-11,transferencia,2140.00,UYU,2140.00,Itaú UYU,Deudas,,,,SISTARBANC 01/11: parte ajena -> Deudas (regalo de cumple del padre: la otra mitad con los hermanos por Splitwise),interno,manual,confirmado,0,29f3a81275d4-split
 ff8ead2addbf,2026-11-01,2026-11,gasto,565.80,UYU,565.80,Santander Platinum,,Transporte,,RADIO TAXI PLAZ,RADIO TAXI PLAZ,casa,mail,confirmado,1,1a195fef98bd0414
