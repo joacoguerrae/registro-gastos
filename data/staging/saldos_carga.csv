@@ -2,3 +2,7 @@ fecha,cuenta,moneda,saldo,nota,fila
 2026-09-30,Gletir,USD,9324.00,,2
 2026-09-30,Efectivo,UYU,0.00,,3
 2026-09-30,Efectivo,USD,30.00,,4
+2026-10-31,Gletir,USD,0.00,,5
+2026-10-31,Efectivo,UYU,0.00,,6
+2026-10-31,Efectivo,USD,30.00,,7
+2026-10-31,Interactive Brokers,USD,21831.60,usd,8
