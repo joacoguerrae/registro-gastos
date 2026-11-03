@@ -290,3 +290,7 @@ f22b0a9309ac,sin_categoria,"estado_cuenta BBVA Crédito 2026-10: 'SEGURO VIDA 2,
 38647d7111f4,sin_categoria,estado_cuenta Santander Mastercard 2026-10: 'CUOTA ANUAL           02 03' sin regla,2026-11-02,1
 584fc96ef5dc,sin_categoria,establecimiento 'LA MOLIENDA MONTE' sin regla,2026-11-02,
 222486cbf6ef,sin_categoria,establecimiento 'NUEVO MALVIN VIS3' sin regla,2026-11-02,
+49998fc03c30,tc_estimado,USD 40.32 x tc 40.33 = 1626.11 UYU (corrige Fase 3),2026-11-03,
+49998fc03c30,sin_categoria,establecimiento 'PAYPAL' sin regla,2026-11-03,
+54c0b580f8b4,sin_categoria,establecimiento 'MONTEVIDEO/POROTINO PETSHOP VIS3' sin regla,2026-11-03,
+fc3cb5b58839,transferencia_a_clasificar,"a 'cuenta 5000001322680 (Santander)', concepto '', UYU 31000.00: sin categoria",2026-11-03,

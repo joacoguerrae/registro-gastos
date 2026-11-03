@@ -520,3 +520,7 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 1a19c99ea6f57f23,2026-11-02T14:11:35Z,recibo,recibo_matcheado,abb6f4ead0ad,Google Play – 100 GB (Google One) USD 1.99 -> enriquece comercio de abb6f4ead0ad,,2026-11-02T21:45:44+00:00
 1a19e1714ff5a076,2026-11-02T21:07:22Z,ignorado,estado_cuenta_pendiente_f3,,bbvanetnotificacionesp@grupobbva.com.uy | Estado de Cuenta de su Tarjeta de Crédito Visa BBVA,,2026-11-02T21:45:44+00:00
 1a19e1a955202742,2026-11-02T21:11:37Z,ignorado,estado_cuenta_pendiente_f3,,envio@tuestadodecuenta.santander.com.uy | Estado de Cuenta Santander VISA,,2026-11-02T21:45:44+00:00
+1a1a12348a8d5de1,2026-11-03T11:20:03Z,aviso_tarjeta,insertado,49998fc03c30,6427 USD 40.32 PAYPAL -> Santander Platinum/personal/(sin categoria),6427||40.32||PAYPAL||2026-11-03T08:20:00,2026-11-03T19:33:57+00:00
+1a1a26bcc3a164f0,2026-11-03T17:18:45Z,aviso_tarjeta,insertado,54c0b580f8b4,8261 UYU 398.36 MONTEVIDEO/POROTINO PETSHOP VIS3 -> Cuenta Casa/casa/(sin categoria),8261||398.36||MONTEVIDEO/POROTINO PETSHOP VIS3||2026-11-03T14:18:43,2026-11-03T19:33:57+00:00
+1a1a107459252d08,2026-11-03T10:49:30Z,transferencia_itau,insertado,fc3cb5b58839,4405 UYU 31000.00 -> 5000001322680 Santander -> Itaú UYU/gasto/personal/(sin categoria),,2026-11-03T19:33:57+00:00
+1a1a1a8106c13eac,2026-11-03T13:45:06Z,ignorado,ignorado,,"comunicaciones@itau.com.uy | Volvió Ciberlunes con canjes rebajados, ¡conocé más! 😎",,2026-11-03T19:33:57+00:00
