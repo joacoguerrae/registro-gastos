@@ -301,3 +301,4 @@ fc3cb5b58839,transferencia_a_clasificar,"a 'cuenta 5000001322680 (Santander)', c
 75f435542f93,formato_nuevo,comunicaciones@itau.com.uy | 'Aviso transferencia realizada' -> ValueError: transferencia Itau: layout desconocido,2026-11-04,
 39c7a958b84a,formato_nuevo,comunicaciones@itau.com.uy | 'Aviso transferencia realizada' -> ValueError: transferencia Itau: layout desconocido,2026-11-04,
 71517b0861fd,formato_nuevo,comunicaciones@itau.com.uy | 'Aviso de pago de tarjeta de credito' -> ValueError: mail de Itau que parece un movimiento pero no tiene parser,2026-11-04,
+60368a6faaec,sin_categoria,establecimiento 'MONTEVIDOE/FERRETERIA FERRO 21 VIS3' sin regla,2026-11-04,
