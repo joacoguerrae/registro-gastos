@@ -303,3 +303,7 @@ fc3cb5b58839,transferencia_a_clasificar,"a 'cuenta 5000001322680 (Santander)', c
 71517b0861fd,formato_nuevo,comunicaciones@itau.com.uy | 'Aviso de pago de tarjeta de credito' -> ValueError: mail de Itau que parece un movimiento pero no tiene parser,2026-11-04,
 60368a6faaec,sin_categoria,establecimiento 'MONTEVIDOE/FERRETERIA FERRO 21 VIS3' sin regla,2026-11-04,
 fa2cc0f6f7de,tc_estimado,USD 100.00 x tc 40.33 = 4033.00 UYU (corrige Fase 3),2026-11-06,
+2e054cf2131a,tc_estimado,USD 60.04 x tc 40.33 = 2421.41 UYU (corrige Fase 3),2026-11-06,
+2e054cf2131a,sin_categoria,establecimiento 'LA LATAM XP LIMA' sin regla,2026-11-06,
+1d67225a0ee4,transferencia_a_clasificar,"a 'cuenta 108071 (Cooperativa de Ahorro y Credito FUCEREP)', concepto '', USD 500.00: sin categoria",2026-11-06,
+1d67225a0ee4,tc_estimado,USD 500.00 x tc 40.33 = 20165.00 UYU (corrige Fase 3),2026-11-06,
