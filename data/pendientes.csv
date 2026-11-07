@@ -307,3 +307,5 @@ fa2cc0f6f7de,tc_estimado,USD 100.00 x tc 40.33 = 4033.00 UYU (corrige Fase 3),20
 2e054cf2131a,sin_categoria,establecimiento 'LA LATAM XP LIMA' sin regla,2026-11-06,
 1d67225a0ee4,transferencia_a_clasificar,"a 'cuenta 108071 (Cooperativa de Ahorro y Credito FUCEREP)', concepto '', USD 500.00: sin categoria",2026-11-06,
 1d67225a0ee4,tc_estimado,USD 500.00 x tc 40.33 = 20165.00 UYU (corrige Fase 3),2026-11-06,
+69a6ad8859eb,transferencia_a_clasificar,"a 'cuenta 11092453300001 (BROU)', concepto '', USD 240.00: sin categoria",2026-11-07,
+69a6ad8859eb,tc_estimado,USD 240.00 x tc 40.33 = 9679.20 UYU (corrige Fase 3),2026-11-07,

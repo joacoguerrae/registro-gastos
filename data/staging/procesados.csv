@@ -546,3 +546,4 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 1a1b1944b7352eca,2026-11-06T15:57:26Z,aviso_tarjeta,insertado,2e054cf2131a,5023 USD 60.04 LA LATAM XP LIMA -> Itaú Infinite/personal/(sin categoria),5023||60.04||LA LATAM XP LIMA||2026-11-06T12:57:26,2026-11-06T19:29:36+00:00
 1a1b0e90bf0385a1,2026-11-06T12:50:24Z,transferencia_itau,insertado,1d67225a0ee4,4411 USD 500.00 -> 108071 Cooperativa de Ahorro y Credito FUCEREP -> Itaú USD/gasto/personal/(sin categoria),,2026-11-06T19:29:36+00:00
 1a1b1d994eff0a62,2026-11-06T17:12:57Z,ignorado,estado_cuenta_pendiente_f3,,envio@tuestadodecuenta.santander.com.uy | Estado de Cuenta Santander MASTERCARD,,2026-11-06T19:29:36+00:00
+1a1b388c644714fc,2026-11-07T01:04:07Z,transferencia_itau,insertado,69a6ad8859eb,4411 USD 240.00 -> 11092453300001 BROU -> Itaú USD/gasto/personal/(sin categoria),,2026-11-07T06:07:50+00:00
