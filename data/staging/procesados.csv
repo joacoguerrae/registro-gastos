@@ -547,3 +547,5 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 1a1b0e90bf0385a1,2026-11-06T12:50:24Z,transferencia_itau,insertado,1d67225a0ee4,4411 USD 500.00 -> 108071 Cooperativa de Ahorro y Credito FUCEREP -> Itaú USD/gasto/personal/(sin categoria),,2026-11-06T19:29:36+00:00
 1a1b1d994eff0a62,2026-11-06T17:12:57Z,ignorado,estado_cuenta_pendiente_f3,,envio@tuestadodecuenta.santander.com.uy | Estado de Cuenta Santander MASTERCARD,,2026-11-06T19:29:36+00:00
 1a1b388c644714fc,2026-11-07T01:04:07Z,transferencia_itau,insertado,69a6ad8859eb,4411 USD 240.00 -> 11092453300001 BROU -> Itaú USD/gasto/personal/(sin categoria),,2026-11-07T06:07:50+00:00
+1a1b68ae26bf85a3,2026-11-07T15:05:14Z,aviso_tarjeta,insertado,99c3b0d7d9a0,8261 UYU 491.80 MONTEVIDEO/MERPAGO*EONE VIS3 -> Cuenta Casa/casa/Auto,8261||491.80||MONTEVIDEO/MERPAGO*EONE VIS3||2026-11-07T12:05:14,2026-11-07T17:46:03+00:00
+1a1b6b7a278b6d07,2026-11-07T15:54:08Z,aviso_tarjeta,insertado,dd2b6bf9b904,8261 UYU 169.70 MONTEVIDEO/MERPAGO*EONE VIS3 -> Cuenta Casa/casa/Auto,8261||169.70||MONTEVIDEO/MERPAGO*EONE VIS3||2026-11-07T12:54:07,2026-11-07T17:46:03+00:00
