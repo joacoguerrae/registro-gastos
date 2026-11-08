@@ -5235,5 +5235,15 @@ fa2cc0f6f7de,2026-11-05,2026-11,gasto,100.00,USD,4033.00,Santander Platinum,,Sus
 1d67225a0ee4,2026-11-06,2026-11,gasto,500.00,USD,20165.00,Itaú USD,,,,cuenta 108071 (Cooperativa de Ahorro y Credito FUCEREP),a cuenta 108071 Cooperativa de Ahorro y Credito FUCEREP,personal,mail,pendiente,1,1a1b0e90bf0385a1
 2e054cf2131a,2026-11-06,2026-11,gasto,60.04,USD,2421.41,Itaú Infinite,,,,LA LATAM XP LIMA,LA LATAM XP LIMA,personal,mail,pendiente,1,1a1b1944b7352eca
 69a6ad8859eb,2026-11-06,2026-11,gasto,240.00,USD,9679.20,Itaú USD,,,,cuenta 11092453300001 (BROU),a cuenta 11092453300001 BROU,personal,mail,pendiente,1,1a1b388c644714fc
+0beb385a728c,2026-11-07,2026-11,gasto,-7160.00,UYU,-7160.00,Santander Platinum,,Transporte,,DLOUBERRIDES,Reintegro DLOUBERRIDES (revierte 934e0d4fedca),personal,mail,confirmado,1,1a1b81810e3e6c0c
+511ab24ec044,2026-11-07,2026-11,gasto,845.90,UYU,845.90,Itaú UYU,,,,Almacen el Ru*HANDY*0VIS3,Almacen el Ru*HANDY*0,personal,mail,pendiente,1,1a1b77abf0f87c2f
+55202f0567c1,2026-11-07,2026-11,gasto,35.00,UYU,35.00,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,1a1b8aedaae1e650
+934e0d4fedca,2026-11-07,2026-11,gasto,7160.00,UYU,7160.00,Santander Platinum,,Transporte,,DLOUBERRIDES,DLOUBERRIDES,personal,mail,confirmado,1,1a1b81787bda52ae
 99c3b0d7d9a0,2026-11-07,2026-11,gasto,491.80,UYU,491.80,Cuenta Casa,,Auto,,MONTEVIDEO/MERPAGO*EONE VIS3,MERPAGO*EONE,casa,mail,confirmado,1,1a1b68ae26bf85a3
+bc8e48024782,2026-11-07,2026-11,gasto,1420.08,UYU,1420.08,Itaú UYU,,,,DON GUZMAN *HANDY*0VIS3,DON GUZMAN *HANDY*0,personal,mail,pendiente,1,1a1b8345deffbbd6
+da16dd25b64d,2026-11-07,2026-11,gasto,88.52,UYU,88.52,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,casa,mail,confirmado,1,1a1b87d5eada8cc6
 dd2b6bf9b904,2026-11-07,2026-11,gasto,169.70,UYU,169.70,Cuenta Casa,,Auto,,MONTEVIDEO/MERPAGO*EONE VIS3,MERPAGO*EONE,casa,mail,confirmado,1,1a1b6b7a278b6d07
+068e5034790e,2026-11-08,2026-11,gasto,429.93,UYU,429.93,Santander Platinum,,Transporte,,DLOUBERRIDES,DLOUBERRIDES,personal,mail,confirmado,1,1a1b927153673e61
+337be97dd361,2026-11-08,2026-11,gasto,-429.93,UYU,-429.93,Santander Platinum,,Transporte,,DLOUBERRIDES,Reintegro DLOUBERRIDES (revierte 068e5034790e),personal,mail,confirmado,1,1a1b927c2956368a
+525bff9992a4,2026-11-08,2026-11,gasto,429.93,UYU,429.93,Santander Platinum,,Transporte,,DLOUBERRIDES,DLOUBERRIDES,personal,mail,pendiente,1,1a1b9287d85d75a9
+e36de4c3c9b1,2026-11-08,2026-11,gasto,-429.93,UYU,-429.93,Santander Platinum,,Transporte,,DLOUBERRIDES,Reintegro DLOUBERRIDES (revierte 068e5034790e),personal,mail,confirmado,1,1a1b92a8995f3c52
