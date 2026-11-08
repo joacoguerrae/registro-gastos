@@ -312,3 +312,7 @@ fa2cc0f6f7de,tc_estimado,USD 100.00 x tc 40.33 = 4033.00 UYU (corrige Fase 3),20
 511ab24ec044,sin_categoria,establecimiento 'Almacen el Ru*HANDY*0VIS3' sin regla,2026-11-08,
 bc8e48024782,sin_categoria,establecimiento 'DON GUZMAN *HANDY*0VIS3' sin regla,2026-11-08,
 525bff9992a4,posible_duplicado,"mismo (tarjeta,monto,establecimiento) que mail 1a1b927153673e61 a las 2026-11-08 00:14:52",2026-11-08,
+5fd2f471501f,tc_estimado,USD 100.00 x tc 40.33 = 4033.00 UYU (corrige Fase 3),2026-11-08,
+5fd2f471501f,sin_categoria,establecimiento 'www.etoro.com*Joaquin*Gue' sin regla,2026-11-08,
+744edd882966,tc_estimado,USD 400.00 x tc 40.33 = 16132.00 UYU (corrige Fase 3),2026-11-08,
+744edd882966,sin_categoria,establecimiento 'www.etoro.com*Joaquin*GDW' sin regla,2026-11-08,

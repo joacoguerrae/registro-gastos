@@ -559,3 +559,6 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 1a1b81810e3e6c0c,2026-11-07T22:19:03Z,devolucion,insertado,0beb385a728c,6427 UYU -7160.00 DLOUBERRIDES -> Santander Platinum/personal/Transporte revierte 934e0d4fedca,,2026-11-08T06:12:26+00:00
 1a1b927c2956368a,2026-11-08T03:15:52Z,devolucion,insertado,337be97dd361,6427 UYU -429.93 DLOUBERRIDES -> Santander Platinum/personal/Transporte revierte 068e5034790e,,2026-11-08T06:12:26+00:00
 1a1b92a8995f3c52,2026-11-08T03:18:53Z,devolucion,insertado,e36de4c3c9b1,6427 UYU -429.93 DLOUBERRIDES -> Santander Platinum/personal/Transporte revierte 068e5034790e,,2026-11-08T06:12:26+00:00
+1a1badcb6d6f184b,2026-11-08T11:13:07Z,aviso_tarjeta,insertado,5bc51434faaa,6427 UYU 3794.00 BANCO DE SEGURO -> Santander Platinum/casa/Auto,6427||3794.00||BANCO DE SEGURO||2026-11-08T08:13:03,2026-11-08T17:57:52+00:00
+1a1bb6b322a5e9a5,2026-11-08T13:48:47Z,aviso_tarjeta,insertado,5fd2f471501f,6136 USD 100.00 www.etoro.com*Joaquin*Gue -> Itaú USD/personal/(sin categoria),6136||100.00||www.etoro.com*Joaquin*Gue||2026-11-08T10:48:47,2026-11-08T17:57:52+00:00
+1a1bb6bc857230a3,2026-11-08T13:49:25Z,aviso_tarjeta,insertado,744edd882966,6136 USD 400.00 www.etoro.com*Joaquin*GDW -> Itaú USD/personal/(sin categoria),6136||400.00||www.etoro.com*Joaquin*GDW||2026-11-08T10:49:25,2026-11-08T17:57:52+00:00
