@@ -319,3 +319,7 @@ bc8e48024782,sin_categoria,establecimiento 'DON GUZMAN *HANDY*0VIS3' sin regla,2
 043938fa5cec,sin_categoria,establecimiento 'MDEO/PIGALLE 4 VIS3' sin regla,2026-11-09,
 5d037a62179f,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-11-09,
 482c28839cff,formato_nuevo,comunicaciones@itau.com.uy | 'Aviso transferencia realizada' -> ValueError: transferencia Itau: layout desconocido,2026-11-09,
+7066a99d757b,sin_categoria,establecimiento 'CANVA* PAAAAHNGZLQZW7I +1737' sin regla,2026-11-09,
+a240f0168989,sin_categoria,establecimiento 'MONTEVIDEO/POROTINO PETSHOP VIS3' sin regla,2026-11-09,
+3822be9fb23d,sin_categoria,establecimiento 'ORTOPEDIA BIOHEALT MONTE' sin regla,2026-11-09,
+2b6c207d5b01,sin_categoria,reintegro 'CANVA* PAAAAHNGZLQZW7I +1737' sin regla ni cargo original,2026-11-09,
