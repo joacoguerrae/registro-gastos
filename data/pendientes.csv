@@ -316,3 +316,6 @@ bc8e48024782,sin_categoria,establecimiento 'DON GUZMAN *HANDY*0VIS3' sin regla,2
 5fd2f471501f,sin_categoria,establecimiento 'www.etoro.com*Joaquin*Gue' sin regla,2026-11-08,
 744edd882966,tc_estimado,USD 400.00 x tc 40.33 = 16132.00 UYU (corrige Fase 3),2026-11-08,
 744edd882966,sin_categoria,establecimiento 'www.etoro.com*Joaquin*GDW' sin regla,2026-11-08,
+043938fa5cec,sin_categoria,establecimiento 'MDEO/PIGALLE 4 VIS3' sin regla,2026-11-09,
+5d037a62179f,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-11-09,
+482c28839cff,formato_nuevo,comunicaciones@itau.com.uy | 'Aviso transferencia realizada' -> ValueError: transferencia Itau: layout desconocido,2026-11-09,
