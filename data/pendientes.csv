@@ -324,3 +324,4 @@ a240f0168989,sin_categoria,establecimiento 'MONTEVIDEO/POROTINO PETSHOP VIS3' si
 3822be9fb23d,sin_categoria,establecimiento 'ORTOPEDIA BIOHEALT MONTE' sin regla,2026-11-09,
 2b6c207d5b01,sin_categoria,reintegro 'CANVA* PAAAAHNGZLQZW7I +1737' sin regla ni cargo original,2026-11-09,
 288ec3ab8380,formato_nuevo,comunicaciones@itau.com.uy | 'Aviso transferencia realizada' -> ValueError: transferencia Itau: layout desconocido,2026-11-10,
+c59a8edbbe99,sin_categoria,establecimiento 'RUDY MONTE' sin regla,2026-11-10,
