@@ -325,3 +325,7 @@ a240f0168989,sin_categoria,establecimiento 'MONTEVIDEO/POROTINO PETSHOP VIS3' si
 2b6c207d5b01,sin_categoria,reintegro 'CANVA* PAAAAHNGZLQZW7I +1737' sin regla ni cargo original,2026-11-09,
 288ec3ab8380,formato_nuevo,comunicaciones@itau.com.uy | 'Aviso transferencia realizada' -> ValueError: transferencia Itau: layout desconocido,2026-11-10,
 c59a8edbbe99,sin_categoria,establecimiento 'RUDY MONTE' sin regla,2026-11-10,
+362e3d8187f2,sin_categoria,establecimiento 'Montevideo/CLUB DEL PAN VIS3' sin regla,2026-11-11,
+ee280834e3c0,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-11-11,
+22b5518d3c35,tc_estimado,USD 12.28 x tc 40.33 = 495.25 UYU (corrige Fase 3),2026-11-11,
+22b5518d3c35,sin_categoria,establecimiento 'NAME-CHEAP.COM* YDYT6C +1323' sin regla,2026-11-11,
