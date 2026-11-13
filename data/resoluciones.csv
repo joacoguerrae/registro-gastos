@@ -1206,3 +1206,126 @@ f22b0a9309ac,motivo_resuelto,sin_categoria,seguro de vida de la BBVA (como Mapfr
 887958c76273,monto_uyu,4155.81,importe del estado Platinum de octubre (con recargo 3%),2026-11-02
 6e77a541f119,monto,9.45,"YouTube: el estado cobro 26,78; las hermanas quedan en lo cobrado (13,00 + 4,33) y la parte propia absorbe el recargo (regla del cierre de setiembre)",2026-11-02
 6e77a541f119,monto_uyu,381.12,"YouTube: el estado cobro 26,78; las hermanas quedan en lo cobrado (13,00 + 4,33) y la parte propia absorbe el recargo (regla del cierre de setiembre)",2026-11-02
+39c7a958b84a,monto_uyu,32000.00,"Joaco 13/11: compre USD 774,81, me debitaron 32000",2026-11-13
+39c7a958b84a,descripcion,"Compra de dolares (pata USD): 32.000 -> USD 774,81 (la pata UYU es 9c210e7e2d2d)","Joaco 13/11: compre USD 774,81, me debitaron 32000",2026-11-13
+39c7a958b84a,motivo_resuelto,transferencia_a_clasificar,"Joaco 13/11: compre USD 774,81, me debitaron 32000",2026-11-13
+1d67225a0ee4,tipo,transferencia,Joaco 13/11: inversion a IBKR (via FUCEREP),2026-11-13
+1d67225a0ee4,cuenta_destino,Interactive Brokers,Joaco 13/11: inversion a IBKR (via FUCEREP),2026-11-13
+1d67225a0ee4,ambito,interno,Joaco 13/11: inversion a IBKR (via FUCEREP),2026-11-13
+1d67225a0ee4,en_analisis,0,Joaco 13/11: inversion a IBKR (via FUCEREP),2026-11-13
+1d67225a0ee4,motivo_resuelto,transferencia_a_clasificar,Joaco 13/11: inversion a IBKR (via FUCEREP),2026-11-13
+1d67225a0ee4,motivo_resuelto,tc_estimado,"Joaco 13/11: es transferencia a IBKR, no gasto",2026-11-13
+69a6ad8859eb,tipo,transferencia,Joaco 13/11: inversion a IBKR (via BROU),2026-11-13
+69a6ad8859eb,cuenta_destino,Interactive Brokers,Joaco 13/11: inversion a IBKR (via BROU),2026-11-13
+69a6ad8859eb,ambito,interno,Joaco 13/11: inversion a IBKR (via BROU),2026-11-13
+69a6ad8859eb,en_analisis,0,Joaco 13/11: inversion a IBKR (via BROU),2026-11-13
+69a6ad8859eb,motivo_resuelto,transferencia_a_clasificar,Joaco 13/11: inversion a IBKR (via BROU),2026-11-13
+69a6ad8859eb,motivo_resuelto,tc_estimado,"Joaco 13/11: es transferencia a IBKR, no gasto",2026-11-13
+482c28839cff,tipo,gasto,Joaco 13/11: los 100 son mi cuota 4 del auto,2026-11-13
+482c28839cff,categoria,Auto,Joaco 13/11: los 100 son mi cuota 4 del auto,2026-11-13
+482c28839cff,ambito,personal,Joaco 13/11: los 100 son mi cuota 4 del auto,2026-11-13
+482c28839cff,cuenta_destino,,Joaco 13/11: los 100 son mi cuota 4 del auto,2026-11-13
+482c28839cff,en_analisis,1,Joaco 13/11: los 100 son mi cuota 4 del auto,2026-11-13
+482c28839cff,descripcion,Cuota 4 del auto Geely (USD 100),Joaco 13/11: los 100 son mi cuota 4 del auto,2026-11-13
+482c28839cff,motivo_resuelto,transferencia_a_clasificar,Joaco 13/11: los 100 son mi cuota 4 del auto,2026-11-13
+288ec3ab8380,tipo,transferencia,Joaco 13/11: los 500 es un prestamo a mi padre que se va de viaje,2026-11-13
+288ec3ab8380,cuenta_destino,A cobrar,Joaco 13/11: los 500 es un prestamo a mi padre que se va de viaje,2026-11-13
+288ec3ab8380,ambito,interno,Joaco 13/11: los 500 es un prestamo a mi padre que se va de viaje,2026-11-13
+288ec3ab8380,en_analisis,0,Joaco 13/11: los 500 es un prestamo a mi padre que se va de viaje,2026-11-13
+288ec3ab8380,descripcion,Prestamo a mi padre (viaje),Joaco 13/11: los 500 es un prestamo a mi padre que se va de viaje,2026-11-13
+288ec3ab8380,motivo_resuelto,transferencia_a_clasificar,Joaco 13/11: los 500 es un prestamo a mi padre que se va de viaje,2026-11-13
+5fd2f471501f,tipo,transferencia,"Joaco 13/11: si, deposito a eToro",2026-11-13
+5fd2f471501f,cuenta_destino,Etoro,"Joaco 13/11: si, deposito a eToro",2026-11-13
+5fd2f471501f,ambito,interno,"Joaco 13/11: si, deposito a eToro",2026-11-13
+5fd2f471501f,en_analisis,0,"Joaco 13/11: si, deposito a eToro",2026-11-13
+5fd2f471501f,descripcion,Deposito a eToro,"Joaco 13/11: si, deposito a eToro",2026-11-13
+5fd2f471501f,motivo_resuelto,sin_categoria,"Joaco 13/11: si, deposito a eToro",2026-11-13
+5fd2f471501f,motivo_resuelto,tc_estimado,"Joaco 13/11: deposito a eToro, transferencia interna",2026-11-13
+744edd882966,tipo,transferencia,"Joaco 13/11: si, deposito a eToro",2026-11-13
+744edd882966,cuenta_destino,Etoro,"Joaco 13/11: si, deposito a eToro",2026-11-13
+744edd882966,ambito,interno,"Joaco 13/11: si, deposito a eToro",2026-11-13
+744edd882966,en_analisis,0,"Joaco 13/11: si, deposito a eToro",2026-11-13
+744edd882966,descripcion,Deposito a eToro,"Joaco 13/11: si, deposito a eToro",2026-11-13
+744edd882966,motivo_resuelto,sin_categoria,"Joaco 13/11: si, deposito a eToro",2026-11-13
+744edd882966,motivo_resuelto,tc_estimado,"Joaco 13/11: deposito a eToro, transferencia interna",2026-11-13
+60fbb6f9679c,descripcion,Psicologa (octubre),Joaco 3/11: pago de la psicologa 10.800 (transferencia a BROU),2026-11-13
+60fbb6f9679c,motivo_resuelto,sin_categoria,Joaco 3/11: pago de la psicologa 10.800 (transferencia a BROU),2026-11-13
+60fbb6f9679c,motivo_resuelto,formato_nuevo,parser arreglado 13/11: Itau escribio la moneda como '$',2026-11-13
+75f435542f93,tipo,gasto,"Joaco 3/11: cuota de Bigua 5.560, se la paso a Lu (como siempre)",2026-11-13
+75f435542f93,categoria,Club,"Joaco 3/11: cuota de Bigua 5.560, se la paso a Lu (como siempre)",2026-11-13
+75f435542f93,ambito,personal,"Joaco 3/11: cuota de Bigua 5.560, se la paso a Lu (como siempre)",2026-11-13
+75f435542f93,cuenta_destino,,"Joaco 3/11: cuota de Bigua 5.560, se la paso a Lu (como siempre)",2026-11-13
+75f435542f93,en_analisis,1,"Joaco 3/11: cuota de Bigua 5.560, se la paso a Lu (como siempre)",2026-11-13
+75f435542f93,comercio,Club (via Lu),"Joaco 3/11: cuota de Bigua 5.560, se la paso a Lu (como siempre)",2026-11-13
+75f435542f93,descripcion,bigua,"Joaco 3/11: cuota de Bigua 5.560, se la paso a Lu (como siempre)",2026-11-13
+75f435542f93,motivo_resuelto,transferencia_a_clasificar,"Joaco 3/11: cuota de Bigua 5.560, se la paso a Lu (como siempre)",2026-11-13
+75f435542f93,motivo_resuelto,formato_nuevo,parser arreglado 13/11: Itau escribio la moneda como '$',2026-11-13
+39c7a958b84a,motivo_resuelto,formato_nuevo,parser arreglado 13/11: Itau escribio la moneda como 'US.D',2026-11-13
+482c28839cff,motivo_resuelto,formato_nuevo,parser arreglado 13/11: Itau escribio la moneda como 'US.D',2026-11-13
+288ec3ab8380,motivo_resuelto,formato_nuevo,parser arreglado 13/11: Itau escribio la moneda como 'US.D',2026-11-13
+71517b0861fd,motivo_resuelto,formato_nuevo,"parser nuevo 13/11: 'Aviso de pago de tarjeta de credito' -> pago del estado de la Itau Infinite (UYU 3.557,64 + USD 353,53)",2026-11-13
+88cd4e1b9984,motivo_resuelto,formato_nuevo,"promo de Itau (Moweek), no es un movimiento; el router ahora ignora las promos con '% menos'",2026-11-13
+5d037a62179f,categoria,Auto,Joaco 13/11: 399 UTE auto,2026-11-13
+5d037a62179f,comercio,UTE (auto),Joaco 13/11: 399 UTE auto,2026-11-13
+5d037a62179f,descripcion,UTE auto (Proyecto PAS),Joaco 13/11: 399 UTE auto,2026-11-13
+5d037a62179f,motivo_resuelto,sin_categoria,Joaco 13/11: 399 UTE auto,2026-11-13
+ee280834e3c0,categoria,Servicios,Joaco 13/11: 2103 antel,2026-11-13
+ee280834e3c0,comercio,ANTEL,Joaco 13/11: 2103 antel,2026-11-13
+ee280834e3c0,descripcion,ANTEL (Proyecto PAS),Joaco 13/11: 2103 antel,2026-11-13
+ee280834e3c0,motivo_resuelto,sin_categoria,Joaco 13/11: 2103 antel,2026-11-13
+7625d08f64e0,categoria,Servicios,Joaco 13/11: 3315 UTE,2026-11-13
+7625d08f64e0,comercio,UTE,Joaco 13/11: 3315 UTE,2026-11-13
+7625d08f64e0,descripcion,UTE (Proyecto PAS),Joaco 13/11: 3315 UTE,2026-11-13
+7625d08f64e0,motivo_resuelto,sin_categoria,Joaco 13/11: 3315 UTE,2026-11-13
+525bff9992a4,en_analisis,0,"Joaco 13/11: un solo viaje, duplicado de 068e5034790e",2026-11-13
+525bff9992a4,motivo_resuelto,posible_duplicado,"Joaco 13/11: un solo viaje, duplicado de 068e5034790e",2026-11-13
+7561fdbfffd7,categoria,Salud,"Joaco 13/11: salud, tiras nasales ronquidos",2026-11-13
+7561fdbfffd7,motivo_resuelto,sin_categoria,"Joaco 13/11: salud, tiras nasales ronquidos",2026-11-13
+9ea8b7bd9def,categoria,Salud,"Joaco 13/11: salud, tiras nasales ronquidos",2026-11-13
+9ea8b7bd9def,motivo_resuelto,sin_categoria,"Joaco 13/11: salud, tiras nasales ronquidos",2026-11-13
+e5cee4539c83,categoria,Salud,"Joaco 13/11: salud, tiras nasales ronquidos (pagado con la Cuenta Casa)",2026-11-13
+e5cee4539c83,motivo_resuelto,sin_categoria,"Joaco 13/11: salud, tiras nasales ronquidos (pagado con la Cuenta Casa)",2026-11-13
+49998fc03c30,categoria,Croqueta,"Joaco 13/11: curso croqueta, es gasto de la casa",2026-11-13
+49998fc03c30,ambito,casa,"Joaco 13/11: curso croqueta, es gasto de la casa",2026-11-13
+49998fc03c30,descripcion,Curso Croqueta (PayPal),"Joaco 13/11: curso croqueta, es gasto de la casa",2026-11-13
+49998fc03c30,motivo_resuelto,sin_categoria,"Joaco 13/11: curso croqueta, es gasto de la casa",2026-11-13
+2e054cf2131a,categoria,Viajes,Joaco 13/11: viajes (personal),2026-11-13
+2e054cf2131a,motivo_resuelto,sin_categoria,Joaco 13/11: viajes (personal),2026-11-13
+3822be9fb23d,categoria,Salud,"Joaco 13/11: salud, personal",2026-11-13
+3822be9fb23d,motivo_resuelto,sin_categoria,"Joaco 13/11: salud, personal",2026-11-13
+222486cbf6ef,categoria,Comer afuera / Delivery,Joaco 13/11: malvin comer afuera,2026-11-13
+222486cbf6ef,motivo_resuelto,sin_categoria,Joaco 13/11: malvin comer afuera,2026-11-13
+043938fa5cec,categoria,Super,Joaco 13/11: pigalle super,2026-11-13
+043938fa5cec,motivo_resuelto,sin_categoria,Joaco 13/11: pigalle super,2026-11-13
+c59a8edbbe99,categoria,Comer afuera / Delivery,"Joaco 13/11: comer afuera personal 1/5 mio, el resto a deudas, me lo devuelven",2026-11-13
+c59a8edbbe99,motivo_resuelto,sin_categoria,"Joaco 13/11: comer afuera personal 1/5 mio, el resto a deudas, me lo devuelven",2026-11-13
+bc8e48024782,categoria,Comer afuera / Delivery,"Joaco 13/11: comer afuera personal 1/5 mio, el resto a deudas, me lo devuelven",2026-11-13
+bc8e48024782,motivo_resuelto,sin_categoria,"Joaco 13/11: comer afuera personal 1/5 mio, el resto a deudas, me lo devuelven",2026-11-13
+c59a8edbbe99,monto,608.81,split: tu parte 608.81 + Deudas 2435.24 = 3044.05 UYU,2026-11-13
+c59a8edbbe99,monto_uyu,608.81,split: 608.81 de 3044.05 UYU,2026-11-13
+c59a8edbbe99,motivo_resuelto,split_a_cargar,split: tu parte 608.81 + Deudas 2435.24 = 3044.05 UYU,2026-11-13
+bc8e48024782,monto,284.02,split: tu parte 284.02 + Deudas 1136.06 = 1420.08 UYU,2026-11-13
+bc8e48024782,monto_uyu,284.02,split: 284.02 de 1420.08 UYU,2026-11-13
+bc8e48024782,motivo_resuelto,split_a_cargar,split: tu parte 284.02 + Deudas 1136.06 = 1420.08 UYU,2026-11-13
+584fc96ef5dc,categoria,Super,Joaco 13/11: molienda: super,2026-11-13
+584fc96ef5dc,motivo_resuelto,sin_categoria,Joaco 13/11: molienda: super,2026-11-13
+54c0b580f8b4,categoria,Croqueta,"Joaco 13/11: Porotino Petshop = Croqueta, casa",2026-11-13
+54c0b580f8b4,motivo_resuelto,sin_categoria,"Joaco 13/11: Porotino Petshop = Croqueta, casa",2026-11-13
+6a438e570dc3,categoria,Croqueta,"Joaco 13/11: Porotino Petshop = Croqueta, casa",2026-11-13
+6a438e570dc3,motivo_resuelto,sin_categoria,"Joaco 13/11: Porotino Petshop = Croqueta, casa",2026-11-13
+a240f0168989,categoria,Croqueta,"Joaco 13/11: Porotino Petshop = Croqueta, casa",2026-11-13
+a240f0168989,motivo_resuelto,sin_categoria,"Joaco 13/11: Porotino Petshop = Croqueta, casa",2026-11-13
+60368a6faaec,categoria,Casa & hogar,"Joaco 13/11: ok (ferreteria, casa)",2026-11-13
+60368a6faaec,motivo_resuelto,sin_categoria,"Joaco 13/11: ok (ferreteria, casa)",2026-11-13
+511ab24ec044,categoria,Super,"Joaco 13/11: ok (almacen, Super)",2026-11-13
+511ab24ec044,motivo_resuelto,sin_categoria,"Joaco 13/11: ok (almacen, Super)",2026-11-13
+362e3d8187f2,categoria,Super,"Joaco 13/11: ok (Club del Pan, Super casa)",2026-11-13
+362e3d8187f2,motivo_resuelto,sin_categoria,"Joaco 13/11: ok (Club del Pan, Super casa)",2026-11-13
+7066a99d757b,categoria,Suscripciones,"Joaco 13/11: ok (Canva, reintegrado el mismo dia)",2026-11-13
+7066a99d757b,motivo_resuelto,sin_categoria,"Joaco 13/11: ok (Canva, reintegrado el mismo dia)",2026-11-13
+2b6c207d5b01,categoria,Suscripciones,"Joaco 13/11: ok (reintegro de Canva, netea 7066a99d757b)",2026-11-13
+2b6c207d5b01,motivo_resuelto,sin_categoria,"Joaco 13/11: ok (reintegro de Canva, netea 7066a99d757b)",2026-11-13
+22b5518d3c35,categoria,Suscripciones,"Joaco 13/11: ok (Namecheap, dominio)",2026-11-13
+22b5518d3c35,descripcion,Namecheap (dominio),"Joaco 13/11: ok (Namecheap, dominio)",2026-11-13
+22b5518d3c35,motivo_resuelto,sin_categoria,"Joaco 13/11: ok (Namecheap, dominio)",2026-11-13
+288ec3ab8380,motivo_resuelto,tc_estimado,"es un prestamo (transferencia a A cobrar), no un gasto: el tc no corrige nada",2026-11-13

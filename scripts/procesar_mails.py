@@ -332,8 +332,12 @@ def parse_aviso_itau(mail):
 
 
 RE_ITAU_TRANSF = re.compile(
-    r"desde la cuenta\s*\**\s*(\d{3,})\s*Importe:\s*([\d.,]+)\s*(UYU|URGP|USD|EUR)\s*"
+    r"desde la cuenta\s*\**\s*(\d{3,})\s*Importe:\s*([\d.,]+)\s*(UYU|URGP|USD|US\.D|EUR|\$)\s*"
     r"Cuenta destino:\s*(\d+)\s*(?:Banco/Instituci.n destino:\s*(.+?)\s*(?:\n|Adem.s|$))?", re.S)
+MONEDA_TRANSF_ITAU = {"UYU": "UYU", "URGP": "UYU", "$": "UYU", "USD": "USD", "US.D": "USD", "EUR": "EUR"}
+RE_ITAU_PAGO_TC = re.compile(
+    r"terminada en\s*(\d{4})\s*\.?\s*Pago en pesos:\s*([\d.,]+)\s*pesos\s*"
+    r"Pago en d.lares:\s*([\d.,]+)\s*d.lares", re.S)
 RE_ITAU_PAGO = re.compile(
     r"Cuenta origen terminada en\s*\.*\s*(\d{3,})\s*\.?\s*Monto:\s*(U\$S|US\$|USD|UYU|\$)\s*"
     r"([\d.,]+)\s*\.?\s*Pago a\s*(.+?)\s*\.?\s*(?:\n|Si no|$)", re.S)
@@ -344,15 +348,24 @@ def parse_transferencia_itau(body):
     solo su numero de cuenta y el banco.
     -> (sufijo_cuenta_origen, moneda, monto, numero_destino, banco_destino)
 
-    Itau escribe los pesos como 'UYU' o como 'URGP' (codigo interno del banco;
-    aparecio el 30/10/2026 en dos avisos que cayeron como formato_nuevo): los dos
-    son UYU."""
+    Itau escribe la moneda de varias formas: los pesos como 'UYU', 'URGP' (30/10/2026)
+    o '$', y los dolares como 'USD' o 'US.D' (3-10/11/2026: cinco avisos cayeron
+    como formato_nuevo)."""
     m = RE_ITAU_TRANSF.search(body)
     if not m:
         raise ValueError("transferencia Itau: layout desconocido")
-    moneda = "UYU" if m.group(3) == "URGP" else m.group(3)
-    return (m.group(1), moneda, num_itau(m.group(2)), m.group(4).lstrip("0"),
+    return (m.group(1), MONEDA_TRANSF_ITAU[m.group(3)], num_itau(m.group(2)), m.group(4).lstrip("0"),
             (m.group(5) or "").strip())
+
+
+def parse_pago_tarjeta_itau(body):
+    """'Aviso de pago de tarjeta de credito' de Itau (pago del estado por la web).
+    Trae el pago en pesos y el pago en dolares por separado (cualquiera puede ser 0).
+    -> (sufijo_tarjeta, pesos, dolares)"""
+    m = RE_ITAU_PAGO_TC.search(body)
+    if not m:
+        raise ValueError("pago de tarjeta Itau: layout desconocido")
+    return m.group(1), num_itau(m.group(2)), num_itau(m.group(3))
 
 
 def parse_pago_itau(body):
@@ -612,13 +625,16 @@ def main():
                 return "devolucion_itau"
             if "transferencia realizada" in s:
                 return "transferencia_itau"
+            if s.startswith("aviso de pago de tarjeta"):
+                return "pago_tarjeta_itau"
             if s.startswith("pago realizado"):
                 return "pago_itau"
             # algo que parece un movimiento pero no conocemos (devolucion,
             # transferencia...): pendiente formato_nuevo, nunca perdido en silencio
             if re.search(r"consumo|compra|devoluci|reintegro|anulaci|transferencia|"
                          r"d.bito|cr.dito|pago", s) \
-                    and not re.search(r"solicitud|aprobada|entrega|en camino|inicio de sesi|millas", s):
+                    and not re.search(r"solicitud|aprobada|entrega|en camino|inicio de sesi|millas|"
+                                      r"% menos|% de descuento", s):   # promos ('Vivi Moweek con 25% menos...')
                 return "itau_desconocido"
             return "ignorado"
         if "mercadopago.com" in frm and "transferencia fue enviada" in subj.lower():
@@ -909,12 +925,25 @@ def main():
             if num and tit:
                 alias_por_numero[num] = tit     # mails en orden: gana el mas reciente
 
-    def cuenta_itau(sufijo, moneda):
+    def cuenta_itau(sufijo):
+        # Sin cuenta_en_moneda: el sufijo ya identifica la caja (pesos o dolares).
+        # Una compra de dolares sale de 4405 con un importe en USD, y remapearla
+        # a 'Itaú USD' la confundia con su propio destino (4/11/2026).
         cands = {c for n, (c, _) in cuentas_propias.items() if n.endswith(sufijo)}
         if len(cands) != 1:
             raise ValueError(f"cuenta origen Itau terminada en {sufijo}: "
                              f"{'no esta' if not cands else 'ambigua'} en config/cuentas_bancarias.csv")
-        return cuenta_en_moneda(cands.pop(), moneda, cuentas_validas)
+        return cands.pop()
+
+    def cuenta_propia(num):
+        # Itau antepone la sucursal a las cuentas de Santander: la Cuenta Casa
+        # (000001322680, suc. 05) llega como 0005000001322680 (giro del 3/11/2026).
+        if num in cuentas_propias:
+            return cuentas_propias[num]
+        for n, v in cuentas_propias.items():
+            if len(num) > 12 and num.endswith(n.zfill(12)):
+                return v
+        return ("", "")
 
     for mail in mails:
         h = router(mail)
@@ -925,7 +954,7 @@ def main():
                 suf, moneda, monto, num_dst, banco = parse_transferencia_itau(mail["body_text"])
             else:
                 suf, moneda, monto, a_quien = parse_pago_itau(mail["body_text"])
-            cuenta_origen = cuenta_itau(suf, moneda)
+            cuenta_origen = cuenta_itau(suf)
         except Exception as e:
             formato_nuevo(mail, h, e)
             continue
@@ -948,7 +977,7 @@ def main():
                                 "(si es el pago de una tarjeta, va como transferencia)"))
             detalle = f"{suf} {moneda} {fmt(monto)} pago a {a_quien}"
         else:
-            propia, moneda_propia = cuentas_propias.get(num_dst, ("", ""))
+            propia, moneda_propia = cuenta_propia(num_dst)
             moneda_origen = {c: mo for c, mo in cuentas_propias.values()}.get(cuenta_origen, moneda)
             if moneda_origen and moneda_origen != moneda:
                 # venta/compra de moneda (ej. 4411 USD -> 274.400 URGP el 30/10/2026):
@@ -984,6 +1013,37 @@ def main():
         nuevos.append(r)
         log_proc(mail, h, "insertado", r["id"],
                  f"{detalle} -> {r['cuenta']}/{r['tipo']}/{r['ambito']}/{r['categoria'] or '(sin categoria)'}")
+
+    # ------------------------------- 2d. pago del estado de una tarjeta Itau
+    # 'Aviso de pago de tarjeta de credito': una fila por moneda pagada. Los pesos
+    # salen de Itaú UYU y los dolares de Itaú USD (el aviso no dice la cuenta).
+    for mail in mails:
+        h = router(mail)
+        if mail["message_id"] in ya_procesados or h != "pago_tarjeta_itau":
+            continue
+        try:
+            suf, pesos, dolares = parse_pago_tarjeta_itau(mail["body_text"])
+            tarjeta = tarjetas[suf][0]
+        except Exception as e:
+            formato_nuevo(mail, h, e)
+            continue
+        fecha = (dt.datetime.fromisoformat(mail["fecha_mail"].replace("Z", "+00:00"))
+                 - dt.timedelta(hours=3)).date().isoformat()
+        ids = []
+        for moneda, monto, sufijo_id in (("UYU", pesos, ""), ("USD", dolares, ":usd")):
+            if not monto:
+                continue
+            r = fila_base(mail["message_id"])
+            r.update(id=hid(mail["message_id"] + sufijo_id), fecha=fecha, mes=fecha[:7],
+                     tipo="transferencia", monto=fmt(monto), moneda=moneda,
+                     monto_uyu=fmt(monto if moneda == "UYU" else round(monto * tc[moneda], 2)),
+                     cuenta=cuenta_en_moneda("Itaú UYU", moneda, cuentas_validas),
+                     cuenta_destino=tarjeta, ambito="interno", en_analisis="0",
+                     descripcion=f"Pago estado {tarjeta} ({moneda})")
+            nuevos.append(r)
+            ids.append(r["id"])
+        log_proc(mail, h, "insertado", ",".join(ids),
+                 f"{suf} pago tarjeta UYU {fmt(pesos)} + USD {fmt(dolares)} -> {tarjeta}")
 
     # ------------------------------------- 2b. retorno de fondo casa desde MP
     # "Tu transferencia fue enviada" (Mercado Pago -> Santander): la cuenta

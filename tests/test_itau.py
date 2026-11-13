@@ -58,6 +58,23 @@ def test_transferencia_realizada_urgp():
     assert pm.parse_transferencia_itau(body) == ("4405", "UYU", 4905.0, "1409211", "Itau")
 
 
+def test_transferencia_realizada_signo_pesos_y_us_punto_d():
+    # 3-10/11/2026: Itau escribio '$' y 'US.D' y cinco avisos cayeron como formato_nuevo
+    body = ("Aviso de transferencia realizada\nTransferencia realizada.\nDetalles:\n"
+            "Transferencia realizada desde la cuenta **** 4405\nImporte: 10800.00 $\n"
+            "Cuenta destino: 00075738100001\nBanco/Institución destino: BROU\nAdemás ingresando")
+    assert pm.parse_transferencia_itau(body) == ("4405", "UYU", 10800.0, "75738100001", "BROU")
+    body = body.replace("10800.00 $", "774.81 US.D")
+    assert pm.parse_transferencia_itau(body)[1:3] == ("USD", 774.81)
+
+
+def test_pago_de_tarjeta():
+    body = ("Aviso de pago de tarjeta de credito\nSe ha confirmado el pago por internet de una "
+            "tarjeta Visa terminada en\n5023.\nPago en pesos: 3,557.64 pesos\n"
+            "Pago en dólares: 353.53 dólares\nSi no lo solicitaste comunícate")
+    assert pm.parse_pago_tarjeta_itau(body) == ("5023", 3557.64, 353.53)
+
+
 def test_pago_realizado():
     body = ("Pago realizado.\nTu pago fue realizado con éxito. Siguen los detalles del mismo:\n"
             "Cuenta origen terminada en ... 4405 .\nMonto: $ 300.00 .\nPago a SISTARBANC .\n"

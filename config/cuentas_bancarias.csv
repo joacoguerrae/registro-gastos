@@ -7,3 +7,5 @@ numero,moneda,cuenta_ledger,nota
 4174405,UYU,Itaú UYU,"caja de ahorro en pesos Itau (cuenta principal desde oct-2026, debito 6136). Numero tal como aparece en los avisos de transferencia de Santander ('Joaco Itau Pesos', 17/10/2026): procesar_mails usa esta tabla para reconocer transferencias a cuentas propias"
 4174411,USD,Itaú USD,"caja de ahorro en dolares Itau. Numero de los avisos de transferencia de Santander ('Joaco Itau USD', 11/10/2026)"
 3701587811,USD,Interactive Brokers,"cuenta Mi Dinero por la que Joaco gira a IBKR (USD 500 desde Itau USD el 26/10/2026, Joaco 28/10): procesar_mails la toma como transferencia interna en_analisis=0"
+108071,USD,Interactive Brokers,"cuenta de la Cooperativa FUCEREP por la que Joaco gira a IBKR (USD 500 desde Itau USD el 6/11/2026, Joaco 13/11: inversion a IBKR)"
+11092453300001,USD,Interactive Brokers,"cuenta BROU por la que Joaco gira a IBKR (USD 240 desde Itau USD el 6/11/2026, Joaco 13/11: inversion a IBKR)"
