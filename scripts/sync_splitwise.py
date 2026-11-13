@@ -209,6 +209,14 @@ def exports_vigentes():
     return out
 
 
+def grupos_cerrados():
+    """slugs de config/parametros.json > splitwise_grupos_cerrados: grupos que ya no
+    tienen movimientos (ej. Guasones en Familia, cerrado en oct-2026, Joaco 13/11).
+    Su ultimo export queda como definitivo y no dispara EXPORT VENCIDO."""
+    with open(PARAMETROS, encoding="utf-8") as f:
+        return {k for k in json.load(f).get("splitwise_grupos_cerrados", {}) if not k.startswith("_")}
+
+
 def leer_export(path):
     """-> (movimientos crudos, saldo total por moneda de mi columna)."""
     with open(path, encoding="utf-8-sig", newline="") as f:
@@ -347,9 +355,14 @@ def fuente_export(cache):
             creado=c["creado_por"], grupo=c["grupo"],
             mi_paid=float(c["mi_paid_share"]), mi_owed=float(c["mi_owed_share"]),
             subcat="", borrado=False, no_insertar=False))
-    viejo = min(f for f, _ in vig.values())
+    # Un grupo cerrado (sin movimientos y con mi saldo en 0) no se re-exporta:
+    # su ultimo export es definitivo y no cuenta para el vencimiento.
+    cerrados = grupos_cerrados()
+    viejo = min((f for g, (f, _) in vig.items() if g not in cerrados), default=None)
     desc = (f"export CSV de {len(vig)} grupo(s) ({', '.join(sorted(vig))}); "
-            f"export mas viejo {viejo}. Referencia de saldo PARCIAL: solo los grupos "
+            f"export mas viejo de un grupo activo {viejo or '-'}"
+            f"{' (cerrados: ' + ', '.join(sorted(cerrados)) + ')' if cerrados else ''}. "
+            f"Referencia de saldo PARCIAL: solo los grupos "
             f"exportados, sin gastos sueltos ni grupos no exportados")
     return gastos, saldo, desc, viejo, avisos
 
