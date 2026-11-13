@@ -597,3 +597,7 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 1a1d0b08bacc6031,2026-11-12T16:56:32Z,aviso_tarjeta,insertado,fb49d031909e,6136 UYU 80.66 DISCO NÊ 22 VIS3 -> Itaú UYU/personal/Super,6136||80.66||DISCO NÊ 22 VIS3||2026-11-12T13:56:32,2026-11-12T20:03:27+00:00
 1a1d03bac3148ec2,2026-11-12T14:48:52Z,itau,formato_nuevo,88cd4e1b9984,comunicaciones@itau.com.uy | 'Viví Moweek con 25% menos con tarjetas de crédito Itaú' -> ValueError: mail de Itau que parece un movimiento pero no tiene parser,,2026-11-12T20:03:27+00:00
 1a1d0f7792bad343,2026-11-12T18:14:00Z,ignorado,ignorado,,"comunicaciones@itau.com.uy | Cobrás tu sueldo, bonificás tu Paquete Personal Bank",,2026-11-12T20:03:27+00:00
+1a1d1cf7741f2828,2026-11-12T22:09:53Z,aviso_tarjeta,insertado,d6b9b47410a6,8261 UYU 759.84 MONTEVIDEO/DEVOTO EXPRESS VIS3 -> Cuenta Casa/casa/Super,8261||759.84||MONTEVIDEO/DEVOTO EXPRESS VIS3||2026-11-12T19:09:52,2026-11-13T06:53:15+00:00
+1a1d279298ec1e74,2026-11-13T01:15:14Z,aviso_tarjeta,insertado,7625d08f64e0,8261 UYU 3314.89 INTERNET/Proyecto PAS -> Cuenta Casa/casa/(sin categoria),8261||3314.89||INTERNET/Proyecto PAS||2026-11-12T22:15:13,2026-11-13T06:53:15+00:00
+1a1d27a900b80ffe,2026-11-13T01:16:47Z,transferencia,insertado,a18563e39c90,Aviso de Transferencia Instantánea en Uruguay   | Yova 'lu y joaco' UYU 1700.00 2026-11-12 -> gasto/casa/Casa & hogar,,2026-11-13T06:53:15+00:00
+1a1d173b169bcc1c,2026-11-12T20:29:19Z,factura,factura,,"Antel  venc  (informativo, no toca ledger)",,2026-11-13T06:53:15+00:00

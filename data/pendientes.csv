@@ -331,3 +331,4 @@ ee280834e3c0,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,202
 22b5518d3c35,sin_categoria,establecimiento 'NAME-CHEAP.COM* YDYT6C +1323' sin regla,2026-11-11,
 e5cee4539c83,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*WALLETMLU VIS3' sin regla,2026-11-11,
 88cd4e1b9984,formato_nuevo,comunicaciones@itau.com.uy | 'Viví Moweek con 25% menos con tarjetas de crédito Itaú' -> ValueError: mail de Itau que parece un movimiento pero no tiene parser,2026-11-12,
+7625d08f64e0,sin_categoria,establecimiento 'INTERNET/Proyecto PAS' sin regla,2026-11-13,
