@@ -603,3 +603,5 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 1a1d03bac3148ec2,2026-11-12T14:48:52Z,ignorado,ignorado,,comunicaciones@itau.com.uy | Viví Moweek con 25% menos con tarjetas de crédito Itaú,,2026-11-13T19:54:52+00:00
 1a1d0f7792bad343,2026-11-12T18:14:00Z,ignorado,ignorado,,"comunicaciones@itau.com.uy | Cobrás tu sueldo, bonificás tu Paquete Personal Bank",,2026-11-13T19:54:52+00:00
 1a1d173b169bcc1c,2026-11-12T20:29:19Z,factura,factura,,"Antel  venc  (informativo, no toca ledger)",,2026-11-13T19:54:52+00:00
+1a1db9511b62f76b,2026-11-14T19:42:20Z,aviso_tarjeta,insertado,667e6be23c38,6427 UYU 196.82 DLOPEDIDOSYA -> Santander Platinum/personal/Comer afuera / Delivery,6427||196.82||DLOPEDIDOSYA||2026-11-14T16:42:16,2026-11-15T06:43:39+00:00
+1a1dba554b78963c,2026-11-14T20:00:05Z,aviso_tarjeta,insertado,5c224df96ff2,6427 UYU 15.00 DLOPEDIDOSYA P -> Santander Platinum/personal/Comer afuera / Delivery,6427||15.00||DLOPEDIDOSYA P||2026-11-14T16:59:59,2026-11-15T06:43:39+00:00
