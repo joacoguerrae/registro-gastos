@@ -281,3 +281,4 @@ fa2cc0f6f7de,tc_estimado,USD 100.00 x tc 40.33 = 4033.00 UYU (corrige Fase 3),20
 22b5518d3c35,tc_estimado,USD 12.28 x tc 40.33 = 495.25 UYU (corrige Fase 3),2026-11-15,
 dc5f76093dde,transferencia_a_clasificar,"a 'Lu Mercado Pago', concepto 'juguetes crolet', UYU 974.00",2026-11-15,1
 25f3b6b5eed1,transferencia_a_clasificar,"a 'Lu mercado pago', concepto 'juguetes croketta', UYU 100.00",2026-11-15,1
+7bcb8c305b7e,carga_manual_duplicado,"[planilla] Aportes fila 5: aporte de Joaco 31000.00 (2026-11-03) ya esta en el ledger (fc3cb5b58839, mail, 2026-11-03): NO se cargo. Si es OTRO, resolvelo en la revision y entra solo",2026-11-15,
