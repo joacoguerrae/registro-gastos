@@ -559,12 +559,16 @@ def main():
         devuelve los motivos de pendiente."""
         texto = f"{titular} {concepto}"
         motivos = []
-        if re.search(r"mercado pago", titular, re.I) or re.search(r"\bcasa\b", concepto, re.I):
-            # regla 1: aporte a la cuenta casa
+        es_lu = re.search(r"\blu\b", titular, re.I)
+        if (re.search(r"mercado pago", titular, re.I) and not es_lu) \
+                or re.search(r"\bcasa\b", concepto, re.I):
+            # regla 1: aporte a la cuenta casa. 'Lu Mercado Pago' es la cuenta de
+            # Lu, no la casa: va a la regla 2 (juguetes de Croqueta del 9/11/2026
+            # desaparecieron como casa -> casa)
             r.update(tipo="transferencia", cuenta_destino="Cuenta Casa",
                      ambito="interno", en_analisis="0",
                      descripcion=concepto or "Aporte")
-        elif re.search(r"\blu\b", titular, re.I):
+        elif es_lu:
             # regla 2: transferencia a Lu. Si el concepto matchea una regla de
             # comercio (ej. "bigua" -> Club) es un gasto pagado via Lu; si no,
             # queda a clasificar (puede ser movimiento de casa).

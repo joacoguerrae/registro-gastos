@@ -275,8 +275,9 @@ f22b0a9309ac,sin_categoria,"estado_cuenta BBVA Crédito 2026-10: 'SEGURO VIDA 2,
 452ae715b031,sin_categoria,estado_cuenta Santander Mastercard 2026-10: 'DEVOLUCION COSTO ANUAL' sin regla,2026-11-02,1
 38647d7111f4,sin_categoria,estado_cuenta Santander Mastercard 2026-10: 'CUOTA ANUAL           02 03' sin regla,2026-11-02,1
 88cd4e1b9984,formato_nuevo,comunicaciones@itau.com.uy | 'Viví Moweek con 25% menos con tarjetas de crédito Itaú' -> ValueError: mail de Itau que parece un movimiento pero no tiene parser,2026-11-12,1
-49998fc03c30,tc_estimado,USD 40.32 x tc 40.33 = 1626.11 UYU (corrige Fase 3),2026-11-13,
-fa2cc0f6f7de,tc_estimado,USD 100.00 x tc 40.33 = 4033.00 UYU (corrige Fase 3),2026-11-13,
-2e054cf2131a,tc_estimado,USD 60.04 x tc 40.33 = 2421.41 UYU (corrige Fase 3),2026-11-13,
-22b5518d3c35,tc_estimado,USD 12.28 x tc 40.33 = 495.25 UYU (corrige Fase 3),2026-11-13,
-7af6c6aaa183,sin_categoria,establecimiento 'SUCAN 26 DE MAR' sin regla,2026-11-13,1
+49998fc03c30,tc_estimado,USD 40.32 x tc 40.33 = 1626.11 UYU (corrige Fase 3),2026-11-15,
+fa2cc0f6f7de,tc_estimado,USD 100.00 x tc 40.33 = 4033.00 UYU (corrige Fase 3),2026-11-15,
+2e054cf2131a,tc_estimado,USD 60.04 x tc 40.33 = 2421.41 UYU (corrige Fase 3),2026-11-15,
+22b5518d3c35,tc_estimado,USD 12.28 x tc 40.33 = 495.25 UYU (corrige Fase 3),2026-11-15,
+dc5f76093dde,transferencia_a_clasificar,"a 'Lu Mercado Pago', concepto 'juguetes crolet', UYU 974.00",2026-11-15,1
+25f3b6b5eed1,transferencia_a_clasificar,"a 'Lu mercado pago', concepto 'juguetes croketta', UYU 100.00",2026-11-15,1

@@ -1332,3 +1332,19 @@ a240f0168989,motivo_resuelto,sin_categoria,"Joaco 13/11: Porotino Petshop = Croq
 7af6c6aaa183,categoria,Croqueta,Joaco 13/11: Croqueta (casa),2026-11-13
 7af6c6aaa183,ambito,casa,Joaco 13/11: Croqueta (casa),2026-11-13
 7af6c6aaa183,motivo_resuelto,sin_categoria,Joaco 13/11: Croqueta (casa),2026-11-13
+25f3b6b5eed1,tipo,gasto,"Joaco 15/11: si, corregilo (juguetes de Croqueta: gasto de la casa pagado desde la Cuenta Casa a la cuenta Mercado Pago de Lu)",2026-11-15
+25f3b6b5eed1,categoria,Croqueta,"Joaco 15/11: si, corregilo (juguetes de Croqueta: gasto de la casa pagado desde la Cuenta Casa a la cuenta Mercado Pago de Lu)",2026-11-15
+25f3b6b5eed1,ambito,casa,"Joaco 15/11: si, corregilo (juguetes de Croqueta: gasto de la casa pagado desde la Cuenta Casa a la cuenta Mercado Pago de Lu)",2026-11-15
+25f3b6b5eed1,cuenta_destino,,"Joaco 15/11: si, corregilo (juguetes de Croqueta: gasto de la casa pagado desde la Cuenta Casa a la cuenta Mercado Pago de Lu)",2026-11-15
+25f3b6b5eed1,en_analisis,1,"Joaco 15/11: si, corregilo (juguetes de Croqueta: gasto de la casa pagado desde la Cuenta Casa a la cuenta Mercado Pago de Lu)",2026-11-15
+25f3b6b5eed1,comercio,Lu Mercado Pago,"Joaco 15/11: si, corregilo (juguetes de Croqueta: gasto de la casa pagado desde la Cuenta Casa a la cuenta Mercado Pago de Lu)",2026-11-15
+25f3b6b5eed1,descripcion,Juguetes Croqueta (via Lu),"Joaco 15/11: si, corregilo (juguetes de Croqueta: gasto de la casa pagado desde la Cuenta Casa a la cuenta Mercado Pago de Lu)",2026-11-15
+25f3b6b5eed1,motivo_resuelto,transferencia_a_clasificar,"Joaco 15/11: si, corregilo (juguetes de Croqueta: gasto de la casa pagado desde la Cuenta Casa a la cuenta Mercado Pago de Lu)",2026-11-15
+dc5f76093dde,tipo,gasto,"Joaco 15/11: si, corregilo (juguetes de Croqueta: gasto de la casa pagado desde la Cuenta Casa a la cuenta Mercado Pago de Lu)",2026-11-15
+dc5f76093dde,categoria,Croqueta,"Joaco 15/11: si, corregilo (juguetes de Croqueta: gasto de la casa pagado desde la Cuenta Casa a la cuenta Mercado Pago de Lu)",2026-11-15
+dc5f76093dde,ambito,casa,"Joaco 15/11: si, corregilo (juguetes de Croqueta: gasto de la casa pagado desde la Cuenta Casa a la cuenta Mercado Pago de Lu)",2026-11-15
+dc5f76093dde,cuenta_destino,,"Joaco 15/11: si, corregilo (juguetes de Croqueta: gasto de la casa pagado desde la Cuenta Casa a la cuenta Mercado Pago de Lu)",2026-11-15
+dc5f76093dde,en_analisis,1,"Joaco 15/11: si, corregilo (juguetes de Croqueta: gasto de la casa pagado desde la Cuenta Casa a la cuenta Mercado Pago de Lu)",2026-11-15
+dc5f76093dde,comercio,Lu Mercado Pago,"Joaco 15/11: si, corregilo (juguetes de Croqueta: gasto de la casa pagado desde la Cuenta Casa a la cuenta Mercado Pago de Lu)",2026-11-15
+dc5f76093dde,descripcion,Juguetes Croqueta (via Lu),"Joaco 15/11: si, corregilo (juguetes de Croqueta: gasto de la casa pagado desde la Cuenta Casa a la cuenta Mercado Pago de Lu)",2026-11-15
+dc5f76093dde,motivo_resuelto,transferencia_a_clasificar,"Joaco 15/11: si, corregilo (juguetes de Croqueta: gasto de la casa pagado desde la Cuenta Casa a la cuenta Mercado Pago de Lu)",2026-11-15
