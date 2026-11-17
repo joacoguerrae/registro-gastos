@@ -3,7 +3,7 @@
     "fallos_seguidos": 0,
     "issue_abierto": false,
     "ultimo_fallo": "2026-10-30T06:00:06+00:00",
-    "ultimo_ok": "2026-11-17T08:02:04+00:00"
+    "ultimo_ok": "2026-11-17T21:01:55+00:00"
   },
   "backup_drive": {
     "fallos_seguidos": 0,
@@ -13,27 +13,27 @@
   "cierre_casa": {
     "fallos_seguidos": 0,
     "issue_abierto": false,
-    "ultimo_ok": "2026-11-17T08:01:56+00:00"
+    "ultimo_ok": "2026-11-17T21:01:47+00:00"
   },
   "deploy_dashboard": {
     "fallos_seguidos": 0,
     "issue_abierto": false,
-    "ultimo_ok": "2026-11-17T08:02:27+00:00"
+    "ultimo_ok": "2026-11-17T21:02:19+00:00"
   },
   "generar_dashboard_html": {
     "fallos_seguidos": 0,
     "issue_abierto": false,
-    "ultimo_ok": "2026-11-17T08:01:56+00:00"
+    "ultimo_ok": "2026-11-17T21:01:48+00:00"
   },
   "leer_carga_manual": {
     "fallos_seguidos": 0,
     "issue_abierto": false,
-    "ultimo_ok": "2026-11-17T08:01:55+00:00"
+    "ultimo_ok": "2026-11-17T21:01:47+00:00"
   },
   "sync_splitwise": {
     "fallos_seguidos": 0,
     "issue_abierto": false,
     "ultimo_fallo": "2026-11-13T19:49:53+00:00",
-    "ultimo_ok": "2026-11-17T08:01:53+00:00"
+    "ultimo_ok": "2026-11-17T21:01:45+00:00"
   }
 }
