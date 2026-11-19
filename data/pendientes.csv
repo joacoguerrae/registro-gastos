@@ -281,3 +281,15 @@ fa2cc0f6f7de,tc_estimado,USD 100.00 x tc 40.33 = 4033.00 UYU (corrige Fase 3),20
 22b5518d3c35,tc_estimado,USD 12.28 x tc 40.33 = 495.25 UYU (corrige Fase 3),2026-11-15,
 dc5f76093dde,transferencia_a_clasificar,"a 'Lu Mercado Pago', concepto 'juguetes crolet', UYU 974.00",2026-11-15,1
 25f3b6b5eed1,transferencia_a_clasificar,"a 'Lu mercado pago', concepto 'juguetes croketta', UYU 100.00",2026-11-15,1
+612cf49fe1b9,tc_estimado,USD 40.00 x tc 40.33 = 1613.20 UYU (corrige Fase 3),2026-11-19,
+612cf49fe1b9,sin_categoria,establecimiento 'FREESHOP WALINCO COLON' sin regla,2026-11-19,
+581a987fb33d,tc_estimado,USD 17.44 x tc 40.33 = 703.36 UYU (corrige Fase 3),2026-11-19,
+581a987fb33d,sin_categoria,establecimiento 'BUQUEBUS VIS3' sin regla,2026-11-19,
+07a8659d7176,sin_categoria,establecimiento 'MONTEVIDEO/LAIKA 21 DE SETIEMBREVIS3' sin regla,2026-11-19,
+2064b8967819,tc_estimado,USD 12.68 x tc 40.33 = 511.38 UYU (corrige Fase 3),2026-11-19,
+2064b8967819,sin_categoria,establecimiento 'UBR PENDINGUB BUENO' sin regla,2026-11-19,
+e2be08bed5c7,tc_estimado,USD 11.39 x tc 40.33 = 459.36 UYU (corrige Fase 3),2026-11-19,
+e2be08bed5c7,sin_categoria,establecimiento 'UBR PENDINGUB BUENO' sin regla,2026-11-19,
+0e709859562f,tc_estimado,USD 13.60 x tc 40.33 = 548.49 UYU (corrige Fase 3),2026-11-19,
+db8e8e5cfc2d,tc_estimado,reintegro USD 12.68 x tc 40.33 (corrige Fase 3),2026-11-19,
+db8e8e5cfc2d,sin_categoria,reintegro 'UBR PENDINGUB BUENO' sin regla ni cargo original,2026-11-19,
