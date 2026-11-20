@@ -622,3 +622,8 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 1a1f51dfdceaa82a,2026-11-19T18:42:24Z,aviso_tarjeta,insertado,0e709859562f,5023 USD 13.60 UBER TRIP BUENO -> Itaú Infinite/personal/Transporte,5023||13.60||UBER TRIP BUENO||2026-11-19T15:42:24,2026-11-19T20:45:13+00:00
 1a1f4e0c9ecad7c5,2026-11-19T17:35:34Z,devolucion,insertado,db8e8e5cfc2d,5023 USD -12.68 UBR PENDINGUB BUENO -> Itaú Infinite/personal/(sin cat) revierte 2064b8967819,,2026-11-19T20:45:13+00:00
 1a1f411f5496aa86,2026-11-19T13:49:37Z,ignorado,ignorado,,"comunicaciones@itau.com.uy | Los datos de tu tarjeta Itaú, siempre a mano",,2026-11-19T20:45:13+00:00
+1a1f5a8edf7f7f38,2026-11-19T21:14:10Z,aviso_tarjeta,insertado,644345371193,5023 USD 17.25 UBR PENDINGUB BUENO -> Itaú Infinite/personal/(sin categoria),5023||17.25||UBR PENDINGUB BUENO||2026-11-19T18:14:10,2026-11-20T07:25:38+00:00
+1a1f61d2a6d2b1db,2026-11-19T23:21:08Z,aviso_tarjeta,insertado,d6d2848ba160,5023 USD 14.08 UBR PENDINGUB BUENO -> Itaú Infinite/personal/(sin categoria),5023||14.08||UBR PENDINGUB BUENO||2026-11-19T20:21:08,2026-11-20T07:25:38+00:00
+1a1f6910dfa035d7,2026-11-20T01:27:43Z,aviso_tarjeta,insertado,836c2f6820fe,5023 USD 6.77 UBR PENDINGUB BUENO -> Itaú Infinite/personal/(sin categoria),5023||6.77||UBR PENDINGUB BUENO||2026-11-19T22:27:43,2026-11-20T07:25:38+00:00
+1a1f6b6b5c2ce094,2026-11-20T02:08:50Z,aviso_tarjeta,insertado,a9d50682afb7,6136 USD 6.34 CEROONCE SRL VIEI -> Itaú USD/personal/(sin categoria),6136||6.34||CEROONCE SRL VIEI||2026-11-19T23:08:50,2026-11-20T07:25:38+00:00
+1a1f62b7374a5a26,2026-11-19T23:36:44Z,devolucion,insertado,7f1dababde03,5023 USD -11.27 UBR PENDINGUB BUENO -> Itaú Infinite/personal/(sin cat) (sin cargo original),,2026-11-20T07:25:38+00:00
