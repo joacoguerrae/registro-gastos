@@ -55,11 +55,11 @@ def escenario(base):
         L(id="a5", fecha="2026-10-05", tipo="gasto", monto="7", moneda="USD", cuenta="Santander UYU"),
         # inversion: giro antes del saldo cargado (no cuenta), uno despues y un retiro
         L(id="i1", fecha="2026-09-20", tipo="transferencia", monto="999", moneda="USD",
-          cuenta="Santander USD", cuenta_destino="Gletir", en_analisis="0", ambito="interno"),
+          cuenta="Santander USD", cuenta_destino="Etoro", en_analisis="0", ambito="interno"),
         L(id="i2", fecha="2026-10-10", tipo="transferencia", monto="2000", moneda="USD",
-          cuenta="Santander USD", cuenta_destino="Gletir", en_analisis="0", ambito="interno"),
+          cuenta="Santander USD", cuenta_destino="Etoro", en_analisis="0", ambito="interno"),
         L(id="i3", fecha="2026-10-12", tipo="transferencia", monto="150", moneda="USD",
-          cuenta="Gletir", cuenta_destino="Santander USD", en_analisis="0", ambito="interno"),
+          cuenta="Etoro", cuenta_destino="Santander USD", en_analisis="0", ambito="interno"),
     ])
     escribir(base / "config" / "saldos_iniciales.csv",
              ["cuenta", "fecha_corte", "saldo", "moneda", "fuente", "nota"],
@@ -74,8 +74,8 @@ def escenario(base):
                "saldo_calculado": "123", "saldo_real": ""}])
     escribir(base / "data" / "staging" / "saldos_carga.csv",
              ["fecha", "cuenta", "moneda", "saldo", "nota", "fila"],
-             [{"fecha": "2026-08-31", "cuenta": "Gletir", "moneda": "USD", "saldo": "5000", "fila": "2"},
-              {"fecha": "2026-09-30", "cuenta": "Gletir", "moneda": "USD", "saldo": "9324", "fila": "3"}])
+             [{"fecha": "2026-08-31", "cuenta": "Etoro", "moneda": "USD", "saldo": "5000", "fila": "2"},
+              {"fecha": "2026-09-30", "cuenta": "Etoro", "moneda": "USD", "saldo": "9324", "fila": "3"}])
     return base
 
 
@@ -94,9 +94,9 @@ def test_saldo_arranca_del_ultimo_real_de_cada_cuenta(escenario, correr):
 def test_inversion_saldo_planilla_mas_giros_posteriores(escenario, correr):
     d = data_de(escenario, correr)
     inv = {x["cuenta"]: x for x in d["inversiones"]}
-    assert inv["Gletir"]["base_fecha"] == "2026-09-30"
-    assert inv["Gletir"]["aportes_desde"] == 1850          # +2000 - 150; el de 999 es previo
-    assert inv["Gletir"]["saldo"] == 9324 + 1850
+    assert inv["eToro"]["base_fecha"] == "2026-09-30"
+    assert inv["eToro"]["aportes_desde"] == 1850          # +2000 - 150; el de 999 es previo
+    assert inv["eToro"]["saldo"] == 9324 + 1850
     assert inv["Interactive Brokers"]["saldo"] is None     # sin carga todavia
 
 

@@ -36,9 +36,9 @@ BANCOS = [
 # (cuenta, moneda, etiqueta, logo). El saldo sale de la pestana Saldos de la
 # planilla Carga manual (data/staging/saldos_carga.csv) + giros posteriores.
 INVERSIONES = [
-    ("Gletir",              "USD", "Gletir",              "gletir"),
     ("Interactive Brokers", "USD", "Interactive Brokers", "ibkr"),
-]
+    ("Etoro",               "USD", "eToro",               "etoro"),
+]   # Gletir salio el 22/11/2026: retiro total el 28/10, saldo 0 (Joaco)
 
 
 def leer(path, **kw):
