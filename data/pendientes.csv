@@ -320,3 +320,5 @@ a3aaa59339d6,sin_categoria,establecimiento 'FREESHOP WALINCO COLON' sin regla,20
 decdb0cf5af4,sin_categoria,establecimiento 'DLO*Cabify26471lqNSgfs MONTE' sin regla,2026-11-21,
 2230d0baef56,sin_categoria,establecimiento 'MONTEVIDEO/LAIKA 21 DE SETIEMBREVIS3' sin regla,2026-11-21,
 4824a40e6ded,sin_categoria,reintegro 'DLO*Cabify2647hp63sDL5 MONTE' sin regla ni cargo original,2026-11-21,
+266bcd618e79,tc_estimado,USD 25.99 x tc 40.33 = 1048.18 UYU (corrige Fase 3),2026-11-22,
+266bcd618e79,split_a_cargar,split recurrente propuesto: Deudas 3/6 (Rodrigo 2/6; hermana 1/6 (+ madre 1/6 a 'A cobrar')) + casa 2/6: 'APPLE.COM/BILL' — aplicar con OK en revision,2026-11-22,
