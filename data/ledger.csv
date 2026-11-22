@@ -5205,7 +5205,7 @@ e2cd034c3a70,2026-10-31,2026-10,gasto,269.75,UYU,269.75,Deudas,,Comer afuera / D
 f4ed2f4627ee,2026-10-31,2026-10,gasto,513.44,UYU,513.44,Cuenta Casa,,Super,,MONTEVIDEO/VIEJO MOLINO VIS3,VIEJO MOLINO,casa,mail,confirmado,1,1a191ad9b5a6f0b8
 1aca967aa45d,2026-11-01,2026-11,gasto,2810.00,UYU,2810.00,Itaú UYU,,Comer afuera / Delivery,,MERPAGO*ELROBLE VIS3,MERPAGO*ELROBLE,casa,mail,confirmado,1,1a198493cbfac713
 29f3a81275d4,2026-11-01,2026-11,gasto,2140.00,UYU,2140.00,Itaú UYU,,Regalos,,SISTARBANC,Regalo cumpleanos de mi padre (pago web Itau via SISTARBANC),personal,mail,confirmado,1,1a199d8f891ae836
-47307b88072f,2026-11-01,2026-11,gasto,112.00,UYU,112.00,Itaú UYU,,Auto,,ANCAP ESTACION AMERICVIS3,ANCAP ESTACION AMERIC,personal,mail,confirmado,1,1a19863eec722e52
+47307b88072f,2026-11-01,2026-11,gasto,110.16,UYU,110.16,Itaú UYU,,Auto,,ANCAP ESTACION AMERICVIS3,ANCAP ESTACION AMERIC,personal,mail,confirmado,1,1a19863eec722e52
 54a2671dbd67,2026-11-01,2026-11,gasto,43.28,UYU,43.28,Cuenta Casa,,Auto,,DURAZNO/AXION DURAZNO ESTACIOVIS3,DURAZNO/AXION DURAZNO ESTACIO,casa,mail,confirmado,1,1a198d5d8f95e863
 7333d12447dc,2026-11-01,2026-11,gasto,25.00,UYU,25.00,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA P,DLOPEDIDOSYA P,personal,mail,confirmado,1,1a19996312ff4d84
 962bb76271ca,2026-11-01,2026-11,gasto,151.00,UYU,151.00,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA,DLOPEDIDOSYA,personal,mail,confirmado,1,1a1997a1452fda02
@@ -5213,19 +5213,24 @@ abb6f4ead0ad,2026-11-01,2026-11,gasto,1.99,USD,80.26,Santander Platinum,,Suscrip
 f47b92f789b0,2026-11-01,2026-11,gasto,171.15,UYU,171.15,Cuenta Casa,,Auto,,DURAZNO/AXION DURAZNO ESTACIOVIS3,DURAZNO/AXION DURAZNO ESTACIO,casa,mail,confirmado,1,1a198d4e2369e19b
 f5cdfd82c7de,2026-11-01,2026-11,transferencia,2140.00,UYU,2140.00,Itaú UYU,Deudas,,,,SISTARBANC 01/11: parte ajena -> Deudas (regalo de cumple del padre: la otra mitad con los hermanos por Splitwise),interno,manual,confirmado,0,29f3a81275d4-split
 ff8ead2addbf,2026-11-01,2026-11,gasto,565.80,UYU,565.80,Santander Platinum,,Transporte,,RADIO TAXI PLAZ,RADIO TAXI PLAZ,casa,mail,confirmado,1,1a195fef98bd0414
-222486cbf6ef,2026-11-02,2026-11,gasto,626.25,UYU,626.25,Itaú UYU,,Comer afuera / Delivery,,NUEVO MALVIN VIS3,NUEVO MALVIN,personal,mail,confirmado,1,1a19dd3ed804fe3e
+222486cbf6ef,2026-11-02,2026-11,gasto,615.98,UYU,615.98,Itaú UYU,,Comer afuera / Delivery,,NUEVO MALVIN VIS3,NUEVO MALVIN,personal,mail,confirmado,1,1a19dd3ed804fe3e
 584fc96ef5dc,2026-11-02,2026-11,gasto,466.00,UYU,466.00,Itaú Infinite,,Super,,LA MOLIENDA MONTE,LA MOLIENDA MONTE,personal,mail,confirmado,1,1a19c85ebda06729
 dd099ec8ae24,2026-11-02,2026-11,gasto,536.00,UYU,536.00,Santander Platinum,,Super,,DEVOTO EXPRESS,DEVOTO EXPRESS,personal,mail,confirmado,1,1a19cdae6a765325
+0fda3ed7f43f,2026-11-03,2026-11,ingreso,146396.00,UYU,146396.00,Itaú UYU,,Sueldo,,DELIVERY HERO,Sueldo noviembre (CRE. CAMBIOS OP; extracto Itau),personal,manual,confirmado,1,ingreso-2026-11-03-146396.00-sueldo-noviembre-cre-cambios
+25c0cd69a4a6,2026-11-03,2026-11,transferencia,10275.54,UYU,10275.54,Itaú UYU,Santander Platinum,,,,Pago estado Platinum (UYU) desde Itau (TCSANTOL),interno,manual,confirmado,0,transf-2026-11-03-10275.54-pago-estado-platinum-uyu-des
 39c7a958b84a,2026-11-03,2026-11,transferencia,774.81,USD,32000.00,Itaú UYU,Itaú USD,,,cuenta 4174411,"Compra de dolares (pata USD): 32.000 -> USD 774,81 (la pata UYU es 9c210e7e2d2d)",interno,mail,confirmado,0,1a1a3e1f50da08c5
 3f0286d17b8f,2026-11-03,2026-11,gasto,3754.00,UYU,3754.00,Cuenta Casa,,Auto,,Martin Rodriguez Garage,garage vazquez ledesma garage vazquez ledesma,casa,mail,confirmado,1,1a1a3db24e885e1a
 49998fc03c30,2026-11-03,2026-11,gasto,40.32,USD,1626.11,Santander Platinum,,Croqueta,,PAYPAL,Curso Croqueta (PayPal),casa,mail,pendiente,1,1a1a12348a8d5de1
 54c0b580f8b4,2026-11-03,2026-11,gasto,398.36,UYU,398.36,Cuenta Casa,,Croqueta,,MONTEVIDEO/POROTINO PETSHOP VIS3,POROTINO PETSHOP,casa,mail,confirmado,1,1a1a26bcc3a164f0
 60fbb6f9679c,2026-11-03,2026-11,gasto,10800.00,UYU,10800.00,Itaú UYU,,Salud,,Silvana Psico,Psicologa (octubre),personal,mail,confirmado,1,1a1a3d2472fe4506
 6a438e570dc3,2026-11-03,2026-11,gasto,594.10,UYU,594.10,Cuenta Casa,,Croqueta,,MONTEVIDEO/POROTINO PETSHOP VIS3,POROTINO PETSHOP,casa,mail,confirmado,1,1a1a2e83e7fa4989
+6e6660efc2a6,2026-11-03,2026-11,transferencia,148.32,USD,5981.75,Itaú USD,Santander Platinum,,,,Pago estado Platinum (USD) desde Itau (TCSANTOL),interno,manual,confirmado,0,transf-2026-11-03-148.32-pago-estado-platinum-usd-des
 71517b0861fd,2026-11-03,2026-11,transferencia,3557.64,UYU,3557.64,Itaú UYU,Itaú Infinite,,,,Pago estado Itaú Infinite (UYU),interno,mail,confirmado,0,1a1a3dcc4becafe9
+72fe94538ca3,2026-11-03,2026-10,gasto,28874.00,UYU,28874.00,Itaú UYU,,Educación,,ORT,"ORT cuota de octubre, pagada el 1/11 (factura 1478071; extracto Itau)",personal,manual,confirmado,1,gasto-2026-11-03-28874.00-ort-cuota-de-octubre-pagada
 7561fdbfffd7,2026-11-03,2026-11,gasto,1316.42,UYU,1316.42,Santander Platinum,,Salud,,MER,MER,personal,mail,confirmado,1,1a1a44d1aa636aad
 75f435542f93,2026-11-03,2026-11,gasto,5560.00,UYU,5560.00,Itaú UYU,,Club,,Club (via Lu),bigua,personal,mail,confirmado,1,1a1a3d5365b8c216
 7c12ffac7784,2026-11-03,2026-11,transferencia,353.53,USD,14257.86,Itaú USD,Itaú Infinite,,,,Pago estado Itaú Infinite (USD),interno,mail,confirmado,0,1a1a3dcc4becafe9
+906b60765bc0,2026-11-03,2026-11,transferencia,3304.14,UYU,3304.14,Itaú UYU,BBVA Crédito,,,,Pago tarjeta BBVA desde Itau (TCBBVAVI),interno,manual,confirmado,0,transf-2026-11-03-3304.14-pago-tarjeta-bbva-desde-itau
 9c210e7e2d2d,2026-11-03,2026-11,transferencia,32000.00,UYU,32000.00,Itaú UYU,Itaú USD,,,,"Compra de dolares (pata UYU): 32.000 -> USD 774,81 (la pata USD es 39c7a958b84a)",interno,manual,confirmado,0,transf-2026-11-03-32000.00-compra-de-dolares-pata-uyu-3
 9ea8b7bd9def,2026-11-03,2026-11,gasto,2102.00,UYU,2102.00,Itaú Infinite,,Salud,,MERPAGO*VENTY MONTE,MERPAGO*VENTY MONTE,personal,mail,confirmado,1,1a1a433aeef11ad7
 fc3cb5b58839,2026-11-03,2026-11,transferencia,31000.00,UYU,31000.00,Itaú UYU,Cuenta Casa,,,cuenta 5000001322680,Aporte,interno,mail,confirmado,0,1a1a107459252d08
@@ -5242,6 +5247,8 @@ b185ec79154e,2026-11-05,2026-11,gasto,35.00,UYU,35.00,Cuenta Casa,,Comer afuera 
 fa2cc0f6f7de,2026-11-05,2026-11,gasto,100.00,USD,4033.00,Santander Platinum,,Suscripciones,,ANTHROPIC,ANTHROPIC,personal,mail,pendiente,1,1a1ad5e41bafb889
 1d67225a0ee4,2026-11-06,2026-11,transferencia,500.00,USD,20165.00,Itaú USD,Interactive Brokers,,,cuenta 108071,Transferencia a Interactive Brokers,interno,mail,confirmado,0,1a1b0e90bf0385a1
 2e054cf2131a,2026-11-06,2026-11,gasto,60.04,USD,2421.41,Itaú Infinite,,Viajes,,LA LATAM XP LIMA,LA LATAM XP LIMA,personal,mail,pendiente,1,1a1b1944b7352eca
+3d09db492d37,2026-11-06,2026-11,gasto,1.00,USD,40.33,Itaú USD,,Otros,,Itau,Comision transferencia a IBKR (USD 500 via FUCEREP),personal,manual,confirmado,1,gasto-2026-11-06-1.00-comision-transferencia-a-ibk
+42700450ac40,2026-11-06,2026-11,gasto,1.00,USD,40.33,Itaú USD,,Otros,,Itau,Comision transferencia a IBKR (USD 240 via BROU),personal,manual,confirmado,1,gasto-2026-11-06-1.00-comision-transferencia-a-ibk-brou
 69a6ad8859eb,2026-11-06,2026-11,transferencia,240.00,USD,9679.20,Itaú USD,Interactive Brokers,,,cuenta 11092453300001,Transferencia a Interactive Brokers,interno,mail,confirmado,0,1a1b388c644714fc
 0beb385a728c,2026-11-07,2026-11,gasto,-7160.00,UYU,-7160.00,Santander Platinum,,Transporte,,DLOUBERRIDES,Reintegro DLOUBERRIDES (revierte 934e0d4fedca),personal,mail,confirmado,1,1a1b81810e3e6c0c
 11c058f033a6,2026-11-07,2026-11,transferencia,1136.06,UYU,1136.06,Itaú UYU,Deudas,,,,DON GUZMAN *HANDY*0VIS3 07/11: parte ajena -> Deudas,interno,manual,confirmado,0,bc8e48024782-split
@@ -5273,6 +5280,7 @@ e36de4c3c9b1,2026-11-08,2026-11,gasto,-429.93,UYU,-429.93,Santander Platinum,,Tr
 a240f0168989,2026-11-09,2026-11,gasto,992.46,UYU,992.46,Cuenta Casa,,Croqueta,,MONTEVIDEO/POROTINO PETSHOP VIS3,POROTINO PETSHOP,casa,mail,confirmado,1,1a1c17a7f3d2ebc9
 dc5f76093dde,2026-11-09,2026-11,gasto,974.00,UYU,974.00,Cuenta Casa,,Croqueta,,Lu Mercado Pago,Juguetes Croqueta (via Lu),casa,mail,confirmado,1,1a1c2f75bed3c730
 e4b06f379cae,2026-11-09,2026-11,gasto,124.00,UYU,124.00,Cuenta Casa,,Super,,MONTEVIDEO/DEVOTO EXPRESS VIS3,DEVOTO EXPRESS,casa,mail,confirmado,1,1a1c29a5455dbcd7
+11606a83564c,2026-11-10,2026-11,gasto,-4177.26,UYU,-4177.26,Itaú UYU,,Viajes,,,"Reintegro viaje BA octubre (trabajo; CRE. CAMBIOS OP, extracto Itau)",personal,manual,confirmado,1,gasto-2026-11-10-4177.26-reintegro-viaje-ba-octubre-t
 22b5518d3c35,2026-11-10,2026-11,gasto,12.28,USD,495.25,Itaú Infinite,,Suscripciones,,NAME-CHEAP.COM* YDYT6C +1323,Namecheap (dominio),personal,mail,pendiente,1,1a1c854c5c1de042
 32693ed0baca,2026-11-10,2026-11,gasto,5.02,UYU,5.02,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa Extra VIS3,DLO*PedidosYa Extra,casa,mail,confirmado,1,1a1c76c8156eb340
 362e3d8187f2,2026-11-10,2026-11,gasto,118.03,UYU,118.03,Cuenta Casa,,Super,,Montevideo/CLUB DEL PAN VIS3,Montevideo/CLUB DEL PAN,casa,mail,confirmado,1,1a1c75804663ada0
@@ -5293,16 +5301,18 @@ a18563e39c90,2026-11-12,2026-11,gasto,1700.00,UYU,1700.00,Cuenta Casa,,Casa & ho
 d6b9b47410a6,2026-11-12,2026-11,gasto,759.84,UYU,759.84,Cuenta Casa,,Super,,MONTEVIDEO/DEVOTO EXPRESS VIS3,DEVOTO EXPRESS,casa,mail,confirmado,1,1a1d1cf7741f2828
 fb49d031909e,2026-11-12,2026-11,gasto,80.66,UYU,80.66,Itaú UYU,,Super,,DISCO NÊ 22 VIS3,DISCO NÊ 22,personal,mail,confirmado,1,1a1d0b08bacc6031
 7af6c6aaa183,2026-11-13,2026-11,gasto,3755.00,UYU,3755.00,Santander Platinum,,Croqueta,,SUCAN 26 DE MAR,SUCAN 26 DE MAR,casa,mail,confirmado,1,1a1d511a98cde39d
+b402c02344de,2026-11-13,2026-11,gasto,843.90,UYU,843.90,Itaú UYU,,Servicios,,Itau,"Paquete bancario Itau (782,84 + IVA 67,16 - REDIVA 6,10)",personal,manual,confirmado,1,gasto-2026-11-13-843.90-paquete-bancario-itau-782-84
 de2d5b1288c6,2026-11-13,2026-11,gasto,343.28,UYU,343.28,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA P,DLOPEDIDOSYA P,personal,mail,confirmado,1,1a1d53681a7668c7
 5c224df96ff2,2026-11-14,2026-11,gasto,15.00,UYU,15.00,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA P,DLOPEDIDOSYA P,personal,mail,confirmado,1,1a1dba554b78963c
 667e6be23c38,2026-11-14,2026-11,gasto,196.82,UYU,196.82,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA,DLOPEDIDOSYA,personal,mail,confirmado,1,1a1db9511b62f76b
+5645321daaec,2026-11-16,2026-11,gasto,28874.00,UYU,28874.00,Itaú UYU,,Educación,,ORT,ORT cuota de noviembre (factura 1494325; extracto Itau),personal,manual,confirmado,1,gasto-2026-11-16-28874.00-ort-cuota-de-noviembre-factu
 3c647ea77083,2026-11-17,2026-11,gasto,190.82,UYU,190.82,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,casa,mail,confirmado,1,1a1ea778cb17e51c
 60d1fe795839,2026-11-17,2026-11,gasto,35.00,UYU,35.00,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,1a1ea92ffff80aac
 7450aa7e2fa4,2026-11-17,2026-11,gasto,590.00,UYU,590.00,Itaú UYU,,Compras personales,,Lucho Royal Barber,a cuenta 8155077 OCA Blue,personal,mail,confirmado,1,1a1ea663e3ed8f73
 824b5f32507e,2026-11-17,2026-11,gasto,139.67,UYU,139.67,Cuenta Casa,,Super,,MONTEVIDEO/DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,casa,mail,confirmado,1,1a1ebcc09def0203
 d744e31c4b23,2026-11-17,2026-11,gasto,25.00,UYU,25.00,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,1a1ebf129fed7c55
 dfac04d0c22f,2026-11-17,2026-11,gasto,28.19,UYU,28.19,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa Extra VIS3,DLO*PedidosYa Extra,casa,mail,confirmado,1,1a1ebd0aa0ca61a3
-bc2eab838218,2026-11-18,2026-11,gasto,1761.60,UYU,1761.60,Itaú UYU,,Salud,,FARMASHOP VISA VIS3,FARMASHOP VISA,personal,mail,confirmado,1,1a1f16023d61904b
+bc2eab838218,2026-11-18,2026-11,gasto,1729.57,UYU,1729.57,Itaú UYU,,Salud,,FARMASHOP VISA VIS3,FARMASHOP VISA,personal,mail,confirmado,1,1a1f16023d61904b
 07a8659d7176,2026-11-19,2026-11,gasto,981.64,UYU,981.64,Cuenta Casa,,Croqueta,,MONTEVIDEO/LAIKA 21 DE SETIEMBREVIS3,LAIKA 21 DE SETIEMBRE,casa,mail,confirmado,1,1a1f4859f2de2829
 0e709859562f,2026-11-19,2026-11,transferencia,13.60,USD,548.49,Itaú Infinite,A cobrar,,,UBER TRIP BUENO,Uber BA (lo rindo),interno,mail,confirmado,0,1a1f51dfdceaa82a
 2064b8967819,2026-11-19,2026-11,gasto,12.68,USD,511.38,Itaú Infinite,,Transporte,,UBR PENDINGUB BUENO,UBR PENDINGUB BUENO,personal,mail,confirmado,0,1a1f4d275cb536dc

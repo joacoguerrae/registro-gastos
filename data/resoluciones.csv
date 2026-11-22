@@ -1443,3 +1443,10 @@ d6d2848ba160,motivo_resuelto,tc_estimado,no es gasto en el analisis (transferenc
 836c2f6820fe,motivo_resuelto,tc_estimado,no es gasto en el analisis (transferencia a A cobrar/Deudas o autorizacion liberada): el tc no corrige nada,2026-11-22
 7f1dababde03,motivo_resuelto,tc_estimado,no es gasto en el analisis (transferencia a A cobrar/Deudas o autorizacion liberada): el tc no corrige nada,2026-11-22
 28101ae3ae71,motivo_resuelto,tc_estimado,no es gasto en el analisis (transferencia a A cobrar/Deudas o autorizacion liberada): el tc no corrige nada,2026-11-22
+72fe94538ca3,mes,2026-10,"Joaco 1/11: acabo de pagar la ort, aunque fue pagada hoy, ponemela como gasto de octubre",2026-11-22
+47307b88072f,monto,110.16,"REDIVA del extracto Itau: el aviso trajo el importe bruto (Joaco 22/11: si, todo asi) (112 - 1,84)",2026-11-22
+47307b88072f,monto_uyu,110.16,"REDIVA del extracto Itau: el aviso trajo el importe bruto (Joaco 22/11: si, todo asi) (112 - 1,84)",2026-11-22
+222486cbf6ef,monto,615.98,"REDIVA del extracto Itau: el aviso trajo el importe bruto (Joaco 22/11: si, todo asi) (626,25 - 10,27)",2026-11-22
+222486cbf6ef,monto_uyu,615.98,"REDIVA del extracto Itau: el aviso trajo el importe bruto (Joaco 22/11: si, todo asi) (626,25 - 10,27)",2026-11-22
+bc2eab838218,monto,1729.57,"REDIVA del extracto Itau: el aviso trajo el importe bruto (Joaco 22/11: si, todo asi) (1.761,60 - 32,03)",2026-11-22
+bc2eab838218,monto_uyu,1729.57,"REDIVA del extracto Itau: el aviso trajo el importe bruto (Joaco 22/11: si, todo asi) (1.761,60 - 32,03)",2026-11-22
