@@ -442,7 +442,6 @@ INSTRUCCIONES = [
     ["", "Si algo ya estaba cargado (mismo monto, ±3 días) tampoco entra dos veces: queda como pendiente para confirmar."],
     ["", "Categoría es opcional: si la dejás vacía, se infiere de 'que fue' o queda para la revisión."],
     ["", "Corregir una fila está bien. Borrar filas viejas en masa, no: el sistema se niega a tomar una planilla que perdió muchas filas de golpe."],
-    ["", "Lo de setiembre de 2026 ya está cargado (aportes de Lu 31.000 + 15.000, el giro de 48.000 del 2/9): arrancá con octubre."],
 ]
 
 
