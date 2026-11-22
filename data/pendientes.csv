@@ -282,43 +282,43 @@ fa2cc0f6f7de,tc_estimado,USD 100.00 x tc 40.33 = 4033.00 UYU (corrige Fase 3),20
 dc5f76093dde,transferencia_a_clasificar,"a 'Lu Mercado Pago', concepto 'juguetes crolet', UYU 974.00",2026-11-15,1
 25f3b6b5eed1,transferencia_a_clasificar,"a 'Lu mercado pago', concepto 'juguetes croketta', UYU 100.00",2026-11-15,1
 612cf49fe1b9,tc_estimado,USD 40.00 x tc 40.33 = 1613.20 UYU (corrige Fase 3),2026-11-19,
-612cf49fe1b9,sin_categoria,establecimiento 'FREESHOP WALINCO COLON' sin regla,2026-11-19,
+612cf49fe1b9,sin_categoria,establecimiento 'FREESHOP WALINCO COLON' sin regla,2026-11-19,1
 581a987fb33d,tc_estimado,USD 17.44 x tc 40.33 = 703.36 UYU (corrige Fase 3),2026-11-19,
-581a987fb33d,sin_categoria,establecimiento 'BUQUEBUS VIS3' sin regla,2026-11-19,
-07a8659d7176,sin_categoria,establecimiento 'MONTEVIDEO/LAIKA 21 DE SETIEMBREVIS3' sin regla,2026-11-19,
-2064b8967819,tc_estimado,USD 12.68 x tc 40.33 = 511.38 UYU (corrige Fase 3),2026-11-19,
-2064b8967819,sin_categoria,establecimiento 'UBR PENDINGUB BUENO' sin regla,2026-11-19,
-e2be08bed5c7,tc_estimado,USD 11.39 x tc 40.33 = 459.36 UYU (corrige Fase 3),2026-11-19,
-e2be08bed5c7,sin_categoria,establecimiento 'UBR PENDINGUB BUENO' sin regla,2026-11-19,
-0e709859562f,tc_estimado,USD 13.60 x tc 40.33 = 548.49 UYU (corrige Fase 3),2026-11-19,
-db8e8e5cfc2d,tc_estimado,reintegro USD 12.68 x tc 40.33 (corrige Fase 3),2026-11-19,
-db8e8e5cfc2d,sin_categoria,reintegro 'UBR PENDINGUB BUENO' sin regla ni cargo original,2026-11-19,
-644345371193,tc_estimado,USD 17.25 x tc 40.33 = 695.69 UYU (corrige Fase 3),2026-11-20,
-644345371193,sin_categoria,establecimiento 'UBR PENDINGUB BUENO' sin regla,2026-11-20,
-d6d2848ba160,tc_estimado,USD 14.08 x tc 40.33 = 567.85 UYU (corrige Fase 3),2026-11-20,
-d6d2848ba160,sin_categoria,establecimiento 'UBR PENDINGUB BUENO' sin regla,2026-11-20,
-836c2f6820fe,tc_estimado,USD 6.77 x tc 40.33 = 273.03 UYU (corrige Fase 3),2026-11-20,
-836c2f6820fe,sin_categoria,establecimiento 'UBR PENDINGUB BUENO' sin regla,2026-11-20,
+581a987fb33d,sin_categoria,establecimiento 'BUQUEBUS VIS3' sin regla,2026-11-19,1
+07a8659d7176,sin_categoria,establecimiento 'MONTEVIDEO/LAIKA 21 DE SETIEMBREVIS3' sin regla,2026-11-19,1
+2064b8967819,tc_estimado,USD 12.68 x tc 40.33 = 511.38 UYU (corrige Fase 3),2026-11-19,1
+2064b8967819,sin_categoria,establecimiento 'UBR PENDINGUB BUENO' sin regla,2026-11-19,1
+e2be08bed5c7,tc_estimado,USD 11.39 x tc 40.33 = 459.36 UYU (corrige Fase 3),2026-11-19,1
+e2be08bed5c7,sin_categoria,establecimiento 'UBR PENDINGUB BUENO' sin regla,2026-11-19,1
+0e709859562f,tc_estimado,USD 13.60 x tc 40.33 = 548.49 UYU (corrige Fase 3),2026-11-19,1
+db8e8e5cfc2d,tc_estimado,reintegro USD 12.68 x tc 40.33 (corrige Fase 3),2026-11-19,1
+db8e8e5cfc2d,sin_categoria,reintegro 'UBR PENDINGUB BUENO' sin regla ni cargo original,2026-11-19,1
+644345371193,tc_estimado,USD 17.25 x tc 40.33 = 695.69 UYU (corrige Fase 3),2026-11-20,1
+644345371193,sin_categoria,establecimiento 'UBR PENDINGUB BUENO' sin regla,2026-11-20,1
+d6d2848ba160,tc_estimado,USD 14.08 x tc 40.33 = 567.85 UYU (corrige Fase 3),2026-11-20,1
+d6d2848ba160,sin_categoria,establecimiento 'UBR PENDINGUB BUENO' sin regla,2026-11-20,1
+836c2f6820fe,tc_estimado,USD 6.77 x tc 40.33 = 273.03 UYU (corrige Fase 3),2026-11-20,1
+836c2f6820fe,sin_categoria,establecimiento 'UBR PENDINGUB BUENO' sin regla,2026-11-20,1
 a9d50682afb7,tc_estimado,USD 6.34 x tc 40.33 = 255.69 UYU (corrige Fase 3),2026-11-20,
-a9d50682afb7,sin_categoria,establecimiento 'CEROONCE SRL VIEI' sin regla,2026-11-20,
-7f1dababde03,tc_estimado,reintegro USD 11.27 x tc 40.33 (corrige Fase 3),2026-11-20,
-7f1dababde03,sin_categoria,reintegro 'UBR PENDINGUB BUENO' sin regla ni cargo original,2026-11-20,
-28101ae3ae71,tc_estimado,USD 13.74 x tc 40.33 = 554.13 UYU (corrige Fase 3),2026-11-21,
-28101ae3ae71,sin_categoria,establecimiento 'UBR PENDINGUB BUENO' sin regla,2026-11-21,
+a9d50682afb7,sin_categoria,establecimiento 'CEROONCE SRL VIEI' sin regla,2026-11-20,1
+7f1dababde03,tc_estimado,reintegro USD 11.27 x tc 40.33 (corrige Fase 3),2026-11-20,1
+7f1dababde03,sin_categoria,reintegro 'UBR PENDINGUB BUENO' sin regla ni cargo original,2026-11-20,1
+28101ae3ae71,tc_estimado,USD 13.74 x tc 40.33 = 554.13 UYU (corrige Fase 3),2026-11-21,1
+28101ae3ae71,sin_categoria,establecimiento 'UBR PENDINGUB BUENO' sin regla,2026-11-21,1
 ce02df71a377,tc_estimado,USD 81.79 x tc 40.33 = 3298.59 UYU (corrige Fase 3),2026-11-21,
-ce02df71a377,sin_categoria,establecimiento 'PIBA BAR-PIBA BAR BUENO' sin regla,2026-11-21,
-9a53446defcc,tc_estimado,USD 112.99 x tc 40.33 = 4556.89 UYU (corrige Fase 3),2026-11-21,
-9a53446defcc,sin_categoria,establecimiento 'PIBA BAR-PIBA BAR BUENO' sin regla,2026-11-21,
+ce02df71a377,sin_categoria,establecimiento 'PIBA BAR-PIBA BAR BUENO' sin regla,2026-11-21,1
+9a53446defcc,tc_estimado,USD 112.99 x tc 40.33 = 4556.89 UYU (corrige Fase 3),2026-11-21,1
+9a53446defcc,sin_categoria,establecimiento 'PIBA BAR-PIBA BAR BUENO' sin regla,2026-11-21,1
 6427998c9d53,tc_estimado,USD 3.55 x tc 40.33 = 143.17 UYU (corrige Fase 3),2026-11-21,
-6427998c9d53,sin_categoria,establecimiento 'OCCO VIEI' sin regla,2026-11-21,
+6427998c9d53,sin_categoria,establecimiento 'OCCO VIEI' sin regla,2026-11-21,1
 832dbe3b387b,tc_estimado,USD 10.51 x tc 40.33 = 423.87 UYU (corrige Fase 3),2026-11-21,
-832dbe3b387b,sin_categoria,establecimiento 'BUQUEBUS VIS3' sin regla,2026-11-21,
+832dbe3b387b,sin_categoria,establecimiento 'BUQUEBUS VIS3' sin regla,2026-11-21,1
 a3aaa59339d6,tc_estimado,USD 16.00 x tc 40.33 = 645.28 UYU (corrige Fase 3),2026-11-21,
-a3aaa59339d6,sin_categoria,establecimiento 'FREESHOP WALINCO COLON' sin regla,2026-11-21,
-88d793862dca,sin_categoria,establecimiento 'MERPAGO*KYNOX VIS3' sin regla,2026-11-21,
-8eb42944737a,sin_categoria,establecimiento 'DLO*Cabify2647hp63sDL5 MONTE' sin regla,2026-11-21,
-decdb0cf5af4,sin_categoria,establecimiento 'DLO*Cabify26471lqNSgfs MONTE' sin regla,2026-11-21,
-2230d0baef56,sin_categoria,establecimiento 'MONTEVIDEO/LAIKA 21 DE SETIEMBREVIS3' sin regla,2026-11-21,
-4824a40e6ded,sin_categoria,reintegro 'DLO*Cabify2647hp63sDL5 MONTE' sin regla ni cargo original,2026-11-21,
+a3aaa59339d6,sin_categoria,establecimiento 'FREESHOP WALINCO COLON' sin regla,2026-11-21,1
+88d793862dca,sin_categoria,establecimiento 'MERPAGO*KYNOX VIS3' sin regla,2026-11-21,1
+8eb42944737a,sin_categoria,establecimiento 'DLO*Cabify2647hp63sDL5 MONTE' sin regla,2026-11-21,1
+decdb0cf5af4,sin_categoria,establecimiento 'DLO*Cabify26471lqNSgfs MONTE' sin regla,2026-11-21,1
+2230d0baef56,sin_categoria,establecimiento 'MONTEVIDEO/LAIKA 21 DE SETIEMBREVIS3' sin regla,2026-11-21,1
+4824a40e6ded,sin_categoria,reintegro 'DLO*Cabify2647hp63sDL5 MONTE' sin regla ni cargo original,2026-11-21,1
 266bcd618e79,tc_estimado,USD 25.99 x tc 40.33 = 1048.18 UYU (corrige Fase 3),2026-11-22,
-266bcd618e79,split_a_cargar,split recurrente propuesto: Deudas 3/6 (Rodrigo 2/6; hermana 1/6 (+ madre 1/6 a 'A cobrar')) + casa 2/6: 'APPLE.COM/BILL' — aplicar con OK en revision,2026-11-22,
+266bcd618e79,split_a_cargar,split recurrente propuesto: Deudas 3/6 (Rodrigo 2/6; hermana 1/6 (+ madre 1/6 a 'A cobrar')) + casa 2/6: 'APPLE.COM/BILL' — aplicar con OK en revision,2026-11-22,1

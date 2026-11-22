@@ -1348,3 +1348,98 @@ dc5f76093dde,en_analisis,1,"Joaco 15/11: si, corregilo (juguetes de Croqueta: ga
 dc5f76093dde,comercio,Lu Mercado Pago,"Joaco 15/11: si, corregilo (juguetes de Croqueta: gasto de la casa pagado desde la Cuenta Casa a la cuenta Mercado Pago de Lu)",2026-11-15
 dc5f76093dde,descripcion,Juguetes Croqueta (via Lu),"Joaco 15/11: si, corregilo (juguetes de Croqueta: gasto de la casa pagado desde la Cuenta Casa a la cuenta Mercado Pago de Lu)",2026-11-15
 dc5f76093dde,motivo_resuelto,transferencia_a_clasificar,"Joaco 15/11: si, corregilo (juguetes de Croqueta: gasto de la casa pagado desde la Cuenta Casa a la cuenta Mercado Pago de Lu)",2026-11-15
+3822be9fb23d,monto,3433.33,"Joaco 22/11: en 3 cuotas (el banco cobra 3 x 3.433,33)",2026-11-22
+3822be9fb23d,monto_uyu,3433.33,"Joaco 22/11: en 3 cuotas (el banco cobra 3 x 3.433,33)",2026-11-22
+3822be9fb23d,descripcion,Ortopedia Biohealth cuota 1/3 (10.300 en 3 cuotas),"Joaco 22/11: en 3 cuotas (el banco cobra 3 x 3.433,33)",2026-11-22
+644345371193,tipo,transferencia,Joaco 22/11: los ubers no los pongas como gasto porque los rindo,2026-11-22
+644345371193,cuenta_destino,A cobrar,Joaco 22/11: los ubers no los pongas como gasto porque los rindo,2026-11-22
+644345371193,ambito,interno,Joaco 22/11: los ubers no los pongas como gasto porque los rindo,2026-11-22
+644345371193,en_analisis,0,Joaco 22/11: los ubers no los pongas como gasto porque los rindo,2026-11-22
+644345371193,descripcion,Uber BA (lo rindo),Joaco 22/11: los ubers no los pongas como gasto porque los rindo,2026-11-22
+644345371193,motivo_resuelto,sin_categoria,Joaco 22/11: los ubers no los pongas como gasto porque los rindo,2026-11-22
+d6d2848ba160,tipo,transferencia,Joaco 22/11: los ubers no los pongas como gasto porque los rindo,2026-11-22
+d6d2848ba160,cuenta_destino,A cobrar,Joaco 22/11: los ubers no los pongas como gasto porque los rindo,2026-11-22
+d6d2848ba160,ambito,interno,Joaco 22/11: los ubers no los pongas como gasto porque los rindo,2026-11-22
+d6d2848ba160,en_analisis,0,Joaco 22/11: los ubers no los pongas como gasto porque los rindo,2026-11-22
+d6d2848ba160,descripcion,Uber BA (lo rindo),Joaco 22/11: los ubers no los pongas como gasto porque los rindo,2026-11-22
+d6d2848ba160,motivo_resuelto,sin_categoria,Joaco 22/11: los ubers no los pongas como gasto porque los rindo,2026-11-22
+836c2f6820fe,tipo,transferencia,Joaco 22/11: los ubers no los pongas como gasto porque los rindo,2026-11-22
+836c2f6820fe,cuenta_destino,A cobrar,Joaco 22/11: los ubers no los pongas como gasto porque los rindo,2026-11-22
+836c2f6820fe,ambito,interno,Joaco 22/11: los ubers no los pongas como gasto porque los rindo,2026-11-22
+836c2f6820fe,en_analisis,0,Joaco 22/11: los ubers no los pongas como gasto porque los rindo,2026-11-22
+836c2f6820fe,descripcion,Uber BA (lo rindo),Joaco 22/11: los ubers no los pongas como gasto porque los rindo,2026-11-22
+836c2f6820fe,motivo_resuelto,sin_categoria,Joaco 22/11: los ubers no los pongas como gasto porque los rindo,2026-11-22
+28101ae3ae71,tipo,transferencia,Joaco 22/11: los ubers no los pongas como gasto porque los rindo,2026-11-22
+28101ae3ae71,cuenta_destino,A cobrar,Joaco 22/11: los ubers no los pongas como gasto porque los rindo,2026-11-22
+28101ae3ae71,ambito,interno,Joaco 22/11: los ubers no los pongas como gasto porque los rindo,2026-11-22
+28101ae3ae71,en_analisis,0,Joaco 22/11: los ubers no los pongas como gasto porque los rindo,2026-11-22
+28101ae3ae71,descripcion,Uber BA (lo rindo),Joaco 22/11: los ubers no los pongas como gasto porque los rindo,2026-11-22
+28101ae3ae71,motivo_resuelto,sin_categoria,Joaco 22/11: los ubers no los pongas como gasto porque los rindo,2026-11-22
+0e709859562f,tipo,transferencia,Joaco 22/11: los ubers no los pongas como gasto porque los rindo,2026-11-22
+0e709859562f,cuenta_destino,A cobrar,Joaco 22/11: los ubers no los pongas como gasto porque los rindo,2026-11-22
+0e709859562f,ambito,interno,Joaco 22/11: los ubers no los pongas como gasto porque los rindo,2026-11-22
+0e709859562f,en_analisis,0,Joaco 22/11: los ubers no los pongas como gasto porque los rindo,2026-11-22
+0e709859562f,categoria,,Joaco 22/11: los ubers no los pongas como gasto porque los rindo,2026-11-22
+0e709859562f,descripcion,Uber BA (lo rindo),Joaco 22/11: los ubers no los pongas como gasto porque los rindo,2026-11-22
+2064b8967819,categoria,Transporte,autorizacion de Uber liberada: no figura en el estado de la Visa Itau (Joaco 22/11: los ubers los rindo),2026-11-22
+2064b8967819,en_analisis,0,autorizacion de Uber liberada: no figura en el estado de la Visa Itau (Joaco 22/11: los ubers los rindo),2026-11-22
+2064b8967819,motivo_resuelto,sin_categoria,autorizacion de Uber liberada: no figura en el estado de la Visa Itau (Joaco 22/11: los ubers los rindo),2026-11-22
+db8e8e5cfc2d,categoria,Transporte,autorizacion de Uber liberada: no figura en el estado de la Visa Itau (Joaco 22/11: los ubers los rindo),2026-11-22
+db8e8e5cfc2d,en_analisis,0,autorizacion de Uber liberada: no figura en el estado de la Visa Itau (Joaco 22/11: los ubers los rindo),2026-11-22
+db8e8e5cfc2d,motivo_resuelto,sin_categoria,autorizacion de Uber liberada: no figura en el estado de la Visa Itau (Joaco 22/11: los ubers los rindo),2026-11-22
+e2be08bed5c7,categoria,Transporte,autorizacion de Uber liberada: no figura en el estado de la Visa Itau (Joaco 22/11: los ubers los rindo),2026-11-22
+e2be08bed5c7,en_analisis,0,autorizacion de Uber liberada: no figura en el estado de la Visa Itau (Joaco 22/11: los ubers los rindo),2026-11-22
+e2be08bed5c7,motivo_resuelto,sin_categoria,autorizacion de Uber liberada: no figura en el estado de la Visa Itau (Joaco 22/11: los ubers los rindo),2026-11-22
+7f1dababde03,categoria,Transporte,autorizacion de Uber liberada: no figura en el estado de la Visa Itau (Joaco 22/11: los ubers los rindo),2026-11-22
+7f1dababde03,en_analisis,0,autorizacion de Uber liberada: no figura en el estado de la Visa Itau (Joaco 22/11: los ubers los rindo),2026-11-22
+7f1dababde03,motivo_resuelto,sin_categoria,autorizacion de Uber liberada: no figura en el estado de la Visa Itau (Joaco 22/11: los ubers los rindo),2026-11-22
+9a53446defcc,tipo,transferencia,Joaco 22/11: piba la de 113 la rindo,2026-11-22
+9a53446defcc,cuenta_destino,A cobrar,Joaco 22/11: piba la de 113 la rindo,2026-11-22
+9a53446defcc,ambito,interno,Joaco 22/11: piba la de 113 la rindo,2026-11-22
+9a53446defcc,en_analisis,0,Joaco 22/11: piba la de 113 la rindo,2026-11-22
+9a53446defcc,descripcion,Piba Bar BA (lo rindo),Joaco 22/11: piba la de 113 la rindo,2026-11-22
+9a53446defcc,motivo_resuelto,sin_categoria,Joaco 22/11: piba la de 113 la rindo,2026-11-22
+ce02df71a377,categoria,Viajes,"Joaco 22/11: la de 81.79 poneme 1/9 del gasto, el resto me lo devuelven",2026-11-22
+ce02df71a377,motivo_resuelto,sin_categoria,"Joaco 22/11: la de 81.79 poneme 1/9 del gasto, el resto me lo devuelven",2026-11-22
+ce02df71a377,monto,9.09,"split: tu parte 9.09 + Deudas 72.70 = 81.79 USD -- Joaco 22/11: la de 81.79 poneme 1/9 del gasto, el resto me lo devuelven",2026-11-22
+ce02df71a377,monto_uyu,366.60,split: 366.60 de 3298.59 UYU,2026-11-22
+ce02df71a377,motivo_resuelto,split_a_cargar,"split: tu parte 9.09 + Deudas 72.70 = 81.79 USD -- Joaco 22/11: la de 81.79 poneme 1/9 del gasto, el resto me lo devuelven",2026-11-22
+581a987fb33d,categoria,Viajes,Joaco 22/11: todo lo otro gasto personal de viajes (BA 19-21/11),2026-11-22
+581a987fb33d,motivo_resuelto,sin_categoria,Joaco 22/11: todo lo otro gasto personal de viajes (BA 19-21/11),2026-11-22
+832dbe3b387b,categoria,Viajes,Joaco 22/11: todo lo otro gasto personal de viajes (BA 19-21/11),2026-11-22
+832dbe3b387b,motivo_resuelto,sin_categoria,Joaco 22/11: todo lo otro gasto personal de viajes (BA 19-21/11),2026-11-22
+612cf49fe1b9,categoria,Viajes,Joaco 22/11: todo lo otro gasto personal de viajes (BA 19-21/11),2026-11-22
+612cf49fe1b9,motivo_resuelto,sin_categoria,Joaco 22/11: todo lo otro gasto personal de viajes (BA 19-21/11),2026-11-22
+a3aaa59339d6,categoria,Viajes,Joaco 22/11: todo lo otro gasto personal de viajes (BA 19-21/11),2026-11-22
+a3aaa59339d6,motivo_resuelto,sin_categoria,Joaco 22/11: todo lo otro gasto personal de viajes (BA 19-21/11),2026-11-22
+a9d50682afb7,categoria,Viajes,Joaco 22/11: todo lo otro gasto personal de viajes (BA 19-21/11),2026-11-22
+a9d50682afb7,motivo_resuelto,sin_categoria,Joaco 22/11: todo lo otro gasto personal de viajes (BA 19-21/11),2026-11-22
+6427998c9d53,categoria,Viajes,Joaco 22/11: todo lo otro gasto personal de viajes (BA 19-21/11),2026-11-22
+6427998c9d53,motivo_resuelto,sin_categoria,Joaco 22/11: todo lo otro gasto personal de viajes (BA 19-21/11),2026-11-22
+decdb0cf5af4,categoria,Transporte,"Joaco 22/11: ok (Cabify, Transporte)",2026-11-22
+decdb0cf5af4,motivo_resuelto,sin_categoria,"Joaco 22/11: ok (Cabify, Transporte)",2026-11-22
+8eb42944737a,categoria,Transporte,"Joaco 22/11: ok (Cabify, Transporte)",2026-11-22
+8eb42944737a,motivo_resuelto,sin_categoria,"Joaco 22/11: ok (Cabify, Transporte)",2026-11-22
+4824a40e6ded,categoria,Transporte,"Joaco 22/11: ok (Cabify, Transporte)",2026-11-22
+4824a40e6ded,motivo_resuelto,sin_categoria,"Joaco 22/11: ok (Cabify, Transporte)",2026-11-22
+07a8659d7176,categoria,Croqueta,"Joaco 22/11: ok (Laika = Croqueta, casa)",2026-11-22
+07a8659d7176,motivo_resuelto,sin_categoria,"Joaco 22/11: ok (Laika = Croqueta, casa)",2026-11-22
+2230d0baef56,categoria,Croqueta,"Joaco 22/11: ok (Laika = Croqueta, casa)",2026-11-22
+2230d0baef56,motivo_resuelto,sin_categoria,"Joaco 22/11: ok (Laika = Croqueta, casa)",2026-11-22
+88d793862dca,categoria,Salud,Joaco 22/11: Kynox salud,2026-11-22
+88d793862dca,motivo_resuelto,sin_categoria,Joaco 22/11: Kynox salud,2026-11-22
+266bcd618e79,ambito,casa,"Joaco 22/11: YouTube como siempre (2/6 casa, 3/6 Deudas, 1/6 madre)",2026-11-22
+266bcd618e79,comercio,YouTube Premium familiar (APPLE.COM/BILL),"Joaco 22/11: YouTube como siempre (2/6 casa, 3/6 Deudas, 1/6 madre)",2026-11-22
+266bcd618e79,monto,8.66,split: tu parte 8.66 + Deudas 13.00 + A cobrar 4.33 = 25.99 USD -- Joaco 22/11: YouTube como siempre,2026-11-22
+266bcd618e79,monto_uyu,349.26,split: 349.26 de 1048.18 UYU,2026-11-22
+266bcd618e79,motivo_resuelto,split_a_cargar,split: tu parte 8.66 + Deudas 13.00 + A cobrar 4.33 = 25.99 USD -- Joaco 22/11: YouTube como siempre,2026-11-22
+9a53446defcc,motivo_resuelto,tc_estimado,no es gasto en el analisis (transferencia a A cobrar/Deudas o autorizacion liberada): el tc no corrige nada,2026-11-22
+2064b8967819,motivo_resuelto,tc_estimado,no es gasto en el analisis (transferencia a A cobrar/Deudas o autorizacion liberada): el tc no corrige nada,2026-11-22
+e2be08bed5c7,motivo_resuelto,tc_estimado,no es gasto en el analisis (transferencia a A cobrar/Deudas o autorizacion liberada): el tc no corrige nada,2026-11-22
+0e709859562f,motivo_resuelto,tc_estimado,no es gasto en el analisis (transferencia a A cobrar/Deudas o autorizacion liberada): el tc no corrige nada,2026-11-22
+db8e8e5cfc2d,motivo_resuelto,tc_estimado,no es gasto en el analisis (transferencia a A cobrar/Deudas o autorizacion liberada): el tc no corrige nada,2026-11-22
+644345371193,motivo_resuelto,tc_estimado,no es gasto en el analisis (transferencia a A cobrar/Deudas o autorizacion liberada): el tc no corrige nada,2026-11-22
+d6d2848ba160,motivo_resuelto,tc_estimado,no es gasto en el analisis (transferencia a A cobrar/Deudas o autorizacion liberada): el tc no corrige nada,2026-11-22
+836c2f6820fe,motivo_resuelto,tc_estimado,no es gasto en el analisis (transferencia a A cobrar/Deudas o autorizacion liberada): el tc no corrige nada,2026-11-22
+7f1dababde03,motivo_resuelto,tc_estimado,no es gasto en el analisis (transferencia a A cobrar/Deudas o autorizacion liberada): el tc no corrige nada,2026-11-22
+28101ae3ae71,motivo_resuelto,tc_estimado,no es gasto en el analisis (transferencia a A cobrar/Deudas o autorizacion liberada): el tc no corrige nada,2026-11-22
