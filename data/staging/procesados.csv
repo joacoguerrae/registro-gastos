@@ -653,3 +653,4 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 1a208e2b1fc1de91,2026-11-23T14:50:03Z,aviso_tarjeta,ignorado,,"5023 USD 0 AMAZON.COM AMZN. (importe 0, sin cargo)",,2026-11-23T23:59:56+00:00
 1a2099978f4c475a,2026-11-23T18:09:41Z,aviso_tarjeta,insertado,7b868e79e73a,8261 UYU 147.54 MONTEVIDOE/FERRETERIA FERRO 21 VIS3 -> Cuenta Casa/casa/(sin categoria),8261||147.54||MONTEVIDOE/FERRETERIA FERRO 21 VIS3||2026-11-23T15:09:40,2026-11-23T23:59:56+00:00
 1a20a42fa7bfaa48,2026-11-23T21:14:49Z,transferencia,insertado,540a5e0ff0f9,Aviso de Transferencia Instantánea en Uruguay   | Babau 'babs pollo joaquin guerra' UYU 350.00 2026-11-23 -> gasto/personal/(sin categoria),,2026-11-23T23:59:56+00:00
+1a20b83993735342,2026-11-24T03:05:02Z,factura,factura,,"DirecTV 1765.00 venc 2026-12-10 (informativo, no toca ledger)",,2026-11-24T10:01:18+00:00
