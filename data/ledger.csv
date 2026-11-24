@@ -5359,6 +5359,7 @@ dd401ee6bd38,2026-11-22,2026-11,gasto,130.82,UYU,130.82,Itaú UYU,,Super,,DLO*Pe
 e1760d25a3b8,2026-11-22,2026-11,gasto,45.00,UYU,45.00,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,1a205baa801d4e74
 540a5e0ff0f9,2026-11-23,2026-11,gasto,350.00,UYU,350.00,Cuenta Casa,,Croqueta,,Babau,babs pollo joaquin guerra,casa,mail,confirmado,1,1a20a42fa7bfaa48
 7b868e79e73a,2026-11-23,2026-11,gasto,147.54,UYU,147.54,Cuenta Casa,,Casa & hogar,,MONTEVIDOE/FERRETERIA FERRO 21 VIS3,MONTEVIDOE/FERRETERIA FERRO 21,casa,mail,confirmado,1,1a2099978f4c475a
+1890899b2f40,2026-11-24,2026-11,gasto,288.00,UYU,288.00,Lu tarjeta,,Super,,Bizcochos,Bizcochos -- Lu pago para ambos (planilla fila 18),casa,carga_manual,confirmado,1,carga:1890899b2f40744a
 4e0fe298c89e,2026-11-24,2026-11,transferencia,31.20,USD,1258.30,Itaú Infinite,A cobrar,,,,"AMAZON MKTPLACE PMTS Amzn. 24/11: parte ajena -> A cobrar (Joaco 24/11: 31,2 USD son para Lu, van a Splitwise, el resto Compras personales)",interno,manual,confirmado,0,95f46f1e643f-split
 95f46f1e643f,2026-11-24,2026-11,gasto,163.91,USD,6610.49,Itaú Infinite,,Compras personales,,AMAZON MKTPLACE PMTS Amzn.,AMAZON MKTPLACE PMTS Amzn.,personal,mail,confirmado,1,1a20ee10b74240a1
 e3df84d9d91c,2026-11-24,2026-11,gasto,468.51,UYU,468.51,Itaú UYU,,Comer afuera / Delivery,,LA ROTISERIA V VIS3,LA ROTISERIA V,personal,mail,confirmado,1,1a20e5e9b2f6f386
