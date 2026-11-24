@@ -323,3 +323,5 @@ decdb0cf5af4,sin_categoria,establecimiento 'DLO*Cabify26471lqNSgfs MONTE' sin re
 266bcd618e79,tc_estimado,USD 25.99 x tc 40.33 = 1048.18 UYU (corrige Fase 3),2026-11-22,
 266bcd618e79,split_a_cargar,split recurrente propuesto: Deudas 3/6 (Rodrigo 2/6; hermana 1/6 (+ madre 1/6 a 'A cobrar')) + casa 2/6: 'APPLE.COM/BILL' — aplicar con OK en revision,2026-11-22,1
 2538817caea3,transferencia_a_clasificar,"a 'cuenta 11032293000001 (BROU)', concepto '', UYU 2500.00: sin categoria",2026-11-23,
+7b868e79e73a,sin_categoria,establecimiento 'MONTEVIDOE/FERRETERIA FERRO 21 VIS3' sin regla,2026-11-23,
+540a5e0ff0f9,transferencia_a_clasificar,"a 'Babau', concepto 'babs pollo joaquin guerra', UYU 350.00: sin categoria",2026-11-23,
