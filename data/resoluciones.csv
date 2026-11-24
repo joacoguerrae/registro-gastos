@@ -1450,3 +1450,28 @@ d6d2848ba160,motivo_resuelto,tc_estimado,no es gasto en el analisis (transferenc
 222486cbf6ef,monto_uyu,615.98,"REDIVA del extracto Itau: el aviso trajo el importe bruto (Joaco 22/11: si, todo asi) (626,25 - 10,27)",2026-11-22
 bc2eab838218,monto,1729.57,"REDIVA del extracto Itau: el aviso trajo el importe bruto (Joaco 22/11: si, todo asi) (1.761,60 - 32,03)",2026-11-22
 bc2eab838218,monto_uyu,1729.57,"REDIVA del extracto Itau: el aviso trajo el importe bruto (Joaco 22/11: si, todo asi) (1.761,60 - 32,03)",2026-11-22
+2538817caea3,categoria,La casa invita,"Joaco 24/11: nueva categoria La casa invita (es mi banda de musica); puntual, sin regla",2026-11-24
+2538817caea3,motivo_resuelto,transferencia_a_clasificar,"Joaco 24/11: nueva categoria La casa invita (es mi banda de musica); puntual, sin regla",2026-11-24
+540a5e0ff0f9,categoria,Croqueta,"Joaco 24/11: Croqueta (babs pollo = pollo para la perra), casa",2026-11-24
+540a5e0ff0f9,ambito,casa,"Joaco 24/11: Croqueta (babs pollo = pollo para la perra), casa",2026-11-24
+540a5e0ff0f9,motivo_resuelto,transferencia_a_clasificar,"Joaco 24/11: Croqueta (babs pollo = pollo para la perra), casa",2026-11-24
+7b868e79e73a,categoria,Casa & hogar,"ferreteria Ferro 21 con la Cuenta Casa: Casa & hogar, casa (misma decision que el 13/11)",2026-11-24
+7b868e79e73a,motivo_resuelto,sin_categoria,"ferreteria Ferro 21 con la Cuenta Casa: Casa & hogar, casa (misma decision que el 13/11)",2026-11-24
+95f46f1e643f,categoria,Compras personales,"Joaco 24/11: 31,2 USD son para Lu (van a Splitwise), el resto Compras personales",2026-11-24
+95f46f1e643f,motivo_resuelto,sin_categoria,"Joaco 24/11: 31,2 USD son para Lu (van a Splitwise), el resto Compras personales",2026-11-24
+95f46f1e643f,monto,163.91,"split: tu parte 163.91 + A cobrar 31.20 = 195.11 USD -- Joaco 24/11: 31,2 USD son para Lu, van a Splitwise, el resto Compras personales",2026-11-24
+95f46f1e643f,monto_uyu,6610.49,split: 6610.49 de 7868.79 UYU,2026-11-24
+95f46f1e643f,motivo_resuelto,split_a_cargar,"split: tu parte 163.91 + A cobrar 31.20 = 195.11 USD -- Joaco 24/11: 31,2 USD son para Lu, van a Splitwise, el resto Compras personales",2026-11-24
+49998fc03c30,motivo_resuelto,tc_estimado,Joaco 24/11: estimacion aceptada; el importe real en pesos llega con el estado de la tarjeta,2026-11-24
+fa2cc0f6f7de,motivo_resuelto,tc_estimado,Joaco 24/11: estimacion aceptada; el importe real en pesos llega con el estado de la tarjeta,2026-11-24
+2e054cf2131a,motivo_resuelto,tc_estimado,Joaco 24/11: estimacion aceptada; el importe real en pesos llega con el estado de la tarjeta,2026-11-24
+22b5518d3c35,motivo_resuelto,tc_estimado,Joaco 24/11: estimacion aceptada; el importe real en pesos llega con el estado de la tarjeta,2026-11-24
+612cf49fe1b9,motivo_resuelto,tc_estimado,Joaco 24/11: estimacion aceptada; el importe real en pesos llega con el estado de la tarjeta,2026-11-24
+ce02df71a377,motivo_resuelto,tc_estimado,Joaco 24/11: estimacion aceptada; el importe real en pesos llega con el estado de la tarjeta,2026-11-24
+a3aaa59339d6,motivo_resuelto,tc_estimado,Joaco 24/11: estimacion aceptada; el importe real en pesos llega con el estado de la tarjeta,2026-11-24
+266bcd618e79,motivo_resuelto,tc_estimado,Joaco 24/11: estimacion aceptada; el importe real en pesos llega con el estado de la tarjeta,2026-11-24
+95f46f1e643f,motivo_resuelto,tc_estimado,Joaco 24/11: estimacion aceptada; el importe real en pesos llega con el estado de la tarjeta,2026-11-24
+581a987fb33d,motivo_resuelto,tc_estimado,"Joaco 24/11: estimacion aceptada; debito en USD de Itau USD, el tc solo afecta el analisis",2026-11-24
+a9d50682afb7,motivo_resuelto,tc_estimado,"Joaco 24/11: estimacion aceptada; debito en USD de Itau USD, el tc solo afecta el analisis",2026-11-24
+6427998c9d53,motivo_resuelto,tc_estimado,"Joaco 24/11: estimacion aceptada; debito en USD de Itau USD, el tc solo afecta el analisis",2026-11-24
+832dbe3b387b,motivo_resuelto,tc_estimado,"Joaco 24/11: estimacion aceptada; debito en USD de Itau USD, el tc solo afecta el analisis",2026-11-24

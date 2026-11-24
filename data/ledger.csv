@@ -5225,7 +5225,7 @@ dd099ec8ae24,2026-11-02,2026-11,gasto,536.00,UYU,536.00,Santander Platinum,,Supe
 25c0cd69a4a6,2026-11-03,2026-11,transferencia,10275.54,UYU,10275.54,Itaú UYU,Santander Platinum,,,,Pago estado Platinum (UYU) desde Itau (TCSANTOL),interno,manual,confirmado,0,transf-2026-11-03-10275.54-pago-estado-platinum-uyu-des
 39c7a958b84a,2026-11-03,2026-11,transferencia,774.81,USD,32000.00,Itaú UYU,Itaú USD,,,cuenta 4174411,"Compra de dolares (pata USD): 32.000 -> USD 774,81 (la pata UYU es 9c210e7e2d2d)",interno,mail,confirmado,0,1a1a3e1f50da08c5
 3f0286d17b8f,2026-11-03,2026-11,gasto,3754.00,UYU,3754.00,Cuenta Casa,,Auto,,Martin Rodriguez Garage,garage vazquez ledesma garage vazquez ledesma,casa,mail,confirmado,1,1a1a3db24e885e1a
-49998fc03c30,2026-11-03,2026-11,gasto,40.32,USD,1626.11,Santander Platinum,,Croqueta,,PAYPAL,Curso Croqueta (PayPal),casa,mail,pendiente,1,1a1a12348a8d5de1
+49998fc03c30,2026-11-03,2026-11,gasto,40.32,USD,1626.11,Santander Platinum,,Croqueta,,PAYPAL,Curso Croqueta (PayPal),casa,mail,confirmado,1,1a1a12348a8d5de1
 54c0b580f8b4,2026-11-03,2026-11,gasto,398.36,UYU,398.36,Cuenta Casa,,Croqueta,,MONTEVIDEO/POROTINO PETSHOP VIS3,POROTINO PETSHOP,casa,mail,confirmado,1,1a1a26bcc3a164f0
 60fbb6f9679c,2026-11-03,2026-11,gasto,10800.00,UYU,10800.00,Itaú UYU,,Salud,,Silvana Psico,Psicologa (octubre),personal,mail,confirmado,1,1a1a3d2472fe4506
 6a438e570dc3,2026-11-03,2026-11,gasto,594.10,UYU,594.10,Cuenta Casa,,Croqueta,,MONTEVIDEO/POROTINO PETSHOP VIS3,POROTINO PETSHOP,casa,mail,confirmado,1,1a1a2e83e7fa4989
@@ -5249,9 +5249,9 @@ d2d882f1a720,2026-11-04,2026-11,gasto,260.98,UYU,260.98,Santander Platinum,,Tran
 4704b66d3651,2026-11-05,2026-11,gasto,84.42,USD,3404.66,Itaú Infinite,,Viajes,,LATAM AIRLIN,"LATAM 5/11: viaje personal (sin aviso, del estado de la Visa Itau)",personal,manual,confirmado,1,gasto-2026-11-05-84.42-latam-5-11-viaje-personal-si
 a733b67f7a09,2026-11-05,2026-11,gasto,555.74,UYU,555.74,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa StarbucVIS3,DLO*PedidosYa Starbuc,casa,mail,confirmado,1,1a1ad1e29d9dca7a
 b185ec79154e,2026-11-05,2026-11,gasto,35.00,UYU,35.00,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,1a1ad3048f5ee9d3
-fa2cc0f6f7de,2026-11-05,2026-11,gasto,100.00,USD,4033.00,Santander Platinum,,Suscripciones,,ANTHROPIC,ANTHROPIC,personal,mail,pendiente,1,1a1ad5e41bafb889
+fa2cc0f6f7de,2026-11-05,2026-11,gasto,100.00,USD,4033.00,Santander Platinum,,Suscripciones,,ANTHROPIC,ANTHROPIC,personal,mail,confirmado,1,1a1ad5e41bafb889
 1d67225a0ee4,2026-11-06,2026-11,transferencia,500.00,USD,20165.00,Itaú USD,Interactive Brokers,,,cuenta 108071,Transferencia a Interactive Brokers,interno,mail,confirmado,0,1a1b0e90bf0385a1
-2e054cf2131a,2026-11-06,2026-11,gasto,60.04,USD,2421.41,Itaú Infinite,,Viajes,,LA LATAM XP LIMA,LA LATAM XP LIMA,personal,mail,pendiente,1,1a1b1944b7352eca
+2e054cf2131a,2026-11-06,2026-11,gasto,60.04,USD,2421.41,Itaú Infinite,,Viajes,,LA LATAM XP LIMA,LA LATAM XP LIMA,personal,mail,confirmado,1,1a1b1944b7352eca
 3d09db492d37,2026-11-06,2026-11,gasto,1.00,USD,40.33,Itaú USD,,Otros,,Itau,Comision transferencia a IBKR (USD 500 via FUCEREP),personal,manual,confirmado,1,gasto-2026-11-06-1.00-comision-transferencia-a-ibk
 42700450ac40,2026-11-06,2026-11,gasto,1.00,USD,40.33,Itaú USD,,Otros,,Itau,Comision transferencia a IBKR (USD 240 via BROU),personal,manual,confirmado,1,gasto-2026-11-06-1.00-comision-transferencia-a-ibk-brou
 69a6ad8859eb,2026-11-06,2026-11,transferencia,240.00,USD,9679.20,Itaú USD,Interactive Brokers,,,cuenta 11092453300001,Transferencia a Interactive Brokers,interno,mail,confirmado,0,1a1b388c644714fc
@@ -5286,7 +5286,7 @@ a240f0168989,2026-11-09,2026-11,gasto,992.46,UYU,992.46,Cuenta Casa,,Croqueta,,M
 dc5f76093dde,2026-11-09,2026-11,gasto,974.00,UYU,974.00,Cuenta Casa,,Croqueta,,Lu Mercado Pago,Juguetes Croqueta (via Lu),casa,mail,confirmado,1,1a1c2f75bed3c730
 e4b06f379cae,2026-11-09,2026-11,gasto,124.00,UYU,124.00,Cuenta Casa,,Super,,MONTEVIDEO/DEVOTO EXPRESS VIS3,DEVOTO EXPRESS,casa,mail,confirmado,1,1a1c29a5455dbcd7
 11606a83564c,2026-11-10,2026-11,gasto,-4177.26,UYU,-4177.26,Itaú UYU,,Viajes,,,"Reintegro viaje BA octubre (trabajo; CRE. CAMBIOS OP, extracto Itau)",personal,manual,confirmado,1,gasto-2026-11-10-4177.26-reintegro-viaje-ba-octubre-t
-22b5518d3c35,2026-11-10,2026-11,gasto,12.28,USD,495.25,Itaú Infinite,,Suscripciones,,NAME-CHEAP.COM* YDYT6C +1323,Namecheap (dominio),personal,mail,pendiente,1,1a1c854c5c1de042
+22b5518d3c35,2026-11-10,2026-11,gasto,12.28,USD,495.25,Itaú Infinite,,Suscripciones,,NAME-CHEAP.COM* YDYT6C +1323,Namecheap (dominio),personal,mail,confirmado,1,1a1c854c5c1de042
 32693ed0baca,2026-11-10,2026-11,gasto,5.02,UYU,5.02,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa Extra VIS3,DLO*PedidosYa Extra,casa,mail,confirmado,1,1a1c76c8156eb340
 362e3d8187f2,2026-11-10,2026-11,gasto,118.03,UYU,118.03,Cuenta Casa,,Super,,Montevideo/CLUB DEL PAN VIS3,Montevideo/CLUB DEL PAN,casa,mail,confirmado,1,1a1c75804663ada0
 563e3c4fb904,2026-11-10,2026-11,gasto,35.00,UYU,35.00,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,1a1c78a8123e8575
@@ -5321,13 +5321,13 @@ bc2eab838218,2026-11-18,2026-11,gasto,1729.57,UYU,1729.57,Itaú UYU,,Salud,,FARM
 07a8659d7176,2026-11-19,2026-11,gasto,981.64,UYU,981.64,Cuenta Casa,,Croqueta,,MONTEVIDEO/LAIKA 21 DE SETIEMBREVIS3,LAIKA 21 DE SETIEMBRE,casa,mail,confirmado,1,1a1f4859f2de2829
 0e709859562f,2026-11-19,2026-11,transferencia,13.60,USD,548.49,Itaú Infinite,A cobrar,,,UBER TRIP BUENO,Uber BA (lo rindo),interno,mail,confirmado,0,1a1f51dfdceaa82a
 2064b8967819,2026-11-19,2026-11,gasto,12.68,USD,511.38,Itaú Infinite,,Transporte,,UBR PENDINGUB BUENO,UBR PENDINGUB BUENO,personal,mail,confirmado,0,1a1f4d275cb536dc
-581a987fb33d,2026-11-19,2026-11,gasto,17.44,USD,703.36,Itaú USD,,Viajes,,BUQUEBUS VIS3,BUQUEBUS,personal,mail,pendiente,1,1a1f465575265746
+581a987fb33d,2026-11-19,2026-11,gasto,17.44,USD,703.36,Itaú USD,,Viajes,,BUQUEBUS VIS3,BUQUEBUS,personal,mail,confirmado,1,1a1f465575265746
 5ebf8164ba27,2026-11-19,2026-11,gasto,740.66,UYU,740.66,Cuenta Casa,,Croqueta,,MONTEVIDEO/POROTINO PETSHOP VIS3,POROTINO PETSHOP,casa,mail,confirmado,1,1a1f4d4dc248568a
-612cf49fe1b9,2026-11-19,2026-11,gasto,40.00,USD,1613.20,Itaú Infinite,,Viajes,,FREESHOP WALINCO COLON,FREESHOP WALINCO COLON,personal,mail,pendiente,1,1a1f455c344b763e
+612cf49fe1b9,2026-11-19,2026-11,gasto,40.00,USD,1613.20,Itaú Infinite,,Viajes,,FREESHOP WALINCO COLON,FREESHOP WALINCO COLON,personal,mail,confirmado,1,1a1f455c344b763e
 644345371193,2026-11-19,2026-11,transferencia,17.25,USD,695.69,Itaú Infinite,A cobrar,,,UBR PENDINGUB BUENO,Uber BA (lo rindo),interno,mail,confirmado,0,1a1f5a8edf7f7f38
 7f1dababde03,2026-11-19,2026-11,gasto,-11.27,USD,-454.52,Itaú Infinite,,Transporte,,UBR PENDINGUB BUENO,Reintegro UBR PENDINGUB BUENO (sin cargo original identificado),personal,mail,confirmado,0,1a1f62b7374a5a26
 836c2f6820fe,2026-11-19,2026-11,transferencia,6.77,USD,273.03,Itaú Infinite,A cobrar,,,UBR PENDINGUB BUENO,Uber BA (lo rindo),interno,mail,confirmado,0,1a1f6910dfa035d7
-a9d50682afb7,2026-11-19,2026-11,gasto,6.34,USD,255.69,Itaú USD,,Viajes,,CEROONCE SRL VIEI,CEROONCE SRL VIEI,personal,mail,pendiente,1,1a1f6b6b5c2ce094
+a9d50682afb7,2026-11-19,2026-11,gasto,6.34,USD,255.69,Itaú USD,,Viajes,,CEROONCE SRL VIEI,CEROONCE SRL VIEI,personal,mail,confirmado,1,1a1f6b6b5c2ce094
 bc27913e8efc,2026-11-19,2026-11,gasto,532.98,UYU,532.98,Santander Platinum,,Transporte,,DLOUBERRIDES,DLOUBERRIDES,personal,mail,confirmado,1,1a1f3d47c15220af
 d6d2848ba160,2026-11-19,2026-11,transferencia,14.08,USD,567.85,Itaú Infinite,A cobrar,,,UBR PENDINGUB BUENO,Uber BA (lo rindo),interno,mail,confirmado,0,1a1f61d2a6d2b1db
 db8e8e5cfc2d,2026-11-19,2026-11,gasto,-12.68,USD,-511.38,Itaú Infinite,,Transporte,,UBR PENDINGUB BUENO,Reintegro UBR PENDINGUB BUENO (revierte 2064b8967819),personal,mail,confirmado,0,1a1f4e0c9ecad7c5
@@ -5335,31 +5335,32 @@ e2be08bed5c7,2026-11-19,2026-11,gasto,11.39,USD,459.36,Itaú Infinite,,Transport
 1729bae376b1,2026-11-20,2026-11,gasto,25.00,UYU,25.00,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,1a1fb6a1058d8c0d
 28101ae3ae71,2026-11-20,2026-11,transferencia,13.74,USD,554.13,Itaú Infinite,A cobrar,,,UBR PENDINGUB BUENO,Uber BA (lo rindo),interno,mail,confirmado,0,1a1fbb323a8b3fb1
 327f2dc662e6,2026-11-20,2026-11,transferencia,72.70,USD,2931.99,Itaú Infinite,Deudas,,,,"PIBA BAR-PIBA BAR BUENO 20/11: parte ajena -> Deudas (Joaco 22/11: la de 81.79 poneme 1/9 del gasto, el resto me lo devuelven)",interno,manual,confirmado,0,ce02df71a377-split
-6427998c9d53,2026-11-20,2026-11,gasto,3.55,USD,143.17,Itaú USD,,Viajes,,OCCO VIEI,OCCO VIEI,personal,mail,pendiente,1,1a1fbd19cf8cffb2
+6427998c9d53,2026-11-20,2026-11,gasto,3.55,USD,143.17,Itaú USD,,Viajes,,OCCO VIEI,OCCO VIEI,personal,mail,confirmado,1,1a1fbd19cf8cffb2
 6aa7496c6931,2026-11-20,2026-11,gasto,11.00,UYU,11.00,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa VeterinVIS3,DLO*PedidosYa Veterin,casa,mail,confirmado,1,1a1fb5c000b46386
 9a53446defcc,2026-11-20,2026-11,transferencia,112.99,USD,4556.89,Itaú Infinite,A cobrar,,,PIBA BAR-PIBA BAR BUENO,Piba Bar BA (lo rindo),interno,mail,confirmado,0,1a1fbcbff315b685
-ce02df71a377,2026-11-20,2026-11,gasto,9.09,USD,366.60,Itaú Infinite,,Viajes,,PIBA BAR-PIBA BAR BUENO,PIBA BAR-PIBA BAR BUENO,personal,mail,pendiente,1,1a1fbcb33b156839
+ce02df71a377,2026-11-20,2026-11,gasto,9.09,USD,366.60,Itaú Infinite,,Viajes,,PIBA BAR-PIBA BAR BUENO,PIBA BAR-PIBA BAR BUENO,personal,mail,confirmado,1,1a1fbcb33b156839
 2230d0baef56,2026-11-21,2026-11,gasto,96.39,UYU,96.39,Cuenta Casa,,Croqueta,,MONTEVIDEO/LAIKA 21 DE SETIEMBREVIS3,LAIKA 21 DE SETIEMBRE,casa,mail,confirmado,1,1a1ff1908f79c7b3
 24357e0c5d47,2026-11-21,2026-11,gasto,1563.00,UYU,1563.00,Santander Platinum,,Croqueta,,SUCAN 26 DE MAR,SUCAN 26 DE MAR,casa,mail,confirmado,1,1a20008264757bbb
 4824a40e6ded,2026-11-21,2026-11,gasto,-15.00,UYU,-15.00,Itaú Infinite,,Transporte,,DLO*Cabify2647hp63sDL5 MONTE,Reintegro DLO*Cabify2647hp63sDL5 MONTE (revierte 8eb42944737a),personal,mail,confirmado,1,1a1fe610faaf3762
-832dbe3b387b,2026-11-21,2026-11,gasto,10.51,USD,423.87,Itaú USD,,Viajes,,BUQUEBUS VIS3,BUQUEBUS,personal,mail,pendiente,1,1a1fdf4bfc16f8c3
+832dbe3b387b,2026-11-21,2026-11,gasto,10.51,USD,423.87,Itaú USD,,Viajes,,BUQUEBUS VIS3,BUQUEBUS,personal,mail,confirmado,1,1a1fdf4bfc16f8c3
 88d793862dca,2026-11-21,2026-11,gasto,1485.00,UYU,1485.00,Itaú UYU,,Salud,,MERPAGO*KYNOX VIS3,MERPAGO*KYNOX,personal,mail,confirmado,1,1a1fe4eef45773fd
 8eb42944737a,2026-11-21,2026-11,gasto,15.00,UYU,15.00,Itaú Infinite,,Transporte,,DLO*Cabify2647hp63sDL5 MONTE,DLO*Cabify2647hp63sDL5 MONTE,personal,mail,confirmado,1,1a1fe6017f8ffdf8
-a3aaa59339d6,2026-11-21,2026-11,gasto,16.00,USD,645.28,Itaú Infinite,,Viajes,,FREESHOP WALINCO COLON,FREESHOP WALINCO COLON,personal,mail,pendiente,1,1a1fe0c50e70ce74
+a3aaa59339d6,2026-11-21,2026-11,gasto,16.00,USD,645.28,Itaú Infinite,,Viajes,,FREESHOP WALINCO COLON,FREESHOP WALINCO COLON,personal,mail,confirmado,1,1a1fe0c50e70ce74
 bba572dd0e5b,2026-11-21,2026-11,gasto,5900.00,UYU,5900.00,Cuenta Casa,,Comer afuera / Delivery,,Brota Viandas,joaquin guerra,casa,mail,confirmado,1,1a2001e82a6f95f1
 decdb0cf5af4,2026-11-21,2026-11,gasto,342.08,UYU,342.08,Itaú Infinite,,Transporte,,DLO*Cabify26471lqNSgfs MONTE,DLO*Cabify26471lqNSgfs MONTE,personal,mail,confirmado,1,1a1fedfa85a382ec
 dfa00f037822,2026-11-21,2026-11,gasto,88.52,UYU,88.52,Cuenta Casa,,Super,,MONTEVIDEO/DEVOTO EXPRESS VIS3,DEVOTO EXPRESS,casa,mail,confirmado,1,1a1ff2436565d839
 085ffff7621d,2026-11-22,2026-11,transferencia,4.33,USD,174.63,Santander Platinum,A cobrar,,,,APPLE.COM/BILL 22/11: parte ajena -> A cobrar (Joaco 22/11: YouTube como siempre),interno,manual,confirmado,0,266bcd618e79-split-b
 0eab2ca4e343,2026-11-22,2026-11,gasto,35.00,UYU,35.00,Itaú UYU,,Super,,DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,personal,mail,confirmado,1,1a203eeeb6da0096
-2538817caea3,2026-11-22,2026-11,gasto,2500.00,UYU,2500.00,Itaú UYU,,,,cuenta 11032293000001 (BROU),a cuenta 11032293000001 BROU,personal,mail,pendiente,1,1a20598f832173b9
-266bcd618e79,2026-11-22,2026-11,gasto,8.66,USD,349.26,Santander Platinum,,Suscripciones,,YouTube Premium familiar (APPLE.COM/BILL),APPLE.COM/BILL,casa,mail,pendiente,1,1a2018b3e80d4947
+2538817caea3,2026-11-22,2026-11,gasto,2500.00,UYU,2500.00,Itaú UYU,,La casa invita,,cuenta 11032293000001 (BROU),a cuenta 11032293000001 BROU,personal,mail,confirmado,1,1a20598f832173b9
+266bcd618e79,2026-11-22,2026-11,gasto,8.66,USD,349.26,Santander Platinum,,Suscripciones,,YouTube Premium familiar (APPLE.COM/BILL),APPLE.COM/BILL,casa,mail,confirmado,1,1a2018b3e80d4947
 9e6369d310ad,2026-11-22,2026-11,gasto,1259.67,UYU,1259.67,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa Bbc BurVIS3,DLO*PedidosYa Bbc Bur,casa,mail,confirmado,1,1a205a2b4665def1
 c6c2311a606a,2026-11-22,2026-11,transferencia,13.00,USD,524.29,Santander Platinum,Deudas,,,,APPLE.COM/BILL 22/11: parte ajena -> Deudas (Joaco 22/11: YouTube como siempre),interno,manual,confirmado,0,266bcd618e79-split-a
 dd401ee6bd38,2026-11-22,2026-11,gasto,130.82,UYU,130.82,Itaú UYU,,Super,,DLO*PedidosYa Market VIS3,DLO*PedidosYa Market,personal,mail,confirmado,1,1a203d877ac2a40f
 e1760d25a3b8,2026-11-22,2026-11,gasto,45.00,UYU,45.00,Cuenta Casa,,Comer afuera / Delivery,,MONTEVIDEO/DLO*PedidosYa PropinaVIS3,DLO*PedidosYa Propina,casa,mail,confirmado,1,1a205baa801d4e74
-540a5e0ff0f9,2026-11-23,2026-11,gasto,350.00,UYU,350.00,Cuenta Casa,,,,Babau,babs pollo joaquin guerra,personal,mail,pendiente,1,1a20a42fa7bfaa48
-7b868e79e73a,2026-11-23,2026-11,gasto,147.54,UYU,147.54,Cuenta Casa,,,,MONTEVIDOE/FERRETERIA FERRO 21 VIS3,MONTEVIDOE/FERRETERIA FERRO 21,casa,mail,pendiente,1,1a2099978f4c475a
-95f46f1e643f,2026-11-24,2026-11,gasto,195.11,USD,7868.79,Itaú Infinite,,,,AMAZON MKTPLACE PMTS Amzn.,AMAZON MKTPLACE PMTS Amzn.,personal,mail,pendiente,1,1a20ee10b74240a1
+540a5e0ff0f9,2026-11-23,2026-11,gasto,350.00,UYU,350.00,Cuenta Casa,,Croqueta,,Babau,babs pollo joaquin guerra,casa,mail,confirmado,1,1a20a42fa7bfaa48
+7b868e79e73a,2026-11-23,2026-11,gasto,147.54,UYU,147.54,Cuenta Casa,,Casa & hogar,,MONTEVIDOE/FERRETERIA FERRO 21 VIS3,MONTEVIDOE/FERRETERIA FERRO 21,casa,mail,confirmado,1,1a2099978f4c475a
+4e0fe298c89e,2026-11-24,2026-11,transferencia,31.20,USD,1258.30,Itaú Infinite,A cobrar,,,,"AMAZON MKTPLACE PMTS Amzn. 24/11: parte ajena -> A cobrar (Joaco 24/11: 31,2 USD son para Lu, van a Splitwise, el resto Compras personales)",interno,manual,confirmado,0,95f46f1e643f-split
+95f46f1e643f,2026-11-24,2026-11,gasto,163.91,USD,6610.49,Itaú Infinite,,Compras personales,,AMAZON MKTPLACE PMTS Amzn.,AMAZON MKTPLACE PMTS Amzn.,personal,mail,confirmado,1,1a20ee10b74240a1
 e3df84d9d91c,2026-11-24,2026-11,gasto,468.51,UYU,468.51,Itaú UYU,,Comer afuera / Delivery,,LA ROTISERIA V VIS3,LA ROTISERIA V,personal,mail,confirmado,1,1a20e5e9b2f6f386
 173c3e27a00d,2026-12-09,2026-12,gasto,3433.33,UYU,3433.33,Itaú Infinite,,Salud,,ORTOPEDIA BIOHEALT MONTE,Ortopedia Biohealth cuota 2/3 (10.300 en 3 cuotas; cargada por adelantado),personal,manual,confirmado,1,gasto-2026-12-09-3433.33-ortopedia-biohealth-cuota-2
 8e242553a9b3,2027-01-09,2027-01,gasto,3433.34,UYU,3433.34,Itaú Infinite,,Salud,,ORTOPEDIA BIOHEALT MONTE,Ortopedia Biohealth cuota 3/3 (10.300 en 3 cuotas; cargada por adelantado),personal,manual,confirmado,1,gasto-2027-01-09-3433.34-ortopedia-biohealth-cuota-3
