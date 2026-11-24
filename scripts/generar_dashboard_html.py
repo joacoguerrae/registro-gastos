@@ -182,20 +182,41 @@ def armar_data():
             "posicion_lu": round(num(r["posicion_lu"]), 2), "posicion_joaco": round(num(r["posicion_joaco"]), 2)}
 
     ledger = leer(P("data", "ledger.csv"))
-    max_fecha = max((r["fecha"] for r in ledger), default="")
+    # Acotado a hoy: una cuota cargada por adelantado (ej. 2027-01) no debe
+    # correr el "mes en curso" ni el mes por defecto del dashboard al futuro.
+    hoy = dt.date.today().isoformat()
+    max_fecha = max((r["fecha"] for r in ledger if r["fecha"] <= hoy), default="")
 
     mes_curso = max_fecha[:7] if max_fecha else ""
     dia_corte = int(max_fecha[8:10]) if len(max_fecha) >= 10 else 0
     dias_mes = calendar.monthrange(int(mes_curso[:4]), int(mes_curso[5:7]))[1] if mes_curso else 30
 
     meses = sorted(set(personal) | set(presup) | set(casa))
+    meses_hasta_hoy = [m for m in meses if m <= hoy[:7]] or meses
+
+    # Detalle de las lineas detras de cada (mes, categoria) del gasto personal
+    # (out/resumen_detalle.csv, lo escribe merge_y_validar con el MISMO importe
+    # que suma al resumen). Solo los ultimos 18 meses, para no inflar el HTML.
+    DETALLE_MESES = 18
+    detalle_desde = meses_hasta_hoy[-DETALLE_MESES] if len(meses_hasta_hoy) >= DETALLE_MESES else (meses[0] if meses else "")
+    detalle = defaultdict(list)
+    for r in leer_opt(P("out", "resumen_detalle.csv")):
+        if r["mes"] < detalle_desde:
+            continue
+        detalle[r["mes"]].append([
+            r["fecha"], r["categoria"], r["cuenta"],
+            (r["descripcion"] or r["comercio"] or "").strip(),   # principal: la descripcion limpia
+            (r["comercio"] or "").strip() if r["descripcion"] else "",   # secundaria: el comercio crudo
+            r["ambito"], r["moneda"], round(num(r["monto"]), 2), round(num(r["monto_uyu"]), 2),
+            round(num(r["frac"]), 4), round(num(r["gasto_uyu"]), 2), r["id"]])
     cats = sorted({x["cat"] for m in personal.values() for x in m}
                   | {x["cat"] for m in casa.values() for x in m["cats"]})
     tipos = tipos_categoria()
 
     return {
         "mes_en_curso": mes_curso, "dia_corte": dia_corte, "dias_mes": dias_mes,
-        "meses": meses, "mes_default": meses[-1] if meses else "", "categorias": cats,
+        "meses": meses, "mes_default": meses_hasta_hoy[-1] if meses_hasta_hoy else "", "categorias": cats,
+        "detalle": detalle, "detalle_desde": detalle_desde,
         "cat_tipo": {c: tipos.get(c, "Variable") for c in cats},
         "personal": personal, "presupuesto": presup,
         "casa": {k: v for k, v in casa.items()}, "casa_cierre": casa_cierre,
@@ -351,6 +372,13 @@ details.sec summary::before{content:"▸"; font-size:10px} details.sec[open] sum
 .bar-head span:nth-child(3),.bar-head span:nth-child(4){text-align:right}
 .bar-row .amt{font-variant-numeric:tabular-nums; color:var(--ink); font-weight:600; white-space:nowrap}
 .d.up{color:var(--bad)} .d.down{color:var(--good)} .d{font-size:11px; margin-left:6px}
+.bars.clickable .bar-row:not(.bar-head){cursor:pointer; border-radius:7px; margin:0 -6px; padding-left:6px; padding-right:6px}
+.bars.clickable .bar-row:not(.bar-head):hover{background:var(--surface-2)} .bar-row.open .lbl{color:var(--accent)}
+.det{margin:4px -6px 10px; padding:6px 8px 4px; background:var(--surface-2); border-radius:9px; font-size:12.5px}
+.det table{font-size:12.5px} .det th,.det td{padding:5px 8px} .det td{white-space:normal}
+.det td.f{white-space:nowrap; color:var(--ink-2)} .det td.n{white-space:nowrap} .det .sub2{color:var(--ink-3); font-size:11px}
+.det .tag{display:inline-block; font-size:10px; font-weight:700; letter-spacing:.04em; padding:1px 6px; border-radius:6px; background:var(--accent-soft); color:var(--accent); margin-left:6px; vertical-align:middle}
+.det .note{color:var(--ink-3); font-size:11.5px; padding:4px 8px 2px}
 table{width:100%; border-collapse:collapse; font-size:13.5px} .tscroll{overflow-x:auto}
 th,td{padding:9px 10px; text-align:right; white-space:nowrap} th:first-child,td:first-child{text-align:left}
 thead th{font-size:11px; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-3); font-weight:600; border-bottom:1px solid var(--line)}
@@ -481,7 +509,7 @@ function hbarsVs(items, prevLabel){ const max=Math.max(1,...items.map(i=>i.val))
     if(vs){ const p=it.prev||0, dl=it.val-p; const up=dl>0;
       const d=Math.abs(dl)>=1?`<span class="d ${up?'up':'down'}">${up?'▲':'▼'}</span>`:"";
       prev=`<span class="prev" title="${prevLabel}: ${fmt(p)} (${dl>=0?'+':''}${fmt0(dl)})">${d}${fmt(p)}</span>`; }
-    return `<div class="bar-row${vs?' vs':''}"><span class="lbl" title="${it.lbl}">${it.lbl}</span><div class="bar-lane"><div class="bar-fill" style="width:${it.val/max*100}%"></div></div><span class="amt">${fmt(it.val)}</span>${prev}</div>`;}).join("")+`</div>`;
+    return `<div class="bar-row${vs?' vs':''}" data-cat="${it.lbl.replace(/"/g,'&quot;')}"><span class="lbl" title="${it.lbl}">${it.lbl}</span><div class="bar-lane"><div class="bar-fill" style="width:${it.val/max*100}%"></div></div><span class="amt">${fmt(it.val)}</span>${prev}</div>`;}).join("")+`</div>`;
 }
 function divBars(items){ const max=Math.max(1,...items.map(i=>Math.abs(i.dif)));
   return `<div class="bars">`+items.map(it=>{const over=it.dif>0,w=Math.abs(it.dif)/max*50,c=devColor(it.pct).fg;
@@ -549,7 +577,9 @@ function renderCat(){
   const vs=single&&pm;
   const bcard=el("div","card"); bcard.appendChild(el("div",null,`<h3>Por categoría</h3><div class="sub">${periodLabel()}${vs?' · vs. '+mesLabel(pm):''}${tipoNote()}</div>`));
   const bitems=Object.entries(agg).map(([cat,v])=>({lbl:cat,val:v,prev:vs?(pmap[cat]||0):null})).sort((a,b)=>b.val-a.val);
-  bcard.appendChild(el("div",null,hbarsVs(bitems, vs?mesLabel(pm):null))); row.appendChild(bcard); w.appendChild(row);
+  const bwrap=el("div",null,hbarsVs(bitems, vs?mesLabel(pm):null)); bwrap.querySelector(".bars").classList.add("clickable");
+  bcard.appendChild(bwrap); bcard.appendChild(el("div","sub",`Clic en una categoría para ver las líneas del ledger que la componen.`));
+  wireDetalle(bwrap); row.appendChild(bcard); w.appendChild(row);
 
   const tc=el("div","card");
   if(selCats&&selCats.size===0){ tc.appendChild(el("div",null,`<h3>Evolución</h3><div class="sub">Elegí una o más categorías en el filtro para ver su evolución.</div>`)); }
@@ -646,6 +676,37 @@ function renderCasa(){
 }
 function wireReparto(card,cl){ card.querySelectorAll(".bar-row[data-i]").forEach(r=>{ r.addEventListener("mousemove",e=>{const x=cl[+r.dataset.i], t=x.total||1;
   showTip(`${x.cat}<br><span style="color:${cssvar('--c1')}">■</span> Vos <b>${fmt(x.joaco)}</b> (${(x.joaco/t*100).toFixed(0)}%)<br><span style="color:${cssvar('--c2')}">■</span> Lu <b>${fmt(x.lu)}</b> (${(x.lu/t*100).toFixed(0)}%)<br>Total <b>${fmt(x.total)}</b>`,e.clientX,e.clientY);}); r.addEventListener("mouseleave",hideTip);});}
+/* detalle de una categoría: las líneas del ledger (meses seleccionados) con el
+   importe que entra al resumen personal (casa ya dividida por coeficiente) */
+function detalleRows(cat){
+  const out=[]; selMeses.forEach(m=>(D.detalle[m]||[]).forEach(r=>{ if(r[1]===cat) out.push(r); }));
+  return out.sort((a,b)=>b[0]<a[0]?-1:b[0]>a[0]?1:0);
+}
+function detalleHtml(cat){
+  const rows=detalleRows(cat);
+  const sinDet=selMeses.filter(m=>m<D.detalle_desde);
+  const note=sinDet.length?`<div class="note">Sin detalle para ${sinDet.length===1?mesLabel(sinDet[0]):sinDet.length+' meses'} (el dashboard guarda las líneas desde ${mesLabel(D.detalle_desde)}).</div>`:"";
+  if(!rows.length) return `<div class="det">${note||'<div class="note">Sin líneas en el período.</div>'}</div>`;
+  const esc=t=>String(t??"").replace(/&/g,"&amp;").replace(/</g,"&lt;");
+  const tot=rows.reduce((t,r)=>t+r[10],0);
+  const multiMes=selMeses.length>1;
+  const body=rows.map(r=>{
+    const [fecha,,cuenta,det,desc,amb,mon,monto,montoUyu,frac,gasto,id]=r;
+    const parcial=frac<0.9999;
+    const casa=amb==="casa"?`<span class="tag" title="gasto de la casa: se cuenta tu parte">CASA</span>`:"";
+    const sub=desc&&desc!==det?`<div class="sub2">${esc(desc)}</div>`:"";
+    const imp=mon==="UYU"?"":`<div class="sub2">${fmtc(monto,mon)}</div>`;
+    const part=parcial?`<div class="sub2">${Math.round(frac*100)}% de ${fmt(montoUyu)}</div>`:"";
+    return `<tr title="id ${esc(id)}"><td class="f">${fecha.slice(8,10)}/${fecha.slice(5,7)}${multiMes?'/'+fecha.slice(2,4):''}</td><td style="text-align:left">${esc(det)}${casa}${sub}</td><td class="n" style="text-align:left">${esc(cuenta)}</td><td class="n">${fmt(gasto)}${imp}${part}</td></tr>`;}).join("");
+  return `<div class="det">${note}<div class="tscroll"><table><thead><tr><th>Fecha</th><th style="text-align:left">Detalle</th><th style="text-align:left">Cuenta</th><th>Gasto</th></tr></thead><tbody>${body}<tr class="total"><td></td><td style="text-align:left">${rows.length} ${rows.length===1?'línea':'líneas'}</td><td></td><td>${fmt(tot)}</td></tr></tbody></table></div></div>`;
+}
+function wireDetalle(wrap){
+  wrap.querySelectorAll(".bar-row[data-cat]").forEach(row=>row.addEventListener("click",()=>{
+    const open=row.classList.toggle("open"); const next=row.nextElementSibling;
+    if(next&&next.classList.contains("det")) next.remove();
+    if(open) row.insertAdjacentHTML("afterend",detalleHtml(row.dataset.cat));
+  }));
+}
 function wireDonut(card,items,total){ card.querySelectorAll("path[data-i]").forEach(p=>{ p.addEventListener("mousemove",e=>{const it=items[+p.dataset.i]; showTip(`${it.label}<br><b>${fmt(it.value)}</b> · ${(it.value/total*100).toFixed(1)}%`,e.clientX,e.clientY);}); p.addEventListener("mouseleave",hideTip);});}
 function wireLine(card){ card.querySelectorAll("circle[data-m]").forEach(c=>{ c.addEventListener("mousemove",e=>showTip(`${c.dataset.n} · ${mesLabel(c.dataset.m)}<br><b>${fmt(+c.dataset.v)}</b>`,e.clientX,e.clientY)); c.addEventListener("mouseleave",hideTip);});}
 

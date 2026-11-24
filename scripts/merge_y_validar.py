@@ -59,6 +59,7 @@ STAGING_CARGA = P("data", "staging", "ledger_carga_manual.csv")
 ORIGENES_STAGING = ("1money", "planilla_casa", "carga_manual")
 OUT_LEDGER = P("data", "ledger.csv")
 OUT_RESUMEN = P("out", "resumen_mensual.csv")
+OUT_DETALLE = P("out", "resumen_detalle.csv")   # las filas detras de cada (mes, categoria)
 OUT_MD = P("docs", "validacion-migracion.md")
 DB = P("data", "raw", "MyFinance.db")
 XLSX = P("data", "raw", "casa.xlsx")
@@ -779,10 +780,12 @@ def main():
                                for r in csv.DictReader(f)}
 
     resumen = defaultdict(float)
+    detalle = []     # una fila por gasto, con el importe que entra al resumen
     for r in ledger:
         if r["tipo"] != "gasto" or r["en_analisis"] != "1":
             continue
         monto = float(r["monto_uyu"])
+        frac = 1.0
         # OJO: las filas origen=planilla_casa YA son la parte de Joaco -- el
         # migrador guardo "Gasto Joaco" (o Egresos/2 en la ventana vieja), no el
         # egreso total. Aplicarles el coeficiente las divide DOS VECES y
@@ -795,7 +798,11 @@ def main():
         if r["ambito"] == "casa" and r["origen"] != "planilla_casa":
             frac = participaciones.get(r["id"], coef_joaco(r["mes"]))
             monto *= frac
-        resumen[(r["mes"], r["categoria"] or "(sin categoria)")] += monto
+        cat = r["categoria"] or "(sin categoria)"
+        resumen[(r["mes"], cat)] += monto
+        detalle.append([r["id"], r["mes"], r["fecha"], cat, r["cuenta"], r["comercio"],
+                        r["descripcion"], r["ambito"], r["origen"], r["moneda"], r["monto"],
+                        r["monto_uyu"], f"{frac:.4f}", f"{monto:.2f}"])
     with open(OUT_RESUMEN, "w", encoding="utf-8", newline="") as f:
         # lineterminator="\n": ver el comentario del writer del ledger (SB1).
         w = csv.writer(f, lineterminator="\n")
@@ -806,8 +813,19 @@ def main():
         w.writerow(["mes", "fecha", "categoria", "gasto_uyu"])
         for (mes, cat), v in sorted(resumen.items()):
             w.writerow([mes, f"{mes}-01", cat, f"{v:.2f}"])
+    # El detalle que hay detras de cada numero del resumen: lo lee el dashboard
+    # (pestaña Categorias, clic en una categoria) para poder ver que lineas del
+    # ledger suman ese importe sin abrir el CSV. `gasto_uyu` es lo que entra al
+    # resumen (ya multiplicado por `frac` si es de la casa); `monto_uyu` es la
+    # linea completa.
+    with open(OUT_DETALLE, "w", encoding="utf-8", newline="") as f:
+        w = csv.writer(f, lineterminator="\n")
+        w.writerow(["id", "mes", "fecha", "categoria", "cuenta", "comercio", "descripcion",
+                    "ambito", "origen", "moneda", "monto", "monto_uyu", "frac", "gasto_uyu"])
+        w.writerows(sorted(detalle, key=lambda d: (d[1], d[2], d[0])))
     log("4.resumen", "OK",
         f"{len(resumen)} filas (mes,categoria) -> out/resumen_mensual.csv "
+        f"(+ {len(detalle)} lineas en out/resumen_detalle.csv) "
         f"(PERSONAL: casa dividida por coeficiente/participacion); "
         f"suma total {sum(resumen.values()):.2f}")
 
