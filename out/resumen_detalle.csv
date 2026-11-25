@@ -3738,7 +3738,6 @@ a917e8437c4e,2026-10,2026-10-31,Comer afuera / Delivery,Santander Platinum,DLOPE
 e2cd034c3a70,2026-10,2026-10-31,Comer afuera / Delivery,Deudas,,Picada bebida,split,splitwise,UYU,269.75,269.75,1.0000,269.75
 f4ed2f4627ee,2026-10,2026-10-31,Super,Cuenta Casa,MONTEVIDEO/VIEJO MOLINO VIS3,VIEJO MOLINO,casa,mail,UYU,513.44,513.44,0.5699,292.60
 72fe94538ca3,2026-10,2026-11-03,Educación,Itaú UYU,ORT,"ORT cuota de octubre, pagada el 1/11 (factura 1478071; extracto Itau)",personal,manual,UYU,28874.00,28874.00,1.0000,28874.00
-0481d6e3d4f2,2026-11,2026-11-01,Croqueta,Lu tarjeta,Correa,Correa -- Lu pago para ambos (planilla fila 16),casa,carga_manual,UYU,1573.00,1573.00,0.5761,906.13
 0d0502eb16f3,2026-11,2026-11-01,Super,Lu tarjeta,Panes,Panes -- Lu pago para ambos (planilla fila 14),casa,carga_manual,UYU,540.00,540.00,0.5761,311.07
 1aca967aa45d,2026-11,2026-11-01,Comer afuera / Delivery,Itaú UYU,MERPAGO*ELROBLE VIS3,MERPAGO*ELROBLE,casa,mail,UYU,2810.00,2810.00,0.5761,1618.71
 29f3a81275d4,2026-11,2026-11-01,Regalos,Itaú UYU,SISTARBANC,Regalo cumpleanos de mi padre (pago web Itau via SISTARBANC),personal,mail,UYU,2140.00,2140.00,1.0000,2140.00
@@ -3746,6 +3745,7 @@ f4ed2f4627ee,2026-10,2026-10-31,Super,Cuenta Casa,MONTEVIDEO/VIEJO MOLINO VIS3,V
 54a2671dbd67,2026-11,2026-11-01,Auto,Cuenta Casa,DURAZNO/AXION DURAZNO ESTACIOVIS3,DURAZNO/AXION DURAZNO ESTACIO,casa,mail,UYU,43.28,43.28,0.5761,24.93
 5f11da3139ed,2026-11,2026-11-01,Casa & hogar,Lu tarjeta,Correa,Correa -- Lu pago para ambos (planilla fila 17),casa,carga_manual,UYU,329.00,329.00,0.5761,189.52
 631e31efee49,2026-11,2026-11-01,Regalos,Lu tarjeta,Murdoku,Murdoku -- Lu pago para ambos (planilla fila 15),casa,carga_manual,UYU,1059.00,1059.00,0.5761,610.04
+683c3f031809,2026-11,2026-11-01,Casa & hogar,Lu tarjeta,Pañales,Pañales -- Lu pago para ambos (planilla fila 16),casa,carga_manual,UYU,1573.00,1573.00,0.5761,906.13
 7333d12447dc,2026-11,2026-11-01,Comer afuera / Delivery,Santander Platinum,DLOPEDIDOSYA P,DLOPEDIDOSYA P,personal,mail,UYU,25.00,25.00,1.0000,25.00
 962bb76271ca,2026-11,2026-11-01,Comer afuera / Delivery,Santander Platinum,DLOPEDIDOSYA,DLOPEDIDOSYA,personal,mail,UYU,151.00,151.00,1.0000,151.00
 abb6f4ead0ad,2026-11,2026-11-01,Suscripciones,Santander Platinum,Google Play – 100 GB (Google One),GOOGLE,personal,mail,USD,1.99,80.26,1.0000,80.26
@@ -3862,6 +3862,7 @@ e1760d25a3b8,2026-11,2026-11-22,Comer afuera / Delivery,Cuenta Casa,MONTEVIDEO/D
 540a5e0ff0f9,2026-11,2026-11-23,Croqueta,Cuenta Casa,Babau,babs pollo joaquin guerra,casa,mail,UYU,350.00,350.00,0.5761,201.62
 7b868e79e73a,2026-11,2026-11-23,Casa & hogar,Cuenta Casa,MONTEVIDOE/FERRETERIA FERRO 21 VIS3,MONTEVIDOE/FERRETERIA FERRO 21,casa,mail,UYU,147.54,147.54,0.5761,84.99
 1890899b2f40,2026-11,2026-11-24,Super,Lu tarjeta,Bizcochos,Bizcochos -- Lu pago para ambos (planilla fila 18),casa,carga_manual,UYU,288.00,288.00,0.5761,165.90
+1d86e27ad1e2,2026-11,2026-11-24,Casa & hogar,Cuenta Casa,Yova,joaco y lu,casa,mail,UYU,1700.00,1700.00,0.5761,979.29
 95f46f1e643f,2026-11,2026-11-24,Compras personales,Itaú Infinite,AMAZON MKTPLACE PMTS Amzn.,AMAZON MKTPLACE PMTS Amzn.,personal,mail,USD,163.91,6610.49,1.0000,6610.49
 e3df84d9d91c,2026-11,2026-11-24,Comer afuera / Delivery,Itaú UYU,LA ROTISERIA V VIS3,LA ROTISERIA V,personal,mail,UYU,468.51,468.51,1.0000,468.51
 173c3e27a00d,2026-12,2026-12-09,Salud,Itaú Infinite,ORTOPEDIA BIOHEALT MONTE,Ortopedia Biohealth cuota 2/3 (10.300 en 3 cuotas; cargada por adelantado),personal,manual,UYU,3433.33,3433.33,1.0000,3433.33

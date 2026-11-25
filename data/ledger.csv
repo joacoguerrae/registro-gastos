@@ -5203,7 +5203,6 @@ da1b40dcc2df,2026-10-30,2026-10,transferencia,1738.50,UYU,1738.50,Santander Plat
 a917e8437c4e,2026-10-31,2026-10,gasto,35.00,UYU,35.00,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA P,DLOPEDIDOSYA P,personal,mail,confirmado,1,1a1939325ec32e21
 e2cd034c3a70,2026-10-31,2026-10,gasto,269.75,UYU,269.75,Deudas,,Comer afuera / Delivery,Licor,,Picada bebida,split,splitwise,confirmado,1,sw:x64a1a0f807
 f4ed2f4627ee,2026-10-31,2026-10,gasto,513.44,UYU,513.44,Cuenta Casa,,Super,,MONTEVIDEO/VIEJO MOLINO VIS3,VIEJO MOLINO,casa,mail,confirmado,1,1a191ad9b5a6f0b8
-0481d6e3d4f2,2026-11-01,2026-11,gasto,1573.00,UYU,1573.00,Lu tarjeta,,Croqueta,,Correa,Correa -- Lu pago para ambos (planilla fila 16),casa,carga_manual,confirmado,1,carga:0481d6e3d4f245d5
 0d0502eb16f3,2026-11-01,2026-11,gasto,540.00,UYU,540.00,Lu tarjeta,,Super,,Panes,Panes -- Lu pago para ambos (planilla fila 14),casa,carga_manual,confirmado,1,carga:0d0502eb16f379ac
 1aca967aa45d,2026-11-01,2026-11,gasto,2810.00,UYU,2810.00,Itaú UYU,,Comer afuera / Delivery,,MERPAGO*ELROBLE VIS3,MERPAGO*ELROBLE,casa,mail,confirmado,1,1a198493cbfac713
 29f3a81275d4,2026-11-01,2026-11,gasto,2140.00,UYU,2140.00,Itaú UYU,,Regalos,,SISTARBANC,Regalo cumpleanos de mi padre (pago web Itau via SISTARBANC),personal,mail,confirmado,1,1a199d8f891ae836
@@ -5211,6 +5210,7 @@ f4ed2f4627ee,2026-10-31,2026-10,gasto,513.44,UYU,513.44,Cuenta Casa,,Super,,MONT
 54a2671dbd67,2026-11-01,2026-11,gasto,43.28,UYU,43.28,Cuenta Casa,,Auto,,DURAZNO/AXION DURAZNO ESTACIOVIS3,DURAZNO/AXION DURAZNO ESTACIO,casa,mail,confirmado,1,1a198d5d8f95e863
 5f11da3139ed,2026-11-01,2026-11,gasto,329.00,UYU,329.00,Lu tarjeta,,Casa & hogar,,Correa,Correa -- Lu pago para ambos (planilla fila 17),casa,carga_manual,confirmado,1,carga:5f11da3139eddaca
 631e31efee49,2026-11-01,2026-11,gasto,1059.00,UYU,1059.00,Lu tarjeta,,Regalos,,Murdoku,Murdoku -- Lu pago para ambos (planilla fila 15),casa,carga_manual,confirmado,1,carga:631e31efee490eb9
+683c3f031809,2026-11-01,2026-11,gasto,1573.00,UYU,1573.00,Lu tarjeta,,Casa & hogar,,Pañales,Pañales -- Lu pago para ambos (planilla fila 16),casa,carga_manual,confirmado,1,carga:683c3f031809e76b
 7333d12447dc,2026-11-01,2026-11,gasto,25.00,UYU,25.00,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA P,DLOPEDIDOSYA P,personal,mail,confirmado,1,1a19996312ff4d84
 962bb76271ca,2026-11-01,2026-11,gasto,151.00,UYU,151.00,Santander Platinum,,Comer afuera / Delivery,,DLOPEDIDOSYA,DLOPEDIDOSYA,personal,mail,confirmado,1,1a1997a1452fda02
 abb6f4ead0ad,2026-11-01,2026-11,gasto,1.99,USD,80.26,Santander Platinum,,Suscripciones,,Google Play – 100 GB (Google One),GOOGLE,personal,mail,confirmado,1,1a1977396ac06029
@@ -5360,6 +5360,7 @@ e1760d25a3b8,2026-11-22,2026-11,gasto,45.00,UYU,45.00,Cuenta Casa,,Comer afuera 
 540a5e0ff0f9,2026-11-23,2026-11,gasto,350.00,UYU,350.00,Cuenta Casa,,Croqueta,,Babau,babs pollo joaquin guerra,casa,mail,confirmado,1,1a20a42fa7bfaa48
 7b868e79e73a,2026-11-23,2026-11,gasto,147.54,UYU,147.54,Cuenta Casa,,Casa & hogar,,MONTEVIDOE/FERRETERIA FERRO 21 VIS3,MONTEVIDOE/FERRETERIA FERRO 21,casa,mail,confirmado,1,1a2099978f4c475a
 1890899b2f40,2026-11-24,2026-11,gasto,288.00,UYU,288.00,Lu tarjeta,,Super,,Bizcochos,Bizcochos -- Lu pago para ambos (planilla fila 18),casa,carga_manual,confirmado,1,carga:1890899b2f40744a
+1d86e27ad1e2,2026-11-24,2026-11,gasto,1700.00,UYU,1700.00,Cuenta Casa,,Casa & hogar,,Yova,joaco y lu,casa,mail,confirmado,1,1a20ff85d3bf2e4b
 4e0fe298c89e,2026-11-24,2026-11,transferencia,31.20,USD,1258.30,Itaú Infinite,A cobrar,,,,"AMAZON MKTPLACE PMTS Amzn. 24/11: parte ajena -> A cobrar (Joaco 24/11: 31,2 USD son para Lu, van a Splitwise, el resto Compras personales)",interno,manual,confirmado,0,95f46f1e643f-split
 95f46f1e643f,2026-11-24,2026-11,gasto,163.91,USD,6610.49,Itaú Infinite,,Compras personales,,AMAZON MKTPLACE PMTS Amzn.,AMAZON MKTPLACE PMTS Amzn.,personal,mail,confirmado,1,1a20ee10b74240a1
 e3df84d9d91c,2026-11-24,2026-11,gasto,468.51,UYU,468.51,Itaú UYU,,Comer afuera / Delivery,,LA ROTISERIA V VIS3,LA ROTISERIA V,personal,mail,confirmado,1,1a20e5e9b2f6f386
