@@ -329,3 +329,7 @@ decdb0cf5af4,sin_categoria,establecimiento 'DLO*Cabify26471lqNSgfs MONTE' sin re
 95f46f1e643f,sin_categoria,establecimiento 'AMAZON MKTPLACE PMTS Amzn.' sin regla,2026-11-24,1
 c56377eff5b6,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*MUNDOCANINO VIS3' sin regla,2026-11-25,
 3a5b01b10dde,sin_categoria,establecimiento 'MERPAGO*ESCARAMUZA MONTE' sin regla,2026-11-25,
+823353a2fc04,tc_estimado,USD 26.33 x tc 40.33 = 1061.89 UYU (corrige Fase 3),2026-11-27,
+823353a2fc04,sin_categoria,establecimiento 'EVO*globalcloths Hong' sin regla,2026-11-27,
+a45613ef1d44,transferencia_a_clasificar,"a 'cuenta 7868300 (Itau)', concepto '', USD 50.00: sin categoria",2026-11-27,
+a45613ef1d44,tc_estimado,USD 50.00 x tc 40.33 = 2016.50 UYU (corrige Fase 3),2026-11-27,
