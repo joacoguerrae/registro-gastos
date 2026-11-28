@@ -333,3 +333,8 @@ c56377eff5b6,sin_categoria,establecimiento 'MONTEVIDEO/MERPAGO*MUNDOCANINO VIS3'
 823353a2fc04,sin_categoria,establecimiento 'EVO*globalcloths Hong' sin regla,2026-11-27,
 a45613ef1d44,transferencia_a_clasificar,"a 'cuenta 7868300 (Itau)', concepto '', USD 50.00: sin categoria",2026-11-27,
 a45613ef1d44,tc_estimado,USD 50.00 x tc 40.33 = 2016.50 UYU (corrige Fase 3),2026-11-27,
+2804653c8895,tc_estimado,USD 1.00 x tc 40.33 = 40.33 UYU (corrige Fase 3),2026-11-28,
+2804653c8895,sin_categoria,establecimiento 'AIRBNB' sin regla,2026-11-28,
+50c1d110a3c6,tc_estimado,reintegro USD 1.00 x tc 40.33 (corrige Fase 3),2026-11-28,
+50c1d110a3c6,sin_categoria,reintegro 'AIRBNB' sin regla ni cargo original,2026-11-28,
+180c84bda387,transferencia_a_clasificar,"a 'Lea Betancor', concepto 'torta joaco guerra', UYU 900.00: sin categoria",2026-11-28,

@@ -664,3 +664,9 @@ message_id,fecha_mail,handler,resultado,id_ledger,detalle,dedupe_key,procesado_e
 1a21ccfcf80e2a2a,2026-11-27T11:41:50Z,aviso_tarjeta,insertado,823353a2fc04,5023 USD 26.33 EVO*globalcloths Hong -> Itaú Infinite/personal/(sin categoria),5023||26.33||EVO*globalcloths Hong||2026-11-27T08:41:50,2026-11-27T21:25:52+00:00
 1a21e5b6f39c21f1,2026-11-27T18:53:57Z,transferencia_itau,insertado,a45613ef1d44,4411 USD 50.00 -> 7868300 Itau -> Itaú USD/gasto/personal/(sin categoria),,2026-11-27T21:25:52+00:00
 1a21df33d3381236,2026-11-27T16:59:57Z,ignorado,ignorado,,comunicaciones@itau.com.uy | ¡Comenzó Black Friday con canjes rebajados!,,2026-11-27T21:25:52+00:00
+1a21f0e204f771ed,2026-11-27T22:09:07Z,aviso_tarjeta,insertado,3f476b1487df,8261 UYU 691.54 MONTEVIDEO/DEVOTO EXPRESS VIS3 -> Cuenta Casa/casa/Super,8261||691.54||MONTEVIDEO/DEVOTO EXPRESS VIS3||2026-11-27T19:09:05,2026-11-28T07:57:57+00:00
+1a21f6d2d932156c,2026-11-27T23:52:56Z,aviso_tarjeta,insertado,6e7c938006d5,8261 UYU 696.89 MONTEVIDEO/REST CHEZ PINEYRO VIS3 -> Cuenta Casa/casa/Comer afuera / Delivery,8261||696.89||MONTEVIDEO/REST CHEZ PINEYRO VIS3||2026-11-27T20:52:54,2026-11-28T07:57:57+00:00
+1a21faff74b519cf,2026-11-28T01:05:53Z,aviso_tarjeta,insertado,2804653c8895,6427 USD 1.00 AIRBNB -> Santander Platinum/personal/(sin categoria),6427||1.00||AIRBNB||2026-11-27T22:05:48,2026-11-28T07:57:57+00:00
+1a21fb011b807d28,2026-11-28T01:05:59Z,devolucion,insertado,50c1d110a3c6,6427 USD -1.00 AIRBNB -> Santander Platinum/personal/(sin cat) revierte 2804653c8895,,2026-11-28T07:57:57+00:00
+1a21eee62dc6d8be,2026-11-27T21:34:27Z,transferencia,insertado,180c84bda387,Aviso de Transferencia Instantánea en Uruguay   | Lea Betancor 'torta joaco guerra' UYU 900.00 2026-11-27 -> gasto/personal/(sin categoria),,2026-11-28T07:57:57+00:00
+1a21f921b9099bed,2026-11-28T00:33:16Z,ignorado,ignorado,,comunicaciones@itau.com.uy | Se ha contratado una inversión.,,2026-11-28T07:57:57+00:00
